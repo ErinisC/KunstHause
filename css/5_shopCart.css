@@ -5,30 +5,37 @@ body {
 
 body::before {
     content: "";
-    display: block;
-    width: 0;
-    height: 0;
     border-style: solid;
-    border-color: #168FA4 #FFC024 black transparent;
+    border-color: transparent #FFC024 black transparent;
     position: absolute;
-    pointer-events: none;
-
     bottom: 0;
     border-width: 80vh 80vw 0 20vw;
-    margin-top: 1px;
+    z-index: 1;
 }
 
 body::after {
     content: "";
-    display: block;
-    width: 0;
-    height: 0;
     border-style: solid;
-    border-color: #168FA4 transparent black #ED5B4C;
+    border-color: transparent transparent black #ED5B4C;
     position: absolute;
-    pointer-events: none;
-
     bottom: 0;
     border-width: 80vh 20vw 0 80vw;
-    margin-top: 1px;
 }
+
+/* 中間表格背景 */
+.form-bg {
+    background-color: white;
+    height: 1000px;
+    z-index: 3;
+}
+
+/* 購物車nav-bar */
+
+
+/* 購物車清單 */
+.shop-list {
+    height: 200px;
+    border-bottom: 3px solid #E2E2E2;
+}
+
+< !-- 購物車訂單結帳資訊框 -->

@@ -10,10 +10,32 @@
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
 <!-- 內容開始 -->
-<div class="bg-yellow col-6 position-absolute"></div>
 
 
-<h5>Hi</h5>
+<div class="container form-bg mt-5 col-8">
+    <!-- 購物車nav-bar -->
+    <div class="row col-8">
+        <div class="shop-nav">
+
+
+        </div>
+    </div>
+
+    <!-- 購物車清單 -->
+    <div class="row col-10">
+        <div class="shop-list">
+
+
+        </div>
+    </div>
+
+    <!-- 購物車訂單結帳資訊框 -->
+    <div class="row col-4">
+        <div class="shop-total-list">
+
+
+        </div>
+    </div>
 
 </div>
 
