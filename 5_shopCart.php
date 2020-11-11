@@ -12,10 +12,8 @@
 <!-- 內容開始 -->
 <div class="bg-yellow col-6 position-absolute"></div>
 
-<div class="bg-pink"></div>
 
-<div class="container mt-3">
-    <h5>Hi</h5>
+<h5>Hi</h5>
 
 </div>
 
