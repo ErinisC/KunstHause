@@ -1,0 +1,20 @@
+body {
+    height: 100vh;
+}
+
+body::before {
+    /* background-color: #168FA4; */
+
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #168FA4 #FFC024 black #FF4E42;
+    position: absolute;
+    pointer-events: none;
+
+    top: 0;
+    border-width: 100vh 50vw 10px 50vw;
+    margin-top: 1px;
+}
