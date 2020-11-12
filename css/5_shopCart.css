@@ -1,3 +1,11 @@
+* {
+    outline: 1px solid red;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
     background-color: #168FA4;
@@ -22,20 +30,29 @@ body::after {
     border-width: 80vh 20vw 0 80vw;
 }
 
+
 /* 中間表格背景 */
 .form-bg {
     background-color: white;
-    height: 1000px;
+    height: 70vh;
     z-index: 3;
 }
 
 /* 購物車nav-bar */
-
-
-/* 購物車清單 */
-.shop-list {
-    height: 200px;
+.shop-nav-wrap {
     border-bottom: 3px solid #E2E2E2;
 }
 
-< !-- 購物車訂單結帳資訊框 -->
+.progress-bar-section p {
+    margin: 0;
+}
+
+.non-active {
+    opacity: 0.3;
+
+}
+
+/* 購物車清單 */
+
+
+/* 購物車訂單結帳資訊框  */

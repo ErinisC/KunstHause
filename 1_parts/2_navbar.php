@@ -1,10 +1,21 @@
 </head>
 
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        background-color: #FFC024;
+        border: 3px solid black;
+    }
+</style>
+
 <body>
 
     <header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
 
             <div class="container">
                 <a class="navbar-brand" href="#">Navbar</a>
