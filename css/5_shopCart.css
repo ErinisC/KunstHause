@@ -34,6 +34,7 @@ body::after {
 /* 中間表格背景 */
 .form-bg {
     background-color: white;
+    border: 3px solid black;
     height: 70vh;
     z-index: 3;
 }
