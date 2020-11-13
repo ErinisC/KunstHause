@@ -4,7 +4,7 @@
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
-<link rel="stylesheet" href="./css/5_shopCart.css">
+<link rel="stylesheet" href="./css/5_shopCart-1.css">
 
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>

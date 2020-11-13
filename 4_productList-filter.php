@@ -1,10 +1,10 @@
-<?php $title = ''; ?>
+<?php $title = '活動篩選頁'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
-<link rel="stylesheet" href="./css/">
+<link rel="stylesheet" href="./css/4_productList-filter.css">
 
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
