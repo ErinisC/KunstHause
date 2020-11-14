@@ -20,6 +20,10 @@
         font-family: "Noto Sans TC", sans-serif;
     }
 
+    .nav-link:hover{
+        color: #fff;
+    }
+
     .header-search {
         position: relative;
     }
@@ -55,11 +59,9 @@
     .dropdown-content {
         display: none;
         position: absolute;
-        /* top: 0.1rem; */
         right: 2px;
         background-color: transparent;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
@@ -108,7 +110,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg topnav">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand mr-5" href="#">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
@@ -156,5 +158,6 @@
                         <!-- TO DO: 判斷是否登入 -->
                     </div>
                 </div>
+            </div>
         </nav>
     </header>

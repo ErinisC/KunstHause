@@ -20,6 +20,10 @@
         font-family: "Noto Sans TC", sans-serif;
     }
 
+    .nav-link:hover {
+        color: #fff;
+    }
+
     .header-search {
         position: relative;
     }
@@ -50,6 +54,36 @@
         background: transparent;
         border: none;
         cursor: pointer;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 2px;
+        background-color: transparent;
+        min-width: 160px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        background-color: #FFC024;
+        border: 3px solid #000;
+        margin: 2px 0;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #168FA4;
+        color: #fff;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 
     /* ----------media query---------- */
@@ -109,13 +143,19 @@
                 <a href="#" class="header-icon shopping-cart">
                     <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="">
                 </a>
-                <a href="#" class="header-icon member">
-                    <img src="<?= WEB_ROOT ?>imgs/index/ic-member.svg" alt="">
-                </a>
+                <div class="dropdown">
+                    <img class="dropdown header-icon" src="<?= WEB_ROOT ?>imgs/index/ic-member.svg" alt="">
+                    <div class="dropdown-content">
+                        <a href="#">會員資料</a>
+                        <a href="#">票券管理</a>
+                        <a href="#">我的收藏</a>
+                        <a href="#">優惠券管理</a>
+                        <a href="#">訊息管理</a>
+                        <a href="#">聯繫客服</a>
+                        <a href="#">登入/登出</a>
+                    </div>
+                    <!-- TO DO: 判斷是否登入 -->
+                </div>
             </div>
-
-
         </nav>
-
-
     </header>
