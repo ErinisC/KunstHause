@@ -1,0 +1,73 @@
+* {
+    outline: 1px solid red;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    background-color: #168FA4;
+}
+
+body::before {
+    content: "";
+    border-style: solid;
+    border-color: transparent #FFC024 black transparent;
+    position: absolute;
+    bottom: 0;
+    border-width: 80vh 80vw 0 20vw;
+    z-index: 1;
+}
+
+body::after {
+    content: "";
+    border-style: solid;
+    border-color: transparent transparent black #ED5B4C;
+    position: absolute;
+    bottom: 0;
+    border-width: 80vh 20vw 0 80vw;
+}
+
+
+/* 中間表格背景 */
+.form-bg {
+    background-color: white;
+    border: 3px solid black;
+    height: 70vh;
+    z-index: 3;
+}
+
+
+
+/* Media 複製以下 */
+/* =============================== */
+/* Small 小型裝置sm (576px 以上) */
+@media (min-width: 576px) {}
+
+
+/* 576-768之間的畫面 */
+@media (min-width: 576px) and (max-width:768px) {}
+
+/* ================================ */
+/* Medium 中型裝置md (768px 以上) */
+@media (min-width: 768px) {}
+
+
+/* 768-992之間的畫面 */
+@media screen and (min-width:768px) and (max-width:992px) {}
+
+/* ================================ */
+/* Large 大型lg (992px以上) */
+@media (min-width: 992px) {}
+
+
+
+/* 991-1200 之間的畫面 */
+@media (min-width: 992px) and (max-width:1200px) {}
+
+/* ================================ */
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
