@@ -17,7 +17,7 @@
 
 <?php include __DIR__ . '/1_parts/2_navbar-lg.php'; ?>
 
-<section class="main grid-blue">
+<section class="main grid-blue pb-5">
     <div class="fluid-container">
         <div class="mainact-1 w-100 img-800"></div>
         <p class="section-title-l w-100 text-center cw m-100">活動列表</p>
@@ -173,6 +173,32 @@
     </div>
 </section>
 
+<section class="about position-relative">
+    <div class="fluid-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 marquee-box">
+            <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+            <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+            <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+            <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+            <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+            <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+            </div>
+            <div class="brand-intro position-absolute">
+                <span class="paper about-slogan">藝文活動？感覺就不好玩</span>
+                <br>
+                <span class="paper sub-slogan">我們是KunstHaus</span>
+                <br>
+                <span class="paper sub-slogan">比小眾更小眾的售票平台</span>
+                <br>
+                <span class="paper sub-slogan">用一些很酷的元素</span>
+                <br>
+                <span class="paper sub-slogan">帶你進入又酷又好玩的藝文世界</span>
+            </div>
+            <div class="col-lg-6 col-md-12 intro-bg"></div>
+        </div>
+    </div>
+</section>
 
 
 

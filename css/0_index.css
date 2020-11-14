@@ -37,6 +37,10 @@
     html {
       font-size: 12px;
     }
+
+    .intro-bg{
+      padding-top: 50%;
+    }
   }
   
   /* ----------hero section area---------- */
@@ -185,3 +189,50 @@
       height: 2rem;
       width: 2rem;
   }
+
+  /* ----------about area---------- */
+.marquee-box{
+  background-color: #002C80;
+}
+
+.blue-marquee{
+  font-size: 8vw;
+  font-weight: 800;
+  color: #168fa4;
+} 
+
+.yellow-marquee{
+  font-size: 8vw;
+  font-weight: 800;
+  color: #ffc024;
+}
+
+.intro-bg{
+  border: 3px solid #000;
+  background-color: #ed5b4c;
+}
+
+.brand-intro{
+  top: calc(50% - 211px);
+  left: 45%;
+  z-index: 1;
+}
+
+.paper{
+  display: inline-block;
+  background-color: #fff;
+  font-family: "Noto Sans TC", sans-serif;
+  padding: 12px 40px 12px 15px;
+}
+
+.about-slogan{
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  
+}
+
+.sub-slogan{
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
