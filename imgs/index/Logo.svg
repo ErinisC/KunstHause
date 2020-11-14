@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60.518" height="38.957" viewBox="0 0 60.518 38.957">
+  <g id="Logo" transform="translate(-230.18 -28.534)">
+    <path id="Path_1297" data-name="Path 1297" d="M250.542,57.26l-19.79,11.426V42.3Z" transform="translate(0 -1.768)" fill="#540b12" stroke="#181919" stroke-linejoin="round" stroke-width="1.145"/>
+    <path id="Path_1298" data-name="Path 1298" d="M250.542,55.493V29.106l-19.79,11.426Z" transform="translate(0)" fill="#dd0010" stroke="#181919" stroke-linejoin="round" stroke-width="1.145"/>
+    <path id="Path_1299" data-name="Path 1299" d="M296.25,57.26,276.46,68.686V42.3Z" transform="translate(-6.125 -1.768)" fill="#d18800" stroke="#181919" stroke-linejoin="round" stroke-width="1.145"/>
+    <path id="Path_1300" data-name="Path 1300" d="M296.25,55.493V29.106L276.46,40.532Z" transform="translate(-6.125)" fill="#f8aa17" stroke="#181919" stroke-linejoin="round" stroke-width="1.145"/>
+    <path id="Path_1301" data-name="Path 1301" d="M253.6,57.26l19.79,11.426V42.3Z" transform="translate(-3.062 -1.768)" fill="#0f2144" stroke="#181919" stroke-linejoin="round" stroke-width="1.145"/>
+    <path id="Path_1302" data-name="Path 1302" d="M253.6,55.493V29.106l19.79,11.426Z" transform="translate(-3.062)" fill="#00398c" stroke="#181919" stroke-linejoin="round" stroke-width="1.145"/>
+    <g id="Group_2" data-name="Group 2" transform="translate(231.776 36.909)">
+      <ellipse id="Ellipse_334" data-name="Ellipse 334" cx="9.726" cy="5.502" rx="9.726" ry="5.502" transform="translate(0 17.898) rotate(-66.949)" fill="#fff"/>
+      <ellipse id="Ellipse_335" data-name="Ellipse 335" cx="4.863" cy="2.751" rx="4.863" ry="2.751" transform="translate(6.642 12.295) rotate(-66.949)" fill="#1a1311"/>
+      <ellipse id="Ellipse_336" data-name="Ellipse 336" cx="1.945" cy="1.1" rx="1.945" ry="1.1" transform="translate(11.141 9.153) rotate(-66.949)" fill="#f6f6f6"/>
+      <ellipse id="Ellipse_337" data-name="Ellipse 337" cx="9.726" cy="5.502" rx="9.726" ry="5.502" transform="translate(0 17.898) rotate(-66.949)" fill="none" stroke="#171818" stroke-miterlimit="10" stroke-width="1.145"/>
+    </g>
+  </g>
+</svg>
