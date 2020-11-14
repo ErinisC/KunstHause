@@ -36,7 +36,6 @@
                 <img src="" alt="">
                 <p>選付款</p>
             </div>
-
         </div>
     </div>
 </div>
@@ -44,6 +43,7 @@
 <!-- 購物車清單 -->
 <div class="row col-10">
     <div class="shop-list">
+
 
 
     </div>

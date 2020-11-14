@@ -11,4 +11,4 @@
     <link rel="stylesheet" href="<?= WEB_ROOT ?>fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="<?= WEB_ROOT ?>css/reset.css">
     <link rel="icon" href="<?= WEB_ROOT ?>imgs/index/favicon.jpg" type="image/x-icon/">
-    <title><?= $title ?? '購物車' ?></title>
+    <title><?= $title ?? 'KunstHause' ?></title>
