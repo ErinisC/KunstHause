@@ -1,3 +1,5 @@
+<?php $title = 'KunstHaus | 不一樣的藝文售票平台'; ?>
+
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <?php include __DIR__ . '/1_parts/2_navbar-lg.php'; ?>

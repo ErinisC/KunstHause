@@ -1,3 +1,5 @@
+<?php $title = 'KunstHaus | 票券管理'; ?>
+
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
