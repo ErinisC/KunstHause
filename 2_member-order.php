@@ -1,6 +1,6 @@
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
-<?php include __DIR__ . '/1_parts/2_navbar-lg.php'; ?>
+<?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
 <!-- JQ -->
 <script src="./libary/jquery-3.5.1.js"></script>
