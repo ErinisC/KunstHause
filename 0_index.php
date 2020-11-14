@@ -7,3 +7,5 @@
 
 <!-- Boostrap JS -->
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+<?php include __DIR__ . '/1_parts/4_footer-lg.php'; ?>
