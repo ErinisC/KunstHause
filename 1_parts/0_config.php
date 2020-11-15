@@ -5,7 +5,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-// 連資料庫
+// // 連資料庫
 // $db_host = 'localhost';
 // $db_name = 'project59';
 // $db_user = 'jin';

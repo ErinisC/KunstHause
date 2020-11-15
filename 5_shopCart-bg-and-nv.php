@@ -1,6 +1,6 @@
 <!-- 內容開始 -->
 <div class="wrap-bg position-relative pb-5">
-    <div class="container form-bg mt-5 py-4 col-lg-8 col-md-8 col-sm-11 col-11">
+    <div class="container form-bg mt-5 py-4 col-lg-8 col-md-10 col-sm-11 col-11">
         <!-- 購物車nav-bar -->
         <div class="row justify-content-center m-0 p-0">
             <div class="shop-nav-wrap d-flex justify-content-between px-0 col-lg-8 col-md-8 col-sm-12 col-12">
@@ -33,4 +33,3 @@
                 </div>
             </div>
         </div>
-    </div>

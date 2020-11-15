@@ -153,7 +153,16 @@ button:focus {
 
 
 /* 768-992之間的畫面 */
-@media screen and (min-width:768px) and (max-width:992px) {}
+@media screen and (min-width:768px) and (max-width:992px) {
+
+    /* 小橫線 */
+    .shop-nav-wrap::after {
+        width: 11.5%;
+        border-top: 3px solid #E2E2E2;
+        left: 63%;
+    }
+
+}
 
 /* ================================ */
 /* Large 大型lg (992px以上) */
