@@ -1,0 +1,215 @@
+* {
+    outline: 1px solid red;
+}
+
+html {
+    font-size: 16px;
+}
+
+.bg {
+    background-color: #168FA4;
+}
+
+/* 麵包屑區塊 */
+.breadcrumb {
+    background-color: transparent;
+
+}
+
+.breadcrumb-item a {
+    color: white;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+    color: white;
+}
+
+.breadcrumb-item.active {
+    color: #FFC024;
+}
+
+/* 大圖輪播區塊 */
+.pic {
+    height: 800px;
+    background-color: #EEE;
+}
+
+/* 篩選區塊 */
+.filter {
+    position: absolute;
+    top: -40px;
+    height: 350px;
+    background-color: #fff;
+}
+
+.f2 {
+    right: 0;
+}
+
+
+/* 本週主打精選 */
+
+.week {
+    height: 800px;
+}
+
+/* 商品列表 */
+
+.card {
+    background-color: transparent;
+    border: none;
+}
+
+/* 活動小卡圖片 */
+.card .img-wrap {
+    height: 300px;
+    border: 3px solid black;
+}
+
+.card .time {
+    bottom: 0;
+    background-color: #FFC024;
+    height: 100px;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+
+}
+
+.card-body {
+    border: 3px solid black;
+    background-color: white;
+}
+
+.card-body .card-price {
+    background-color: #4336A3;
+    color: white;
+    border-left: 3px solid black;
+    cursor: pointer;
+}
+
+.card-price hr {
+    top: -9px;
+    width: 70%;
+    border-color: white;
+}
+
+/* 頁碼 */
+
+
+/* 推薦商品 */
+.card-sm .img-wrap {
+    height: 200px;
+}
+
+/* 蓋板彈跳窗格 */
+
+/* 購物車畫面 */
+#cartWrap {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    z-index: 51;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.shop-cart-content {
+    top: 25%;
+    left: 35%;
+    background-color: #fff;
+}
+
+.btn-close {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.right-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 右方資訊區 */
+.btn-wrap {
+    background-color: #000;
+}
+
+.btn-wrap button {
+    color: white;
+    background-color: #000;
+}
+
+.cost::before {
+    content: '$';
+}
+
+.cost::after {
+    content: '元';
+}
+
+
+/* 怪怪地區 */
+footer .letter-submit {
+    font-size: 1rem;
+}
+
+
+/* ====== Ｍedia Query =============== */
+/* Extra small 超小 (576px 以下) */
+@media screen and (max-width: 576px) {
+    .card-price {
+        font-size: .8rem;
+    }
+
+}
+
+/* =============================== */
+/* Small 小型裝置sm (576px 以上) */
+@media (min-width: 576px) {}
+
+
+/* 576-768之間的畫面 */
+@media (min-width: 576px) and (max-width:768px) {}
+
+
+
+@media (max-width: 768px) {
+    .shop-cart-content {
+        left: 10%;
+    }
+}
+
+/* ================================ */
+/* Medium 中型裝置md (768px 以上) */
+@media (min-width: 768px) {}
+
+
+/* 768-992之間的畫面 */
+@media screen and (min-width:768px) and (max-width:992px) {
+    .shop-cart-content {
+        left: 22%;
+    }
+
+}
+
+/* ================================ */
+/* Large 大型lg (992px以上) */
+@media (min-width: 992px) {}
+
+
+
+/* 991-1200 之間的畫面 */
+@media (min-width: 992px) and (max-width:1200px) {}
+
+/* ================================ */
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

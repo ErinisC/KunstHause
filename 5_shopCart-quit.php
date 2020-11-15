@@ -11,12 +11,12 @@
 
 
 <!-- 內容開始 -->
-<div class="container form-bg mt-5 py-4 col-lg-8 col-md-8 col-sm-11 col-11">
+<div class="wrap-bg position-relative pb-5">
+    <div class="container form-bg mt-5 py-4 col-lg-8 col-md-8 col-sm-11 col-11">
 
 
 
-
-
+    </div>
 </div>
 
 

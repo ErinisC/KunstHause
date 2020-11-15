@@ -12,7 +12,7 @@ body {
     background-color: #168FA4;
 }
 
-body::before {
+.wrap-bg::before {
     content: "";
     border-style: solid;
     border-color: transparent #FFC024 black transparent;
@@ -22,7 +22,7 @@ body::before {
     z-index: 1;
 }
 
-body::after {
+.wrap-bg::after {
     content: "";
     border-style: solid;
     border-color: transparent transparent black #ED5B4C;
@@ -36,7 +36,7 @@ body::after {
 .form-bg {
     background-color: white;
     border: 3px solid black;
-    height: 70vh;
+    height: 90vh;
     z-index: 3;
 }
 
