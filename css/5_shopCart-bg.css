@@ -12,6 +12,10 @@ body {
     background-color: #168FA4;
 }
 
+button:focus {
+    outline: 3px solid #FFC024;
+}
+
 .wrap-bg::before {
     content: "";
     border-style: solid;

@@ -6,6 +6,10 @@ html {
     font-size: 16px;
 }
 
+button:focus {
+    outline: 3px solid #FFC024;
+}
+
 .bg {
     background-color: #168FA4;
 }
@@ -19,6 +23,12 @@ html {
 .breadcrumb-item a {
     color: white;
 }
+
+.breadcrumb-item a:hover {
+    color: #FFC024;
+    text-decoration: none;
+}
+
 
 .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
@@ -67,6 +77,12 @@ html {
     border: 3px solid black;
 }
 
+.img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .card .time {
     bottom: 0;
     background-color: #FFC024;
@@ -95,7 +111,29 @@ html {
 }
 
 /* 頁碼 */
+.page-link {
+    background-color: transparent;
+    color: #21489C;
+    border: none;
+}
 
+.page-link:hover {
+    background-color: #FFC024;
+    border: 3px solid black;
+}
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+.page-item.active .page-link {
+    background-color: #FFC024;
+    border: 3px solid black;
+}
+
+.page-item.disabled .page-link {
+    background-color: transparent;
+}
 
 /* 推薦商品 */
 .card-sm .img-wrap {
@@ -106,7 +144,7 @@ html {
 
 /* 購物車畫面 */
 #cartWrap {
-    /* display: none; */
+    display: none;
     width: 100%;
     height: 100%;
     z-index: 51;
