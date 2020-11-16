@@ -9,6 +9,20 @@
         overflow-x: hidden;
     }
 
+    header {
+        z-index: 100;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .sticky+.main {
+        padding-top: 102px;
+    }
+
     .navbar {
         background-color: #FFC024;
         border: 3px solid black;
@@ -87,7 +101,7 @@
             margin-right: 40px;
         }
 
-        .lg-none{
+        .lg-none {
             display: none;
         }
     }
@@ -110,7 +124,7 @@
             height: 50px;
         }
 
-        .sm-none{
+        .sm-none {
             display: none;
         }
     }
@@ -118,7 +132,7 @@
 
 <body>
 
-    <header>
+    <header id="myHeader">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand mr-5 sm-none" href="#">
                 <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
@@ -134,7 +148,7 @@
             <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none">
                 <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
             </a>
-            
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -177,3 +191,20 @@
             </div>
         </nav>
     </header>
+
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        const header = document.getElementById("");
+        const sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>

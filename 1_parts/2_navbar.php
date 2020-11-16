@@ -9,6 +9,10 @@
         overflow-x: hidden;
     }
 
+    header {
+        z-index: 100;
+    }
+
     .navbar {
         background-color: #FFC024;
         border: 3px solid black;
@@ -118,9 +122,9 @@
 
 <body>
 
-    <header>
+    <header class="position-fixed w-100">
         <nav class="navbar navbar-expand-lg">
-            <div class="container">
+            <div class="container ">
                 <a class="navbar-brand mr-5 sm-none" href="#">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>

@@ -18,7 +18,7 @@
 <?php include __DIR__ . '/1_parts/2_navbar-lg.php'; ?>
 
 <section class="main grid-blue pb-5">
-    <div class="fluid-container">
+    <div class="container-fluid p-0">
         <div class="mainact-1 w-100 img-800"></div>
         <p class="section-title-l w-100 text-center cw m-100">活動列表</p>
     </div>
@@ -177,12 +177,15 @@
     <div class="fluid-container">
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 marquee-box p-0">
-            <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
-            <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
-            <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
-            <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
-            <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
-            <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+                <div class="bubble position-absolute">
+                    <img src="<?= WEB_ROOT ?>imgs/index/landing_03.png" alt="">
+                </div>
+                <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+                <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+                <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+                <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+                <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
+                <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
             </div>
             <div class="brand-intro position-absolute">
                 <span class="paper about-slogan">藝文活動？感覺就不好玩</span>

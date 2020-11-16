@@ -42,6 +42,8 @@
       padding-top: 50%;
     }
   }
+
+  
   
   /* ----------hero section area---------- */
   .hero-section{
@@ -157,7 +159,7 @@
   .card-bottom:after{
     content: '';
     background: #eee;
-    border: 0.25rem solid $black;
+    border: 0.25rem solid black;
     border-radius: 50%;
   }
   
@@ -195,6 +197,11 @@
   max-width: 1920px;
   background-color: #002C80;
   overflow: hidden;
+}
+
+.bubble{
+  z-index: 100;
+  top: 50%;
 }
 
 .blue-marquee{
