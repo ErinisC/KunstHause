@@ -136,8 +136,11 @@
                 <a class="navbar-brand lg-none" href="#">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
+                <!-- 購物車icon -->
                 <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none">
                     <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                    <!-- 購物車數量小提示 -->
+                    <span class="badge badge-pill badge-info position-absolute">0</span>
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
