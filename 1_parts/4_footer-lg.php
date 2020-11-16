@@ -117,14 +117,14 @@
             </div>
             <div class="col-lg-2 col-md-2"></div>
             <div class="col-lg-2 col-md-2 col-sm-12 col-12">
-                <div class="social d-flex mb-5">
-                    <div class="ins">
+                <div class="social d-flex mb-5 footer-title">
+                    <div class="ins mr-3">
                         <i class="fab fa-instagram"></i>
                     </div>
-                    <div class="fb">
+                    <div class="fb mr-3">
                         <i class="fab fa-facebook-f"></i>
                     </div>
-                    <div class="twitter">
+                    <div class="twitter mr-3">
                         <i class="fab fa-twitter"></i>
                     </div>
                 </div>
