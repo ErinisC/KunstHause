@@ -187,6 +187,8 @@
                 </li>
                 <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none">
                     <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                    <!-- 購物車數量小提示 -->
+                    <span class="badge badge-pill badge-warning count-badge">0</span>
                 </a>
             </div>
         </nav>
