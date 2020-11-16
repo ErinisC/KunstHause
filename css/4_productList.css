@@ -141,8 +141,6 @@ button:focus {
 }
 
 /* 蓋板彈跳窗格 */
-
-/* 購物車畫面 */
 #cartWrap {
     display: none;
     width: 100%;
@@ -170,13 +168,19 @@ button:focus {
     z-index: 1;
 }
 
+/* 圖片 */
+.right-pic {
+    height: 200px;
+}
+
+
 .right-pic img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-/* 右方資訊區 */
+/* 活動資訊區 */
 .btn-wrap {
     background-color: #000;
 }

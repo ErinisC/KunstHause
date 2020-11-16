@@ -47,7 +47,6 @@
 
                     </li>
                     <!-- 數量 -->
-
                     <li class="p-0 col-lg-3 col-md-3 col-sm-6 col-6">
                         <!-- 數量加減區塊 -->
                         <div class="number-wrap d-flex p-0 align-items-center">
@@ -91,6 +90,11 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src=""></script>
+<script src="">
+
+
+
+
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

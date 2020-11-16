@@ -193,28 +193,33 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
         <div class="shop-cart-content position-fixed position-relative col-lg-4 col-md-7 col-sm-10 col-10">
 
+            <!-- 右上刪除鈕 -->
             <button class="btn-close position-absolute">
                 <i class="fas fa-times text-white"></i>
             </button>
 
-            <div class="content-wrap p-5 h-100">
+            <!-- 中間白色小卡 -->
+            <div data-sid="<?= $r['sid'] ?>" class="content-wrap p-5 h-100">
+                <!-- 圖片 -->
                 <div class="right-pic">
-                    <img src="" alt="">
-
+                    <img src="imgs/event/big/<?= $r['book_id'] ?>.png" alt="">
                 </div>
 
-                <!-- 左邊資訊區 -->
+                <!-- 活動資訊區 -->
                 <div class="left-info d-flex flex-column justify-content-around">
 
                     <div class="info-out text-center">
-                        <h2 class="product-name">法國黑麥長卷麵包</h2>
+                        <h2 class="product-name">
+                            <?= $r['bookname'] ?>
+                        </h2>
+
                         <div class="card-info bread text-center my-3 text-dark">
-                            四周位元同一一切都是因為代理把你花蓮，農業代理蓮
+                            活動日期放這邊
                         </div>
                     </div>
 
                     <div class="cost text-center">
-                        200
+                        <?= $r['price'] ?>
                     </div>
 
                     <!-- 數量加減區塊 -->
@@ -224,6 +229,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                             <div class="input-group  justify-content-between">
                                 <span class="minus"><button><i class="fas fa-minus"></i></button></span>
 
+                                <!-- 中間數量 -->
                                 <input type="text" id='product-quantity' class="col-9" value="1">
 
                                 <span class="add"><button><i class="fas fa-plus"></i></button></span>
@@ -232,7 +238,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     </div>
 
                     <!-- 總金額區塊 -->
-
                     <div class="total-wrap mt-2">
                         <div class="total">總金額</div>
                         <div class="input-group ml-3">
@@ -243,12 +248,11 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                     <!-- 立刻購買按鈕 -->
                     <div class="btn-wrap mt-2">
-                        <button class="w-100">立刻購買</button>
+                        <button class="buy-btn w-100">立刻購買</button>
                     </div>
                 </div>
 
             </div>
-
 
         </div>
 
@@ -267,16 +271,17 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 <script>
     ///彈出購物車視窗
-
     $('.card-price').on('click', function() {
-        console.log('hi')
+        // console.log('hi')
         $('#cartWrap').css('display', 'block')
     })
 
+    // 關閉按鈕
     $('.btn-close').on('click', function() {
         $('#cartWrap').css('display', 'none')
     })
 
+    // 數量增減
     let productQuantity = +$('#product-quantity').val();
     let cost = $('.cost').text()
     $('#total-cost').val(cost * productQuantity)
@@ -294,18 +299,41 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     $('.minus').on('click', function() {
         productQuantity -= 1;
         cost = $('.cost').text()
-
-
         $('#product-quantity').val(productQuantity)
         $('#total-cost').val(cost * productQuantity)
     })
 
 
-
-
-    // 購物車小窗彈出
-    $('.fa-shopping-cart').on('click', function() {
+    // 購物車nav小窗彈出，白色大區塊消失
+    $('.buy-btn').on('click', function() {
         $('.shop-box-wrap').toggle()
+        $('#cartWrap').css('display', 'none')
+
+    });
+
+    // 準備串接購物車，先看能不能正確抓到商品sid跟數量
+    $('.buy-btn').on('click', function() {
+        // 先往上找到小卡
+        const item = $(this).closest('.content-wrap');
+        //再找到這個item的屬性，就能抓到設定給它的data-sid的值
+        const sid = item.attr('data-sid');
+        //接著再往item裡面找，找到數量，再取他的val來拿到數量的值
+        const qty = item.find('#product-quantity').val();
+
+        console.log({
+            sid: sid,
+            quantity: qty
+        });
+        // 現在要丟ajx給購物車api
+        $.get('4_productList-SP-api.php', {
+                sid: sid,
+                quantity: qty,
+                action: 'add'
+            },
+            function(data) {
+                console.log(data);
+
+            }, 'json')
 
     });
 </script>

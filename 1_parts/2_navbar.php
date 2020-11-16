@@ -175,8 +175,14 @@
                             <a class="dropdown-item" href="#">登入/登出</a>
                         </div>
                     </li>
+
+
+                    <!-- 購物車 -->
                     <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                        <!-- 購物車數量小提示 -->
+                        <span class="badge badge-pill badge-info position-absolute">0</span>
+
                     </a>
                 </div>
             </div>
