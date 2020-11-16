@@ -212,6 +212,7 @@
 .intro-bg{
   border: 3px solid #000;
   background-color: #ed5b4c;
+  padding-top: 100%;
 }
 
 .brand-intro{
