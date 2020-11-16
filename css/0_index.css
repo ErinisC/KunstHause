@@ -192,7 +192,9 @@
 
   /* ----------about area---------- */
 .marquee-box{
+  max-width: 1920px;
   background-color: #002C80;
+  overflow: hidden;
 }
 
 .blue-marquee{

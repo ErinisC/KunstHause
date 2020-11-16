@@ -176,7 +176,7 @@
 <section class="about position-relative">
     <div class="fluid-container">
         <div class="row">
-            <div class="col-lg-6 col-md-12 marquee-box">
+            <div class="col-lg-6 col-md-12 marquee-box p-0">
             <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
             <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
             <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
@@ -195,7 +195,7 @@
                 <br>
                 <span class="paper sub-slogan">帶你進入又酷又好玩的藝文世界</span>
             </div>
-            <div class="col-lg-6 col-md-12 intro-bg"></div>
+            <div class="col-lg-6 col-md-12 intro-bg p-0"></div>
         </div>
     </div>
 </section>

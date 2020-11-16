@@ -20,7 +20,7 @@
         font-family: "Noto Sans TC", sans-serif;
     }
 
-    .nav-link:hover{
+    .nav-link:hover {
         color: #fff;
     }
 
@@ -104,6 +104,29 @@
             margin-right: 2rem;
         }
 
+        .sm-right {
+            margin-left: 60%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .sm-right {
+            margin-left: 50%;
+        }
+
+        .header-icon img {
+            margin-right: 0rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sm-right {
+            margin-left: 20%;
+        }
+
+        .header-icon img {
+            margin-right: 0rem;
+        }
     }
 </style>
 
@@ -115,7 +138,7 @@
                 <a class="navbar-brand mr-5" href="#">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler sm-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-menu.svg" alt="" style="width: 48px; height: 10px;">
                     </span>
@@ -141,9 +164,6 @@
                             <img src="<?= WEB_ROOT ?>imgs/index/ic-search.svg" alt="">
                         </button>
                     </form>
-                    <a href="#" class="header-icon shopping-cart">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="">
-                    </a>
                     <div class="dropdown">
                         <img class="dropdown header-icon" src="<?= WEB_ROOT ?>imgs/index/ic-member.svg" alt="">
                         <div class="dropdown-content">
@@ -158,6 +178,9 @@
                         <!-- TO DO: 判斷是否登入 -->
                     </div>
                 </div>
+                <a href="#" class="header-icon shopping-cart">
+                    <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="">
+                </a>
             </div>
         </nav>
     </header>
