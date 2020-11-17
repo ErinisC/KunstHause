@@ -156,14 +156,6 @@
     /* border-bottom: 0.5rem dotted #168fa4; */
   }
   
-  .card-bottom:after{
-    content: '';
-    background: #eee;
-    border: 0.25rem solid black;
-    border-radius: 50%;
-  }
-  
-  
   .hashtag {
     font-size: 0.8rem;
     margin-right: 0.5rem;
