@@ -1,240 +1,336 @@
 * {
-    outline: 1px solid red;
-  }
-  /* ----------style guide---------- */
-  body {
-    font-family: "Noto Sans TC", sans-serif;
-    font-family: "Roboto", sans-serif;
-    overflow-x: hidden;
-  }
-  
-  /* ----------font style---------- */
-  .section-title-l {
-    letter-spacing: 2.55px;
-    font-size: 1.7rem;
-    font-weight: bold;
-  }
-  
-  .section-title-s {
-    letter-spacing: 2.55px;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  /* ----------color style---------- */
-  .cw {
-    color: #ffffff;
-  }
-  
-  /* ----------media query---------- */
-  @media (min-width: 769px) {
-    html {
-      font-size: 20px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    html {
-      font-size: 12px;
-    }
+  /* outline: 1px solid red; */
+}
+/* ----------style guide---------- */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
 
-    .intro-bg{
-      padding-top: 50%;
-    }
+/* ----------font style---------- */
+.section-title-l {
+  letter-spacing: 2.55px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.section-title-s {
+  letter-spacing: 2.55px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ----------color style---------- */
+.cw {
+  color: #ffffff;
+}
+
+/* ----------media query---------- */
+@media (min-width: 769px) {
+  html {
+    font-size: 20px;
   }
 
-  
-  
-  /* ----------hero section area---------- */
-  .hero-section{
-      background-color: #000;
-      width: 100vw;
-      height: 100vh;
+  .marquee-roll{
+    padding-top: 40%;
+  }
+}
+
+@media (min-width: 960px) {
+  .marquee-roll{
+    padding-top: 20%;
   }
   
-  .marquee {
-      font-family: "Roboto", sans-serif;
-      font-weight: 800;
-      margin: 2rem 0;
-      font-size: 12vw;
-      overflow: hidden;
-      color: #ffffff;
-      transform: rotate(-7deg);
-  }
-  
-  .marquee-long {
-      font-family: "Noto Sans TC", sans-serif;
-      font-weight: 500;
-      margin: 1rem 0;
-      font-size: 1vw;
-      overflow: hidden;
-      color: #696969;
-      transform: rotate(-7deg);
-  }
-  
-  /* ----------main act area---------- */
-  .grid-blue {
-    background: #168fa4;
-    background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
-      linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
-    background-size: 0.75rem 0.75rem;
-  }
-  
-  .mainact-1 {
-    overflow: hidden;
-    background-image: url(../imgs/index/mainact_01.jpg);
-    background-size: cover;
-  }
-  
-  .img-800 {
-    height: 700px;
-  }
-  
-  .m-100 {
-    margin: 5rem 0;
-  }
-  
-  .w-85 {
-    width: 85%;
-  }
-  
-  .card{
-      background: transparent;
-  }
-  .card-top {
-    background-color: #fac000;
-    border: 3px solid black;
-  }
-  
-  .circle {
-    width: 1rem;
-    height: 1rem;
-    border: 3px solid black;
-    border-radius: 50%;
-    background-color: #ffffff;
-    /* margin: 0 1rem; */
-  }
-  
-  .cat-label {
-    background-color: #002c80;
-    border: 3px solid black;
-    padding: 1.4rem;
-    margin: 1.4rem 0;
-  }
-  
-  .pickup-1 {
-    border: 3px solid black;
-    border-radius: 0;
-    background: url(../imgs/index/mainact_02.jpg) no-repeat;
-    background-size: cover;
-    background-position: right;
-  }
-  
-  .pickup-2 {
-    border: 3px solid black;
-    border-radius: 0;
-    background: url(../imgs/index/mainact_03.jpg) no-repeat;
-    background-size: cover;
-    background-position: right;
-  }
-  
-  .pickup-3 {
-    border: 3px solid black;
-    border-radius: 0;
-    background: url(../imgs/index/mainact_04.jpg) no-repeat;
-    background-size: cover;
-    background-position: right;
-  }
-  
-  .img-480 {
-    padding-top: 100%; /* 1:1 aspect ration*/
-  }
-  
-  .card-bottom {
-    background-color: #fac000;
-    border: 3px solid black;
-    /* border-bottom: 0.5rem dotted #168fa4; */
-  }
-  
-  .hashtag {
-    font-size: 0.8rem;
-    margin-right: 0.5rem;
-  }
-  
-  .price {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  .ticket-punches{
-      position: absolute;
-      width: 90%;
-      bottom: -20px;
-      left: 8%;
-  }
-  
-  .punch{
-      background: #168fa4;
-      border: 3px solid black;
-      border-bottom-color: transparent;
-      border-right-color: transparent;
-      transform: rotate(45deg);
-      border-radius: 50%;
-      height: 2rem;
-      width: 2rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
   }
 
-  /* ----------about area---------- */
-.marquee-box{
+  .marquee-roll{
+    padding-top: 60%;
+  }
+
+  .intro-bg {
+    padding-top: 50%;
+  }
+}
+
+/* ----------hero section area---------- */
+.hero-section {
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+}
+
+.marquee-main-lg {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  margin: 2rem 0;
+  font-size: 12vw;
+  overflow: hidden;
+  color: #ffffff;
+  transform: rotate(-7deg);
+  background: url(../imgs/index/ic-tape-kv.svg) center no-repeat;
+}
+
+.marquee-main-sm {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 500;
+  margin: 1rem 0;
+  font-size: 1vw;
+  overflow: hidden;
+  color: #696969;
+  transform: rotate(-7deg);
+}
+
+.brand{
+  margin-right: 5rem;
+}
+
+.slogan{
+  margin-right: 5rem;
+}
+
+.the-wall{
+  top: 8%;
+  left: 8%;
+  transition-duration: .5s;
+}
+
+.the-wall:hover{
+  transform: rotate(-45deg);
+}
+
+.god{
+  width: 250px;
+  top: 8%;
+  right: 20%;
+  transition-duration: .5s;
+  transform: rotate(-15deg);
+}
+
+.god:hover{
+  transform: rotate(45deg);
+}
+
+.taipei{
+  width: 300px;
+  bottom: 3%;
+  right: 3%;
+  transition-duration: .5s;
+}
+
+.taipei:hover{
+  transform: rotate(60deg);
+}
+
+.space{
+  height: 15%;
+}
+
+.scroll-down{
+  margin: auto;
+  padding: 30px;
+  background-color: #FFC024;
+}
+
+.scroll-down span{
+  font-weight: bold;
+  line-height: 40px;
+}
+
+/* ----------main act area---------- */
+.grid-blue {
+  background: #168fa4;
+  background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+}
+
+.mainact-1 {
+  overflow: hidden;
+  background-image: url(../imgs/index/mainact_01.jpg);
+  background-size: cover;
+}
+
+.img-800 {
+  height: 700px;
+}
+
+.m-100 {
+  margin: 5rem 0;
+}
+
+.w-85 {
+  width: 85%;
+}
+
+.card {
+  background: transparent;
+}
+.card-top {
+  background-color: #fac000;
+  border: 3px solid black;
+}
+
+.circle {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: #ffffff;
+  /* margin: 0 1rem; */
+}
+
+.cat-label {
+  background-color: #002c80;
+  border: 3px solid black;
+  padding: 1.4rem;
+  margin: 1.4rem 0;
+}
+
+.pickup-1 {
+  border: 3px solid black;
+  border-radius: 0;
+  background: url(../imgs/index/mainact_02.jpg) no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.pickup-2 {
+  border: 3px solid black;
+  border-radius: 0;
+  background: url(../imgs/index/mainact_03.jpg) no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.pickup-3 {
+  border: 3px solid black;
+  border-radius: 0;
+  background: url(../imgs/index/mainact_04.jpg) no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.img-480 {
+  padding-top: 100%; /* 1:1 aspect ration*/
+}
+
+.card-bottom {
+  background-color: #fac000;
+  border: 3px solid black;
+  /* border-bottom: 0.5rem dotted #168fa4; */
+}
+
+.hashtag {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.ticket-punches {
+  position: absolute;
+  width: 90%;
+  bottom: -20px;
+  left: 8%;
+}
+
+.punch {
+  background: #168fa4;
+  border: 3px solid black;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(45deg);
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
+
+.see-more {
+  letter-spacing: 2.55px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 40px 60px;
+  background: url(../imgs/index/ic-tape.svg) center no-repeat;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.see-more:hover{
+  color: #000;
+}
+
+.rubberBand{
+  margin: 0 0.5rem;
+  animation: rubberBand;
+  animation-duration: 0.8s;
+}
+
+/* ----------about area---------- */
+.marquee-box {
   max-width: 1920px;
-  background-color: #002C80;
+  background-color: #002c80;
   overflow: hidden;
 }
 
-.bubble{
+.bubble {
   z-index: 100;
-  top: 50%;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
 }
 
-.blue-marquee{
+.blue-marquee {
   font-size: 8vw;
   font-weight: 800;
   color: #168fa4;
-} 
+}
 
-.yellow-marquee{
+.yellow-marquee {
   font-size: 8vw;
   font-weight: 800;
   color: #ffc024;
 }
 
-.intro-bg{
+.intro-bg {
   border: 3px solid #000;
   background-color: #ed5b4c;
   padding-top: 100%;
 }
 
-.brand-intro{
+.brand-intro {
   top: calc(50% - 211px);
   left: 45%;
   z-index: 1;
 }
 
-.paper{
+.paper {
   display: inline-block;
   background-color: #fff;
   font-family: "Noto Sans TC", sans-serif;
   padding: 12px 40px 12px 15px;
 }
 
-.about-slogan{
+.about-slogan {
   font-size: 3.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  
 }
 
-.sub-slogan{
+.sub-slogan {
   font-size: 1.9rem;
   margin-bottom: 0.5rem;
 }
+
+
+
