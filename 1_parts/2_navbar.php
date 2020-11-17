@@ -91,6 +91,11 @@
         height: 200px;
     }
 
+    .cart-nav {
+        width: 400px;
+        left: -400%;
+    }
+
     /* ----------media query---------- */
     @media (min-width: 993px) {
         .nav-link {
@@ -129,6 +134,11 @@
             height: 200px;
         }
 
+        .cart-nav {
+            width: 280px;
+            left: -250%;
+        }
+
     }
 </style>
 
@@ -159,7 +169,7 @@
                     </a>
 
                     <!-- 購物車dropdown -->
-                    <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu cart-nav p-0" aria-labelledby="navbarDropdown">
                         <div class="dropdown-item shopcart-dropdown" href="#">購物車商品</div>
 
                     </div>
@@ -216,9 +226,34 @@
                         </a>
 
                         <!-- 購物車dropdown -->
-                        <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
-                            <div class="dropdown-item shopcart-dropdown" href="#">購物車商品</div>
+                        <div class="dropdown-menu cart-nav p-0" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-item shopcart-dropdown d-flex flex-column justify-content-between" href="#">
+                                <div class="">購物車商品</div>
 
+                                <!-- 如果session cart空空 -->
+                                <?php if (empty($_SESSION['cart'])) : ?>
+                                    <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
+                                    <!-- 如果session cart有東西 -->
+                                <?php else : ?>
+
+                                    <div class="wrap d-flex justify-content-between align-items-center">
+                                        <div class="img-wrap col-4 pl-0" style="height:50px">
+                                            <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
+                                        </div>
+                                        <div class="title">活動名稱長長長</div>
+                                        <div class="quantity">3張</div>
+                                        <div class="price">$1200</div>
+                                        <div class="delete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- 去結帳按鈕 -->
+                                    <a href="5_shopCart-list.php"><button type="button" class="btn btn-info">去結帳</button></a>
+                                <?php endif; ?>
+
+
+                            </div>
                         </div>
                     </li>
 

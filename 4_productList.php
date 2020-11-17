@@ -314,8 +314,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
     // 購物車nav小窗彈出，白色大區塊消失
     $('.buy-btn').on('click', function() {
-        $('.shop-box-wrap').toggle()
+        $('.cart-nav').addClass('show')
         $('#exampleModal').modal('hide')
+
+        setTimeout(function() {
+            $('.cart-nav').removeClass('show');
+        }, 2000);
 
     });
 
