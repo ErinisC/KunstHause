@@ -14,3 +14,6 @@
     <link rel="stylesheet" href="<?= WEB_ROOT ?>css/reset.css">
     <link rel="icon" href="<?= WEB_ROOT ?>imgs/index/favicon.jpg" type="image/x-icon/">
     <title><?= $title ?? 'KunstHaus' ?></title>
+
+    <!-- 掛ＪＱ，因為nav購物車小數量需要提前先有ＪＱ -->
+    <script src="./libary/jquery-3.5.1.js"></script>
