@@ -35,6 +35,12 @@
                 <div class="alert alert-primary" role="alert">
                     你的購物車空空如也～
                 </div>
+
+                <!-- 回商品列表按鈕 -->
+                <a href="4_productList.php">
+                    <button type="button" class="btn btn-info">來去逛逛</button>
+                </a>
+
             </section>
 
         <?php else : ?>
@@ -162,6 +168,23 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 上一步下一步按鈕 -->
+            <div class="container mt-3">
+                <div class="row row justify-content-center">
+                    <!-- 繼續逛逛 -->
+                    <a href="4_productList.php">
+                        <button type="button" class="btn btn-warning mr-3">繼續逛逛</button>
+                    </a>
+                    <!-- 下一步按鈕 -->
+                    <a href="5_shopCart-member-info.php">
+                        <button type="button" class="btn btn-info">下一步</button>
+                    </a>
+                </div>
+            </div>
+
+
+
     </div>
 
 
