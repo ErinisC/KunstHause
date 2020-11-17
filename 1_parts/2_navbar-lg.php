@@ -28,6 +28,7 @@
         border: 3px solid black;
     }
 
+
     .nav-item {
         list-style: none;
     }
@@ -195,18 +196,20 @@
     </header>
 
     <script>
-        window.onscroll = function() {
-            myFunction()
-        };
-
-        const header = document.getElementById("");
-        const sticky = header.offsetTop;
-
-        function myFunction() {
-            if (window.pageYOffset > sticky) {
-                header.classList.add("sticky");
-            } else {
-                header.classList.remove("sticky");
-            }
-        }
+        // navbar scollUp show
+        $(function() {
+            $('#myHeader').each(function() {
+                let $window = $(window),
+                    $header = $(this),
+                    headerOffsetTop = $header.offset().top;
+                $window.on('scroll', function() {
+                    if ($window.scrollTop() > headerOffsetTop) {
+                        $header.addClass('sticky');
+                    } else {
+                        $header.removeClass('sticky');
+                    }
+                });
+                $window.trigger('scroll');
+            });
+        });
     </script>
