@@ -140,8 +140,11 @@
                 <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none">
                     <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
                     <!-- 購物車數量小提示 -->
-                    <span class="badge badge-pill badge-info position-absolute">0</span>
+                    <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
                 </a>
+
+
+                <!-- 頁面縮小時 -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
@@ -184,7 +187,7 @@
                     <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
                         <!-- 購物車數量小提示 -->
-                        <span class="badge badge-pill badge-info position-absolute">0</span>
+                        <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
 
                     </a>
                 </div>
@@ -192,3 +195,20 @@
         </nav>
 
     </header>
+
+    <script>
+        const count_badge = $('.count-badge');
+
+        function countCart(cart) {
+            let count = 0;
+            for (let i in cart) {
+                count += cart[i].quantity * 1;
+            }
+            count_badge.html(count);
+        }
+
+        $.get("4_productList-SP-api.php", function(data) {
+            console.log(data);
+            countCart(data.cart);
+        }, 'json');
+    </script>

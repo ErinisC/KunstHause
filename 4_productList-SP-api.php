@@ -26,14 +26,15 @@ switch ($action) {
         break;
 
     case 'add':
-        if (!$sid or $quantity) {
+        if (!$sid or !$quantity) {
             $output['code'] = 'add failue';
         } else {
             // 如果購物車內已經有那筆資料了
             if (isset($_SESSION['cart']['$sid'])) {
                 // 就改變商品數量就好
                 // 拿到那個商品sid裡面的數量，變成用戶決定的數量
-                $_SESSION['cart']['sid']['quantity'] = $quantity;
+                // 這邊的$sid是變數，是因為要抓整筆物件的$sid，不是物件中的sid
+                $_SESSION['cart'][$sid]['quantity'] = $quantity;
             } else { //如果項目不存在的話，才去搜資料庫抓資料
                 // 用產品的編號當作key，來判斷購物車內有沒有這個商品
                 // 先用資料庫讀取
@@ -62,9 +63,9 @@ switch ($action) {
         // 這邊用的sid是購物車cart中，用戶傳進來的編號sid
         // 如果用戶傳的編號，有對應到購物車內的sid
         // 問～～～～～～～～～～～～～～～～～～～～～～～
-        if (isset($_SESSION['cart']['$sid'])) {
+        if (isset($_SESSION['cart'][$sid])) {
             // 就移除這個項目
-            unset($_SESSION['cart']['$sid']);
+            unset($_SESSION['cart'][$sid]);
         } else {
             $output['code'] = 'remove not success';
         }
