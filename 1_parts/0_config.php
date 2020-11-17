@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 
 // 連資料庫
 $db_host = 'localhost';
-$db_name = 'proj59';
+$db_name = 'kunsthaus';
 $db_user = 'root';
 $db_pass = '';
 
