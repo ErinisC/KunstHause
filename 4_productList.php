@@ -18,7 +18,6 @@ $totalRows = $t_stmt->fetch(PDO::FETCH_NUM)[0]; //總筆數
 $totalPages = ceil($totalRows / $perPage); //總頁數
 
 // 設定條件
-
 if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     if ($page < 1) { //如果所在頁數頁數小於一
         header('Location:4_productList.php');
@@ -90,25 +89,25 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <!-- 小卡 -->
                 <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
                     <div class="img-wrap mb-3 position-relative">
-                        <img src="imgs/event/big/<?= $r['book_id'] ?>.png" class="card-img-top" alt="">
+
+                        <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
+                        <a href="4_productList-detail-api.php?sid=<?= $r['sid'] ?>" target="_blank" class="col-8">
+                            <img src="imgs/event/big/<?= $r['book_id'] ?>.png" class="card-img-top" alt="">
+                        </a>
+
+                        <!-- 圖片上時間 -->
                         <div class="time position-absolute col-4"><?= $r['publish_date'] ?></div>
                     </div>
 
                     <!-- 小卡下方票價 -->
-
                     <div class="wrap d-flex">
                         <div class="card-body d-flex p-0">
+                            <div class="card-info m-auto py-3">
+                                <div class="event-name mb-3"><?= $r['bookname'] ?></div>
+                                <div class="event-location">地點：台北市</div>
+                            </div>
 
-                            <!-- 需要再包一個參數，傳給modal-api那隻 -->
-                            <a href="4_productList-modal-api.php?sid=<?= $r['sid'] ?>" target="_blank" class="col-8">
-                                <div class="card-info m-auto py-3">
-                                    <div class="event-name mb-3"><?= $r['bookname'] ?></div>
-                                    <div class="event-location">地點：台北市</div>
-                                </div>
-                            </a>
-
-
-                            <!-- 產品詳細頁加連結，傳參數過去product-detail01 -->
+                            <!-- 價格按鈕加Modal的彈跳窗格 -->
                             <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-4">
                                 <div class=" card-price py-3">
                                     <div class="origin-price mb-3 position-relative">
@@ -164,12 +163,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div>
     </div>
 
-    <!-- 推薦商品 -->
+    <!-- 推薦商品標題 -->
     <div class="container">
         <div class="pd-title py-5">我們為你推薦</div>
     </div>
 
-    <!-- 小推薦商品 -->
+    <!-- 推薦商品小卡 -->
     <div class="container-fluid">
         <div class="row m-0 p-0 col-12">
             <!-- 小卡 -->
@@ -199,93 +198,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div>
     </div>
 
-    <!-- 測試的modal -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-        Launch static backdrop modal
-    </button>
-
-    <!-- 自己的蓋板彈跳，取內容後刪掉 -->
-    <div id="cartWrap" class="shopping-cart-wrap position-fixed">
-
-        <div class="shop-cart-content position-fixed position-relative col-lg-4 col-md-7 col-sm-10 col-10">
-
-            <!-- 右上刪除鈕 -->
-            <button class="btn-close position-absolute">
-                <i class="fas fa-times text-white"></i>
-            </button>
-
-            <!-- 產品詳細頁加連結，傳參數過去product-detail01 -->
-            <!-- <a href="4_productList-modal-api.php?sid=<?= $r['sid'] ?>"></a> -->
-            <!-- 收藏 -->
-            <!-- 清單拿資料時，要順便拿收藏欄位，判斷有無收藏 -->
-
-            <!-- 中間白色小卡 -->
-            <div data-sid="" class="content-wrap p-5 h-100">
-
-                <!-- 圖片 -->
-                <div class="right-pic">
-                    <img src="" alt="">
-                </div>
-
-                <!-- 活動資訊區 -->
-                <div class="left-info d-flex flex-column justify-content-around">
-
-                    <div class="info-out text-center">
-                        <h2 class="product-name">
-                            書名
-                        </h2>
-
-                        <div class="card-info bread text-center my-3 text-dark">
-                            活動日期放這邊
-                        </div>
-                    </div>
-
-                    <div class="cost text-center">
-                        價錢
-                    </div>
-
-                    <!-- 數量加減區塊 -->
-                    <div class="number-wrap">
-                        <div class="">數量</div>
-                        <div class="input-wrap">
-                            <div class="input-group  justify-content-between">
-                                <span class="minus"><button><i class="fas fa-minus"></i></button></span>
-
-                                <!-- 中間數量 -->
-                                <input type="text" id='product-quantity' class="col-9" value="1">
-
-                                <span class="add"><button><i class="fas fa-plus"></i></button></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 總金額區塊 -->
-                    <div class="total-wrap mt-2">
-                        <div class="total">總金額</div>
-                        <div class="input-group ml-3">
-                            <span class="mr-3"><i class="fas fa-dollar-sign"></i></span>
-                            <input type="text" id="total-cost">
-                        </div>
-                    </div>
-
-                    <!-- 立刻購買按鈕 -->
-                    <div class="btn-wrap mt-2">
-                        <button class="buy-btn w-100">立刻購買</button>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <!-- 整個大Modal -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -300,15 +212,63 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <!-- body內容 -->
                 <div class="modal-body">
                     <!-- 這邊設定iframe -->
-                    <iframe src="4_productList-modal-api.php?sid=1" frameborder="0" style="width:100%;height:100%;">
+                    <!-- <iframe src="4_productList-detail-api.php?sid=1" frameborder="0" style="width:100%;height:100%;">
+                    </iframe> -->
 
-                    </iframe>
+                    <!-- 測試小卡內容 -->
+                    <!-- 圖片 -->
+                    <div class="right-pic">
+                        <img src="4_productList-detail-api.php?sid=1" alt="">
+                    </div>
 
-                </div>
+                    <!-- 活動資訊區 -->
+                    <div class="left-info d-flex flex-column justify-content-around">
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                        <div class="info-out text-center">
+                            <h2 class="product-name">
+                                書名
+                            </h2>
+
+                            <div class="card-info bread text-center my-3 text-dark">
+                                活動日期放這邊
+                            </div>
+                        </div>
+
+                        <div class="cost text-center">
+                            100
+                        </div>
+
+                        <!-- 數量加減區塊 -->
+                        <div class="number-wrap">
+                            <div class="">數量</div>
+                            <div class="input-wrap">
+                                <div class="input-group  justify-content-between">
+                                    <span class="minus"><button><i class="fas fa-minus"></i></button></span>
+
+                                    <!-- 中間數量 -->
+                                    <input type="text" id='product-quantity' class="col-9" value="1">
+
+                                    <span class="add"><button><i class="fas fa-plus"></i></button></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 總金額區塊 -->
+                        <div class="total-wrap mt-2">
+                            <div class="total">總金額</div>
+                            <div class="input-group ml-3">
+                                <span class="mr-3"><i class="fas fa-dollar-sign"></i></span>
+                                <input type="text" id="total-cost">
+                            </div>
+                        </div>
+
+                        <!-- 立刻購買按鈕 -->
+                        <div class="btn-wrap mt-2">
+                            <button class="buy-btn w-100">立刻購買</button>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -323,12 +283,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 
 <script>
-    ///彈出購物車視窗
-    // $('.card-price').on('click', function() {
-    //     // console.log('hi')
-    //     $('#cartWrap').css('display', 'block')
-    // })
-
     // 關閉按鈕
     $('.btn-close').on('click', function() {
         $('#cartWrap').css('display', 'none')
@@ -360,7 +314,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     // 購物車nav小窗彈出，白色大區塊消失
     $('.buy-btn').on('click', function() {
         $('.shop-box-wrap').toggle()
-        $('#cartWrap').css('display', 'none')
+        $('#exampleModal').modal('hide')
 
     });
 
@@ -385,7 +339,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             },
             function(data) {
                 console.log(data);
-
             }, 'json')
 
     });
@@ -394,7 +347,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
     function showProductModal(sid) {
         // 去抓當個sid
-        $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
+        // $('.right-pic')[0].src = '4_productList-modal-api.php?sid=' + sid;
 
 
         $('#exampleModal').modal('show')
