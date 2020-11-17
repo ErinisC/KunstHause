@@ -85,6 +85,12 @@
         display: block;
     }
 
+
+    /* 購物車dropdown視窗框 */
+    .dropdown-item.shopcart-dropdown {
+        height: 200px;
+    }
+
     /* ----------media query---------- */
     @media (min-width: 993px) {
         .nav-link {
@@ -117,6 +123,12 @@
         .sm-none {
             display: none;
         }
+
+        /* 購物車dropdown視窗框 */
+        .dropdown-item.shopcart-dropdown {
+            height: 200px;
+        }
+
     }
 </style>
 
@@ -136,15 +148,25 @@
                 <a class="navbar-brand lg-none" href="#">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
-                <!-- 購物車icon -->
-                <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none">
-                    <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
-                    <!-- 購物車數量小提示 -->
-                    <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
-                </a>
+
+                <!-- 購物車 -->
+                <li class="nav-item dropdown">
+                    <!-- 購物車 -->
+                    <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                        <!-- 購物車數量小提示 -->
+                        <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
+                    </a>
+
+                    <!-- 購物車dropdown -->
+                    <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-item shopcart-dropdown" href="#">購物車商品</div>
+
+                    </div>
+                </li>
 
 
-                <!-- 頁面縮小時 -->
+                <!-- 大版頁面navbar -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
@@ -168,9 +190,11 @@
                     </form>
                     <!-- TO DO: 判斷是否登入 -->
                     <li class="nav-item dropdown">
+                        <!-- 會員icon -->
                         <a class="nav-link mx-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="<?= WEB_ROOT ?>imgs/index/ic-member2.svg" alt="" style="width:48px;">
                         </a>
+                        <!-- 會員dropdown -->
                         <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">會員資料</a>
                             <a class="dropdown-item" href="#">票券管理</a>
@@ -182,14 +206,23 @@
                         </div>
                     </li>
 
-
                     <!-- 購物車 -->
-                    <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
-                        <!-- 購物車數量小提示 -->
-                        <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
+                    <li class="nav-item dropdown">
+                        <!-- 購物車 -->
+                        <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                            <!-- 購物車數量小提示 -->
+                            <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
+                        </a>
 
-                    </a>
+                        <!-- 購物車dropdown -->
+                        <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-item shopcart-dropdown" href="#">購物車商品</div>
+
+                        </div>
+                    </li>
+
+
                 </div>
             </div>
         </nav>
@@ -197,6 +230,7 @@
     </header>
 
     <script>
+        // 購物車icon旁的數量
         const count_badge = $('.count-badge');
 
         function countCart(cart) {
