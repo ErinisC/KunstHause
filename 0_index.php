@@ -52,7 +52,7 @@
     </div>
     <div class="container-fluid w-85 pb-5">
         <div class="pickup-act row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12 px-4">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 px-4">
                 <div class="card">
                     <div class="card-top">
                         <div class="row m-0 align-items-center justify-content-center">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12 px-4">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 px-4">
                 <div class="card">
                     <div class="card-top">
                         <div class="row m-0 align-items-center justify-content-center">
@@ -149,7 +149,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12 px-4">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 px-4">
                 <div class="card">
                     <div class="card-top">
                         <div class="row m-0 align-items-center justify-content-center">

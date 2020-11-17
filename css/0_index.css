@@ -35,11 +35,47 @@ body {
   .marquee-roll{
     padding-top: 40%;
   }
+
+  .about-slogan {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .sub-slogan {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 992px) {
   .marquee-roll{
     padding-top: 20%;
+  }
+
+  .about-slogan {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .sub-slogan {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+  .about-slogan {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .sub-slogan {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
   }
   
 }
@@ -53,8 +89,27 @@ body {
     padding-top: 60%;
   }
 
+  .ticket-punches{
+    display: none;
+  }
+
   .intro-bg {
     padding-top: 50%;
+  }
+
+  .bubble{
+    width: 50%;
+  }
+
+  .about-slogan {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .sub-slogan {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -321,16 +376,7 @@ a:hover{
   padding: 12px 40px 12px 15px;
 }
 
-.about-slogan {
-  font-size: 3.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
 
-.sub-slogan {
-  font-size: 1.9rem;
-  margin-bottom: 0.5rem;
-}
 
 
 
