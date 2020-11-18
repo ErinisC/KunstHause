@@ -88,58 +88,60 @@ if (empty($row)) {
 </style>
 
 
-<!-- 測試小卡內容 -->
-<!-- 圖片 -->
-<div class="right-pic">
-    <img src="4_productList-modal-api.php?sid=1" alt="">
-</div>
-
-<!-- 活動資訊區 -->
-<div class="left-info d-flex flex-column justify-content-around">
-
-    <div class="info-out text-center">
-        <h2 class="product-name">
-            書名
-        </h2>
-
-        <div class="card-info bread text-center my-3 text-dark">
-            活動日期放這邊
-        </div>
+<!-- 中間小卡內容 -->
+<div class="content-wrap product-item" data-sid="<?= $row['sid'] ?>">
+    <!-- 圖片 -->z
+    <div class="right-pic mb-3">
+        <img src="imgs/event/small/<?= $row['book_id'] ?>.jpg" alt="">
     </div>
 
-    <div class="cost text-center">
-        100
-    </div>
+    <!-- 活動資訊區 -->
+    <div class="left-info d-flex flex-column justify-content-around">
 
-    <!-- 數量加減區塊 -->
-    <div class="number-wrap">
-        <div class="">數量</div>
-        <div class="input-wrap">
-            <div class="input-group  justify-content-between">
-                <span class="minus"><button><i class="fas fa-minus"></i></button></span>
+        <div class="info-out text-center">
+            <h2 class="product-name">
+                <?= $row['bookname'] ?>
+            </h2>
 
-                <!-- 中間數量 -->
-                <input type="text" id='product-quantity' class="col-9" value="1">
-
-                <span class="add"><button><i class="fas fa-plus"></i></button></span>
+            <div class="card-info bread text-center my-3 text-dark">
+                活動日期放這邊
             </div>
         </div>
-    </div>
 
-    <!-- 總金額區塊 -->
-    <div class="total-wrap mt-2">
-        <div class="total">總金額</div>
-        <div class="input-group ml-3">
-            <span class="mr-3"><i class="fas fa-dollar-sign"></i></span>
-            <input type="text" id="total-cost">
+        <div class="cost text-center">
+            <?= $row['price'] ?>
         </div>
-    </div>
 
-    <!-- 立刻購買按鈕 -->
-    <div class="btn-wrap mt-2">
-        <button class="buy-btn w-100">立刻購買</button>
-    </div>
+        <!-- 數量加減區塊 -->
+        <div class="number-wrap">
+            <div class="">數量</div>
+            <div class="input-wrap">
+                <div class="input-group  justify-content-between">
+                    <span class="minus"><button><i class="fas fa-minus"></i></button></span>
 
+                    <!-- 中間數量 -->
+                    <input type="text" id='product-quantity' class="col-9" value="1">
+
+                    <span class="add"><button><i class="fas fa-plus"></i></button></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 總金額區塊 -->
+        <div class="total-wrap mt-2">
+            <div class="total">總金額</div>
+            <div class="input-group ml-3">
+                <span class="mr-3"><i class="fas fa-dollar-sign"></i></span>
+                <input type="text" id="total-cost">
+            </div>
+        </div>
+
+        <!-- 立刻購買按鈕 -->
+        <div class="btn-wrap mt-2">
+            <button class="buy-btn w-100">立刻購買</button>
+        </div>
+
+    </div>
 </div>
 
 <!-- JS -->
@@ -168,15 +170,15 @@ if (empty($row)) {
 
 
     // 購物車nav小窗彈出，白色大區塊消失
-    $('.buy-btn').on('click', function() {
-        $('.cart-nav').addClass('show')
-        $('#exampleModal').modal('hide')
+    // $('.buy-btn').on('click', function() {
+    //     $('.cart-nav').addClass('show')
+    //     $('body').addClass('modal-open')
 
-        setTimeout(function() {
-            $('.cart-nav').removeClass('show');
-        }, 2000);
+    //     setTimeout(function() {
+    //         $('.cart-nav').removeClass('show');
+    //     }, 2000);
 
-    });
+    // });
 
     // 準備串接購物車，先看能不能正確抓到商品sid跟數量
     $('.buy-btn').on('click', function() {

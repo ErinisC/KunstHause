@@ -88,16 +88,17 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             <?php foreach ($rows as $r) : ?>
                 <!-- 小卡 -->
                 <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="img-wrap mb-3 position-relative">
 
-                        <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
-                        <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="col-8">
+                    <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
+                    <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank">
+                        <div class="img-wrap mb-3 position-relative">
+
                             <img src="imgs/event/big/<?= $r['book_id'] ?>.png" class="card-img-top" alt="">
-                        </a>
+                            <!-- 圖片上時間 -->
+                            <div class="time position-absolute col-4"><?= $r['publish_date'] ?></div>
+                        </div>
+                    </a>
 
-                        <!-- 圖片上時間 -->
-                        <div class="time position-absolute col-4"><?= $r['publish_date'] ?></div>
-                    </div>
 
                     <!-- 小卡下方票價 -->
                     <div class="wrap d-flex">
@@ -203,7 +204,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -230,12 +230,15 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 <script>
     // 關閉按鈕
-    $('.btn-close').on('click', function() {
-        $('#cartWrap').css('display', 'none')
-    })
+    // $('.btn-close').on('click', function() {
+    //     // $('#cartWrap').css('display', 'none');
+    //     $('.cart-nav').addClass('show');
 
+    //     setTimeout(function() {
+    //         $('.cart-nav').removeClass('show');
+    //     }, 2000);
+    // })
     // modal
-
     function showProductModal(sid) {
         // 去抓當個sid
         $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;

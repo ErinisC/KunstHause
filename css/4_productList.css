@@ -123,6 +123,10 @@ iframe {
     height: 100%;
 }
 
+.modal-body {
+    height: 600px;
+}
+
 
 /* 頁碼 */
 .page-link {
