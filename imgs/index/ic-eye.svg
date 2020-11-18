@@ -1,14 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="68" height="38" viewBox="0 0 68 38">
-  <g id="ic_eye" data-name="ic/eye" transform="translate(0.111)">
-    <g id="Ellipse_338" data-name="Ellipse 338" transform="translate(-0.111)" fill="#fff" stroke="#000" stroke-width="3">
-      <ellipse cx="15.5" cy="19" rx="15.5" ry="19" stroke="none"/>
-      <ellipse cx="15.5" cy="19" rx="14" ry="17.5" fill="none"/>
-    </g>
-    <g id="Ellipse_339" data-name="Ellipse 339" transform="translate(40.889)" fill="#fff" stroke="#000" stroke-width="3">
-      <ellipse cx="13.5" cy="19" rx="13.5" ry="19" stroke="none"/>
-      <ellipse cx="13.5" cy="19" rx="12" ry="17.5" fill="none"/>
-    </g>
-    <path id="Path_1303" data-name="Path 1303" d="M7.791,0A7.757,7.757,0,0,0,3.9,1.04L6.393,6.612.438,5.216A7.784,7.784,0,1,0,7.791,0Z" transform="translate(43.502 16.723) rotate(-30)"/>
-    <path id="Path_1304" data-name="Path 1304" d="M7.791,0A7.757,7.757,0,0,0,3.9,1.04L6.393,6.612.438,5.216A7.784,7.784,0,1,0,7.791,0Z" transform="translate(3.294 16.723) rotate(-30)"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 68 38" style="enable-background:new 0 0 68 38;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#000000;stroke-width:3;}
+</style>
+<g id="ic_eye" transform="translate(0.111)">
+	<g id="Ellipse_338" transform="translate(-0.111)">
+		<ellipse class="st0" cx="15.5" cy="19" rx="15.5" ry="19"/>
+		<ellipse class="st1" cx="15.5" cy="19" rx="14" ry="17.5"/>
+	</g>
+	<path id="Path_1304" d="M10,12.8c-1.2,0.7-2.2,1.7-2.8,2.8l4.9,3.6L6.3,21c0.8,4.2,4.9,7,9.1,6.2c4.2-0.8,7-4.9,6.2-9.1
+		c-0.8-4.2-4.9-7-9.1-6.2C11.6,12.1,10.8,12.4,10,12.8z"/>
+	<g id="ic_eye_1_" transform="translate(0.111)">
+		<g id="Ellipse_338_1_" transform="translate(-0.111)">
+			<ellipse class="st0" cx="52.3" cy="19" rx="15.5" ry="19"/>
+			<ellipse class="st1" cx="52.3" cy="19" rx="14" ry="17.5"/>
+		</g>
+		<path id="Path_1304_1_" d="M46.9,12.8c-1.2,0.7-2.2,1.7-2.8,2.8l4.9,3.6L43.1,21c0.8,4.2,4.9,7,9.1,6.2c4.2-0.8,7-4.9,6.2-9.1
+			c-0.8-4.2-4.9-7-9.1-6.2C48.4,12.1,47.6,12.4,46.9,12.8z"/>
+	</g>
+</g>
 </svg>

@@ -1,5 +1,5 @@
 * {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 }
 /* ----------style guide---------- */
 body {
@@ -53,6 +53,10 @@ body {
     padding-top: 20%;
   }
 
+  .card{
+    margin-bottom: 3rem;
+  }
+
   .about-slogan {
     font-size: 3rem;
     font-weight: 600;
@@ -89,6 +93,10 @@ body {
     padding-top: 60%;
   }
 
+  .card{
+    margin-bottom: 2rem;
+  }
+
   .ticket-punches{
     display: none;
   }
@@ -123,7 +131,6 @@ body {
 .marquee-main-lg {
   font-family: "Roboto", sans-serif;
   font-weight: 800;
-  margin: 2rem 0;
   font-size: 12vw;
   overflow: hidden;
   color: #ffffff;
@@ -150,6 +157,7 @@ body {
 }
 
 .the-wall{
+  width: 250px;
   top: 8%;
   left: 8%;
   transition-duration: .5s;
@@ -173,7 +181,7 @@ body {
 
 .taipei{
   width: 300px;
-  bottom: 3%;
+  bottom: 5%;
   right: 3%;
   transition-duration: .5s;
 }
@@ -183,7 +191,7 @@ body {
 }
 
 .space{
-  height: 15%;
+  height: 12%;
 }
 
 .scroll-down{
@@ -193,8 +201,42 @@ body {
 }
 
 .scroll-down span{
+  font-size: 1.5rem;
   font-weight: bold;
   line-height: 40px;
+}
+
+.eyes{
+  height: 40px;
+}
+
+.arrow{
+  animation: scroll 1.5s infinite;
+  -webkit-animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
 }
 
 /* ----------main act area---------- */
@@ -207,7 +249,7 @@ body {
 
 .mainact-1 {
   overflow: hidden;
-  background-image: url(../imgs/index/mainact_01.jpg);
+  background-image: url(../imgs/index/mainact-01.jpg);
   background-size: cover;
 }
 
@@ -250,7 +292,7 @@ body {
 .pickup-1 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact_02.jpg) no-repeat;
+  background: url(../imgs/index/mainact-02.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -258,7 +300,7 @@ body {
 .pickup-2 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact_03.jpg) no-repeat;
+  background: url(../imgs/index/mainact-03.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -266,7 +308,7 @@ body {
 .pickup-3 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact_04.jpg) no-repeat;
+  background: url(../imgs/index/mainact-04.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -376,7 +418,16 @@ a:hover{
   padding: 12px 40px 12px 15px;
 }
 
+/* ----------blog area---------- */
+.grid-white {
+  background: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+}
 
-
-
+.blog .section-title{
+  font-size: 8rem;
+  font-weight: 800;
+}
 

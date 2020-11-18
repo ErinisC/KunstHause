@@ -10,25 +10,10 @@
 
 <section class="hero-section position-relative">
     <div class="marquee-roll">
-        <marquee class="marquee-main-lg" style="--tw:40vw; --ad:2.5s;" scrollamount=12>
-            <span class="brand">KUNSTHAUS</span>
-            <span class="brand">KUNSTHAUS</span>
-            <span class="brand">KUNSTHAUS</span>
-            <span class="brand">KUNSTHAUS</span>
-            <span class="brand">KUNSTHAUS</span>
-            <span class="brand">KUNSTHAUS</span>
-        </marquee>
-        <marquee class="marquee-main-sm" style="--tw:40vw; --ad:2.5s;" scrollamount=10>
+        <div id="marquee-main-lg" class="marquee-main-lg">KUNSTHAUS</div>
+        <div id="marquee-main-sm" class="marquee-main-sm">
             <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-            <span class="slogan">不一樣的藝文售票平台</span>
-        </marquee>
+        </div>
     </div>
     <img class="the-wall position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-deco-thewall.svg" alt="">
     <img class="god position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-deco-god.svg" alt="">
@@ -36,9 +21,9 @@
     <div class="space"></div>
     <div class="d-flex text-center align-middle">
         <span class="scroll-down d-flex">
-        <img class="mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
-        <span>SCROLL DOWN</span>
-        <img class="mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-arrow-down.svg" alt="">
+            <img class="eyes mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
+            <span>SCROLL DOWN</span>
+            <img class="arrow mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-arrow-down.svg" alt="">
         </span>
     </div>
 </section>
@@ -236,7 +221,28 @@
     </div>
 </section>
 
+<section class="blog grid-white pt-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="section-title">新鮮事。</div>
+            </div>
+            <div class="col-lg-4">
+                <div class="article-1 layout w-100">
+                    <img src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="article-2 layout">
 
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+
+</section>
 
 
 
@@ -248,9 +254,85 @@
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 <script>
+    // marquee-main-lg direction
+    $(function() {
+        let isScrolling = null;
+        let direction = '-100%';
+        let lastDirection = direction;
+        const marquee = $("#marquee-main-lg");
+        marquee.css({
+            "overflow": "hidden",
+            "width": "100%"
+        });
+
+        marquee.wrapInner("<span>");
+        marquee.find("span").css({
+            "width": "50%",
+            "display": "inline-block",
+            "text-align": "center"
+        });
+        marquee.append(marquee.find("span").clone());
+
+        marquee.wrapInner("<div id='marquee-direction'>");
+        marquee.find("div").css("width", "200%");
+
+        const reset = function() {
+            $(this).css("margin-left", "0%");
+            $(this).animate({
+                "margin-left": direction
+            }, 10000, 'linear', reset);
+        };
+
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+
+            let st = window.pageYOffset || document.documentElement.scrollTop;
+            console.log('st:', st)
+            console.log('lastScrollTop:', lastScrollTop)
+
+            if (st > lastScrollTop) {
+                direction = '-100%';
+            } else {
+                direction = '100%';
+            }
+
+            // Clear our timeout throughout the scroll
+            window.clearTimeout(isScrolling);
+
+            // Set a timeout to run after scrolling ends
+            isScrolling = setTimeout(function() {
+
+                // Run the callback
+                console.log('Scrolling has stopped.');
+                if (lastDirection !== direction) {
+                    $('#marquee-direction').stop();
+                    marqueeAnimate(direction);
+                }
+            }, 66);
+
+            lastScrollTop = st <= 0 ? 0 : st;
+            lastDirection = direction;
+        }, false);
+
+        function marqueeAnimate(direction) {
+            $('#marquee-direction').animate({
+                "margin-left": direction
+            }, 10000, 'linear', reset);
+        }
+
+        reset.call(marquee.find("div"));
+
+    });
+
+
+
+    // card heart animation
+
+    // see more rubberBand animation
     $(window).scroll(function() {
         let scrollTop = $(window).scrollTop();
-        console.log('scrollTop:', scrollTop);
+        // console.log('scrollTop:', scrollTop);
         if (scrollTop > 2015) {
             $('.see-more').addClass('rubberBand');
         } else {

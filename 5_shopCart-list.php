@@ -97,7 +97,7 @@
                                         <i class="fas fa-minus"></i>
                                     </div>
 
-                                    <input id='product-quantity' data-quantity="<?= $i['quantity'] ?>" type="text" class="quantity col-8 text-center" value="<?= $i['quantity'] ?>">
+                                    <input data-quantity="<?= $i['quantity'] ?>" type="text" class="quantity col-8 text-center" value="<?= $i['quantity'] ?>">
 
                                     <div class="add col-2 p-0">
                                         <i class="fas fa-plus"></i>
@@ -191,8 +191,6 @@
 <?php endif; ?>
 
 
-
-
 </div>
 </div>
 
@@ -215,20 +213,19 @@
     $('#total-cost').val(cost * productQuantity)
 
     $('.add').on('click', function() {
-        productQuantity += 1;
-        cost = $('.cost').text()
+        let q = $(this).prev().val();
+        q = q * 1 + 1;
+        $(this).prev().val(q);
 
 
-        $('#product-quantity').val(productQuantity)
-        $('#total-cost').val(cost * productQuantity)
     })
 
     // 按鈕減少數量
     $('.minus').on('click', function() {
-        productQuantity -= 1;
-        cost = $('.cost').text()
-        $('#product-quantity').val(productQuantity)
-        $('#total-cost').val(cost * productQuantity)
+        let q = $(this).next().val();
+        q = q * 1 - 1;
+        $(this).next().val(q);
+
     })
 
 

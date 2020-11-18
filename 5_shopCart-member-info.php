@@ -59,7 +59,7 @@
                 </a>
 
                 <!-- 送出 -->
-                <button type="submit" class="btn btn-primary">確認送出</button>
+                <button type="submit" class="btn btn-info">確認送出</button>
 
             </div>
         </form>

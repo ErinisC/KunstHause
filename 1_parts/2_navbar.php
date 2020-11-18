@@ -96,6 +96,16 @@
         left: -400%;
     }
 
+    /* 隱藏溢出文字 */
+    .cart-nav .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .delete {
+        font-size: 1.5rem;
+    }
+
     /* ----------media query---------- */
     @media (min-width: 993px) {
         .nav-link {
@@ -237,19 +247,28 @@
                                 <?php else : ?>
 
                                     <div class="wrap d-flex justify-content-between align-items-center">
-                                        <div class="img-wrap col-4 pl-0" style="height:50px">
+                                        <div class="img-wrap col-4 p-0" style="height:100px">
                                             <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
                                         </div>
-                                        <div class="title">活動名稱長長長</div>
-                                        <div class="quantity">3張</div>
-                                        <div class="price">$1200</div>
+
+                                        <div class="item-info col-6">
+                                            <div class="title my-3">
+                                                <!-- <//?= $_SESSION['cart']['boookname'] ?> -->
+                                                很長長長長長的名稱
+                                            </div>
+                                            <div class="quantity mb-3">3張</div>
+                                            <div class="price mb-3">$1200</div>
+                                        </div>
+
                                         <div class="delete">
                                             <i class="far fa-trash-alt"></i>
                                         </div>
                                     </div>
 
                                     <!-- 去結帳按鈕 -->
-                                    <a href="5_shopCart-list.php"><button type="button" class="btn btn-info">去結帳</button></a>
+                                    <a href="5_shopCart-list.php" class="text-right">
+                                        <button type="button" class="btn btn-info">去結帳</button>
+                                    </a>
                                 <?php endif; ?>
 
 
@@ -276,8 +295,16 @@
             count_badge.html(count);
         }
 
-        $.get("4_productList-SP-api.php", function(data) {
-            console.log(data);
+        $.get("4_productList-shopcart-api.php", function(data) {
+            // console.log(data);
             countCart(data.cart);
+        }, 'json');
+
+
+        // 購物車icon下拉框的活動資訊
+        // const cart_nav = $('.cart-nav');
+
+        $.get("4_productList-shopcart-api.php", function(data) {
+            console.log(data);
         }, 'json');
     </script>
