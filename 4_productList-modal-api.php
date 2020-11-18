@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/1_parts/0_config.php';;
+include __DIR__ . '/1_parts/0_config.php';
 
 
 if (!isset($_GET['sid'])) {
@@ -90,7 +90,7 @@ if (empty($row)) {
 
 <!-- 中間小卡內容 -->
 <div class="content-wrap product-item" data-sid="<?= $row['sid'] ?>">
-    <!-- 圖片 -->z
+    <!-- 圖片 -->
     <div class="right-pic mb-3">
         <img src="imgs/event/small/<?= $row['book_id'] ?>.jpg" alt="">
     </div>
