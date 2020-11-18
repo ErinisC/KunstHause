@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446.869" height="163.176" viewBox="0 0 446.869 163.176">
+  <g id="registrater" transform="translate(-1560.989 -1261.467)">
+    <g id="Group_90" data-name="Group 90" transform="translate(0 0)">
+      <g id="title-bg-2" transform="translate(1590.515 1313.232) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
+        <rect width="357.507" height="109.778" stroke="none"/>
+        <rect x="1.5" y="1.5" width="354.507" height="106.778" fill="none"/>
+      </g>
+      <g id="title-bg1" transform="translate(1560.989 1308.078) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
+        <rect width="382.461" height="117.441" stroke="none"/>
+        <rect x="1.5" y="1.5" width="379.461" height="114.441" fill="none"/>
+      </g>
+    </g>
+    <text id="signup-Kunsthaus-title_" data-name="signup-Kunsthaus-title​" transform="translate(1600.776 1331.351) rotate(-7)" fill="#fff" font-size="34" font-family="NotoSansTC-Regular, Noto Sans TC"><tspan x="0" y="39">申請 Kunsthaus會員​</tspan></text>
+  </g>
+</svg>

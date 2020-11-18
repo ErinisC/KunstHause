@@ -1,6 +1,6 @@
-* {
-  /* outline: 1px solid red; */
-}
+/* * {
+  outline: 1px solid red;
+} */
 
 body {
   height: 100vh;
@@ -16,13 +16,33 @@ body {
   margin-bottom: 200px;
 }
 
+.deco {
+  position: relative;
+}
+
+.long-clip {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -20px;
+}
+
+.tape img {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  transform: rotate(15deg);
+  top: -90px;
+  right: -10px;
+}
+
 .list-title {
   font-size: 24px;
   text-align: center;
   font-family: NotoSansTC-Regular, Roboto;
-  margin-top: 100px;
   letter-spacing: 2px;
   line-height: 35px;
+  margin-top: 100px;
 }
 
 .signup-form {
@@ -30,13 +50,22 @@ body {
   padding: 20px 120px;
 }
 
+.r-pin {
+  width: 40px;
+  height: 40px;
+  transform: rotate(310deg);
+  margin-right: 8px;
+}
+
 label {
   font-size: 16px;
   font-family: NotoSansTC-Regular;
   padding: 8px;
+  margin-left: 38px;
 }
 
 .form-control {
+  height: 50px;
   border-radius: 0;
   border: 3px solid #000;
   font-family: NotoSansTC-Regular, Roboto;
@@ -45,14 +74,20 @@ label {
 
 .terms-title {
   text-align: center;
-  margin: 30px 0;
+  margin: 40px 0 30px;
   font-family: NotoSansTC-Regular, Roboto;
   font-size: 24px;
 }
 
+.eyes {
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+}
+
 .terms {
   background-color: #fff;
-  border: 1px solid #000;
+  border: 3px solid #000;
   width: 710px;
   height: 200px;
   overflow: auto;
@@ -73,6 +108,7 @@ label {
 .form-check-label {
   font-family: NotoSansTC-Regular, Roboto;
   font-size: 16px;
+  margin-left: 0px;
 }
 
 .form-check-input {
@@ -88,3 +124,10 @@ label {
   border: 3px solid #000;
   border-radius: 0px;
   font-weight: 600;
+}
+
+.line {
+  border-top: 3px solid #aaa;
+  margin-top: 40px;
+  padding-top: 20px;
+}
