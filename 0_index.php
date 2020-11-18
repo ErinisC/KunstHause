@@ -38,7 +38,7 @@
         <span class="scroll-down d-flex">
         <img class="mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
         <span>SCROLL DOWN</span>
-        <img class="mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-arrow-down.svg" alt="">
+        <img class="arrow mx-4" src="<?= WEB_ROOT ?>imgs/index/ic-arrow-down.svg" alt="">
         </span>
     </div>
 </section>
@@ -248,6 +248,9 @@
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 <script>
+    // card heart animation
+
+    // see more rubberBand animation
     $(window).scroll(function() {
         let scrollTop = $(window).scrollTop();
         console.log('scrollTop:', scrollTop);

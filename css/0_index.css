@@ -50,7 +50,11 @@ body {
 
 @media (min-width: 992px) {
   .marquee-roll{
-    padding-top: 20%;
+    padding-top: 16%;
+  }
+
+  .card{
+    margin-bottom: 3rem;
   }
 
   .about-slogan {
@@ -87,6 +91,10 @@ body {
 
   .marquee-roll{
     padding-top: 60%;
+  }
+
+  .card{
+    margin-bottom: 2rem;
   }
 
   .ticket-punches{
@@ -150,6 +158,7 @@ body {
 }
 
 .the-wall{
+  width: 250px;
   top: 8%;
   left: 8%;
   transition-duration: .5s;
@@ -173,7 +182,7 @@ body {
 
 .taipei{
   width: 300px;
-  bottom: 3%;
+  bottom: 5%;
   right: 3%;
   transition-duration: .5s;
 }
@@ -183,7 +192,7 @@ body {
 }
 
 .space{
-  height: 15%;
+  height: 12%;
 }
 
 .scroll-down{
@@ -193,8 +202,38 @@ body {
 }
 
 .scroll-down span{
+  font-size: 1.5rem;
   font-weight: bold;
   line-height: 40px;
+}
+
+.arrow{
+  animation: scroll 1.5s infinite;
+  -webkit-animation: scroll 1.5s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
 }
 
 /* ----------main act area---------- */
