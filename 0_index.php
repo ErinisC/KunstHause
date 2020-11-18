@@ -221,7 +221,7 @@
     </div>
 </section>
 
-<section class="blog grid-white">
+<section class="blog grid-white pt-5">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-1"></div>
@@ -229,11 +229,9 @@
                 <div class="section-title">新鮮事。</div>
             </div>
             <div class="col-lg-4">
-                <a href="#">
-                    <div class="article-1 layout">
-
-                    </div>
-                </a>
+                <div class="article-1 layout w-100">
+                    <img src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
+                </div>
             </div>
             <div class="col-lg-3">
                 <div class="article-2 layout">
@@ -258,7 +256,9 @@
 <script>
     // marquee-main-lg direction
     $(function() {
-
+        let isScrolling = null;
+        let direction = '-100%';
+        let lastDirection = direction;
         const marquee = $("#marquee-main-lg");
         marquee.css({
             "overflow": "hidden",
@@ -279,31 +279,53 @@
         const reset = function() {
             $(this).css("margin-left", "0%");
             $(this).animate({
-                "margin-left": "-100%"
+                "margin-left": direction
             }, 10000, 'linear', reset);
         };
 
         var lastScrollTop = 0;
 
         window.addEventListener("scroll", function() {
+
             let st = window.pageYOffset || document.documentElement.scrollTop;
             console.log('st:', st)
             console.log('lastScrollTop:', lastScrollTop)
+
             if (st > lastScrollTop) {
-                $('#marquee-direction').animate({
-                    "margin-left": "-100%"
-                }, 10000, 'linear', reset);
+                direction = '-100%';
             } else {
-                $('#marquee-direction').animate({
-                    "margin-left": "100%"
-                }, 10000, 'linear', reset);
+                direction = '100%';
             }
+
+            // Clear our timeout throughout the scroll
+            window.clearTimeout(isScrolling);
+
+            // Set a timeout to run after scrolling ends
+            isScrolling = setTimeout(function() {
+
+                // Run the callback
+                console.log('Scrolling has stopped.');
+                if (lastDirection !== direction) {
+                    $('#marquee-direction').stop();
+                    marqueeAnimate(direction);
+                }
+            }, 66);
+
             lastScrollTop = st <= 0 ? 0 : st;
+            lastDirection = direction;
         }, false);
+
+        function marqueeAnimate(direction) {
+            $('#marquee-direction').animate({
+                "margin-left": direction
+            }, 10000, 'linear', reset);
+        }
 
         reset.call(marquee.find("div"));
 
     });
+
+
 
     // card heart animation
 

@@ -1,5 +1,5 @@
 * {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 }
 /* ----------style guide---------- */
 body {
@@ -249,7 +249,7 @@ body {
 
 .mainact-1 {
   overflow: hidden;
-  background-image: url(../imgs/index/mainact_01.jpg);
+  background-image: url(../imgs/index/mainact-01.jpg);
   background-size: cover;
 }
 
@@ -292,7 +292,7 @@ body {
 .pickup-1 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact_02.jpg) no-repeat;
+  background: url(../imgs/index/mainact-02.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -300,7 +300,7 @@ body {
 .pickup-2 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact_03.jpg) no-repeat;
+  background: url(../imgs/index/mainact-03.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -308,7 +308,7 @@ body {
 .pickup-3 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact_04.jpg) no-repeat;
+  background: url(../imgs/index/mainact-04.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -426,5 +426,8 @@ a:hover{
   background-size: 0.75rem 0.75rem;
 }
 
-
+.blog .section-title{
+  font-size: 8rem;
+  font-weight: 800;
+}
 
