@@ -418,7 +418,13 @@ a:hover{
   padding: 12px 40px 12px 15px;
 }
 
-
+/* ----------blog area---------- */
+.grid-white {
+  background: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+}
 
 
 

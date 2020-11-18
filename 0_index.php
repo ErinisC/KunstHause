@@ -221,7 +221,30 @@
     </div>
 </section>
 
+<section class="blog grid-white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+                <div class="section-title">新鮮事。</div>
+            </div>
+            <div class="col-lg-4">
+                <a href="#">
+                    <div class="article-1 layout">
 
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3">
+                <div class="article-2 layout">
+
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+
+</section>
 
 
 
@@ -264,6 +287,8 @@
 
         window.addEventListener("scroll", function() {
             let st = window.pageYOffset || document.documentElement.scrollTop;
+            console.log('st:', st)
+            console.log('lastScrollTop:', lastScrollTop)
             if (st > lastScrollTop) {
                 $('#marquee-direction').animate({
                     "margin-left": "-100%"
@@ -280,30 +305,12 @@
 
     });
 
-    // marquee-main-lg direction
-    // const lastScrollTop = 0;
-
-    // window.addEventListener("scroll", function() {
-    //     let st = window.pageYOffset || document.documentElement.scrollTop;
-    //     if (st > lastScrollTop) {
-    //         $('#marquee-direction').animate({
-    //             "margin-left": "-100%"
-    //         }, 10000, 'linear', reset);
-    //     } else {
-    //         $('#marquee-direction').animate({
-    //             "margin-left": "100%"
-    //         }, 10000, 'linear', reset);
-    //     }
-    //     lastScrollTop = st <= 0 ? 0 : st; 
-    // }, false);
-
-
     // card heart animation
 
     // see more rubberBand animation
     $(window).scroll(function() {
         let scrollTop = $(window).scrollTop();
-        console.log('scrollTop:', scrollTop);
+        // console.log('scrollTop:', scrollTop);
         if (scrollTop > 2015) {
             $('.see-more').addClass('rubberBand');
         } else {
