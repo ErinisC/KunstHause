@@ -18,3 +18,6 @@ if (empty($row)) {
 }
 
 echo json_encode($row, JSON_UNESCAPED_UNICODE);
+
+
+

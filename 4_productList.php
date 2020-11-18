@@ -91,7 +91,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <div class="img-wrap mb-3 position-relative">
 
                         <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
-                        <a href="4_productList-detail-api.php?sid=<?= $r['sid'] ?>" target="_blank" class="col-8">
+                        <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="col-8">
                             <img src="imgs/event/big/<?= $r['book_id'] ?>.png" class="card-img-top" alt="">
                         </a>
 
@@ -212,63 +212,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <!-- body內容 -->
                 <div class="modal-body">
                     <!-- 這邊設定iframe -->
-                    <!-- <iframe src="4_productList-detail-api.php?sid=1" frameborder="0" style="width:100%; height:100%">
-                    </iframe> -->
-
-                    <!-- 測試小卡內容 -->
-
-                    <!-- 圖片 -->
-                    <div class="right-pic">
-                        <img src="4_productList-detail-api.php?sid=1" alt="">
-                    </div>
-
-                    <!-- 活動資訊區 -->
-                    <div class="left-info d-flex flex-column justify-content-around">
-
-                        <div class="info-out text-center">
-                            <h2 class="product-name">
-                                書名
-                            </h2>
-
-                            <div class="card-info bread text-center my-3 text-dark">
-                                活動日期放這邊
-                            </div>
-                        </div>
-
-                        <div class="cost text-center">
-                            100
-                        </div>
-
-                        <!-- 數量加減區塊 -->
-                        <div class="number-wrap">
-                            <div class="">數量</div>
-                            <div class="input-wrap">
-                                <div class="input-group  justify-content-between">
-                                    <span class="minus"><button><i class="fas fa-minus"></i></button></span>
-
-                                    <!-- 中間數量 -->
-                                    <input type="text" id='product-quantity' class="col-9" value="1">
-
-                                    <span class="add"><button><i class="fas fa-plus"></i></button></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 總金額區塊 -->
-                        <div class="total-wrap mt-2">
-                            <div class="total">總金額</div>
-                            <div class="input-group ml-3">
-                                <span class="mr-3"><i class="fas fa-dollar-sign"></i></span>
-                                <input type="text" id="total-cost">
-                            </div>
-                        </div>
-
-                        <!-- 立刻購買按鈕 -->
-                        <div class="btn-wrap mt-2">
-                            <button class="buy-btn w-100">立刻購買</button>
-                        </div>
-
-                    </div>
+                    <iframe src="4_productList-modal-api.php?sid=1">
+                    </iframe>
 
                 </div>
             </div>
@@ -289,70 +234,11 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         $('#cartWrap').css('display', 'none')
     })
 
-    // 數量增減
-    let productQuantity = +$('#product-quantity').val();
-    let cost = $('.cost').text()
-    $('#total-cost').val(cost * productQuantity)
-
-    $('.add').on('click', function() {
-        productQuantity += 1;
-        cost = $('.cost').text()
-
-
-        $('#product-quantity').val(productQuantity)
-        $('#total-cost').val(cost * productQuantity)
-    })
-
-    // 按鈕減少數量
-    $('.minus').on('click', function() {
-        productQuantity -= 1;
-        cost = $('.cost').text()
-        $('#product-quantity').val(productQuantity)
-        $('#total-cost').val(cost * productQuantity)
-    })
-
-
-    // 購物車nav小窗彈出，白色大區塊消失
-    $('.buy-btn').on('click', function() {
-        $('.cart-nav').addClass('show')
-        $('#exampleModal').modal('hide')
-
-        setTimeout(function() {
-            $('.cart-nav').removeClass('show');
-        }, 2000);
-
-    });
-
-    // 準備串接購物車，先看能不能正確抓到商品sid跟數量
-    $('.buy-btn').on('click', function() {
-        // 先往上找到小卡
-        const item = $(this).closest('.content-wrap');
-        //再找到這個item的屬性，就能抓到設定給它的data-sid的值
-        const sid = item.attr('data-sid');
-        //接著再往item裡面找，找到數量，再取他的val來拿到數量的值
-        const qty = item.find('#product-quantity').val();
-
-        console.log({
-            sid: sid,
-            quantity: qty
-        });
-        // 現在要丟ajx給購物車api
-        $.get('4_productList-SP-api.php', {
-                sid: sid,
-                quantity: qty,
-                action: 'add'
-            },
-            function(data) {
-                console.log(data);
-            }, 'json')
-
-    });
-
     // modal
 
     function showProductModal(sid) {
         // 去抓當個sid
-        // $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
+        $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
 
 
         $('#exampleModal').modal('show')

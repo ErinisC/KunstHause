@@ -276,7 +276,7 @@
             count_badge.html(count);
         }
 
-        $.get("4_productList-SP-api.php", function(data) {
+        $.get("4_productList-shopcart-api.php", function(data) {
             console.log(data);
             countCart(data.cart);
         }, 'json');
