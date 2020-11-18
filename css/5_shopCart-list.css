@@ -13,6 +13,7 @@
     height: 100px;
 }
 
+.minus,
 .fa-plus,
 .fa-trash-alt {
     font-size: 1.5rem;
@@ -21,6 +22,17 @@
 
 .item {
     border-bottom: 3px solid black;
+}
+
+/* 購物車總計明細藍框框 */
+.shopcart-total {
+    background-color: #168FA4;
+    height: 300px;
+}
+
+
+.line {
+    border-top: 3px solid white;
 }
 
 /* ====== Ｍedia Query =============== */

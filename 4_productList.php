@@ -212,10 +212,11 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <!-- body內容 -->
                 <div class="modal-body">
                     <!-- 這邊設定iframe -->
-                    <!-- <iframe src="4_productList-detail-api.php?sid=1" frameborder="0" style="width:100%;height:100%;">
+                    <!-- <iframe src="4_productList-detail-api.php?sid=1" frameborder="0" style="width:100%; height:100%">
                     </iframe> -->
 
                     <!-- 測試小卡內容 -->
+
                     <!-- 圖片 -->
                     <div class="right-pic">
                         <img src="4_productList-detail-api.php?sid=1" alt="">
@@ -313,8 +314,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
     // 購物車nav小窗彈出，白色大區塊消失
     $('.buy-btn').on('click', function() {
-        $('.shop-box-wrap').toggle()
+        $('.cart-nav').addClass('show')
         $('#exampleModal').modal('hide')
+
+        setTimeout(function() {
+            $('.cart-nav').removeClass('show');
+        }, 2000);
 
     });
 
@@ -347,7 +352,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
     function showProductModal(sid) {
         // 去抓當個sid
-        // $('.right-pic')[0].src = '4_productList-modal-api.php?sid=' + sid;
+        // $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
 
 
         $('#exampleModal').modal('show')

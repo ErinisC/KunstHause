@@ -85,6 +85,17 @@
         display: block;
     }
 
+
+    /* 購物車dropdown視窗框 */
+    .dropdown-item.shopcart-dropdown {
+        height: 200px;
+    }
+
+    .cart-nav {
+        width: 400px;
+        left: -400%;
+    }
+
     /* ----------media query---------- */
     @media (min-width: 993px) {
         .nav-link {
@@ -117,6 +128,17 @@
         .sm-none {
             display: none;
         }
+
+        /* 購物車dropdown視窗框 */
+        .dropdown-item.shopcart-dropdown {
+            height: 200px;
+        }
+
+        .cart-nav {
+            width: 280px;
+            left: -250%;
+        }
+
     }
 </style>
 
@@ -136,15 +158,25 @@
                 <a class="navbar-brand lg-none" href="#">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
-                <!-- 購物車icon -->
-                <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none">
-                    <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
-                    <!-- 購物車數量小提示 -->
-                    <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
-                </a>
+
+                <!-- 購物車 -->
+                <li class="nav-item dropdown">
+                    <!-- 購物車 -->
+                    <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                        <!-- 購物車數量小提示 -->
+                        <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
+                    </a>
+
+                    <!-- 購物車dropdown -->
+                    <div class="dropdown-menu cart-nav p-0" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-item shopcart-dropdown" href="#">購物車商品</div>
+
+                    </div>
+                </li>
 
 
-                <!-- 頁面縮小時 -->
+                <!-- 大版頁面navbar -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
@@ -168,9 +200,11 @@
                     </form>
                     <!-- TO DO: 判斷是否登入 -->
                     <li class="nav-item dropdown">
+                        <!-- 會員icon -->
                         <a class="nav-link mx-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="<?= WEB_ROOT ?>imgs/index/ic-member2.svg" alt="" style="width:48px;">
                         </a>
+                        <!-- 會員dropdown -->
                         <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">會員資料</a>
                             <a class="dropdown-item" href="#">票券管理</a>
@@ -182,14 +216,48 @@
                         </div>
                     </li>
 
-
                     <!-- 購物車 -->
-                    <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
-                        <!-- 購物車數量小提示 -->
-                        <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
+                    <li class="nav-item dropdown">
+                        <!-- 購物車 -->
+                        <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                            <!-- 購物車數量小提示 -->
+                            <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
+                        </a>
 
-                    </a>
+                        <!-- 購物車dropdown -->
+                        <div class="dropdown-menu cart-nav p-0" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-item shopcart-dropdown d-flex flex-column justify-content-between" href="#">
+                                <div class="">購物車商品</div>
+
+                                <!-- 如果session cart空空 -->
+                                <?php if (empty($_SESSION['cart'])) : ?>
+                                    <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
+                                    <!-- 如果session cart有東西 -->
+                                <?php else : ?>
+
+                                    <div class="wrap d-flex justify-content-between align-items-center">
+                                        <div class="img-wrap col-4 pl-0" style="height:50px">
+                                            <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
+                                        </div>
+                                        <div class="title">活動名稱長長長</div>
+                                        <div class="quantity">3張</div>
+                                        <div class="price">$1200</div>
+                                        <div class="delete">
+                                            <i class="far fa-trash-alt"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- 去結帳按鈕 -->
+                                    <a href="5_shopCart-list.php"><button type="button" class="btn btn-info">去結帳</button></a>
+                                <?php endif; ?>
+
+
+                            </div>
+                        </div>
+                    </li>
+
+
                 </div>
             </div>
         </nav>
@@ -197,6 +265,7 @@
     </header>
 
     <script>
+        // 購物車icon旁的數量
         const count_badge = $('.count-badge');
 
         function countCart(cart) {

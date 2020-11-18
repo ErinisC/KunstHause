@@ -27,6 +27,10 @@
         margin: 10px 0;
     }
 
+    .news-slogan {
+        font-size: 14px;
+    }
+
     .service a {
         display: block;
     }
@@ -44,10 +48,11 @@
     }
 
     .letter-submit {
-        padding: 16px 15px;
+        padding: 15px 30px;
         border: none;
         border-radius: 0;
         color: #ed5b4c;
+        font-size: 17px;
     }
 
     .copyright {

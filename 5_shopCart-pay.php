@@ -25,6 +25,9 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src=""></script>
+<script src="">
+    // header不要fixed
+    $('header').removeClass('position-fixed');
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
