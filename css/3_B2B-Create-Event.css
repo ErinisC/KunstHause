@@ -1,0 +1,29 @@
+* {
+  outline: 1px solid red;
+}
+
+.b2bcreate {
+  height: 750px;
+  background-color: #ffc024;
+}
+.row {
+  margin: 0 auto;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.title {
+  width: 204px;
+  height: 48px;
+  margin: 50px 493.9px 1px 217px;
+  font-family: Arial;
+  font-size: 34px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: normal;
+  text-align: center;
+  color: #000000;
+  
+}
