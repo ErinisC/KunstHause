@@ -1,0 +1,61 @@
+* {
+  outline: 1px solid red;
+}
+
+.background {
+  width: 100%;
+  height: 1100px;
+  background-color: #ffc024;
+}
+.mamberbg {
+  margin: 0 auto;
+}
+
+.mambertext {
+  width: 100%;
+  height: 900px;
+  margin-top: 140px;
+  background-color: #fff;
+  background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+  margin-bottom: 200px;
+}
+
+.picture {
+  margin: 50px auto 0;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+}
+
+.people {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.organizer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.introduction {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.introduction-text {
+  margin: 30px auto;
+  height: 130px;
+  padding: 0;
+}
+.introduction-text p {
+  font-size: 16px;
+  font-weight: 100;
+}
