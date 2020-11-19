@@ -46,8 +46,9 @@
             <button type="submit" class="btn btn-primary col-2 mt-4">登入</button>
         </div>
 
-        <div class="help d-flex justify-content-between mt-5">
-            <p>還不是 Kunsthaus會員嗎? 點此註冊</p>
+        <div class="help d-flex justify-content-between mt-4 p-3">
+            <p>還不是 Kunsthaus會員嗎? </p>
+            <p>點此註冊</p>
         </div>
 
 
