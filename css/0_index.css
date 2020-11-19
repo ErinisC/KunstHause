@@ -70,7 +70,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .add-pt{
+  .add-pt {
     padding-top: 5%;
   }
 
@@ -153,7 +153,6 @@ body {
 .brand {
   margin-right: 5rem;
 }
-
 
 .the-wall {
   width: 250px;
@@ -486,14 +485,72 @@ a:hover {
   background: url(../imgs/index/blog-deco-01.svg) no-repeat;
 }
 
-.tiger{
+.tiger {
   top: -19%;
   transform: rotate(20deg);
   transition-duration: 0.5s;
 }
 
-.tiger:hover{
+.tiger:hover {
   transform: rotate(50deg);
 }
 
 /* ----------b2b area---------- */
+.b2b {
+  background-color: #ffc024;
+  border: 3px solid #000;
+}
+
+.purple-marquee {
+  color: #002c80;
+  font-size: 5vw;
+  font-weight: 800;
+  transform: rotate(270deg);
+}
+
+.content {
+  flex-direction: column;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.b2b .section-title {
+  color: #fff;
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-top: 5%;
+  padding: 10% 20% 10% 10%;
+  background: url(../imgs/index/ic-label.svg) left no-repeat;
+  transform: rotate(-7deg);
+}
+
+.para-title {
+  font-size: 1.7rem;
+  margin: 15% 2% 3%;
+}
+
+.para {
+  line-height: 35px;
+  margin: 5% 2% 15%;
+}
+
+.sign {
+  margin-top: 20%;
+  margin-right: 0;
+}
+
+/* ----------fixed button---------- */
+.fixed-botton{
+  bottom: 10%;
+  right: 2%;
+  width: 150px;
+  z-index: 100;
+}
+
+.text{
+  width: 140px;
+  top: calc(50% - 70px);
+  left: calc(50% - 70px);
+}

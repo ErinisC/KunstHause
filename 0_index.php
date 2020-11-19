@@ -322,13 +322,35 @@
 
 </section>
 
-<div class="fixed-botton">
-    <div class="cicle"></div>
+<div class="fixed-botton position-fixed">
+    <img class="cicle position-relative" src="<?= WEB_ROOT ?>imgs/index/backToTop.svg" alt="">
+    <img class="text position-absolute" src="<?= WEB_ROOT ?>imgs/index/backToTopText.svg" alt="">
 </div>
+
+
 <section class="b2b">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1">
+                <marquee class="purple-marquee">WHY CHOOSE US WHY CHOOSE US WHY CHOOSE US</marquee>
+            </div>
+            <div class="col-lg-8">
+                <div class="content d-flex">
+                    <p class="section-title">我要辦活動</p>
+                    <p class="para-title">讓生活因 <strong>活動</strong> 而生動！</p>
+                    <p class="para">
+                        作為一個自助式活動上架平台，任何人都可以輕鬆的在這裡建立帳號、經營活動，營造自己的活動社群，但對於剛踏入KunstHaus的主辦來說，往往不知道從何下手，甚麼是主辦單位身分認證？甚麼是活動審核？往往搞得一個頭兩個大。
+                        <br>
+                        <br>
+                        我們不希望讓你覺得「辦活動」似乎是件充滿繁瑣行政程序又麻煩的事情，在對帳收單上耗盡寶貴的時間，我們希望你將心力花在更重要的地方，比如活動內容的發想、創意的揮灑，和如何辦理更有趣好玩的活動。
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 p-0">
+                <a href="#">
+                    <img class="sign" src="<?= WEB_ROOT ?>imgs/index/ic-sign.svg" alt="">
+                </a>
+            </div>
         </div>
     </div>
 </section>
