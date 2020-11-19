@@ -206,8 +206,10 @@
                 $window.on('scroll', function() {
                     if ($window.scrollTop() > headerOffsetTop) {
                         $header.addClass('sticky');
+                        $('.main').addClass('add-pt');
                     } else {
                         $header.removeClass('sticky');
+                        $('.main').removeClass('add-pt');
                     }
                 });
                 $window.trigger('scroll');
