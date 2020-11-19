@@ -2,16 +2,20 @@
   outline: 1px solid red;
 } */
 
+body {
+  height: 100vh;
+  background-color: #002c80;
+}
+
 .login-popup {
-  width: 570px;
-  height: 800px;
-  margin: 50px auto;
+  margin: 2.5rem auto;
   background: #fff;
   background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
     linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
   background-size: 0.75rem 0.75rem;
   position: relative;
-  padding-top: 100px;
+  padding-top: 5rem;
+  margin-top: 12rem;
 }
 
 .g-clip {
@@ -21,8 +25,8 @@
 }
 
 .x-btn {
-  width: 35px;
-  height: 35px;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -30,30 +34,30 @@
 
 .login-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 2.3rem;
 }
 
 .reminder {
   color: #f26969;
   font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 40px;
+  font-size: 0.875rem;
+  margin-bottom: 2.3rem;
 }
 
 .icons {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 40px;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 2rem;
 }
 
 p {
-  padding-top: 20px;
+  padding-top: 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
 .login-item {
@@ -61,8 +65,8 @@ p {
 }
 
 .form-control {
-  font-size: 14px;
-  height: 50px;
+  font-size: 0.875rem;
+  height: 3.125rem;
   border: 3px solid #000;
   border-radius: 0;
 }
@@ -84,4 +88,49 @@ p {
 
 .help {
   font-size: 14px;
+}
+
+/* Media Query */
+/* ============================= */
+/* Extra small 超小 (576px 以下) */
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* =============================== */
+/* Small 小型裝置sm (576px 以上) */
+@media (min-width: 576px) {
+}
+
+/* 576-768之間的畫面 */
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
+}
+
+/* ============================= */
+/* Medium 中型裝置md (768px 以上) */
+@media (min-width: 768px) {
+}
+
+/* 768-992之間的畫面 */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* ================================ */
+/* Large 大型lg (992px以上) */
+@media (min-width: 992px) {
+}
+
+/* 991-1200 之間的畫面 */
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* ================================ */
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
