@@ -71,17 +71,15 @@
         </span>
         <Textarea name="EventContent" class="textarea" cols="83" rows="15">
         </Textarea>
-        <div class="pricesetting">
+
+        <div class="pricesetting my-auto d-flex">
             <span>活動票卷售價</span>
-            <div class="pricetag d-flex border-right-3 col-4">
-                <div class="dollar my-auto mx-1">NT$</div>
-                <input type="number" class="price col-10 ">
+            <div class="pricetag col-5">
+                <p class="col-4">NT$</p>
             </div>
         </div>
     </div>
 
-
-    <div class="space" style="height: 200px;"></div>
 </div>
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
