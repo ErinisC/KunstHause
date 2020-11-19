@@ -172,7 +172,7 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-search.svg" alt="">
                     </button>
                 </form>
-                <!-- TO DO: 判斷是否登入 -->
+                <!-- TO DO: 判斷是否登入，登入member icon變泰瑞色-->
                 <li class="nav-item dropdown">
                     <a class="nav-link mx-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-member2.svg" alt="" style="width:48px;">
