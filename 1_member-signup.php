@@ -20,7 +20,7 @@
     <div class="row">
 
         <section class="signup-list mx-auto p-0 col-lg-10 col-md-12 col-sm-12 col-12 w-100">
-            <div class="list-body w-100 mx-0 pb-3">
+            <div class="list-body w-100 mx-0 pb-3 mb-5">
 
                 <!-- 錯誤跳提醒設定 -->
                 <!-- <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
