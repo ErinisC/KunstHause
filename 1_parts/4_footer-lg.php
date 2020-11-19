@@ -48,7 +48,7 @@
         background-color: #000;
         border-radius: 0;
         height: 50px;
-        width: 250px;
+        width: 400px;
     }
 
     .letter-submit {

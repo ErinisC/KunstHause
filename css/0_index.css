@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 /* ----------style guide---------- */
 body {
@@ -70,6 +70,10 @@ body {
 }
 
 @media (min-width: 1200px) {
+  .add-pt{
+    padding-top: 5%;
+  }
+
   .about-slogan {
     font-size: 3.5rem;
     font-weight: 600;
@@ -431,6 +435,7 @@ a:hover {
 }
 
 .post-tape {
+  width: 50%;
   top: -10%;
   left: calc(50% - 119px);
 }
@@ -482,3 +487,15 @@ a:hover {
 .binding-ring {
   background: url(../imgs/index/blog-deco-01.svg) no-repeat;
 }
+
+.tiger{
+  top: -19%;
+  transform: rotate(20deg);
+  transition-duration: 0.5s;
+}
+
+.tiger:hover{
+  transform: rotate(50deg);
+}
+
+/* ----------b2b area---------- */
