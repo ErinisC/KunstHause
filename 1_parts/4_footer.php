@@ -48,7 +48,7 @@
     }
 
     .letter-submit {
-        padding: 15px 30px;
+        padding: 15px 10px;
         border: none;
         border-radius: 0;
         color: #ed5b4c;

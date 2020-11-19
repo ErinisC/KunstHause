@@ -10,7 +10,7 @@
 
 <section class="hero-section position-relative">
     <div class="marquee-roll">
-        <div id="marquee-main-lg" class="marquee-main-lg">KUNSTHAUS</div>
+        <div id="marquee-main-lg" class="marquee-main marquee-main-lg">KUNSTHAUS</div>
         <div id="marquee-main-sm" class="marquee-main-sm">
             <span class="slogan">不一樣的藝文售票平台</span>
         </div>
@@ -221,33 +221,101 @@
     </div>
 </section>
 
-<section class="blog grid-white pt-5">
+<section class="blog grid-white py-5">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-lg-1"></div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-12">
                 <div class="section-title">新鮮事。</div>
             </div>
-            <div class="col-lg-3">
-                <a href="#" class="">
-                    <div class="article-1 layout w-100">
-                        <div class="post-tape">
-                            <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
-                        </div>
-                        <div class="inner-box">
-                            <h3>週五看MV</h3>
-                            <hr>
-                            <p class="article-title">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
-                        </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="article-layout w-100 position-relative">
+                    <div class="post-tape position-absolute">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <div class="article-2 layout">
-
+                    <a href="#" class="">
+                        <div class="article-img">
+                            <div class="inner-box">
+                                <h3 class="article-title">週五看MV</h3>
+                                <div class="line w-100"></div>
+                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="article-layout w-100 position-relative">
+                    <div class="post-tape position-absolute">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                    </div>
+                    <a href="#" class="">
+                        <div class="article-img">
+                            <div class="inner-box">
+                                <h3 class="article-title">週五看MV</h3>
+                                <div class="line w-100"></div>
+                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 graffiti">
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="row mt-5">
             <div class="col-lg-1"></div>
+            <div class="col-lg-3 col-md-12">
+                <div class="article-layout w-100 position-relative">
+                    <div class="post-tape position-absolute">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                    </div>
+                    <a href="#" class="">
+                        <div class="article-img">
+                            <div class="inner-box">
+                                <h3 class="article-title">週五看MV</h3>
+                                <div class="line w-100"></div>
+                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="article-layout w-100 position-relative">
+                    <div class="post-tape position-absolute">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                    </div>
+                    <a href="#" class="">
+                        <div class="article-img">
+                            <div class="inner-box">
+                                <h3 class="article-title">週五看MV</h3>
+                                <div class="line w-100"></div>
+                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="article-layout w-100 position-relative">
+                    <div class="post-tape position-absolute">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                    </div>
+                    <a href="#" class="">
+                        <div class="article-img">
+                            <div class="inner-box">
+                                <h3 class="article-title">週五看MV</h3>
+                                <div class="line w-100"></div>
+                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-2 graffiti">
+            </div>
         </div>
     </div>
 
@@ -266,7 +334,7 @@
     // marquee-main-lg direction
     $(function() {
         let isScrolling = null;
-        let direction = '-100%';
+        let direction = "-100%";
         let lastDirection = direction;
         const marquee = $("#marquee-main-lg");
         marquee.css({
@@ -289,7 +357,7 @@
             $(this).css("margin-left", "0%");
             $(this).animate({
                 "margin-left": direction
-            }, 10000, 'linear', reset);
+            }, 10000, "linear", reset);
         };
 
         var lastScrollTop = 0;
@@ -297,13 +365,13 @@
         window.addEventListener("scroll", function() {
 
             let st = window.pageYOffset || document.documentElement.scrollTop;
-            console.log('st:', st)
-            console.log('lastScrollTop:', lastScrollTop)
+            console.log("st:", st)
+            console.log("lastScrollTop:", lastScrollTop)
 
             if (st > lastScrollTop) {
-                direction = '-100%';
+                direction = "-100%";
             } else {
-                direction = '100%';
+                direction = "100%";
             }
 
             // Clear our timeout throughout the scroll
@@ -313,9 +381,9 @@
             isScrolling = setTimeout(function() {
 
                 // Run the callback
-                console.log('Scrolling has stopped.');
+                console.log("Scrolling has stopped.");
                 if (lastDirection !== direction) {
-                    $('#marquee-direction').stop();
+                    $("#marquee-direction").stop();
                     marqueeAnimate(direction);
                 }
             }, 66);
@@ -325,7 +393,7 @@
         }, false);
 
         function marqueeAnimate(direction) {
-            $('#marquee-direction').animate({
+            $("#marquee-direction").animate({
                 "margin-left": direction
             }, 10000, 'linear', reset);
         }
