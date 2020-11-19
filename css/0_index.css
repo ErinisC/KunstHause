@@ -146,7 +146,7 @@ body {
   margin: 1rem 0;
   font-size: 1vw;
   overflow: hidden;
-  color: #696969;
+  color: #8f8f8f;
   transform: rotate(-7deg);
 }
 
@@ -154,9 +154,6 @@ body {
   margin-right: 5rem;
 }
 
-.slogan {
-  margin-right: 5rem;
-}
 
 .the-wall {
   width: 250px;
@@ -429,6 +426,7 @@ a:hover {
 }
 
 .blog .section-title {
+  color: #000;
   margin-top: 10%;
   font-size: 8rem;
   font-weight: 800;
@@ -437,7 +435,7 @@ a:hover {
 .post-tape {
   width: 50%;
   top: -10%;
-  left: calc(50% - 119px);
+  left: calc(50% - 25%);
 }
 
 .article-img {

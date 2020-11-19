@@ -12,7 +12,7 @@
     <div class="marquee-roll">
         <div id="marquee-main-lg" class="marquee-main marquee-main-lg">KUNSTHAUS</div>
         <div id="marquee-main-sm" class="marquee-main-sm">
-            <span class="slogan">不一樣的藝文售票平台</span>
+            <p class="slogan text-center">不一樣的藝文售票平台</p>
         </div>
     </div>
     <img class="the-wall position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-deco-thewall.svg" alt="">
@@ -328,7 +328,7 @@
 <section class="b2b">
     <div class="container-fluid">
         <div class="row">
-            .col
+            <div class="col-lg-1"></div>
         </div>
     </div>
 </section>
