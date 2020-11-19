@@ -224,14 +224,14 @@
 <section class="blog grid-white py-5">
     <div class="container-fluid">
         <div class="row mt-5">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1 binding-ring"></div>
             <div class="col-lg-3 col-md-12">
                 <div class="section-title">新鮮事。</div>
             </div>
             <div class="col-lg-3 col-md-12">
                 <div class="article-layout w-100 position-relative">
                     <div class="post-tape position-absolute">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tapebr-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
                         <div class="article-img">
@@ -247,7 +247,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="article-layout w-100 position-relative">
                     <div class="post-tape position-absolute">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tapebr-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
                         <div class="article-img">
@@ -265,11 +265,11 @@
         </div>
         <div class="space"></div>
         <div class="row mt-5">
-            <div class="col-lg-1"></div>
+            <div class="col-lg-1 binding-ring"></div>
             <div class="col-lg-3 col-md-12">
                 <div class="article-layout w-100 position-relative">
                     <div class="post-tape position-absolute">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tapebr-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
                         <div class="article-img">
@@ -285,7 +285,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="article-layout w-100 position-relative">
                     <div class="post-tape position-absolute">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tapebr-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
                         <div class="article-img">
@@ -301,7 +301,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="article-layout w-100 position-relative">
                     <div class="post-tape position-absolute">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-tapebr-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
                         <div class="article-img">

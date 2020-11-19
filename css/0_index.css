@@ -476,5 +476,9 @@ a:hover {
 }
 
 .graffiti {
-  background: url(../imgs/index/blog-deco-01.png) no-repeat;
+  background: url(../imgs/index/blog-deco-02.png) no-repeat;
+}
+
+.binding-ring {
+  background: url(../imgs/index/blog-deco-01.svg) no-repeat;
 }
