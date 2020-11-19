@@ -16,52 +16,102 @@
 
 <!-- 內容開始 -->
 <div class="container my-5">
+
+    <!-- 訂單下拉式明細 -->
+    <div class="wrap wrap text-center">
+        <!-- 按鈕 -->
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                訂單明細
+            </button>
+        </p>
+
+        <!-- 下面收合的選單 -->
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 表單區塊 -->
     <div class="row justify-content-center">
-        <form class="col-8">
-            <!-- 姓名 -->
-            <div class="form-group">
-                <label for="name">姓名</label>
-                <input type="text" class="form-control" id="name">
-                <!-- 驗證 -->
-                <small id="name" class="form-text text-muted">請輸入正確資訊</small>
-            </div>
+        <!-- 表單開始 -->
+        <form name="form1" onsubmit="checkForm(); return false;" class="col-lg-8 col-md-10 col-sm-12 col-12">
 
-            <!-- email -->
-            <div class="form-group">
-
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <!-- email驗證 -->
-                <small id="emailHelp" class="form-text text-muted">請輸入正確資訊</small>
-            </div>
-
-            <!-- 電話號碼 -->
-            <div class="form-group">
-                <label for="mobile">電話號碼</label>
-                <input type="text" class="form-control" id="mobile">
-                <!-- 驗證 -->
-                <small id="mobile" class="form-text text-muted">請輸入正確資訊</small>
-            </div>
-
-            <!-- 密碼 -->
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+            <!-- 項目標題 -->
+            <div class="wrap w-100 text-center my-4">
+                <div class="form-title col-6 m-auto py-2">顧客資訊</div>
             </div>
 
 
+            <!-- 訂購人姓名 -->
+            <div class="form-group">
+                <label for="name">訂購人姓名 (必填)</label>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name">
+                    <!-- 姓名驗證 -->
+                    <small class="form-text">驗證</small>
+                </div>
+            </div>
 
+            <!-- 信箱 -->
+            <div class="form-group">
+                <label for="email">電子信箱email</label>
+                <div class="input-box">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
+                    <!-- 信箱驗證 -->
+                    <small id="emailHelp" class="form-text text-muted">驗證</small>
+                </div>
+            </div>
+
+            <!-- 電話 -->
+            <div class="form-group">
+                <label for="phone">聯絡電話</label>
+                <div class="input-box">
+                    <input type=" text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" name="phone">
+                    <!-- 電話驗證 -->
+                    <small class="form-text" class="r-pin">驗證</small>
+                </div>
+            </div>
+
+            <!-- 項目標題 -->
+            <div class="wrap w-100 text-center my-4">
+                <div class="form-title col-6 m-auto py-2">電子發票</div>
+            </div>
+
+            <!-- 三聯發票抬頭 -->
+            <div class="form-group">
+                <label for="receipt">三聯發票抬頭</label>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="receipt" placeholder="三聯發票抬頭" name="receipt">
+                    <!--抬頭驗證 -->
+                    <small class="form-text">驗證</small>
+                </div>
+            </div>
+
+            <!-- 統一編號 -->
+            <div class="form-group">
+                <label for="receipt-number">統一編號</label>
+                <div class="input-box">
+                    <input type="text" class="form-control" id="receipt-number" placeholder="統一編號" name="receipt-number">
+                    <!-- 統一編號驗證 -->
+                    <small class="form-text">驗證</small>
+                </div>
+            </div>
+
+
+            <!-- 上一步或送出按鈕 -->
             <div class="row justify-content-center">
-                <!-- 上一步或送出按鈕 -->
                 <!-- 上一步 -->
-                <a href="5_shopCart-list.php">
-                    <button type="button" class="btn btn-warning mr-3">上一步</button>
-                </a>
+                <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
 
                 <!-- 送出 -->
-                <button type="submit" class="btn btn-info">確認送出</button>
+                <button type="submit" class="btn submit btn-info">確認送出</button>
 
             </div>
+
         </form>
 
     </div>
@@ -77,6 +127,13 @@
 <script>
     // header不要fixed
     $('header').removeClass('position-fixed');
+
+    // 傳送表單
+
+    function checkForm() {
+
+
+    }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

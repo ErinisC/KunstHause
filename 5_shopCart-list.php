@@ -233,7 +233,7 @@
 
     // 移除
     function removeItem(sid) {
-        $.get('4_productList-SP-api.php', {
+        $.get('4_productList-shopcart-api.php', {
             sid: sid,
             action: 'remove'
         }, function(data) {
