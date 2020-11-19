@@ -322,6 +322,17 @@
 
 </section>
 
+<div class="fixed-botton">
+    <div class="cicle"></div>
+</div>
+<section class="b2b">
+    <div class="container-fluid">
+        <div class="row">
+            .col
+        </div>
+    </div>
+</section>
+
 
 
 
