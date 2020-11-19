@@ -228,10 +228,19 @@
             <div class="col-lg-3">
                 <div class="section-title">新鮮事。</div>
             </div>
-            <div class="col-lg-4">
-                <div class="article-1 layout w-100">
-                    <img src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
-                </div>
+            <div class="col-lg-3">
+                <a href="#" class="">
+                    <div class="article-1 layout w-100">
+                        <div class="post-tape">
+                            <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
+                        </div>
+                        <div class="inner-box">
+                            <h3>週五看MV</h3>
+                            <hr>
+                            <p class="article-title">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="col-lg-3">
                 <div class="article-2 layout">
