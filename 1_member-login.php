@@ -9,6 +9,11 @@
 <!-- 引入navbar -->
 <!-- <?php include __DIR__ . '/1_parts/2_navbar.php'; ?> -->
 
+<!-- JQ -->
+<script src="./libary/jquery-3.5.1.js"></script>
+
+<!-- Boostrap JS -->
+<script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 <div class="container">
     <div class="login-popup col-lg-6 col-md-6 col-sm-6 col-6">
@@ -43,19 +48,17 @@
         </div>
 
         <div class="login-btn d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary col-2 mt-4">登入</button>
+            <button type="submit" class="btn btn-primary col-4 mt-4">登入</button>
         </div>
 
         <div class="help d-flex justify-content-between mt-4 p-3">
             <p>還不是 Kunsthaus會員嗎? </p>
-            <p>點此註冊</p>
+            <p style="font-weight:600">點此註冊</p>
         </div>
-
-
-
-
     </div>
 </div>
+
+
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 

@@ -61,7 +61,7 @@ label {
   font-size: 16px;
   font-family: NotoSansTC-Regular;
   padding: 8px;
-  margin-left: 38px;
+  margin-left: 48px;
 }
 
 .form-control {
@@ -90,7 +90,7 @@ label {
   background-color: #fff;
   border: 3px solid #000;
   width: 710px;
-  height: 200px;
+  height: 300px;
   overflow: auto;
   font-family: NotoSansTC-Regular, Roboto;
 }
@@ -99,11 +99,14 @@ label {
   padding-bottom: 30px;
   margin-bottom: 30px;
   border-bottom: 1px solid #ccc;
-  line-height: 20px;
+  line-height: 23px;
+  font-size: 14px;
 }
+
 .privacy-text {
-  line-height: 20px;
+  line-height: 23px;
   margin-bottom: 30px;
+  font-size: 14px;
 }
 
 .form-check-label {
@@ -131,4 +134,45 @@ label {
   border-top: 3px solid #aaa;
   margin-top: 40px;
   padding-top: 20px;
+}
+
+/* Media Query */
+/* ============================= */
+/* Extra small 超小 (576px 以下) */
+@media screen and (max-width: 576px) {
+}
+
+/* =============================== */
+/* Small 小型裝置sm (576px 以上) */
+@media (min-width: 576px) {
+}
+
+/* 576-768之間的畫面 */
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
+}
+
+/* ============================= */
+/* Medium 中型裝置md (768px 以上) */
+@media (min-width: 768px) {
+}
+
+/* 768-992之間的畫面 */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* ================================ */
+/* Large 大型lg (992px以上) */
+@media (min-width: 992px) {
+}
+
+/* 991-1200 之間的畫面 */
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* ================================ */
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }
