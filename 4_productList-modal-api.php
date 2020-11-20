@@ -169,16 +169,20 @@ if (empty($row)) {
     })
 
 
-    // 購物車nav小窗彈出，白色大區塊消失
-    // $('.buy-btn').on('click', function() {
-    //     $('.cart-nav').addClass('show')
-    //     $('body').addClass('modal-open')
+    // 購物車nav小窗彈出， 白色大區塊消失
+    $('.buy-btn').on('click', function() {
+        window.parent.$('#exampleModal').modal('hide');
+        window.parent.$('.shopping-cart').click();
 
-    //     setTimeout(function() {
-    //         $('.cart-nav').removeClass('show');
-    //     }, 2000);
+        // $('window.parent.cart-nav').addClass('show')
+        // $('window.parent.body').addClass('modal-open')
 
-    // });
+        // setTimeout(function() {
+        //     window.parent.$('.cart-nav-big').toggle();
+        // }, 2000);
+
+
+    });
 
     // 準備串接購物車，先看能不能正確抓到商品sid跟數量
     $('.buy-btn').on('click', function() {

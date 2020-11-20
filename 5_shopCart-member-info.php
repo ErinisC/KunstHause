@@ -134,7 +134,8 @@
         $.post('5_shopCart-member-info-api.php', $(document.form1).serialize(), function(data) {
             console.log(data)
 
-        }, 'json')
+        }, 'json');
+        location.href = '5_shopCart-pay.php';
 
     }
 </script>

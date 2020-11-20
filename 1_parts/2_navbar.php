@@ -88,22 +88,27 @@
 
     /* 購物車dropdown視窗框 */
     .dropdown-item.shopcart-dropdown {
-        height: 200px;
+        min-height: 260px;
     }
 
-    .cart-nav {
+    .cart-nav-big {
         width: 400px;
         left: -400%;
     }
 
     /* 隱藏溢出文字 */
-    .cart-nav .title {
+    .cart-nav-big .title {
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
     .delete {
         font-size: 1.5rem;
+    }
+
+    .dropdown-item:hover {
+        background-color: #FFC024;
+        color: black;
     }
 
     /* ----------media query---------- */
@@ -236,39 +241,41 @@
                         </a>
 
                         <!-- 購物車dropdown -->
-                        <div class="dropdown-menu cart-nav p-0" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu cart-nav-big p-0" aria-labelledby="navbarDropdown">
                             <div class="dropdown-item shopcart-dropdown d-flex flex-column justify-content-between" href="#">
-                                <div class="">購物車商品</div>
+                                <div class="text-center my-3">購物車商品</div>
 
                                 <!-- 如果session cart空空 -->
                                 <?php if (empty($_SESSION['cart'])) : ?>
                                     <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
                                     <!-- 如果session cart有東西 -->
                                 <?php else : ?>
-
-                                    <div class="wrap d-flex justify-content-between align-items-center">
-                                        <div class="img-wrap col-4 p-0" style="height:100px">
-                                            <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
-                                        </div>
-
-                                        <div class="item-info col-6">
-                                            <div class="title my-3">
-                                                <!-- <//?= $_SESSION['cart']['boookname'] ?> -->
-                                                很長長長長長的名稱
+                                    <!-- 先用foreach抓出session的東西 -->
+                                    <?php foreach ($_SESSION['cart'] as $i) : ?>
+                                        <div class="wrap d-flex justify-content-between align-items-center">
+                                            <div class="img-wrap col-4 p-0" style="height:100px">
+                                                <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
                                             </div>
-                                            <div class="quantity mb-3">3張</div>
-                                            <div class="price mb-3">$1200</div>
-                                        </div>
 
-                                        <div class="delete">
-                                            <i class="far fa-trash-alt"></i>
+                                            <div class="item-info col-6">
+                                                <div class="title my-3">
+                                                    <?= $i['bookname'] ?>
+                                                </div>
+                                                <div class="quantity mb-3"><?= $i['quantity'] ?>張</div>
+                                                <div class="price mb-3">$<?= $i['price'] ?></div>
+                                            </div>
+
+                                            <div class="delete">
+                                                <i class="far fa-trash-alt"></i>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php endforeach; ?>
 
                                     <!-- 去結帳按鈕 -->
-                                    <a href="5_shopCart-list.php" class="text-right">
+                                    <a href="5_shopCart-list.php" class="text-right my-3">
                                         <button type="button" class="btn btn-info">去結帳</button>
                                     </a>
+
                                 <?php endif; ?>
 
 

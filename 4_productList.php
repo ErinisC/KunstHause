@@ -243,9 +243,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         // 去抓當個sid
         $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
 
-
         $('#exampleModal').modal('show')
 
+    }
+
+    function updateCartCount() {
+        //nav bar 呼叫的方法
     }
 </script>
 
