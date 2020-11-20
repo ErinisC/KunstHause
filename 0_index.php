@@ -331,10 +331,10 @@
 <section class="b2b">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-1">
-                <marquee class="purple-marquee" direction="up">WHY CHOOSE US WHY CHOOSE US WHY CHOOSE US</marquee>
+            <div class="col-lg-1 col-md-12">
+                <div class="purple-marquee "></div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-12">
                 <div class="content d-flex">
                     <p class="section-title">我要辦活動</p>
                     <p class="para-title">讓生活因 <strong>活動</strong> 而生動！</p>
@@ -346,7 +346,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-lg-3 p-0">
+            <div class="col-lg-3 col-md-12 p-0">
                 <a href="#" class="be-partner position-relative">
                     <img class="sign1 position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-sign-01.svg" alt="">
                     <img class="sign2" src="<?= WEB_ROOT ?>imgs/index/ic-sign-02.svg" alt="">
