@@ -111,6 +111,10 @@
         color: black;
     }
 
+    .delete {
+        cursor: pointer;
+    }
+
     /* ----------media query---------- */
     @media (min-width: 993px) {
         .nav-link {
@@ -252,7 +256,7 @@
                                 <?php else : ?>
                                     <!-- 先用foreach抓出session的東西 -->
                                     <?php foreach ($_SESSION['cart'] as $i) : ?>
-                                        <div class="wrap d-flex justify-content-between align-items-center">
+                                        <div id="prod<?= $i['sid'] ?>" class="wrap d-flex justify-content-between align-items-center">
                                             <div class="img-wrap col-4 p-0" style="height:100px">
                                                 <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
                                             </div>
@@ -265,9 +269,9 @@
                                                 <div class="price mb-3">$<?= $i['price'] ?></div>
                                             </div>
 
-                                            <div class="delete">
+                                            <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete">
                                                 <i class="far fa-trash-alt"></i>
-                                            </div>
+                                            </a>
                                         </div>
                                     <?php endforeach; ?>
 
@@ -314,4 +318,18 @@
         $.get("4_productList-shopcart-api.php", function(data) {
             console.log(data);
         }, 'json');
+
+        // 移除
+        function removeItem(sid) {
+            $.get('4_productList-shopcart-api', {
+                sid: sid,
+                action: 'remove'
+            }, function(data) {
+                countCart(data.cart);
+                $('#prod' + sid).remove();
+                $('.shopping-cart').click();
+            }, 'json');
+
+
+        }
     </script>

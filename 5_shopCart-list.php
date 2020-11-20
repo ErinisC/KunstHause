@@ -105,7 +105,7 @@
                                 </div>
                             </li>
 
-                            <!-- 總金額 -->
+                            <!-- 小計 -->
                             <li id="total" class="subtotal col-lg-2 col-md-2 col-sm-6 col-6">
                                 0
                             </li>
@@ -135,7 +135,7 @@
                             <!-- 小計 -->
                             <div class="wrap d-flex justify-content-between">
                                 <p>小計</p>
-                                <p>$1,200</p>
+                                <p class="totalAmount">$1,200</p>
                             </div>
 
                             <!-- 使用優惠代碼 -->
@@ -208,10 +208,6 @@
 
 
     // 數量增減
-    let productQuantity = +$('#product-quantity').val();
-    let cost = $('.cost').text()
-    $('#total-cost').val(cost * productQuantity)
-
     $('.add').on('click', function() {
         let q = $(this).prev().val();
         q = q * 1 + 1;
@@ -243,28 +239,52 @@
     }
 
 
-    // 調整數量時連動資料庫
+    //計算總計金額
+    function calcTotal() {
+        let total = 0;
+        // 調整數量時連動資料庫
+        $('.product-item').each(function() {
+            // 拿到這個項目後
+            const ul = $(this);
 
-    $('.product-item').each(function() {
-        // 拿到這個項目後
-        const ul = $(this);
+            // 拿價錢
+            const price = parseInt(ul.find('div.price').attr('data-price'));
+            // 拿數量
+            const quantity = parseInt(ul.find('input.quantity').attr('data-quantity'));
+            // console.log(quantity)
+            // 算小計，先抓到小計區塊
+            const subTotal = ul.find('li.subtotal').text(price * quantity);
+            // 每次小計完就加上金額
+            total += price * quantity;
+        });
+        $('.totalAmount').text('$ ' + total);
 
-        // 拿價錢
-        const price = parseInt(ul.find('div.price').attr('data-price'));
-
-        // 拿數量
-        const quantity = parseInt(ul.find('input.quantity').attr('data-quantity'));
-
-        console.log(quantity)
-
-        // 
-        ul.find('li.quantity').val(quantity);
-
-        // 先算小記金額
-        $('#total').text(price * quantity)
+    };
+    calcTotal();
 
 
+    // 現在要改變數量時，金額也會跳。抓不到！！！！！下週問老師
+    $('.add').on('click', function() {
+        const quantity = $(this).next('.quantity').val()
     });
+    // $('.product-item input.quantity').on('change', function() {
+    //     const quantity = $(this).text;
+    //     const sid = $(this).closest('.product-item').attr('data-sid');
+    //     const combo = $(this);
+    //     // 找到這兩個數字後，就發ajx到購物車api那邊
+    //     $.get('4_productList-shopcart-api.php', {
+    //         sid: sid,
+    //         action: 'add',
+    //         quantity: quantity
+    //     }, function(data) {
+    //         // 上面navbar的購物車數量要變
+    //         countCart(data.cart);
+    //         // 回來後更改數量 
+    //         combo.attr('data-quantity', 'quantity');
+    //         // 總計
+    //         // combo.closest('.product-item').find('.subtotal').text()
+    //     }, 'json')
+    // });
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
