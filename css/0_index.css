@@ -441,8 +441,14 @@ a:hover {
   margin-top: 10%;
   height: 380px;
   background: url(../imgs/index/blog-01.jpg) center no-repeat;
+  background-size: 100%;
+  -webkit-transition: all 0.3s ease-in;
   display: flex;
   align-items: center;
+}
+
+.article-img:hover {
+  background-size: 130%;
 }
 
 .blog .inner-box {
@@ -505,7 +511,7 @@ a:hover {
   color: #002c80;
   font-size: 5vw;
   font-weight: 800;
-  transform: rotate(270deg);
+  /* transform: rotate(270deg); */
 }
 
 .content {
@@ -521,14 +527,15 @@ strong {
   font-size: 2.3rem;
   font-weight: bold;
   margin-top: 5%;
-  padding: 10% 20% 10% 10%;
+  padding: 10% 20% 10% 5%;
   background: url(../imgs/index/ic-label.svg) left no-repeat;
   transform: rotate(-7deg);
+  background-size: 30%;
 }
 
 .para-title {
   font-size: 1.7rem;
-  margin: 15% 2% 3%;
+  margin: 10% 2% 3%;
 }
 
 .para {
@@ -536,20 +543,40 @@ strong {
   margin: 5% 2% 15%;
 }
 
-.sign {
-  margin-top: 20%;
-  margin-right: 0;
+.be-partner {
+  top: 15%;
+}
+
+.sign1 {
+  animation: fadeIn 0.7s infinite;
+  -webkit-animation: fadeIn 0.7s infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ----------fixed button---------- */
-.fixed-botton{
+.fixed-botton {
   bottom: 10%;
-  right: 2%;
+  right: 3%;
   width: 150px;
   z-index: 100;
+  cursor: pointer;
 }
 
-.text{
+.text {
   width: 140px;
   top: calc(50% - 70px);
   left: calc(50% - 70px);

@@ -332,7 +332,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-1">
-                <marquee class="purple-marquee">WHY CHOOSE US WHY CHOOSE US WHY CHOOSE US</marquee>
+                <marquee class="purple-marquee" direction="up">WHY CHOOSE US WHY CHOOSE US WHY CHOOSE US</marquee>
             </div>
             <div class="col-lg-8">
                 <div class="content d-flex">
@@ -347,8 +347,9 @@
                 </div>
             </div>
             <div class="col-lg-3 p-0">
-                <a href="#">
-                    <img class="sign" src="<?= WEB_ROOT ?>imgs/index/ic-sign.svg" alt="">
+                <a href="#" class="be-partner position-relative">
+                    <img class="sign1 position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-sign-01.svg" alt="">
+                    <img class="sign2" src="<?= WEB_ROOT ?>imgs/index/ic-sign-02.svg" alt="">
                 </a>
             </div>
         </div>
@@ -450,6 +451,9 @@
             $('.see-more').removeClass('rubberBand');
         }
     });
+
+    // fixed button animation
+
 </script>
 
 
