@@ -15,7 +15,7 @@ body {
   background-size: 0.75rem 0.75rem;
   position: relative;
   padding-top: 5rem;
-  margin-top: 12rem;
+  margin-top: 10rem;
 }
 
 .g-clip {
@@ -30,6 +30,7 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
+  cursor: pointer;
 }
 
 .login-title {
@@ -96,7 +97,29 @@ p {
 
 @media screen and (max-width: 576px) {
   html {
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  body {
+    background: #fff;
+    background-image: linear-gradient(
+        rgba(22, 143, 164, 0.15) 1px,
+        transparent 0
+      ),
+      linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
+    background-size: 0.75rem 0.75rem;
+  }
+
+  .login-popup {
+    margin: 5rem auto;
+  }
+
+  .g-clip {
+    display: none;
+  }
+
+  .x-btn {
+    display: none;
   }
 }
 
