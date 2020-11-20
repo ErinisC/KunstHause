@@ -577,16 +577,31 @@ strong {
 }
 
 /* ----------fixed button---------- */
-.fixed-botton {
+.fixed-button {
+  opacity: 0;
   bottom: 10%;
   right: 3%;
   width: 150px;
   z-index: 100;
   cursor: pointer;
+  transition-duration: 0.3s;
 }
 
 .text {
   width: 140px;
   top: calc(50% - 70px);
   left: calc(50% - 70px);
+}
+
+.spin{
+  animation: spin 1.5s;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }

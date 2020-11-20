@@ -322,7 +322,7 @@
 
 </section>
 
-<div class="fixed-botton position-fixed">
+<div id="fixed-button" class="fixed-button position-fixed">
     <img class="cicle position-relative" src="<?= WEB_ROOT ?>imgs/index/backToTop.svg" alt="">
     <img class="text position-absolute" src="<?= WEB_ROOT ?>imgs/index/backToTopText.svg" alt="">
 </div>
@@ -450,9 +450,22 @@
         } else {
             $('.see-more').removeClass('rubberBand');
         }
+
+        if (scrollTop > 2500) {
+                $('#fixed-button').css('opacity', '1');
+            }
+            else {
+                $('#fixed-button').css('opacity', '0');
+            }
     });
 
     // fixed button animation
+    $('#fixed-button').on('click', function(){
+        console.log('hi');
+        $('html,body').animate({ scrollTop: 0 }, 1500);
+        $('.text').addClass('spin');
+    });
+
 
 </script>
 
