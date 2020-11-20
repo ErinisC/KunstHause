@@ -53,7 +53,7 @@
                         <li class="col-3">活動</li>
                         <li class="col-3"></li>
                         <li class="col-3">數量</li>
-                        <li class="col-2">總金額</li>
+                        <li class="col-2">小計</li>
                         <li class="col-1"></li>
                     </ul>
                 </div>
@@ -229,8 +229,6 @@
     })
 
 
-
-
     // 移除
     function removeItem(sid) {
         $.get('4_productList-shopcart-api.php', {
@@ -255,7 +253,9 @@
         const price = parseInt(ul.find('div.price').attr('data-price'));
 
         // 拿數量
-        const quantity = parseInt(ul.find('li.quantity').attr('data-quantity'));
+        const quantity = parseInt(ul.find('input.quantity').attr('data-quantity'));
+
+        console.log(quantity)
 
         // 
         ul.find('li.quantity').val(quantity);

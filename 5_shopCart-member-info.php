@@ -83,9 +83,9 @@
 
             <!-- 三聯發票抬頭 -->
             <div class="form-group">
-                <label for="receipt">三聯發票抬頭</label>
+                <label for="company">三聯發票抬頭</label>
                 <div class="input-box">
-                    <input type="text" class="form-control" id="receipt" placeholder="三聯發票抬頭" name="receipt">
+                    <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company">
                     <!--抬頭驗證 -->
                     <small class="form-text">驗證</small>
                 </div>
@@ -93,9 +93,9 @@
 
             <!-- 統一編號 -->
             <div class="form-group">
-                <label for="receipt-number">統一編號</label>
+                <label for="tax-id-number">統一編號</label>
                 <div class="input-box">
-                    <input type="text" class="form-control" id="receipt-number" placeholder="統一編號" name="receipt-number">
+                    <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number">
                     <!-- 統一編號驗證 -->
                     <small class="form-text">驗證</small>
                 </div>
@@ -131,7 +131,10 @@
     // 傳送表單
 
     function checkForm() {
+        $.post('5_shopCart-member-info-api.php', $(document.form1).serialize(), function(data) {
+            console.log(data)
 
+        }, 'json')
 
     }
 </script>
