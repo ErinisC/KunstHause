@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Feedback" transform="translate(55.12 -55)">
+    <g id="Rectangle_1508" data-name="Rectangle 1508" transform="translate(-55.12 55)" fill="none" stroke="#000" stroke-width="3">
+      <rect width="48" height="48" stroke="none"/>
+      <rect x="1.5" y="1.5" width="45" height="45" fill="none"/>
+    </g>
+    <text id="填寫_回饋" data-name="填寫
+回饋" transform="translate(-31.12 75)" font-size="12" font-family="NotoSansTC-Regular, Noto Sans TC"><tspan x="-12" y="0">填寫</tspan><tspan x="-12" y="18">回饋</tspan></text>
+  </g>
+</svg>

@@ -43,20 +43,43 @@
 <link rel="stylesheet" href="./css/2_member-order.css">
 <div class="space"></div>
 <div class="container">
-    <div class="section-title">
-        
-    </div>
     <div class="row">
-        <div class="btn-group w-100" role="group" aria-label="Basic example">
-            <button type="button" class="btn-s btn-warning">已付款</button>
-            <button type="button" class="btn-s btn-light">未付款</button>
-            <button type="button" class="btn-s btn-light">已取消</button>
-            <button type="button" class="btn-s btn-light">已完成</button>
+        <div class="section-title mb-5">
+            <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title.svg" alt="">
+        </div>
+        <div class="btn-group w-100 mb-5" role="group" aria-label="Basic example">
+            <button type="button" class="btn-s btn-select">已付款</button>
+            <button type="button" class="btn-s">未付款</button>
+            <button type="button" class="btn-s">已取消</button>
+            <button type="button" class="btn-s">已完成</button>
         </div>
     </div>
-
 </div>
 
+<div class="container">
+    <div class="row order mb-5">
+        <div class="col-lg-3 event-img"></div>
+        <div class="col-lg-4 event-info">
+            <div class="main-info my-3">
+                <p class="event-name">2019百威真我至上音樂巡迴</p>
+                <p class="price">NT$ 300</p>
+            </div>
+            <div class="sub-info my-4">
+                <p class="date">2019-09-06 19:30 ~ 2019-09-06 23:00</p>
+                <p class="order-sid">訂單編號：1909050529331213415877</p>
+                <p class="pay-method">付款方式：信用卡</p>
+            </div>
+        </div>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-1 edit my-3">
+            <button class="delete"></button>
+            <button class="feedback"></button>
+        </div>
+        <div class="col-lg-2 qr-code my-3">
+            <img class="position-relative" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+        </div>
+    </div>
+</div>
 
 
 

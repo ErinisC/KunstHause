@@ -1,5 +1,5 @@
 * {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 }
 /* ----------style guide---------- */
 body {
@@ -34,7 +34,55 @@ body {
 /* ----------order status---------- */
 .btn-s{
     border: 3px solid #000;
+    background-color: #fff;
     border-radius: 0%;
     width: 25%;
     padding: 2% 0;
+}
+
+.btn-select{
+    background-color: #FFC024;
+    border: 3px solid #000;
+}
+
+.order{
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+.event-img{
+    background: url(../imgs/member/order-event-img-01.jpg) center no-repeat;
+}
+
+.main-info{
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2.55px;
+}
+
+.edit{
+    text-align: center;
+}
+
+.edit button{
+    width: 48px;
+    height: 48px;
+    margin: 0.5rem 0;
+    border: none;
+}
+
+.delete{
+    background: url(../imgs/member/cancel.svg) center no-repeat;
+}
+
+.feedback{
+    background: url(../imgs/member/feedback.svg) center no-repeat;
+}
+
+.qr-code {
+    text-align: center;
+}
+
+.qr-code img{
+    top: calc(50% - 40%);
 }
