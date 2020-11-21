@@ -50,7 +50,7 @@
                             <label for="email">會員帳號 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
+                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
                                 <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
                         </div>

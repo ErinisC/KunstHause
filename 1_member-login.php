@@ -1,6 +1,22 @@
 <?php $title = '會員登入'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
+
+<?php
+if (isset($_POST['email']) and isset($_POST['password'])) {
+    if ($_POST['email'] === 'aaa@qq.com' and $_POST['password'] === '1234') {
+        $_SESSION['user'] = [
+            'email' => 'aaa@qq.com',
+            'nickname' => 'Chan',
+        ];
+    } else {
+        $msg = '帳號或密碼錯誤';
+    }
+}
+?>
+
+
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
@@ -17,9 +33,11 @@
 
 <div class="container">
     <div class="row">
+        <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
+        </div>
         <div class="login-popup col-lg-5 col-md-5 col-sm-12 col-12">
             <div class="deco">
-                <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
+
                 <img class="x-btn" src=" <?= WEB_ROOT ?>/imgs/member/times-solid.svg">
             </div>
             <div class="login-title">請登入會員</div>
@@ -30,25 +48,29 @@
                 <img class="google" src=" <?= WEB_ROOT ?>/imgs/member/google-plus-brands.svg">
             </div>
 
-            <div class="form col-xl-12 col-md-12 col-sm-12 col-12 position-relative">
-                <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
-                    <label for="email" class="login-item">帳號</label>
-                    <div class="input-box">
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
-                        <small id="emailHelp" class="form-text text-muted"></small>
-                    </div>
-                </div>
 
-                <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
-                    <label for="password" class="login-item">密碼</label>
-                    <div class="input-box">
-                        <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password">
-                        <a href="">
-                            <small class="form-text position-absolute mt-2 text-dark">忘記密碼?</small>
-                        </a>
+            <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
+                <form action="" method="post">
+                    <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
+                        <label for="email" class="login-item">帳號</label>
+                        <div class="input-box">
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
+                            <small id="emailHelp" class="form-text text-muted"></small>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
+                        <label for="password" class="login-item">密碼</label>
+                        <div class="input-box">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="密碼不超過10碼" name="password">
+                            <a href="">
+                                <small class="form-text position-absolute mt-2 text-dark">忘記密碼?</small>
+                            </a>
+                        </div>
+                    </div>
+                </form>
             </div>
+
 
             <div class="login-btn d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary col-4 mt-4">登入</button>
@@ -68,7 +90,40 @@
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
+<script>
+    const account = $('#email'),
+        password = $('#password'),
+        info_bar = $('#info_bar')
+
+    function checkForm() {
+
+        $.post('ab-login-api.php', {
+            email: email.val(),
+            password: password.val()
+        }, function(data) {
+            if (data.success) {
+                info_bar
+                    .removeClass('alert-danger')
+                    .addClass('alert-success')
+                    .text('登入成功');
+                location.href = 'ab-list.php';
+            } else {
+                info_bar
+                    .removeClass('alert-success')
+                    .addClass('alert-danger')
+                    .text('登入失敗');
+            }
+            info_bar.slideDown();
+
+            setTimeout(function() {
+                info_bar.slideUp();
+            }, 2000);
+        }, 'json');
+    }
+</script>
+
+
 <!-- 引入自己的JS -->
-<script src=""></script>
+<!-- <script src=""></script> -->
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
