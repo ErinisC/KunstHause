@@ -1,6 +1,19 @@
 <?php $title = '會員登入'; ?>
-
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
+
+<?php
+if (isset($_POST['account']) and isset($_POST['password'])) {
+    if ($_POST['account'] === 'dan' and $_POST['password'] === 'dan') {
+        $_SESSION['user'] = [
+            'account' => 'dan',
+            'nickname' => 'dan',
+        ];
+    } else {
+        $msg = '帳號或密碼錯誤';
+    }
+}
+?>
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <!-- 引入css -->
 <link rel="stylesheet" href="./css/1_member-login.css">
@@ -14,10 +27,6 @@
 
 <div class="container">
     <div class="row">
-
-        <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
-        </div>
-
         <!-- login list Area -->
 
         <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12">
@@ -33,14 +42,21 @@
                 <img class="google" src=" <?= WEB_ROOT ?>/imgs/member/google-plus-brands.svg">
             </div>
 
-            <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
+            <!-- 登入表單開始 -->
+            <!-- alert -->
+            <?php if (isset($msg)) : ?>
+                <div id="info_bar" class="alert alert-danger" role="alert">
+                    <?= $msg ?>
+                </div>
+            <?php endif; ?>
 
-                <form name="form1" onsubmit="checkForm(); return false;">
+            <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
+                <form action="" method="post">
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="account" class="login-item">帳號</label>
                         <div class="input-box">
-                            <input type="text" class="form-control" id="account" name="account" aria-describedby="emailHelp" placeholder="請填寫email信箱">
-                            <small id="emailHelp" class="form-text text-muted"></small>
+                            <input type="text" class="form-control" id="account" name="account" placeholder="請填寫email信箱">
+                            <small class="form-text text-muted"></small>
                         </div>
                     </div>
 
@@ -54,13 +70,17 @@
                         </div>
                     </div>
 
+                    <!-- 登入按紐 -->
                     <div class="login-btn d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary col-4 mt-4">登入</button>
                     </div>
+
                 </form>
             </div>
 
 
+
+            <!-- 註冊標示 -->
             <div class="help d-flex justify-content-between my-4 p-3">
                 <p>還不是 Kunsthaus會員嗎? </p>
                 <a href="" class="s-signup text-dark">

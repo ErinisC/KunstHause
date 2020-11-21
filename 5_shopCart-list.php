@@ -172,13 +172,21 @@
             <div class="container mt-3">
                 <div class="row row justify-content-center">
                     <!-- 繼續逛逛 -->
+
                     <a href="4_productList.php">
                         <button type="button" class="btn btn-warning mr-3">繼續逛逛</button>
                     </a>
-                    <!-- 下一步按鈕 -->
-                    <a href="5_shopCart-member-info.php">
-                        <button type="button" class="btn btn-info">下一步</button>
-                    </a>
+                    <?php if (isset($_SESSION['user'])) : ?>
+                        <!-- 下一步按鈕 -->
+                        <a href="5_shopCart-member-info.php">
+                            <button type="button" class="btn btn-info">下一步</button>
+                        </a>
+                    <?php else : ?>
+                        <a href="1_member-login.php">
+                            <button type="button" class="btn btn-info">請先登入會員</button>
+                        </a>
+
+                    <?php endif; ?>
                 </div>
             </div>
 

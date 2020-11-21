@@ -4,6 +4,9 @@
 
 <!-- 自己的php條件放在這邊 -->
 <?php
+$pageName = 'productList';
+
+
 // 設定一頁只能有六格
 $perPage = 6;
 // 設定使用者目前看的頁數

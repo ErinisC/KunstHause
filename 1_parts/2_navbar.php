@@ -31,6 +31,10 @@
         color: #fff;
     }
 
+    .nav-item.active a {
+        color: #fff;
+    }
+
     .header-search {
         position: relative;
     }
@@ -162,11 +166,16 @@
 </style>
 
 <body>
+    <?php if (!isset($pageName)) {
+        $pageName = "";
+    };
+
+    ?>
 
     <header class="position-fixed w-100">
         <nav class="navbar navbar-expand-lg">
             <div class="container ">
-                <a class="navbar-brand mr-5 sm-none" href="#">
+                <a class="navbar-brand mr-5 sm-none" href="0_index.php">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -174,7 +183,7 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-menu.svg" alt="" style="width: 48px; height: 10px;">
                     </span>
                 </button>
-                <a class="navbar-brand lg-none" href="#">
+                <a class="navbar-brand lg-none" href="0_index.php">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
 
@@ -198,17 +207,17 @@
                 <!-- 大版頁面navbar -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">逛逛活動</a>
+                        <li class="nav-item <?= $pageName === "productList" ? 'active' : '' ?>">
+                            <a class="nav-link" href="4_productList.php">逛逛活動</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">舉辦活動</a>
+                            <a class="nav-link" href="3_B2B-index.php">舉辦活動</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">關於我們</a>
+                            <a class="nav-link" href="0_index.php">關於我們</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">新鮮事</a>
+                            <a class="nav-link" href="0_index.php">新鮮事</a>
                         </li>
                     </ul>
                     <form class="header-search mr-3" method="POST" name="header-search" class="form-inline ">
@@ -221,7 +230,12 @@
                     <li class="nav-item dropdown">
                         <!-- 會員icon -->
                         <a class="nav-link mx-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="<?= WEB_ROOT ?>imgs/index/ic-member2.svg" alt="" style="width:48px;">
+                            <?php if (isset($_SESSION['user'])) : ?>
+                                <i class="fas fa-user" style="font-size:38px;color:#168FA4"></i>
+                            <?php else : ?>
+                                <i class="fas fa-user" style="font-size:38px"></i>
+                            <?php endif; ?>
+                            <!-- <img src="<//?= WEB_ROOT ?>imgs/index/ic-member2.svg" alt="" style="width:48px;"> -->
                         </a>
                         <!-- 會員dropdown -->
                         <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
@@ -231,7 +245,12 @@
                             <a class="dropdown-item" href="#">優惠券管理</a>
                             <a class="dropdown-item" href="#">訊息管理</a>
                             <a class="dropdown-item" href="#">聯繫客服</a>
-                            <a class="dropdown-item" href="#">登入/登出</a>
+
+                            <?php if (isset($_SESSION['user'])) : ?>
+                                <a class="dropdown-item" href="1_member-logout-api.php">登出</a>
+                            <?php else : ?>
+                                <a class="dropdown-item" href="1_member-login.php">登入</a>
+                            <?php endif; ?>
                         </div>
                     </li>
 

@@ -12,6 +12,8 @@ button:focus {
 
 .bg {
     background-color: #168FA4;
+    background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0), linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
+    background-size: 0.75rem 0.75rem;
 }
 
 /* 麵包屑區塊 */

@@ -16,9 +16,13 @@ button:focus {
     outline: 3px solid #FFC024;
 }
 
-.wrap-bg {
-    height: 100vh;
+.navbar {
+    z-index: 10;
 }
+
+/* .wrap-bg {
+    height: 100vh;
+} */
 
 .wrap-bg::before {
     content: "";
@@ -26,7 +30,7 @@ button:focus {
     border-color: transparent #FFC024 black transparent;
     position: absolute;
     bottom: 0;
-    border-width: 80vh 80vw 0 20vw;
+    border-width: 50vh 80vw 0 20vw;
     z-index: 1;
 }
 
@@ -36,7 +40,7 @@ button:focus {
     border-color: transparent transparent black #ED5B4C;
     position: absolute;
     bottom: 0;
-    border-width: 80vh 20vw 0 80vw;
+    border-width: 50vh 20vw 0 80vw;
 }
 
 

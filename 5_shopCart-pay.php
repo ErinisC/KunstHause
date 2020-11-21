@@ -79,116 +79,116 @@
     <div class="row">
         <div class="col-12 p-0 m-auto">
             <!-- 下拉式選單呈現區塊 -->
-            <div class="wrap">
-                <!-- 信用卡付款下拉選單 -->
-                <div class="col">
+            <!-- <div class="wrap"> -->
+            <!-- 信用卡付款下拉選單 -->
+            <!-- <div class="col">
                     <div class="collapse multi-collapse" id="credit-pay">
 
-                        <!-- 開始信用卡圖片 -->
-                        <div class="row">
-                            <!-- 信用卡圖片 -->
-                            <div class="card card-body m-auto col-4">
-                                <img src="" alt="">
-                                <div class="img-wrap">
 
-                                </div>
-                            </div>
-
-                            <!-- 信用卡資料 -->
-                            <!-- 表單開始 -->
-                            <form name="form1" onsubmit="checkForm(); return false;" class="col-lg-8 col-md-10 col-sm-12 col-12">
-
-                                <!-- 項目標題 -->
-                                <div class="wrap w-100 text-center my-4">
-                                    <div class="form-title col-6 m-auto py-2">信用卡資訊</div>
-                                </div>
-
-
-                                <!-- 持卡人姓名 -->
-                                <div class="form-group">
-                                    <label for="name">持卡人姓名 (必填)</label>
-                                    <div class="input-box">
-                                        <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name">
-                                        <!-- 姓名驗證 -->
-                                        <small class="form-text">驗證</small>
-                                    </div>
-                                </div>
-
-                                <!-- 卡片號碼 -->
-                                <div class="form-group">
-                                    <label for="credit-number">卡片號碼</label>
-                                    <div class="input-box">
-                                        <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼">
-                                        <!-- 信箱驗證 -->
-                                        <small id="credit-number" class="form-text text-muted">驗證</small>
-                                    </div>
-                                </div>
-
-                                <!-- 有效年月 -->
-                                <div class="form-group">
-                                    <label for="valid-date"">有效年月</label>
-                                    <div class=" input-box">
-                                        <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date">
-                                        <!-- 有效年月驗證 -->
-                                        <small class="form-text" class="r-pin">驗證</small>
-                                </div>
-
-
-
-                                <!-- 驗證碼 -->
-                                <div class="form-group">
-                                    <label for="security-number">驗證碼</label>
-                                    <div class="input-box">
-                                        <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number">
-                                        <!-- 電話驗證 -->
-                                        <small class="form-text" class="r-pin">驗證</small>
-                                    </div>
-                                </div>
-
-                                <!-- 上一步或送出按鈕 -->
-                                <div class="row justify-content-center">
-                                    <!-- 上一步 -->
-                                    <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
-
-                                    <!-- 送出 -->
-                                    <button type="submit" class="btn submit btn-info">確認送出</button>
-
-                                </div>
-
-                            </form>
-
-
-
-                        </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- 銀行轉帳付款下拉選單 -->
-                <div class="col">
+            <!-- 銀行轉帳付款下拉選單 -->
+            <!-- <div class="col">
                     <div class="collapse multi-collapse" id="bank-pay">
                         <div class="card card-body col-8">
                             銀行付款
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- 超商條碼付款下拉選單 -->
-                <div class="col">
+            <!-- 超商條碼付款下拉選單 -->
+            <!-- <div class="col">
                     <div class="collapse multi-collapse" id="ibon-pay">
                         <div class="card card-body">
                             超商條碼付款
                         </div>
                     </div>
+                </div> -->
+            <!-- </div> -->
+
+
+            <div class="test" style="display:none">
+                <!-- 開始信用卡圖片 -->
+                <div class="row">
+                    <!-- 信用卡圖片 -->
+                    <div class="card card-body m-auto col-4">
+                        <img src="" alt="">
+                        <div class="img-wrap">
+
+                        </div>
+                    </div>
+
+                    <!-- 信用卡資料 -->
+                    <!-- 表單開始 -->
+                    <form name="form1" onsubmit="checkForm(); return false;" class="col-lg-8 col-md-10 col-sm-12 col-12">
+
+                        <!-- 項目標題 -->
+                        <div class="wrap w-100 text-center my-4">
+                            <div class="form-title col-6 m-auto py-2">信用卡資訊</div>
+                        </div>
+
+                        <!-- 持卡人姓名 -->
+                        <div class="form-group">
+                            <label for="name">持卡人姓名 (必填)</label>
+                            <div class="input-box">
+                                <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name">
+                                <!-- 姓名驗證 -->
+                                <small class="form-text">驗證</small>
+                            </div>
+                        </div>
+
+                        <!-- 卡片號碼 -->
+                        <div class="form-group">
+                            <label for="credit-number">卡片號碼</label>
+                            <div class="input-box">
+                                <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼">
+                                <!-- 信箱驗證 -->
+                                <small id="credit-number" class="form-text text-muted">驗證</small>
+                            </div>
+                        </div>
+
+                        <!-- 有效年月 -->
+                        <div class="form-group">
+                            <label for="valid-date"">有效年月</label>
+                                    <div class=" input-box">
+                                <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date">
+                                <!-- 有效年月驗證 -->
+                                <small class="form-text" class="r-pin">驗證</small>
+                        </div>
                 </div>
+
+
+
+                <!-- 驗證碼 -->
+                <div class="form-group">
+                    <label for="security-number">驗證碼</label>
+                    <div class="input-box">
+                        <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number">
+                        <!-- 電話驗證 -->
+                        <small class="form-text" class="r-pin">驗證</small>
+                    </div>
+                </div>
+
+                <!-- 上一步或送出按鈕 -->
+                <div class="row justify-content-center">
+                    <!-- 上一步 -->
+                    <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
+
+                    <!-- 送出 -->
+                    <button type="submit" class="btn submit btn-info">確認送出</button>
+
+                </div>
+
+                </form>
             </div>
 
-
-            <div class="test" style="display:none">ppp</div>
-
-
-
         </div>
+
+
+
     </div>
+</div>
 </div>
 
 

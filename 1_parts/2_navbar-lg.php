@@ -43,6 +43,10 @@
         color: #fff;
     }
 
+    .nav-item.active a {
+        color: #fff;
+    }
+
     .header-search {
         position: relative;
     }
@@ -133,7 +137,6 @@
 </style>
 
 <body>
-
     <header id="myHeader">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand mr-5 sm-none" href="#">
@@ -147,17 +150,17 @@
             <a class="navbar-brand lg-none" href="#">
                 <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
             </a>
-            <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none">
+            <a href="0_index.php" class="header-icon shopping-cart nav-link mx-0 lg-none">
                 <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
             </a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">逛逛活動</a>
+                        <a class="nav-link" href="4_productList.php">逛逛活動</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">舉辦活動</a>
+                        <a class="nav-link" href="3_B2B-index.php">舉辦活動</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">關於我們</a>
