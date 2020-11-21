@@ -3,10 +3,10 @@
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
 <?php
-if (isset($_POST['email']) and isset($_POST['password'])) {
-    if ($_POST['email'] === 'aaa@qq.com' and $_POST['password'] === '1234') {
+if (isset($_POST['account']) and isset($_POST['password'])) {
+    if ($_POST['account'] === 'shin' and $_POST['password'] === '1234') {
         $_SESSION['user'] = [
-            'email' => 'aaa@qq.com',
+            'account' => 'shin',
             'nickname' => 'Chan',
         ];
     } else {
@@ -15,29 +15,31 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
 }
 ?>
 
-
-
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
-
-<!-- 引入自己的ＣＳＳ -->
+<!-- 引入css -->
 <link rel="stylesheet" href="./css/1_member-login.css">
-
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
-
 <!-- JQ -->
 <script src="./libary/jquery-3.5.1.js"></script>
-
-<!-- Boostrap JS -->
+<!-- Bootstrap JS -->
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
 
 <div class="container">
     <div class="row">
-        <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
-        </div>
-        <div class="login-popup col-lg-5 col-md-5 col-sm-12 col-12">
-            <div class="deco">
+        <!-- alert -->
+        <?php if (isset($msg)) : ?>
+            <div id="info_bar" class="alert alert-danger" role="alert">
+                <?= $msg ?>
+            </div>
+        <?php endif; ?>
 
+        <!-- login list Area -->
+
+        <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12">
+            <div class="deco">
+                <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
                 <img class="x-btn" src=" <?= WEB_ROOT ?>/imgs/member/times-solid.svg">
             </div>
             <div class="login-title">請登入會員</div>
@@ -48,8 +50,8 @@ if (isset($_POST['email']) and isset($_POST['password'])) {
                 <img class="google" src=" <?= WEB_ROOT ?>/imgs/member/google-plus-brands.svg">
             </div>
 
-
             <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
+
                 <form action="" method="post">
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="email" class="login-item">帳號</label>

@@ -123,13 +123,13 @@ p {
   }
 }
 
+/* 576-768之間的畫面 */
+@media (min-width: 576px) and (max-width: 768px) {
+}
+
 /* =============================== */
 /* Small 小型裝置sm (576px 以上) */
 @media (min-width: 576px) {
-}
-
-/* 576-768之間的畫面 */
-@media (min-width: 576px) and (max-width: 768px) {
 }
 
 @media (max-width: 768px) {

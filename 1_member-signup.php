@@ -12,12 +12,18 @@
 <!-- JQ -->
 <script src="./libary/jquery-3.5.1.js"></script>
 
-<!-- Boostrap JS -->
+<!-- Bootstrap JS -->
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 
 <div class="container">
     <div class="row">
+        <!-- alert -->
+        <?php if (isset($msg)) : ?>
+            <div id="info_bar" class="alert alert-danger" role="alert">
+                <?= $msg ?>
+            </div>
+        <?php endif; ?>
 
         <section class="signup-list mx-auto p-0 col-lg-10 col-md-12 col-sm-12 col-12 w-100">
             <div class="list-body w-100 mx-0 pb-3 mb-5">
@@ -42,7 +48,7 @@
                             <label for="name">會員姓名 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name">
+                                <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" required>
                                 <small class="form-text"></small>
                             </div>
                         </div>
@@ -50,7 +56,7 @@
                             <label for="email">會員帳號 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
+                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="請填寫email信箱" required>
                                 <small id="emailHelp" class="form-text text-muted"></small>
                             </div>
                         </div>
@@ -59,7 +65,7 @@
                             <label for="password">密碼 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password">
+                                <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password" required>
                                 <small class="form-text"></small>
                             </div>
                         </div>
@@ -67,7 +73,7 @@
                             <label for="password">確認密碼 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password">
+                                <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password" required>
                                 <small class="form-text"></small>
                             </div>
                         </div>
@@ -76,7 +82,7 @@
                             <label for="phone">連絡電話</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
-                                <input type=" text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" name="phone">
+                                <input type="text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" name="phone">
                                 <small class="form-text" class="r-pin"></small>
                             </div>
                         </div>
@@ -94,7 +100,7 @@
                             <img class="eyes" src=" <?= WEB_ROOT ?>/imgs/index/ic-eye.svg">
                         </div>
 
-                        <div id="terms" class="terms col-xl-12 col-md-12 col-sm-6 col-12">
+                        <div id="terms" class="terms col-xl-12 col-md-12 col-sm-12 col-12">
 
                             <div class="service-term m-3">服務條款</div>
                             <div class="service-text">
@@ -145,7 +151,7 @@
                             <label class="form-check-label" for="exampleCheck1">我同意Kunsthaus服務條款及隱私權政策</label>
                         </div>
                         <div class="signup-btn d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary col-sm-12 col-4">註冊
+                            <button type="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4">註冊
                             </button>
                         </div>
                         <div class="line d-flex justify-content-between">
