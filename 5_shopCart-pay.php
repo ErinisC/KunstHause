@@ -1,6 +1,11 @@
 <?php $title = '購物車 選擇付款方式'; ?>
 
-<?php include __DIR__ . '/1_parts/0_config.php'; ?>
+<?php include __DIR__ . '/1_parts/0_config.php';
+
+
+
+
+?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入ShopCart BG 的ＣＳＳ -->
@@ -185,13 +190,34 @@
 
         </div>
 
+    </div>
 
 
+
+
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
 </div>
-</div>
-
-
 
 <!-- 購物車ＢＧ結尾 -->
 </div>
@@ -229,7 +255,11 @@
 
     function checkForm() {
 
+        $.post('5_shopCart-pay-api.php', $(document.form1).serialize(), function(data) {
+            console.log(data)
+        }, 'json');
 
+        // $('.modal').modal('show');
     }
 </script>
 

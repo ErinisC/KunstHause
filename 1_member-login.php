@@ -1,19 +1,6 @@
 <?php $title = '會員登入'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
-<?php
-if (isset($_POST['account']) and isset($_POST['password'])) {
-    if ($_POST['account'] === 'dan' and $_POST['password'] === 'dan') {
-        $_SESSION['user'] = [
-            'account' => 'dan',
-            'nickname' => 'dan',
-        ];
-    } else {
-        $msg = '帳號或密碼錯誤';
-    }
-}
-?>
-
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <!-- 引入css -->
 <link rel="stylesheet" href="./css/1_member-login.css">
@@ -44,14 +31,12 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
 
             <!-- 登入表單開始 -->
             <!-- alert -->
-            <?php if (isset($msg)) : ?>
-                <div id="info_bar" class="alert alert-danger" role="alert">
-                    <?= $msg ?>
-                </div>
-            <?php endif; ?>
+
+            <div id="info_bar" class="alert alert-danger" role="alert" style="display:none">
+            </div>
 
             <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
-                <form action="" method="post">
+                <form name="form1" onsubmit="checkForm(); return false;">
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="account" class="login-item">帳號</label>
                         <div class="input-box">
@@ -112,6 +97,7 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
                     .addClass('alert-success')
                     .text('登入成功');
                 location.href = '0_index.php';
+
             } else {
                 info_bar
                     .removeClass('alert-success')

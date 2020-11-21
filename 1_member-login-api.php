@@ -1,4 +1,5 @@
 <?php
+
 require __DIR__ . '/1_parts/0_config.php';
 $output = [
     'success' => false,
@@ -20,6 +21,7 @@ $stmt->execute([
 
 if ($stmt->rowCount() > 0) {
     $output['success'] = true;
-    $_SESSION['admin'] = $stmt->fetch();
+    $_SESSION['user'] = $stmt->fetch();
 }
+
 echo json_encode($output, JSON_UNESCAPED_UNICODE);

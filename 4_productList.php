@@ -152,8 +152,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                             <!-- 價格按鈕加Modal的彈跳窗格 -->
                             <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-4">
                                 <div class=" card-price py-3">
-                                    <div class="origin-price mb-3 position-relative">
-                                        <hr class="position-absolute">原價$ <?= $r['price'] ?></div>
                                     <div class="now-price">優惠價$ <?= $r['price'] ?></div>
                                 </div>
                             </a>

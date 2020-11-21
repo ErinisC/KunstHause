@@ -117,15 +117,9 @@ input:focus {
 .card-body .card-price {
     background-color: #4336A3;
     color: white;
-    border-left: 3px solid black;
     cursor: pointer;
 }
 
-.card-price hr {
-    top: -9px;
-    width: 70%;
-    border-color: white;
-}
 
 /* 小卡彈跳蓋板 */
 .modal-content {

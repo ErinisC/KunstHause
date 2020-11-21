@@ -48,19 +48,20 @@
 
             <!-- 訂購人姓名 -->
             <div class="form-group">
-                <label for="name">訂購人姓名 (必填)</label>
-                <div class="input-box">
-                    <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name">
-                    <!-- 姓名驗證 -->
-                    <small class="form-text">驗證</small>
-                </div>
+                <?php if (isset($_SESSION['user'])) : ?>
+                    <label for="name">訂購人姓名 (必填)</label>
+                    <div class="input-box">
+                        <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" value="<?= $_SESSION['user']['nickname'] ?>">
+                        <!-- 姓名驗證 -->
+                        <small class="form-text">驗證</small>
+                    </div>
             </div>
 
             <!-- 信箱 -->
             <div class="form-group">
                 <label for="email">電子信箱email</label>
                 <div class="input-box">
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱" value="<?= $_SESSION['user']['account'] ?>">
                     <!-- 信箱驗證 -->
                     <small id="emailHelp" class="form-text text-muted">驗證</small>
                 </div>
@@ -101,16 +102,17 @@
                 </div>
             </div>
 
+        <?php endif; ?>
 
-            <!-- 上一步或送出按鈕 -->
-            <div class="row justify-content-center">
-                <!-- 上一步 -->
-                <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
+        <!-- 上一步或送出按鈕 -->
+        <div class="row justify-content-center">
+            <!-- 上一步 -->
+            <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
 
-                <!-- 送出 -->
-                <button type="submit" class="btn submit btn-info">確認送出</button>
+            <!-- 送出 -->
+            <button type="submit" class="btn submit btn-info">確認送出</button>
 
-            </div>
+        </div>
 
         </form>
 
