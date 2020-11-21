@@ -172,16 +172,16 @@ label {
 
   .tape img {
     position: static;
-    width: 15rem;
+    width: 18rem;
     transform: rotate(7deg);
-    margin-left: 2.7rem;
+    margin-left: 3.5rem;
   }
 
   .list-title {
-    font-size: 0.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: 2px;
-    line-height: 1.8rem;
+    letter-spacing: 1.5px;
+    line-height: 1.5rem;
     margin: 2.5rem 1rem 0;
   }
 

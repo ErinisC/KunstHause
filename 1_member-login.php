@@ -1,20 +1,6 @@
 <?php $title = '會員登入'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
-
-<?php
-if (isset($_POST['account']) and isset($_POST['password'])) {
-    if ($_POST['account'] === 'shin' and $_POST['password'] === '1234') {
-        $_SESSION['user'] = [
-            'account' => 'shin',
-            'nickname' => 'Chan',
-        ];
-    } else {
-        $msg = '帳號或密碼錯誤';
-    }
-}
-?>
-
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <!-- 引入css -->
 <link rel="stylesheet" href="./css/1_member-login.css">
@@ -28,12 +14,9 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
 
 <div class="container">
     <div class="row">
-        <!-- alert -->
-        <?php if (isset($msg)) : ?>
-            <div id="info_bar" class="alert alert-danger" role="alert">
-                <?= $msg ?>
-            </div>
-        <?php endif; ?>
+
+        <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
+        </div>
 
         <!-- login list Area -->
 
@@ -52,11 +35,11 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
 
             <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
 
-                <form action="" method="post">
+                <form name="form1" onsubmit="checkForm(); return false;">
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
-                        <label for="email" class="login-item">帳號</label>
+                        <label for="account" class="login-item">帳號</label>
                         <div class="input-box">
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="請填寫email信箱">
+                            <input type="text" class="form-control" id="account" name="account" aria-describedby="emailHelp" placeholder="請填寫email信箱">
                             <small id="emailHelp" class="form-text text-muted"></small>
                         </div>
                     </div>
@@ -70,13 +53,13 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
                             </a>
                         </div>
                     </div>
+
+                    <div class="login-btn d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary col-4 mt-4">登入</button>
+                    </div>
                 </form>
             </div>
 
-
-            <div class="login-btn d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary col-4 mt-4">登入</button>
-            </div>
 
             <div class="help d-flex justify-content-between my-4 p-3">
                 <p>還不是 Kunsthaus會員嗎? </p>
@@ -93,14 +76,14 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <script>
-    const account = $('#email'),
+    const account = $('#account'),
         password = $('#password'),
         info_bar = $('#info_bar')
 
     function checkForm() {
 
-        $.post('ab-login-api.php', {
-            email: email.val(),
+        $.post('1_member-login-api.php', {
+            account: account.val(),
             password: password.val()
         }, function(data) {
             if (data.success) {
@@ -108,7 +91,7 @@ if (isset($_POST['account']) and isset($_POST['password'])) {
                     .removeClass('alert-danger')
                     .addClass('alert-success')
                     .text('登入成功');
-                location.href = 'ab-list.php';
+                location.href = '0_index.php';
             } else {
                 info_bar
                     .removeClass('alert-success')

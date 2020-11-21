@@ -15,22 +15,22 @@
 <!-- Bootstrap JS -->
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
+<style>
+    small.form-text {
+        color: red;
+    }
+</style>
+
 
 <div class="container">
     <div class="row">
-        <!-- alert -->
-        <?php if (isset($msg)) : ?>
-            <div id="info_bar" class="alert alert-danger" role="alert">
-                <?= $msg ?>
-            </div>
-        <?php endif; ?>
 
         <section class="signup-list mx-auto p-0 col-lg-10 col-md-12 col-sm-12 col-12 w-100">
             <div class="list-body w-100 mx-0 pb-3 mb-5">
 
-                <!-- 錯誤跳提醒設定 -->
-                <!-- <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
-                </div> -->
+                <!-- 錯誤跳提醒設定 alert -->
+                <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
+                </div>
 
                 <div class="deco">
                     <img class="long-clip" src=" <?= WEB_ROOT ?>/imgs/member/clip.svg">
@@ -43,7 +43,8 @@
                     您可以隨時上網查詢預售狀況、節目資訊、演出時間等資訊。
                 </div>
                 <div class="signup-form w-100 col-md-8 col-xl-8 mx-auto">
-                    <form name="form1" onsubmit="checkForm(); return false;">
+
+                    <form name="form1" onsubmit="checkForm(); return false;" novalidate>
                         <div class="form-group">
                             <label for="name">會員姓名 (必填)</label>
                             <div class="input-box d-flex">
@@ -53,11 +54,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">會員帳號 (必填)</label>
+                            <label for="account">會員帳號 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="請填寫email信箱" required>
-                                <small id="emailHelp" class="form-text text-muted"></small>
+                                <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
+                                <small class="form-text text-muted"></small>
                             </div>
                         </div>
 
@@ -70,19 +71,19 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password">確認密碼 (必填)</label>
+                            <label for="checkpassword">確認密碼 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password" required>
+                                <input type="password" class="form-control" id="checkpassword" placeholder="請再次輸入您的密碼" name="checkpassword" required>
                                 <small class="form-text"></small>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">連絡電話</label>
+                            <label for="mobile">連絡電話</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
-                                <input type="text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" name="phone">
+                                <input type="text" class="form-control" id="mobile" placeholder="請輸入您的手機號碼" name="mobile" pattern="09\d{2}-?\d{3}-?\d{3}">
                                 <small class="form-text" class="r-pin"></small>
                             </div>
                         </div>
@@ -165,25 +166,60 @@
     </div>
 </div>
 
-
-
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
-
-
 
 <!-- 引入自己的ＪＳ -->
 <!-- <script src=""></script> -->
 
 <script>
-    var terms;
-    window.onload = function() {
-        terms = document.getElementById("terms");
-        // HTML Element 中的 scrollLeft 和 scrollTop 屬性
-        window.setInterval(scroll, 50);
-    };
+    const email_re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    const mobile_re = /^09\d{2}-?\d{3}-?\d{3}$/;
+    const password = $('#password'),
+        email = $('#email'),
+        info_bar = $('#info_bar')
 
-    function scroll() {
-        box.scrollTop++;
+    function checkForm() {
+        name.next().text('');
+        email.next().text('');
+
+        let isPass = true;
+
+        if (password.val().length > 10) {
+            isPass = false;
+            password.next().text('密碼不可超過10碼!');
+        }
+        // https://github.com/shinder/mmmh57-php/blob/master/proj/login.php
+
+        if (email.val()) {
+            if (!email_re.test(email.val())) {
+                isPass = false;
+                email.next().text('請填寫正確的 email 格式!');
+            }
+        }
+
+        if (isPass) {
+            $.post('ab-insert-api.php', $(document.form1).serialize(), function(data) {
+                console.log(data);
+                if (data.success) {
+                    info_bar
+                        .removeClass('alert-danger')
+                        .addClass('alert-success')
+                        .text('完成新增');
+                } else {
+                    info_bar
+                        .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .text(data.error || '新增失敗');
+                }
+                info_bar.slideDown();
+
+                setTimeout(function() {
+                    info_bar.slideUp();
+                }, 2000);
+            }, 'json')
+        }
+
+
     }
 </script>
 
