@@ -32,7 +32,19 @@
 
 <section class="main grid-blue pb-5">
     <div class="container-fluid main-activities p-0">
-        <div class="mainact-1 w-100 img-800"></div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 mainact-1 img-800" src="#" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 mainact-1 img-800" src="#" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 mainact-1 img-800" src="#" alt="Third slide">
+                </div>
+            </div>
+        </div>
         <p class="section-title-l w-100 text-center cw m-100">活動列表</p>
     </div>
     <div class="container-fluid w-85 pb-5">
@@ -336,7 +348,9 @@
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="content d-flex">
-                    <p class="section-title">我要辦活動</p>
+                    <div class="section-title">
+                        <img src="<?= WEB_ROOT ?>imgs/index/b2b-section-title.svg" alt="">
+                    </div>
                     <p class="para-title">讓生活因 <strong>活動</strong> 而生動！</p>
                     <p class="para">
                         作為一個自助式活動上架平台，任何人都可以輕鬆的在這裡建立帳號、經營活動，營造自己的活動社群，但對於剛踏入KunstHaus的主辦來說，往往不知道從何下手，甚麼是主辦單位身分認證？甚麼是活動審核？往往搞得一個頭兩個大。
@@ -452,21 +466,20 @@
         }
 
         if (scrollTop > 2500) {
-                $('#fixed-button').css('opacity', '1');
-            }
-            else {
-                $('#fixed-button').css('opacity', '0');
-            }
+            $('#fixed-button').css('opacity', '1');
+        } else {
+            $('#fixed-button').css('opacity', '0');
+        }
     });
 
     // fixed button animation
-    $('#fixed-button').on('click', function(){
+    $('#fixed-button').on('click', function() {
         console.log('hi');
-        $('html,body').animate({ scrollTop: 0 }, 1500);
+        $('html,body').animate({
+            scrollTop: 0
+        }, 1500);
         $('.text').addClass('spin');
     });
-
-
 </script>
 
 

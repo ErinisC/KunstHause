@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="474.977" height="202.937" viewBox="0 0 474.977 202.937">
+  <g id="Section_Title" data-name="Section Title" transform="translate(0 -0.045)">
+    <g id="Label" transform="translate(0 0)">
+      <g id="Rectangle_1499" data-name="Rectangle 1499" transform="translate(10.523 65.546) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
+        <rect width="450.94" height="138.468" stroke="none"/>
+        <rect x="1.5" y="1.5" width="447.94" height="135.468" fill="none"/>
+      </g>
+      <g id="Rectangle_1500" data-name="Rectangle 1500" transform="translate(0 55.001) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
+        <rect width="450.94" height="138.468" stroke="none"/>
+        <rect x="1.5" y="1.5" width="447.94" height="135.468" fill="none"/>
+      </g>
+    </g>
+    <text id="我要辦活動" transform="translate(221.251 112.558) rotate(-7)" fill="#fff" font-size="46" font-family="NotoSansTC-Bold, Noto Sans TC" font-weight="700" letter-spacing="0.075em"><tspan x="-121.9" y="0">我要辦活動</tspan></text>
+  </g>
+</svg>
