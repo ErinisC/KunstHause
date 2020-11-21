@@ -41,6 +41,8 @@
 
 <!-- 引入index的css -->
 <link rel="stylesheet" href="./css/2_member-order.css">
+
+
 <div class="space"></div>
 <div class="container">
     <div class="row">
@@ -82,17 +84,35 @@
 </div>
 
 
+<div class="container">
+        <div class="row justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <!-- 前一頁 -->
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="fas fa-arrow-left"></i></a>
+                    </li>
+                    <!-- 中間頁數 -->
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <!-- 後一頁 -->
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-
-
-
-
-
-
-
-
-
-
+        </div>
+    </div>
 
 
 <!-- JQ -->
