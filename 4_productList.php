@@ -62,16 +62,54 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </nav>
     </div>
 
-
-    <div class="container-fluid pic">
-        <h5>這邊要放圖片輪播</h5>
+    <!-- Banner輪播 -->
+    <div class="container-fluid pic p-0">
+        <div id="carouselExampleIndicators" class="carousel slide p-0" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="imgs/banner/b-1.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="imgs/banner/b-2.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
 
     <!-- 篩選區塊 -->
-    <div class="container">
-        <div class="row justify-content-between position-relative">
-            <div class="filter f1 col-lg-6 col-md-6 col-sm-12 col-12"></div>
-            <div class="filter f2 col-lg-5 col-md-5 col-sm-12 col-12"></div>
+    <div class="container my-4">
+        <div class="row justify-content-between">
+            <!-- 搜尋篩選 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="filter">
+                    我想搜尋： <input type="text">
+                </div>
+            </div>
+            <!-- 日立 -->
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="filter calander">日立放這邊</div>
+            </div>
+
+            <!-- 按搜尋的input之後，需要出現的篩選區 -->
+            <div class="col-12 py-3">
+                <div class="choose">這邊要放選擇checkbox</div>
+            </div>
         </div>
     </div>
 
@@ -103,7 +141,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <!-- 小卡下方票價 -->
                     <div class="wrap d-flex">
                         <div class="card-body d-flex p-0">
-                            <div class="card-info m-auto py-3">
+                            <div class="card-info m-auto py-3 col-8">
                                 <div class="event-name mb-3"><?= $r['bookname'] ?></div>
                                 <div class="event-location">地點：台北市</div>
                             </div>
@@ -172,84 +210,85 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     <!-- 推薦商品小卡 -->
     <div class="container-fluid">
         <div class="row m-0 p-0 col-12">
-            <!-- 小卡 -->
-            <div class="card card-sm mb-5 col-lg-3 col-md-4 col-sm-6 col-12">
-                <div class="img-wrap mb-3 position-relative">
-                    <img src="" class="card-img-top" alt="">
-                    <div class="time position-absolute col-4">這裡放時間</div>
-                </div>
+            <?php for ($i = 0; $i < 6; $i++) : ?>
+                <!-- 小卡 -->
+                <div class="card card-sm mb-5 col-lg-2 col-md-4 col-sm-6 col-12">
+                    <div class="img-wrap mb-3 position-relative">
+                        <img src="" class="card-img-top" alt="">
+                        <div class="time position-absolute col-6">這裡放時間</div>
+                    </div>
 
-                <!-- 小卡下方票價 -->
-                <div class="wrap d-flex">
-                    <div class="card-body d-flex p-0">
-                        <div class="card-info m-auto py-3 col-8">
-                            <div class="event-name mb-3">台北藝文活動展覽</div>
-                            <div class="event-location">地點：台北市</div>
+                    <!-- 小卡下方票價 -->
+                    <div class="wrap d-flex">
+                        <div class="card-body d-flex p-0">
+                            <div class="card-info m-auto py-3 col-8">
+                                <div class="event-name mb-3">台北藝文活動展覽</div>
+                                <div class="event-location">地點：台北市</div>
+                            </div>
+                            <div class="card-price px-1 d-flex col-4 align-items-center">
+                                <div class="origin-price position-relative">
+                                    <div class="now-price">優惠價$ 300</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-price py-3 col-4">
-                            <div class="origin-price mb-3 position-relative">
-                                <hr class="position-absolute">原價$ 450</div>
-                            <div class="now-price">優惠價$ 300</div>
-                        </div>
+                    </div>
+
+
+                </div>
+            <?php endfor; ?>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <!-- body內容 -->
+                    <div class="modal-body">
+                        <!-- 這邊設定iframe -->
+                        <iframe src="4_productList-modal-api.php?sid=1">
+                        </iframe>
+
                     </div>
                 </div>
             </div>
-
-
         </div>
+
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+    <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
-                <!-- body內容 -->
-                <div class="modal-body">
-                    <!-- 這邊設定iframe -->
-                    <iframe src="4_productList-modal-api.php?sid=1">
-                    </iframe>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<?php include __DIR__ . '/1_parts/3_script.php'; ?>
-
-<!-- 引入自己的ＪＳ -->
-<!-- <script src=""></script> -->
+    <!-- 引入自己的ＪＳ -->
+    <!-- <script src=""></script> -->
 
 
-<script>
-    // 關閉按鈕
-    // $('.btn-close').on('click', function() {
-    //     // $('#cartWrap').css('display', 'none');
-    //     $('.cart-nav').addClass('show');
+    <script>
+        // 關閉按鈕
+        // $('.btn-close').on('click', function() {
+        //     // $('#cartWrap').css('display', 'none');
+        //     $('.cart-nav').addClass('show');
 
-    //     setTimeout(function() {
-    //         $('.cart-nav').removeClass('show');
-    //     }, 2000);
-    // })
-    // modal
-    function showProductModal(sid) {
-        // 去抓當個sid
-        $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
+        //     setTimeout(function() {
+        //         $('.cart-nav').removeClass('show');
+        //     }, 2000);
+        // })
+        // modal
+        function showProductModal(sid) {
+            // 去抓當個sid
+            $('iframe')[0].src = '4_productList-modal-api.php?sid=' + sid;
 
-        $('#exampleModal').modal('show')
+            $('#exampleModal').modal('show')
 
-    }
+        }
 
-    function updateCartCount() {
-        //nav bar 呼叫的方法
-    }
-</script>
+        function updateCartCount() {
+            //nav bar 呼叫的方法
+        }
+    </script>
 
-<?php include __DIR__ . '/1_parts/4_footer.php'; ?>
+    <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

@@ -16,6 +16,10 @@ button:focus {
     outline: 3px solid #FFC024;
 }
 
+.wrap-bg {
+    height: 100vh;
+}
+
 .wrap-bg::before {
     content: "";
     border-style: solid;

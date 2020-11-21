@@ -183,6 +183,8 @@
             </div>
 
 
+            <div class="test" style="display:none">ppp</div>
+
 
 
         </div>
@@ -203,9 +205,11 @@
 
     // 秀出信用卡付款資料表
     function showCollapse() {
-        $('#credit-pay').collapse('show')
-        $('#bank-pay').collapse('hide')
-        $('#ibon-pay').collapse('hide')
+        $('.test').slideDown();
+
+        // $('#credit-pay').collapse('show')
+        // $('#bank-pay').collapse('hide')
+        // $('#ibon-pay').collapse('hide')
     }
 
     function showCollapse2() {

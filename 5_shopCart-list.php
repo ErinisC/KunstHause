@@ -46,7 +46,7 @@
         <?php else : ?>
 
             <!-- 購物車資料框 -->
-            <section class="shopping-list mx-auto p-0 col-lg-10 col-md-12 col-sm-12 col-12">
+            <section class="shopping-list mx-auto col-lg-9 col-md-12 col-sm-12 col-12">
                 <!-- 上面的總品項名稱 -->
                 <div class="row shop-item-title w-100 mx-0 pb-3 mb-3">
                     <ul class="d-flex w-100 list-unstyled text-center">
@@ -73,7 +73,7 @@
                                 <div class="info-wrap w-100 px-3 d-flex flex-column text-left justify-content-around">
 
                                     <!-- 活動名稱 -->
-                                    <div class="">
+                                    <div class="event-title">
                                         <?= $i['bookname'] ?>
                                     </div>
 
@@ -90,7 +90,7 @@
 
                             </li>
                             <!-- 數量 -->
-                            <li class="p-0 col-lg-3 col-md-3 col-sm-6 col-6">
+                            <li class="p-0 col-lg-2 col-md-2 col-sm-10 col-10">
                                 <!-- 數量加減區塊 -->
                                 <div class="number-wrap d-flex p-0 align-items-center">
                                     <div class="minus col-2 p-0">
@@ -125,49 +125,48 @@
                 <?php endforeach; ?>
             </section>
 
-            <!-- 總計框框 -->
-            <div class="container p-0 mt-3">
-                <div class="row mx-auto p-0 justify-content-end col-lg-10 col-md-12 col-sm-12 col-12">
-                    <div class="col-lg-4 col-md-4 col-sm-5 col-12 p-0">
-                        <div class="shopcart-total p-3 text-white d-flex flex-column justify-content-between">
-                            <div class="title">訂單資訊</div>
+            <!-- 總計明細框框 -->
+            <div class="container p-0 mt-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                <div class="wrap">
+                    <div class="shopcart-total p-3 text-white d-flex flex-column justify-content-between">
+                        <div class="title">訂單資訊</div>
 
-                            <!-- 小計 -->
-                            <div class="wrap d-flex justify-content-between">
-                                <p>小計</p>
-                                <p class="totalAmount">$1,200</p>
-                            </div>
-
-                            <!-- 使用優惠代碼 -->
-                            <div class="wrap">
-                                <p>使用優惠代碼</p>
-                                <!-- 按鈕 -->
-                                <div class="input-group my-2">
-                                    <input type="text" class="form-control">
-                                    <div class="input-group-append">
-                                        <button class="input-group-text" id="basic-addon2">輸入</button>
-                                    </div>
-                                </div>
-                                <!-- 驗證 -->
-                                <p>＊優惠券不存在</p>
-                            </div>
-                            <!-- 分隔線 -->
-                            <div class="line w-100"></div>
-                            <!-- 優惠券折扣 -->
-                            <div class="wrap d-flex justify-content-between">
-                                <p>優惠券折扣</p>
-                                <p>-$200</p>
-                            </div>
-                            <!-- 總計 -->
-                            <div class="wrap d-flex justify-content-between">
-                                <p>總計</p>
-                                <p>$1,000</p>
-                            </div>
+                        <!-- 小計 -->
+                        <div class="wrap d-flex justify-content-between">
+                            <p>小計</p>
+                            <p class="totalAmount">$1,200</p>
                         </div>
 
+                        <!-- 使用優惠代碼 -->
+                        <div class="wrap">
+                            <p>使用優惠代碼</p>
+                            <!-- 按鈕 -->
+                            <div class="input-group my-2">
+                                <input type="text" class="form-control">
+                                <div class="input-group-append">
+                                    <button class="input-group-text" id="basic-addon2">輸入</button>
+                                </div>
+                            </div>
+                            <!-- 驗證 -->
+                            <p>＊優惠券不存在</p>
+                        </div>
+                        <!-- 分隔線 -->
+                        <div class="line w-100"></div>
+                        <!-- 優惠券折扣 -->
+                        <div class="wrap d-flex justify-content-between">
+                            <p>優惠券折扣</p>
+                            <p>-$200</p>
+                        </div>
+                        <!-- 總計 -->
+                        <div class="wrap d-flex justify-content-between">
+                            <p>總計</p>
+                            <p>$1,000</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
 
             <!-- 上一步下一步按鈕 -->
             <div class="container mt-3">
