@@ -2,6 +2,10 @@
   outline: 1px solid red;
 } */
 
+html {
+  font-size: 20px;
+}
+
 body {
   height: 100vh;
   background-color: #002c80;
@@ -14,7 +18,7 @@ body {
     linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
   background-size: 0.75rem 0.75rem;
   position: relative;
-  padding-top: 5rem;
+  padding-top: 4rem;
   margin-top: 10rem;
 }
 
@@ -25,8 +29,7 @@ body {
 }
 
 .x-btn {
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -35,7 +38,7 @@ body {
 
 .login-title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 2.3rem;
 }
@@ -43,38 +46,34 @@ body {
 .reminder {
   color: #f26969;
   font-weight: 600;
-  font-size: 0.875rem;
-  margin-bottom: 2.3rem;
+  font-size: 0.7rem;
+  margin-bottom: 2rem;
 }
 
 .icons {
-  width: 4rem;
-  height: 4rem;
-  margin-bottom: 2rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-bottom: 1.8rem;
 }
 
 p {
-  padding-top: 1.5rem;
+  padding-top: 0.6rem;
 }
 
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .login-item {
-  margin: 5px;
+  font-size: 1rem;
+  margin: 0.25rem;
 }
 
 .form-control {
-  font-size: 0.875rem;
-  height: 3.125rem;
+  font-size: 0.7rem;
+  height: 2.5rem;
   border: 3px solid #000;
   border-radius: 0;
-}
-
-.form-text {
-  right: 15px;
-  font-size: 14px;
 }
 
 .btn {
@@ -84,11 +83,50 @@ p {
   border: 3px solid #000;
   border-radius: 0px;
   font-weight: 600;
-  height: 50px;
+  height: 2.5rem;
 }
 
 .help {
-  font-size: 14px;
+  font-size: 0.7rem;
+}
+
+/* forgotpw-modal css */
+
+.modal-content {
+  background: #fff;
+  background-image: linear-gradient(rgba(255, 0, 0, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+  position: relative;
+  padding-top: 2.5rem;
+  border-radius: 0px;
+}
+
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-title {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.q-mark {
+  width: 2rem;
+}
+
+.command-text {
+  color: #000;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 0 none;
 }
 
 /* Media Query */
