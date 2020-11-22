@@ -1,0 +1,185 @@
+/* * {
+  outline: 1px solid red;
+} */
+
+input:focus {
+  color: #000 !important;
+}
+
+.background {
+  width: 100%;
+  height: 1800px;
+  background-color: #ffc024;
+}
+
+.title {
+  width: 100%;
+  /* height: 50px; */
+  margin: 130px auto 0;
+  text-align: center;
+  padding: 0;
+}
+
+.title h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.title p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.ogzcard {
+  margin-top: 40px;
+}
+
+.picture {
+  margin: 0 auto;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+}
+
+.people {
+  margin: 40px auto 0;
+  position: relative;
+}
+
+.peopleadd {
+  margin: 0 auto;
+}
+
+.organizer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.pictureadd {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+  position: absolute;
+  top: 250px;
+  right: 240px;
+}
+
+.inputform {
+  margin: 40px auto 0;
+  padding: 0;
+}
+
+.inputform p {
+  font-size: 16px;
+  padding-left: 0;
+  font-weight: 700;
+}
+
+.inputbox {
+  margin-top: 12px;
+  width: 100%;
+  height: 50px;
+  border: 3px solid #000;
+}
+
+.inputboxint {
+  margin-top: 12px;
+  width: 100%;
+  height: 300px;
+  border: 3px solid #000;
+}
+
+.wortcount {
+  margin-top: 5px;
+  text-align: end;
+}
+
+.membertext {
+  font-size: 24px;
+}
+
+.eyes {
+  width: 2.2rem;
+  margin-left: 0.625rem;
+}
+
+.terms {
+  background-color: #fff;
+  border: 3px solid #000;
+  width: 100%;
+  height: 25rem;
+  overflow: auto;
+  margin: 10px auto 0;
+  font-family: NotoSansTC-Regular, Roboto;
+}
+
+.service-text {
+  padding-bottom: 1.875rem;
+  margin-bottom: 1.875rem;
+  border-bottom: 1px solid #ccc;
+  line-height: 23px;
+  font-size: 0.875rem;
+  margin: 0 15px;
+}
+
+.privacy-text {
+  line-height: 23px;
+  margin-bottom: 1.875rem;
+  font-size: 0.875rem;
+  margin: 12px 15px;
+}
+
+.checkform {
+  margin: 30px auto 0;
+  padding: 0;
+}
+
+.checkbox {
+  margin-right: 10px;
+  align-items: center;
+}
+
+.ckecktext {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+.modbutton {
+  width: 100%;
+  margin: 40px auto 0;
+}
+
+.okbutton {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.modify1 {
+  width: 140px;
+  height: 50px;
+  background-color: #ed5b4c;
+  border: 3px solid #000;
+  border-radius: 0;
+}
+
+.modify2 {
+  width: 140px;
+  height: 50px;
+  background-color: #168fa4;
+  border: 3px solid #000;
+  border-radius: 0;
+}
+
+button:disabled {
+  background: #000 !important;
+  border: 3px solid #000 !important;
+}
