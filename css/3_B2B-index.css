@@ -5,8 +5,7 @@
 .background {
   width: 100%;
   height: 750px;
-  background: url(/imgs/b2b/b2b背景_工作區域\ 1.jpg) center no-repeat;
-  background-size: contain;
+  background-color: #ffc024;
 }
 
 .index {
