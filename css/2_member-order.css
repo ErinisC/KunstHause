@@ -60,8 +60,14 @@ body {
     letter-spacing: 2.55px;
 }
 
+.ticket{
+  align-items: center;
+}
+
 .edit{
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .edit button{

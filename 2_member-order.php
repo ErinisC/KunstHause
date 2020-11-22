@@ -73,12 +73,14 @@
             </div>
         </div>
         <div class="col-lg-2"></div>
-        <div class="col-lg-1 edit my-3">
-            <button class="delete"></button>
-            <button class="feedback"></button>
-        </div>
-        <div class="col-lg-2 qr-code my-3">
-            <img class="position-relative" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+        <div class="col-lg-3 ticket d-flex my-3">
+            <div class="edit">
+                <button class="delete"></button>
+                <button class="feedback"></button>
+            </div>
+            <div class="qr-code">
+                <img class="position-relative" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+            </div>
         </div>
     </div>
 </div>
