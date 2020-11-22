@@ -38,7 +38,7 @@ body {
 }
 
 .list-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   font-family: NotoSansTC-Regular, Roboto;
@@ -59,7 +59,7 @@ body {
 }
 
 label {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: NotoSansTC-Regular;
   padding: 0.6rem;
   margin-left: 3rem;
@@ -70,14 +70,14 @@ label {
   border-radius: 0;
   border: 3px solid #000;
   font-family: NotoSansTC-Regular, Roboto;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .terms-title {
   text-align: center;
   margin: 2rem 0 1.875rem;
   font-family: NotoSansTC-Regular, Roboto;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -141,6 +141,51 @@ label {
   border-top: 3px solid #aaa;
   margin-top: 2rem;
   padding-top: 1rem;
+}
+
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-content {
+  border-radius: 0px;
+  width: 300px;
+  height: 500px;
+  background-color: #ffc024;
+}
+
+.welcome-text {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+.tap img {
+  width: 180px;
+  top: -50px;
+  left: -45px;
+  position: absolute;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.check-circle-solid {
+  width: 50px;
+}
+
+.house {
+  width: 250px;
+  margin: 10px auto;
+}
+
+.close {
+  background-color: #ff0000;
 }
 
 /* Media Query */
@@ -214,6 +259,26 @@ label {
   }
   .login-btn {
     font-size: 0.8125rem;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .tap img {
+    width: 130px;
+    top: -35px;
+    left: -30px;
+  }
+
+  .house {
+    width: 250px;
+    margin: 10px auto;
+    padding-top: 20px;
+  }
+
+  .welcome-text {
+    font-size: 1.2rem;
   }
 }
 

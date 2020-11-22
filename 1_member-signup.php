@@ -152,8 +152,37 @@
                             <label class="form-check-label" for="exampleCheck1">我同意Kunsthaus服務條款及隱私權政策</label>
                         </div>
                         <div class="signup-btn d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4">註冊
+                            <button type="button" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" data-target="#exampleModalCenter">註冊
                             </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content pt-3 mx-auto">
+                                        <div class="tap">
+                                            <img src=" <?= WEB_ROOT ?>/imgs/member/tap.svg">
+                                        </div>
+
+                                        <div class="modal-header d-flex flex-column">
+                                            <div class="modal-title mx-auto" id="exampleModalCenterTitle">恭喜您註冊成功!
+                                            </div>
+                                            <div class="g-check mx-auto mt-3">
+                                                <img class="check-circle-solid" src=" <?= WEB_ROOT ?>/imgs/member/check-circle-solid.svg">
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-body py-0">
+                                            <div class="welcome-text my-2"> 歡迎成為 Kunsthaus 的一員!
+                                            </div>
+                                            <img class="house mx-auto mt-3" src=" <?= WEB_ROOT ?>/imgs/member/house.svg">
+                                        </div>
+                                        <div class="modal-footer mx-auto my-3">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="line d-flex justify-content-between">
                             <div class="confirm">您已經是 Kunsthaus 的會員?</div>
