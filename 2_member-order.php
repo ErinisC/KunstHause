@@ -75,7 +75,7 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-3 ticket d-flex my-3">
             <div class="edit">
-                <button class="delete"></button>
+                <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button>
                 <button class="feedback"></button>
             </div>
             <div class="qr-code">
@@ -86,7 +86,7 @@
 </div>
 
 
-<div class="container">
+<div class="container pagination">
     <div class="row justify-content-center">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
@@ -116,11 +116,6 @@
     </div>
 </div>
 
-<!-- Modal -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
