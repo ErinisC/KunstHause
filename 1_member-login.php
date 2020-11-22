@@ -16,7 +16,7 @@
     <div class="row">
         <!-- login list Area -->
 
-        <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12">
+        <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12 pb-3">
             <div class="deco">
                 <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
                 <img class="x-btn" src=" <?= WEB_ROOT ?>/imgs/member/times-solid.svg">
@@ -49,28 +49,60 @@
                         <label for="password" class="login-item">密碼</label>
                         <div class="input-box">
                             <input type="password" class="form-control" id="password" name="password" placeholder="密碼不超過10碼" name="password">
-                            <a href="">
-                                <small class="form-text position-absolute mt-2 text-dark">忘記密碼?</small>
-                            </a>
+                            <small class="form-text"></small>
                         </div>
                     </div>
 
+
                     <!-- 登入按紐 -->
                     <div class="login-btn d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary col-4 mt-4">登入</button>
+                        <button type="submit" class="btn btn-primary col-4 my-4">登入</button>
                     </div>
-
                 </form>
             </div>
 
 
 
             <!-- 註冊標示 -->
-            <div class="help d-flex justify-content-between my-4 p-3">
-                <p>還不是 Kunsthaus會員嗎? </p>
-                <a href="" class="s-signup text-dark">
-                    <p style="font-weight:600">點此註冊</p>
-                </a>
+            <div class="others d-flex justify-content-between my-4">
+                <div class="help ml-4">
+                    <p>還不是 Kunsthaus會員嗎?</p>
+                    <a href="" class="s-signup text-dark">
+                        <p style="font-weight:600">點此註冊</p>
+                    </a>
+                </div>
+
+                <!-- 忘記密碼 Modal Area -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary mr-4 mt-2" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #168FA4">忘記密碼?
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+
+                        <div class="modal-content mx-auto col-11">
+                            <div class="modal-header d-flex flex-column">
+                                <div class="modal-title mx-auto" id="exampleModalCenterTitle">忘記密碼
+                                </div>
+                                <img class="q-mark mt-2 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/question.svg">
+                            </div>
+                            <div class="modal-body">
+                                <div class="command-text mb-4"> 請輸入您的 Email<br>系統將寄送密碼重設信函給您 !
+                                </div>
+
+                                <div class="input-box col-11 mx-auto">
+                                    <input type="email" class="form-control mb-2" id="account" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer mb-5 d-flex flex-column">
+                                <button type="submit" class="btn btn-primary col-5 mx-auto mb-2">寄送</button>
+                                <button type="button" class="btn btn-secondary col-5 mt-3" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

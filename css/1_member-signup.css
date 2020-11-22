@@ -23,14 +23,14 @@ body {
 
 .long-clip {
   position: absolute;
-  width: 12rem;
-  top: -7rem;
+  width: 10rem;
+  top: -6rem;
   left: -1rem;
   transform: rotate(33deg);
 }
 
 .tape img {
-  width: 24rem;
+  width: 22rem;
   position: absolute;
   transform: rotate(15deg);
   top: -4rem;
@@ -134,7 +134,7 @@ label {
   border: 3px solid #000;
   border-radius: 0px;
   font-weight: 600;
-  height: 50px;
+  height: 2.5rem;
 }
 
 .line {
@@ -142,6 +142,8 @@ label {
   margin-top: 2rem;
   padding-top: 1rem;
 }
+
+/* signup success modal css*/
 
 .modal-header {
   border-bottom: 0 none;

@@ -151,6 +151,7 @@
                             <input type="checkbox" class="form-check-input" id="exampleCheck1" name="my_check" value="是">
                             <label class="form-check-label" for="exampleCheck1">我同意Kunsthaus服務條款及隱私權政策</label>
                         </div>
+
                         <div class="signup-btn d-flex justify-content-center">
                             <button type="button" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" data-target="#exampleModalCenter">註冊
                             </button>
