@@ -63,7 +63,8 @@
         margin-top: 250px;
     }
 
-    .contact, .service{
+    .contact,
+    .service {
         margin-left: 50px;
     }
 
@@ -77,10 +78,14 @@
             flex-direction: column;
         }
 
-        .contact, .service{
+        .contact,
+        .service {
             margin-left: 0px;
         }
 
+        .email {
+            width: 280px;
+        }
 
     }
 </style>

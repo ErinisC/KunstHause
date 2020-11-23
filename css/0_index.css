@@ -49,9 +49,41 @@ body {
 }
 
 @media (min-width: 992px) {
+  /* hero sec */
   .marquee-roll {
     padding-top: 20%;
   }
+
+  .marquee-main-lg {
+    font-size: 12vw;
+  }
+
+  .the-wall {
+    width: 250px;
+    top: 8%;
+    left: 8%;
+  }
+
+  .god {
+    width: 250px;
+    top: 8%;
+    right: 20%;
+  }
+
+  .taipei {
+    width: 300px;
+    bottom: 5%;
+    right: 3%;
+  }
+
+  .scroll-down {
+    padding: 30px;
+  }
+
+  .eyes {
+    height: 40px;
+  }
+  /* act sec */
 
   .card {
     margin-bottom: 3rem;
@@ -91,10 +123,43 @@ body {
     font-size: 12px;
   }
 
+  /* hero sec */
+
   .marquee-roll {
-    padding-top: 60%;
+    padding-top: 80%;
   }
 
+  .marquee-main-lg {
+    font-size: 20vw;
+  }
+
+  .the-wall {
+    width: 100px;
+    top: 3%;
+    left: 8%;
+  }
+
+  .god {
+    width: 150px;
+    top: 8%;
+    right: 8%;
+  }
+
+  .taipei {
+    width: 180px;
+    bottom: 2%;
+    right: 10%;
+  }
+
+  .scroll-down {
+    padding: 1rem;
+  }
+
+  .eyes {
+    height: 30px;
+  }
+
+  /* act sec */
   .card {
     margin-bottom: 2rem;
   }
@@ -133,7 +198,6 @@ body {
 .marquee-main-lg {
   font-family: "Roboto", sans-serif;
   font-weight: 800;
-  font-size: 12vw;
   overflow: hidden;
   color: #ffffff;
   transform: rotate(-7deg);
@@ -155,9 +219,6 @@ body {
 }
 
 .the-wall {
-  width: 250px;
-  top: 8%;
-  left: 8%;
   transition-duration: 0.5s;
 }
 
@@ -166,9 +227,6 @@ body {
 }
 
 .god {
-  width: 250px;
-  top: 8%;
-  right: 20%;
   transition-duration: 0.5s;
   transform: rotate(-15deg);
 }
@@ -178,9 +236,6 @@ body {
 }
 
 .taipei {
-  width: 300px;
-  bottom: 5%;
-  right: 3%;
   transition-duration: 0.5s;
 }
 
@@ -194,7 +249,6 @@ body {
 
 .scroll-down {
   margin: auto;
-  padding: 30px;
   background-color: #ffc024;
 }
 
@@ -202,10 +256,6 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 40px;
-}
-
-.eyes {
-  height: 40px;
 }
 
 .arrow {
@@ -514,7 +564,7 @@ a:hover {
   animation: marquee 20s linear infinite;
 }
 
-@keyframes marquee{
+@keyframes marquee {
   from {
     transform: translateY(0);
   }
@@ -586,15 +636,15 @@ strong {
   left: calc(50% - 70px);
 }
 
-.spin{
+.spin {
   animation: spin 1.5s;
 }
 
 @keyframes spin {
   from {
-      transform:rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
