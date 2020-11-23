@@ -126,7 +126,21 @@ body {
   }
 
   /* blog sec */
+  .blog .section-title {
+    font-size: 8rem;
+  }
 
+  .tiger {
+    top: -19%;
+  }
+
+  .post-tape {
+    top: -10%;
+  }
+
+  .blog .inner-box {
+    height: 80%;
+  }
 
   /* fixed button */
   .fixed-button {
@@ -235,7 +249,7 @@ body {
   .brand-intro {
     background-color: #ed5b4c;
     border: 3px solid #000;
-    padding: 10px;
+    padding: 30px 10px;
   }
 
   .about-slogan {
@@ -250,6 +264,26 @@ body {
   }
 
   /* blog sec */
+  .blog .section-title {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 10%;
+    letter-spacing: 2.55px;
+  }
+
+  .tiger {
+    width: 30%;
+    top: -2%;
+    left: 0;
+  }
+
+  .post-tape {
+    top: 5%;
+  }
+
+  .blog .inner-box {
+    height: 50%;
+  }
 
   /* fixed button */
   .fixed-button {
@@ -545,13 +579,11 @@ a:hover {
 .blog .section-title {
   color: #000;
   margin-top: 10%;
-  font-size: 8rem;
   font-weight: 800;
 }
 
 .post-tape {
   width: 50%;
-  top: -10%;
   left: calc(50% - 25%);
 }
 
@@ -572,7 +604,6 @@ a:hover {
 .blog .inner-box {
   margin: auto;
   width: 80%;
-  height: 80%;
   border: 2px solid rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
@@ -610,7 +641,6 @@ a:hover {
 }
 
 .tiger {
-  top: -19%;
   transform: rotate(20deg);
   transition-duration: 0.5s;
 }
