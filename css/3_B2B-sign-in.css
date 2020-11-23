@@ -9,7 +9,8 @@ input:focus {
 .background {
   width: 100%;
   height: 1800px;
-  background-color: #ffc024;
+  background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .title {
