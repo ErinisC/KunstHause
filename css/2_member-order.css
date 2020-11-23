@@ -89,6 +89,9 @@ body {
 }
 
 /* ----------pagination---------- */
+.pagination{
+  text-align: center;
+}
 
 .page-link {
   background-color: transparent;

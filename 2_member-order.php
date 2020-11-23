@@ -134,7 +134,7 @@
                     按下確認鍵確定取消訂單。</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal">確認取消</button>
+                <button type="button" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal">確認取消</button>
                 <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
             </div>
         </div>
