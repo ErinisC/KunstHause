@@ -1,60 +1,189 @@
 * {
-    outline: 1px solid red;
+  outline: 1px solid red;
 }
 
-
-.bg {
-    background-color: #168FA4;
-    height: 100vh;
+html,
+body {
+  /* background-color: #168fa4; */
+  height: 300vh;
+  background: #168fa4;
+  background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
 }
 
+.space {
+  height: 87px;
+}
+/* ------------麵包屑------------- */
 
+.breadcrumb {
+  background-color: transparent;
+}
+.breadcrumb a {
+  color: black;
+}
+.breadcrumb-item.active {
+  color: #fac000;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  color: black;
+}
 
+.mainact {
+  width: 100%;
+  height: 465px;
+  border: 3px solid black;
+  background-image: url(../imgs/index/mainact-02.jpg);
+  background-size: cover;
+  background-position: right;
+}
 
+.date {
+  width: 120px;
+  height: 133px;
+  background-color: #fac000;
+  border: 3px solid black;
+  padding-top: 15px;
+  padding-left: 10px;
+}
 
+.space-2 {
+  height: 50px;
+  width: 100%;
+}
 
+/* ---------date bar------ */
+.date-year {
+  font-size: 18px;
+}
 
+.date-mon {
+  font-size: 32px;
+  font-weight: bold;
+}
 
+/* --------音樂標籤-------- */
+.label {
+  height: 32px;
+  width: 72px;
+  background-color: #fff;
+  border: 3px solid black;
+  padding-top: 5px;
+  text-align: center;
+}
 
+.apply {
+  height: 133px;
+  width: 223px;
+  background-color: #fac000;
+  border: 3px solid black;
+  text-align: center;
+}
 
+/* --------tabs------- */
 
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  margin-top: 50px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  border: 3px solid black;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  width: 100%;
+  margin: 0 auto;
+}
 
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100% / 3);
+  height: 50px;
+  border: 1px solid black;
+  background-color: #4336a3;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
 
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
 
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+  /* height: 550px; */
+}
 
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+  display: block;
+}
 
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+  background-color: #fff;
+  color: #000000;
+  border-bottom: 3px solid transparent;
+}
 
+.tab_content_title {
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.tab_content p {
+  font-size: 20px;
+}
 
 /* ====== Ｍedia Query ============= */
 /* Extra small 超小 (576px 以下) */
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+}
 
 /* =============================== */
 /* Small 小型裝置sm (576px 以上) */
-@media (min-width: 576px) {}
-
+@media (min-width: 576px) {
+}
 
 /* 576-768之間的畫面 */
-@media (min-width: 576px) and (max-width:768px) {}
+@media (min-width: 576px) and (max-width: 768px) {
+}
 
 /* ================================ */
 /* Medium 中型裝置md (768px 以上) */
-@media (min-width: 768px) {}
-
+@media (min-width: 768px) {
+}
 
 /* 768-992之間的畫面 */
-@media screen and (min-width:768px) and (max-width:992px) {}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
 
 /* ================================ */
 /* Large 大型lg (992px以上) */
-@media (min-width: 992px) {}
-
-
+@media (min-width: 992px) {
+}
 
 /* 991-1200 之間的畫面 */
-@media (min-width: 992px) and (max-width:1200px) {}
+@media (min-width: 992px) and (max-width: 1200px) {
+}
 
 /* ================================ */
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
