@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:8889
--- 產生時間： 2020 年 11 月 23 日 07:53
+-- 產生時間： 2020 年 11 月 23 日 11:07
 -- 伺服器版本： 5.7.30
 -- PHP 版本： 7.4.9
 
@@ -103,18 +103,30 @@ CREATE TABLE `orders` (
   `company_name` varchar(255) DEFAULT NULL,
   `tax_id_number` int(11) DEFAULT NULL,
   `remark` text,
-  `pay_way` varchar(255) NOT NULL,
+  `pay_way` varchar(255) DEFAULT NULL,
   `credit_card_number` int(11) NOT NULL,
   `month` varchar(255) NOT NULL,
-  `year` varchar(255) NOT NULL,
+  `year` varchar(255) DEFAULT NULL,
   `security_number` int(11) NOT NULL,
-  `QR_code` varchar(255) NOT NULL,
-  `ticket_number` varchar(255) NOT NULL,
-  `order_status` varchar(255) NOT NULL,
-  `event_status` varchar(255) NOT NULL,
+  `QR_code` varchar(255) DEFAULT NULL,
+  `ticket_number` varchar(255) DEFAULT NULL,
+  `order_status` varchar(255) DEFAULT NULL,
+  `event_status` varchar(255) DEFAULT NULL,
   `order_date` datetime NOT NULL,
-  `pay_date` datetime NOT NULL
+  `pay_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `orders`
+--
+
+INSERT INTO `orders` (`sid`, `member_sid`, `total_price`, `company_name`, `tax_id_number`, `remark`, `pay_way`, `credit_card_number`, `month`, `year`, `security_number`, `QR_code`, `ticket_number`, `order_status`, `event_status`, `order_date`, `pay_date`) VALUES
+(1, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, 123322, '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 18:40:22', NULL),
+(2, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, 123322, '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 18:57:36', NULL),
+(3, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, 123322, '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 18:58:06', NULL),
+(4, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, 1213123, '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 19:04:33', NULL),
+(5, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, 1213123, '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 19:05:33', NULL),
+(6, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, 1213123, '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 19:06:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -125,17 +137,29 @@ CREATE TABLE `orders` (
 CREATE TABLE `order_details` (
   `sid` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `member_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `event_amount` int(11) NOT NULL,
-  `pay_way` varchar(255) NOT NULL,
-  `QR_code` varchar(255) NOT NULL,
-  `ticket_number` varchar(255) NOT NULL,
-  `order_status` varchar(255) NOT NULL,
-  `event_status` varchar(255) NOT NULL,
-  `modified_date` datetime NOT NULL
+  `pay_way` varchar(255) DEFAULT NULL,
+  `QR_code` varchar(255) DEFAULT NULL,
+  `ticket_number` varchar(255) DEFAULT NULL,
+  `order_status` varchar(255) DEFAULT NULL,
+  `event_status` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- 傾印資料表的資料 `order_details`
+--
+
+INSERT INTO `order_details` (`sid`, `order_id`, `product_id`, `price`, `event_amount`, `pay_way`, `QR_code`, `ticket_number`, `order_status`, `event_status`) VALUES
+(1, 3, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(2, 3, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(3, 4, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(4, 4, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(5, 5, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(6, 5, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(7, 6, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
+(8, 6, 55, 0, 1, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -318,13 +342,13 @@ ALTER TABLE `member`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `products`
