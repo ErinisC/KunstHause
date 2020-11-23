@@ -198,6 +198,12 @@
 </div>
 </div>
 
+
+
+<!-- 購物車ＢＧ結尾 -->
+</div>
+</div>
+
 <!-- Modal -->
 <div class="modal" tabindex="-1">
     <div class="modal-dialog">
@@ -217,10 +223,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- 購物車ＢＧ結尾 -->
-</div>
 </div>
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
@@ -259,7 +261,7 @@
             console.log(data)
         }, 'json');
 
-        // $('.modal').modal('show');
+        $('.modal').modal('show');
     }
 </script>
 

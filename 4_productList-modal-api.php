@@ -92,7 +92,7 @@ if (empty($row)) {
 <div class="content-wrap product-item" data-sid="<?= $row['sid'] ?>">
     <!-- 圖片 -->
     <div class="right-pic mb-3">
-        <img src="imgs/event/small/<?= $row['book_id'] ?>.jpg" alt="">
+        <img src="imgs/event/<?= $row['picture'] ?>.jpg" alt="">
     </div>
 
     <!-- 活動資訊區 -->
@@ -100,7 +100,7 @@ if (empty($row)) {
 
         <div class="info-out text-center">
             <h2 class="product-name">
-                <?= $row['bookname'] ?>
+                <?= $row['event_name'] ?>
             </h2>
 
             <div class="card-info bread text-center my-3 text-dark">

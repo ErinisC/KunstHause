@@ -144,12 +144,15 @@
             account: account.val(),
             password: password.val()
         }, function(data) {
+            console.log('data', data)
             if (data.success) {
                 info_bar
                     .removeClass('alert-danger')
                     .addClass('alert-success')
                     .text('登入成功');
-                location.href = '0_index.php';
+                window.location.href = '5_shopCart-list.php';
+
+
 
             } else {
                 info_bar

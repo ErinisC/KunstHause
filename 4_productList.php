@@ -134,9 +134,9 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank">
                         <div class="img-wrap mb-3 position-relative">
 
-                            <img src="imgs/event/big/<?= $r['book_id'] ?>.png" class="card-img-top" alt="">
+                            <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                             <!-- 圖片上時間 -->
-                            <div class="time position-absolute col-4"><?= $r['publish_date'] ?></div>
+                            <div class="time position-absolute col-4"><?= $r['start-datetime'] ?></div>
                         </div>
                     </a>
 
@@ -145,8 +145,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <div class="wrap d-flex">
                         <div class="card-body d-flex p-0">
                             <div class="card-info m-auto py-3 col-8">
-                                <div class="event-name mb-3"><?= $r['bookname'] ?></div>
-                                <div class="event-location">地點：台北市</div>
+                                <div class="event-name mb-3"><?= $r['event_name'] ?></div>
+                                <div class="event-location"><?= $r['location'] ?></div>
                             </div>
 
                             <!-- 價格按鈕加Modal的彈跳窗格 -->
@@ -290,6 +290,11 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         function updateCartCount() {
             //nav bar 呼叫的方法
         }
+
+        // 動態一一浮現
+        // 用css animate抓scroll時的offest
+        $('.card').eq(0); //抓到所有的小卡
+        $('.card').eq(0).offset(); //抓到第0個的offset
     </script>
 
     <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
