@@ -134,14 +134,14 @@ body {
   }
 
   .the-wall {
-    width: 100px;
+    width: 120px;
     top: 3%;
     left: 8%;
   }
 
   .god {
     width: 150px;
-    top: 8%;
+    top: 15%;
     right: 8%;
   }
 
