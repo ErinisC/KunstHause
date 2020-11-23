@@ -86,11 +86,7 @@ body {
 }
 
 .qr-code {
-    text-align: center;
-}
 
-.qr-code img{
-    top: calc(50% - 40%);
 }
 
 /* ----------pagination---------- */

@@ -73,13 +73,13 @@
             </div>
         </div>
         <div class="col-lg-2"></div>
-        <div class="col-lg-3 ticket d-flex my-3">
+        <div class="col-lg-3 ticket d-flex justify-content-around my-3">
             <div class="edit">
-                <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button>
+                <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
                 <button class="feedback"></button>
             </div>
             <div class="qr-code">
-                <img class="position-relative" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+                <img src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
             </div>
         </div>
     </div>
@@ -117,8 +117,8 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal Cancel-->
+<div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -138,6 +138,26 @@
     </div>
 </div>
 
+<!-- Modal Confirm-->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
