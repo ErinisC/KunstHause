@@ -1,6 +1,15 @@
 <?php $title = '會員登入'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
+<?php
+
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $gotoURL = $_SERVER['HTTP_REFERER'];
+} else {
+    $gotoURL = '4_productList.php';
+}
+?>
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <!-- 引入css -->
 <link rel="stylesheet" href="./css/1_member-login.css">
@@ -150,7 +159,7 @@
                     .removeClass('alert-danger')
                     .addClass('alert-success')
                     .text('登入成功');
-                window.location.href = '5_shopCart-list.php';
+                location.href = '<?= $gotoURL ?>';
 
 
 

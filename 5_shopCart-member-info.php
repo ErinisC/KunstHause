@@ -86,7 +86,7 @@
             <div class="form-group">
                 <label for="company">三聯發票抬頭</label>
                 <div class="input-box">
-                    <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company" value="<?= $_SESSION['buy_info']['company'] ?>">
+                    <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company">
                     <!--抬頭驗證 -->
                     <small class="form-text">驗證</small>
                 </div>
@@ -96,7 +96,7 @@
             <div class="form-group">
                 <label for="tax-id-number">統一編號</label>
                 <div class="input-box">
-                    <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number" value="<?= $_SESSION['buy_info']['tax-id-number'] ?>">
+                    <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number">
                     <!-- 統一編號驗證 -->
                     <small class="form-text">驗證</small>
                 </div>
