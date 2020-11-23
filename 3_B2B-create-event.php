@@ -28,8 +28,9 @@
         <label for="event-name">活動名稱</label>
         <input class="input" type="text" name="event-name" placeholder="活動名稱">
         <label for="date">活動日期</label>
+        <p class="pt-3">(活動日期開始)</p>
         <input class="input" name="date" type="datetime-local">
-        <p style="text-align: center;">至</p>
+        <p>(活動日期結束)</p>
         <input class="input" name="date" type="datetime-local">
         <label for="sort">活動種類</label>
         <select name="sort" type="text" class="input">
@@ -71,7 +72,7 @@
         <label for="event-content">
             活動內容資訊
         </label>
-        <Textarea name="event-content" class="textarea" cols="83" rows="15">
+        <Textarea name="event-content" class="textarea" cols="83" rows="15" required>
         </Textarea>
         <div class="d-flex">
             <div class="blanket"></div>
@@ -81,7 +82,6 @@
                     <div class="pricetag col-5">
                         <p class="py-2">NT$</p>
                     </div>
-
                     <input name="price" type="number" class="col-7 input">
                 </div>
 
