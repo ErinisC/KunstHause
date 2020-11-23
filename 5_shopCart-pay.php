@@ -147,7 +147,7 @@
                         <div class="form-group mb-4">
                             <label for="credit-number">卡片號碼</label>
                             <div class="input-box">
-                                <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼">
+                                <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number">
                                 <!-- 信箱驗證 -->
                                 <small id="credit-number" class="form-text"></small>
                             </div>
@@ -218,7 +218,7 @@
             </div>
             <div class="modal-footer m-auto">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">再看一下</button>
-                <button type="button" class="btn btn-info">確認結帳</button>
+                <button type="button" onclick="doBuy()" class="btn btn-info">確認結帳</button>
             </div>
         </div>
     </div>
@@ -261,6 +261,18 @@
         }, 'json');
 
         $('.modal').modal('show');
+    }
+
+    // 確認結帳
+    function doBuy() {
+        $.get('5_shopCart-pay-buy-api.php', function(data) {
+            if (data.success) {
+                location.href = '5_shopCart-quit.php';
+            } else {
+                console.log(data);
+            }
+        }, 'json')
+
     }
 </script>
 

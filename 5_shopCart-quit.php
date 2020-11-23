@@ -14,7 +14,7 @@
 <div class="wrap-bg position-relative pb-5">
     <div class="container form-bg mt-5 py-4 col-lg-8 col-md-8 col-sm-11 col-11">
 
-
+        感謝訂購～～
 
     </div>
 </div>
@@ -24,7 +24,7 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src="">
+<script>
     // header不要fixed
     $('header').removeClass('position-fixed');
 </script>
