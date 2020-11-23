@@ -17,31 +17,33 @@
             <h2 class="sm-title">KunstHaus 使用者將透過下列資訊了解活動</h2>
         </div>
         <div class="space" style="height: 100px;"></div>
-        <span>活動Banner</span>
+        <label for="event-banner">活動Banner</label>
         <div class="event-banner d-flex">
 
-            <input class="input" type="" src="" alt="" placeholder="XXX.JPG">
+            <input class="input" name="event-banner" type="" src="" alt="" placeholder="XXX.JPG">
 
-            <button class="upload-banner btn" type="button">上傳圖片</button>
+            <button class="upload-banner btn" type="submit">上傳圖片</button>
         </div>
         <div class="image-review"></div>
-        <span>活動名稱</span>
-        <input class="input" type="text" placeholder="活動名稱">
-        <span>活動日期</span>
-        <input class="input" type="date">
-        <span>活動種類</span>
+        <label for="event-name">活動名稱</label>
+        <input class="input" type="text" name="event-name" placeholder="活動名稱">
+        <label for="date">活動日期</label>
+        <input class="input" name="date" type="datetime-local">
+        <p style="text-align: center;">至</p>
+        <input class="input" name="date" type="datetime-local">
+        <label for="sort">活動種類</label>
         <select name="sort" type="text" class="input">
             <option value="music">音樂會</option>
             <option value="show">表演</option>
             <option value="art">演藝</option>
         </select>
-        <span>標籤設定</span>
-        <input type="text" class="input" placeholder="#Hashtags">
+        <label for="hashtag">標籤設定</label>
+        <input type="text" class="input" name="hashtag" placeholder="#Hashtags">
 
-        <span>
+        <label for="event-place">
             活動地點
-        </span>
-        <form class="event-place d-flex">
+        </label>
+        <form name="event-place" class="event-place d-flex">
             <select name="City" type="text" class="input " style="width:180px">
                 <option value="Taipei">台北市</option>
                 <option value="NewTaipei">新北市</option>
@@ -56,26 +58,33 @@
             </select>
             <input type="text" class="input" placeholder="XXX街XXX號">
         </form>
-        <span>
+        <label for="transport">
             交通資訊
-        </span>
-        <Textarea name="traffic" class="textarea" cols="83" rows="15">
+        </label>
+        <Textarea name="transport" class="textarea" cols="83" rows="15">
         </Textarea>
-        <span>
+        <label for="Precautions">
             活動注意事項
-        </span>
+        </label>
         <Textarea name="Precautions" class="textarea" cols="83" rows="15">
         </Textarea>
-        <span>
+        <label for="event-content">
             活動內容資訊
-        </span>
-        <Textarea name="EventContent" class="textarea" cols="83" rows="15">
+        </label>
+        <Textarea name="event-content" class="textarea" cols="83" rows="15">
         </Textarea>
+        <div class="d-flex">
+            <div class="blanket"></div>
+            <div>
+                <label for="price">活動票卷售價</label>
+                <div class="d-flex pricesetting">
+                    <div class="pricetag col-5">
+                        <p class="py-2">NT$</p>
+                    </div>
 
-        <div class="pricesetting my-auto d-flex">
-            <span>活動票卷售價</span>
-            <div class="pricetag col-5">
-                <p class="col-4">NT$</p>
+                    <input name="price" type="number" class="col-7 input">
+                </div>
+
             </div>
         </div>
     </div>
