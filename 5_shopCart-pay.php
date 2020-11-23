@@ -30,11 +30,11 @@
 
 
         <!-- 信用卡付款 -->
-        <a href="javascript:showCollapse()" class="col-4">
+        <a href="javascript:showCollapse()" class="col-lg-4 col-md-4 col-sm-12 col-12">
             <div class="payway-wrap p-3">
                 <div class="inner-wrap">
                     <div class="img-wrap">
-                        <img src="" alt="">
+                        <img src="./imgs/shopcart/ic-pay.svg" alt="">
                     </div>
                     <div class="text-center my-3">信用卡付款</div>
                     <div class="input-group-text">
@@ -45,11 +45,11 @@
         </a>
 
         <!-- 銀行轉帳付款 -->
-        <a href="javascript:showCollapse2()" class="col-4">
+        <a href="javascript:showCollapse2()" class="col-lg-4 col-md-4 col-sm-12 col-12">
             <div class="payway-wrap p-3">
                 <div class="inner-wrap">
                     <div class="img-wrap">
-                        <img src="" alt="">
+                        <img src="./imgs/shopcart/ic-banking.svg" alt="">
                     </div>
                     <div class="text-center my-3">銀行付款</div>
                     <div class="input-group-text">
@@ -60,11 +60,11 @@
         </a>
 
         <!-- 超商ibon付款 -->
-        <a href="javascript:showCollapse3()" class="col-4">
+        <a href="javascript:showCollapse3()" class="col-lg-4 col-md-4 col-sm-12 col-12">
             <div class="payway-wrap p-3">
                 <div class="inner-wrap">
                     <div class="img-wrap">
-                        <img src="" alt="">
+                        <img src="./imgs/shopcart/ic-7-11.svg" alt="">
                     </div>
                     <div class="text-center my-3">信用卡付款</div>
                     <div class="input-group-text">
@@ -115,9 +115,9 @@
 
             <div class="test" style="display:none">
                 <!-- 開始信用卡圖片 -->
-                <div class="row">
+                <div class="row justify-content-center">
                     <!-- 信用卡圖片 -->
-                    <div class="card card-body m-auto col-4">
+                    <div class="card card-body m-auto col-lg-8 col-md-8 col-sm-10 col-12">
                         <img src="" alt="">
                         <div class="img-wrap">
 
@@ -134,51 +134,51 @@
                         </div>
 
                         <!-- 持卡人姓名 -->
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="name">持卡人姓名 (必填)</label>
                             <div class="input-box">
                                 <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name">
                                 <!-- 姓名驗證 -->
-                                <small class="form-text">驗證</small>
+                                <small class="form-text"></small>
                             </div>
                         </div>
 
                         <!-- 卡片號碼 -->
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="credit-number">卡片號碼</label>
                             <div class="input-box">
                                 <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼">
                                 <!-- 信箱驗證 -->
-                                <small id="credit-number" class="form-text text-muted">驗證</small>
+                                <small id="credit-number" class="form-text"></small>
                             </div>
                         </div>
 
                         <!-- 有效年月 -->
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="valid-date"">有效年月</label>
                                     <div class=" input-box">
                                 <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date">
                                 <!-- 有效年月驗證 -->
-                                <small class="form-text" class="r-pin">驗證</small>
+                                <small class="form-text" class="r-pin"></small>
                         </div>
                 </div>
 
 
 
                 <!-- 驗證碼 -->
-                <div class="form-group">
+                <div class="form-group mb-4">
                     <label for="security-number">驗證碼</label>
                     <div class="input-box">
                         <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number">
                         <!-- 電話驗證 -->
-                        <small class="form-text" class="r-pin">驗證</small>
+                        <small class="form-text" class="r-pin"></small>
                     </div>
                 </div>
 
                 <!-- 上一步或送出按鈕 -->
                 <div class="row justify-content-center">
                     <!-- 上一步 -->
-                    <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
+                    <a href="5_shopCart-member-info.php" role="button" class="btn previous-step">上一步</a>
 
                     <!-- 送出 -->
                     <button type="submit" class="btn submit btn-info">確認送出</button>
@@ -206,20 +206,20 @@
 
 <!-- Modal -->
 <div class="modal" tabindex="-1">
-    <div class="modal-dialog">
+    <div class="modal-dialog h-100">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
+                <h5 class="modal-title col-11 text-center">確認結帳</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
+            <div class="modal-body text-center">
+                <p>你真的確定你要結帳了嗎？</p>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="modal-footer m-auto">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">再看一下</button>
+                <button type="button" class="btn btn-info">確認結帳</button>
             </div>
         </div>
     </div>

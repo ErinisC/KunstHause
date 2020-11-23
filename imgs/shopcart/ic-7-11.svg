@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="68" height="64.118" viewBox="0 0 68 64.118">
+  <g id="ic_7-11" data-name="ic/7-11" transform="translate(1 1)">
+    <path id="polygon10" d="M0,0H65.419V61.353H0Z" transform="translate(0.318 0.463)" fill="#fff"/>
+    <path id="polygon12" d="M14.391,13.311h66V75.429h-66Z" transform="translate(-14.391 -13.311)" fill="#008061" stroke="#000" stroke-width="2"/>
+    <path id="path14" d="M73.481,83.286v2.491H57.472v-2.5H45.358a2.441,2.441,0,0,1-2.148-2.65L38.142,31.446a2.648,2.648,0,0,1,2.644-2.652H89.738a2.646,2.646,0,0,1,2.635,2.652L87.361,80.631a2.441,2.441,0,0,1-2.148,2.65l-11.732,0Z" transform="translate(-32.675 -25.23)" fill="#fff"/>
+    <path id="path16" d="M74.567,59.459h30.817c-3.034,1.137-12.271,7.391-14.578,11.6H74.595l-.027-11.6Z" transform="translate(-59.314 -48.594)" fill="#f5821f"/>
+    <path id="path18" d="M135.066,203.817c-.44,4.2-.458,9.313-.458,14.685H121.251a145.916,145.916,0,0,1,.664-14.685Z" transform="translate(-95.029 -158.836)" fill="#ff4e42"/>
+    <path id="polygon20" d="M75.161,165.546v1.628H73.025V168.8h2.136v1.866H70.278v-8.681h4.883v1.934H73.025v1.626Z" transform="translate(-56.695 -127.025)" fill="#008061"/>
+    <path id="polygon22" d="M124.526,165.546v1.628H122.4V168.8h2.127v1.866h-4.874v-8.681h4.874v1.934H122.4v1.626Z" transform="translate(-94.07 -127.025)" fill="#008061"/>
+    <path id="polygon24" d="M178.861,165.546v1.628h-2.136V168.8h2.136v1.866h-4.883v-8.681h4.883v1.934h-2.136v1.626Z" transform="translate(-135.192 -127.025)" fill="#008061"/>
+    <path id="polygon26" d="M98.219,161.986V168.8h2.136v1.866H95.472v-8.681Z" transform="translate(-75.766 -127.025)" fill="#008061"/>
+    <path id="polygon28" d="M146.451,167.853l-1.042-5.867h-2.4l1.364,8.681h3.528l1.652-8.681h-2.038Z" transform="translate(-111.704 -127.025)" fill="#008061"/>
+    <path id="Union_4" data-name="Union 4" d="M3.9,8.93V2.673c0-.428-.834-.676-1.26-.3V8.929H0V.249H2.64V.614C4.506-.569,6.547.069,6.547,1.572V8.93Z" transform="translate(45.235 34.711)" fill="#008061"/>
+    <path id="path34" d="M144.892,79.792c.269-3.322,4.82-8.748,9.228-10.172V56.8C141.992,62.228,134.11,70.434,132.4,79.76l12.487.032Z" transform="translate(-103.101 -46.494)" fill="#ff4e42"/>
+  </g>
+</svg>

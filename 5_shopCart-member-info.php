@@ -51,7 +51,7 @@
                 <?php if (isset($_SESSION['user'])) : ?>
                     <label for="name">訂購人姓名 (必填)</label>
                     <div class="input-box">
-                        <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" value="<?= $_SESSION['user']['nickname'] ?>">
+                        <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" value="<?= $_SESSION['user']['name'] ?>">
                         <!-- 姓名驗證 -->
                         <small class="form-text">驗證</small>
                     </div>
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label for="email">電子信箱email</label>
                 <div class="input-box">
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱" value="<?= $_SESSION['user']['account'] ?>">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱" value="<?= $_SESSION['user']['email'] ?>">
                     <!-- 信箱驗證 -->
                     <small id="emailHelp" class="form-text text-muted">驗證</small>
                 </div>
@@ -71,7 +71,7 @@
             <div class="form-group">
                 <label for="phone">聯絡電話</label>
                 <div class="input-box">
-                    <input type=" text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" name="phone">
+                    <input type=" text" class="form-control" id="phone" placeholder="請輸入您的手機號碼" name="phone" value="<?= $_SESSION['user']['phone'] ?>">
                     <!-- 電話驗證 -->
                     <small class="form-text" class="r-pin">驗證</small>
                 </div>
@@ -86,7 +86,7 @@
             <div class="form-group">
                 <label for="company">三聯發票抬頭</label>
                 <div class="input-box">
-                    <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company">
+                    <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company" value="<?= $_SESSION['buy_info']['company'] ?>">
                     <!--抬頭驗證 -->
                     <small class="form-text">驗證</small>
                 </div>
@@ -96,7 +96,7 @@
             <div class="form-group">
                 <label for="tax-id-number">統一編號</label>
                 <div class="input-box">
-                    <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number">
+                    <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number" value="<?= $_SESSION['buy_info']['tax-id-number'] ?>">
                     <!-- 統一編號驗證 -->
                     <small class="form-text">驗證</small>
                 </div>
@@ -110,7 +110,7 @@
             <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
 
             <!-- 送出 -->
-            <button type="submit" class="btn submit btn-info">確認送出</button>
+            <button type="submit" class="btn submit btn-info">下一步</button>
 
         </div>
 
