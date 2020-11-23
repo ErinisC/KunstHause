@@ -60,7 +60,9 @@
 
 <div class="container">
     <div class="row order mb-5">
-        <div class="col-lg-3 event-img"></div>
+        <div class="col-lg-3 event-img p-0">
+            <img src="<?= WEB_ROOT ?>imgs/member/order-event-img-01.jpg" alt="">
+        </div>
         <div class="col-lg-4 event-info">
             <div class="main-info my-3">
                 <p class="event-name">2019百威真我至上音樂巡迴</p>
@@ -87,7 +89,7 @@
 
 
 <div class="container pagination">
-    <div class="row justify-content-center">
+    <div class="row mx-auto justify-content-center">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <!-- 前一頁 -->
