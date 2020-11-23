@@ -217,7 +217,7 @@
                 <marquee class="blue-marquee">ABOUT US ABOUT US ABOUT US</marquee>
                 <marquee class="yellow-marquee">ABOUT US ABOUT US ABOUT US</marquee>
             </div>
-            <div class="brand-intro position-absolute">
+            <div class="brand-intro">
                 <span class="paper about-slogan">藝文活動？感覺就不好玩</span>
                 <br>
                 <span class="paper sub-slogan">我們是KunstHaus</span>
