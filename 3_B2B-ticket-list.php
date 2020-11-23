@@ -127,7 +127,6 @@
                             </td>
                         </tr>
                     </tbody>
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -164,10 +163,46 @@
                         </div>
                     </div>
                 </table>
+
+
+                <!-- 頁碼 -->
+                <div class="row justify-content-center">
+                    <nav class="page" aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <!-- 前一頁 -->
+                            <li class="page-item">
+                                <a class="page-link" href="#"><i class="fas fa-arrow-left"></i></a>
+                            </li>
+
+                            <!-- 中間頁數 -->
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+
+
+
+                            <!-- 後一頁 -->
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
             </div>
 
         </div>
     </div>
+
 </div>
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>

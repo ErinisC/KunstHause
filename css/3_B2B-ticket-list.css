@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 .background {
   width: 100%;
@@ -175,4 +175,33 @@ table {
   border-radius: 0px;
   border: 3px solid #000;
   color: #000 !important;
+}
+
+/* 頁碼 */
+.page {
+  margin-top: 35px;
+}
+
+.page-link {
+  background-color: transparent;
+  color: #000;
+  border: none;
+}
+
+.page-link:hover {
+  background-color: #168fa4;
+  border: 3px solid black;
+}
+
+.page-item.active .page-link {
+  background-color: #168fa4;
+  border: 3px solid black;
+}
+
+.page-item.disabled .page-link {
+  background-color: transparent;
+}
+
+.page-link:focus {
+  box-shadow: none;
 }
