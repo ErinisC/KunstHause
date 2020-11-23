@@ -92,6 +92,10 @@ p {
 
 /* forgotpw-modal css */
 
+.modal-header {
+  border-bottom: 0 none;
+}
+
 .modal-content {
   background: #fff;
   background-image: linear-gradient(rgba(255, 0, 0, 0.15) 1px, transparent 0),
@@ -100,10 +104,6 @@ p {
   position: relative;
   padding-top: 2.5rem;
   border-radius: 0px;
-}
-
-.modal-header {
-  border-bottom: 0 none;
 }
 
 .modal-title {
@@ -127,6 +127,17 @@ p {
 
 .modal-footer {
   border-top: 0 none;
+}
+
+/* sendModal css */
+.letter {
+  width: 8rem;
+}
+
+.modal-body {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
 }
 
 /* Media Query */
