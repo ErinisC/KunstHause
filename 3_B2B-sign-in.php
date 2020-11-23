@@ -52,7 +52,7 @@
 
             <div class="inputform col-8">
                 <p>主辦單位簡介（必填）</p>
-                <input class="inputboxint" type="textarea" placeholder="請填寫主辦單位簡介">
+                <textarea class="textarea2" name="" id="" cols="87.5" rows="10" placeholder="請填寫主辦單位簡介"></textarea>
                 <p class="wortcount">0/255</p>
             </div>
 
