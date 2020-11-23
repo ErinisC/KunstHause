@@ -142,6 +142,19 @@ body {
     height: 80%;
   }
 
+  .article-title {
+    font-size: 1rem;
+  }
+
+  .article-subtitle {
+    font-size: 0.7rem;
+  }
+
+  /* b2b sec */
+  .be-partner {
+    top: 15%;
+  }
+  
   /* fixed button */
   .fixed-button {
     width: 150px;
@@ -283,6 +296,32 @@ body {
 
   .blog .inner-box {
     height: 50%;
+  }
+
+  .article-title {
+    font-size: 1.7rem;
+  }
+
+  .article-subtitle {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+
+  /* b2b sec */
+  .section-title img {
+    width: 50%;
+  }
+
+  .be-partner {
+    top: 0;
+  }
+
+  .sign1{
+    width: 50%;
+  }
+
+  .sign2{
+    width: 50%;
   }
 
   /* fixed button */
@@ -616,7 +655,6 @@ a:hover {
 .article-title {
   color: #fff;
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 1rem;
   font-weight: bold;
   letter-spacing: 2.55px;
   flex: 1;
@@ -626,7 +664,6 @@ a:hover {
 .article-subtitle {
   color: #fff;
   font-family: "Noto Sans TC", sans-serif;
-  font-size: 0.7rem;
   letter-spacing: 2.55px;
   flex: 3;
   margin: 5%;
@@ -693,10 +730,6 @@ strong {
   margin: 5% 2% 15%;
 }
 
-.be-partner {
-  top: 15%;
-}
-
 .sign1 {
   animation: fadeIn 0.7s infinite;
   -webkit-animation: fadeIn 0.7s infinite;
@@ -726,7 +759,6 @@ strong {
   cursor: pointer;
   transition-duration: 0.3s;
 }
-
 
 .spin {
   animation: spin 1.5s;
