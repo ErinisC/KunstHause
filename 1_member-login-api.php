@@ -11,7 +11,7 @@ if (empty($_POST['account'])) {
 }
 // TODO: 檢查資料格式
 
-$sql = "SELECT `sid`, `account`, `nickname` FROM `admins` WHERE `account`=? AND `password`=SHA1(?)";
+$sql = "SELECT * FROM `member` WHERE `email`=? AND `password`=SHA1(?)";
 $output['sql'] = $sql;
 $stmt = $pdo->prepare($sql);
 $stmt->execute([

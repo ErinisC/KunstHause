@@ -68,18 +68,18 @@
 
                                 <!-- 圖片 -->
                                 <div class="img-wrap p-0 col-4">
-                                    <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
+                                    <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                 </div>
                                 <div class="info-wrap w-100 px-3 d-flex flex-column text-left justify-content-around">
 
                                     <!-- 活動名稱 -->
                                     <div class="event-title">
-                                        <?= $i['bookname'] ?>
+                                        <?= $i['event_name'] ?>
                                     </div>
 
                                     <!-- 活動日期 -->
                                     <div class="">
-                                        <?= $i['author'] ?>
+                                        <?= $i['start-datetime'] ?>
                                     </div>
 
                                     <!-- 活動價格 -->

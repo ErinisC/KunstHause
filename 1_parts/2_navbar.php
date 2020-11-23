@@ -277,12 +277,12 @@
                                     <?php foreach ($_SESSION['cart'] as $i) : ?>
                                         <div id="prod<?= $i['sid'] ?>" class="wrap d-flex justify-content-between align-items-center">
                                             <div class="img-wrap col-4 p-0" style="height:100px">
-                                                <img src="imgs/event/big/<?= $i['book_id'] ?>.png" alt="">
+                                                <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                             </div>
 
                                             <div class="item-info col-6">
                                                 <div class="title my-3">
-                                                    <?= $i['bookname'] ?>
+                                                    <?= $i['event_name'] ?>
                                                 </div>
                                                 <div class="quantity mb-3"><?= $i['quantity'] ?>張</div>
                                                 <div class="price mb-3">$<?= $i['price'] ?></div>
