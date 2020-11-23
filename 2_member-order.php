@@ -39,7 +39,7 @@
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
-<!-- 引入index的css -->
+<!--引入member order的css-->
 <link rel="stylesheet" href="./css/2_member-order.css">
 
 
@@ -49,13 +49,14 @@
         <div class="section-title mb-5">
             <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title.svg" alt="">
         </div>
-        <div class="btn-group w-100 mb-5" role="group" aria-label="Basic example">
+        <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
             <button type="button" class="btn-s btn-select">已付款</button>
             <button type="button" class="btn-s">未付款</button>
             <button type="button" class="btn-s">已取消</button>
             <button type="button" class="btn-s">已完成</button>
         </div>
     </div>
+</div>
 </div>
 
 <div class="container">
@@ -65,30 +66,33 @@
         </div>
         <div class="col-lg-4 event-info">
             <div class="main-info my-3">
-                <p class="event-name">2019百威真我至上音樂巡迴</p>
-                <p class="price">NT$ 300</p>
+                <p class="event-name mb-2">2019百威真我至上音樂巡迴</p>
+                <p class="price mb-2">NT$ 300</p>
             </div>
             <div class="sub-info my-4">
-                <p class="date">2019-09-06 19:30 ~ 2019-09-06 23:00</p>
-                <p class="order-sid">訂單編號：1909050529331213415877</p>
-                <p class="pay-method">付款方式：信用卡</p>
+                <p class="date mb-2">2019-09-06 19:30 ~ 2019-09-06 23:00</p>
+                <p class="order-sid mb-2">訂單編號：1909050529331213415877</p>
+                <p class="pay-method mb-2">付款方式：信用卡</p>
             </div>
         </div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-3 ticket d-flex justify-content-around my-3">
+        <div class="col-lg-2 sm-none"></div>
+        <div class="col-lg-3 ticket d-flex justify-content-around">
             <div class="edit">
                 <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
                 <button class="feedback"></button>
             </div>
             <div class="qr-code">
-                <img src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+                <button class="qr-code-lg" type="button" class="btn btn-primary" data-toggle="modal" data-target="#qrcodeModal">
+                    <img src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+                </button>
             </div>
         </div>
     </div>
 </div>
+</div>
 
-
-<div class="container pagination">
+<!--pagination-->
+<div class="container paginatio mb-5">
     <div class="row mx-auto justify-content-center">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
@@ -119,7 +123,7 @@
 </div>
 
 
-<!-- Modal Cancel-->
+<!--modal cancel-->
 <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content position-relative">
@@ -143,8 +147,32 @@
     </div>
 </div>
 
-<!-- Modal Confirm-->
+<!--modal confirm-->
 <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
+            </div>
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    2019百威真我至上音樂巡迴
+                </h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>訂單已為您取消，<br>
+                    訂單明細已寄送至信箱。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn order-his-btn" data-toggle="modal" data-target="#confirmModal">查看已取消訂單</button>
+                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal qrcode-->
+<div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content position-relative">
             <div class="g-clip position-absolute">

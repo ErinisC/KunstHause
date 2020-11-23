@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 /* ----------style guide---------- */
 body {
@@ -7,6 +7,10 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   background-color: #002c80;
+}
+
+body.modal-open {
+  padding-right: 0 !important;
 }
 
 /* ----------media query---------- */
@@ -20,6 +24,19 @@ body {
   .space {
     height: 10rem;
   }
+
+  .edit {
+    flex-direction: column;
+  }
+
+  .edit button {
+    margin: 0.5rem 0;
+  }
+
+  .ticket {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -28,6 +45,33 @@ body {
 @media (max-width: 768px) {
   html {
     font-size: 12px;
+  }
+
+  .space {
+    height: 8rem;
+  }
+
+  .section-title img {
+    width: 20vh;
+  }
+
+
+
+  .edit {
+    flex-direction: row;
+  }
+
+  .edit button {
+    margin: 0.5rem 1.5rem;
+  }
+
+  .ticket {
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .sm-none {
+    display: none;
   }
 }
 
@@ -56,20 +100,14 @@ body {
   letter-spacing: 2.55px;
 }
 
-.ticket {
-  align-items: center;
-}
-
 .edit {
   text-align: center;
   display: flex;
-  flex-direction: column;
 }
 
 .edit button {
   width: 48px;
   height: 48px;
-  margin: 0.5rem 0;
   border: none;
 }
 
@@ -81,8 +119,16 @@ body {
   background: url(../imgs/member/feedback.svg) center no-repeat;
 }
 
+.button:focus {
+  outline: none;
+}
+
+.qr-code-lg {
+  background-color: transparent;
+}
+
 /* ----------pagination---------- */
-.pagination{
+.pagination {
   text-align: center;
 }
 
@@ -112,6 +158,9 @@ body {
 }
 
 /* ----------modal---------- */
+.modal-dialog {
+  top: 20vh;
+}
 .modal-content {
   border: 3px solid #000;
   border-radius: 0%;
@@ -153,11 +202,15 @@ body {
 }
 
 .modal-footer .cancel-btn {
-  background-color: #FF4E42;
+  background-color: #ff4e42;
   color: #fff;
 }
 
-.order-his-btn{
-  background-color: #168FA4;
+.order-his-btn {
+  background-color: #168fa4;
   color: #fff;
+}
+
+.qr-code-lg {
+  border: none;
 }
