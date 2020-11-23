@@ -83,10 +83,23 @@ body {
   .eyes {
     height: 40px;
   }
-  /* act sec */
 
+  /* act sec */
   .card {
     margin-bottom: 3rem;
+  }
+
+  .see-more {
+    padding: 40px 60px;
+  }
+
+  /* about sec */
+  .blue-marquee {
+    font-size: 8vw;
+  }
+
+  .yellow-marquee {
+    font-size: 8vw;
   }
 
   .about-slogan {
@@ -124,7 +137,6 @@ body {
   }
 
   /* hero sec */
-
   .marquee-roll {
     padding-top: 80%;
   }
@@ -166,6 +178,19 @@ body {
 
   .ticket-punches {
     display: none;
+  }
+
+  .see-more {
+    padding: 20px 30px;
+  }
+
+  /* about sec */
+  .blue-marquee {
+    font-size: 20vw;
+  }
+
+  .yellow-marquee {
+    font-size: 20vw;
   }
 
   .intro-bg {
@@ -404,7 +429,6 @@ body {
   font-size: 1.7rem;
   font-weight: bold;
   color: #fff;
-  padding: 40px 60px;
   background: url(../imgs/index/ic-tape.svg) center no-repeat;
 }
 
@@ -436,13 +460,11 @@ a:hover {
 }
 
 .blue-marquee {
-  font-size: 8vw;
   font-weight: 800;
   color: #168fa4;
 }
 
 .yellow-marquee {
-  font-size: 8vw;
   font-weight: 800;
   color: #ffc024;
 }
