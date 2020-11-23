@@ -120,19 +120,22 @@
 <!-- Modal Cancel-->
 <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
             </div>
-            <div class="modal-body">
-                ...
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    2019百威真我至上音樂巡迴
+                </h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>訂單即將取消，<br>
+                    按下確認鍵確定取消訂單。</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal">確認取消</button>
+                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
             </div>
         </div>
     </div>
@@ -141,19 +144,22 @@
 <!-- Modal Confirm-->
 <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
             </div>
-            <div class="modal-body">
-                ...
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    2019百威真我至上音樂巡迴
+                </h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>訂單已為您取消，<br>
+                    訂單明細已寄送至信箱。</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn order-his-btn" data-toggle="modal" data-target="#confirmModal">查看已取消訂單</button>
+                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
             </div>
         </div>
     </div>

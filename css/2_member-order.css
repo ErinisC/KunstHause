@@ -32,87 +32,136 @@ body {
 }
 
 /* ----------order status---------- */
-.btn-s{
-    border: 3px solid #000;
-    background-color: #fff;
-    border-radius: 0%;
-    width: 25%;
-    padding: 2% 0;
+.btn-s {
+  border: 3px solid #000;
+  background-color: #fff;
+  border-radius: 0%;
+  width: 25%;
+  padding: 2% 0;
 }
 
-.btn-select{
-    background-color: #FFC024;
-    border: 3px solid #000;
+.btn-select {
+  background-color: #ffc024;
+  border: 3px solid #000;
 }
 
-.order{
-    border: 3px solid #000;
-    background-color: #fff;
+.order {
+  border: 3px solid #000;
+  background-color: #fff;
 }
 
-.event-img{
-    background: url(../imgs/member/order-event-img-01.jpg) center no-repeat;
+.event-img {
+  background: url(../imgs/member/order-event-img-01.jpg) center no-repeat;
 }
 
-.main-info{
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 2.55px;
+.main-info {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2.55px;
 }
 
-.ticket{
+.ticket {
   align-items: center;
 }
 
-.edit{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+.edit {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.edit button{
-    width: 48px;
-    height: 48px;
-    margin: 0.5rem 0;
-    border: none;
+.edit button {
+  width: 48px;
+  height: 48px;
+  margin: 0.5rem 0;
+  border: none;
 }
 
-.delete{
-    background: url(../imgs/member/cancel.svg) center no-repeat;
+.delete {
+  background: url(../imgs/member/cancel.svg) center no-repeat;
 }
 
-.feedback{
-    background: url(../imgs/member/feedback.svg) center no-repeat;
+.feedback {
+  background: url(../imgs/member/feedback.svg) center no-repeat;
 }
 
 .qr-code {
-
 }
 
 /* ----------pagination---------- */
 
 .page-link {
-    background-color: transparent;
-    color: #fff;
-    border: none;
+  background-color: transparent;
+  color: #fff;
+  border: none;
 }
 
 .page-link:hover {
-    background-color: #fff;
-    border: 3px solid black;
-
+  background-color: #fff;
+  border: 3px solid black;
 }
 
 .page-item.active .page-link {
-    background-color: #FFC024;
-    color: #000;
-    border: 3px solid black;
+  background-color: #ffc024;
+  color: #000;
+  border: 3px solid black;
 }
 
 .page-item.disabled .page-link {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .page-link:focus {
-    box-shadow: none;
+  box-shadow: none;
+}
+
+/* ----------modal---------- */
+.modal-content {
+  border: 3px solid #000;
+  border-radius: 0%;
+}
+
+.g-clip {
+  top: -8%;
+}
+
+.g-clip img {
+  width: 70%;
+}
+.modal-header {
+  border: none;
+}
+
+.modal-title {
+  margin: 5% auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.modal-footer {
+  flex-direction: column;
+  border: none;
+}
+
+.modal-footer .btn {
+  border: 3px solid #000;
+  border-radius: 0;
+  letter-spacing: 1.5px;
+  width: 50%;
+  margin: 10px 0;
+}
+
+.modal-footer .cancel-btn {
+  background-color: #FF4E42;
+  color: #fff;
+}
+
+.order-his-btn{
+  background-color: #168FA4;
+  color: #fff;
 }
