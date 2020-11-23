@@ -124,6 +124,20 @@ body {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
+
+  /* blog sec */
+
+
+  /* fixed button */
+  .fixed-button {
+    width: 150px;
+  }
+
+  .text {
+    width: 140px;
+    top: calc(50% - 70px);
+    left: calc(50% - 70px);
+  }
 }
 
 @media (min-width: 1200px) {
@@ -233,6 +247,19 @@ body {
   .sub-slogan {
     font-size: 1rem;
     margin-bottom: 0.5rem;
+  }
+
+  /* blog sec */
+
+  /* fixed button */
+  .fixed-button {
+    width: 100px;
+  }
+
+  .text {
+    width: 90px;
+    top: calc(50% - 45px);
+    left: calc(50% - 45px);
   }
 }
 
@@ -665,17 +692,11 @@ strong {
   opacity: 0;
   bottom: 10%;
   right: 3%;
-  width: 150px;
   z-index: 100;
   cursor: pointer;
   transition-duration: 0.3s;
 }
 
-.text {
-  width: 140px;
-  top: calc(50% - 70px);
-  left: calc(50% - 70px);
-}
 
 .spin {
   animation: spin 1.5s;
