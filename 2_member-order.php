@@ -178,18 +178,20 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
             <div class="g-clip position-absolute">
                 <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
             </div>
-            <div class="modal-header text-center">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    2019百威真我至上音樂巡迴
-                </h5>
+            <div class="modal-header mx-auto mt-5 position-relative">
+                <img c;ass="qr-code-save" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="" style="width: 250px;">
+                <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body text-center">
-                <p>訂單已為您取消，<br>
-                    訂單明細已寄送至信箱。</p>
+                <h5>2019百威真我至上音樂巡迴</h5>
+                <p class="time">2019-12-10 11:00 ~ 2019-12-10 12:00</p>
+                <p class="location">台灣台北市信義區松壽路22號5樓</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn order-his-btn" data-toggle="modal" data-target="#confirmModal">查看已取消訂單</button>
-                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
+            <p class="attender w-100 text-center">參加人：王大明</p>
+            <p class="ticket-sid w-100 text-center">票券編號：1909050529332096708790</p>
             </div>
         </div>
     </div>

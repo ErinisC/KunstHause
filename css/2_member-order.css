@@ -37,6 +37,11 @@ body.modal-open {
     align-items: center;
     margin-bottom: 1rem;
   }
+
+  .close{
+    right: -30%;
+    top: -20%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -72,6 +77,11 @@ body.modal-open {
 
   .sm-none {
     display: none;
+  }
+
+  .close{
+    right: -12%;
+    top: -10%;
   }
 }
 
@@ -213,4 +223,17 @@ body.modal-open {
 
 .qr-code-lg {
   border: none;
+}
+
+.attender{
+  background-color: #FFC024;
+  padding: 10px;
+  margin: 0;
+}
+
+.ticket-sid{
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
 }
