@@ -1,4 +1,4 @@
-<?php 
+<?php
 include __DIR__ . '/1_parts/0_config.php';
 
 // 購物車用session來代表，session變數叫cart，屆時再設定購物車那邊
