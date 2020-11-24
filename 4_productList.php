@@ -71,25 +71,78 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel">
             <!-- 固定的搜尋區塊 -->
             <div class="filter-wrap position-absolute w-100">
-                <div class="filter-bg text-white m-auto d-flex align-items-center  col-8">
+                <div class="row filter-bg text-white m-auto py-3 align-items-center col-8 col-md-8 col-sm-11 col-11">
                     <div class="event-search w-100 d-flex flex-column justify-content-between">
-                        <h1>最棒的活動，都在KunstHaus</h1>
-                        <h5>來找活動吧</h5>
-                        <div class="search-block">
+                        <h1 class="mb-3">最棒的活動，都在KunstHaus</h1>
+                        <h5 class="mb-3">來找活動吧</h5>
+                        <div class="search-block position-relative">
                             <!-- 搜尋input -->
                             <div class="input-group">
-                                <input type="text" class="col-8" placeholder="搜搜各種活動">
-                                <div class="input-group-btn">
+                                <input type="text" id="search-event" class="col-10" placeholder="搜搜各種活動">
+
+                                <!-- 搜尋條input -->
+                                <div class="input-group-btn col-2 p-0">
                                     <button class="btn btn-info">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </div>
                             </div>
                             <!-- 下拉框 -->
-                            <div class="search-dropdown"></div>
+                            <div class="search-dropdown position-absolute col-11 py-3">
+                                <p class="title mb-3">選擇地區</p>
+                                <ul class=" col-3 p-0">
+                                    <li>
+                                        <a href="#">北區</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">中區</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">南區</a>
+                                    </li>
+                                </ul>
+                            </div>
 
                         </div>
                     </div>
+
+                    <!-- 關鍵字搜尋 -->
+                    <div class="col mt-3">
+                        <div class="row quickSearch">
+                            <div class="quickSearch__title col-2 p-0">熱門搜尋 <span class="gap mx-2"></span>
+                            </div>
+
+
+                            <!-- 關鍵字欄位 -->
+                            <div class="row col-10">
+                                <div class="search-keyword mb-3">
+                                    <span class="chip m-2">
+                                        <a href="#">青峰演唱會</a>
+                                    </span>
+                                </div>
+
+                                <div class="search-keyword mb-3">
+                                    <span class="chip m-2">
+                                        <a href="#">台北藝術節</a>
+                                    </span>
+                                </div>
+
+                                <div class="search-keyword mb-3">
+                                    <span class="chip m-2">
+                                        <a href="#">台日交流展</a>
+                                    </span>
+                                </div>
+
+                                <div class="search-keyword mb-3">
+                                    <span class="chip m-2">
+                                        <a href="#">鬼滅之刃</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
 
                 </div>
 
@@ -117,26 +170,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div>
     </div>
 
-    <!-- 篩選區塊 -->
-    <div class="container my-4">
-        <div class="row justify-content-between">
-            <!-- 搜尋篩選 -->
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="filter">
-                    我想搜尋： <input type="text">
-                </div>
-            </div>
-            <!-- 日立 -->
-            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                <div class="filter calander">日立放這邊</div>
-            </div>
-
-            <!-- 按搜尋的input之後，需要出現的篩選區 -->
-            <div class="col-12 py-3">
-                <div class="choose">這邊要放選擇checkbox</div>
-            </div>
-        </div>
-    </div>
 
     <!-- 本週主打精選 -->
     <div class="container week">
@@ -312,6 +345,17 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         function updateCartCount() {
             //nav bar 呼叫的方法
         }
+
+
+        // 搜尋下拉框呈現
+        $('#search-event').on('click', function() {
+            $('.search-dropdown').toggle();
+
+        })
+
+
+
+
 
         // 動態一一浮現
         // 用css animate抓scroll時的offest
