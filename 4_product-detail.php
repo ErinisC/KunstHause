@@ -67,31 +67,32 @@ if (empty($row)) {
 
         <div class="row justify-content-between">
             <div class="activity">
-                <h1 class="activity-title">AUDIO ARCHITECTURE：聲音的建築展</h1>
+                <h1 class="activity-title mt-3">AUDIO ARCHITECTURE：聲音的建築展</h1>
                 <div class="activity-time d-flex">
-                    <p class="activity-time-title">活動時間</p>
-
-                    <p class="">17:30-20:30</p>
+                    <p class="activity-time-title mt-3">活動時間 17:30-20:30</p>
                 </div>
 
                 <div class="activity-place">
-                    <p class="activity-place-title">活動地點</p>
-
-                    <p class="">台灣台北市中正區八德路一段117號</p>
+                    <p class="activity-place-title mt-3">活動地點 台灣台北市中正區八德路一段117號</p>
                 </div>
 
-                <a href="">#Covid-free</a>
-                <a href="">#INCEPTION</a>
+                <div class="mt-3">
+                    <a href="">#Covid-free</a>
+                    <a href="">#INCEPTION</a>
+                </div>
+
 
 
             </div>
 
-            <div class="apply d-flex text-align: center;">
-                <div class="apply-ticket">
-                    <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
-                </div>
-                <div class="apply-word">
-                    <p>立即<br>報名</p>
+            <div class="apply d-flex align-items-center justify-content-center">
+                <div class="d-flex text-align: center">
+                    <div class="apply-ticket">
+                        <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
+                    </div>
+                    <div class="apply-word d-flex align-items-center justify-content-center ml-3">
+                        <p>立即<br>報名</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,15 +141,82 @@ if (empty($row)) {
         <div class="space-2"></div>
 
         <div class="row">
-            
+            <div class="tape">
+                <img src=" <?= WEB_ROOT ?>/imgs/member/Section Title-3.svg">
+            </div>
+
+            <!-- ------留言板內容------ -->
+            <div class="message-board">
+                <div class="name-bar d-flex">
+                    <div class="bar-circle"></div>
+
+                    <div class="bar-title">
+                        <h2>Johnny</h2>
+                        <p>2020/09/20</p>
+                    </div>
+
+                    <div class="bar-word">
+                        <p>金假讚！</p>
+                    </div>
+                </div>
+
+                <div class="name-bar d-flex">
+                    <div class="bar-circle"></div>
+
+                    <div class="bar-title">
+                        <h2>Johnny</h2>
+                        <p>2020/09/20</p>
+                    </div>
+
+                    <div class="bar-word">
+                        <p>金假讚！</p>
+                    </div>
+                </div>
+
+                <div class="name-bar d-flex">
+                    <div class="bar-circle"></div>
+
+                    <div class="bar-title">
+                        <h2>Johnny</h2>
+                        <p>2020/09/20</p>
+                    </div>
+
+                    <div class="bar-word">
+                        <p>金假讚！</p>
+                    </div>
+                </div>
+
+
+                <div class="search-bar d-flex">
+                    <input type="text" placeholder="我來說幾句...(50個字為限)" class="col-11">
+                    <div class="search-bar-ser col-1 p-0 d-flex align-items-center justify-content-center">
+                        <p class="text-white text-center">發表</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-
-
+        <div class="space-2"></div>
 
     </div>
     </div>
+</section>
 
+<section>
+    <div class="container-fluid">
+
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="tape">
+                    <img src=" <?= WEB_ROOT ?>/imgs/member/Group 888.svg">
+                </div>
+
+                <div class="tape-2">
+                    <img src=" <?= WEB_ROOT ?>/imgs/member/alien-1.svg">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 

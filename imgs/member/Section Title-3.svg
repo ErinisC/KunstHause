@@ -1,0 +1,13 @@
+<svg id="Section_Title-3" data-name="Section Title-3" xmlns="http://www.w3.org/2000/svg" width="315.991" height="134.993" viewBox="0 0 315.991 134.993">
+  <g id="Label">
+    <g id="Rectangle_1499" data-name="Rectangle 1499" transform="translate(7 43.561) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
+      <rect width="300" height="92.12" stroke="none"/>
+      <rect x="1.5" y="1.5" width="297" height="89.12" fill="none"/>
+    </g>
+    <g id="Rectangle_1500" data-name="Rectangle 1500" transform="translate(0 36.561) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
+      <rect width="300" height="92.12" stroke="none"/>
+      <rect x="1.5" y="1.5" width="297" height="89.12" fill="none"/>
+    </g>
+  </g>
+  <text id="訪客留言" transform="translate(156.416 77.459) rotate(-7)" fill="#fff" font-size="34" font-family="NotoSansTC-Bold, Noto Sans TC" font-weight="700"><tspan x="-68" y="0">訪客留言</tspan></text>
+</svg>
