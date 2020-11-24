@@ -21,7 +21,7 @@
                 <p class="organizer">主辦單位名稱</p>
             </div>
             <div class="indexcard">
-                <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" width="184.249" height="78.712" viewBox="0 0 184.249 78.712">
+                <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">
                     <g id="Section_Title" data-name="Section Title" transform="translate(-184.29 -1183.437)">
                         <g id="Label" transform="translate(184.29 1183.437)">
                             <g id="Rectangle_1499" data-name="Rectangle 1499" transform="translate(4.082 25.399) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
@@ -40,7 +40,7 @@
                 </svg>
 
                 <div class="bgcard">
-                    <svg class="notebook" xmlns="http://www.w3.org/2000/svg" width="177.526" height="166.836" viewBox="0 0 177.526 166.836">
+                    <svg class="notebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 177.526 166.836">
                         <g id="Group_862" data-name="Group 862" transform="translate(-745.434 -325.228)">
                             <g id="Group_888" data-name="Group 888">
                                 <g id="Group_855" data-name="Group 855" transform="translate(986.771 77.765) rotate(-13)">
@@ -82,7 +82,7 @@
                 </div>
             </div>
             <div class="indexcard">
-                <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" width="184.249" height="78.712" viewBox="0 0 184.249 78.712">
+                <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">
                     <g id="Section_Title" data-name="Section Title" transform="translate(-184.29 -1183.437)">
                         <g id="Label" transform="translate(184.29 1183.437)">
                             <g id="Rectangle_1499" data-name="Rectangle 1499" transform="translate(4.082 25.399) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div class="indexcard">
-                <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" width="184.249" height="78.712" viewBox="0 0 184.249 78.712">
+                <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">
                     <g id="Section_Title" data-name="Section Title" transform="translate(-184.29 -1183.437)">
                         <g id="Label" transform="translate(184.29 1183.437)">
                             <g id="Rectangle_1499" data-name="Rectangle 1499" transform="translate(4.082 25.399) rotate(-7)" fill="#ed5b4c" stroke="#000" stroke-width="3">

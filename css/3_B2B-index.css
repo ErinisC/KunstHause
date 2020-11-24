@@ -29,6 +29,8 @@
 
 .titlecard {
   position: absolute;
+  width: 185px;
+  height: 79px;
   top: 15px;
   right: 40px;
 }
@@ -42,6 +44,8 @@
 }
 
 .notebook {
+  width: 178px;
+  height: 167px;
   margin-top: 60px;
   margin-left: 50px;
 }
@@ -111,4 +115,127 @@
   margin-left: 48%;
   font-weight: 700;
   font-size: 34px;
+}
+
+/* Media Query */
+/* ============================= */
+/* Extra small 超小 (576px 以下) */
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 16px;
+  }
+
+  .background {
+    width: 100%;
+    height: 1000px;
+    background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+  .index {
+    /* display: flex; */
+    margin: 0 auto;
+    /* justify-content: space-between; */
+  }
+
+  .ogzcard {
+    margin: 150px auto 0;
+  }
+
+  .picture {
+    margin-top: 0;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-color: #f1f9ff;
+    border: 3px solid #000;
+  }
+
+  .people {
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+
+  .indexcard {
+    margin-top: 10px;
+    width: 170px;
+    height: 225px;
+    /* background-color: #168fa4; */
+    position: relative;
+  }
+
+  .titlecard {
+    position: absolute;
+    width: 108px;
+    height: 50px;
+    top: 30px;
+    right: 30px;
+  }
+
+  .notebook {
+    width: 100px;
+    height: 86px;
+    margin-top: 35px;
+    margin-left: 35px;
+  }
+
+  .eventsvg {
+    width: 100px;
+    height: 86px;
+    margin-top: 35px;
+    margin-left: 40px;
+  }
+
+  .ticketsvg {
+    width: 100px;
+    height: 86px;
+    margin-top: 35px;
+    margin-left: 40px;
+  }
+
+  .bgcard {
+    margin-top: 50px;
+    width: 170px;
+    height: 210px;
+    background-color: #168fa4;
+    border: 3px solid #000;
+  }
+
+  .cardtext {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .eventcardtext {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .modbutton {
+    width: 100%;
+  }
+
+  .modify {
+    padding: 0;
+    margin-top: 15px;
+    width: 75px;
+    height: 38px;
+    font-size: 12px;
+    background-color: #ffc024;
+    border: 3px solid #000;
+    border-radius: 0;
+  }
+
+  .slogan {
+    width: 100%;
+  }
+
+  .slogan p {
+    margin-left: 0;
+    margin-top: 60px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+  }
 }
