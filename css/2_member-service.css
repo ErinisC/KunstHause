@@ -1,0 +1,41 @@
+* {
+  outline: 1px solid red;
+}
+/* ----------style guide---------- */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  background-color: #002c80;
+}
+
+/* ----------media query---------- */
+@media (min-width: 769px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .space {
+    height: 10rem;
+  }
+
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  .space {
+    height: 8rem;
+  }
+
+
+}
+
+/* ----------form---------- */
