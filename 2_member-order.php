@@ -1,15 +1,15 @@
-<?php include __DIR__ . '/1_parts/0_config.php'
+<?php include __DIR__ . '/1_parts/0_config.php';
 
 // 判斷是否登入
-// if (!isset($_SESSION['user'])) {
-//     header('Location: user-login.php');
-//     exit;
-// }
+if (!isset($_SESSION['user'])) {
+    header('Location: 1_member-login.php');
+    exit;
+}
 
 // 判斷member id
-// $member_sid = intval($_SESSION['user']['id']);
-// $o_sql = "SELECT * FROM `orders` WHERE `member_sid`=$member_sid ORDER BY `order_date` DESC";
-// $o_rows = $pdo->query($o_sql)->fetchAll();
+$member_sid = intval($_SESSION['user']['sid']);
+$o_sql = "SELECT * FROM `orders` WHERE `member_sid`=$member_sid ORDER BY `order_date` DESC";
+$o_rows = $pdo->query($o_sql)->fetchAll();
 
 // 如果沒有任何的訂購資料, 就顯示訊息或離開
 // if (empty($o_rows)) {
