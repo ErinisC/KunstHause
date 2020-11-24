@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 /* ----------style guide---------- */
 body {
@@ -21,9 +21,6 @@ body {
     height: 10rem;
   }
 
-}
-
-@media (min-width: 1200px) {
 }
 
 @media (max-width: 768px) {
@@ -87,3 +84,89 @@ textarea{
   letter-spacing: 2.55px;
 }
 
+/* ----------animation---------- */
+.title {
+  text-align: center;
+  font-size: 90px;
+}
+
+#title-shape {
+  width: 20vw!important;
+  margin-left: 0;
+  margin-top: 2vh!important;
+  line-height: 60vh;
+  font-weight: 800;
+}
+
+#shape-1 {
+  margin-top: 15%;
+  margin-left: 20%;
+  width: 20vw;
+  height: 20vh;
+}
+
+#shape-2{
+  margin-top: 75%;
+  margin-left: 60%;
+  width: 10vw;
+  height: 10vh;
+}
+
+#shape-3{
+  margin-top: 0;
+  margin-left: 0%;
+  width: 8vw;
+  height: 8vh;
+}
+
+#shape-1,#shape-2,#shape-3,#title-shape {position:absolute;  transition: .3s ease!important;
+}
+
+
+#title-shape {
+  animation: shake 10s;
+  animation-iteration-count: infinite; 
+}
+.shake-1{
+  animation: shake 8s; 
+  animation-iteration-count: infinite; 
+}
+.shake-2{
+  animation: shake 12s; 
+  animation-iteration-count: infinite; 
+}
+.shake-3{
+  animation: shake 10s; 
+  animation-iteration-count: infinite; 
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 20px) rotate(0deg); }
+  10% { transform: translate(-3px, 10px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(4deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(2deg); }
+  90% { transform: translate(1px, 10px) rotate(-3deg); }
+  100% { transform: translate(1px, 20px) rotate(0deg); }
+}
+
+
+.title {
+  color:#F6F0E8;
+}
+
+#shape-1 svg {
+  fill:#ED5B4C;
+}
+
+#shape-2,#shape-4 svg {
+  fill:#FFC024;
+}
+
+#shape-3 svg {
+  fill:#168FA4;
+}
