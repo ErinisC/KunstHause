@@ -11,8 +11,8 @@
 
 <div class="background">
     <div class="container">
-        <div class="row signinbg col-12">
-            <div class="title col-8">
+        <div class="row signinbg col-xl-12 col-12">
+            <div class="title col-xl-8">
                 <h1>編輯主辦單位檔案</h1>
                 <p class="text">KunstHaus 使用者將透過下列資訊認識你</p>
 
@@ -39,28 +39,28 @@
                 </div>
             </div>
 
-            <div class="inputform col-8">
+            <div class="inputform col-xl-8 col-12">
                 <p>主辦單位名稱（必填）</p>
                 <input class="inputbox" type="text" placeholder="請填寫主辦單位名稱">
             </div>
 
-            <div class="inputform col-8">
+            <div class="inputform col-xl-8 col-12">
                 <p>主辦單位電話號碼（必填）</p>
                 <input class="inputbox" type="text" placeholder="請填寫電話號碼">
                 <input class="inputbox" type="text" placeholder="分機號碼(選填)">
             </div>
 
-            <div class="inputform col-8">
+            <div class="inputform col-xl-8 col-12">
                 <p>主辦單位簡介（必填）</p>
                 <textarea class="textarea2" name="" id="" cols="87.5" rows="10" placeholder="請填寫主辦單位簡介"></textarea>
                 <p class="wortcount">0/255</p>
             </div>
 
-            <div class="inputform col-8">
+            <div class="inputform col-xl-8 col-12">
                 <p class="membertext">請詳閱 Kunsthaus 服務條款及會員相關權益<img class="eyes" src=" <?= WEB_ROOT ?>/imgs/index/ic-eye.svg"></p>
             </div>
 
-            <div id="terms" class="terms col-8">
+            <div id="terms" class="terms col-xl-8 col-12">
                 <div class="service-term m-3">服務條款</div>
                 <div class="service-text">
                     (1) 台端與 Kunsthaus 的關係<br>
@@ -104,14 +104,14 @@
                 </div>
             </div>
 
-            <div class="checkform col-8 d-flex">
-                <p class="ckecktext col-6"><input class="checkbox" type="checkbox">我已同意Kunsthaus服務條款及隱私權政策</p>
+            <div class="checkform col-xl-8 col-12 d-flex">
+                <p class="ckecktext col-xl-6 col-12"><input class="checkbox" type="checkbox">我同意Kunsthaus服務條款及隱私權政策</p>
             </div>
 
-            <div class="modbutton text-center col-8">
-                <div class="okbutton col-6 d-flex">
-                    <button class="modify1 btn btn-primary">取消註冊</button>
-                    <button class="modify2 btn btn-primary" disabled>完成註冊</button>
+            <div class="modbutton text-center col-xl-8 col-12">
+                <div class="okbutton col-xl-6 col-10 d-flex">
+                    <button class="modify1 col-5 btn btn-primary">取消註冊</button>
+                    <button class="modify2 col-5 btn btn-primary" disabled>完成註冊</button>
                 </div>
             </div>
 

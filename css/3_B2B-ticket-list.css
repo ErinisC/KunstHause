@@ -116,15 +116,6 @@ table {
   border-radius: 0;
 }
 
-.modify3 {
-  width: 100px;
-  height: 50px;
-  margin-left: 10px;
-  background-color: #168fa4;
-  border: 3px solid #000;
-  border-radius: 0;
-}
-
 .modify4 {
   width: 100px;
   height: 50px;
@@ -204,4 +195,14 @@ table {
 
 .page-link:focus {
   box-shadow: none;
+}
+
+@media screen and (max-width: 576px) {
+  .modify3 {
+    display: none;
+  }
+
+  .modify4 {
+    display: none;
+  }
 }

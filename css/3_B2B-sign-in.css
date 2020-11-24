@@ -17,6 +17,10 @@ textarea:focus {
   background-size: cover;
 }
 
+.signinbg {
+  margin: 0 auto;
+}
+
 .title {
   width: 100%;
   /* height: 50px; */
@@ -165,6 +169,7 @@ textarea {
 .modbutton {
   width: 100%;
   margin: 40px auto 0;
+  padding: 0;
 }
 
 .okbutton {
@@ -193,4 +198,48 @@ textarea {
 button:disabled {
   background: #000 !important;
   border: 3px solid #000 !important;
+}
+
+@media screen and (max-width: 576px) {
+  .pictureadd {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #f1f9ff;
+    border: 3px solid #000;
+    position: absolute;
+    top: 250px;
+    right: 30px;
+  }
+
+  .eyes {
+    opacity: 0;
+  }
+
+  .modify1 {
+    width: 100%;
+    height: 50px;
+    background-color: #ed5b4c;
+    border: 3px solid #000;
+    border-radius: 0;
+  }
+
+  .modify2 {
+    width: 100%;
+    height: 50px;
+    background-color: #168fa4;
+    border: 3px solid #000;
+    border-radius: 0;
+  }
+
+  .textarea2 {
+    width: 100%;
+  }
+
+  .okbutton {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: space-between;
+  }
 }

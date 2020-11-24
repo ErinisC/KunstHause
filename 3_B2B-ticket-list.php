@@ -11,17 +11,17 @@
 
 <div class="background">
     <div class="container">
-        <div class="row ticketbg col-12">
+        <div class="row ticketbg">
             <div class="title">
                 <h1>訂單管理</h1>
                 <p class="text">您可以在此查看所有的訂單紀錄</p>
-                <div class="ticketbutton d-flex col-6">
+                <div class="ticketbutton d-flex col-xl-6 col-12">
                     <button class="modify btn btn-primary">歷史訂單</button>
                     <button class="modify2 btn btn-primary">已付款</button>
                     <button class="modify2 btn btn-primary">未付款</button>
                     <button class="modify2 btn btn-primary">已取消</button>
                 </div>
-                <form class="header-search col-6" method="POST" name="header-search" class="form-inline ">
+                <form class="header-search col-xl-6 col-12" method="POST" name="header-search" class="form-inline ">
                     <input class="search" type="text" name="search" placeholder="搜索訂單編號或活動名稱">
                     <button class="search-icon" type="submit">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-search.svg" alt="">
@@ -30,7 +30,7 @@
 
                 <table>
                     <thead>
-                        <tr class="tr d-flex mr-5">
+                        <tr class="tr d-flex mr-5 col-xl-12 col-12">
                             <td>訂單編號</td>
                             <td>訂單日期</td>
                             <td>合計</td>
@@ -41,7 +41,7 @@
                             </td>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="col-xl-12 col-12">
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
