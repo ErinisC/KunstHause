@@ -39,17 +39,19 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             </div>
 
             <!-- 登入表單開始 -->
-            <!-- alert -->
 
+            <!-- alert -->
             <div id="info_bar" class="alert alert-danger" role="alert" style="display:none">
             </div>
 
             <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
-                <form name="form1" onsubmit="checkForm(); return false;">
+
+                <form name="form1" id="loginForm" onsubmit="checkForm(); return false;">
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="account" class="login-item">帳號</label>
                         <div class="input-box">
-                            <input type="text" class="form-control" id="account" name="account" placeholder="請填寫email信箱">
+                            <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱">
+                            <span class="error"></span>
                             <small class="form-text text-muted"></small>
                         </div>
                     </div>
@@ -57,7 +59,8 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="password" class="login-item">密碼</label>
                         <div class="input-box">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="密碼不超過10碼" name="password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="請輸入您的密碼" name="password">
+                            <span class="error"></span>
                             <small class="form-text"></small>
                         </div>
                     </div>
@@ -123,11 +126,11 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
                                 <img class="letter mt-3 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/letter.svg">
                             </div>
-                            <div class="modal-body mt-2">請至您的電子信箱確認以進行修改<br>謝謝 !
+                            <div class="modal-body mt-2">請至您的電子信箱收確認信，以進行後續密碼修改，感謝您!
                             </div>
 
                             <div class="modal-footer mb-5">
-                                <button type="button" class="btn btn-secondary col-4 mt-4 mx-auto" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
+                                <button type="button" class="btn btn-secondary col-5 mt-4 mx-auto" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
                             </div>
                         </div>
                     </div>
@@ -143,38 +146,72 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <script>
+    // $('#loginForm').on('submit', (e) => {
+    //             e.preventDefault();
+    //             
+    //             }
+
+
+
     const account = $('#account'),
         password = $('#password'),
         info_bar = $('#info_bar')
 
     function checkForm() {
+        let infoText = '';
+        let send = true;
 
-        $.post('1_member-login-api.php', {
-            account: account.val(),
-            password: password.val()
-        }, function(data) {
-            console.log('data', data)
-            if (data.success) {
-                info_bar
-                    .removeClass('alert-danger')
-                    .addClass('alert-success')
-                    .text('登入成功');
-                location.href = '<?= $gotoURL ?>';
+        if ($('#account').val() === '') {
+            // $('#loginForm').find('[name="email"]').siblings('.error').text('請輸入您的電子信箱');
+            infoText = '請輸入您的電子信箱';
+            send = false;
+        } else if ($('#password').val() === '') {
+            infoText = '請輸入您的密碼';
+            send = false;
+        } else if ($('#password').val().length < 8) {
+            infoText = '密碼length';
+            send = false;
+        }
 
 
+        if (send) {
+            $.post('1_member-login-api.php', {
+                account: account.val(),
+                password: password.val()
+            }, function(data) {
+                console.log('data', data)
+                if (data.success) {
+                    info_bar
+                        .removeClass('alert-danger')
+                        .addClass('alert-success')
+                        .text('登入成功');
+                    // location.href = '<?= $gotoURL ?>';
 
-            } else {
-                info_bar
-                    .removeClass('alert-success')
-                    .addClass('alert-danger')
-                    .text('登入失敗');
-            }
+                } else {
+                    info_bar
+                        .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .text('登入失敗');
+                }
+                info_bar.slideDown();
+
+                setTimeout(function() {
+                    info_bar.slideUp();
+                }, 2000);
+            }, 'json');
+        } else {
+            info_bar
+                .removeClass('alert-success')
+                .addClass('alert-danger')
+                .text(infoText);
             info_bar.slideDown();
 
             setTimeout(function() {
                 info_bar.slideUp();
             }, 2000);
-        }, 'json');
+        }
+
+
     }
 </script>
 

@@ -66,7 +66,7 @@
                             <label for="password">密碼 (必填)</label>
                             <div class="input-box d-flex">
                                 <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="password" class="form-control" id="password" placeholder="密碼不超過10碼" name="password" required>
+                                <input type="password" class="form-control" id="password" placeholder="密碼請至少超過8碼" name="password" required>
                                 <small class="form-text"></small>
                             </div>
                         </div>
@@ -204,21 +204,19 @@
 <script>
     const email_re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     const mobile_re = /^09\d{2}-?\d{3}-?\d{3}$/;
-    const password = $('#password'),
-        email = $('#email'),
-        info_bar = $('#info_bar')
+    const name = $('#name'),
+        const password = $('#password'),
+            email = $('#email'),
+            info_bar = $('#info_bar')
 
     function checkForm() {
-        name.next().text('');
-        email.next().text('');
-
         let isPass = true;
 
-        if (password.val().length > 10) {
+
+        if (name.val().length < 2) {
             isPass = false;
-            password.next().text('密碼不可超過10碼!');
+            name.next().text('請填寫正確的姓名!')
         }
-        // https://github.com/shinder/mmmh57-php/blob/master/proj/login.php
 
         if (email.val()) {
             if (!email_re.test(email.val())) {
@@ -227,8 +225,17 @@
             }
         }
 
+
+        if (password.val().length < 8) {
+            isPass = false;
+            password.next().text('密碼請至少超過8碼!');
+        }
+        // https://github.com/shinder/mmmh57-php/blob/master/proj/login.php
+
+        
+
         if (isPass) {
-            $.post('ab-insert-api.php', $(document.form1).serialize(), function(data) {
+            $.post('1_member-signup-api.php', $(document.form1).serialize(), function(data) {
                 console.log(data);
                 if (data.success) {
                     info_bar

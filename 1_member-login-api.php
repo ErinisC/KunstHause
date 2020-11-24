@@ -21,6 +21,7 @@ $stmt->execute([
 
 if ($stmt->rowCount() > 0) {
     $output['success'] = true;
+    $output['user'] = $stmt->fetch();
     $_SESSION['user'] = $stmt->fetch();
 }
 
