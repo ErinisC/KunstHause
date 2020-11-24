@@ -191,14 +191,14 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                             <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                             <!-- 圖片上時間 -->
-                            <div class="time position-absolute col-4"><?= $r['start-datetime'] ?></div>
+                            <div class="time position-absolute col-4 p-2"><?= $r['start-datetime'] ?></div>
                         </div>
                     </a>
 
 
                     <!-- 小卡下方票價 -->
                     <div class="wrap d-flex">
-                        <div class="card-body d-flex p-0">
+                        <div class="card-body d-flex p-0 w-100">
                             <div class="card-info m-auto py-3 col-8">
                                 <div class="event-name mb-3"><?= $r['event_name'] ?></div>
                                 <div class="event-location"><?= $r['location'] ?></div>
@@ -207,7 +207,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                             <!-- 價格按鈕加Modal的彈跳窗格 -->
                             <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-4">
                                 <div class=" card-price py-3">
-                                    <div class="now-price">優惠價$ <?= $r['price'] ?></div>
+                                    <div class="mb-3">優惠價</div>
+                                    <div class="now-price">$ <?= $r['price'] ?></div>
                                 </div>
                             </a>
 

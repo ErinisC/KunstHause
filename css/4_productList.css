@@ -10,6 +10,15 @@ button:focus {
     outline: 3px solid #FFC024;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 .bg {
     background-color: #168FA4;
     background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0), linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
@@ -153,13 +162,21 @@ input:focus {
 .card {
     background-color: transparent;
     border: none;
+    transition: transform 1s;
 }
+
+.card:hover {
+    transform: scale(1.1);
+    /* box-shadow: 3px 5px rgba(0, 0, 0, 0.5); */
+}
+
 
 /* 活動小卡圖片 */
 .card .img-wrap {
     height: 300px;
     border: 3px solid black;
 }
+
 
 .img-wrap img {
     width: 100%;
@@ -170,9 +187,8 @@ input:focus {
 .card .time {
     bottom: 0;
     background-color: #FFC024;
-    height: 100px;
-    border-top: 3px solid black;
-    border-right: 3px solid black;
+    height: 50px;
+    border-radius: 3px;
 
 }
 
@@ -185,6 +201,13 @@ input:focus {
     background-color: #4336A3;
     color: white;
     cursor: pointer;
+}
+
+.event-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* -webkit-line-clamp: 2; */
 }
 
 
