@@ -172,7 +172,10 @@ if (empty($row)) {
     // 購物車nav小窗彈出， 白色大區塊消失
     $('.buy-btn').on('click', function() {
         window.parent.$('#exampleModal').modal('hide');
-        window.parent.$('.shopping-cart').click();
+        window.parent.$('.cartnav-dropdown').toggle();
+        // 小版時要跳出小版navbar的畫面，但大版時消不掉！！！
+        // window.parent.$('.cart-nav-small').toggle();
+
 
         // $('window.parent.cart-nav').addClass('show')
         // $('window.parent.body').addClass('modal-open')
@@ -180,7 +183,6 @@ if (empty($row)) {
         // setTimeout(function() {
         //     window.parent.$('.cart-nav-big').toggle();
         // }, 2000);
-
 
     });
 

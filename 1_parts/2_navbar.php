@@ -1,176 +1,10 @@
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: "Noto Sans TC", sans-serif;
-        font-family: "Roboto", sans-serif;
-        overflow-x: hidden;
-    }
-
-    header {
-        z-index: 100;
-    }
-
-    .navbar {
-        background-color: #FFC024;
-        border: 3px solid black;
-    }
-
-    .nav-item {
-        list-style: none;
-    }
-
-    .nav-link {
-        color: #000;
-        font-family: "Noto Sans TC", sans-serif;
-    }
-
-    .nav-link:hover {
-        color: #fff;
-    }
-
-    .nav-item.active a {
-        color: #fff;
-    }
-
-    .header-search {
-        position: relative;
-    }
-
-    .search {
-        border: 3px solid #000;
-        height: 38px;
-    }
-
-    .search:focus {
-        border: 3px solid #168FA4;
-        background-color: #168FA4;
-    }
-
-    textarea:focus,
-    input:focus {
-        color: #fff;
-    }
-
-    .search-icon {
-        top: 5px;
-        right: 8px;
-        position: absolute;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-    }
-
-    .dropdown-menu {
-        background-color: transparent;
-
-    }
-
-    .dropdown-item {
-        float: none;
-        color: black;
-        background-color: #FFC024;
-        border: 3px solid #000;
-        margin: 2px 0;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-    }
-
-    .dropdown-item:hover {
-        background-color: #168FA4;
-        color: #fff;
-    }
-
-    .dropdown:hover .dropdown-item {
-        display: block;
-    }
-
-
-    /* 購物車dropdown視窗框 */
-    .dropdown-item.shopcart-dropdown {
-        min-height: 260px;
-    }
-
-    .cart-nav-big {
-        width: 400px;
-        left: -400%;
-    }
-
-    /* 隱藏溢出文字 */
-    .cart-nav-big .title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .delete {
-        font-size: 1.5rem;
-    }
-
-    .dropdown-item:hover {
-        background-color: #FFC024;
-        color: black;
-    }
-
-    .delete {
-        cursor: pointer;
-    }
-
-    /* ----------media query---------- */
-    @media (min-width: 993px) {
-        .nav-link {
-            margin-right: 40px;
-        }
-
-        .lg-none {
-            display: none;
-        }
-    }
-
-    @media (max-width: 992px) {
-        .header-search {
-            display: none;
-        }
-
-        .navbar-collapse {
-            text-align: center;
-        }
-
-        .header-icon {
-            display: block;
-        }
-
-        .member {
-            width: 50px;
-            height: 50px;
-        }
-
-        .sm-none {
-            display: none;
-        }
-
-        /* 購物車dropdown視窗框 */
-        .dropdown-item.shopcart-dropdown {
-            height: 200px;
-        }
-
-        .cart-nav {
-            width: 280px;
-            left: -250%;
-        }
-
-    }
-</style>
+<!-- 引入css -->
+<link rel="stylesheet" href="./css/00_navbar.css">
 
 <body>
     <?php if (!isset($pageName)) {
         $pageName = "";
-    };
-
-    ?>
+    }; ?>
 
     <header class="position-fixed w-100">
         <nav class="navbar navbar-expand-lg">
@@ -187,18 +21,52 @@
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
 
-                <!-- 購物車 -->
-                <li class="nav-item dropdown">
-                    <!-- 購物車 -->
+                <!-- 小版購物車 -->
+                <li class="nav-item dropdown position-relative">
+                    <!-- 小版購物車 -->
                     <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
-                        <!-- 購物車數量小提示 -->
+                        <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" class="shopcart-small-click" style="width:48px;">
+                        <!-- 小版購物車數量提示 -->
                         <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
                     </a>
 
-                    <!-- 購物車dropdown -->
-                    <div class="dropdown-menu cart-nav p-0" aria-labelledby="navbarDropdown">
-                        <div class="dropdown-item shopcart-dropdown" href="#">購物車商品</div>
+                    <!-- 小版購物車dropdown -->
+                    <div class="cart-nav-small p-3 position-absolute text-center" aria-labelledby="navbarDropdown">
+                        <div class="cart-nav-small-dropdown" href="#">購物車商品</div>
+
+                        <!-- 如果session cart空空 -->
+                        <?php if (empty($_SESSION['cart'])) : ?>
+                            <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
+                            <!-- 如果session cart有東西 -->
+                        <?php else : ?>
+                            <!-- 先用foreach抓出session的東西 -->
+                            <?php foreach ($_SESSION['cart'] as $i) : ?>
+                                <div id="prod<?= $i['sid'] ?>" class="row one-item flex-column pb-3 m-3">
+                                    <div class="img-wrap" style="height:100px">
+                                        <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
+                                    </div>
+
+                                    <div class="item-info">
+                                        <div class="title my-3">
+                                            <?= $i['event_name'] ?>
+                                        </div>
+                                        <div class="quantity mb-3">票數：<?= $i['quantity'] ?>張</div>
+
+                                        <div class="price mb-3">單張票價： $<?= $i['price'] ?></div>
+                                    </div>
+
+                                    <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete">
+                                        <i class="far fa-trash-alt"></i>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+
+                            <!-- 去結帳按鈕 -->
+                            <a href="5_shopCart-list.php" class="text-right my-3">
+                                <button type="button" class="btn btn-info">去結帳</button>
+                            </a>
+                        <?php endif; ?>
+
 
                     </div>
                 </li>
@@ -226,7 +94,7 @@
                             <img src="<?= WEB_ROOT ?>imgs/index/ic-search.svg" alt="">
                         </button>
                     </form>
-                    <!-- TO DO: 判斷是否登入，登入member icon變泰瑞色-->
+                    <!-- 大版nav會員登入-->
                     <li class="nav-item dropdown">
                         <!-- 會員icon -->
                         <a class="nav-link mx-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -235,7 +103,7 @@
                             <?php else : ?>
                                 <i class="fas fa-user" style="font-size:38px"></i>
                             <?php endif; ?>
-                            <!-- <img src="<//?= WEB_ROOT ?>imgs/index/ic-member2.svg" alt="" style="width:48px;"> -->
+
                         </a>
                         <!-- 會員dropdown -->
                         <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
@@ -255,17 +123,17 @@
                     </li>
 
                     <!-- 購物車 -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown position-relative">
                         <!-- 購物車 -->
                         <a href="#" class="header-icon shopping-cart nav-link mx-0 sm-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" style="width:48px;">
+                            <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" class="car-click" style="width:48px;">
                             <!-- 購物車數量小提示 -->
                             <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
                         </a>
 
                         <!-- 購物車dropdown -->
-                        <div class="dropdown-menu cart-nav-big p-0" aria-labelledby="navbarDropdown">
-                            <div class="dropdown-item shopcart-dropdown d-flex flex-column justify-content-between" href="#">
+                        <div class="cartnav-dropdown px-3 position-absolute" aria-labelledby="navbarDropdown">
+                            <div class="shopcart-dropdown d-flex flex-column justify-content-between" href="#">
                                 <div class="text-center my-3">購物車商品</div>
 
                                 <!-- 如果session cart空空 -->
@@ -275,17 +143,18 @@
                                 <?php else : ?>
                                     <!-- 先用foreach抓出session的東西 -->
                                     <?php foreach ($_SESSION['cart'] as $i) : ?>
-                                        <div id="prod<?= $i['sid'] ?>" class="wrap d-flex justify-content-between align-items-center">
+                                        <div id="prod<?= $i['sid'] ?>" class="one-item wrap d-flex px-2 justify-content-between align-items-center">
                                             <div class="img-wrap col-4 p-0" style="height:100px">
                                                 <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                             </div>
 
-                                            <div class="item-info col-6">
+                                            <div class="item-info p-0 col-6">
                                                 <div class="title my-3">
                                                     <?= $i['event_name'] ?>
                                                 </div>
-                                                <div class="quantity mb-3"><?= $i['quantity'] ?>張</div>
-                                                <div class="price mb-3">$<?= $i['price'] ?></div>
+                                                <div class="quantity mb-3">票數：<?= $i['quantity'] ?>張</div>
+
+                                                <div class="price mb-3">單張票價： $<?= $i['price'] ?></div>
                                             </div>
 
                                             <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete">
@@ -298,7 +167,6 @@
                                     <a href="5_shopCart-list.php" class="text-right my-3">
                                         <button type="button" class="btn btn-info">去結帳</button>
                                     </a>
-
                                 <?php endif; ?>
 
 
@@ -331,24 +199,30 @@
         }, 'json');
 
 
-        // 購物車icon下拉框的活動資訊
-        // const cart_nav = $('.cart-nav');
+        // 點擊購物車icon，出現下拉框的購物車
+        $('.car-click').on('click', function() {
+            $('.cartnav-dropdown').toggle();
+        })
 
         $.get("4_productList-shopcart-api.php", function(data) {
             console.log(data);
         }, 'json');
 
-        // 移除
+        // 移除購物車內的列
         function removeItem(sid) {
-            $.get('4_productList-shopcart-api', {
+            $.get('4_productList-shopcart-api.php', {
                 sid: sid,
                 action: 'remove'
             }, function(data) {
                 countCart(data.cart);
                 $('#prod' + sid).remove();
-                $('.shopping-cart').click();
             }, 'json');
 
 
         }
+
+        // 小版購物車
+        $('.shopcart-small-click').on('click', function() {
+            $('.cart-nav-small').toggle();
+        });
     </script>
