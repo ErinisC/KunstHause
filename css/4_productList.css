@@ -16,6 +16,10 @@ button:focus {
     background-size: 0.75rem 0.75rem;
 }
 
+.space {
+    height: 90px;
+}
+
 /* 麵包屑區塊 */
 .breadcrumb {
     background-color: transparent;
@@ -42,30 +46,43 @@ button:focus {
 }
 
 /* 大圖輪播區塊 */
-/* .pic {
-    height: 800px;
-    background-color: #EEE;
-} */
-
-.carousel {
+.pic {
     height: 700px;
     overflow: hidden;
 }
 
+.carousel {
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 700px;
+}
+
 .carousel img {
     object-fit: cover;
+    height: 100%;
 }
 
 /* 篩選區塊 */
-.filter {
-    /* position: absolute; */
-    /* top: -40px; */
-    height: 100px;
-    background-color: #fff;
+.filter-wrap {
+    bottom: 30%;
+    z-index: 1;
 }
+
+.filter-bg {
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.event-search {
+    height: 60%;
+}
+
 
 textarea:focus,
 input:focus {
+    outline: 2px solid #168FA4;
     color: black !important;
 }
 

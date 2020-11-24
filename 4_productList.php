@@ -53,11 +53,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 <div class="bg">
-
+    <!-- nav的高度空出來 -->
+    <div class="space"></div>
     <!-- 麵包屑 -->
     <div class="container">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="#">首頁</a></li>
                 <li class="breadcrumb-item"><a href="#">商品列表</a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
@@ -67,12 +68,41 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
     <!-- Banner輪播 -->
     <div class="container-fluid pic p-0">
-        <div id="carouselExampleIndicators" class="carousel slide p-0" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel">
+            <!-- 固定的搜尋區塊 -->
+            <div class="filter-wrap position-absolute w-100">
+                <div class="filter-bg text-white m-auto d-flex align-items-center  col-8">
+                    <div class="event-search w-100 d-flex flex-column justify-content-between">
+                        <h1>最棒的活動，都在KunstHaus</h1>
+                        <h5>來找活動吧</h5>
+                        <div class="search-block">
+                            <!-- 搜尋input -->
+                            <div class="input-group">
+                                <input type="text" class="col-8" placeholder="搜搜各種活動">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-info">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- 下拉框 -->
+                            <div class="search-dropdown"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- 下面的小橫線 -->
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
+            <!-- 圖片 -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="imgs/banner/b-1.jpg" alt="First slide">
@@ -84,14 +114,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="Third slide">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
     </div>
 
