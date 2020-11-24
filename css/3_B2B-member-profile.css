@@ -107,10 +107,21 @@
 
 .phone {
   align-items: center;
+  padding-left: 100px;
+}
+
+.phoneimg {
+  width: 52px;
+  height: 52px;
 }
 
 .e-mail {
   align-items: center;
+}
+
+.mailimg {
+  width: 52px;
+  height: 52px;
 }
 
 .number {
@@ -129,4 +140,57 @@
   border: 3px solid #000;
   border-radius: 0;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 16px;
+  }
+
+  .clip {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+  }
+
+  .eye {
+    margin-top: 25px;
+    margin-left: -20px;
+  }
+
+  .date {
+    margin-top: 30px;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .history {
+    margin: 60px auto 0;
+    width: 380px;
+    height: 90px;
+    padding: 0;
+  }
+
+  .contact {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .phone {
+    padding-left: 15px;
+  }
+
+  .phoneimg {
+    width: 35px;
+    height: 35px;
+  }
+  .e-mail {
+    margin-top: 10px;
+  }
+  .mailimg {
+    width: 35px;
+    height: 35px;
+  }
 }
