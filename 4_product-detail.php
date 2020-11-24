@@ -67,7 +67,6 @@ if (empty($row)) {
 
         <div class="row justify-content-between">
             <div class="activity">
-<<<<<<< Updated upstream
                 <h1 class="activity-title mt-3">AUDIO ARCHITECTURE：聲音的建築展</h1>
                 <div class="activity-time d-flex">
                     <p class="activity-time-title mt-3">活動時間 17:30-20:30</p>
@@ -82,28 +81,10 @@ if (empty($row)) {
                     <a href="">#INCEPTION</a>
                 </div>
 
-=======
-                <h1 class="activity-title">AUDIO ARCHITECTURE：聲音的建築展</h1>
-                <div class="activity-time d-flex">
-                    <p class="activity-time-title">活動時間</p>
-
-                    <p class="">17:30-20:30</p>
-                </div>
-
-                <div class="activity-place">
-                    <p class="activity-place-title">活動地點</p>
-
-                    <p class="">台灣台北市中正區八德路一段117號</p>
-                </div>
-
-                <a href="">#Covid-free</a>
-                <a href="">#INCEPTION</a>
->>>>>>> Stashed changes
 
 
             </div>
 
-<<<<<<< Updated upstream
             <div class="apply d-flex align-items-center justify-content-center">
                 <div class="d-flex text-align: center">
                     <div class="apply-ticket">
@@ -112,14 +93,6 @@ if (empty($row)) {
                     <div class="apply-word d-flex align-items-center justify-content-center ml-3">
                         <p>立即<br>報名</p>
                     </div>
-=======
-            <div class="apply d-flex text-align: center;">
-                <div class="apply-ticket">
-                    <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
-                </div>
-                <div class="apply-word">
-                    <p>立即<br>報名</p>
->>>>>>> Stashed changes
                 </div>
             </div>
         </div>
@@ -168,7 +141,6 @@ if (empty($row)) {
         <div class="space-2"></div>
 
         <div class="row">
-<<<<<<< Updated upstream
             <div class="tape">
                 <img src=" <?= WEB_ROOT ?>/imgs/member/Section Title-3.svg">
             </div>
@@ -245,17 +217,6 @@ if (empty($row)) {
             </div>
         </div>
     </div>
-=======
-            
-        </div>
-
-
-
-
-    </div>
-    </div>
-
->>>>>>> Stashed changes
 
 </section>
 
