@@ -1,11 +1,12 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 .background {
   width: 100%;
-  background-color: #ffc024;
-  height: 2800px;
+  height: 100%;
+  background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .b2bcreate {
@@ -42,6 +43,7 @@ label {
   line-height: 1.5;
   letter-spacing: 1.2px;
   color: #050505;
+  margin-top: 50px;
 }
 
 .input {
@@ -77,6 +79,7 @@ input:focus {
   border: solid 3px #030101;
   background-color: white;
   overflow: auto;
+  resize: none;
 }
 
 .blanket {
@@ -92,4 +95,64 @@ input:focus {
   font-weight: bold;
   margin: 12px 0 23px;
   text-align: center;
+}
+
+.fee {
+  border-bottom: 1px solid #707070;
+  padding-bottom: 1em;
+}
+
+.total {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.modbutton {
+  width: 100%;
+  margin: 40px auto 0;
+}
+
+.okbutton {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.modify1 {
+  width: 190px;
+  height: 50px;
+  background-color: #e8e8e8;
+  border: 3px solid #707070;
+  border-radius: 0;
+  color: #bcbcbc;
+}
+
+.modify2 {
+  width: 190px;
+  height: 50px;
+  background-color: #168fa4;
+  border: 3px solid #000;
+  border-radius: 0;
+  color: white;
+}
+
+/* Media Query */
+/* ============================= */
+/* Extra small 超小 (576px 以下) */
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 16px;
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
+    background-size: cover;
+  }
+
+  textarea {
+    width: 100%;
+  }
 }
