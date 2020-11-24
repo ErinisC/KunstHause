@@ -7,6 +7,7 @@
   height: 100%;
   background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
   background-size: cover;
+  padding-bottom: 20%;
 }
 
 .b2bcreate {
