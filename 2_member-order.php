@@ -7,9 +7,13 @@ if (!isset($_SESSION['user'])) {
 }
 
 // 判斷member id
-$member_sid = intval($_SESSION['user']['id']);
+$member_sid = intval($_SESSION['user']['sid']);
 $o_sql = "SELECT * FROM `orders` WHERE `member_sid`=$member_sid ORDER BY `order_date` DESC";
 $o_rows = $pdo->query($o_sql)->fetchAll();
+echo json_encode($o_rows);
+exit;
+
+
 
 // 如果沒有任何的訂購資料, 就顯示訊息或離開
 // if (empty($o_rows)) {
@@ -22,16 +26,16 @@ foreach ($o_rows as $o) {
     $order_ids[] = $o['sid'];
 }
 
-$d_sql = sprintf("SELECT d.*, p.event_name, p.picture FROM `order_details` d 
+$d_sql = sprintf("SELECT d.*, p.event_name, p.sid FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_sid
 WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
-//echo json_encode([
-//    'orders' => $o_rows,
-//    'details' => $d_rows,
-//]);
+echo json_encode([
+   'orders' => $o_rows,
+   'details' => $d_rows,
+]);
 //exit;
 ?>
 
