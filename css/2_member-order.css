@@ -110,6 +110,10 @@ body.modal-open {
   letter-spacing: 2.55px;
 }
 
+.sub-info{
+  font-size: 0.7rem;
+}
+
 .edit {
   text-align: center;
   display: flex;

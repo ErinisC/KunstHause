@@ -66,6 +66,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 </div>
 </div>
 
+
 <!-- 先判斷訂單資料內有沒有東西 -->
 <?php if (empty($o_rows)) : ?>
     <div class="container">
@@ -78,25 +79,27 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 <?php else : ?>
 
     <div class="container">
-        <div class="row order mb-5">
+        <div class="row order mb-5 align-content-center">
             <?php foreach ($o_rows as $o) : ?>
                 <?php foreach ($d_rows as $d) : ?>
                     <?php if ($o['sid'] == $d['order_id']) : ?>
                         <div class="col-lg-3 event-img p-0">
-                            <img src="<?= WEB_ROOT ?>imgs/event/<?= $d['picture'] ?>.jpg" alt="">
+                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg.jpg" alt="">
                         </div>
-                        <div class="col-lg-4 event-info">
-                            <div class="main-info my-3">
+                        <div class="col-lg-5 event-info">
+                            <div class="main-info my-4">
                                 <p class="event-name mb-2"><?= $d['event_name'] ?></p>
-                                <p class="price mb-2"><?= $d['price'] ?></p>
+                                <p class="price mb-2">單價$ <?= $d['price'] ?></p>
                             </div>
                             <div class="sub-info my-4">
                                 <p class="date mb-2"><?= $d['start-datetime'] ?></p>
                                 <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
                                 <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
+                                <p class="total-price mb-2">訂單總額：<?= $o['total_price'] ?></p>
+                                <p class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
                             </div>
                         </div>
-                        <div class="col-lg-2 sm-none"></div>
+                        <div class="col-lg-1 sm-none"></div>
                         <div class="col-lg-3 ticket d-flex justify-content-around">
                             <div class="edit">
                                 <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
@@ -113,7 +116,8 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             <?php endforeach; ?>
         </div>
     </div>
-    <<<<<<< Updated upstream </div>======= </div>>>>>>>> Stashed changes <!--pagination-->
+    
+    <!--pagination-->
         <div class="container paginatio mb-5">
             <div class="row mx-auto justify-content-center">
                 <nav aria-label="Page navigation example">
