@@ -23,14 +23,14 @@ body {
 
 .long-clip {
   position: absolute;
-  width: 10rem;
+  width: 9rem;
   top: -6rem;
   left: -1rem;
   transform: rotate(33deg);
 }
 
 .tape img {
-  width: 22rem;
+  width: 18rem;
   position: absolute;
   transform: rotate(15deg);
   top: -4rem;
@@ -63,6 +63,50 @@ label {
   font-family: NotoSansTC-Regular;
   padding: 0.6rem;
   margin-left: 3rem;
+  display: inline-block;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap.success input {
+  border-color: #168fa4;
+}
+
+.input-wrap.error input {
+  border-color: #ff0000;
+}
+
+.input-wrap i {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  visibility: hidden;
+}
+
+.input-wrap.success i.fa-check-circle {
+  visibility: visible;
+  color: #168fa4;
+}
+
+.input-wrap.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #ff0000;
+}
+
+.form-text {
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  right: 15px;
+  top: 65px;
+  font-size: 0.7rem;
+}
+
+.input-wrap.error small {
+  visibility: visible;
+  color: #ff0000;
 }
 
 .form-control {

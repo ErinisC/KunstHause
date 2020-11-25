@@ -29,8 +29,8 @@
             <div class="list-body w-100 mx-0 pb-3 mb-5">
 
                 <!-- 錯誤跳提醒設定 alert -->
-                <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
-                </div>
+                <!-- <div id="info_bar" class="alert alert-danger" role="alert" style="display: none">
+                </div> -->
 
                 <div class="deco">
                     <img class="long-clip" src=" <?= WEB_ROOT ?>/imgs/member/clip.svg">
@@ -44,60 +44,84 @@
                 </div>
                 <div class="signup-form w-100 col-md-8 col-xl-8 mx-auto">
 
-                    <form name="needs-validation" onsubmit="checkForm(); return false;" novalidate>
+                    <form id="form" class="form" name="form" onclick="return false" ; novalidate>
                         <div class="form-group">
                             <label for="name">會員姓名 (必填)</label>
-                            <div class="input-box d-flex">
-                                <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" required>
-                                <small class="form-text"></small>
+                            <div class="input-wrap">
+                                <div class="input-box d-flex">
+                                    <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
+                                    <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" required>
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small class="form-text">* 此欄位為必填, 請填上您的姓名</small>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="account">會員帳號 (必填)</label>
-                            <div class="input-box d-flex">
-                                <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
-                                <small class="form-text text-muted"></small>
+                            <div class="input-wrap">
+                                <div class="input-box d-flex">
+                                    <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
+                                    <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small class="form-text">* 請符合email格式設定</small>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="password">密碼 (必填)</label>
-                            <div class="input-box d-flex">
-                                <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="password" class="form-control" id="password" placeholder="密碼請至少超過8碼" name="password" required>
-                                <small class="form-text"></small>
+                            <div class="input-wrap">
+                                <div class="input-box d-flex">
+                                    <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
+                                    <input type="password" class="form-control" id="password" placeholder="密碼請至少超過8碼" name="password" required>
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small class="form-text">* 密碼請至少設置8碼</small>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="checkpassword">確認密碼 (必填)</label>
-                            <div class="input-box d-flex">
-                                <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                <input type="password" class="form-control" id="checkpassword" placeholder="請再次輸入您的密碼" name="checkpassword" required>
-                                <small class="form-text"></small>
+                            <div class="input-wrap">
+                                <div class="input-box d-flex">
+                                    <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
+                                    <input type="password" class="form-control" id="checkpassword" placeholder="請再次輸入您的密碼" name="checkpassword" required>
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small class="form-text">* 您輸入的密碼與第一次不同</small>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="mobile">連絡電話</label>
-                            <div class="input-box d-flex">
-                                <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
-                                <input type="text" class="form-control" id="mobile" placeholder="請輸入您的手機號碼" name="mobile" pattern="09\d{2}-?\d{3}-?\d{3}">
-                                <small class="form-text" class="r-pin"></small>
+                            <div class="input-wrap">
+                                <div class="input-box d-flex">
+                                    <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
+                                    <input type="text" class="form-control" id="mobile" placeholder="請輸入您的手機號碼" name="mobile" pattern="09\d{2}-?\d{3}-?\d{3}">
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small class="form-text" class="r-pin">* 您輸入的電話格式不符</small>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="account">地址</label>
-                            <div class="input-box d-flex">
-                                <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
-                                <input type="text" class="form-control" id="address" placeholder="請填寫您的居住地址" name="address">
+                            <label for="address">地址</label>
+                            <div class="input-wrap">
+                                <div class="input-box d-flex d-block">
+                                    <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
+                                    <input type="text" class="form-control" id="address" placeholder="請填寫您的居住地址" name="address">
+                                </div>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
                                 <small class="form-text"></small>
                             </div>
                         </div>
 
-                        <div class="terms-title">請詳閱 Kunsthaus 服務條款及會員相關權益
+                        <div class="terms-title mt-5">請詳閱 Kunsthaus 服務條款及會員相關權益
                             <img class="eyes" src=" <?= WEB_ROOT ?>/imgs/index/ic-eye.svg">
                         </div>
 
@@ -153,11 +177,11 @@
                         </div>
 
                         <div class="signup-btn d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" data-target="#exampleModalCenter">註冊
+                            <button type="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" name="button" id="button" data-target="#exampleModalCenter">註冊
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content pt-3 mx-auto">
                                         <div class="tap">
@@ -182,7 +206,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
                         <div class="line d-flex justify-content-between">
@@ -202,77 +226,163 @@
 <!-- <script src=""></script> -->
 
 <script>
-    const name = $('#name'),
-        const account = $('#account'),
-            const password = $('#password'),
-                const checkpassword = $('#checkpassword'),
-                    const mobile = $('#mobile'),
-                        const address = $('#address'),
-                            const info_bar = $('#info_bar')
+    const form = document.getElementById('form');
+    const name = document.getElementById('name');
+    const account = document.getElementById('account');
+    const password = document.getElementById('password');
+    const checkpassword = document.getElementById('checkpassword');
+    const mobile = document.getElementById('mobile');
+    const address = document.getElementById('address');
 
-    function checkForm() {
-        let infoText = '';
-        let send = true;
-        let regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-
-        if ($('#name').val() === '') {
-            infoText = '請填寫正確的姓名!';
-            send = false;
-        } else if ($('#account').val() === '') {
-            infoText = '請填寫正確的 email 格式!';
-            send = false;
-        } else if ($('#password').val().length < 8) {
-            infoText = '密碼請至少超過8碼';
-            send = false;
-        } else if ($('#password').val() != ('#checkpassword').val()) {
-            infoText = '您輸入的密碼與第一次不同!';
-            send = false;
-        } else if ($('#mobile').val() === '') {
-            re = /^09\d{2}-?\d{3}-?\d{3}$/;
-            infoText = '您輸入的電話格式不符';
-            send = false;
-        } else if ($('#address').val() === '') {
-            infoText = '請輸入您的地址';
-            send = false;
-        }
-        else
-        submit()
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        checkInput();
+    });
 
 
+    function checkInput() {
+        // get the values from the inputs
+        const nameValue = name.value.trim();
+        const accountValue = account.value.trim();
+        const passwordValue = password.value.trim();
+        const checkpasswordValue = checkpassword.value.trim();
+        const mobileValue = mobile.value.trim();
+        const addressValue = address.value.trim();
 
-        if (send) {
-            $.post('1_member-signup-api.php', $(document.needs - validation).serialize(), function(data) {
-                console.log(data);
-                if (data.success) {
-                    info_bar
-                        .removeClass('alert-danger')
-                        .addClass('alert-success')
-                        .text('完成新增');
-                } else {
-                    info_bar
-                        .removeClass('alert-success')
-                        .addClass('alert-danger')
-                        .text(data.error || '新增失敗');
-                }
-                info_bar.slideDown();
 
-                setTimeout(function() {
-                    info_bar.slideUp();
-                }, 2000);
-            }, 'json')
-        } else {
-            info_bar
-                .removeClass('alert-success')
-                .addClass('alert-danger')
-                .text(infoText);
-            info_bar.slideDown();
+        // let infoText = '';
+        // let send = true;
+        // let regex = 
 
-            setTimeout(function() {
-                info_bar.slideUp();
-            }, 2000);
+        if ($(nameValue === '') {
+                //show error
+                //add error class
+                setErrorFor(name, '* 此欄位為必填, 請輸入您的真實姓名');
+            } else {
+                // add success class
+                setSuccessFor(name);
+            }
+
+            if (accountValue === '') {
+                setErrorFor(account, '帳號欄位不可空白');
+            } else if (!isEmail(accountValue)) {
+                setErrorFor(account, '* 請符合email格式設定');
+            } else {
+                setSuccessFor(account);
+            }
+
+            if (passwordValue === '') {
+                setErrorFor(password, '* 密碼欄位不可空白');
+            } else if (passwordValue.length < 8) {
+                setErrorFor(password, '* 密碼請至少設置8碼');
+            } else {
+                setSuccessFor(password);
+            }
+
+            if (checkpasswordValue === '') {
+                setErrorFor(checkpassword, '* 確認密碼欄位不可空白');
+            } else if (passwordValue !== checkpasswordValue) {
+                setErrorFor(checkpassword, '* 您輸入的密碼與第一次不同');
+            } else {
+                setSuccessFor(checkpassword);
+            }
+
+            // show a success message
         }
 
-    }
+        function setErrorFor(input, message) {
+            const inputWrap = input.parentElement; // .input-wrap
+            const small = InputWrap.querySelector('small');
+            //add error message inside small
+            small.innerText = message;
+
+            //add error class
+            InputWrap.className = 'input-wrap error';
+        }
+
+        function setSuccessFor(input) {
+            const inputWrap = input.parentElement;
+            InputWrap.className = 'input-wrap success';
+        }
+
+        function isEmail(email) {
+            return /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(email);
+        }
+
+
+
+        // ($('#account').val() === '') {
+
+        // } else($('#password').val().length < 8) {
+
+        // } else($('#password').val() != ('#checkpassword').val()) {
+
+        // } else($('#mobile').val() === '') {
+        //     // re = /^09\d{2}-?\d{3}-?\d{3}$/;
+
+        // } else
+        //   submit()
+
+
+
+        // $(document).ready(function() {
+        //     $("button").click(function() {
+        //         if ($("#name").val() == '') {
+        //             alert("你尚未填寫姓名");
+        //             eval("document.form1['name'].focus()");
+        //         } else if ($("#account").val() == "") {
+        //             alert("請符合email格式設定");
+        //             eval("document.form1['account'].focus()");
+        //         } else if ($("#password").val() == "") {
+        //             alert("密碼請至少設置8碼");
+        //             eval("document.form1['password'].focus()");
+        //         } else if ($("#checkpassword").val() == "") {
+        //             alert("您輸入的密碼與第一次不同!");
+        //             eval("document.form1['checkpassword'].focus()");
+        //         } else if ($("#mobile").val() == "") {
+        //             alert("你尚未填寫電話");
+        //             eval("document.form1['mobile'].focus()");
+        //         } else {
+        //             document.form1.submit();
+        //         }
+        //     })
+        // })
+
+
+
+
+
+        //     if (send) {
+        //         $.post('1_member-signup-api.php', $(document.needs - validation).serialize(), function(data) {
+        //             console.log(data);
+        //             if (data.success) {
+        //                 info_bar
+        //                     .removeClass('alert-danger')
+        //                     .addClass('alert-success')
+        //                     .text('完成新增');
+        //             } else {
+        //                 info_bar
+        //                     .removeClass('alert-success')
+        //                     .addClass('alert-danger')
+        //                     .text(data.error || '新增失敗');
+        //             }
+        //             info_bar.slideDown();
+
+        //             setTimeout(function() {
+        //                 info_bar.slideUp();
+        //             }, 2000);
+        //         }, 'json')
+        //     } else {
+        //         info_bar
+        //             .removeClass('alert-success')
+        //             .addClass('alert-danger')
+        //             .text(infoText);
+        //         info_bar.slideDown();
+
+        //         setTimeout(function() {
+        //             info_bar.slideUp();
+        //         }, 2000);
+        //     }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
