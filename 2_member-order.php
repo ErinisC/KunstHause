@@ -9,9 +9,10 @@ if (!isset($_SESSION['user'])) {
 // 判斷member id
 $member_sid = intval($_SESSION['user']['sid']);
 $o_sql = "SELECT * FROM `orders` WHERE `member_sid`=$member_sid ORDER BY `order_date` DESC";
+
 $o_rows = $pdo->query($o_sql)->fetchAll();
-echo json_encode($o_rows);
-exit;
+// echo json_encode($o_rows);
+// exit;
 
 
 
@@ -26,17 +27,25 @@ foreach ($o_rows as $o) {
     $order_ids[] = $o['sid'];
 }
 
-$d_sql = sprintf("SELECT d.*, p.event_name, p.sid FROM `order_details` d 
-JOIN `products` p ON p.sid=d.product_sid
+$d_sql = sprintf("SELECT d.*, p.event_name, p.sid, p.picture FROM `order_details` d 
+JOIN `products` p ON p.sid=d.product_id
 WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
+<<<<<<< Updated upstream
 echo json_encode([
     'orders' => $o_rows,
     'details' => $d_rows,
 ]);
 //exit;
+=======
+// echo json_encode([
+//    'orders' => $o_rows,
+//    'details' => $d_rows,
+// ]);
+// exit;
+>>>>>>> Stashed changes
 ?>
 
 <?php $title = 'KunstHaus | 票券管理'; ?>
