@@ -45,18 +45,19 @@
             活動地點
         </label>
         <form name="event-place" class="event-place d-flex flex-wrap col-12 p-0">
-            <select name="City" type="text" class="input col-xl-2 col-sm-6" style="width:180px">
-                <option value="Taipei">台北市</option>
-                <option value="NewTaipei">新北市</option>
-                <option value="Taoyuan">桃園市</option>
-                <option value="Hsinchu">新竹縣</option>
-                <option value="Miaoli">苗栗國</option>
-                <option value="Taichung">台中市</option>
-            </select>
+            <div class="selector col-xl-4 d-flex justify-content-between p-0">
+                <select name="City" type="text" class="input col-sm-6" style="width:180px">
+                    <option value="Taipei">台北市</option>
+                    <option value="NewTaipei">新北市</option>
+                    <option value="Taoyuan">桃園市</option>
+                    <option value="Hsinchu">新竹縣</option>
+                    <option value="Miaoli">苗栗國</option>
+                    <option value="Taichung">台中市</option>
+                </select>
+                <select type="text" class="input col-sm-6 " style="width:180px">
 
-            <select type="text" class="input col-xl-2 col-sm-6 " style="width:180px">
-
-            </select>
+                </select>
+            </div>
             <input type="text" class="input col-xl-8 col-sm-12" placeholder="XXX街XXX號">
         </form>
         <label for="transport">
@@ -99,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div class="modbutton text-center col-8">
+        <div class="modbutton text-center col-xl-8 col-sm-12 p-0">
             <div class="okbutton d-flex">
                 <button class="modify1 btn ">取消</button>
                 <div class="space" style="width: 20px;"></div>

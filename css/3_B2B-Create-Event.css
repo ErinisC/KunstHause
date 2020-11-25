@@ -161,4 +161,29 @@ input:focus {
   .blanket {
     display: none;
   }
+
+  .okbutton {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: space-around;
+  }
+
+  .modify1 {
+    width: 165px;
+    height: 50px;
+    background-color: #e8e8e8;
+    border: 3px solid #707070;
+    border-radius: 0;
+    color: #bcbcbc;
+  }
+
+  .modify2 {
+    width: 165px;
+    height: 50px;
+    background-color: #168fa4;
+    border: 3px solid #000;
+    border-radius: 0;
+    color: white;
+  }
 }
