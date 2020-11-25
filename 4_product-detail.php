@@ -47,23 +47,40 @@ if (empty($row)) {
             </ol>
         </nav>
 
-        <div class="row">
+        <div class="row justify-content-between">
             <div class="mainact">
             </div>
 
-            <div class="space-2"></div>
+            <div class="space-1"></div>
 
             <div class="date">
                 <p class="date-year">2020</p>
                 <p class="date-mon">10.10<br>10.13</p>
             </div>
 
-            <div class="space-2"></div>
+    <!-- ---------報名卡片-------------- -->
 
+            <div class="apply  apply-02 d-flex align-items-center justify-content-center">
+                <div class="d-flex text-align: center">
+                    <div class="apply-ticket">
+                        <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
+                    </div>
+                    <div class="apply-word d-flex align-items-center justify-content-center ml-3">
+                        <p>立即<br>報名</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-1"></div>
+
+        </div>
+
+        <div class="row">
             <div class="label">
                 <p>音樂</p>
             </div>
         </div>
+
 
         <div class="row justify-content-between">
             <div class="activity">
@@ -85,7 +102,8 @@ if (empty($row)) {
 
             </div>
 
-            <div class="apply d-flex align-items-center justify-content-center">
+<!-- ---------報名卡片-------------- -->
+            <div class="apply apply-01 d-flex align-items-center justify-content-center">
                 <div class="d-flex text-align: center">
                     <div class="apply-ticket">
                         <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
@@ -97,7 +115,7 @@ if (empty($row)) {
             </div>
         </div>
 
-        <div class="space-2"></div>
+        <div class="space-1"></div>
 
         <div class="row">
             <div class="tabs">
@@ -140,8 +158,8 @@ if (empty($row)) {
 
         <div class="space-2"></div>
 
-        <div class="row">
-            <div class="tape">
+        <div class="row position-relative">
+            <div class="tape-1">
                 <img src=" <?= WEB_ROOT ?>/imgs/member/Section Title-3.svg">
             </div>
 
@@ -196,7 +214,7 @@ if (empty($row)) {
             </div>
         </div>
 
-        <div class="space-2"></div>
+        <div class="space-1"></div>
 
     </div>
     </div>
