@@ -59,8 +59,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                <li class="breadcrumb-item"><a href="#">商品列表</a></li>
+                <li class="breadcrumb-item"><a href="0_index.php">首頁</a></li>
+                <li class="breadcrumb-item"><a href="4_productList.php">商品列表</a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
             </ol>
         </nav>
@@ -186,12 +186,18 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
 
                     <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
-                    <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank">
-                        <div class="img-wrap mb-3 position-relative">
+                    <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
+                        <div class="flip-card-inner position-relative">
+                            <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                                <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                <!-- 圖片上時間 -->
+                                <div class="time position-absolute col-4 p-2"><?= $r['start-datetime'] ?></div>
+                            </div>
 
-                            <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
-                            <!-- 圖片上時間 -->
-                            <div class="time position-absolute col-4 p-2"><?= $r['start-datetime'] ?></div>
+                            <!-- 翻轉卡片背面 -->
+                            <div class="flip-card-back position-absolute p-3">
+                                <p><?= $r['event_info'] ?></p>
+                            </div>
                         </div>
                     </a>
 
