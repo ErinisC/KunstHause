@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 .background {
   width: 100%;
@@ -151,9 +151,14 @@ input:focus {
     height: 100%;
     background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
     background-size: cover;
+    padding-bottom: 20%;
   }
 
   textarea {
     width: 100%;
+  }
+
+  .blanket {
+    display: none;
   }
 }
