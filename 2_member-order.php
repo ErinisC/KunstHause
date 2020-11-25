@@ -17,16 +17,16 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 //     exit;
 // }
 
-// $order_sids = [];
-// foreach ($o_rows as $o) {
-//     $order_sids[] = $o['sid'];
-// }
+$order_sids = [];
+foreach ($o_rows as $o) {
+    $order_sids[] = $o['sid'];
+}
 
-// $d_sql = sprintf("SELECT d.*, p.bookname, p.book_id FROM `order_details` d 
-// JOIN `products` p ON p.sid=d.product_sid
-// WHERE d.`order_sid` IN (%s)", implode(',', $order_sids));
+$d_sql = sprintf("SELECT d.*, p.event_name, p.picture FROM `order_details` d 
+JOIN `products` p ON p.sid=d.product_sid
+WHERE d.`order_sid` IN (%s)", implode(',', $order_sids));
 
-// $d_rows = $pdo->query($d_sql)->fetchAll();
+$d_rows = $pdo->query($d_sql)->fetchAll();
 
 //echo json_encode([
 //    'orders' => $o_rows,
@@ -59,20 +59,34 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 </div>
 </div>
 
+<!-- 先判斷訂單資料內有沒有東西 -->
+<?php if (empty($o_rows)) : ?>
+<div class="container">
+    <div class="row">
+
+    </div>
+</div>
+
+
+<?php else : ?>
+
 <div class="container">
     <div class="row order mb-5">
+    <?php foreach ($o_rows as $o) : ?>
+    <?php foreach ($d_rows as $d) : ?>
+        <?php if ($o['sid'] == $d['order_id']) : ?>
         <div class="col-lg-3 event-img p-0">
-            <img src="<?= WEB_ROOT ?>imgs/member/order-event-img-01.jpg" alt="">
+            <img src="<?= WEB_ROOT ?>imgs/event/<?= $d['picture'] ?>.jpg" alt="">
         </div>
         <div class="col-lg-4 event-info">
             <div class="main-info my-3">
-                <p class="event-name mb-2">2019百威真我至上音樂巡迴</p>
-                <p class="price mb-2">NT$ 300</p>
+                <p class="event-name mb-2"><?= $d['event_name'] ?></p>
+                <p class="price mb-2"><?= $d['price'] ?></p>
             </div>
             <div class="sub-info my-4">
-                <p class="date mb-2">2019-09-06 19:30 ~ 2019-09-06 23:00</p>
-                <p class="order-sid mb-2">訂單編號：1909050529331213415877</p>
-                <p class="pay-method mb-2">付款方式：信用卡</p>
+                <p class="date mb-2"><?= $d['modified_date'] ?></p>
+                <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
+                <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
             </div>
         </div>
         <div class="col-lg-2 sm-none"></div>
@@ -87,6 +101,9 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
                 </button>
             </div>
         </div>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        <?php endforeach; ?>
     </div>
 </div>
 </div>
