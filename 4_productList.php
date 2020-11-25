@@ -78,7 +78,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                         <div class="search-block position-relative">
                             <!-- 搜尋input -->
                             <div class="input-group">
-                                <input type="text" id="search-event" class="col-10" placeholder="搜搜各種活動">
+                                <input type="text" id="search-event" class="col-lg-6 col-md-10 col-sm-10 col-10" placeholder="搜搜各種活動">
 
                                 <!-- 搜尋條input -->
                                 <div class="input-group-btn col-2 p-0">
@@ -172,14 +172,30 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 
     <!-- 本週主打精選 -->
-    <div class="container week">
-        <div class="row"></div>
+    <div class="container week mt-5">
+        <div class="row">
+
+            <!-- Section小標題 -->
+            <div class="section-title col-3 position-relative">
+                <div class="section-title-below position-absolute text-white text-center pt-3">本週主打精選</div>
+            </div>
+
+
+
+        </div>
     </div>
 
     <!-- 商品列表 -->
     <div class="container list">
-        <div id="b1" class="pd-title py-5"></div>
+        <div id="b1" class="pd-title py-5">
+            <!-- Section小標題 -->
+            <div class="section-title col-3 position-relative">
+                <div class="section-title-below position-absolute text-white text-center pt-3">大家都在看</div>
+            </div>
+
+        </div>
         <div class="row">
+
 
             <?php foreach ($rows as $r) : ?>
                 <!-- 小卡 -->
@@ -205,9 +221,16 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <!-- 小卡下方票價 -->
                     <div class="wrap d-flex">
                         <div class="card-body d-flex p-0 w-100">
-                            <div class="card-info m-auto py-3 col-8">
+                            <div class="card-info position-relative m-auto py-3 col-8">
                                 <div class="event-name mb-3"><?= $r['event_name'] ?></div>
+
                                 <div class="event-location"><?= $r['location'] ?></div>
+
+                                <!-- 收藏 -->
+                                <a href="#" class="like position-absolute">
+                                    <i class="far fa-heart"></i>
+                                </a>
+
                             </div>
 
                             <!-- 價格按鈕加Modal的彈跳窗格 -->
@@ -265,41 +288,53 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div>
     </div>
 
-    <!-- 推薦商品標題 -->
-    <div class="container">
-        <div class="pd-title py-5">我們為你推薦</div>
-    </div>
+
 
     <!-- 推薦商品小卡 -->
-    <div class="container-fluid">
-        <div class="row m-0 p-0 col-12">
-            <?php for ($i = 0; $i < 6; $i++) : ?>
-                <!-- 小卡 -->
-                <div class="card card-sm mb-5 col-lg-2 col-md-4 col-sm-6 col-12">
-                    <div class="img-wrap mb-3 position-relative">
-                        <img src="" class="card-img-top" alt="">
-                        <div class="time position-absolute col-6">這裡放時間</div>
-                    </div>
-
-                    <!-- 小卡下方票價 -->
-                    <div class="wrap d-flex">
-                        <div class="card-body d-flex p-0">
-                            <div class="card-info m-auto py-3 col-8">
-                                <div class="event-name mb-3">台北藝文活動展覽</div>
-                                <div class="event-location">地點：台北市</div>
+    <div class="container-fluid r-section p-0">
+        <!-- 推薦商品標題 -->
+        <div class="container mt-5">
+            <!-- Section小標題 -->
+            <div class="section-title col-3 position-relative">
+                <div class="section-title-below position-absolute text-white text-center pt-3">我們為您推薦</div>
+            </div>
+        </div>
+        <!-- 拖曳卡片 -->
+        <div class="grid-container">
+            <main class="grid-item main">
+                <div class="items mt-5">
+                    <?php foreach ($rows as $r) : ?>
+                        <!-- 小卡 -->
+                        <div class="item card card-sm col-3">
+                            <div class="img-wrap mb-3 position-relative">
+                                <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                <div class="time position-absolute col-4"><?= $r['start-datetime'] ?></div>
                             </div>
-                            <div class="card-price px-1 d-flex col-4 align-items-center">
-                                <div class="origin-price position-relative">
-                                    <div class="now-price">優惠價$ 300</div>
+                            <!-- 小卡下方票價 -->
+                            <div class="wrap d-flex">
+                                <div class="card-body d-flex p-0 w-100">
+                                    <div class="card-info m-auto py-3 col-8 position-relative">
+                                        <div class="event-name mb-3"><?= $r['event_name'] ?></div>
+                                        <div class="event-location"><?= $r['location'] ?></div>
+                                        <!-- 收藏 -->
+                                        <a href="#" class="like position-absolute">
+                                            <i class="far fa-heart"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card-price px-1 d-flex col-4 align-items-center">
+                                        <div class="origin-price position-relative">
+                                            <div class="now-price">優惠價$ 300</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
-
-
+                    <?php endforeach; ?>
                 </div>
-            <?php endfor; ?>
+            </main>
         </div>
+
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -368,6 +403,37 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         // 用css animate抓scroll時的offest
         $('.card').eq(0); //抓到所有的小卡
         $('.card').eq(0).offset(); //抓到第0個的offset
+
+
+
+        // 測試拖曳
+        const slider = document.querySelector('.items');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; //scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+            console.log(walk);
+        });
     </script>
 
     <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

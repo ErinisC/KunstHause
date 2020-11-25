@@ -82,6 +82,7 @@ a:hover {
 .filter-bg {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
+    max-width: 1170px;
 }
 
 .event-search {
@@ -154,7 +155,22 @@ input:focus {
 
 .week {
     height: 300px;
+}
 
+.section-title {
+    height: 80px;
+    background-color: #ED5B4C;
+    border: 3px solid black;
+    transform: rotate(-5deg);
+}
+
+.section-title-below {
+    top: -10px;
+    left: -15px;
+    width: 105%;
+    height: 80px;
+    background-color: #ED5B4C;
+    border: 3px solid black;
 }
 
 /* 商品列表 */
@@ -238,6 +254,26 @@ input:focus {
     /* -webkit-line-clamp: 2; */
 }
 
+.like {
+    bottom: 0;
+    right: 10px;
+    font-size: 2rem;
+}
+
+.like:hover {
+    color: #ED5B4C;
+}
+
+.like:focus .far.fa-heart {
+    color: #ED5B4C;
+    font-weight: 900;
+}
+
+/* .like:visited .far.fa-heart {
+    color: #ED5B4C;
+    font-weight: 900;
+} */
+
 
 /* 小卡彈跳蓋板 */
 .modal-content {
@@ -288,9 +324,66 @@ iframe {
 }
 
 .card-sm .time {
-    height: 60px;
+    height: 40px;
 }
 
+
+/* 推薦商品小卡 */
+.r-section {
+    margin-top: 150px;
+}
+
+.recommened-events {
+    min-height: 40vh;
+}
+
+/* others */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    background: url(../imgs/member/section-4.svg);
+}
+
+.main {
+    background-color: lighten(skyblue, 60%);
+    grid-area: main;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+.grid-item {
+    padding: 3.5em 1em;
+    font-size: 1em;
+}
+
+.items {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+}
+
+.items.active {
+    /* background: rgba(255, 255, 255, 0.3); */
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+
+.item {
+    display: inline-block;
+    min-height: 250px;
+    min-width: 400px;
+    margin: 2em 1em;
+
+}
 
 /* 怪怪地區 */
 footer .letter-submit {
@@ -338,7 +431,13 @@ footer .letter-submit {
 
 /* ================================ */
 /* Large 大型lg (992px以上) */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+
+    .filter-bg {
+        padding-left: 15%;
+    }
+
+}
 
 
 
