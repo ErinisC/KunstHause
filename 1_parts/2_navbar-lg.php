@@ -202,7 +202,7 @@
 <body>
     <header id="myHeader">
         <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand mr-5 sm-none" href="#">
+            <a class="navbar-brand mr-5 sm-none" href="0_index.php">
                 <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -272,10 +272,10 @@
                         <a class="nav-link" href="3_B2B-index.php">舉辦活動</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">關於我們</a>
+                        <a class="nav-link" href="0_index.php">關於我們</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">新鮮事</a>
+                        <a class="nav-link" href="0_index.php">新鮮事</a>
                     </li>
                 </ul>
 
@@ -299,11 +299,11 @@
                     </a>
                     <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">會員資料</a>
-                        <a class="dropdown-item" href="#">票券管理</a>
+                        <a class="dropdown-item" href="2_member-order.php">票券管理</a>
                         <a class="dropdown-item" href="#">我的收藏</a>
                         <a class="dropdown-item" href="#">優惠券管理</a>
                         <a class="dropdown-item" href="#">訊息管理</a>
-                        <a class="dropdown-item" href="#">聯繫客服</a>
+                        <a class="dropdown-item" href="2_member-service.php">聯繫客服</a>
                         <?php if (isset($_SESSION['user'])) : ?>
                             <a class="dropdown-item" href="1_member-logout-api.php">登出</a>
                         <?php else : ?>

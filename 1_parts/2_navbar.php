@@ -108,11 +108,11 @@
                         <!-- 會員dropdown -->
                         <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">會員資料</a>
-                            <a class="dropdown-item" href="#">票券管理</a>
+                            <a class="dropdown-item" href="2_member-order.php">票券管理</a>
                             <a class="dropdown-item" href="#">我的收藏</a>
                             <a class="dropdown-item" href="#">優惠券管理</a>
                             <a class="dropdown-item" href="#">訊息管理</a>
-                            <a class="dropdown-item" href="#">聯繫客服</a>
+                            <a class="dropdown-item" href="2_member-service.php">聯繫客服</a>
 
                             <?php if (isset($_SESSION['user'])) : ?>
                                 <a class="dropdown-item" href="1_member-logout-api.php">登出</a>

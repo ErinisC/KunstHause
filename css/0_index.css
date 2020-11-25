@@ -36,6 +36,12 @@ body {
     padding-top: 40%;
   }
 
+  .god {
+    width: 250px;
+    top: 8%;
+    right: 20%;
+  }
+
   .about-slogan {
     font-size: 2.5rem;
     font-weight: 600;

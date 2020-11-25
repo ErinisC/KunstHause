@@ -18,6 +18,14 @@ body.modal-open {
   html {
     font-size: 20px;
   }
+
+  .main-info {
+    font-size: 1rem;
+  }
+  
+  .sub-info{
+    font-size: 0.7rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -60,7 +68,19 @@ body.modal-open {
     width: 20vh;
   }
 
+  .btn-s{
+    font-size: 1.5rem;
+  }
 
+  .main-info {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+  
+  .sub-info{
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
 
   .edit {
     flex-direction: row;
@@ -105,13 +125,8 @@ body.modal-open {
 }
 
 .main-info {
-  font-size: 1rem;
   font-weight: bold;
   letter-spacing: 2.55px;
-}
-
-.sub-info{
-  font-size: 0.7rem;
 }
 
 .edit {
