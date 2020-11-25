@@ -36,7 +36,7 @@
                             <td>合計</td>
                             <td class="d-flex">訂單狀態<div class="white"></div>
                             </td>
-                            <td class="d-flex">顯示
+                            <td class="confirm d-flex">顯示
                                 <div class="white"></div>
                             </td>
                         </tr>

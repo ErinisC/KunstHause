@@ -41,13 +41,21 @@
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位名稱（必填）</p>
+                <svg class="trouble" id="Attention" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
+                </svg>
                 <input class="inputbox" type="text" placeholder="請填寫主辦單位名稱">
+                <p class="trouble2">X 必填資訊未填寫完整</p>
             </div>
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位電話號碼（必填）</p>
+                <svg class="trouble" id="Attention" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
+                </svg>
                 <input class="inputbox" type="text" placeholder="請填寫電話號碼">
                 <input class="inputbox" type="text" placeholder="分機號碼(選填)">
+                <p class="trouble2">X 必填資訊未填寫完整</p>
             </div>
 
             <div class="inputform col-xl-8 col-12">
