@@ -27,25 +27,19 @@ foreach ($o_rows as $o) {
     $order_ids[] = $o['sid'];
 }
 
-$d_sql = sprintf("SELECT d.*, p.event_name, p.sid, p.picture FROM `order_details` d 
+// event_name, p.sid, p.picture
+
+$d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_id
 WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
-<<<<<<< Updated upstream
-echo json_encode([
-    'orders' => $o_rows,
-    'details' => $d_rows,
-]);
-//exit;
-=======
 // echo json_encode([
 //    'orders' => $o_rows,
 //    'details' => $d_rows,
 // ]);
 // exit;
->>>>>>> Stashed changes
 ?>
 
 <?php $title = 'KunstHaus | 票券管理'; ?>
@@ -97,7 +91,7 @@ echo json_encode([
                                 <p class="price mb-2"><?= $d['price'] ?></p>
                             </div>
                             <div class="sub-info my-4">
-                                <p class="date mb-2"><?= $d['modified_date'] ?></p>
+                                <p class="date mb-2"><?= $d['start-datetime'] ?></p>
                                 <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
                                 <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
                             </div>
