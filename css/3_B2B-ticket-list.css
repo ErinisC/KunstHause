@@ -242,15 +242,17 @@ table {
 
   .confirm {
     display: none;
+    visibility: hidden;
     opacity: 0;
   }
 
   .tr {
     width: 100%;
-    justify-content: space-between;
-    height: 5rem;
+    justify-content: space-around;
+    height: 4rem;
     border-bottom: 1px solid #000;
     font-weight: 700;
     align-items: center;
+    padding: 0;
   }
 }
