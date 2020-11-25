@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
 }
 
 // 判斷member id
-$member_sid = intval($_SESSION['user']['sid']);
+$member_sid = intval($_SESSION['user']['id']);
 $o_sql = "SELECT * FROM `orders` WHERE `member_sid`=$member_sid ORDER BY `order_date` DESC";
 $o_rows = $pdo->query($o_sql)->fetchAll();
 
@@ -17,14 +17,14 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 //     exit;
 // }
 
-$order_sids = [];
+$order_ids = [];
 foreach ($o_rows as $o) {
-    $order_sids[] = $o['sid'];
+    $order_ids[] = $o['sid'];
 }
 
 $d_sql = sprintf("SELECT d.*, p.event_name, p.picture FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_sid
-WHERE d.`order_sid` IN (%s)", implode(',', $order_sids));
+WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
@@ -106,7 +106,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         <?php endforeach; ?>
     </div>
 </div>
-</div>
+
 
 <!--pagination-->
 <div class="container paginatio mb-5">
@@ -139,6 +139,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
     </div>
 </div>
 
+<?php endif; ?>
 
 <!--modal cancel-->
 <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
