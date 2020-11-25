@@ -11,13 +11,11 @@ body {
 /* ----------font style---------- */
 .section-title-l {
   letter-spacing: 2.55px;
-  font-size: 1.7rem;
   font-weight: bold;
 }
 
 .section-title-s {
   letter-spacing: 2.55px;
-  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -91,6 +89,14 @@ body {
   }
 
   /* act sec */
+  .section-title-l {
+    font-size: 1.7rem;
+  }
+
+  .section-title-s {
+    font-size: 1rem;
+  }
+
   .card {
     margin-bottom: 3rem;
   }
@@ -231,6 +237,15 @@ body {
   }
 
   /* act sec */
+  .section-title-l {
+    font-size: 2rem;
+  }
+
+  .section-title-s {
+    font-size: 1.5rem;
+  }
+
+
   .card {
     margin-bottom: 2rem;
   }
@@ -285,7 +300,7 @@ body {
   /* blog sec */
   .blog .section-title {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin-bottom: 10%;
     letter-spacing: 2.55px;
   }
@@ -451,8 +466,6 @@ body {
 
 .mainact-1 {
   overflow: hidden;
-  background-image: url(../imgs/index/mainact-01.jpg);
-  background-size: cover;
 }
 
 .img-800 {

@@ -35,13 +35,19 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100 mainact-1 img-700" src="#" alt="First slide">
+                    <a href="#" class="">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-45.png.jpg" alt="First slide">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100 mainact-1 img-800" src="#" alt="Second slide">
+                    <a href="#" class="">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-46.png.jpg" alt="Second slide">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100 mainact-1 img-700" src="#" alt="Third slide">
+                    <a href="#" class="">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-47.png.jpg" alt="Third slide">
+                    </a>
                 </div>
             </div>
         </div>
@@ -74,7 +80,7 @@
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
                                     <p class="section-title-s m-3">2020簡單生活節</p>
-                                    <i class="far fa-heart fa-2x mr-3"></i>
+                                    <i id="my-fav" class="far fa-heart fa-2x mr-3"></i>
                                 </div>
                                 <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
                                 <div class="d-flex">
