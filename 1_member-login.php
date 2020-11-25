@@ -178,6 +178,11 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         .addClass('alert-success')
                         .text('登入成功');
 
+                    setTimeout(function() {
+                        location.href = '<?= $gotoURL ?>';
+                    }, 2000);
+
+
                 } else {
                     info_bar
                         .removeClass('alert-success')
