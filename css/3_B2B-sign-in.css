@@ -80,7 +80,7 @@ textarea:focus {
 }
 
 .inputform {
-  margin: 40px auto 0;
+  margin: 35px auto 0;
   padding: 0;
 }
 
@@ -90,11 +90,29 @@ textarea:focus {
   font-weight: 700;
 }
 
+/* trouble為錯誤提醒 */
+.trouble {
+  position: absolute;
+  right: 10px;
+  top: 45px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.trouble2 {
+  /* display: none; */
+  margin-top: 5px;
+  text-align: end;
+  opacity: 0;
+  color: #ff1000;
+}
+
 .inputbox {
   margin-top: 12px;
   width: 100%;
   height: 50px;
   border: 3px solid #000;
+  position: relative;
 }
 
 .inputboxint {
@@ -198,6 +216,42 @@ textarea {
 button:disabled {
   background: #000 !important;
   border: 3px solid #000 !important;
+}
+
+/* 提醒小卡css */
+.modal-content {
+  border-radius: 0px;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border: 3px solid #000;
+}
+
+.welcome-text {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+}
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  padding: 0;
+  border-top: 0 none;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.closebutton {
+  width: 190px;
+  height: 50px;
+  border-radius: 0px;
+  border: 3px solid #000;
+  color: #000 !important;
 }
 
 @media screen and (max-width: 576px) {

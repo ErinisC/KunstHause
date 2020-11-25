@@ -44,7 +44,7 @@
                 </div>
                 <div class="signup-form w-100 col-md-8 col-xl-8 mx-auto">
 
-                    <form name="form1" onsubmit="checkForm(); return false;" novalidate>
+                    <form name="needs-validation" onsubmit="checkForm(); return false;" novalidate>
                         <div class="form-group">
                             <label for="name">會員姓名 (必填)</label>
                             <div class="input-box d-flex">
@@ -202,40 +202,46 @@
 <!-- <script src=""></script> -->
 
 <script>
-    const email_re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    const mobile_re = /^09\d{2}-?\d{3}-?\d{3}$/;
     const name = $('#name'),
-        const password = $('#password'),
-            email = $('#email'),
-            info_bar = $('#info_bar')
+        const account = $('#account'),
+            const password = $('#password'),
+                const checkpassword = $('#checkpassword'),
+                    const mobile = $('#mobile'),
+                        const address = $('#address'),
+                            const info_bar = $('#info_bar')
 
     function checkForm() {
-        let isPass = true;
+        let infoText = '';
+        let send = true;
+        let regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
-
-        if (name.val().length < 2) {
-            isPass = false;
-            name.next().text('請填寫正確的姓名!')
+        if ($('#name').val() === '') {
+            infoText = '請填寫正確的姓名!';
+            send = false;
+        } else if ($('#account').val() === '') {
+            infoText = '請填寫正確的 email 格式!';
+            send = false;
+        } else if ($('#password').val().length < 8) {
+            infoText = '密碼請至少超過8碼';
+            send = false;
+        } else if ($('#password').val() != ('#checkpassword').val()) {
+            infoText = '您輸入的密碼與第一次不同!';
+            send = false;
+        } else if ($('#mobile').val() === '') {
+            re = /^09\d{2}-?\d{3}-?\d{3}$/;
+            infoText = '您輸入的電話格式不符';
+            send = false;
+        } else if ($('#address').val() === '') {
+            infoText = '請輸入您的地址';
+            send = false;
         }
-
-        if (email.val()) {
-            if (!email_re.test(email.val())) {
-                isPass = false;
-                email.next().text('請填寫正確的 email 格式!');
-            }
-        }
+        else
+        submit()
 
 
-        if (password.val().length < 8) {
-            isPass = false;
-            password.next().text('密碼請至少超過8碼!');
-        }
-        // https://github.com/shinder/mmmh57-php/blob/master/proj/login.php
 
-        
-
-        if (isPass) {
-            $.post('1_member-signup-api.php', $(document.form1).serialize(), function(data) {
+        if (send) {
+            $.post('1_member-signup-api.php', $(document.needs - validation).serialize(), function(data) {
                 console.log(data);
                 if (data.success) {
                     info_bar
@@ -254,8 +260,17 @@
                     info_bar.slideUp();
                 }, 2000);
             }, 'json')
-        }
+        } else {
+            info_bar
+                .removeClass('alert-success')
+                .addClass('alert-danger')
+                .text(infoText);
+            info_bar.slideDown();
 
+            setTimeout(function() {
+                info_bar.slideUp();
+            }, 2000);
+        }
 
     }
 </script>

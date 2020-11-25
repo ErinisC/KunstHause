@@ -14,7 +14,7 @@ if (empty($_POST['name'])) {
 
 //TODO: 檢查資料格式
 
-$sql = "INSERT INTO `address_book`(
+$sql = "INSERT INTO `kunsthaus`(
         `name`, `account`, `password`, 
         `mobile`, `address`
         ) VALUES (

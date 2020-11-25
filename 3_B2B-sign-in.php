@@ -41,13 +41,21 @@
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位名稱（必填）</p>
+                <svg class="trouble" id="Attention" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
+                </svg>
                 <input class="inputbox" type="text" placeholder="請填寫主辦單位名稱">
+                <p class="trouble2">X 必填資訊未填寫完整</p>
             </div>
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位電話號碼（必填）</p>
+                <svg class="trouble" id="Attention" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
+                </svg>
                 <input class="inputbox" type="text" placeholder="請填寫電話號碼">
                 <input class="inputbox" type="text" placeholder="分機號碼(選填)">
+                <p class="trouble2">X 必填資訊未填寫完整</p>
             </div>
 
             <div class="inputform col-xl-8 col-12">
@@ -111,7 +119,33 @@
             <div class="modbutton text-center col-xl-8 col-12">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn btn-primary">取消註冊</button>
-                    <button class="modify2 col-5 btn btn-primary" disabled>完成註冊</button>
+                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成註冊</button>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content pt-3 mx-auto">
+                        <div class="tap">
+
+                        </div>
+
+                        <div class="modal-header d-flex flex-column">
+                            <div class="g-check mx-auto mt-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="148.234" height="106.909" viewBox="0 0 148.234 106.909">
+                                    <path id="Path_644" data-name="Path 644" d="M-97.709,57.527a10.375,10.375,0,0,0-14.63,0l-78.928,78.928-34.011-34.01a10.375,10.375,0,0,0-14.63,0,10.377,10.377,0,0,0,0,14.631l41.325,41.324a10.375,10.375,0,0,0,14.63,0h0l86.242-86.244A10.375,10.375,0,0,0-97.709,57.527Z" transform="translate(242.925 -54.509)" fill="#168fa4" />
+                                </svg>
+                            </div>
+                            <div class="modal-title mx-auto mt-4" id="exampleModalCenterTitle">修改完成
+                            </div>
+                        </div>
+
+                        <div class="modal-footer mx-auto mt-2">
+                            <button type="button" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 

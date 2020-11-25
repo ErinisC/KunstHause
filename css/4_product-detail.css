@@ -258,13 +258,11 @@ input[name="tab_item"] {
 
 /* 576-768之間的畫面 */
 @media (min-width: 576px) and (max-width: 768px) {
-
 }
 
 /* ================================ */
 /* Medium 中型裝置md (768px 以上) */
 @media (min-width: 768px) {
-
 }
 
 /* 768-992之間的畫面 */

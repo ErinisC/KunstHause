@@ -61,8 +61,8 @@
                 <!-- 下方商品欄位一 -->
                 <?php foreach ($_SESSION['cart'] as $i) : ?>
 
-                    <div id="prod<?= $i['sid'] ?>" class="row item mx-0 py-3 text-center">
-                        <ul class="product-item w-100 list-unstyled justify-content-between align-items-center">
+                    <div id="prod<?= $i['sid'] ?>" data-sid="<?= $i['sid'] ?>" class="product-item row item mx-0 py-3 text-center">
+                        <ul class="w-100 list-unstyled justify-content-between align-items-center">
                             <!-- 活動 -->
                             <li class="d-flex p-0 align-items-center col-lg-6 col-md-6 col-sm-12 col-12">
 
@@ -78,7 +78,7 @@
                                     </div>
 
                                     <!-- 活動日期 -->
-                                    <div class="">
+                                    <div class="my-3">
                                         <?= $i['start-datetime'] ?>
                                     </div>
 
@@ -97,11 +97,12 @@
                                         <i class="fas fa-minus"></i>
                                     </div>
 
-                                    <input data-quantity="<?= $i['quantity'] ?>" type="text" class="quantity col-8 text-center" value="<?= $i['quantity'] ?>">
 
+                                    <input data-quantity="<?= $i['quantity'] ?>" type="text" class="quantity mx-2 p-0 text-center col-6" value="<?= $i['quantity'] ?>">
                                     <div class="add col-2 p-0">
                                         <i class="fas fa-plus"></i>
                                     </div>
+
                                 </div>
                             </li>
 
@@ -134,7 +135,7 @@
                         <!-- 小計 -->
                         <div class="wrap d-flex justify-content-between">
                             <p>小計</p>
-                            <p class="totalAmount">$1,200</p>
+                            <p id="totalAmount">$</p>
                         </div>
 
                         <!-- 使用優惠代碼 -->
@@ -189,17 +190,12 @@
                     <?php endif; ?>
                 </div>
             </div>
-
+        <?php endif; ?>
 
 
     </div>
-
-
-<?php endif; ?>
-
-
 </div>
-</div>
+
 
 
 
@@ -219,7 +215,8 @@
         let q = $(this).prev().val();
         q = q * 1 + 1;
         $(this).prev().val(q);
-
+        $(this).prev().attr('value', q);
+        // $(this).prev().attr('data-quantity', q);
 
     })
 
@@ -228,9 +225,9 @@
         let q = $(this).next().val();
         q = q * 1 - 1;
         $(this).next().val(q);
-
+        $(this).next().attr('value', q);
+        // $(this).next().attr('data-quantity', q);
     })
-
 
     // 移除
     function removeItem(sid) {
@@ -241,19 +238,19 @@
             // 上面navbar的購物車數量要變
             countCart(data.cart);
             // 購物車清單的列要移除
-            $('#prod' + sid).remove();
+            $('div#prod' + sid).remove();
+
         }, 'json')
     }
 
 
-    //計算總計金額
+    //計算全部總計金額
     function calcTotal() {
         let total = 0;
         // 調整數量時連動資料庫
         $('.product-item').each(function() {
             // 拿到這個項目後
             const ul = $(this);
-
             // 拿價錢
             const price = parseInt(ul.find('div.price').attr('data-price'));
             // 拿數量
@@ -264,34 +261,57 @@
             // 每次小計完就加上金額
             total += price * quantity;
         });
-        $('.totalAmount').text('$ ' + total);
+        $('#totalAmount').text('$ ' + total);
 
     };
     calcTotal();
 
 
-    // 現在要改變數量時，金額也會跳。抓不到！！！！！下週問老師
+    // 現在要改變數量時，寫進購物車內改數量，再回傳回來
+    // 先做加的
     $('.add').on('click', function() {
-        const quantity = $(this).next('.quantity').val()
+        // console.log('input.quantity')
+        const quantity = $(this).prev().val();
+        const sid = $(this).closest('.product-item').attr('data-sid');
+        const combo = $(this);
+        // 找到這兩個數字後，就發ajx到購物車api那邊
+        $.get('4_productList-shopcart-api.php', {
+            sid: sid,
+            action: 'add',
+            quantity: quantity
+        }, function(data) {
+            console.log(data);
+            // 上面navbar的購物車數量要變
+            countCart(data.cart);
+            // 回來後更改數量 
+            combo.prev().attr('data-quantity', quantity);
+            // 有變動後再呼叫一次總計
+            calcTotal();
+        }, 'json')
     });
-    // $('.product-item input.quantity').on('change', function() {
-    //     const quantity = $(this).text;
-    //     const sid = $(this).closest('.product-item').attr('data-sid');
-    //     const combo = $(this);
-    //     // 找到這兩個數字後，就發ajx到購物車api那邊
-    //     $.get('4_productList-shopcart-api.php', {
-    //         sid: sid,
-    //         action: 'add',
-    //         quantity: quantity
-    //     }, function(data) {
-    //         // 上面navbar的購物車數量要變
-    //         countCart(data.cart);
-    //         // 回來後更改數量 
-    //         combo.attr('data-quantity', 'quantity');
-    //         // 總計
-    //         // combo.closest('.product-item').find('.subtotal').text()
-    //     }, 'json')
-    // });
+
+    // 現在要改變數量時，寫進購物車內改數量，再回傳回來
+    // 再做減的
+    $('.minus').on('click', function() {
+        // console.log('input.quantity')
+        const quantity = $(this).next().val();
+        const sid = $(this).closest('.product-item').attr('data-sid');
+        const combo = $(this);
+        // 找到這兩個數字後，就發ajx到購物車api那邊
+        $.get('4_productList-shopcart-api.php', {
+            sid: sid,
+            action: 'add',
+            quantity: quantity
+        }, function(data) {
+            console.log(data);
+            // 上面navbar的購物車數量要變
+            countCart(data.cart);
+            // 回來後更改數量 
+            combo.next().attr('data-quantity', quantity);
+            // 有變動後再呼叫一次總計
+            calcTotal();
+        }, 'json')
+    });
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

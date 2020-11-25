@@ -10,7 +10,7 @@
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
 <div class="background">
-    <div class="container col-8 b2bcreate">
+    <div class="container col-xl-8 col-12 b2bcreate">
         <div class="space" style="height: 150px;"></div>
         <div class="row">
             <h1 class="title">上架活動資料</h1>
@@ -44,20 +44,21 @@
         <label for="event-place">
             活動地點
         </label>
-        <form name="event-place" class="event-place d-flex">
-            <select name="City" type="text" class="input " style="width:180px">
-                <option value="Taipei">台北市</option>
-                <option value="NewTaipei">新北市</option>
-                <option value="Taoyuan">桃園市</option>
-                <option value="Hsinchu">新竹縣</option>
-                <option value="Miaoli">苗栗國</option>
-                <option value="Taichung">台中市</option>
-            </select>
+        <form name="event-place" class="event-place d-flex flex-wrap col-12 p-0">
+            <div class="selector col-xl-4 d-flex justify-content-between p-0">
+                <select name="City" type="text" class="input col-sm-6" style="width:180px">
+                    <option value="Taipei">台北市</option>
+                    <option value="NewTaipei">新北市</option>
+                    <option value="Taoyuan">桃園市</option>
+                    <option value="Hsinchu">新竹縣</option>
+                    <option value="Miaoli">苗栗國</option>
+                    <option value="Taichung">台中市</option>
+                </select>
+                <select type="text" class="input col-sm-6 " style="width:180px">
 
-            <select type="text" class="input" style="width:180px">
-
-            </select>
-            <input type="text" class="input" placeholder="XXX街XXX號">
+                </select>
+            </div>
+            <input type="text" class="input col-xl-8 col-sm-12" placeholder="XXX街XXX號">
         </form>
         <label for="transport">
             交通資訊
@@ -78,14 +79,14 @@
         </label>
 
         <div class="d-flex">
-            <div class="blanket"></div>
-            <div>
+            <div class="blanket col-8"></div>
+            <div class="price-lenght  col-xl-4 col-sm-12 p-0">
                 <label for="price">活動票卷售價</label>
                 <div class="d-flex pricesetting">
-                    <div class="pricetag col-5">
+                    <div class="pricetag col-4">
                         <p class="py-2">NT$</p>
                     </div>
-                    <input name="price" type="number" class="col-7 input">
+                    <input name="price" type="number" class="col-8 input">
 
                 </div>
                 <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -99,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div class="modbutton text-center col-8">
+        <div class="modbutton text-center col-xl-8 col-sm-12 p-0">
             <div class="okbutton d-flex">
                 <button class="modify1 btn ">取消</button>
                 <div class="space" style="width: 20px;"></div>
@@ -107,7 +108,7 @@
             </div>
         </div>
     </div>
-
+    <div class="space" style="height: 150px;"></div>
 </div>
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>

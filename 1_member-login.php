@@ -104,7 +104,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
 
                                 <div class="input-box col-11 mx-auto">
-                                    <input type="email" class="form-control mb-2" id="account" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
+                                    <input type="email" class="account form-control mb-2" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
                                 </div>
 
                             </div>
@@ -146,13 +146,6 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <script>
-    // $('#loginForm').on('submit', (e) => {
-    //             e.preventDefault();
-    //             
-    //             }
-
-
-
     const account = $('#account'),
         password = $('#password'),
         info_bar = $('#info_bar')
@@ -162,16 +155,16 @@ if (isset($_SERVER['HTTP_REFERER'])) {
         let send = true;
 
         if ($('#account').val() === '') {
-            // $('#loginForm').find('[name="email"]').siblings('.error').text('請輸入您的電子信箱');
             infoText = '請輸入您的電子信箱';
             send = false;
         } else if ($('#password').val() === '') {
             infoText = '請輸入您的密碼';
             send = false;
-        } else if ($('#password').val().length < 8) {
-            infoText = '密碼length';
+        } else if ($('#password').val().length < 3) {
+            infoText = '您的密碼不正確';
             send = false;
         }
+
 
 
         if (send) {
@@ -185,7 +178,11 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         .removeClass('alert-danger')
                         .addClass('alert-success')
                         .text('登入成功');
-                    // location.href = '<?= $gotoURL ?>';
+
+                    setTimeout(function() {
+                        location.href = '<?= $gotoURL ?>';
+                    }, 2000);
+
 
                 } else {
                     info_bar
@@ -210,7 +207,6 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                 info_bar.slideUp();
             }, 2000);
         }
-
 
     }
 </script>
