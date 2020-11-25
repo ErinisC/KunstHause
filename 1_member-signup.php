@@ -47,7 +47,7 @@
                     <form id="form" class="form" name="form" onclick="return false" ; novalidate>
                         <div class="form-group">
                             <label for="name">會員姓名 (必填)</label>
-                            <div class="input-wrap">
+                            <div class="input-wrap success">
                                 <div class="input-box d-flex">
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
                                     <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" required>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group">
                             <label for="account">會員帳號 (必填)</label>
-                            <div class="input-wrap">
+                            <div class="input-wrap error">
                                 <div class="input-box d-flex">
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
                                     <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
@@ -176,6 +176,7 @@
                             <label class="form-check-label" for="exampleCheck1">我同意Kunsthaus服務條款及隱私權政策</label>
                         </div>
 
+
                         <div class="signup-btn d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" name="button" id="button" data-target="#exampleModalCenter">註冊
                             </button>
@@ -254,135 +255,135 @@
         // let send = true;
         // let regex = 
 
-        if ($(nameValue === '') {
-                //show error
-                //add error class
-                setErrorFor(name, '* 此欄位為必填, 請輸入您的真實姓名');
-            } else {
-                // add success class
-                setSuccessFor(name);
-            }
-
-            if (accountValue === '') {
-                setErrorFor(account, '帳號欄位不可空白');
-            } else if (!isEmail(accountValue)) {
-                setErrorFor(account, '* 請符合email格式設定');
-            } else {
-                setSuccessFor(account);
-            }
-
-            if (passwordValue === '') {
-                setErrorFor(password, '* 密碼欄位不可空白');
-            } else if (passwordValue.length < 8) {
-                setErrorFor(password, '* 密碼請至少設置8碼');
-            } else {
-                setSuccessFor(password);
-            }
-
-            if (checkpasswordValue === '') {
-                setErrorFor(checkpassword, '* 確認密碼欄位不可空白');
-            } else if (passwordValue !== checkpasswordValue) {
-                setErrorFor(checkpassword, '* 您輸入的密碼與第一次不同');
-            } else {
-                setSuccessFor(checkpassword);
-            }
-
-            // show a success message
-        }
-
-        function setErrorFor(input, message) {
-            const inputWrap = input.parentElement; // .input-wrap
-            const small = InputWrap.querySelector('small');
-            //add error message inside small
-            small.innerText = message;
-
+        if (nameValue === '') {
+            //show error
             //add error class
-            InputWrap.className = 'input-wrap error';
+            setErrorFor(name, '* 此欄位為必填, 請輸入您的真實姓名');
+        } else {
+            // add success class
+            setSuccessFor(name);
         }
 
-        function setSuccessFor(input) {
-            const inputWrap = input.parentElement;
-            InputWrap.className = 'input-wrap success';
+        if (accountValue === '') {
+            setErrorFor(account, '帳號欄位不可空白');
+        } else if (!isEmail(accountValue)) {
+            setErrorFor(account, '* 請符合email格式設定');
+        } else {
+            setSuccessFor(account);
         }
 
-        function isEmail(email) {
-            return /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(email);
+        if (passwordValue === '') {
+            setErrorFor(password, '* 密碼欄位不可空白');
+        } else if (passwordValue.length < 8) {
+            setErrorFor(password, '* 密碼請至少設置8碼');
+        } else {
+            setSuccessFor(password);
         }
 
+        if (checkpasswordValue === '') {
+            setErrorFor(checkpassword, '* 確認密碼欄位不可空白');
+        } else if (passwordValue !== checkpasswordValue) {
+            setErrorFor(checkpassword, '* 您輸入的密碼與第一次不同');
+        } else {
+            setSuccessFor(checkpassword);
+        }
 
+        // show a success message
+    }
 
-        // ($('#account').val() === '') {
+    function setErrorFor(input, message) {
+        const inputWrap = input.parentElement; // .input-wrap
+        const small = InputWrap.querySelector('small');
+        //add error message inside small
+        small.innerText = message;
 
-        // } else($('#password').val().length < 8) {
+        //add error class
+        InputWrap.className = 'input-wrap error';
+    }
 
-        // } else($('#password').val() != ('#checkpassword').val()) {
+    function setSuccessFor(input) {
+        const inputWrap = input.parentElement;
+        InputWrap.className = 'input-wrap success';
+    }
 
-        // } else($('#mobile').val() === '') {
-        //     // re = /^09\d{2}-?\d{3}-?\d{3}$/;
-
-        // } else
-        //   submit()
-
-
-
-        // $(document).ready(function() {
-        //     $("button").click(function() {
-        //         if ($("#name").val() == '') {
-        //             alert("你尚未填寫姓名");
-        //             eval("document.form1['name'].focus()");
-        //         } else if ($("#account").val() == "") {
-        //             alert("請符合email格式設定");
-        //             eval("document.form1['account'].focus()");
-        //         } else if ($("#password").val() == "") {
-        //             alert("密碼請至少設置8碼");
-        //             eval("document.form1['password'].focus()");
-        //         } else if ($("#checkpassword").val() == "") {
-        //             alert("您輸入的密碼與第一次不同!");
-        //             eval("document.form1['checkpassword'].focus()");
-        //         } else if ($("#mobile").val() == "") {
-        //             alert("你尚未填寫電話");
-        //             eval("document.form1['mobile'].focus()");
-        //         } else {
-        //             document.form1.submit();
-        //         }
-        //     })
-        // })
+    function isEmail(email) {
+        return /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(email);
+    }
 
 
 
+    // ($('#account').val() === '') {
+
+    // } else($('#password').val().length < 8) {
+
+    // } else($('#password').val() != ('#checkpassword').val()) {
+
+    // } else($('#mobile').val() === '') {
+    //     // re = /^09\d{2}-?\d{3}-?\d{3}$/;
+
+    // } else
+    //   submit()
 
 
-        //     if (send) {
-        //         $.post('1_member-signup-api.php', $(document.needs - validation).serialize(), function(data) {
-        //             console.log(data);
-        //             if (data.success) {
-        //                 info_bar
-        //                     .removeClass('alert-danger')
-        //                     .addClass('alert-success')
-        //                     .text('完成新增');
-        //             } else {
-        //                 info_bar
-        //                     .removeClass('alert-success')
-        //                     .addClass('alert-danger')
-        //                     .text(data.error || '新增失敗');
-        //             }
-        //             info_bar.slideDown();
 
-        //             setTimeout(function() {
-        //                 info_bar.slideUp();
-        //             }, 2000);
-        //         }, 'json')
-        //     } else {
-        //         info_bar
-        //             .removeClass('alert-success')
-        //             .addClass('alert-danger')
-        //             .text(infoText);
-        //         info_bar.slideDown();
+    // $(document).ready(function() {
+    //     $("button").click(function() {
+    //         if ($("#name").val() == '') {
+    //             alert("你尚未填寫姓名");
+    //             eval("document.form1['name'].focus()");
+    //         } else if ($("#account").val() == "") {
+    //             alert("請符合email格式設定");
+    //             eval("document.form1['account'].focus()");
+    //         } else if ($("#password").val() == "") {
+    //             alert("密碼請至少設置8碼");
+    //             eval("document.form1['password'].focus()");
+    //         } else if ($("#checkpassword").val() == "") {
+    //             alert("您輸入的密碼與第一次不同!");
+    //             eval("document.form1['checkpassword'].focus()");
+    //         } else if ($("#mobile").val() == "") {
+    //             alert("你尚未填寫電話");
+    //             eval("document.form1['mobile'].focus()");
+    //         } else {
+    //             document.form1.submit();
+    //         }
+    //     })
+    // })
 
-        //         setTimeout(function() {
-        //             info_bar.slideUp();
-        //         }, 2000);
-        //     }
+
+
+
+
+    //     if (send) {
+    //         $.post('1_member-signup-api.php', $(document.needs - validation).serialize(), function(data) {
+    //             console.log(data);
+    //             if (data.success) {
+    //                 info_bar
+    //                     .removeClass('alert-danger')
+    //                     .addClass('alert-success')
+    //                     .text('完成新增');
+    //             } else {
+    //                 info_bar
+    //                     .removeClass('alert-success')
+    //                     .addClass('alert-danger')
+    //                     .text(data.error || '新增失敗');
+    //             }
+    //             info_bar.slideDown();
+
+    //             setTimeout(function() {
+    //                 info_bar.slideUp();
+    //             }, 2000);
+    //         }, 'json')
+    //     } else {
+    //         info_bar
+    //             .removeClass('alert-success')
+    //             .addClass('alert-danger')
+    //             .text(infoText);
+    //         info_bar.slideDown();
+
+    //         setTimeout(function() {
+    //             info_bar.slideUp();
+    //         }, 2000);
+    //     }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
