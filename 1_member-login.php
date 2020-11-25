@@ -104,7 +104,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                                 </div>
 
                                 <div class="input-box col-11 mx-auto">
-                                    <input type="email" class="form-control mb-2" id="account" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
+                                    <input type="email" class="account form-control mb-2" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
                                 </div>
 
                             </div>
@@ -164,6 +164,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             infoText = '您的密碼不正確';
             send = false;
         }
+
 
 
         if (send) {

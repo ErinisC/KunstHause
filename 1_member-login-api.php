@@ -12,7 +12,7 @@ if (empty($_POST['account'])) {
 // TODO: 檢查資料格式
 
 $sql = "SELECT * FROM `member` WHERE `email`=? AND `password`=SHA1(?)";
-$output['sql'] = $sql;
+// $output['sql'] = $sql;
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['account'],
@@ -21,7 +21,7 @@ $stmt->execute([
 
 if ($stmt->rowCount() > 0) {
     $output['success'] = true;
-    $output['user'] = $stmt->fetch();
+    // $output['user'] = $stmt->fetch();
     $_SESSION['user'] = $stmt->fetch();
 }
 
