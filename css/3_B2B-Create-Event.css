@@ -7,11 +7,10 @@
   height: 100%;
   background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
   background-size: cover;
-  padding-bottom: 20%;
 }
 
 .b2bcreate {
-  height: 2800px;
+  height: 2700px;
 }
 
 .title {
@@ -138,6 +137,51 @@ input:focus {
   color: white;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 提醒小卡css */
+.modal-content {
+  border-radius: 0px;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  border: 3px solid #000;
+}
+
+.welcome-text {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+}
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  padding: 0;
+  border-top: 0 none;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.closebutton {
+  width: 190px;
+  height: 50px;
+  border-radius: 0px;
+  border: 3px solid #000;
+  color: white !important;
+  background-color: #168fa4 !important;
+}
+
 /* Media Query */
 /* ============================= */
 /* Extra small 超小 (576px 以下) */
@@ -148,10 +192,14 @@ input:focus {
 
   .background {
     width: 100%;
-    height: 400vh;
+    height: 360vh;
     background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
     background-size: cover;
     padding-bottom: 20%;
+  }
+
+  .container {
+    padding: 0 15px !important;
   }
 
   textarea {
