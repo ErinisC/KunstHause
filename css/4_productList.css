@@ -207,11 +207,20 @@ input:focus {
 .flip-card-back {
     transform: rotateY(180deg);
     background-color: #FFC024;
-    color: #168FA4;
+    /* color: #168FA4; */
     line-height: 1.5;
+    /* overflow: hidden; */
+}
 
+.flip-card-back .filp-title {
+    font-weight: 600;
+    background-color: #4336A3;
+    color: white;
+}
+
+.flip-card-back p {
+    height: 80%;
     overflow: hidden;
-
 }
 
 /* 活動小卡圖片 */
@@ -260,12 +269,17 @@ input:focus {
     font-size: 2rem;
 }
 
-.like:hover {
+/* .like:hover {
     color: #ED5B4C;
 }
 
 .like:focus .far.fa-heart {
     color: #ED5B4C;
+    font-weight: 900;
+} */
+
+.like.liked {
+    color: #ed5b4c;
     font-weight: 900;
 }
 
@@ -386,9 +400,9 @@ iframe {
 }
 
 /* 瀏覽紀錄邊條 */
-.side-cookie-bar {
-    /* width: 50px; */
-    /* height: 50px; */
+/* .side-cookie-bar {
+    width: 50px;
+    height: 50px;
     border-radius: 8px 0 0 8px;
     background-color: rgba(0, 0, 0, 0.5);
     top: 50%;
@@ -413,7 +427,7 @@ iframe {
 
 .side-cookie-item p {
     font-size: .8rem;
-}
+} */
 
 /* 怪怪地區 */
 footer .letter-submit {

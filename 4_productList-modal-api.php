@@ -173,6 +173,9 @@ if (empty($row)) {
     $('.buy-btn').on('click', function() {
         window.parent.$('#exampleModal').modal('hide');
         window.parent.$('.cartnav-dropdown').toggle();
+        // 先移除購物車空空的alert
+        window.parent.$('.alert').css('display', 'none');
+        window.parent.$('.pay-btn').css('display', 'block');
         // 小版時要跳出小版navbar的畫面，但大版時消不掉！！！
         // window.parent.$('.cart-nav-small').toggle();
 
@@ -184,10 +187,7 @@ if (empty($row)) {
         //     window.parent.$('.cart-nav-big').toggle();
         // }, 2000);
 
-    });
-
-    // 準備串接購物車，先看能不能正確抓到商品sid跟數量
-    $('.buy-btn').on('click', function() {
+        // 準備串接購物車，先看能不能正確抓到商品sid跟數量
         // 先往上找到小卡
         const item = $(this).closest('.content-wrap');
         //再找到這個item的屬性，就能抓到設定給它的data-sid的值
@@ -207,7 +207,17 @@ if (empty($row)) {
             },
             function(data) {
                 console.log(data);
+                if (window.parent && window.parent.smallCartInit) {
+                    window.parent.smallCartInit();
+                }
+
             }, 'json')
 
     });
+
+
+    // $('.buy-btn').on('click', function() {
+
+
+    // });
 </script>

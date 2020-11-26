@@ -113,7 +113,7 @@
             <!-- </div> -->
 
 
-            <div class="test" style="display:none">
+            <div class="test" style="display:block">
                 <!-- 開始信用卡圖片 -->
                 <div class="row justify-content-center">
                     <!-- 信用卡圖片 -->
@@ -133,74 +133,117 @@
                             <div class="form-title col-6 m-auto py-2">信用卡資訊</div>
                         </div>
 
-                        <!-- 持卡人姓名 -->
-                        <div class="form-group mb-4">
-                            <label for="name">持卡人姓名 (必填)</label>
-                            <div class="input-box">
-                                <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name">
-                                <!-- 姓名驗證 -->
-                                <small class="form-text"></small>
+                        <!-- 如果有設定信用卡的話，如果沒有就 -->
+                        <?php if (isset($_SESSION['creditcard'])) : ?>
+                            <!-- 持卡人姓名 -->
+                            <div class="form-group mb-4">
+                                <label for="name">持卡人姓名 (必填)</label>
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="<?= $_SESSION['creditcard']['name'] ?>">
+                                    <!-- 姓名驗證 -->
+                                    <small class="form-text"></small>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- 卡片號碼 -->
-                        <div class="form-group mb-4">
-                            <label for="credit-number">卡片號碼</label>
-                            <div class="input-box">
-                                <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number">
-                                <!-- 信箱驗證 -->
-                                <small id="credit-number" class="form-text"></small>
+                            <!-- 卡片號碼 -->
+                            <div class="form-group mb-4">
+                                <label for="credit-number">卡片號碼</label>
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="<?= $_SESSION['creditcard']['credit-number'] ?>">
+                                    <!-- 信箱驗證 -->
+                                    <small id="credit-number" class="form-text"></small>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- 有效年月 -->
-                        <div class="form-group mb-4">
-                            <label for="valid-date"">有效年月</label>
+                            <!-- 有效年月 -->
+                            <div class="form-group mb-4">
+                                <label for="valid-date"">有效年月</label>
                                     <div class=" input-box">
-                                <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date">
-                                <!-- 有效年月驗證 -->
-                                <small class="form-text" class="r-pin"></small>
+                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="<?= $_SESSION['creditcard']['valid-date'] ?>">
+                                    <!-- 有效年月驗證 -->
+                                    <small class="form-text" class="r-pin"></small>
+                            </div>
+
+                            <!-- 驗證碼 -->
+                            <div class="form-group mb-4">
+                                <label for="security-number">驗證碼</label>
+                                <div class="input-box">
+                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="<?= $_SESSION['creditcard']['security-number'] ?>">
+                                    <!-- 電話驗證 -->
+                                    <small class="form-text" class="r-pin"></small>
+                                </div>
+                            </div>
+
+                        <?php else : ?>
+                            <!-- 持卡人姓名 -->
+                            <div class="form-group mb-4">
+                                <label for="name">持卡人姓名 (必填)</label>
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="">
+                                    <!-- 姓名驗證 -->
+                                    <small class="form-text"></small>
+                                </div>
+                            </div>
+
+                            <!-- 卡片號碼 -->
+                            <div class="form-group mb-4">
+                                <label for="credit-number">卡片號碼</label>
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="">
+                                    <!-- 信箱驗證 -->
+                                    <small id="credit-number" class="form-text"></small>
+                                </div>
+                            </div>
+
+                            <!-- 有效年月 -->
+                            <div class="form-group mb-4">
+                                <label for="valid-date"">有效年月</label>
+                                    <div class=" input-box">
+                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="">
+                                    <!-- 有效年月驗證 -->
+                                    <small class="form-text" class="r-pin"></small>
+                            </div>
+
+                            <!-- 驗證碼 -->
+                            <div class="form-group mb-4">
+                                <label for="security-number">驗證碼</label>
+                                <div class="input-box">
+                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="">
+                                    <!-- 電話驗證 -->
+                                    <small class="form-text" class="r-pin"></small>
+                                </div>
+                            </div>
+
+                        <?php endif ?>
+
+
+                        <!-- 上一步或送出按鈕 -->
+                        <div class="row justify-content-center">
+                            <!-- 繼續逛逛 -->
+                            <div class="col-6 text-right">
+                                <a href="5_shopCart-member-info.php">
+                                    <button type="button" class="btn btn-warning btn-before">上一步</button>
+                                </a>
+                            </div>
+
+                            <!-- 送出 -->
+                            <div class="col-6">
+                                <button type="submit" class="btn submit btn-info">確認送出</button>
+                            </div>
+
                         </div>
+
+                    </form>
                 </div>
 
-
-                <!-- 驗證碼 -->
-                <div class="form-group mb-4">
-                    <label for="security-number">驗證碼</label>
-                    <div class="input-box">
-                        <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number">
-                        <!-- 電話驗證 -->
-                        <small class="form-text" class="r-pin"></small>
-                    </div>
-                </div>
-
-                <!-- 上一步或送出按鈕 -->
-                <div class="row justify-content-center">
-                    <!-- 繼續逛逛 -->
-                    <div class="col-6 text-right">
-                        <a href="5_shopCart-member-info.php">
-                            <button type="button" class="btn btn-warning btn-before">上一步</button>
-                        </a>
-                    </div>
-
-                    <!-- 送出 -->
-                    <div class="col-6">
-                        <button type="submit" class="btn submit btn-info">確認送出</button>
-                    </div>
-
-                </div>
-
-                </form>
             </div>
 
         </div>
 
+
+
+
     </div>
-
-
-
-
-</div>
 </div>
 
 
@@ -253,7 +296,7 @@
 
     // 秀出信用卡付款資料表
     function showCollapse() {
-        $('.test').slideDown();
+        $('.test').toggle();
 
         // $('#credit-pay').collapse('show')
         // $('#bank-pay').collapse('hide')

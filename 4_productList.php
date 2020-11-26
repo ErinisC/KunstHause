@@ -212,7 +212,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                             <!-- 翻轉卡片背面 -->
                             <div class="flip-card-back position-absolute p-3">
-                                <p><?= $r['event_info'] ?></p>
+                                <div class="filp-title mb-3 text-center"><?= $r['event_name'] ?></div>
+                                <p class="px-3"><?= $r['event_info'] ?></p>
                             </div>
                         </div>
                     </a>
@@ -358,7 +359,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div>
 
         <!-- 瀏覽紀錄邊條 -->
-        <div class="side-cookie-bar position-fixed position-relative">
+        <!-- <div class="side-cookie-bar position-fixed position-relative">
             <i class="fas fa-history text-white" style="font-size:1.5rem"></i>
 
             <div class="side-cookie-item  text-center position-absolute">
@@ -378,7 +379,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
@@ -398,6 +399,13 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         //         $('.cart-nav').removeClass('show');
         //     }, 2000);
         // })
+
+        // card heart animation
+        $('.like').on('click', function() {
+            console.log('like');
+            $(this).toggleClass('liked');
+        });
+
         // modal
         function showProductModal(sid) {
             // 去抓當個sid
@@ -417,9 +425,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             $('.search-dropdown').toggle();
 
         })
-
-
-
 
 
         // 動態一一浮現

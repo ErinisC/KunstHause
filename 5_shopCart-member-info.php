@@ -82,43 +82,70 @@
                 <div class="form-title col-6 m-auto py-2">電子發票</div>
             </div>
 
-            <!-- 三聯發票抬頭 -->
-            <div class="form-group">
-                <label for="company">三聯發票抬頭</label>
-                <div class="input-box">
-                    <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company">
-                    <!--抬頭驗證 -->
-                    <small class="form-text">驗證</small>
+            <!-- 如果有設定三聯發票的話，如果沒有就 -->
+            <?php if (isset($_SESSION['buy_info'])) : ?>
+                <!-- 三聯發票抬頭 -->
+                <div class="form-group">
+                    <label for="company">三聯發票抬頭</label>
+                    <div class="input-box">
+                        <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company" value="<?= $_SESSION['buy_info']['company'] ?>">
+                        <!--抬頭驗證 -->
+                        <small class="form-text">驗證</small>
+                    </div>
+                </div>
+            <?php else : ?>
+                <!-- 三聯發票抬頭 -->
+                <div class="form-group">
+                    <label for="company">三聯發票抬頭</label>
+                    <div class="input-box">
+                        <input type="text" class="form-control" id="company" placeholder="三聯發票抬頭" name="company" value="">
+                        <!--抬頭驗證 -->
+                        <small class="form-text">驗證</small>
+                    </div>
+
+                <?php endif ?>
+
+
+                <!-- 如果有設定統編的話，如果沒有就 -->
+                <?php if (isset($_SESSION['buy_info'])) : ?>
+                    <!-- 統一編號 -->
+                    <div class="form-group">
+                        <label for="tax-id-number">統一編號</label>
+                        <div class="input-box">
+                            <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number" value="<?= $_SESSION['buy_info']['tax-id-number'] ?>">
+                            <!-- 統一編號驗證 -->
+                            <small class="form-text">驗證</small>
+                        </div>
+                    </div>
+                <?php else : ?>
+                    <!-- 統一編號 -->
+                    <div class="form-group">
+                        <label for="tax-id-number">統一編號</label>
+                        <div class="input-box">
+                            <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number" value="0">
+                            <!-- 統一編號驗證 -->
+                            <small class="form-text">驗證</small>
+                        </div>
+                    </div>
+                <?php endif ?>
+
+            <?php endif; ?>
+
+            <!-- 上一步或送出按鈕 -->
+            <div class="row justify-content-center">
+                <!-- 繼續逛逛 -->
+                <div class="col-6 text-right">
+                    <a href="5_shopCart-list.php">
+                        <button type="button" class="btn btn-warning btn-before">上一步</button>
+                    </a>
+                </div>
+
+
+                <!-- 送出 -->
+                <div class="col-6">
+                    <button type="submit" class="btn submit btn-info">下一步</button>
                 </div>
             </div>
-
-            <!-- 統一編號 -->
-            <div class="form-group">
-                <label for="tax-id-number">統一編號</label>
-                <div class="input-box">
-                    <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number">
-                    <!-- 統一編號驗證 -->
-                    <small class="form-text">驗證</small>
-                </div>
-            </div>
-
-        <?php endif; ?>
-
-        <!-- 上一步或送出按鈕 -->
-        <div class="row justify-content-center">
-            <!-- 繼續逛逛 -->
-            <div class="col-6 text-right">
-                <a href="5_shopCart-list.php">
-                    <button type="button" class="btn btn-warning btn-before">上一步</button>
-                </a>
-            </div>
-
-
-            <!-- 送出 -->
-            <div class="col-6">
-                <button type="submit" class="btn submit btn-info">下一步</button>
-            </div>
-        </div>
 
         </form>
 

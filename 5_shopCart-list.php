@@ -1,6 +1,25 @@
 <?php $title = '購物車清單'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
+
+
+
+
+<?php
+
+// 選擇資料庫要的資料表，用count找出總共的幾數
+$sql = "SELECT * FROM products";
+$stmt = $pdo->query($sql);
+
+// $rows就會等於每一筆抓出的資料
+$rows = $stmt->fetchAll();
+
+// echo json_encode($rows);
+// exit;
+
+?>
+
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入ShopCart BG 的ＣＳＳ -->
@@ -124,6 +143,8 @@
                     </div>
 
                 <?php endforeach; ?>
+
+
             </section>
 
             <!-- 總計明細框框 -->

@@ -137,37 +137,40 @@
                                 <div class="text-center my-3">購物車商品</div>
 
                                 <!-- 如果session cart空空 -->
-                                <?php if (empty($_SESSION['cart'])) : ?>
-                                    <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
-                                    <!-- 如果session cart有東西 -->
-                                <?php else : ?>
-                                    <!-- 先用foreach抓出session的東西 -->
-                                    <?php foreach ($_SESSION['cart'] as $i) : ?>
-                                        <div id="prod<?= $i['sid'] ?>" class="one-item wrap d-flex px-2 justify-content-between align-items-center">
-                                            <div class="img-wrap col-4 p-0" style="height:100px">
-                                                <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
-                                            </div>
+                                <div class="alert alert-primary" role="alert" style="display:<?= empty($_SESSION['cart']) ? 'block' : 'none' ?>">你的購物車空空如也～</div>
+                                <!-- 如果session cart有東西 -->
 
-                                            <div class="item-info p-0 col-6">
-                                                <div class="title my-3">
-                                                    <?= $i['event_name'] ?>
+                                <!-- 空的div包起樣板字串 -->
+                                <div class="car-attatch">
+                                    <?php if (!empty($_SESSION['cart'])) : ?>
+                                        <!-- 先用foreach抓出session的東西 -->
+                                        <?php foreach ($_SESSION['cart'] as $i) : ?>
+                                            <div id="prod<?= $i['sid'] ?>" class="one-item wrap d-flex px-2 justify-content-between align-items-center">
+                                                <div class="img-wrap col-4 p-0" style="height:100px">
+                                                    <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                                 </div>
-                                                <div class="quantity mb-3">票數：<?= $i['quantity'] ?>張</div>
 
-                                                <div class="price mb-3">單張票價： $<?= $i['price'] ?></div>
+                                                <div class="item-info p-0 col-6">
+                                                    <div class="title my-3">
+                                                        <?= $i['event_name'] ?>
+                                                    </div>
+                                                    <div class="quantity mb-3">票數：<?= $i['quantity'] ?>張</div>
+
+                                                    <div class="price mb-3">單張票價： $<?= $i['price'] ?></div>
+                                                </div>
+
+                                                <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
                                             </div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
 
-                                            <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete">
-                                                <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                    <?php endforeach; ?>
-
-                                    <!-- 去結帳按鈕 -->
-                                    <a href="5_shopCart-list.php" class="text-right my-3">
-                                        <button type="button" class="btn btn-info">去結帳</button>
-                                    </a>
-                                <?php endif; ?>
+                                <!-- 去結帳按鈕 -->
+                                <a href="5_shopCart-list.php" class="pay-btn text-right my-3" style="display:<?= empty($_SESSION['cart']) ? 'none' : 'block' ?>">
+                                    <button type="button" class="btn btn-info">去結帳</button>
+                                </a>
 
 
                             </div>
@@ -193,10 +196,48 @@
             count_badge.html(count);
         }
 
-        $.get("4_productList-shopcart-api.php", function(data) {
-            // console.log(data);
-            countCart(data.cart);
-        }, 'json');
+        function smallCartInit() {
+            $.get("4_productList-shopcart-api.php", function(data) {
+                // console.log(data);
+                countCart(data.cart);
+
+                // 呼叫下方樣板字串，加入購物車列
+                let str = "";
+                for (let i in data.cart) {
+                    let el = data.cart[i];
+                    str += smallCartShowItems(el);
+                }
+
+                // 拿到html字串後，再把所有商品串起來
+                $('.car-attatch').html(str);
+
+            }, 'json');
+        }
+        smallCartInit();
+
+        // 樣板字串
+        function smallCartShowItems(a) {
+            return `  <div id="prod${a.sid}" class="one-item wrap d-flex px-2 justify-content-between align-items-center">
+                                            <div class="img-wrap col-4 p-0" style="height:100px">
+                                                <img src="imgs/event/${a.picture}.jpg" alt="">
+                                            </div>
+
+                                            <div class="item-info p-0 col-6">
+                                                <div class="title my-3">
+                                                   ${a.event_name}
+                                                </div>
+                                                <div class="quantity mb-3">票數：${a.quantity}張</div>
+
+                                                <div class="price mb-3">單張票價：${a.price} </div>
+                                            </div>
+
+                                            <a href="javascript:removeItem(${a.sid})" class="delete">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                        
+            `;
+        }
 
 
         // 點擊購物車icon，出現下拉框的購物車
@@ -204,9 +245,9 @@
             $('.cartnav-dropdown').toggle();
         })
 
-        $.get("4_productList-shopcart-api.php", function(data) {
-            console.log(data);
-        }, 'json');
+        // $.get("4_productList-shopcart-api.php", function(data) {
+        //     console.log(data);
+        // }, 'json');
 
         // 移除購物車內的列
         function removeItem(sid) {

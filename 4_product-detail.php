@@ -58,7 +58,7 @@ if (empty($row)) {
                 <p class="date-mon">10.10<br>10.13</p>
             </div>
 
-    <!-- ---------報名卡片-------------- -->
+            <!-- ---------報名卡片-------------- -->
 
             <div class="apply  apply-02 d-flex align-items-center justify-content-center">
                 <div class="d-flex text-align: center">
@@ -102,7 +102,7 @@ if (empty($row)) {
 
             </div>
 
-<!-- ---------報名卡片-------------- -->
+            <!-- ---------報名卡片-------------- -->
             <div class="apply apply-01 d-flex align-items-center justify-content-center">
                 <div class="d-flex text-align: center">
                     <div class="apply-ticket">
