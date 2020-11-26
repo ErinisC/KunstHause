@@ -41,7 +41,9 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 // ]);
 // exit;
 
+
 // 訂單狀態
+// 成功取出值的ajax寫法
 $status = isset($_GET['order_status']) ? intval($_GET['order_status']) : 0;
 
 $s_sql = "SELECT * FROM order_details";
@@ -68,7 +70,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
             <?php foreach ($s_rows as $s) : ?>
-                <button type="button" class="cate-btn btn-s btn-outline-primary" data-sid="<?= $s['sid'] ?>">
+                <button type="button" class="status-btn btn-s" data-sid="<?= $s['sid'] ?>">
                     <?= $s['order_status'] ?>
                 </button>
             <?php endforeach ?>
@@ -82,7 +84,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 <?php if (empty($o_rows)) : ?>
     <div class="container">
         <div class="row">
-
+            <p>還沒有訂單資料唷～</p>
         </div>
     </div>
 
@@ -90,9 +92,9 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 <?php else : ?>
 
     <div class="container">
-        <div class="row order mb-5 align-content-center">
-            <?php foreach ($o_rows as $o) : ?>
-                <?php foreach ($d_rows as $d) : ?>
+        <?php foreach ($o_rows as $o) : ?>
+            <?php foreach ($d_rows as $d) : ?>
+                <div class="row order mb-5 align-content-center">
                     <?php if ($o['sid'] == $d['order_id']) : ?>
                         <div class="col-lg-3 event-img p-0">
                             <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg.jpg" alt="">
@@ -123,9 +125,9 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                             </div>
                         </div>
                     <?php endif; ?>
-                <?php endforeach; ?>
+                </div>
             <?php endforeach; ?>
-        </div>
+        <?php endforeach; ?>
     </div>
 
     <!--pagination-->
@@ -160,6 +162,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
     </div>
 
 <?php endif; ?>
+
 <!--modal cancel-->
 <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -243,9 +246,8 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 <script>
-    // const dallorCommas = function(n) {
-    //     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    // };
+   
+
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
