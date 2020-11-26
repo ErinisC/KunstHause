@@ -54,8 +54,8 @@
             活動地點
         </label>
         <form name="event-place" class="event-place d-flex flex-wrap col-12 p-0">
-            <div class="selector col-xl-4 d-flex justify-content-between p-0">
-                <select name="City" type="text" class="input col-sm-6" style="width:180px">
+            <div class="selector col-xl-4  d-flex justify-content-between p-0">
+                <select name="City" type="text" class="input col-sm-5 mx-0" style="width:180px">
                     <option value="Taipei">台北市</option>
                     <option value="NewTaipei">新北市</option>
                     <option value="Taoyuan">桃園市</option>
@@ -63,27 +63,29 @@
                     <option value="Miaoli">苗栗國</option>
                     <option value="Taichung">台中市</option>
                 </select>
-                <select type="text" class="input col-sm-6 " style="width:180px">
-
+                <div class="col-lg-1"></div>
+                <select type="text" class="input col-sm-5 mx-0" style="width:180px">
                 </select>
+                <div class="space col-1 px-0" style="width:10px"></div>
             </div>
+            <!-- <div class="space col-1" style="width:10px"></div> -->
             <input type="text" class="input col-xl-8 col-sm-12" placeholder="XXX街XXX號">
         </form>
         <label for="transport">
             交通資訊
-            <Textarea name="transport" class="textarea" cols="87" rows="10">
+            <Textarea name="transport" class="textarea" cols="117" rows="10">
         </Textarea>
         </label>
 
         <label for="Precautions">
             活動注意事項
-            <Textarea name="Precautions" class="textarea" cols="87" rows="10">
+            <Textarea name="Precautions" class="textarea" cols="117" rows="10">
         </Textarea>
         </label>
 
         <label for="event-content">
             活動內容資訊
-            <Textarea name="event-content" class="textarea" cols="87" rows="10" required>
+            <Textarea name="event-content" class="textarea" cols="117" rows="10" required>
         </Textarea>
         </label>
 
