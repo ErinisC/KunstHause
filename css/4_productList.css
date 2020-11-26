@@ -385,6 +385,36 @@ iframe {
 
 }
 
+/* 瀏覽紀錄邊條 */
+.side-cookie-bar {
+    /* width: 50px; */
+    /* height: 50px; */
+    border-radius: 8px 0 0 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+}
+
+.side-cookie-bar:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.side-cookie-item {
+    display: none;
+    min-height: 100px;
+    max-height: 300px;
+    width: 120px;
+    background-color: #fff;
+    border-radius: 5px;
+    top: 0;
+    right: 30px;
+}
+
+.side-cookie-item p {
+    font-size: .8rem;
+}
+
 /* 怪怪地區 */
 footer .letter-submit {
     font-size: 1rem;

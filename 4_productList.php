@@ -357,6 +357,29 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             </div>
         </div>
 
+        <!-- 瀏覽紀錄邊條 -->
+        <div class="side-cookie-bar position-fixed position-relative">
+            <i class="fas fa-history text-white" style="font-size:1.5rem"></i>
+
+            <div class="side-cookie-item  text-center position-absolute">
+                <p class="mb-3">瀏覽紀錄</p>
+                <ul>
+                    <li class="d-flex justify-content-around my-2">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <p>name</p>
+                    </li>
+                    <li class="d-flex justify-content-around">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <p>name</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
     <?php include __DIR__ . '/1_parts/3_script.php'; ?>
@@ -433,6 +456,13 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             const walk = (x - startX) * 3; //scroll-fast
             slider.scrollLeft = scrollLeft - walk;
             console.log(walk);
+        });
+
+
+        // 瀏覽紀錄的動態
+        $('.side-cookie-bar').on('click', function() {
+            $('.side-cookie-item').toggle();
+
         });
     </script>
 

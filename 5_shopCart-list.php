@@ -170,22 +170,31 @@
 
 
             <!-- 上一步下一步按鈕 -->
-            <div class="container mt-3">
-                <div class="row row justify-content-center">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
                     <!-- 繼續逛逛 -->
+                    <div class="col-6 text-right">
+                        <a href="4_productList.php">
+                            <button type="button" class="btn btn-warning btn-before">繼續逛</button>
+                        </a>
+                    </div>
 
-                    <a href="4_productList.php">
-                        <button type="button" class="btn btn-warning mr-3">繼續逛逛</button>
-                    </a>
+
+
                     <?php if (isset($_SESSION['user'])) : ?>
                         <!-- 下一步按鈕 -->
-                        <a href="5_shopCart-member-info.php">
-                            <button type="button" class="btn btn-info">下一步</button>
-                        </a>
+                        <div class="col-6">
+                            <a href="5_shopCart-member-info.php">
+                                <button type="button" class="btn btn-info">下一步</button>
+                            </a>
+                        </div>
+
                     <?php else : ?>
-                        <a href="1_member-login.php">
-                            <button type="button" class="btn btn-info">請先登入會員</button>
-                        </a>
+                        <div class="col-6">
+                            <a href="1_member-login.php">
+                                <button type="button" class="btn btn-info">請先登入會員</button>
+                            </a>
+                        </div>
 
                     <?php endif; ?>
                 </div>

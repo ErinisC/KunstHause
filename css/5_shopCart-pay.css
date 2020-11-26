@@ -13,6 +13,14 @@
 
 .payway-wrap {
     cursor: pointer;
+    transition: .5s;
+}
+
+.payway-wrap:hover {
+    cursor: pointer;
+    outline: 1px solid #168FA4;
+    border-radius: 5px;
+    box-shadow: 5px 5px #168FA4;
 }
 
 .payway-wrap .img-wrap {
@@ -38,6 +46,21 @@
 .form-control:focus {
     border-color: #FFC026;
     box-shadow: 0 0 0 0.2rem rgba(255, 192, 38, 0.25);
+}
+
+/* 統一按鈕 */
+.btn {
+    border: 3px solid #000;
+    border-radius: 0px;
+    font-weight: 600;
+}
+
+.btn-info {
+    color: black
+}
+
+.btn-before {
+    opacity: .5;
 }
 
 /* Modal */

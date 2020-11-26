@@ -23,8 +23,6 @@
     text-overflow: ellipsis;
 }
 
-
-
 .minus,
 .fa-plus,
 .fa-trash-alt {
@@ -45,6 +43,21 @@
 
 .line {
     border-top: 3px solid white;
+}
+
+/* 統一按鈕 */
+.btn {
+    border: 3px solid #000;
+    border-radius: 0px;
+    font-weight: 600;
+}
+
+.btn-info {
+    color: black
+}
+
+.btn-before {
+    opacity: .5;
 }
 
 /* ====== Ｍedia Query =============== */

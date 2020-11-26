@@ -25,8 +25,19 @@ form .btn {
     font-weight: 600;
 }
 
-.previous-step {
-    background-color: #ffc639;
+/* 統一按鈕 */
+.btn {
+    border: 3px solid #000;
+    border-radius: 0px;
+    font-weight: 600;
+}
+
+.btn-info {
+    color: black
+}
+
+.btn-before {
+    opacity: .5;
 }
 
 

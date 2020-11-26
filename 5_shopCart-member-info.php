@@ -106,12 +106,18 @@
 
         <!-- 上一步或送出按鈕 -->
         <div class="row justify-content-center">
-            <!-- 上一步 -->
-            <a href="5_shopCart-list.php" role="button" class="btn previous-step">上一步</a>
+            <!-- 繼續逛逛 -->
+            <div class="col-6 text-right">
+                <a href="5_shopCart-list.php">
+                    <button type="button" class="btn btn-warning btn-before">上一步</button>
+                </a>
+            </div>
+
 
             <!-- 送出 -->
-            <button type="submit" class="btn submit btn-info">下一步</button>
-
+            <div class="col-6">
+                <button type="submit" class="btn submit btn-info">下一步</button>
+            </div>
         </div>
 
         </form>
