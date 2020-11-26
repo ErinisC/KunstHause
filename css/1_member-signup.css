@@ -37,6 +37,12 @@ body {
   right: -1.2rem;
 }
 
+.alert {
+  text-align: center;
+  border: 3px solid #832626;
+  font-weight: 600;
+}
+
 .list-title {
   font-size: 1.2rem;
   font-weight: 600;
@@ -44,7 +50,8 @@ body {
   font-family: NotoSansTC-Regular, Roboto;
   letter-spacing: 2px;
   line-height: 1.8rem;
-  margin-top: 7rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }
 
 .signup-form {
