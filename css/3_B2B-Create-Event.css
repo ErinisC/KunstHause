@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 .background {
   width: 100%;
@@ -10,7 +10,7 @@
 }
 
 .b2bcreate {
-  height: 2700px;
+  height: 2350px;
 }
 
 .title {
@@ -18,7 +18,7 @@
   height: 100%;
   margin: auto;
   font-family: Arial;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -31,8 +31,9 @@
 .sm-title {
   width: 100%;
   height: 100%;
-  margin: auto;
-  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
   line-height: 16px;
   text-align: center;
 }
@@ -43,14 +44,18 @@ label {
   line-height: 1.5;
   letter-spacing: 1.2px;
   color: #050505;
-  margin-top: 50px;
+  margin-top: 35px;
+}
+
+.event-banner {
+  margin-top: 0;
 }
 
 .input {
   border: #000000 3px solid;
   width: 100%;
   height: 50px;
-  margin: 12px auto 23px;
+  margin: 12px auto 0;
   padding: 0 0 0 10px;
 }
 
@@ -110,6 +115,7 @@ input:focus {
 .modbutton {
   width: 100%;
   margin: 40px auto 0;
+  padding: 0;
 }
 
 .okbutton {
@@ -120,7 +126,7 @@ input:focus {
 }
 
 .modify1 {
-  width: 190px;
+  width: 140px;
   height: 50px;
   background-color: #e8e8e8;
   border: 3px solid #707070;
@@ -129,12 +135,11 @@ input:focus {
 }
 
 .modify2 {
-  width: 190px;
+  width: 140px;
   height: 50px;
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
-  color: white;
 }
 
 input::-webkit-outer-spin-button,
@@ -192,7 +197,7 @@ input[type="number"] {
 
   .background {
     width: 100%;
-    height: 360vh;
+    height: 310vh;
     background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
     background-size: cover;
     padding-bottom: 20%;

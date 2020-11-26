@@ -49,7 +49,7 @@
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary">查閱</button>
+                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -63,7 +63,7 @@
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary">查閱</button>
+                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -77,7 +77,7 @@
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary">查閱</button>
+                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -91,7 +91,7 @@
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary">查閱</button>
+                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -105,7 +105,7 @@
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary">查閱</button>
+                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -119,7 +119,7 @@
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary">查閱</button>
+                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -127,7 +127,7 @@
                             </td>
                         </tr>
                     </tbody>
-                    <!-- Modal -->
+                    <!-- Modal 取消訂單-->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content pt-3 mx-auto">
@@ -157,6 +157,34 @@
 
                                 <div class="modal-footer mx-auto">
                                     <button type="button" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 查閱訂單 -->
+                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content checkmodal pt-3 mx-auto">
+                                <div class="event mx-auto">
+                                    <div class="eventimg"></div>
+                                </div>
+                                <div class="modal-header d-flex flex-column">
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">活動名稱：臺日剪紙紙雕交流展
+                                    </div>
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：XD48763
+                                    </div>
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人姓名：王小明
+                                    </div>
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人電話：0900001234
+                                    </div>
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人電話：123@gmail.com
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer mx-auto">
+                                    <button type="button" class="closebutton btn btn-secondary mt-3" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
                                 </div>
 
                             </div>

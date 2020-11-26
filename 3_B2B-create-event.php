@@ -11,8 +11,8 @@
 
 <div class="background">
     <div class="container col-xl-6 col-12 b2bcreate px-0">
-        <div class="space" style="height: 150px;"></div>
-        <div class=" col-12 ">
+        <div class="space" style="height: 130px;"></div>
+        <div class="col-12">
             <h1 class="title">上架活動資料</h1>
             <h2 class="sm-title">KunstHaus 使用者將透過下列資訊了解活動</h2>
         </div>
@@ -39,7 +39,7 @@
 
         <p class="pt-3">(活動日期開始)</p>
         <input class="input" name="date" type="datetime-local">
-        <p>(活動日期結束)</p>
+        <p class="mt-3">(活動日期結束)</p>
         <input class="input" name="date" type="datetime-local">
         <label for="sort">活動種類</label>
         <select name="sort" type="text" class="input">
@@ -109,11 +109,10 @@
                 </div>
             </div>
         </div>
-        <div class="modbutton text-center col-xl-8 col-sm-12 p-0">
-            <div class="okbutton d-flex">
-                <button class="modify1 btn ">取消</button>
-                <div class="space" style="width:20px;"></div>
-                <button class="modify2 btn " data-toggle="modal" data-target="#exampleModalCenter">完成</button>
+        <div class="modbutton text-center">
+            <div class="okbutton col-xl-6 col-10 d-flex">
+                <button class="modify1 col-5 btn btn-primary">取消</button>
+                <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成</button>
             </div>
         </div>
         <!-- Modal -->
