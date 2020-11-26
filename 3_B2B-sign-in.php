@@ -11,7 +11,7 @@
 
 <div class="background">
     <div class="container">
-        <div class="row signinbg col-xl-12 col-12">
+        <div class="row signinbg col-12">
             <div class="title col-xl-8">
                 <h1>編輯主辦單位檔案</h1>
                 <p class="text">KunstHaus 使用者將透過下列資訊認識你</p>
@@ -60,7 +60,7 @@
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位簡介（必填）</p>
-                <textarea class="textarea2" name="" id="" cols="87" rows="10" placeholder="請填寫主辦單位簡介"></textarea>
+                <textarea class="textarea2" name="" id="" cols="89" rows="10" placeholder="請填寫主辦單位簡介"></textarea>
                 <p class="wortcount">0/255</p>
             </div>
 
