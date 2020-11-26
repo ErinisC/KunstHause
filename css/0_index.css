@@ -668,6 +668,11 @@ body {
   left: 8%;
 }
 
+.like.liked{
+    color: #ed5b4c;
+    font-weight: 900;
+}
+
 .punch {
   background: #168fa4;
   border: 3px solid black;
@@ -761,7 +766,8 @@ a:hover {
 .article-img {
   margin-top: 10%;
   height: 380px;
-  -webkit-transition: all 0.3s ease-in;
+  background-size: 100%;
+  transition-duration: 0.5s;
   display: flex;
   align-items: center;
 }

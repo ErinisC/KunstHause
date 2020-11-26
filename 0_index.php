@@ -89,13 +89,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-img pickup-1 img-480"></div>
+                    <a href="#">
+                        <div class="card-img pickup-1 img-480"></div>
+                    </a>
                     <div class="card-bottom pb-5">
                         <div class="act-title">
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
-                                    <p class="section-title-s m-3">2020簡單生活節</p>
-                                    <i id="my-fav" class="far fa-heart fa-2x mr-3"></i>
+                                    <a href="#">
+                                        <p class="section-title-s m-3">2020簡單生活節</p>
+                                    </a>
+                                    <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
                                 <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
                                 <div class="d-flex">
@@ -138,15 +142,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-img pickup-2 img-480"></div>
+                    <a href="#">
+                        <div class="card-img pickup-2 img-480"></div>
+                    </a>
                     <div class="card-bottom pb-5">
                         <div class="act-title">
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
-                                    <p class="section-title-s m-3">2020簡單生活節</p>
-                                    <i id="my-fav" class="far fa-heart fa-2x mr-3"></i>
+                                    <a href="#">
+                                        <p class="section-title-s m-3">CYCLE 野原邦彥個展</p>
+                                    </a>
+                                    <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
-                                <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
+                                <p class="act-time mb-3 ml-3">2020-01-15 ~ 01-16</p>
                                 <div class="d-flex">
                                     <div class="col-7 hashtage">
                                         <span class="hashtag">#簡單生活節</span>
@@ -186,13 +194,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-img pickup-3 img-480"></div>
+                    <a href="#">
+                        <div class="card-img pickup-3 img-480"></div>
+                    </a>
                     <div class="card-bottom pb-5">
                         <div class="act-title">
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
-                                    <p class="section-title-s m-3">2020簡單生活節</p>
-                                    <i id="my-fav" class="far fa-heart fa-2x mr-3"></i>
+                                    <a href="#">
+                                        <p class="section-title-s m-3">2020簡單生活節</p>
+                                    </a>
+                                    <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
                                 <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
                                 <div class="d-flex">
@@ -488,6 +500,10 @@
 
 
     // card heart animation
+    $('.like').on('click', function(){
+        console.log('like');
+        $(this).toggleClass('liked');
+    });
 
     // see more rubberBand animation
     $(window).scroll(function() {
@@ -508,7 +524,7 @@
 
     // fixed button animation
     $('#fixed-button').on('click', function() {
-        console.log('hi');
+        // console.log('hi');
         $('html,body').animate({
             scrollTop: 0
         }, 1500);
