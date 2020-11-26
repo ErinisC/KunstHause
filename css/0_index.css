@@ -160,13 +160,14 @@ body {
 
   .article-subtitle {
     font-size: 0.7rem;
+    line-height: 1rem;
   }
 
   /* b2b sec */
   .be-partner {
     top: 15%;
   }
-  
+
   /* fixed button */
   .fixed-button {
     width: 150px;
@@ -244,7 +245,6 @@ body {
   .section-title-s {
     font-size: 1.5rem;
   }
-
 
   .card {
     margin-bottom: 2rem;
@@ -337,11 +337,11 @@ body {
     top: 0;
   }
 
-  .sign1{
+  .sign1 {
     width: 50%;
   }
 
-  .sign2{
+  .sign2 {
     width: 50%;
   }
 
@@ -648,7 +648,6 @@ a:hover {
 .article-img {
   margin-top: 10%;
   height: 380px;
-  background: url(../imgs/index/blog-01.jpg) center no-repeat;
   background-size: 100%;
   -webkit-transition: all 0.3s ease-in;
   display: flex;
@@ -657,6 +656,26 @@ a:hover {
 
 .article-img:hover {
   background-size: 130%;
+}
+
+.cover-1 {
+  background: url(../imgs/index/blog-01.jpg) center no-repeat;
+}
+
+.cover-2 {
+  background: url(../imgs/index/blog-02.jpg) center no-repeat;
+}
+
+.cover-3{
+  background: url(../imgs/index/blog-03.jpg) center no-repeat;
+}
+
+.cover-4{
+  background: url(../imgs/index/blog-04.jpg) center no-repeat;
+}
+
+.cover-5{
+  background: url(../imgs/index/blog-05.jpg) center no-repeat;
 }
 
 .blog .inner-box {

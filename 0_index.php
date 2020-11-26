@@ -30,9 +30,6 @@
 
 <?php include __DIR__ . '/1_parts/2_navbar-lg.php'; ?>
 
-
-
-
 <section class="main grid-blue pb-5">
     <div class="container-fluid main-activities p-0">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -49,7 +46,7 @@
                     <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-02.jpeg.png.jpg" alt="First slide">
+                    <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-02.jpeg.jpg" alt="First slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -264,7 +261,7 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
-                        <div class="article-img">
+                        <div class="article-img cover-1">
                             <div class="inner-box">
                                 <h3 class="article-title">週五看MV</h3>
                                 <div class="line w-100"></div>
@@ -280,11 +277,11 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
-                        <div class="article-img">
+                        <div class="article-img cover-2">
                             <div class="inner-box">
-                                <h3 class="article-title">週五看MV</h3>
+                                <h3 class="article-title">巴奈第二張個人全創作專輯</h3>
                                 <div class="line w-100"></div>
-                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                                <p class="article-subtitle">歷經20年淬煉 《愛，不到》正式發行</p>
                             </div>
                         </div>
                     </a>
@@ -302,11 +299,11 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
-                        <div class="article-img">
+                        <div class="article-img cover-3">
                             <div class="inner-box">
-                                <h3 class="article-title">週五看MV</h3>
+                                <h3 class="article-title">看見TCCF上的未來創意內容</h3>
                                 <div class="line w-100"></div>
-                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                                <p class="article-subtitle">在安溥的歌裡漫遊、讓雅婷不只打逐字稿還做音樂</p>
                             </div>
                         </div>
                     </a>
@@ -318,11 +315,11 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
-                        <div class="article-img">
+                        <div class="article-img cover-4">
                             <div class="inner-box">
-                                <h3 class="article-title">週五看MV</h3>
+                                <h3 class="article-title">AI街頭藝術家——GANksy</h3>
                                 <div class="line w-100"></div>
-                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                                <p class="article-subtitle">模仿Banksy的百幅塗鴉作品並低價出售</p>
                             </div>
                         </div>
                     </a>
@@ -334,11 +331,11 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
                     <a href="#" class="">
-                        <div class="article-img">
+                        <div class="article-img cover-5">
                             <div class="inner-box">
-                                <h3 class="article-title">週五看MV</h3>
+                                <h3 class="article-title">梅澤捨次郎的「嘉義市立美術館」</h3>
                                 <div class="line w-100"></div>
-                                <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                                <p class="article-subtitle">在台灣留下無數典雅端莊的古蹟建築</p>
                             </div>
                         </div>
                     </a>
