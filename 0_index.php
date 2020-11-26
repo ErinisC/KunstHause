@@ -30,6 +30,7 @@
 
 <?php include __DIR__ . '/1_parts/2_navbar-lg.php'; ?>
 
+
 <section class="main grid-blue pb-5">
     <div class="container-fluid main-activities p-0">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -40,13 +41,19 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-59.jpg.jpg" alt="First slide">
+                    <a href="#">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-59.jpg.jpg" alt="First slide">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg.jpg" alt="First slide">
+                    <a href="#">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg.jpg" alt="First slide">
+                    </a>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-02.jpeg.jpg" alt="First slide">
+                    <a href="#">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-02.jpeg.jpg" alt="First slide">
+                    </a>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -137,7 +144,7 @@
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
                                     <p class="section-title-s m-3">2020簡單生活節</p>
-                                    <i class="far fa-heart fa-2x mr-3"></i>
+                                    <i id="my-fav" class="far fa-heart fa-2x mr-3"></i>
                                 </div>
                                 <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
                                 <div class="d-flex">
@@ -185,7 +192,7 @@
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
                                     <p class="section-title-s m-3">2020簡單生活節</p>
-                                    <i class="far fa-heart fa-2x mr-3"></i>
+                                    <i id="my-fav" class="far fa-heart fa-2x mr-3"></i>
                                 </div>
                                 <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
                                 <div class="d-flex">
@@ -217,6 +224,7 @@
     </div>
 </section>
 
+
 <section class="about position-relative">
     <div class="fluid-container">
         <div class="row m-0">
@@ -246,6 +254,7 @@
         </div>
     </div>
 </section>
+
 
 <section class="blog grid-white py-5">
     <div class="container-fluid position-relative">
@@ -357,6 +366,7 @@
     </div>
 
 </section>
+
 
 <div id="fixed-button" class="fixed-button position-fixed">
     <img class="cicle position-relative" src="<?= WEB_ROOT ?>imgs/index/backToTop.svg" alt="">
