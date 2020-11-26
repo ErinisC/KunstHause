@@ -10,24 +10,33 @@
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
 <div class="background">
-    <div class="container col-xl-8 col-12 b2bcreate">
+    <div class="container col-xl-6 col-12 b2bcreate px-0">
         <div class="space" style="height: 150px;"></div>
-        <div class="row">
+        <div class=" col-12 ">
             <h1 class="title">上架活動資料</h1>
             <h2 class="sm-title">KunstHaus 使用者將透過下列資訊了解活動</h2>
         </div>
-        <div class="space" style="height: 50px;"></div>
-        <label for="event-banner">活動Banner</label>
-        <div class="event-banner d-flex">
 
-            <input class="input" name="event-banner" type="" src="" alt="" placeholder="XXX.JPG">
+        <div class="space" style="height: 50px;"></div>
+        <label for="event-banner col-xl-8">活動Banner
+
+        </label>
+
+        <label class="event-banner d-flex">
+
+            <input class="input fake-input" name="event-banner" type="file" onchange="previewFile()" src="" alt="" placeholder="XXX.JPG">
 
             <button class="upload-banner btn" type="submit">上傳圖片</button>
-        </div>
-        <div class="image-review"></div>
+        </label>
+
+        <img src="" width="100%" height="211" alt="Image preview..." class="col-12">
+        <br>
+
         <label for="event-name">活動名稱</label>
+
         <input class="input" type="text" name="event-name" placeholder="活動名稱">
         <label for="date">活動日期</label>
+
         <p class="pt-3">(活動日期開始)</p>
         <input class="input" name="date" type="datetime-local">
         <p>(活動日期結束)</p>
@@ -62,19 +71,19 @@
         </form>
         <label for="transport">
             交通資訊
-            <Textarea name="transport" class="textarea" cols="113" rows="15">
+            <Textarea name="transport" class="textarea" cols="87" rows="10">
         </Textarea>
         </label>
 
         <label for="Precautions">
             活動注意事項
-            <Textarea name="Precautions" class="textarea" cols="113" rows="15">
+            <Textarea name="Precautions" class="textarea" cols="87" rows="10">
         </Textarea>
         </label>
 
         <label for="event-content">
             活動內容資訊
-            <Textarea name="event-content" class="textarea" cols="113" rows="15" required>
+            <Textarea name="event-content" class="textarea" cols="87" rows="10" required>
         </Textarea>
         </label>
 
@@ -86,7 +95,7 @@
                     <div class="pricetag col-4">
                         <p class="py-2">NT$</p>
                     </div>
-                    <input name="price" type="number" class="col-8 input">
+                    <input name="price" type="number" min="0" max="9999" class="col-8 input">
 
                 </div>
                 <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
@@ -103,11 +112,44 @@
         <div class="modbutton text-center col-xl-8 col-sm-12 p-0">
             <div class="okbutton d-flex">
                 <button class="modify1 btn ">取消</button>
-                <div class="space" style="width: 20px;"></div>
-                <button class="modify2 btn ">完成</button>
+                <div class="space" style="width:20px;"></div>
+                <button class="modify2 btn " data-toggle="modal" data-target="#exampleModalCenter">完成</button>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content pt-3 mx-auto">
+                    <div class="tap">
+
+                    </div>
+
+                    <div class="modal-header d-flex flex-column">
+                        <div class="g-check mx-auto mt-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80.5" height="80.5" viewBox="0 0 80.5 80.5">
+                                <path id="check-circle-solid" d="M88,48A40,40,0,1,1,48,8,40,40,0,0,1,88,48ZM43.373,69.18,73.051,39.5a2.581,2.581,0,0,0,0-3.65L69.4,32.2a2.581,2.581,0,0,0-3.65,0l-24.2,24.2-11.3-11.3a2.581,2.581,0,0,0-3.65,0l-3.65,3.65a2.581,2.581,0,0,0,0,3.65L39.724,69.18a2.581,2.581,0,0,0,3.65,0Z" transform="translate(-7.75 -7.75)" fill="#168fa4" stroke="#000" stroke-width="0.5" />
+                            </svg>
+
+                        </div>
+                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">2019百威真我至上音樂巡迴
+                        </div>
+                        <span class="text-center mt-3 ">活動已幫你送出審核，
+                            再請至活動管理
+                            查詢狀態。
+                        </span>
+                    </div>
+
+                    <div class="modal-footer mx-auto my-auto">
+                        <button type="button" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </table>
     </div>
+
+
     <div class="space" style="height: 150px;"></div>
 </div>
 
@@ -115,6 +157,21 @@
 
 <!-- 引入自己的ＪＳ -->
 <script src="">
+    function previewFile() {
+        const preview = document.querySelector('img');
+        const file = document.querySelector('input[type=file]').files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function() {
+            // convert image file to base64 string
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
     function autogrow(textarea) {
         var adjustedHeight = textarea.clientHeight;
         adjustedHeight = Math.max(textarea.scrollHeight, adjustedHeight);
