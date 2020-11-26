@@ -498,14 +498,123 @@ body {
   border: 3px solid black;
   border-radius: 50%;
   background-color: #ffffff;
-  /* margin: 0 1rem; */
 }
 
-.cat-label {
+.cat-label-music {
   background-color: #002c80;
-  border: 3px solid black;
+  border: 3px solid rgb(0, 0, 0);
   padding: 1.4rem;
   margin: 1.4rem 0;
+  overflow: hidden;
+  transform: translate(0%, 0%);
+  color: #fff;
+  letter-spacing: 2.55px;
+  font-weight: bold;
+}
+
+.cat-label-music:before {
+  content:'音樂';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+
+}
+
+.cat-label-music:hover:before {
+  top: -30px;
+}
+
+.cat-label-music:after {
+  content: '去逛逛';
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+
+.cat-label-music:hover:after {
+  top: 50%;
+}
+
+.cat-label-ex {
+  background-color: #002c80;
+  border: 3px solid rgb(0, 0, 0);
+  padding: 1.4rem;
+  margin: 1.4rem 0;
+  overflow: hidden;
+  transform: translate(0%, 0%);
+  color: #fff;
+  letter-spacing: 2.55px;
+  font-weight: bold;
+}
+
+.cat-label-ex:before {
+  content:'展覽';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+
+}
+
+.cat-label-ex:hover:before {
+  top: -30px;
+}
+
+.cat-label-ex:after {
+  content: '去逛逛';
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+
+.cat-label-ex:hover:after {
+  top: 50%;
+}
+
+.cat-label-th {
+  background-color: #002c80;
+  border: 3px solid rgb(0, 0, 0);
+  padding: 1.4rem;
+  margin: 1.4rem 0;
+  overflow: hidden;
+  transform: translate(0%, 0%);
+  color: #fff;
+  letter-spacing: 2.55px;
+  font-weight: bold;
+}
+
+.cat-label-th:before {
+  content:'戲劇';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+
+}
+
+.cat-label-th:hover:before {
+  top: -30px;
+}
+
+.cat-label-th:after {
+  content: '去逛逛';
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+
+.cat-label-th:hover:after {
+  top: 50%;
 }
 
 .pickup-1 {

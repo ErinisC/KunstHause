@@ -72,8 +72,8 @@
                             </div>
                             <div class="col-8 p-0">
                                 <a href="#">
-                                    <div class="cat-label text-center">
-                                        <p class="section-title-s cw">音樂</p>
+                                    <div class="cat-label-music text-center">
+                                        <p class="section-title-s cw"></p>
                                     </div>
                                 </a>
                             </div>
@@ -121,8 +121,8 @@
                             </div>
                             <div class="col-8 p-0">
                                 <a href="#">
-                                    <div class="cat-label text-center">
-                                        <p class="section-title-s cw">展覽</p>
+                                    <div class="cat-label-ex text-center">
+                                        <p class="section-title-s cw"></p>
                                     </div>
                                 </a>
                             </div>
@@ -169,8 +169,8 @@
                             </div>
                             <div class="col-8 p-0">
                                 <a href="#">
-                                    <div class="cat-label text-center">
-                                        <p class="section-title-s cw">戲劇</p>
+                                    <div class="cat-label-th text-center">
+                                        <p class="section-title-s cw"></p>
                                     </div>
                                 </a>
                             </div>
