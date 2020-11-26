@@ -40,6 +40,16 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 //    'details' => $d_rows,
 // ]);
 // exit;
+
+// 訂單狀態
+$status = isset($_GET['order_status']) ? intval($_GET['order_status']) : 0;
+
+$s_sql = "SELECT * FROM order_details";
+$s_rows = $pdo->query($s_sql)->fetchAll();
+// echo json_encode($s_rows);
+// exit;
+
+
 ?>
 
 <?php $title = 'KunstHaus | 票券管理'; ?>
@@ -57,10 +67,11 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title.svg" alt="">
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
-            <button type="button" class="btn-s btn-select">已付款</button>
-            <button type="button" class="btn-s">未付款</button>
-            <button type="button" class="btn-s">已取消</button>
-            <button type="button" class="btn-s">已完成</button>
+            <?php foreach ($s_rows as $s) : ?>
+                <button type="button" class="cate-btn btn-s btn-outline-primary" data-sid="<?= $s['sid'] ?>">
+                    <?= $s['order_status'] ?>
+                </button>
+            <?php endforeach ?>
         </div>
     </div>
 </div>
@@ -116,125 +127,125 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             <?php endforeach; ?>
         </div>
     </div>
-    
+
     <!--pagination-->
-        <div class="container paginatio mb-5">
-            <div class="row mx-auto justify-content-center">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                        <!-- 前一頁 -->
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="fas fa-arrow-left"></i></a>
-                        </li>
-                        <!-- 中間頁數 -->
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <!-- 後一頁 -->
-                        <li class="page-item">
-                            <a class="page-link" href="#">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+    <div class="container paginatio mb-5">
+        <div class="row mx-auto justify-content-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <!-- 前一頁 -->
+                    <li class="page-item">
+                        <a class="page-link" href="#"><i class="fas fa-arrow-left"></i></a>
+                    </li>
+                    <!-- 中間頁數 -->
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <!-- 後一頁 -->
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-            </div>
-        </div>
-
-    <?php endif; ?>
-    <!--modal cancel-->
-    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content position-relative">
-                <div class="g-clip position-absolute">
-                    <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
-                </div>
-                <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        2019百威真我至上音樂巡迴
-                    </h5>
-                </div>
-                <div class="modal-body text-center">
-                    <p>訂單即將取消，<br>
-                        按下確認鍵確定取消訂單。</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal">確認取消</button>
-                    <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!--modal confirm-->
-    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content position-relative">
-                <div class="g-clip position-absolute">
-                    <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
-                </div>
-                <div class="modal-header text-center">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        2019百威真我至上音樂巡迴
-                    </h5>
-                </div>
-                <div class="modal-body text-center">
-                    <p>訂單已為您取消，<br>
-                        訂單明細已寄送至信箱。</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn order-his-btn" data-toggle="modal" data-target="#confirmModal">查看已取消訂單</button>
-                    <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
-                </div>
+<?php endif; ?>
+<!--modal cancel-->
+<div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
+            </div>
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    2019百威真我至上音樂巡迴
+                </h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>訂單即將取消，<br>
+                    按下確認鍵確定取消訂單。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal">確認取消</button>
+                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
             </div>
         </div>
     </div>
+</div>
 
-    <!--modal qrcode-->
-    <div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content position-relative">
-                <div class="g-clip position-absolute">
-                    <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
-                </div>
-                <div class="modal-header mx-auto mt-5 position-relative">
-                    <img c;ass="qr-code-save" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="" style="width: 250px;">
-                    <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <h5>2019百威真我至上音樂巡迴</h5>
-                    <p class="time">2019-12-10 11:00 ~ 2019-12-10 12:00</p>
-                    <p class="location">台灣台北市信義區松壽路22號5樓</p>
-                </div>
-                <div class="modal-footer">
-                    <p class="attender w-100 text-center">參加人：王大明</p>
-                    <p class="ticket-sid w-100 text-center">票券編號：1909050529332096708790</p>
-                </div>
+<!--modal confirm-->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
+            </div>
+            <div class="modal-header text-center">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    2019百威真我至上音樂巡迴
+                </h5>
+            </div>
+            <div class="modal-body text-center">
+                <p>訂單已為您取消，<br>
+                    訂單明細已寄送至信箱。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn order-his-btn" data-toggle="modal" data-target="#confirmModal">查看已取消訂單</button>
+                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
             </div>
         </div>
     </div>
+</div>
+
+<!--modal qrcode-->
+<div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
+            </div>
+            <div class="modal-header mx-auto mt-5 position-relative">
+                <img c;ass="qr-code-save" src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="" style="width: 250px;">
+                <button type="button" class="close position-absolute" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <h5>2019百威真我至上音樂巡迴</h5>
+                <p class="time">2019-12-10 11:00 ~ 2019-12-10 12:00</p>
+                <p class="location">台灣台北市信義區松壽路22號5樓</p>
+            </div>
+            <div class="modal-footer">
+                <p class="attender w-100 text-center">參加人：王大明</p>
+                <p class="ticket-sid w-100 text-center">票券編號：1909050529332096708790</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-    <!-- JQ -->
-    <script src="./libary/jquery-3.5.1.js"></script>
+<!-- JQ -->
+<script src="./libary/jquery-3.5.1.js"></script>
 
-    <!-- Boostrap JS -->
-    <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+<!-- Boostrap JS -->
+<script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
-    <script>
-        // const dallorCommas = function(n) {
-        //     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-        // };
-    </script>
+<script>
+    // const dallorCommas = function(n) {
+    //     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    // };
+</script>
 
-    <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
+<?php include __DIR__ . '/1_parts/4_footer.php'; ?>
