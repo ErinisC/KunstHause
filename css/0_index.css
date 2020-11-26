@@ -312,8 +312,12 @@ body {
   }
 
   .post-tape {
-    top: 5%;
+    top: -8%;
   }
+
+.article-layout{
+  margin-bottom: 5rem;
+}
 
   .blog .inner-box {
     height: 50%;
@@ -648,10 +652,15 @@ a:hover {
 .article-img {
   margin-top: 10%;
   height: 380px;
-  background-size: 100%;
   -webkit-transition: all 0.3s ease-in;
   display: flex;
   align-items: center;
+}
+
+.img-mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .article-img:hover {
@@ -666,21 +675,22 @@ a:hover {
   background: url(../imgs/index/blog-02.jpg) center no-repeat;
 }
 
-.cover-3{
+.cover-3 {
   background: url(../imgs/index/blog-03.jpg) center no-repeat;
 }
 
-.cover-4{
+.cover-4 {
   background: url(../imgs/index/blog-04.jpg) center no-repeat;
 }
 
-.cover-5{
+.cover-5 {
   background: url(../imgs/index/blog-05.jpg) center no-repeat;
 }
 
 .blog .inner-box {
-  margin: auto;
+  margin: calc(25% - 15%) auto;
   width: 80%;
+  height: 80%;
   border: 2px solid rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
