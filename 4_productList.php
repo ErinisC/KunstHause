@@ -460,9 +460,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 
         // 瀏覽紀錄的動態
-        $('.side-cookie-bar').on('click', function() {
+        $('.side-cookie-bar').on('mouseover', function() {
             $('.side-cookie-item').toggle();
-
         });
     </script>
 

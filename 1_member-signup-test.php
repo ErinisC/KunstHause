@@ -28,8 +28,6 @@
         <section class="signup-list mx-auto p-0 col-lg-10 col-md-12 col-sm-12 col-12 w-100">
             <div class="list-body w-100 mx-0 pb-3 mb-5">
 
-
-
                 <div class="deco">
                     <img class="long-clip" src=" <?= WEB_ROOT ?>/imgs/member/clip.svg">
 
@@ -42,14 +40,14 @@
                 </div>
 
                 <!-- 錯誤跳提醒設定 alert -->
-                <div id="info_bar" class="alert alert-danger col-8 mx-auto my-3" role="alert" style="display: block">錯誤錯誤
+                <div id="info_bar" class="alert alert-danger col-8 mx-auto my-3" role="alert" style="display: none">錯誤錯誤
                 </div>
                 <!-- 表單開始 -->
                 <div class="signup-form w-100 col-md-8 col-xl-8 mx-auto">
-                    <form name="form" onsubmit="checkInput();return false;" novalidate;>
+                    <form name="form1" onsubmit="checkForm();return false;" novalidate>
                         <div class="form-group">
                             <label for="name">會員姓名 (必填)</label>
-                            <div class="input-wrap success">
+                            <div class="input-wrap">
                                 <div class="input-box d-flex">
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
                                     <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" required>
@@ -61,10 +59,10 @@
                         </div>
                         <div class="form-group">
                             <label for="account">會員帳號 (必填)</label>
-                            <div class="input-wrap error">
+                            <div class="input-wrap">
                                 <div class="input-box d-flex">
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
-                                    <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
+                                    <input type="text" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
                                 </div>
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
@@ -180,7 +178,7 @@
 
 
                         <div class="signup-btn d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" name="button" id="button" data-target="#exampleModalCenter">註冊
+                            <button type="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4">註冊
                             </button>
 
                             <!-- Modal -->
@@ -229,165 +227,34 @@
 <!-- <script src=""></script> -->
 
 <script>
-    const form = document.getElementById('form');
-    const name = document.getElementById('name');
-    const account = document.getElementById('account');
-    const password = document.getElementById('password');
-    const checkpassword = document.getElementById('checkpassword');
-    const mobile = document.getElementById('mobile');
-    const address = document.getElementById('address');
+    // input-wrap .success
 
-    // form.addEventListener('submit', (e) => {
-    //     e.preventDefault();
-    //     checkInput();
-    // });
+    // 設定常數
+    const name = $('#name'),
+        account = $('#account'),
+        info_bar = $('#info-bar');
 
-    function checkInput() {
-        // get the values from the inputs
-        const nameValue = name.value.trim();
-        const accountValue = account.value.trim();
-        const passwordValue = password.value.trim();
-        const checkpasswordValue = checkpassword.value.trim();
-        const mobileValue = mobile.value.trim();
-        const addressValue = address.value.trim();
 
+    function checkForm() {
+        // 呼叫的時候先清掉其他緊告
+        // name.next().text('')
+        // account.next().text('')
 
         // 檢查有沒有通過，檢查姓名長度跟email格式
         let isPass = true;
 
-        // let infoText = '';
-        // let send = true;
-        // let regex = 
+        // 如果拿到的姓名的長度小於2，就不通過
+        if (name.val().length < 2) {
+            isPass = false;
 
-        if (nameValue === '') {
-            //show error
-            //add error class
-            setErrorFor(name, '* 此欄位為必填, 請輸入您的真實姓名');
-        } else {
-            // add success class
-            setSuccessFor(name);
+            // 這邊設定下面small的小警告出現的文字
+            // 小警告的位置是name的next (JQ select注意！)
+            name.closest('.input-wrap').addClass('error')
+            // name.closest('.input-wrap').find(small).text('請填寫正確姓名')
+            // name.next().text('請填寫正確姓名')
         }
 
-        if (accountValue === '') {
-            setErrorFor(account, '帳號欄位不可空白');
-        } else if (!isEmail(accountValue)) {
-            setErrorFor(account, '* 請符合email格式設定');
-        } else {
-            setSuccessFor(account);
-        }
-
-        if (passwordValue === '') {
-            setErrorFor(password, '* 密碼欄位不可空白');
-        } else if (passwordValue.length < 8) {
-            setErrorFor(password, '* 密碼請至少設置8碼');
-        } else {
-            setSuccessFor(password);
-        }
-
-        if (checkpasswordValue === '') {
-            setErrorFor(checkpassword, '* 確認密碼欄位不可空白');
-        } else if (passwordValue !== checkpasswordValue) {
-            setErrorFor(checkpassword, '* 您輸入的密碼與第一次不同');
-        } else {
-            setSuccessFor(checkpassword);
-        }
-
-        // show a success message
     }
-
-    function setErrorFor(input, message) {
-        const inputWrap = input.parentElement; // .input-wrap
-        const small = InputWrap.querySelector('small');
-        //add error message inside small
-        small.innerText = message;
-
-        //add error class
-        InputWrap.className = 'input-wrap error';
-    }
-
-    function setSuccessFor(input) {
-        const inputWrap = input.parentElement;
-        InputWrap.className = 'input-wrap success';
-    }
-
-    function isEmail(email) {
-        return /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i.test(email);
-    }
-
-
-
-    // ($('#account').val() === '') {
-
-    // } else($('#password').val().length < 8) {
-
-    // } else($('#password').val() != ('#checkpassword').val()) {
-
-    // } else($('#mobile').val() === '') {
-    //     // re = /^09\d{2}-?\d{3}-?\d{3}$/;
-
-    // } else
-    //   submit()
-
-
-
-    // $(document).ready(function() {
-    //     $("button").click(function() {
-    //         if ($("#name").val() == '') {
-    //             alert("你尚未填寫姓名");
-    //             eval("document.form1['name'].focus()");
-    //         } else if ($("#account").val() == "") {
-    //             alert("請符合email格式設定");
-    //             eval("document.form1['account'].focus()");
-    //         } else if ($("#password").val() == "") {
-    //             alert("密碼請至少設置8碼");
-    //             eval("document.form1['password'].focus()");
-    //         } else if ($("#checkpassword").val() == "") {
-    //             alert("您輸入的密碼與第一次不同!");
-    //             eval("document.form1['checkpassword'].focus()");
-    //         } else if ($("#mobile").val() == "") {
-    //             alert("你尚未填寫電話");
-    //             eval("document.form1['mobile'].focus()");
-    //         } else {
-    //             document.form1.submit();
-    //         }
-    //     })
-    // })
-
-
-
-
-
-    //     if (send) {
-    //         $.post('1_member-signup-api.php', $(document.needs - validation).serialize(), function(data) {
-    //             console.log(data);
-    //             if (data.success) {
-    //                 info_bar
-    //                     .removeClass('alert-danger')
-    //                     .addClass('alert-success')
-    //                     .text('完成新增');
-    //             } else {
-    //                 info_bar
-    //                     .removeClass('alert-success')
-    //                     .addClass('alert-danger')
-    //                     .text(data.error || '新增失敗');
-    //             }
-    //             info_bar.slideDown();
-
-    //             setTimeout(function() {
-    //                 info_bar.slideUp();
-    //             }, 2000);
-    //         }, 'json')
-    //     } else {
-    //         info_bar
-    //             .removeClass('alert-success')
-    //             .addClass('alert-danger')
-    //             .text(infoText);
-    //         info_bar.slideDown();
-
-    //         setTimeout(function() {
-    //             info_bar.slideUp();
-    //         }, 2000);
-    //     }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

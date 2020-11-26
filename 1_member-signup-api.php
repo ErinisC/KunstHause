@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '/parts/config.php';
-require __DIR__ . '/parts/admin-required.php';
+include __DIR__ . '/1_parts/0_config.php';
+// require __DIR__ . '/parts/admin-required.php';
 $output = [
     'success' => false,
     'code' => 0,
