@@ -1,0 +1,42 @@
+
+
+* {
+    outline: 1px solid red;
+  }
+
+html {
+    font-size: 20px;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: #002c80;
+  }
+
+  .account-set {
+    margin-top: 16rem;
+    background: #fff;
+    background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
+      linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
+    background-size: 0.75rem 0.75rem;
+    margin-bottom: 10rem;
+    position: relative;
+  }
+
+  .list-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: NotoSansTC-Regular, Roboto;
+    letter-spacing: 2px;
+    line-height: 1.8rem;
+    margin-top: 7rem;
+  }
+
+  .signup-form {
+    margin-top: 40px;
+  }
+
+  .little-head {
+    border-radius: 50%;
+  }

@@ -4,7 +4,7 @@ include __DIR__ . '/1_parts/0_config.php';
 $output = [
     'success' => false,
     'code' => 0,
-    'error' => '沒有表單資料',
+    'error' => '哎呀! 您尚未完成表單資料填寫',
 ];
 
 if (empty($_POST['name'])) {
@@ -27,6 +27,7 @@ $stmt->execute([
     $_POST['name'],
     $_POST['account'],
     $_POST['password'],
+    $_POST['checkpassword'],
     $_POST['mobile'],
     $_POST['address'],
 ]);

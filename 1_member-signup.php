@@ -35,13 +35,12 @@
                         <img src=" <?= WEB_ROOT ?>/imgs/member/registrater.svg">
                     </div>
                 </div>
+
                 <div class="list-title">歡迎您加入「Kunsthaus」會員!<br>
                     您可以隨時上網查詢預售狀況、節目資訊、演出時間等資訊。
                 </div>
 
-                <!-- 錯誤跳提醒設定 alert -->
-                <div id="info_bar" class="alert alert-danger col-8 mx-auto my-3" role="alert" style="display: none">錯誤錯誤
-                </div>
+
                 <!-- 表單開始 -->
                 <div class="signup-form w-100 col-md-8 col-xl-8 mx-auto">
                     <form name="form1" method="post" onsubmit="checkForm();return false;" novalidate>
@@ -177,6 +176,11 @@
                         </div>
 
 
+                        <!-- 錯誤跳提醒設定 alert -->
+                        <div id="info_bar" class="alert alert-danger col-8 mx-auto my-4 py-3" role="alert" style="display: none">
+                        </div>
+
+
                         <div class="signup-btn d-flex justify-content-center">
                             <button type="submit" id="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4">註冊
                             </button>
@@ -212,7 +216,9 @@
                         </div>
                         <div class="line d-flex justify-content-between">
                             <div class="confirm">您已經是 Kunsthaus 的會員?</div>
-                            <div class="login-btn">登入</div>
+                            <div class="login-btn">
+                                <a href="" class="s-login text-dark">登入</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -237,7 +243,7 @@
     const mobile = $('#mobile');
     const address = $('#address');
     const checkbox = $('#checkbox');
-    const info_bar = $('#info-bar');
+    const info_bar = $('#info_bar')
 
 
 
@@ -299,12 +305,28 @@
             isPass = false;
             alert('需同意 Kunsthaus 服務及隱私權政策才能註冊成為會員唷!');
         } else {
-            // $(document.form1).submit();
+
             $.post('1_member-signup-api.php', $(document.form1).serialize(), function(data) {
                 console.log(data);
-            })
-        }
 
+                if (data.success) {
+                    info_bar
+                        .removeClass('alert-danger')
+                        .addClass('alert-success')
+                        .text('完成新增');
+                } else {
+                    info_bar
+                        .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .text(data.error || '新增失敗');
+                }
+                info_bar.slideDown();
+
+                setTimeout(function() {
+                    info_bar.slideUp();
+                }, 2000);
+            }, 'json')
+        }
     }
 </script>
 
