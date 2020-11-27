@@ -66,7 +66,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 <div class="container">
     <div class="row">
         <div class="section-title mb-5">
-            <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title.svg" alt="">
+            <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title2.svg" alt="">
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
             <?php foreach ($s_rows as $s) : ?>

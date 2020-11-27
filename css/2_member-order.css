@@ -33,6 +33,10 @@ body.modal-open {
     height: 10rem;
   }
 
+  .section-title img {
+    width: 25vh;
+  }
+
   .edit {
     flex-direction: column;
   }
@@ -106,6 +110,7 @@ body.modal-open {
 }
 
 /* ----------order status---------- */
+
 .btn-s {
   border: 3px solid #000;
   background-color: #fff;
