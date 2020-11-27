@@ -45,7 +45,6 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 // 訂單狀態
 // 成功取出值的ajax寫法
 $status = isset($_GET['order_status']) ? intval($_GET['order_status']) : 0;
-
 $s_sql = "SELECT * FROM order_details";
 $s_rows = $pdo->query($s_sql)->fetchAll();
 // echo json_encode($s_rows);
@@ -70,7 +69,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
             <?php foreach ($s_rows as $s) : ?>
-                <button type="button" class="status-btn btn-s" data-sid="<?= $s['sid'] ?>">
+                <button type="button" class="status-btn btn-s" data-sid="<?= $s['order_status'] ?>">
                     <?= $s['order_status'] ?>
                 </button>
             <?php endforeach ?>
