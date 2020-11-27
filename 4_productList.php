@@ -154,17 +154,21 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <!-- 圖片 -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="imgs/banner/b-1.jpg" alt="First slide">
+                    <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="imgs/banner/b-2.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="imgs/banner/b-4.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="imgs/banner/b-5.jpg" alt="Four slide">
                 </div>
             </div>
         </div>
@@ -176,11 +180,28 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         <div class="row">
 
             <!-- Section小標題 -->
-            <div class="section-title col-3 position-relative">
-                <div class="section-title-below position-absolute text-white text-center pt-3">本週主打精選</div>
+            <div class="section-title mb-5 col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
+                <div class="section-title-below position-absolute d-flex align-items-center">
+                    <p class="text-white text-center w-100">本週主打精選</p>
+                </div>
             </div>
 
 
+            <!-- 介紹框 -->
+            <div class="intro-box w-100">
+                <a href="#" class="d-flex position-relative">
+                    <div class="intro-img col-6">
+                        <img src="imgs/event/TNC-41.jpg" alt="">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center intro-info text-white pl-5 col-4 position-absolute">
+                        <div class="title mb-3">2020戴勝益創作展</div>
+                        <div class="mb-3">地點：台北</div>
+                        <div class="">來個＃</div>
+
+                    </div>
+                </a>
+
+            </div>
 
         </div>
     </div>
@@ -189,8 +210,10 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     <div class="container list">
         <div id="b1" class="pd-title py-5">
             <!-- Section小標題 -->
-            <div class="section-title col-3 position-relative">
-                <div class="section-title-below position-absolute text-white text-center pt-3">大家都在看</div>
+            <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
+                <div class="section-title-below position-absolute d-flex align-items-center">
+                    <p class="text-white text-center w-100">大家都在看</p>
+                </div>
             </div>
 
         </div>
@@ -228,8 +251,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                                 <div class="event-location"><?= $r['location'] ?></div>
 
                                 <!-- 收藏 -->
-                                <a href="#" class="like position-absolute">
-                                    <i class="far fa-heart"></i>
+                                <a href="Javascript:" class="like-link position-absolute">
+                                    <i class="like far fa-heart"></i>
                                 </a>
 
                             </div>
@@ -290,14 +313,45 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     </div>
 
 
+    <!-- 本週主打精選 -->
+    <div class="container flip-book mt-5">
+
+        <!-- Section小標題 -->
+        <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
+            <div class="section-title-below position-absolute d-flex align-items-center">
+                <p class="text-white text-center w-100">來個一排東東</p>
+            </div>
+        </div>
+
+
+        <div class="container containerA">
+            <div id="carousel">
+                <figure><img src="imgs/event/event-sm/HSZ-11.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/KHH-12.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/TPE-07.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/KHH-17.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/TPE-07.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/TNC-41-1.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/KHH-27.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/HSZ-11.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/TPE-32-1.jpg.jpg" alt=""></figure>
+            </div>
+        </div>
+
+
+
+    </div>
+
 
     <!-- 推薦商品小卡 -->
     <div class="container-fluid r-section p-0">
         <!-- 推薦商品標題 -->
         <div class="container mt-5">
             <!-- Section小標題 -->
-            <div class="section-title col-3 position-relative">
-                <div class="section-title-below position-absolute text-white text-center pt-3">我們為您推薦</div>
+            <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
+                <div class="section-title-below position-absolute d-flex align-items-center">
+                    <p class="text-white text-center w-100">我們為您推薦</p>
+                </div>
             </div>
         </div>
         <!-- 拖曳卡片 -->
@@ -382,6 +436,9 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div> -->
 
     </div>
+
+
+
 
     <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
@@ -468,6 +525,20 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         $('.side-cookie-bar').on('mouseover', function() {
             $('.side-cookie-item').toggle();
         });
+
+
+        // 輪播測試
+        var angle = 0;
+
+        function galleryspin(sign) {
+            spinner = document.querySelector("#spinner");
+            if (!sign) {
+                angle = angle + 45;
+            } else {
+                angle = angle - 45;
+            }
+            spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+        }
     </script>
 
     <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
