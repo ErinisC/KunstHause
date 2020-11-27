@@ -182,11 +182,11 @@
 
 
                         <div class="signup-btn d-flex justify-content-center">
-                            <button type="submit" id="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4">註冊
+                            <button type="submit" id="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" data-target="#exampleModalCenter">註冊
                             </button>
 
                             <!-- Modal -->
-                            <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content pt-3 mx-auto">
                                         <div class="tap">
@@ -211,7 +211,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
                         </div>
                         <div class="line d-flex justify-content-between">
