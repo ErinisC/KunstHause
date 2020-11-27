@@ -21,6 +21,10 @@ body {
     height: 10rem;
   }
 
+  .section-title img {
+    width: 25vh;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -32,16 +36,16 @@ body {
     height: 8rem;
   }
 
-  .sm-none{
-    display: none;
+  .section-title img {
+    width: 20vh;
   }
+
+  /* .sm-none{
+    display: none;
+  } */
 }
 
 /* ----------form---------- */
-.section-title img {
-  width: 20vh;
-}
-
 .label{
   background-color: #168FA4;
   border: 3px solid #000;
@@ -67,6 +71,10 @@ input{
 
 textarea{
   border: 3px solid #000;
+}
+
+.service textarea:focus {
+  color: #000;
 }
 
 .service-submit{

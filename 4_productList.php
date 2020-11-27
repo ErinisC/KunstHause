@@ -334,7 +334,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <figure><img src="imgs/event/event-sm/TNC-41-1.jpg" alt=""></figure>
                 <figure><img src="imgs/event/event-sm/KHH-27.jpg" alt=""></figure>
                 <figure><img src="imgs/event/event-sm/HSZ-11.jpg" alt=""></figure>
-                <figure><img src="imgs/event/event-sm/TPE-32-1.jpg.jpg" alt=""></figure>
+                <figure><img src="imgs/event/event-sm/TPE-32-1.jpg" alt=""></figure>
             </div>
         </div>
 
