@@ -10,6 +10,9 @@
 
 <div class="space"></div>
 <div class="container">
+    <div class="section-title mb-5">
+        <img class="" src="<?= WEB_ROOT ?>imgs/member/service-section-title.svg" alt="">
+    </div>
     <div class="row">
         <div class="col-lg-6 col-12">
             <form class="service" action="POST" novalidate="novalidate">
