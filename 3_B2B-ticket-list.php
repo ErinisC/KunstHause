@@ -171,7 +171,7 @@
                                     <div class="eventimg"></div>
                                 </div>
                                 <div class="modal-header d-flex flex-column">
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">活動名稱：臺日剪紙紙雕交流展
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">活動名稱：空山祭
                                     </div>
                                     <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：XD48763
                                     </div>
