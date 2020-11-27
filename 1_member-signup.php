@@ -32,7 +32,7 @@
                     <img class="long-clip" src=" <?= WEB_ROOT ?>/imgs/member/clip.svg">
 
                     <div class="tape">
-                        <img src=" <?= WEB_ROOT ?>/imgs/member/registrater.svg">
+                        <img src=" <?= WEB_ROOT ?>/imgs/member/member-label.svg">
                     </div>
                 </div>
 
@@ -182,7 +182,7 @@
 
 
                         <div class="signup-btn d-flex justify-content-center">
-                            <button type="submit" id="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4" data-toggle="modal" data-target="#exampleModalCenter">註冊
+                            <button type="submit" id="submit" class="btn btn-primary col-lg-4 col-sm-4 col-4">註冊
                             </button>
 
                             <!-- Modal -->
@@ -308,24 +308,34 @@
 
             $.post('1_member-signup-api.php', $(document.form1).serialize(), function(data) {
                 console.log(data);
+                // $('#exampleModalCenter').modal('show');
+                // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+                //     location.href = '1_member-login.php'
+                // })
+                // return;
 
                 if (data.success) {
-                    info_bar
-                        .removeClass('alert-danger')
-                        .addClass('alert-success')
-                        .text('完成新增');
+                    // info_bar
+                    //     .removeClass('alert-danger')
+                    //     .addClass('alert-success')
+                    //     .text('完成新增');
+                    $('#exampleModalCenter').modal('show');
+                    $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+                        location.href = '1_member-login.php'
+                    })
                 } else {
                     info_bar
-                        .removeClass('alert-success')
+                        // .removeClass('alert-success')
                         .addClass('alert-danger')
                         .text(data.error || '新增失敗');
-                }
-                info_bar.slideDown();
 
-                setTimeout(function() {
-                    info_bar.slideUp();
-                }, 2000);
-            }, 'json')
+                    info_bar.slideDown();
+
+                    setTimeout(function() {
+                        info_bar.slideUp();
+                    }, 2000);
+                }
+            }, 'json');
         }
     }
 </script>

@@ -32,9 +32,9 @@ body {
 .tape img {
   width: 18rem;
   position: absolute;
-  transform: rotate(15deg);
-  top: -4rem;
-  right: -1.2rem;
+  transform: rotate(9deg);
+  top: -3rem;
+  right: 1rem;
 }
 
 .alert {
