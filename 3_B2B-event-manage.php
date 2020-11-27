@@ -13,13 +13,13 @@
     <div class="container">
         <div class="row ticketbg">
             <div class="title">
-                <h1>訂單管理</h1>
-                <p class="text">您可以在此查看所有的訂單紀錄</p>
+                <h1>活動管理</h1>
+                <p class="text">您可以在此查看所有的活動紀錄</p>
                 <div class="ticketbutton d-flex col-xl-6 col-12">
-                    <button class="modify btn btn-primary">歷史訂單</button>
-                    <button class="modify2 btn btn-primary">已付款</button>
-                    <button class="modify2 btn btn-primary">未付款</button>
-                    <button class="modify2 btn btn-primary">已取消</button>
+                    <button class="modify btn btn-primary">總攬</button>
+                    <button class="modify2 btn btn-primary">已完成</button>
+                    <button class="modify2 btn btn-primary">尚未舉行</button>
+                    <button class="modify2 btn btn-primary">審核中</button></button>
                 </div>
                 <form class="header-search col-xl-6 col-12" method="POST" name="header-search" class="form-inline ">
                     <input class="search" type="text" name="search" placeholder="搜索訂單編號或活動名稱">
@@ -31,10 +31,9 @@
                 <table>
                     <thead>
                         <tr class="tr d-flex mr-5 col-xl-12 col-12">
-                            <td>訂單編號</td>
-                            <td>訂單日期</td>
-                            <td>合計</td>
-                            <td class="d-flex">訂單狀態<div class="white"></div>
+                            <td>活動名稱</td>
+                            <td>活動日期</td>
+                            <td class="d-flex">活動狀態<div class="white"></div>
                             </td>
                             <td class="confirm d-flex">顯示
                                 <div class="white"></div>
@@ -43,10 +42,9 @@
                     </thead>
                     <tbody class="col-xl-12 col-12">
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XXXX活動</td>
                             <td>2020-10-26</td>
-                            <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -59,8 +57,7 @@
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
-                            <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -73,8 +70,7 @@
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
-                            <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -87,8 +83,7 @@
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
-                            <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -101,8 +96,7 @@
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
-                            <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -115,8 +109,7 @@
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
-                            <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -171,7 +164,7 @@
                                     <div class="eventimg"></div>
                                 </div>
                                 <div class="modal-header d-flex flex-column">
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">活動名稱：空山祭
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">活動名稱：臺日剪紙紙雕交流展
                                     </div>
                                     <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：XD48763
                                     </div>

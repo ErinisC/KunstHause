@@ -19,14 +19,15 @@
 
         <div class="space" style="height: 50px;"></div>
         <label for="event-banner col-xl-8">活動Banner
+            <input class="input fake-input col-12 positition-relative" name="event-banner" type="file" onchange="previewFile()" src="" alt="" placeholder="XXX.JPG">
 
+            <i class="upload-banner col-4 btn position-absolute" type="submit">上傳圖片</i>
         </label>
 
         <label class="event-banner d-flex">
+            <input class="input fake-input col-12 positition-relative" name="event-banner" type="file" onchange="previewFile()" src="" alt="" placeholder="XXX.JPG">
 
-            <input class="input fake-input" name="event-banner" type="file" onchange="previewFile()" src="" alt="" placeholder="XXX.JPG">
-
-            <button class="upload-banner btn" type="submit">上傳圖片</button>
+            <button class="upload-banner btn position-absolute" type="submit">上傳圖片</button>
         </label>
 
         <img src="" width="100%" height="211" alt="Image preview..." class="col-12">
@@ -90,7 +91,7 @@
         </label>
 
         <div class="d-flex">
-            <div class="blanket col-8"></div>
+            <div class="blanket col-8"> </div>
             <div class="price-lenght  col-xl-4 col-sm-12 p-0">
                 <label for="price">活動票卷售價</label>
                 <div class="d-flex pricesetting">
