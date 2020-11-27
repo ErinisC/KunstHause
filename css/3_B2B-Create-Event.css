@@ -72,6 +72,7 @@ label {
   border: black 3px solid;
   margin: 12px 0 23px;
   border-radius: 0%;
+  right: 0;
 }
 
 textarea:focus,
