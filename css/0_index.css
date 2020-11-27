@@ -8,17 +8,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ----------font style---------- */
-.section-title-l {
-  letter-spacing: 2.55px;
-  font-weight: bold;
-}
-
-.section-title-s {
-  letter-spacing: 2.55px;
-  font-weight: bold;
-}
-
 /* ----------color style---------- */
 .cw {
   color: #ffffff;
@@ -648,10 +637,22 @@ body {
 .card-bottom {
   background-color: #fac000;
   border: 3px solid black;
-  /* border-bottom: 0.5rem dotted #168fa4; */
+}
+
+.section-title-l {
+  letter-spacing: 2.55px;
+  font-weight: bold;
+}
+
+.section-title-s {
+  color: #000000;
+  letter-spacing: 2.55px;
+  font-weight: bold;
 }
 
 .hashtag {
+  cursor: pointer;
+  color: #002c80;
   font-size: 0.8rem;
   margin-right: 0.5rem;
 }
@@ -666,6 +667,10 @@ body {
   width: 90%;
   bottom: -20px;
   left: 8%;
+}
+
+.like{
+  cursor: pointer;
 }
 
 .like.liked{

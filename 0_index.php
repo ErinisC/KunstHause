@@ -42,17 +42,17 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-59.jpg.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-59.jpg" alt="First slide">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg" alt="First slide">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-02.jpeg.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-02.jpg" alt="First slide">
                     </a>
                 </div>
             </div>
@@ -230,7 +230,7 @@
         </div>
     </div>
     <div class="container-fluid text-center p-0 my-5">
-        <a href="#">
+        <a href="4_productList.php">
             <p class="see-more">我全都要</p>
         </a>
     </div>
