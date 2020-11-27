@@ -76,9 +76,9 @@ if (empty($row)) {
         </div>
 
         <div class="row">
-            <div class="label">
+            <button class="label">
                 <p>音樂</p>
-            </div>
+            </button>
         </div>
 
 
@@ -103,7 +103,7 @@ if (empty($row)) {
             </div>
 
             <!-- ---------報名卡片-------------- -->
-            <div class="apply apply-01 d-flex align-items-center justify-content-center">
+            <button class="apply apply-01 d-flex align-items-center justify-content-center">
                 <div class="d-flex text-align: center">
                     <div class="apply-ticket">
                         <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
@@ -112,7 +112,7 @@ if (empty($row)) {
                         <p>立即<br>報名</p>
                     </div>
                 </div>
-            </div>
+            </button>
         </div>
 
         <div class="space-1"></div>
@@ -207,9 +207,9 @@ if (empty($row)) {
 
                 <div class="search-bar d-flex">
                     <input type="text" placeholder="我來說幾句...(50個字為限)" class="col-11">
-                    <div class="search-bar-ser col-1 p-0 d-flex align-items-center justify-content-center">
+                    <button class="search-bar-ser col-1 p-0 d-flex align-items-center justify-content-center">
                         <p class="text-white text-center">發表</p>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
