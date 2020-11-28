@@ -187,6 +187,7 @@ input:focus {
 .intro-info {
     bottom: -40%;
     right: 6%;
+    box-shadow: 8px 8px black;
 }
 
 .intro-box .title {
@@ -218,10 +219,25 @@ input:focus {
 
 
 /* 商品列表 */
+.bg-attatch {
+    /* background: url(../imgs/banner/bg-attatch-4.jpg);
+    background-attachment: fixed; */
+    background-color: #002c80;
+
+    border: 6px solid black;
+}
+
 
 .card {
     background-color: transparent;
     border: none;
+    transition: 1s;
+    opacity: 0;
+}
+
+.move-up {
+    transform: translateY(-30px);
+    opacity: 1;
 }
 
 /* 翻轉卡片 */
@@ -251,9 +267,8 @@ input:focus {
 .flip-card-back {
     transform: rotateY(180deg);
     background-color: #FFC024;
-    /* color: #168FA4; */
+    border: 3px solid black;
     line-height: 1.5;
-    /* overflow: hidden; */
 }
 
 .flip-card-back .filp-title {
@@ -292,6 +307,7 @@ input:focus {
 .card-body {
     border: 3px solid black;
     background-color: white;
+    box-shadow: 8px 10px;
 }
 
 .card-body .card-price {
@@ -304,7 +320,8 @@ input:focus {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* -webkit-line-clamp: 2; */
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .like-link {

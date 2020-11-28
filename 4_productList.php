@@ -207,110 +207,116 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     </div>
 
     <!-- 商品列表 -->
-    <div class="container list">
-        <div id="b1" class="pd-title py-5">
-            <!-- Section小標題 -->
-            <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
-                <div class="section-title-below position-absolute d-flex align-items-center">
-                    <p class="text-white text-center w-100">大家都在看</p>
+    <div class="container-fluid bg-attatch">
+        <div class="container list">
+            <div id="b1" class="pd-title py-5">
+                <!-- Section小標題 -->
+                <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
+                    <div class="section-title-below position-absolute d-flex align-items-center">
+                        <p class="text-white text-center w-100">大家都在看</p>
+                    </div>
                 </div>
+
             </div>
-
-        </div>
-        <div class="row">
+            <div class="row">
 
 
-            <?php foreach ($rows as $r) : ?>
-                <!-- 小卡 -->
-                <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                <?php foreach ($rows as $r) : ?>
+                    <!-- 小卡 -->
+                    <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
 
-                    <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
-                    <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
-                        <div class="flip-card-inner position-relative">
-                            <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
-                                <!-- 圖片上時間 -->
-                                <div class="time position-absolute col-4 p-2"><?= $r['start-datetime'] ?></div>
+                        <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
+                        <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
+                            <div class="flip-card-inner position-relative">
+                                <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                                    <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                    <!-- 圖片上時間 -->
+                                    <div class="time position-absolute col-4 p-2"><?= $r['start-datetime'] ?></div>
+                                </div>
+
+                                <!-- 翻轉卡片背面 -->
+                                <div class="flip-card-back position-absolute p-3">
+                                    <div class="filp-title mb-3 text-center"><?= $r['event_name'] ?></div>
+                                    <p class="px-3"><?= $r['event_info'] ?></p>
+                                </div>
                             </div>
-
-                            <!-- 翻轉卡片背面 -->
-                            <div class="flip-card-back position-absolute p-3">
-                                <div class="filp-title mb-3 text-center"><?= $r['event_name'] ?></div>
-                                <p class="px-3"><?= $r['event_info'] ?></p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
 
 
-                    <!-- 小卡下方票價 -->
-                    <div class="wrap d-flex">
-                        <div class="card-body d-flex p-0 w-100">
-                            <div class="card-info position-relative m-auto py-3 col-8">
-                                <div class="event-name mb-3"><?= $r['event_name'] ?></div>
+                        <!-- 小卡下方票價 -->
+                        <div class="wrap mt-1 d-flex">
+                            <div class="card-body d-flex p-0 w-100">
+                                <div class="card-info position-relative m-auto py-3 col-8">
+                                    <div class="event-name mb-3"><?= $r['event_name'] ?></div>
 
-                                <div class="event-location"><?= $r['location'] ?></div>
+                                    <div class="event-location"><?= $r['location'] ?></div>
 
-                                <!-- 收藏 -->
-                                <a href="Javascript:" class="like-link position-absolute">
-                                    <i class="like far fa-heart"></i>
+                                    <!-- 收藏 -->
+                                    <a href="Javascript:" class="like-link position-absolute">
+                                        <i class="like far fa-heart"></i>
+                                    </a>
+
+                                </div>
+
+                                <!-- 價格按鈕加Modal的彈跳窗格 -->
+                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-4">
+                                    <div class=" card-price py-3">
+                                        <div class="mb-3">優惠價</div>
+                                        <div class="now-price">$ <?= $r['price'] ?></div>
+                                    </div>
                                 </a>
 
                             </div>
-
-                            <!-- 價格按鈕加Modal的彈跳窗格 -->
-                            <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-4">
-                                <div class=" card-price py-3">
-                                    <div class="mb-3">優惠價</div>
-                                    <div class="now-price">$ <?= $r['price'] ?></div>
-                                </div>
-                            </a>
-
                         </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
 
+            </div>
+
+        </div>
+
+
+        <!-- 頁碼 -->
+        <div class="container mb-5">
+            <div class="row justify-content-center">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+
+                        <!-- 前一頁 -->
+                        <!-- 這邊是指，如果到了最前頁，就讓class加上disable的文字 -->
+                        <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                            <!-- 這邊是讓頁面連結的最後，加上目前頁面-1，才會跳轉到前一頁 -->
+                            <a class="page-link" href="?page=<?= $page - 1 ?>"><i class="fas fa-arrow-left"></i></a>
+                        </li>
+
+                        <!-- 中間頁數 -->
+                        <!-- 這邊設定每行頁籤要出現幾個 -->
+                        <?php for ($i = $page - 2; $i <= $page + 2; $i++) : ?>
+                            <!-- 設定變數i，並規定i大於一小於總頁數的話 -->
+                            <?php if ($i >= 1 and $i <= $totalPages) : ?>
+                                <!-- 如果頁數等於擁有的頁數，就active -->
+                                <li class="page-item <?= $page == $i ? 'active' : '' ?>">
+                                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+
+
+                        <!-- 後一頁 -->
+                        <li class="page-item <?= $page >= $totalPages ? 'disabled' : '' ?>">
+                            <!-- 這邊是讓頁面連結的最後，加上目前頁面-1，才會跳轉到前一頁 -->
+                            <a class="page-link" href="?page=<?= $page + 1 ?>"><i class="fas fa-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
         </div>
 
     </div>
 
 
-    <!-- 頁碼 -->
-    <div class="container mb-5">
-        <div class="row justify-content-center">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
 
-                    <!-- 前一頁 -->
-                    <!-- 這邊是指，如果到了最前頁，就讓class加上disable的文字 -->
-                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
-                        <!-- 這邊是讓頁面連結的最後，加上目前頁面-1，才會跳轉到前一頁 -->
-                        <a class="page-link" href="?page=<?= $page - 1 ?>"><i class="fas fa-arrow-left"></i></a>
-                    </li>
-
-                    <!-- 中間頁數 -->
-                    <!-- 這邊設定每行頁籤要出現幾個 -->
-                    <?php for ($i = $page - 2; $i <= $page + 2; $i++) : ?>
-                        <!-- 設定變數i，並規定i大於一小於總頁數的話 -->
-                        <?php if ($i >= 1 and $i <= $totalPages) : ?>
-                            <!-- 如果頁數等於擁有的頁數，就active -->
-                            <li class="page-item <?= $page == $i ? 'active' : '' ?>">
-                                <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-
-
-                    <!-- 後一頁 -->
-                    <li class="page-item <?= $page >= $totalPages ? 'disabled' : '' ?>">
-                        <!-- 這邊是讓頁面連結的最後，加上目前頁面-1，才會跳轉到前一頁 -->
-                        <a class="page-link" href="?page=<?= $page + 1 ?>"><i class="fas fa-arrow-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
-
-        </div>
-    </div>
 
 
     <!-- 本週主打精選 -->
@@ -361,7 +367,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <?php foreach ($rows as $r) : ?>
                         <!-- 小卡 -->
                         <div class="item card card-sm col-3">
-                            <div class="img-wrap mb-3 position-relative">
+                            <div class="img-wrap mb-1 position-relative">
                                 <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                                 <div class="time position-absolute col-4"><?= $r['start-datetime'] ?></div>
                             </div>
@@ -486,6 +492,21 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
         // 動態一一浮現
         // 用css animate抓scroll時的offest
+        // parallax scrolling
+
+        $(window).scroll(function() {
+            let scrollTop = $(window).scrollTop();
+            console.log('scrollTop:', scrollTop);
+            if (scrollTop > 1000) {
+                $('.card').addClass('move-up');
+                $('.card').addClass('move-up');
+            } else {
+                $('.card').removeClass('move-up');
+            }
+        })
+
+
+
         $('.card').eq(0); //抓到所有的小卡
         $('.card').eq(0).offset(); //抓到第0個的offset
 
