@@ -51,7 +51,7 @@
 }
 
 .introduction {
-  margin-top: 50px;
+  margin-top: 40px;
   text-align: center;
   font-size: 16px;
   font-weight: 700;
@@ -69,8 +69,9 @@
 
 .time {
   height: 25px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   justify-content: flex-end;
+  /* text-align: center; */
 }
 
 .date {
@@ -79,7 +80,7 @@
 }
 
 .history {
-  margin: 60px auto 0;
+  margin: 40px auto 0;
   width: 380px;
   height: 90px;
   padding: 0;
@@ -131,15 +132,31 @@
 
 .modbutton {
   width: 100%;
+  margin: 20px auto 0;
+  padding: 0;
 }
 
-.modify {
-  width: 190px;
+.okbutton {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.modify1 {
+  width: 140px;
+  height: 50px;
+  background-color: #ed5b4c;
+  border: 3px solid #000;
+  border-radius: 0;
+}
+
+.modify2 {
+  width: 140px;
   height: 50px;
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
-  margin-top: 20px;
 }
 
 @media screen and (max-width: 576px) {
@@ -156,12 +173,12 @@
   }
 
   .eye {
-    margin-top: 25px;
+    margin-top: 5px;
     margin-left: -20px;
   }
 
   .date {
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 10px;
     font-size: 12px;
   }
@@ -192,5 +209,11 @@
   .mailimg {
     width: 35px;
     height: 35px;
+  }
+  .modify1 {
+    padding: 0;
+  }
+  .modify2 {
+    padding: 0;
   }
 }

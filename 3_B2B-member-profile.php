@@ -1,4 +1,4 @@
-<?php $title = 'B2B首頁'; ?>
+<?php $title = 'KunstHaus | 廠商會員中心'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
@@ -20,13 +20,6 @@
                     </svg>
                 </div>
                 <p class="organizer">主辦單位名稱</p>
-                <p class="introduction">簡介</p>
-                <div class="introduction-text col-10 col-xl-6">
-                    <p>LMalaysian comedian and content creator based in London, UK. Creator of Uncle Roger and Rice To Meet You podcast.
-                        <br>
-                        <br>
-                        For all enquiries please contact Duncan Hayes at United Agents via Olivia Jones ojones@unitedagents.co.uk</p>
-                </div>
                 <div class="time d-flex col-6">
                     <svg class="eye" xmlns="http://www.w3.org/2000/svg" width="39" height="21" viewBox="0 0 39 21">
                         <g id="Eyes-icon" transform="translate(0 0)">
@@ -44,6 +37,14 @@
                     </svg>
                     <div class="date">建立於2020-11-15</div>
                 </div>
+                <p class="introduction">簡介</p>
+                <div class="introduction-text col-10 col-xl-6">
+                    <p>LMalaysian comedian and content creator based in London, UK. Creator of Uncle Roger and Rice To Meet You podcast.
+                        <br>
+                        <br>
+                        For all enquiries please contact Duncan Hayes at United Agents via Olivia Jones ojones@unitedagents.co.uk</p>
+                </div>
+
                 <div class="history col-xl-4 col-10">
                     <div class="always">經常舉辦</div>
                     <div class="type d-flex">
@@ -80,8 +81,11 @@
 
             </div>
 
-            <div class="modbutton text-center">
-                <button class="modify btn btn-primary">返回會員頁面</button>
+            <div class="modbutton text-center col-xl-8 col-12">
+                <div class="okbutton col-xl-6 col-10 d-flex">
+                    <button class="modify1 col-5 btn btn-primary">修改會員資料</button>
+                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">返回會員中心</button>
+                </div>
             </div>
 
         </div>

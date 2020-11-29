@@ -1,4 +1,4 @@
-<?php $title = 'B2B首頁'; ?>
+<?php $title = 'KunstHaus | 廠商會員中心首頁'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
@@ -206,7 +206,7 @@
             </div>
         </div>
         <div class="slogan">
-            <p>讓生活因活動而生動</p>
+            <p>讓生活因<span class="event">活動</span>而生動</p>
         </div>
     </div>
 </div>
