@@ -13,8 +13,12 @@
 <!-- 內容開始 -->
 <div class="wrap-bg position-relative pb-5">
     <div class="container form-bg mt-5 py-4 col-lg-8 col-md-8 col-sm-11 col-11">
-
-        感謝訂購～～
+        <div class="success-animation">
+        </div>
+        <h3 class="text-center">付款成功</h3>
+        <p class="order-no text-center">
+            訂單編號:2456344543
+        </p>
 
         <table class="table my-5">
             <thead class="thead-dark">
