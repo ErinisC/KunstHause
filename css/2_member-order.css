@@ -22,8 +22,8 @@ body.modal-open {
   .main-info {
     font-size: 1rem;
   }
-  
-  .sub-info{
+
+  .sub-info {
     font-size: 0.7rem;
   }
 }
@@ -50,7 +50,7 @@ body.modal-open {
     margin-bottom: 1rem;
   }
 
-  .close{
+  .close {
     right: -30%;
     top: -20%;
   }
@@ -72,7 +72,7 @@ body.modal-open {
     width: 20vh;
   }
 
-  .btn-s{
+  .btn-s {
     font-size: 1.5rem;
   }
 
@@ -80,8 +80,8 @@ body.modal-open {
     font-size: 1.7rem;
     line-height: 2rem;
   }
-  
-  .sub-info{
+
+  .sub-info {
     font-size: 1.4rem;
     line-height: 1.7rem;
   }
@@ -103,7 +103,7 @@ body.modal-open {
     display: none;
   }
 
-  .close{
+  .close {
     right: -12%;
     top: -10%;
   }
@@ -249,13 +249,13 @@ body.modal-open {
   border: none;
 }
 
-.attender{
-  background-color: #FFC024;
+.attender {
+  background-color: #ffc024;
   padding: 10px;
   margin: 0;
 }
 
-.ticket-sid{
+.ticket-sid {
   background-color: #000;
   color: #fff;
   padding: 10px;

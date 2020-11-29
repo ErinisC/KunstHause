@@ -3,153 +3,148 @@
 } */
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 button:focus {
-    outline: 3px solid #FFC024;
+  outline: 3px solid #ffc024;
 }
 
 a {
-    color: black;
+  color: black;
 }
 
 a:hover {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .bg {
-    background-color: #168FA4;
-    background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0), linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
-    background-size: 0.75rem 0.75rem;
+  background-color: #168fa4;
+  background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
 }
 
 .space {
-    height: 90px;
+  height: 90px;
 }
 
 /* 麵包屑區塊 */
 .breadcrumb {
-    background-color: transparent;
-
+  background-color: transparent;
 }
 
 .breadcrumb-item a {
-    color: white;
+  color: white;
 }
 
 .breadcrumb-item a:hover {
-    color: #FFC024;
-    text-decoration: none;
+  color: #ffc024;
+  text-decoration: none;
 }
 
-
-.breadcrumb-item+.breadcrumb-item::before {
-    content: ">";
-    color: white;
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  color: white;
 }
 
 .breadcrumb-item.active {
-    color: #FFC024;
+  color: #ffc024;
 }
 
 /* 大圖輪播區塊 */
 .pic {
-    height: 700px;
-    overflow: hidden;
+  height: 700px;
+  overflow: hidden;
 }
 
 .carousel {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .carousel-item {
-    height: 700px;
+  height: 700px;
 }
 
 .carousel img {
-    object-fit: cover;
-    height: 100%;
+  object-fit: cover;
+  height: 100%;
 }
 
 /* 篩選區塊 */
 .filter-wrap {
-    bottom: 30%;
-    z-index: 1;
+  bottom: 30%;
+  z-index: 1;
 }
 
 .filter-bg {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    max-width: 1170px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  max-width: 1170px;
 }
 
 .event-search {
-    height: 60%;
+  height: 60%;
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 /* input或text area打字時是黑色的字 */
 textarea:focus,
 input:focus {
-    outline: 2px solid #168FA4;
-    color: black !important;
+  outline: 2px solid #168fa4;
+  color: black !important;
 }
 
 /* 下拉篩選框 */
 .search-dropdown {
-    display: none;
-    top: 50px;
-    background-color: #fff;
-    border-radius: 3px;
-    height: 200px;
-    z-index: 1;
-    color: black;
+  display: none;
+  top: 50px;
+  background-color: #fff;
+  border-radius: 3px;
+  height: 200px;
+  z-index: 1;
+  color: black;
 }
 
 .search-dropdown .title {
-    color: #168FA4;
-    font-weight: 600;
-
+  color: #168fa4;
+  font-weight: 600;
 }
 
 .search-dropdown ul li a {
-    color: #333;
-    display: flex;
-    padding: 15px 10px;
-    font-size: .8rem;
+  color: #333;
+  display: flex;
+  padding: 15px 10px;
+  font-size: 0.8rem;
 }
 
 .search-dropdown ul li a:hover {
-    text-decoration: none;
-    background: #f4f4f4;
+  text-decoration: none;
+  background: #f4f4f4;
 }
-
-
 
 /* 關鍵字區塊 */
 .gap {
-    width: 10px;
-    border-right: 2px solid white;
+  width: 10px;
+  border-right: 2px solid white;
 }
 
 .chip a {
-    font-size: .8rem;
-    color: white;
-    border: 1px solid white;
-    border-radius: 100px;
-    padding: 2px 12px;
+  font-size: 0.8rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 100px;
+  padding: 2px 12px;
 }
 
 .chip a:hover {
-    text-decoration: none;
-    background-color: hsla(0, 0%, 100%, .2);
+  text-decoration: none;
+  background-color: hsla(0, 0%, 100%, 0.2);
 }
-
 
 /* 本週主打精選 */
 
@@ -158,176 +153,170 @@ input:focus {
 } */
 
 .intro-box {
-    height: 500px;
+  height: 500px;
 }
 
 .intro-img {
-    margin-left: 150px;
-    height: 300px;
-    z-index: 1;
+  margin-left: 150px;
+  height: 300px;
+  z-index: 1;
 }
 
 .intro-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .intro-img img:hover {
-    transform: scale(1.2, 1.2);
-}
-
-
-.intro-info {
-    height: 200px;
-    background-color: #4336A3;
+  transform: scale(1.2, 1.2);
 }
 
 .intro-info {
-    bottom: -40%;
-    right: 6%;
-    box-shadow: 8px 8px black;
+  height: 200px;
+  background-color: #4336a3;
+}
+
+.intro-info {
+  bottom: -40%;
+  right: 6%;
+  box-shadow: 8px 8px black;
 }
 
 .intro-box .title {
-    font-size: 2rem;
-    font-weight: 600;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 /* 小標 */
 .section-title {
-    height: 80px;
-    background-color: #ED5B4C;
-    border: 3px solid black;
-    transform: rotate(-5deg);
+  height: 80px;
+  background-color: #ed5b4c;
+  border: 3px solid black;
+  transform: rotate(-5deg);
 }
 
 .section-title-below {
-    top: -10px;
-    left: -15px;
-    width: 105%;
-    height: 80px;
-    background-color: #ED5B4C;
-    border: 3px solid black;
+  top: -10px;
+  left: -15px;
+  width: 105%;
+  height: 80px;
+  background-color: #ed5b4c;
+  border: 3px solid black;
 }
 
 .section-title-below p {
-    transform: rotate(5deg);
-    font-size: 1.5rem;
+  transform: rotate(5deg);
+  font-size: 1.5rem;
 }
-
 
 /* 商品列表 */
 .bg-attatch {
-    /* background: url(../imgs/banner/bg-attatch-4.jpg);
+  /* background: url(../imgs/banner/bg-attatch-4.jpg);
     background-attachment: fixed; */
-    background-color: #002c80;
+  background-color: #002c80;
 
-    border: 6px solid black;
+  border: 6px solid black;
 }
 
-
 .card {
-    background-color: transparent;
-    border: none;
-    transition: 1s;
-    opacity: 0;
+  background-color: transparent;
+  border: none;
+  transition: 1s;
+  opacity: 0;
 }
 
 .move-up {
-    transform: translateY(-30px);
-    opacity: 1;
+  transform: translateY(-30px);
+  opacity: 1;
 }
 
 /* 翻轉卡片 */
 .flip-card-inner {
-    height: 300px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 300px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flip-card:hover .time {
-    opacity: 0;
+  opacity: 0;
 }
 
 .flip-card-front,
 .flip-card-back {
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .flip-card-back {
-    transform: rotateY(180deg);
-    background-color: #FFC024;
-    border: 3px solid black;
-    line-height: 1.5;
+  transform: rotateY(180deg);
+  background-color: #ffc024;
+  border: 3px solid black;
+  line-height: 1.5;
 }
 
 .flip-card-back .filp-title {
-    font-weight: 600;
-    background-color: #4336A3;
-    color: white;
+  font-weight: 600;
+  background-color: #4336a3;
+  color: white;
 }
 
 .flip-card-back p {
-    height: 80%;
-    overflow: hidden;
+  height: 80%;
+  overflow: hidden;
 }
 
 /* 活動小卡圖片 */
 .card .img-wrap {
-    height: 300px;
-    border: 3px solid black;
+  height: 300px;
+  border: 3px solid black;
 }
 
-
 .img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card .time {
-    bottom: 0;
-    background-color: #FFC024;
-    height: 50px;
-    border-radius: 3px;
-    transition: 0.8s;
-
+  bottom: 0;
+  background-color: #ffc024;
+  height: 50px;
+  border-radius: 3px;
+  transition: 0.8s;
 }
 
 .card-body {
-    border: 3px solid black;
-    background-color: white;
-    box-shadow: 8px 10px;
+  border: 3px solid black;
+  background-color: white;
+  box-shadow: 8px 10px;
 }
 
 .card-body .card-price {
-    background-color: #4336A3;
-    color: white;
-    cursor: pointer;
+  background-color: #4336a3;
+  color: white;
+  cursor: pointer;
 }
 
 .event-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.5rem;
-    font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .like-link {
-    bottom: 0;
-    right: 10px;
-    font-size: 2rem;
+  bottom: 0;
+  right: 10px;
+  font-size: 2rem;
 }
 
 /* .like:hover {
@@ -340,8 +329,8 @@ input:focus {
 } */
 
 .like.liked {
-    color: #ed5b4c;
-    font-weight: 900;
+  color: #ed5b4c;
+  font-weight: 900;
 }
 
 /* .like:visited .far.fa-heart {
@@ -349,115 +338,110 @@ input:focus {
     font-weight: 900;
 } */
 
-
 /* 小卡彈跳蓋板 */
 .modal-content {
-    border: 3px solid black;
-    border-radius: 0;
-
+  border: 3px solid black;
+  border-radius: 0;
 }
 
 iframe {
-    border: none;
-    width: 100%;
-    height: 100%;
+  border: none;
+  width: 100%;
+  height: 100%;
 }
 
 .modal-body {
-    height: 600px;
+  height: 600px;
 }
-
 
 /* 頁碼 */
 .page-link {
-    background-color: transparent;
-    color: #21489C;
-    border: none;
+  background-color: transparent;
+  color: #21489c;
+  border: none;
 }
 
 .page-link:hover {
-    background-color: #FFC024;
-    border: 3px solid black;
+  background-color: #ffc024;
+  border: 3px solid black;
 }
 
 .page-link:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .page-item.active .page-link {
-    background-color: #FFC024;
-    border: 3px solid black;
+  background-color: #ffc024;
+  border: 3px solid black;
 }
 
 .page-item.disabled .page-link {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /* 推薦商品 */
 .card-sm .img-wrap {
-    height: 200px;
+  height: 200px;
 }
 
 .card-sm .time {
-    height: 40px;
+  height: 40px;
 }
-
 
 /* 推薦商品小卡 */
 .r-section {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 .recommened-events {
-    min-height: 40vh;
+  min-height: 40vh;
 }
 
 /* others */
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-    background: url(../imgs/member/section-4.svg);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  background: url(../imgs/member/section-4.svg);
 }
 
 .main {
-    background-color: lighten(skyblue, 60%);
-    grid-area: main;
-    padding: 0;
-    overflow-y: hidden;
+  background-color: lighten(skyblue, 60%);
+  grid-area: main;
+  padding: 0;
+  overflow-y: hidden;
 }
 
 .grid-item {
-    padding: 3.5em 1em;
-    font-size: 1em;
+  padding: 3.5em 1em;
+  font-size: 1em;
 }
 
 .items {
-    position: relative;
-    width: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    transition: all 0.2s;
-    transform: scale(0.98);
-    will-change: transform;
-    user-select: none;
-    cursor: pointer;
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
 }
 
 .items.active {
-    /* background: rgba(255, 255, 255, 0.3); */
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    transform: scale(1);
+  /* background: rgba(255, 255, 255, 0.3); */
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
 }
 
 .item {
-    display: inline-block;
-    min-height: 250px;
-    min-width: 400px;
-    margin: 2em 1em;
-
+  display: inline-block;
+  min-height: 250px;
+  min-width: 400px;
+  margin: 2em 1em;
 }
 
 /* 瀏覽紀錄邊條 */
@@ -492,7 +476,7 @@ iframe {
 
 /* 怪怪地區 */
 footer .letter-submit {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 /* 3D測試 */
@@ -570,158 +554,152 @@ div#carousel~span:hover {
 } */
 
 .flip-book {
-    height: 500px;
-
+  height: 500px;
 }
 
 .containerA {
-    margin: 4% auto;
-    width: 210px;
-    height: 140px;
-    position: relative;
-    perspective: 1000px;
+  margin: 4% auto;
+  width: 210px;
+  height: 140px;
+  position: relative;
+  perspective: 1000px;
 }
 
 #carousel {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    animation: rotation 20s infinite linear;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotation 20s infinite linear;
 }
 
 #carousel:hover {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 #carousel figure {
-    display: block;
-    position: absolute;
-    width: 206px;
-    height: 166px;
-    left: 10px;
-    top: 50px;
-    background: white;
-    overflow: hidden;
-    border: solid 5px black;
+  display: block;
+  position: absolute;
+  width: 206px;
+  height: 166px;
+  left: 10px;
+  top: 50px;
+  background: white;
+  overflow: hidden;
+  border: solid 5px black;
 }
 
 figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #carousel figure:nth-child(9) {
-    transform: rotateY(0deg) translateZ(320px);
+  transform: rotateY(0deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(8) {
-    transform: rotateY(40deg) translateZ(320px);
+  transform: rotateY(40deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(7) {
-    transform: rotateY(80deg) translateZ(320px);
+  transform: rotateY(80deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(6) {
-    transform: rotateY(120deg) translateZ(320px);
+  transform: rotateY(120deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(5) {
-    transform: rotateY(160deg) translateZ(320px);
+  transform: rotateY(160deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(4) {
-    transform: rotateY(200deg) translateZ(320px);
+  transform: rotateY(200deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(3) {
-    transform: rotateY(240deg) translateZ(320px);
+  transform: rotateY(240deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(2) {
-    transform: rotateY(280deg) translateZ(320px);
+  transform: rotateY(280deg) translateZ(320px);
 }
 
 #carousel figure:nth-child(1) {
-    transform: rotateY(320deg) translateZ(320px);
+  transform: rotateY(320deg) translateZ(320px);
 }
 
 img {
-    /* -webkit-filter: grayscale(1); */
-    cursor: pointer;
-    transition: all .5s ease;
+  /* -webkit-filter: grayscale(1); */
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 #carousel img:hover {
-    /* -webkit-filter: grayscale(0); */
-    transform: scale(1.2, 1.2);
+  /* -webkit-filter: grayscale(0); */
+  transform: scale(1.2, 1.2);
 }
 
 @keyframes rotation {
-    from {
-        transform: rotateY(360deg);
-    }
+  from {
+    transform: rotateY(360deg);
+  }
 
-    to {
-        transform: rotateY(0deg);
-    }
+  to {
+    transform: rotateY(0deg);
+  }
 }
 
 /* ====== Ｍedia Query =============== */
 /* Extra small 超小 (576px 以下) */
 @media screen and (max-width: 576px) {
-    .card-price {
-        font-size: .8rem;
-    }
-
+  .card-price {
+    font-size: 0.8rem;
+  }
 }
 
 /* =============================== */
 /* Small 小型裝置sm (576px 以上) */
-@media (min-width: 576px) {}
-
+@media (min-width: 576px) {
+}
 
 /* 576-768之間的畫面 */
-@media (min-width: 576px) and (max-width:768px) {}
-
-
+@media (min-width: 576px) and (max-width: 768px) {
+}
 
 @media (max-width: 768px) {
-    .shop-cart-content {
-        left: 10%;
-    }
+  .shop-cart-content {
+    left: 10%;
+  }
 }
 
 /* ================================ */
 /* Medium 中型裝置md (768px 以上) */
-@media (min-width: 768px) {}
-
+@media (min-width: 768px) {
+}
 
 /* 768-992之間的畫面 */
-@media screen and (min-width:768px) and (max-width:992px) {
-    .shop-cart-content {
-        left: 22%;
-    }
-
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .shop-cart-content {
+    left: 22%;
+  }
 }
 
 /* ================================ */
 /* Large 大型lg (992px以上) */
 @media (min-width: 992px) {
-
-    .filter-bg {
-        padding-left: 15%;
-    }
-
+  .filter-bg {
+    padding-left: 15%;
+  }
 }
 
-
-
 /* 991-1200 之間的畫面 */
-@media (min-width: 992px) and (max-width:1200px) {}
+@media (min-width: 992px) and (max-width: 1200px) {
+}
 
 /* ================================ */
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}

@@ -9,6 +9,8 @@ html {
 body {
   height: 100vh;
   background-color: #002c80;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .login-popup {
@@ -84,6 +86,11 @@ p {
   border-radius: 0px;
   font-weight: 600;
   height: 2.5rem;
+}
+
+.btn:active {
+  border: none;
+  outline: none;
 }
 
 .help {

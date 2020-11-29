@@ -1,0 +1,343 @@
+* {
+  outline: 1px solid red;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  height: 100vh;
+  background-color: #002c80;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 10rem;
+}
+
+.row {
+  width: 100%;
+}
+
+.member-area {
+  background: #fff;
+  background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
+    linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+  margin-bottom: 10rem;
+  position: relative;
+}
+
+.avatar {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 50%;
+  top: -100px;
+  right: 430px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.edit-member {
+  text-align: center;
+  margin: 4.5rem;
+  font-weight: 600;
+}
+
+.btn {
+  background-color: #ffc639;
+  color: #000;
+  margin: 2rem auto;
+  border: 3px solid #000;
+  border-radius: 0px;
+  font-weight: 600;
+  height: 2.5rem;
+}
+
+.favorite {
+  width: 100%;
+  border-bottom: 3px solid #000;
+  font-weight: 600;
+}
+
+/* 商品列表 */
+
+.card {
+  background-color: transparent;
+  border: none;
+  transition: 1s;
+  opacity: 0;
+}
+
+.move-up {
+  transform: translateY(-30px);
+  opacity: 1;
+}
+
+/* 翻轉卡片 */
+.flip-card-inner {
+  height: 300px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover .time {
+  opacity: 0;
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #ffc024;
+  border: 3px solid black;
+  line-height: 1.5;
+}
+
+.flip-card-back .filp-title {
+  font-weight: 600;
+  background-color: #4336a3;
+  color: white;
+}
+
+.flip-card-back p {
+  height: 80%;
+  overflow: hidden;
+}
+
+/* 活動小卡圖片 */
+.card .img-wrap {
+  height: 300px;
+  border: 3px solid black;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .time {
+  bottom: 0;
+  background-color: #ffc024;
+  height: 50px;
+  border-radius: 3px;
+  transition: 0.8s;
+}
+
+.card-body {
+  border: 3px solid black;
+  background-color: white;
+  box-shadow: 8px 10px;
+}
+
+.card-body .card-price {
+  background-color: #4336a3;
+  color: white;
+  cursor: pointer;
+}
+
+.event-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.like-link {
+  bottom: 0;
+  right: 10px;
+  font-size: 2rem;
+}
+
+.like.liked {
+  color: #ed5b4c;
+  font-weight: 900;
+}
+
+/* 小卡彈跳蓋板 */
+.modal-content {
+  border: 3px solid black;
+  border-radius: 0;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-body {
+  height: 600px;
+}
+
+/* ----------media query---------- */
+@media (min-width: 769px) {
+  html {
+    font-size: 20px;
+  }
+
+  .main-info {
+    font-size: 1rem;
+  }
+
+  .sub-info {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .space {
+    height: 10rem;
+  }
+
+  .section-title img {
+    width: 25vh;
+  }
+
+  .edit {
+    flex-direction: column;
+  }
+
+  .edit button {
+    margin: 0.5rem 0;
+  }
+
+  .ticket {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .close {
+    right: -30%;
+    top: -20%;
+  }
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  .space {
+    height: 8rem;
+  }
+
+  .section-title img {
+    width: 20vh;
+  }
+
+  .btn-s {
+    font-size: 1.5rem;
+  }
+
+  .main-info {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .sub-info {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+
+  .edit {
+    flex-direction: row;
+  }
+
+  .edit button {
+    margin: 0.5rem 1.5rem;
+  }
+
+  .ticket {
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .sm-none {
+    display: none;
+  }
+
+  .close {
+    right: -12%;
+    top: -10%;
+  }
+}
+
+/* ----------order status---------- */
+
+.btn-s {
+  border: 3px solid #000;
+  background-color: #fff;
+  border-radius: 0%;
+  width: 25%;
+  padding: 2% 0;
+}
+
+.btn-select {
+  background-color: #ffc024;
+  border: 3px solid #000;
+}
+
+.order {
+  border: 3px solid #000;
+  background-color: #fff;
+}
+
+.main-info {
+  font-weight: bold;
+  letter-spacing: 2.55px;
+}
+
+.edit {
+  text-align: center;
+  display: flex;
+}
+
+.edit button {
+  width: 48px;
+  height: 48px;
+  border: none;
+}
+
+.delete {
+  background: url(../imgs/member/cancel.svg) center no-repeat;
+}
+
+.feedback {
+  background: url(../imgs/member/feedback.svg) center no-repeat;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.qr-code-lg {
+  background-color: transparent;
+}

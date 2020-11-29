@@ -1,4 +1,4 @@
-<?php $title = '會員註冊'; ?>
+<?php $title = 'Kunsthaus|會員註冊'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
@@ -172,7 +172,7 @@
 
                         <div class="form-check my-4">
                             <input type="checkbox" class="form-check-input" id="checkbox" name="checkbox" value="是">
-                            <label class="form-check-label" id="checkbox-text" for="checkbox">我同意Kunsthaus服務條款及隱私權政策</label>
+                            <label class="form-check-label " id="checkbox-text" for="checkbox">我同意Kunsthaus服務條款及隱私權政策</label>
                         </div>
 
 

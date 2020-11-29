@@ -1,4 +1,4 @@
-<?php $title = '會員登入'; ?>
+<?php $title = 'Kunsthaus|會員登入'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
 <?php
@@ -33,9 +33,9 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             <div class="login-title">請登入會員</div>
             <div class="reminder ml-3">*您可以選擇下列帳號快速登入</div>
             <div class="icons d-flex justify-content-center mx-auto">
-                <img class="facebook" src=" <?= WEB_ROOT ?>/imgs/member/facebook-brands.svg">
+                <img class="facebook" src=" <?= WEB_ROOT ?>/imgs/member/facebook-brands.svg" style="  cursor: pointer">
                 <p>或</p>
-                <img class="google" src=" <?= WEB_ROOT ?>/imgs/member/google-plus-brands.svg">
+                <img class="google" src=" <?= WEB_ROOT ?>/imgs/member/google-plus-brands.svg" style="  cursor: pointer">
             </div>
 
             <!-- 登入表單開始 -->
@@ -80,13 +80,15 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                 <div class="help ml-4">
                     <p>還不是 Kunsthaus會員嗎?</p>
                     <a href="" class="s-signup text-dark">
-                        <p style="font-weight:600">點此註冊</p>
+                        <p style="font-weight:600; color:#1741ca; font-size: 0.8rem">點此註冊</p>
                     </a>
                 </div>
 
                 <!-- 忘記密碼 Modal Area -->
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary mr-4 mt-2" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #168FA4">忘記密碼?
+                <button type="button" class="btn btn-primary mr-4 mt-2" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #168FA4">
+                    <p style="font-size:1rem; padding-top:0px">忘記密碼?
+                    </p>
                 </button>
 
                 <!-- Modal -->
