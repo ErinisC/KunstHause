@@ -14,10 +14,13 @@
 <div class="wrap-bg position-relative pb-5">
     <div class="container form-bg mt-5 py-4 col-lg-8 col-md-8 col-sm-11 col-11">
         <div class="success-animation">
+            <svg class="checkmark success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark_circle_success" cx="26" cy="26" r="25" fill="none" />
+                <path class="checkmark_check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" stroke-linecap="round" /></svg>
         </div>
-        <h3 class="text-center">付款成功</h3>
+        <h1 class="show-text text-center">付款成功</h1>
         <p class="order-no text-center">
-            訂單編號:2456344543
+            訂單編號: 2456344543
         </p>
 
         <table class="table my-5">
