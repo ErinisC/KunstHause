@@ -1,6 +1,10 @@
 * {
   outline: 1px solid red;
 }
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
 
 input:focus {
   color: #000 !important;
