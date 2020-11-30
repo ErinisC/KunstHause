@@ -90,7 +90,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 
 <?php else : ?>
 
-    <div class="container">
+    <div class="container order-status-list">
         <?php foreach ($o_rows as $o) : ?>
             <?php foreach ($d_rows as $d) : ?>
                 <!-- <div class="row order mb-5 align-content-center">
