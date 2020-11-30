@@ -79,6 +79,7 @@ a:hover {
 .event-search {
     height: 60%;
 } */
+
 h1 {
   font-size: 2rem;
 }
@@ -254,20 +255,19 @@ input:focus {
 .bg-attatch {
   /* background: url(../imgs/banner/bg-attatch-4.jpg);
     background-attachment: fixed; */
-  <<<<<<< Updated upstream background-color: #002c80;
+  background-color: #002c80;
 
   border: 6px solid black;
-  =======border: 6px solid black;
+  border: 6px solid black;
   background-color: #002c80;
   background-image: radial-gradient(#01173fc2 18%, transparent 22%), radial-gradient(#01173fc2 18%, transparent 22%);
   background-position: 20px 0, 56px 46px;
   background-size: 83px 80px;
   background-attachment: fixed;
-  >>>>>>>Stashed changes
 }
 
 .card {
-  <<<<<<< Updated upstream background-color: transparent;
+  background-color: transparent;
   border: none;
   transition: 1s;
   opacity: 0;
@@ -276,7 +276,7 @@ input:focus {
 .move-up {
   transform: translateY(-30px);
   opacity: 1;
-  =======background-color: transparent;
+  background-color: transparent;
   border: none;
   transition: 2s;
   opacity: 0;
@@ -287,13 +287,12 @@ input:focus {
 .move-up {
   transform: translateY(-20px);
   opacity: 1;
-  >>>>>>>Stashed changes
 }
 
 /* 翻轉卡片 */
 .flip-card-inner {
   height: 300px;
-  transition: transform 0.8s;
+  transition: 0.8s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -353,13 +352,12 @@ input:focus {
 }
 
 .card-body {
-  <<<<<<< Updated upstream border: 3px solid black;
+  border: 3px solid black;
   background-color: white;
   box-shadow: 8px 10px;
-  =======border: 3px solid black;
+  border: 3px solid black;
   background-color: white;
   box-shadow: 6px 6px black;
-  >>>>>>>Stashed changes
 }
 
 .card-body .card-price {
