@@ -41,7 +41,7 @@
                         <?php else : ?>
                             <!-- 先用foreach抓出session的東西 -->
                             <?php foreach ($_SESSION['cart'] as $i) : ?>
-                                <div id="prod<?= $i['sid'] ?>" class="row one-item flex-column pb-3 m-3">
+                                <div id="prod<?= $i['sid'] ?>" class="row one-item flex-column p-3 mb-3">
                                     <div class="img-wrap" style="height:100px">
                                         <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                     </div>

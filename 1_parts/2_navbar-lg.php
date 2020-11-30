@@ -224,7 +224,7 @@
                 </a>
 
                 <!-- 小版購物車dropdown -->
-                <div class="cart-nav-small p-3 position-absolute text-center" aria-labelledby="navbarDropdown">
+                <div class="cart-nav-small p-3 position-absolute text-center lg-none aria-labelledby=" navbarDropdown">
                     <div class="cart-nav-small-dropdown" href="#">購物車商品</div>
 
                     <!-- 如果session cart空空 -->

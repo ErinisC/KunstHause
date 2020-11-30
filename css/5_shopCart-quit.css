@@ -1,55 +1,58 @@
 * {
-    outline: 1px solid red;
-    box-sizing: border-box;
+  outline: 1px solid red;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 16px;
-    font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 body {
-    height: 100vh;
-    background-color: #168FA4;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  background-color: #168FA4;
 }
 
+
 .wrap-bg::before {
-    content: "";
-    border-style: solid;
-    border-color: transparent #FFC024 black transparent;
-    position: absolute;
-    bottom: 0px;
-    border-width: 80vh 80vw 0 20vw;
-    z-index: 1;
+  content: "";
+  border-style: solid;
+  border-color: transparent #FFC024 black transparent;
+  position: absolute;
+  bottom: 0px;
+  border-width: 80vh 80vw 0 20vw;
+  z-index: 1;
 }
 
 .wrap-bg::after {
-    content: "";
-    border-style: solid;
-    border-color: transparent transparent black #ED5B4C;
-    position: absolute;
-    bottom: 0px;
-    border-width: 80vh 20vw 0 80vw;
+  content: "";
+  border-style: solid;
+  border-color: transparent transparent black #ED5B4C;
+  position: absolute;
+  bottom: 0px;
+  border-width: 80vh 20vw 0 80vw;
 }
 
-.show-text{
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 2%;
-    letter-spacing: 2.55px;
+.show-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+  letter-spacing: 2.55px;
 }
 
-.order-no{
-    letter-spacing: 1px;
+.order-no {
+  letter-spacing: 1px;
 }
 
 
 /* 中間表格背景 */
 .form-bg {
-    background-color: white;
-    border: 3px solid black;
-    height: 90vh;
-    z-index: 3;
+  background-color: white;
+  border: 3px solid black;
+  height: 90vh;
+  z-index: 3;
 }
 
 
@@ -86,99 +89,109 @@ body {
 
 /* success animation */
 .checkmark_circle_success {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 5px;
-    stroke-miterlimit: 10;
-    stroke: #00C851;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-  }
-  
-  .checkmark_circle_error {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 5px;
-    stroke-miterlimit: 10;
-    stroke: #ff4444;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-  }
-  
-  .checkmark {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    display: block;
-    stroke-width: 5px;
-    stroke: white;
-    stroke-miterlimit: 10;
-    margin: 5% auto;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 5px;
+  stroke-miterlimit: 10;
+  stroke: #00C851;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark_circle_error {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 5px;
+  stroke-miterlimit: 10;
+  stroke: #ff4444;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 5px;
+  stroke: white;
+  stroke-miterlimit: 10;
+  margin: 5% auto;
+}
+
+.checkmark.success {
+  box-shadow: inset 0px 0px 0px #00C851;
+  animation: fillsuccess .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark.error {
+  box-shadow: inset 0px 0px 0px #ff4444;
+  animation: fillerror .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark_check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+.progress {
+  transform: rotate(-90deg);
+  stroke: black;
+}
+
+.progress circle {
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  animation: dash 1.5s infinite;
+}
+
+@keyframes dash {
+  50% {
+    stroke-dashoffset: 0;
   }
 
-  .checkmark.success {
-    box-shadow: inset 0px 0px 0px #00C851;
-    animation: fillsuccess .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  100% {
+    stroke-dashoffset: -130;
   }
-  .checkmark.error {
-    box-shadow: inset 0px 0px 0px #ff4444;
-    animation: fillerror .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.progress {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.progress.progress--thin {
+  left: auto;
+  right: 5%;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
   }
-  
-  .checkmark_check {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+@keyframes scale {
+
+  0%,
+  100% {
+    transform: none;
   }
-  
-  .progress {
-    transform: rotate(-90deg);
-    stroke: black;
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
   }
-  
-  .progress circle {
-    stroke-dasharray: 130;
-    stroke-dashoffset: 130;
-    animation: dash 1.5s infinite;
+}
+
+@keyframes fillsuccess {
+  100% {
+    box-shadow: inset 0px 0px 0px 75px #00C851;
   }
-  
-  @keyframes dash {
-    50% {
-      stroke-dashoffset: 0;
-    }
-    100% {
-      stroke-dashoffset: -130;
-    }
+}
+
+@keyframes fillerror {
+  100% {
+    box-shadow: inset 0px 0px 0px 75px #ff4444;
   }
-  .progress {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-  }
-  .progress.progress--thin {
-    left: auto;
-    right: 5%;
-  }
-  
-  @keyframes stroke {
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-  @keyframes scale {
-    0%, 100% {
-      transform: none;
-    }
-    50% {
-      transform: scale3d(1.1, 1.1, 1);
-    }
-  }
-  @keyframes fillsuccess {
-    100% {
-      box-shadow: inset 0px 0px 0px 75px #00C851;
-    }
-  }
-  @keyframes fillerror {
-    100% {
-      box-shadow: inset 0px 0px 0px 75px #ff4444;
-    }
-  }
+}

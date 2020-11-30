@@ -8,8 +8,11 @@ html {
 }
 
 body {
+    font-family: "Noto Sans TC", sans-serif;
+    font-family: "Roboto", sans-serif;
     height: 100vh;
     background-color: #168FA4;
+    letter-spacing: 2px;
 }
 
 button:focus {

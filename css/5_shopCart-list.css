@@ -1,3 +1,13 @@
+/* 通用區 */
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
+
 .form-bg {
     min-height: 70vh;
 }
@@ -14,13 +24,20 @@
 }
 
 .info-wrap {
-    height: 100px;
+    /* height: 100px; */
     overflow: hidden;
 }
 
 .event-title {
-    overflow: hidden;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
+}
+
+.number-wrap .quantity {
+    border: 3px solid black;
 }
 
 .minus,
@@ -30,8 +47,18 @@
     cursor: pointer;
 }
 
+textarea:focus,
+input:focus {
+    color: black !important;
+    outline: none;
+}
+
 .item {
     border-bottom: 3px solid black;
+}
+
+#total {
+    font-size: 1.2rem;
 }
 
 
@@ -44,6 +71,18 @@
 
 .line {
     border-top: 3px solid white;
+}
+
+#allTotal {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* color: #FFC024; */
+
+}
+
+.form-control:focus {
+    border-color: transparent;
+    box-shadow: none;
 }
 
 /* 統一按鈕 */
@@ -63,7 +102,22 @@
 
 /* ====== Ｍedia Query =============== */
 /* Extra small 超小 (576px 以下) */
-@media screen and (max-width: 576px) {}
+@media screen and (max-width: 576px) {
+
+    html {
+        font-size: 12px;
+    }
+
+    .product-item img {
+        height: 50%;
+    }
+
+
+    /* 購物車nav圖示小點 */
+    .progress-bar-section .img-wrap img {
+        height: 70%;
+    }
+}
 
 /* =============================== */
 /* Small 小型裝置sm (576px 以上) */

@@ -98,26 +98,26 @@ $rows = $stmt->fetchAll();
 
                                     <!-- 活動日期 -->
                                     <div class="my-3">
-                                        <?= $i['start-datetime'] ?>
+                                        日期： <?= $i['start-datetime'] ?>
                                     </div>
 
                                     <!-- 活動價格 -->
                                     <div class="price" data-price="<?= $i['price'] ?>">
-                                        $ <?= $i['price'] ?>
+                                        單張票價： $ <?= $i['price'] ?>
                                     </div>
                                 </div>
 
                             </li>
                             <!-- 數量 -->
-                            <li class="p-0 col-lg-2 col-md-2 col-sm-10 col-10">
+                            <li class="p-0 col-lg-3 col-md-2 col-sm-10 col-10">
                                 <!-- 數量加減區塊 -->
-                                <div class="number-wrap d-flex p-0 align-items-center">
+                                <div class="number-wrap d-flex p-0 align-items-center justify-content-center">
                                     <div class="minus col-2 p-0">
                                         <i class="fas fa-minus"></i>
                                     </div>
 
 
-                                    <input data-quantity="<?= $i['quantity'] ?>" type="text" class="quantity mx-2 p-0 text-center col-6" value="<?= $i['quantity'] ?>">
+                                    <input data-quantity="<?= $i['quantity'] ?>" type="text" class="quantity mx-2 p-0 text-center col-3" value="<?= $i['quantity'] ?>">
                                     <div class="add col-2 p-0">
                                         <i class="fas fa-plus"></i>
                                     </div>
@@ -177,12 +177,12 @@ $rows = $stmt->fetchAll();
                         <!-- 優惠券折扣 -->
                         <div class="wrap d-flex justify-content-between">
                             <p>優惠券折扣</p>
-                            <p>-$200</p>
+                            <p id="discount">200</p>
                         </div>
                         <!-- 總計 -->
                         <div class="wrap d-flex justify-content-between">
                             <p>總計</p>
-                            <p>$1,000</p>
+                            <p id="allTotal">$1,000</p>
                         </div>
                     </div>
 
@@ -287,11 +287,15 @@ $rows = $stmt->fetchAll();
             const quantity = parseInt(ul.find('input.quantity').attr('data-quantity'));
             // console.log(quantity)
             // 算小計，先抓到小計區塊
-            const subTotal = ul.find('li.subtotal').text(price * quantity);
+            const subTotal = ul.find('li.subtotal').text('$' + (price * quantity));
             // 每次小計完就加上金額
             total += price * quantity;
         });
         $('#totalAmount').text('$ ' + total);
+
+        // 扣掉優惠券的總計價格
+        const discount = $('#discount').text() * 1;
+        $('#allTotal').text('$' + (total - discount));
 
     };
     calcTotal();
