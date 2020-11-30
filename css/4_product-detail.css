@@ -107,6 +107,7 @@ body {
 .name-bar {
   border-bottom: 3px solid black;
   margin: auto;
+  padding: 20px;
   /* width: 900px; */
 }
 .bar-circle {
@@ -126,9 +127,9 @@ body {
 }
 
 .search-bar {
-  /* width: 900px; */
-  /* height: 100px; */
-  margin: 40px auto;
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
   border: 3px solid black;
 }
 
@@ -227,8 +228,8 @@ input[name="tab_item"] {
 
 .message-board {
   width: 100%;
-  height: 500px;
-  background-color: #fff;
+  /* height: 500px; */
+  background-color: white;
   border: 3px solid black;
   /* position: relative; */
 }
