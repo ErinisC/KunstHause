@@ -213,17 +213,42 @@ input:focus {
 
 .intro-img img:hover {
   transform: scale(1.2, 1.2);
+
 }
 
 .intro-info {
   height: 200px;
   background-color: #4336a3;
-}
-
-.intro-info {
   bottom: -40%;
   right: 13%;
   box-shadow: 8px 8px black;
+}
+
+
+.intro-info::before {
+  content: "FEATURE";
+  font-weight: 700;
+  font-size: 3rem;
+  position: absolute;
+  top: -23px;
+  right: 0;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transform: skew(-21.5deg) scaleY(.9);
+  transform: skew(-21.5deg) scaleY(.9);
+}
+
+.intro-info::after {
+  content: "";
+  position: absolute;
+  top: -186px;
+  bottom: 0;
+  right: 352px;
+  width: 45vw;
+  max-width: 556px;
+  max-height: 289px;
+  z-index: 0;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #d5a546), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, #d5a546), color-stop(.75, #d5a546), color-stop(.75, transparent), to(transparent));
+  background-size: 9px 9px;
 }
 
 .intro-box .title {
@@ -354,10 +379,8 @@ input:focus {
 .card-body {
   border: 3px solid black;
   background-color: white;
-  box-shadow: 8px 10px;
-  border: 3px solid black;
-  background-color: white;
   box-shadow: 6px 6px black;
+  color: black;
 }
 
 .card-body .card-price {
@@ -631,7 +654,6 @@ div#carousel~span:hover {
   position: relative;
   perspective: 1000px;
   transition: 1s;
-  transform: translateX(1500px);
 }
 
 .right-in {
@@ -771,4 +793,9 @@ img {
 
 /* ================================ */
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .containerA {
+    transform: translateX(1500px);
+  }
+
+}

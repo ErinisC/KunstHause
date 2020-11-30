@@ -212,7 +212,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     <div class="intro-img col-6">
                         <img src="imgs/event/TNC-41.jpg" alt="">
                     </div>
-                    <div class="d-flex flex-column justify-content-center intro-info text-white pl-5 col-4 position-absolute">
+                    <div class="d-flex intro-info flex-column justify-content-center text-white pl-5 col-4 position-absolute">
                         <div class="title mb-3">2020戴勝益創作展</div>
                         <div class="mb-3">地點：台北</div>
                         <div class="">來個＃</div>
