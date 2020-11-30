@@ -41,6 +41,7 @@ body {
   border-radius: 50%;
   top: -100px;
   right: 430px;
+  border: 3px solid #000;
 }
 
 .avatar img {
@@ -51,7 +52,7 @@ body {
 
 .edit-member {
   text-align: center;
-  margin: 4.5rem;
+  margin: 4.5rem auto 2rem;
   font-weight: 600;
 }
 
@@ -65,95 +66,42 @@ body {
   height: 2.5rem;
 }
 
-.favorite {
+.sort {
   width: 100%;
   border-bottom: 3px solid #000;
   font-weight: 600;
 }
 
-/* 商品列表 */
+/* 我的珍藏 */
 
-.card {
-  background-color: transparent;
-  border: none;
-  transition: 1s;
-  opacity: 0;
-}
-
-.move-up {
-  transform: translateY(-30px);
-  opacity: 1;
-}
-
-/* 翻轉卡片 */
-.flip-card-inner {
-  height: 300px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card:hover .time {
-  opacity: 0;
-}
-
-.flip-card-front,
-.flip-card-back {
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  background-color: #ffc024;
+.card-wrap {
+  /* height: 500px; */
   border: 3px solid black;
-  line-height: 1.5;
+  box-shadow: 8px 10px #ffc639;
 }
 
-.flip-card-back .filp-title {
-  font-weight: 600;
-  background-color: #4336a3;
-  color: white;
-}
-
-.flip-card-back p {
-  height: 80%;
+.card-kv {
   overflow: hidden;
+  object-fit: contain;
 }
 
-/* 活動小卡圖片 */
-.card .img-wrap {
-  height: 300px;
-  border: 3px solid black;
-}
-
-.img-wrap img {
+.card-kv img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
-.card .time {
+.time {
   bottom: 0;
   background-color: #ffc024;
   height: 50px;
-  border-radius: 3px;
-  transition: 0.8s;
+  font-size: 0.9rem;
 }
 
-.card-body {
+.card-info {
   border: 3px solid black;
   background-color: white;
-  box-shadow: 8px 10px;
 }
 
-.card-body .card-price {
+.card-price {
   background-color: #4336a3;
   color: white;
   cursor: pointer;
@@ -163,8 +111,12 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
+}
+
+.event-location {
+  font-size: 0.8rem;
 }
 
 .like-link {
@@ -192,6 +144,12 @@ iframe {
 
 .modal-body {
   height: 600px;
+}
+
+/* 票券管理 */
+
+.ticket-wrap {
+  border: 3px solid #000;
 }
 
 /* ----------media query---------- */
