@@ -49,7 +49,7 @@
             <!-- 訂購人姓名 -->
             <div class="form-group">
                 <?php if (isset($_SESSION['user'])) : ?>
-                    <label for="name">訂購人姓名 (必填)</label>
+                    <label for="name" class="mb-3">訂購人姓名 (必填)</label>
                     <div class="input-box">
                         <input type="text" class="form-control" id="name" placeholder="請填寫真實姓名" name="name" value="<?= $_SESSION['user']['name'] ?>">
                         <!-- 姓名驗證 -->
@@ -59,7 +59,7 @@
 
             <!-- 信箱 -->
             <div class="form-group">
-                <label for="email">電子信箱email</label>
+                <label for="email" class="mb-3">電子信箱email</label>
                 <div class="input-box">
                     <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="請填寫email信箱" value="<?= $_SESSION['user']['email'] ?>">
                     <!-- 信箱驗證 -->
@@ -122,7 +122,7 @@
                     <div class="form-group">
                         <label for="tax-id-number">統一編號</label>
                         <div class="input-box">
-                            <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number" value="0">
+                            <input type="text" class="form-control" id="tax-id-number" placeholder="統一編號" name="tax-id-number" value="">
                             <!-- 統一編號驗證 -->
                             <small class="form-text">驗證</small>
                         </div>

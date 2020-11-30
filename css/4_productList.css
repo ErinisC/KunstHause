@@ -20,77 +20,70 @@ a:hover {
 }
 
 .bg {
-  background-color: #168fa4;
-  background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
-    linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
-  background-size: 0.75rem 0.75rem;
+  background-color: #168FA4;
+  /* background-image: radial-gradient(#0b4e5ab6 11%, transparent 31%), radial-gradient(#0b4e5ab6 27%, transparent 24%);
+    background-position: 19px 3px, 83px 49px;
+    background-size: 134px 118px;
+    background-attachment: fixed; */
+  /* transition: .3s; */
 }
 
 .space {
-  height: 90px;
+  height: 80px;
 }
 
 /* 麵包屑區塊 */
-.breadcrumb {
-  background-color: transparent;
+/* .breadcrumb {
+    background-color: transparent;
 }
-
 .breadcrumb-item a {
   color: white;
 }
-
 .breadcrumb-item a:hover {
   color: #ffc024;
   text-decoration: none;
 }
-
-.breadcrumb-item + .breadcrumb-item::before {
-  content: ">";
-  color: white;
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+    color: white;
 }
-
 .breadcrumb-item.active {
-  color: #ffc024;
-}
+    color: #FFC024;
+} */
 
 /* 大圖輪播區塊 */
-.pic {
-  height: 700px;
-  overflow: hidden;
+/* .pic {
+    height: 700px;
+    overflow: hidden;
 }
-
 .carousel {
   overflow: hidden;
 }
-
 .carousel-item {
   height: 700px;
 }
-
 .carousel img {
   object-fit: cover;
   height: 100%;
 }
-
 /* 篩選區塊 */
-.filter-wrap {
-  bottom: 30%;
-  z-index: 1;
+/* .filter-wrap {
+    bottom: 30%;
+    z-index: 1;
 }
-
 .filter-bg {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   max-width: 1170px;
 }
-
 .event-search {
-  height: 60%;
-}
-
+    height: 60%;
+} */
 h1 {
   font-size: 2rem;
 }
+
+*/
 
 /* input或text area打字時是黑色的字 */
 textarea:focus,
@@ -100,39 +93,36 @@ input:focus {
 }
 
 /* 下拉篩選框 */
-.search-dropdown {
-  display: none;
-  top: 50px;
-  background-color: #fff;
-  border-radius: 3px;
-  height: 200px;
-  z-index: 1;
-  color: black;
+/* .search-dropdown {
+    display: none;
+    top: 50px;
+    background-color: #fff;
+    border-radius: 3px;
+    height: 200px;
+    z-index: 1;
+    color: black;
 }
-
 .search-dropdown .title {
   color: #168fa4;
   font-weight: 600;
 }
-
 .search-dropdown ul li a {
   color: #333;
   display: flex;
   padding: 15px 10px;
   font-size: 0.8rem;
 }
-
 .search-dropdown ul li a:hover {
-  text-decoration: none;
-  background: #f4f4f4;
-}
+    text-decoration: none;
+    background: #f4f4f4;
+} */
+
 
 /* 關鍵字區塊 */
-.gap {
-  width: 10px;
-  border-right: 2px solid white;
+/* .gap {
+    width: 10px;
+    border-right: 2px solid white;
 }
-
 .chip a {
   font-size: 0.8rem;
   color: white;
@@ -140,24 +130,76 @@ input:focus {
   border-radius: 100px;
   padding: 2px 12px;
 }
-
 .chip a:hover {
-  text-decoration: none;
-  background-color: hsla(0, 0%, 100%, 0.2);
+    text-decoration: none;
+    background-color: hsla(0, 0%, 100%, .2);
+} */
+
+.main-search {
+  height: 800px;
+  border: 6px solid black;
+  background-color: #002c80;
+  background-image: radial-gradient(#01173fc2 18%, transparent 22%), radial-gradient(#01173fc2 18%, transparent 22%);
+  background-position: 20px 0, 56px 46px;
+  background-size: 83px 80px;
+  background-attachment: fixed;
+}
+
+.search-box {
+  border: 6px solid black;
+  background-color: #0544b8;
+}
+
+.search-box-shadow {
+  border: 6px solid black;
+  height: 400px;
+  top: 27%;
+  right: 23%;
+  background-color: rgb(241, 84, 69);
 }
 
 /* 本週主打精選 */
+.quotation {
+  transition: 1s;
+}
 
-/* .week {
-    height: 300px;
-} */
+.quotation img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.ql {
+  transform: translateX(-800px);
+}
+
+.qr {
+  transform: translateX(800px);
+}
+
+
+.flyin {
+  transform: translateX(0px);
+}
+
+.goUp {
+  transform: translateY(-500px);
+  opacity: 0;
+
+}
 
 .intro-box {
   height: 500px;
+  transition: 1s;
+  opacity: 0;
+}
+
+.show-up {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .intro-img {
-  margin-left: 150px;
+  margin-left: 100px;
   height: 300px;
   z-index: 1;
 }
@@ -179,7 +221,7 @@ input:focus {
 
 .intro-info {
   bottom: -40%;
-  right: 6%;
+  right: 13%;
   box-shadow: 8px 8px black;
 }
 
@@ -189,13 +231,12 @@ input:focus {
 }
 
 /* 小標 */
-.section-title {
-  height: 80px;
-  background-color: #ed5b4c;
-  border: 3px solid black;
-  transform: rotate(-5deg);
+/* .section-title {
+    height: 80px;
+    background-color: #ED5B4C;
+    border: 3px solid black;
+    transform: rotate(-5deg);
 }
-
 .section-title-below {
   top: -10px;
   left: -15px;
@@ -204,23 +245,29 @@ input:focus {
   background-color: #ed5b4c;
   border: 3px solid black;
 }
-
 .section-title-below p {
-  transform: rotate(5deg);
-  font-size: 1.5rem;
-}
+    transform: rotate(5deg);
+    font-size: 1.5rem;
+} */
 
 /* 商品列表 */
 .bg-attatch {
   /* background: url(../imgs/banner/bg-attatch-4.jpg);
     background-attachment: fixed; */
-  background-color: #002c80;
+  <<<<<<< Updated upstream background-color: #002c80;
 
   border: 6px solid black;
+  =======border: 6px solid black;
+  background-color: #002c80;
+  background-image: radial-gradient(#01173fc2 18%, transparent 22%), radial-gradient(#01173fc2 18%, transparent 22%);
+  background-position: 20px 0, 56px 46px;
+  background-size: 83px 80px;
+  background-attachment: fixed;
+  >>>>>>>Stashed changes
 }
 
 .card {
-  background-color: transparent;
+  <<<<<<< Updated upstream background-color: transparent;
   border: none;
   transition: 1s;
   opacity: 0;
@@ -229,6 +276,18 @@ input:focus {
 .move-up {
   transform: translateY(-30px);
   opacity: 1;
+  =======background-color: transparent;
+  border: none;
+  transition: 2s;
+  opacity: 0;
+  color: #0b4e5ab6;
+  transform: translateY(150px);
+}
+
+.move-up {
+  transform: translateY(-20px);
+  opacity: 1;
+  >>>>>>>Stashed changes
 }
 
 /* 翻轉卡片 */
@@ -294,9 +353,13 @@ input:focus {
 }
 
 .card-body {
-  border: 3px solid black;
+  <<<<<<< Updated upstream border: 3px solid black;
   background-color: white;
   box-shadow: 8px 10px;
+  =======border: 3px solid black;
+  background-color: white;
+  box-shadow: 6px 6px black;
+  >>>>>>>Stashed changes
 }
 
 .card-body .card-price {
@@ -402,7 +465,13 @@ iframe {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr auto;
-  background: url(../imgs/member/section-4.svg);
+  /* background: url(../imgs/member/section-4.svg); */
+  border: 6px solid black;
+  background-color: #002c80;
+  background-image: radial-gradient(#01173fc2 18%, transparent 22%), radial-gradient(#01173fc2 18%, transparent 22%);
+  background-position: 20px 0, 56px 46px;
+  background-size: 83px 80px;
+  background-attachment: fixed;
 }
 
 .main {
@@ -563,6 +632,13 @@ div#carousel~span:hover {
   height: 140px;
   position: relative;
   perspective: 1000px;
+  transition: 1s;
+  transform: translateX(1500px);
+}
+
+.right-in {
+  transform: translateX(0px);
+  transform: scale(1.2);
 }
 
 #carousel {
@@ -583,7 +659,7 @@ div#carousel~span:hover {
   width: 206px;
   height: 166px;
   left: 10px;
-  top: 50px;
+  top: 100%;
   background: white;
   overflow: hidden;
   border: solid 5px black;
@@ -662,12 +738,10 @@ img {
 
 /* =============================== */
 /* Small 小型裝置sm (576px 以上) */
-@media (min-width: 576px) {
-}
+@media (min-width: 576px) {}
 
 /* 576-768之間的畫面 */
-@media (min-width: 576px) and (max-width: 768px) {
-}
+@media (min-width: 576px) and (max-width: 768px) {}
 
 @media (max-width: 768px) {
   .shop-cart-content {
@@ -677,8 +751,7 @@ img {
 
 /* ================================ */
 /* Medium 中型裝置md (768px 以上) */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 /* 768-992之間的畫面 */
 @media screen and (min-width: 768px) and (max-width: 992px) {
@@ -696,10 +769,8 @@ img {
 }
 
 /* 991-1200 之間的畫面 */
-@media (min-width: 992px) and (max-width: 1200px) {
-}
+@media (min-width: 992px) and (max-width: 1200px) {}
 
 /* ================================ */
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}

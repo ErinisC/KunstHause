@@ -56,7 +56,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     <!-- nav的高度空出來 -->
     <div class="space"></div>
     <!-- 麵包屑 -->
-    <div class="container">
+    <!-- <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="0_index.php">首頁</a></li>
@@ -64,31 +64,31 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
             </ol>
         </nav>
-    </div>
+    </div> -->
 
     <!-- Banner輪播 -->
-    <div class="container-fluid pic p-0">
-        <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel">
-            <!-- 固定的搜尋區塊 -->
-            <div class="filter-wrap position-absolute w-100">
+    <!-- <div class="container-fluid pic p-0">
+        <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel"> -->
+    <!-- 固定的搜尋區塊 -->
+    <!-- <div class="filter-wrap position-absolute w-100">
                 <div class="row filter-bg text-white m-auto py-3 align-items-center col-8 col-md-8 col-sm-11 col-11">
                     <div class="event-search w-100 d-flex flex-column justify-content-between">
                         <h1 class="mb-3">最棒的活動，都在KunstHaus</h1>
                         <h5 class="mb-3">來找活動吧</h5>
-                        <div class="search-block position-relative">
-                            <!-- 搜尋input -->
-                            <div class="input-group">
-                                <input type="text" id="search-event" class="col-lg-6 col-md-10 col-sm-10 col-10" placeholder="搜搜各種活動">
+                        <div class="search-block position-relative"> -->
+    <!-- 搜尋input -->
+    <!-- <div class="input-group">
+                                <input type="text" id="search-event" class="col-lg-6 col-md-10 col-sm-10 col-10" placeholder="搜搜各種活動"> -->
 
-                                <!-- 搜尋條input -->
-                                <div class="input-group-btn col-2 p-0">
+    <!-- 搜尋條input -->
+    <!-- <div class="input-group-btn col-2 p-0">
                                     <button class="btn btn-info">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </div>
-                            </div>
-                            <!-- 下拉框 -->
-                            <div class="search-dropdown position-absolute col-11 py-3">
+                            </div> -->
+    <!-- 下拉框 -->
+    <!-- <div class="search-dropdown position-absolute col-11 py-3">
                                 <p class="title mb-3">選擇地區</p>
                                 <ul class=" col-3 p-0">
                                     <li>
@@ -104,17 +104,17 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                             </div>
 
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!-- 關鍵字搜尋 -->
-                    <div class="col mt-3">
+    <!-- 關鍵字搜尋 -->
+    <!-- <div class="col mt-3">
                         <div class="row quickSearch">
                             <div class="quickSearch__title col-2 p-0">熱門搜尋 <span class="gap mx-2"></span>
-                            </div>
+                            </div> -->
 
 
-                            <!-- 關鍵字欄位 -->
-                            <div class="row col-10">
+    <!-- 關鍵字欄位 -->
+    <!-- <div class="row col-10">
                                 <div class="search-keyword mb-3">
                                     <span class="chip m-2">
                                         <a href="#">青峰演唱會</a>
@@ -142,22 +142,20 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                         </div>
 
                     </div>
-
-
                 </div>
 
 
-            </div>
+            </div> -->
 
-            <!-- 下面的小橫線 -->
-            <ol class="carousel-indicators">
+    <!-- 下面的小橫線 -->
+    <!-- <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-            <!-- 圖片 -->
-            <div class="carousel-inner">
+            </ol> -->
+    <!-- 圖片 -->
+    <!-- <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="First slide">
                 </div>
@@ -172,6 +170,24 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 </div>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="container-flui main-search">
+        <div class="container h-100">
+            <div class="row flex-column h-100 position-relative">
+
+
+                <div class="search-box-shadow col-6 text-white  m-auto p-5 position-absolute"></div>
+                <div class="col-6 search-box text-white  m-auto p-5">
+                    <h1 class="mb-3">最棒的活動，都在KunstHaus</h1>
+                    <h5 class="mb-3">來找活動吧</h5>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
 
 
@@ -180,15 +196,18 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         <div class="row">
 
             <!-- Section小標題 -->
-            <div class="section-title mb-5 col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
+            <!-- <div class="section-title mb-5 col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
                 <div class="section-title-below position-absolute d-flex align-items-center">
                     <p class="text-white text-center w-100">本週主打精選</p>
                 </div>
+            </div> -->
+
+            <div class="quotation ql col-1">
+                <img src="imgs/banner/quotation_marks_1.webp" alt="">
             </div>
 
-
             <!-- 介紹框 -->
-            <div class="intro-box w-100">
+            <div class="intro-box w-100 mt-5">
                 <a href="#" class="d-flex position-relative">
                     <div class="intro-img col-6">
                         <img src="imgs/event/TNC-41.jpg" alt="">
@@ -201,7 +220,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     </div>
                 </a>
 
+
             </div>
+            <div class="quotation qr text-right col-1 ml-auto mb-5">
+                <img src="imgs/banner/quotation_marks_2.webp" alt="">
+            </div>
+
 
         </div>
     </div>
@@ -213,7 +237,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <!-- Section小標題 -->
                 <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
                     <div class="section-title-below position-absolute d-flex align-items-center">
-                        <p class="text-white text-center w-100">大家都在看</p>
+                        <h1 class="text-white text-center w-100">大家都在看</h1>
                     </div>
                 </div>
 
@@ -325,7 +349,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         <!-- Section小標題 -->
         <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
             <div class="section-title-below position-absolute d-flex align-items-center">
-                <p class="text-white text-center w-100">來個一排東東</p>
+                <h1 class="text-white text-center w-100">來個一排東東</h1>
             </div>
         </div>
 
@@ -356,7 +380,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             <!-- Section小標題 -->
             <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
                 <div class="section-title-below position-absolute d-flex align-items-center">
-                    <p class="text-white text-center w-100">我們為您推薦</p>
+                    <h1 class="text-white text-center w-100">我們為您推薦</h1>
                 </div>
             </div>
         </div>
@@ -418,28 +442,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             </div>
         </div>
 
-        <!-- 瀏覽紀錄邊條 -->
-        <!-- <div class="side-cookie-bar position-fixed position-relative">
-            <i class="fas fa-history text-white" style="font-size:1.5rem"></i>
 
-            <div class="side-cookie-item  text-center position-absolute">
-                <p class="mb-3">瀏覽紀錄</p>
-                <ul>
-                    <li class="d-flex justify-content-around my-2">
-                        <div class="img-wrap">
-                            <img src="" alt="">
-                        </div>
-                        <p>name</p>
-                    </li>
-                    <li class="d-flex justify-content-around">
-                        <div class="img-wrap">
-                            <img src="" alt="">
-                        </div>
-                        <p>name</p>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
 
     </div>
 
@@ -497,15 +500,45 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         $(window).scroll(function() {
             let scrollTop = $(window).scrollTop();
             console.log('scrollTop:', scrollTop);
-            if (scrollTop > 1000) {
+
+
+            // quotation飛進來
+            if (scrollTop > 600) {
+                $('.quotation').addClass('flyin');
+            } else {
+                $('.quotation').removeClass('flyin');
+            }
+
+            // 精選小卡浮現
+            if (scrollTop > 650) {
+                $('.intro-box').addClass('show-up');
+            } else {
+                $('.intro-box').removeClass('show-up');
+            }
+
+            if (scrollTop > 1500) {
                 $('.card').addClass('move-up');
                 $('.card').addClass('move-up');
             } else {
                 $('.card').removeClass('move-up');
             }
+
+            // 3D 區飛進來
+            if (scrollTop > 2800) {
+                $('.containerA').addClass('right-in')
+            } else {
+                $('.containerA').removeClass('right-in')
+            }
         })
 
 
+        $('.search-box').on('mouseover', function() {
+            $('.search-box').css('transform', 'translate(20px, 18px)')
+        })
+
+        $('.search-box').on('mouseleave', function() {
+            $('.search-box').css('transform', 'translate(0px, 0px)')
+        })
 
         $('.card').eq(0); //抓到所有的小卡
         $('.card').eq(0).offset(); //抓到第0個的offset

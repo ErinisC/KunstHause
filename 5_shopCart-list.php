@@ -196,7 +196,7 @@ $rows = $stmt->fetchAll();
                     <!-- 繼續逛逛 -->
                     <div class="col-6 text-right">
                         <a href="4_productList.php">
-                            <button type="button" class="btn btn-warning btn-before">繼續逛</button>
+                            <button type="button" class="btn btn-warning btn-before">繼續逛逛</button>
                         </a>
                     </div>
 
@@ -213,7 +213,7 @@ $rows = $stmt->fetchAll();
                     <?php else : ?>
                         <div class="col-6">
                             <a href="1_member-login.php">
-                                <button type="button" class="btn btn-info">請先登入會員</button>
+                                <button type="button" class="btn btn-info">請先登入</button>
                             </a>
                         </div>
 
