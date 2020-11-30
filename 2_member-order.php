@@ -93,7 +93,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
     <div class="container">
         <?php foreach ($o_rows as $o) : ?>
             <?php foreach ($d_rows as $d) : ?>
-                <div class="row order mb-5 align-content-center">
+                <!-- <div class="row order mb-5 align-content-center">
                     <?php if ($o['sid'] == $d['order_id']) : ?>
                         <div class="col-lg-3 event-img p-0">
                             <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
@@ -124,7 +124,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                             </div>
                         </div>
                     <?php endif; ?>
-                </div>
+                </div> -->
             <?php endforeach; ?>
         <?php endforeach; ?>
     </div>
@@ -171,7 +171,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             </div>
             <div class="modal-header text-center">
                 <h5 class="modal-title" id="exampleModalLabel">
-                    2019百威真我至上音樂巡迴
+                    <?= $d['event_name'] ?>
                 </h5>
             </div>
             <div class="modal-body text-center">
@@ -195,7 +195,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             </div>
             <div class="modal-header text-center">
                 <h5 class="modal-title" id="exampleModalLabel">
-                    2019百威真我至上音樂巡迴
+                    <?= $d['event_name'] ?>
                 </h5>
             </div>
             <div class="modal-body text-center">
@@ -224,7 +224,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                 </button>
             </div>
             <div class="modal-body text-center">
-                <h5>2019百威真我至上音樂巡迴</h5>
+                <h5><?= $d['event_name'] ?></h5>
                 <p class="time">2019-12-10 11:00 ~ 2019-12-10 12:00</p>
                 <p class="location">台灣台北市信義區松壽路22號5樓</p>
             </div>
@@ -245,8 +245,83 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 <script>
-   
+    const status_btns = $('.status-btn');
 
+    const productTpl = function(a) {
+        return `
+        <div class="row order mb-5 align-content-center">
+                    <?php if ($o['sid'] == $d['order_id']) : ?>
+                        <div class="col-lg-3 event-img p-0">
+                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                        </div>
+                        <div class="col-lg-5 event-info">
+                            <div class="main-info my-4">
+                                <p class="event-name mb-2"><?= $d['event_name'] ?></p>
+                                <p class="price mb-2">單價$ <?= $d['price'] ?></p>
+                            </div>
+                            <div class="sub-info my-4">
+                                <p class="date mb-2"><?= $d['start-datetime'] ?> ~ <?= $d['end-datetime'] ?></p>
+                                <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
+                                <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
+                                <p class="total-price mb-2">訂單總額：<?= $o['total_price'] ?></p>
+                                <p class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 sm-none"></div>
+                        <div class="col-lg-3 ticket d-flex justify-content-around">
+                            <div class="edit">
+                                <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
+                                <button class="feedback"></button>
+                            </div>
+                            <div class="qr-code">
+                                <button class="qr-code-lg" type="button" class="btn btn-primary" data-toggle="modal" data-target="#qrcodeModal">
+                                    <img src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
+    `;
+    };
+
+    function whenHashChanged() {
+        let u = parseInt(location.hash.slice(1)) || 0;
+        console.log(u);
+        getProductData(u);
+
+        status_btns.removeClass('btn-primary').addClass('btn-select');
+        status_btns.each(function(index, el) {
+            const sid = parseInt($(this).attr('data-sid'));
+            if (sid === u) {
+                $(this).removeClass('btn-select').addClass('btn-primary');
+            }
+        });
+    };
+
+    window.addEventListener('hashchange', whenHashChanged);
+    whenHashChanged();
+
+    status_btns.on('click', function(event) {
+        const sid = $(this).attr('data-sid') * 1;
+        console.log(`sid: ${sid}`);
+        location.href = "#" + sid;
+    });
+
+    function getProductData(cate = 0) {
+        $.get('2_member-order api.php', {
+            cate: cate
+        }, function(data) {
+            console.log(data);
+
+            let str = '';
+            if (data.products && data.products.length) {
+                data.products.forEach(function(el) {
+                    str += productTpl(el);
+                });
+            }
+            $('.product-list').html(str);
+        }, 'json');
+    }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
