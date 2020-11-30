@@ -466,8 +466,8 @@
         window.addEventListener("scroll", function() {
 
             let st = window.pageYOffset || document.documentElement.scrollTop;
-            console.log("st:", st)
-            console.log("lastScrollTop:", lastScrollTop)
+            // console.log("st:", st)
+            // console.log("lastScrollTop:", lastScrollTop)
 
             if (st > lastScrollTop) {
                 direction = "-100%";
@@ -507,7 +507,7 @@
 
     // card heart animation
     $('.like').on('click', function() {
-        console.log('like');
+        // console.log('like');
         $(this).toggleClass('liked');
     });
 
