@@ -51,12 +51,12 @@ if (empty($row)) {
             <div class="mainact">
             </div>
 
-            <div class="space-1"></div>
+            <!-- <div class="space-1"></div> -->
 
-            <div class="date">
+            <!-- <div class="date">
                 <p class="date-year">2020</p>
                 <p class="date-mon">10.10<br>10.13</p>
-            </div>
+            </div> -->
 
             <!-- ---------報名卡片-------------- -->
 
@@ -75,32 +75,45 @@ if (empty($row)) {
 
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <button class="label">
                 <p>音樂</p>
             </button>
-        </div>
+        </div> -->
 
 
         <div class="row justify-content-between">
-            <div class="activity">
-                <h1 class="activity-title mt-3">AUDIO ARCHITECTURE：聲音的建築展</h1>
-                <div class="activity-time d-flex">
-                    <p class="activity-time-title mt-3">活動時間 17:30-20:30</p>
+
+            <div class="">
+                <button class="label">
+                    <p>音樂</p>
+                </button>
+                <div class="activity">
+                    <h1 class="activity-title mt-3">AUDIO ARCHITECTURE：聲音的建築展</h1>
+                    <div class="activity-time d-flex">
+                        <p class="activity-time-title mt-3">活動時間 17:30-20:30</p>
+                    </div>
+
+                    <div class="activity-date">
+                        <p class="activity-place-title mt-3">活動日期 台灣台北市中正區八德路一段117號</p>
+                    </div>
+                    
+                    <div class="activity-place">
+                        <p class="activity-place-title mt-3">活動地點 台灣台北市中正區八德路一段117號</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="">#Covid-free</a>
+                        <a href="">#INCEPTION</a>
+                    </div>
+
+                    <div class="activity-place">
+                        <p class="mt-3">$450</p>
+                    </div>
+
                 </div>
-
-                <div class="activity-place">
-                    <p class="activity-place-title mt-3">活動地點 台灣台北市中正區八德路一段117號</p>
-                </div>
-
-                <div class="mt-3">
-                    <a href="">#Covid-free</a>
-                    <a href="">#INCEPTION</a>
-                </div>
-
-
-
             </div>
+
 
             <!-- ---------報名卡片-------------- -->
             <button class="apply apply-01 d-flex align-items-center justify-content-center">
@@ -164,7 +177,8 @@ if (empty($row)) {
             </div>
 
             <!-- ------留言板內容------ -->
-            <div class="message-board">
+            <div class="message-board p-3">
+                <div class="">
                 <div class="name-bar d-flex">
                     <div class="bar-circle"></div>
 
@@ -203,15 +217,20 @@ if (empty($row)) {
                         <p>金假讚！</p>
                     </div>
                 </div>
+                </div>
 
 
+
+            </div>
+
+            
+        </div>
+
+        <div class="row">
                 <div class="search-bar d-flex">
                     <input type="text" placeholder="我來說幾句...(50個字為限)" class="col-11">
-                    <button class="search-bar-ser col-1 p-0 d-flex align-items-center justify-content-center">
-                        <p class="text-white text-center">發表</p>
-                    </button>
+                    <button class="search-bar-ser col-1 p-0 d-flex align-items-center justify-content-center text-white text-center">發表</button>
                 </div>
-            </div>
         </div>
 
         <div class="space-1"></div>
