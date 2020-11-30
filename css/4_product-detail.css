@@ -15,28 +15,37 @@ body {
 .space {
   height: 87px;
 }
+
 /* ------------麵包屑------------- */
 
 .breadcrumb {
   background-color: transparent;
 }
+
 .breadcrumb a {
   color: black;
 }
+
 .breadcrumb-item.active {
   color: #fac000;
 }
-.breadcrumb-item + .breadcrumb-item::before {
+
+.breadcrumb-item+.breadcrumb-item::before {
   color: black;
 }
 
 .mainact {
-  width: 100%;
-  height: 465px;
+  /* height: 465px; */
   border: 3px solid black;
-  background-image: url(../imgs/index/mainact-02.jpg);
-  background-size: cover;
+  /* background-image: url(../imgs/index/mainact-02.jpg); */
+  /* background-size: cover; */
   background-position: right;
+}
+
+.mainact img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .date {
@@ -71,7 +80,7 @@ body {
 /* --------音樂標籤-------- */
 .label {
   height: 32px;
-  width: 72px;
+  /* width: 72px; */
   background-color: #fff;
   border: 3px solid black;
   padding-top: 5px;
@@ -110,6 +119,7 @@ body {
   padding: 20px;
   /* width: 900px; */
 }
+
 .bar-circle {
   width: 80px;
   height: 80px;
@@ -179,6 +189,7 @@ input {
   font-weight: bold;
   transition: all 0.2s ease;
 }
+
 .tab_item:hover {
   opacity: 0.75;
 }
@@ -198,14 +209,14 @@ input[name="tab_item"] {
 }
 
 /*選択されているタブのコンテンツのみを表示*/
-#all:checked ~ #all_content,
-#programming:checked ~ #programming_content,
-#design:checked ~ #design_content {
+#all:checked~#all_content,
+#programming:checked~#programming_content,
+#design:checked~#design_content {
   display: block;
 }
 
 /*選択されているタブのスタイルを変える*/
-.tabs input:checked + .tab_item {
+.tabs input:checked+.tab_item {
   background-color: #fff;
   color: #000000;
   border-bottom: 3px solid transparent;
@@ -258,28 +269,22 @@ input[name="tab_item"] {
 }
 
 /* 576-768之間的畫面 */
-@media (min-width: 576px) and (max-width: 768px) {
-}
+@media (min-width: 576px) and (max-width: 768px) {}
 
 /* ================================ */
 /* Medium 中型裝置md (768px 以上) */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 /* 768-992之間的畫面 */
-@media screen and (min-width: 768px) and (max-width: 992px) {
-}
+@media screen and (min-width: 768px) and (max-width: 992px) {}
 
 /* ================================ */
 /* Large 大型lg (992px以上) */
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
 /* 991-1200 之間的畫面 */
-@media (min-width: 992px) and (max-width: 1200px) {
-}
+@media (min-width: 992px) and (max-width: 1200px) {}
 
 /* ================================ */
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
