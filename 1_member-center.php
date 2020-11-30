@@ -114,15 +114,15 @@
                     </div>
                     <div class="card-wrap m-3 col-lg-5 col-md-5 col-sm-12 col-12 p-0">
                         <div class="card-kv position-relative">
-                            <img src="/KunstHause/imgs/event/event-sm/TPE-06.jpg">
+                            <img src="/KunstHause/imgs/event/event-sm/HSZ-11.jpg">
                             <div class="time col-4 position-absolute mt-3">
-                                <p class="my-2">2020.12.11-2020.12.27</p>
+                                <p class="my-2">2020.11.28-2021.01.09</p>
                             </div>
                         </div>
                         <div class="card-body d-flex p-0 w-100">
                             <div class="card-info position-relative col-8">
-                                <div class="event-name my-2">小毛頭之亂-大寶寶齊打交</div>
-                                <div class="event-location my-2">【台北THE WALL公館】</div>
+                                <div class="event-name my-2">野原邦彥個展-CYCLE</div>
+                                <div class="event-location my-2">【愛上藝廊-新竹】</div>
                                 <!-- 收藏 -->
                                 <a href="#" class="like-link position-absolute">
                                     <i class="like far fa-heart"></i>
@@ -135,6 +135,9 @@
                         </div>
                     </div>
                 </div>
+                <div class="view-more mt-4">
+                    <p>VIEW MORE >></p>
+                </div>
 
             </div>
 
@@ -144,33 +147,117 @@
 
             <div class="sort col-10 mx-auto my-5 pb-2">票券管理</div>
 
-            <div class="ticket-wrap d-flex">
-                <div class="ticket-kv col-lg-3 p-0">
-                    <img class="event-sm-img w-100" src="/KunstHause/imgs/event/event-sm/TXG-08.jpg">
+            <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
+                <div class="t-detail col-lg-9 d-flex p-0">
+                    <div class="ticket-kv col-lg-4 p-0 mr-3">
+                        <img class="event-sm-img w-100 p-0" src="/KunstHause/imgs/event/event-sm/TNN-55.jpg">
+                    </div>
+                    <div class="main-info">
+                        <div class="event-title my-4">
+                            <p class="event-name mb-2">【臺日剪紙紙雕交流展】</p>
+                            <p class="price mb-2">單價$</p>
+                        </div>
+                        <div class="sub-info my-4">
+                            <p class="date mb-2">2020.01.</p>
+                            <p class="number mb-2">訂單編號:</p>
+                            <p class="pay mb-2">付款方式: 信用卡</p>
+                            <p class="total mb-2">訂單總額:</p>
+                            <p class="status mb-2">訂單狀態:</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="t-detail col-lg-5 d-flex align-content-center">
-                    <div class="main-info my-4">
-                        <p class="event-name mb-2">2020百威真我至上音樂巡迴</p>
-                        <p class="price mb-2">單價$</p>
+                <div class="edit-area d-flex">
+                    <div class="e-ticket pt-3 mt-3">
+                        <button class="delete m-3" type="button">
+                            <img src="/KunstHause/imgs/member/cancel.svg">
+                        </button>
+                        <button class="feedback m-3" type="button">
+                            <img src="/KunstHause/imgs/member/feedback.svg">
+                        </button>
                     </div>
-                    <div class="sub-info my-4">
-                        <p class="date mb-2">2020.01.</p>
-                        <p class="number mb-2">訂單編號:</p>
-                        <p class="pay mb-2">付款方式:</p>
-                        <p class="total mb-2">訂單總額:</p>
-                        <p class="status mb-2">訂單狀態:</p>
-                    </div>
-                    <div class="col-lg-1 sm-none"></div>
-                    <div class="e-ticket col-lg-3 d-flex justify-content-around">
-                        <button class="delete" type="button" data-toggle="modal" data-target="#cancelModal"></button>
-                        <button class="feedback"></button>
-                    </div>
-                    <div class="qr-code">
-                        <button class="qr-code-lg" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                    <div class="qr-code mr-2">
+                        <button class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
                             <img src="/KunstHause/imgs/member/qr-code.svg">
                         </button>
                     </div>
                 </div>
+            </div>
+
+
+            <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
+                <div class="t-detail col-lg-9 d-flex p-0">
+                    <div class="ticket-kv col-lg-4 p-0 mr-3">
+                        <img class="event-sm-img w-100 p-0" src="/KunstHause/imgs/event/event-sm/TPE-06.jpg">
+                    </div>
+                    <div class="main-info">
+                        <div class="event-title my-4">
+                            <p class="event-name mb-2">【小毛頭之亂-大寶寶齊打交】</p>
+                            <p class="price mb-2">單價$</p>
+                        </div>
+                        <div class="sub-info my-4">
+                            <p class="date mb-2">2020.01.</p>
+                            <p class="number mb-2">訂單編號:</p>
+                            <p class="pay mb-2">付款方式: 信用卡</p>
+                            <p class="total mb-2">訂單總額:</p>
+                            <p class="status mb-2">訂單狀態:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-area d-flex">
+                    <div class="e-ticket pt-3 mt-3">
+                        <button class="delete m-3" type="button">
+                            <img src="/KunstHause/imgs/member/cancel.svg">
+                        </button>
+                        <button class="feedback m-3" type="button">
+                            <img src="/KunstHause/imgs/member/feedback.svg">
+                        </button>
+                    </div>
+                    <div class="qr-code mr-2">
+                        <button class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                            <img src="/KunstHause/imgs/member/qr-code.svg">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
+                <div class="t-detail col-lg-9 d-flex p-0">
+                    <div class="ticket-kv col-lg-4 p-0 mr-3">
+                        <img class="event-sm-img w-100 p-0" src="/KunstHause/imgs/event/event-sm/TXG-08.jpg">
+                    </div>
+                    <div class="main-info">
+                        <div class="event-title my-4">
+                            <p class="event-name mb-2">【耿一偉-新時代的劇場創作】</p>
+                            <p class="price mb-2">單價$</p>
+                        </div>
+                        <div class="sub-info my-4">
+                            <p class="date mb-2">2020.01.</p>
+                            <p class="number mb-2">訂單編號:</p>
+                            <p class="pay mb-2">付款方式: 信用卡</p>
+                            <p class="total mb-2">訂單總額:</p>
+                            <p class="status mb-2">訂單狀態:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-area d-flex">
+                    <div class="e-ticket pt-3 mt-3">
+                        <button class="delete m-3" type="button">
+                            <img src="/KunstHause/imgs/member/cancel.svg">
+                        </button>
+                        <button class="feedback m-3" type="button">
+                            <img src="/KunstHause/imgs/member/feedback.svg">
+                        </button>
+                    </div>
+                    <div class="qr-code mr-2">
+                        <button class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                            <img src="/KunstHause/imgs/member/qr-code.svg">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more my-4">
+                <p>VIEW MORE >></p>
             </div>
 
         </div>
