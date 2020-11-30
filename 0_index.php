@@ -440,7 +440,7 @@
         const marquee = $("#marquee-main-lg");
         marquee.css({
             "overflow": "hidden",
-            "width": "100%"
+            "width": "100%" 
         });
 
         marquee.wrapInner("<span>");

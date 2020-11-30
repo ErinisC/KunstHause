@@ -77,7 +77,7 @@
                     </svg>
                     <p class="cardtext">想讓更多人認識您嗎？</p>
                     <div class="modbutton text-center">
-                        <button class="modify btn btn-primary">修改資料</button>
+                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-sign-in-edit-file.php'">修改資料</button>
                     </div>
                 </div>
             </div>
@@ -120,8 +120,8 @@
 
                     <p class="eventcardtext">快來辦一場精彩的活動吧！</p>
                     <div class="modbutton text-center">
-                        <button class="modify btn btn-primary">上架活動</button>
-                        <button class="modify btn btn-primary">活動修改</button>
+                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-create-event.php'">上架活動</button>
+                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-event-manage.php'">活動修改</button>
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@
 
                     <p class="cardtext">檢視您的訂單</p>
                     <div class="modbutton text-center">
-                        <button class="modify btn btn-primary">檢視訂單</button>
+                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-ticket-list.php'">檢視訂單</button>
                     </div>
                 </div>
             </div>

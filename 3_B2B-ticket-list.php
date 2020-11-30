@@ -21,7 +21,7 @@
                     <button class="modify2 btn btn-primary">未付款</button>
                     <button class="modify2 btn btn-primary">已取消</button>
                 </div>
-                <form class="header-search col-xl-6 col-12" method="POST" name="header-search" class="form-inline ">
+                <form class="header-search2 col-xl-6 col-12" method="POST" name="header-search" class="form-inline ">
                     <input class="search" type="text" name="search" placeholder="搜索訂單編號或活動名稱">
                     <button class="search-icon" type="submit">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-search.svg" alt="">
