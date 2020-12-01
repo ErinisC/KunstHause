@@ -16,7 +16,7 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 
 // 如果沒有任何的訂購資料, 就顯示訊息或離開
 if (empty($o_rows)) {
-    echo '<script>alert(‘提示內容’)</script>';
+    echo '<script>alert(‘尚無訂單內容，來去逛逛吧’)</script>';
     header('Location: 4_productList.php'); // 顯示訊息比較好, 告訴用戶沒有訂單資料
     exit;
 }
