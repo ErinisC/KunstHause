@@ -37,6 +37,7 @@
     .nav-link {
         color: #000;
         font-family: "Noto Sans TC", sans-serif;
+        font-size: 16px;
     }
 
     .nav-link:hover {
@@ -82,7 +83,8 @@
 
     .dropdown-item {
         float: none;
-        color: black;
+        color: #000;
+        font-size: 16px;
         background-color: #FFC024;
         border: 3px solid #000;
         margin: 2px 0;
@@ -154,6 +156,7 @@
 
     /* ----------media query---------- */
     @media (min-width: 993px) {
+
         .nav-link {
             margin-right: 40px;
         }
