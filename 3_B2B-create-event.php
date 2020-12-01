@@ -1,4 +1,4 @@
-<?php $title = '活動上架'; ?>
+<?php $title = 'KunstHaus | 活動上架'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
@@ -18,106 +18,101 @@
         </div>
 
         <div class="space" style="height: 50px;"></div>
-        <label for="event-banner col-xl-8">活動Banner
-            <input class="input fake-input col-12 positition-relative" name="event-banner" type="file" onchange="previewFile()" src="" alt="" placeholder="XXX.JPG">
 
-            <i class="upload-banner col-4 btn position-absolute" type="submit">上傳圖片</i>
-        </label>
+        <form name="event-form" method="post" onsubmit="checkForm();return false;" novalidate>
 
-        <label class="event-banner d-flex">
-            <input class="input fake-input col-12 positition-relative" name="event-banner" type="file" onchange="previewFile()" src="" alt="" placeholder="XXX.JPG">
+            <label class="event-banner d-flex">
+                <input class="input fake_input col-12" ref={fileInput} accept="image/jpeg,image/png" type="file" onChange={handleImageChange} placeholder="XXX.jpg" />
+                <div class="input fake_input_placeholder position-absolute"></div>
+                <a onclick="myFunction()" class="upload-banner btn position-absolute" type="submit">上傳圖片</a>
+            </label>
 
-            <button class="upload-banner btn position-absolute" type="submit">上傳圖片</button>
-        </label>
+            <img src="" width="100%" height="211" alt="Image preview..." class="col-12">
+            <br>
 
-        <img src="" width="100%" height="211" alt="Image preview..." class="col-12">
-        <br>
+            <label for="event-name">活動名稱</label>
 
-        <label for="event-name">活動名稱</label>
+            <input class="input" type="text" name="event_name" placeholder="活動名稱">
+            <label for="eventDate">活動日期</label>
 
-        <input class="input" type="text" name="event-name" placeholder="活動名稱">
-        <label for="date">活動日期</label>
+            <p class="pt-3">(活動日期開始)</p>
+            <input class="input" name="start-datetime" type="datetime-local">
+            <p class="mt-3">(活動日期結束)</p>
+            <input class="input" name="end-datetime" type="datetime-local">
+            <label for="sort">活動種類</label>
+            <select name="sort" type="text" class="input">
+                <option value="music">音樂會</option>
+                <option value="show">表演</option>
+                <option value="art">演藝</option>
+            </select>
+            <label for="hashtag">標籤設定</label>
+            <input type="text" class="input" name="hashtag" placeholder="#Hashtags">
 
-        <p class="pt-3">(活動日期開始)</p>
-        <input class="input" name="date" type="datetime-local">
-        <p class="mt-3">(活動日期結束)</p>
-        <input class="input" name="date" type="datetime-local">
-        <label for="sort">活動種類</label>
-        <select name="sort" type="text" class="input">
-            <option value="music">音樂會</option>
-            <option value="show">表演</option>
-            <option value="art">演藝</option>
-        </select>
-        <label for="hashtag">標籤設定</label>
-        <input type="text" class="input" name="hashtag" placeholder="#Hashtags">
+            <label for="event-place">
+                活動地點
+            </label>
+            <label for="address" name="address" class="event-place d-flex flex-wrap col-12 p-0">
+                <div class="selector col-xl-4  d-flex justify-content-between p-0">
+                    <select name="City" type="text" class="input col-sm-5 mx-0" style="width:180px" name="address">
+                        <option value="Taipei">台北市</option>
+                        <option value="NewTaipei">新北市</option>
+                        <option value="Taoyuan">桃園市</option>
+                        <option value="Hsinchu">新竹縣</option>
+                        <option value="Miaoli">苗栗國</option>
+                        <option value="Taichung">台中市</option>
+                    </select>
+                    <div class="col-lg-1"></div>
+                    <select type="text" name="address" class="input col-sm-5 mx-0" style="width:180px">
+                    </select>
+                    <div class="space col-1 px-0" style="width:10px"></div>
+                </div>
+                <!-- <div class="space col-1" style="width:10px"></div> -->
+                <input type="text" name="address" class="input col-xl-8 col-sm-12 mx-0" placeholder="XXX街XXX號">
+            </label>
+            <label for="transportation">
+                交通資訊
+                <Textarea name="transportation" class="textarea" cols="117" rows="10"></Textarea>
+            </label>
 
-        <label for="event-place">
-            活動地點
-        </label>
-        <form name="event-place" class="event-place d-flex flex-wrap col-12 p-0">
-            <div class="selector col-xl-4  d-flex justify-content-between p-0">
-                <select name="City" type="text" class="input col-sm-5 mx-0" style="width:180px">
-                    <option value="Taipei">台北市</option>
-                    <option value="NewTaipei">新北市</option>
-                    <option value="Taoyuan">桃園市</option>
-                    <option value="Hsinchu">新竹縣</option>
-                    <option value="Miaoli">苗栗國</option>
-                    <option value="Taichung">台中市</option>
-                </select>
-                <div class="col-lg-1"></div>
-                <select type="text" class="input col-sm-5 mx-0" style="width:180px">
-                </select>
-                <div class="space col-1 px-0" style="width:10px"></div>
-            </div>
-            <!-- <div class="space col-1" style="width:10px"></div> -->
-            <input type="text" class="input col-xl-8 col-sm-12" placeholder="XXX街XXX號">
-        </form>
-        <label for="transport">
-            交通資訊
-            <Textarea name="transport" class="textarea" cols="117" rows="10">
-        </Textarea>
-        </label>
+            <label for="notice">
+                活動注意事項
+                <Textarea name="notice" class="textarea" cols="117" rows="10"></Textarea>
+            </label>
 
-        <label for="Precautions">
-            活動注意事項
-            <Textarea name="Precautions" class="textarea" cols="117" rows="10">
-        </Textarea>
-        </label>
+            <label for="event_info">
+                活動內容資訊
+                <Textarea name="event_info" class="textarea" cols="117" rows="10" required></Textarea>
+            </label>
 
-        <label for="event-content">
-            活動內容資訊
-            <Textarea name="event-content" class="textarea" cols="117" rows="10" required>
-        </Textarea>
-        </label>
+            <div class="d-flex">
+                <div class="blanket col-8"> </div>
+                <div class="price-lenght  col-xl-4 col-sm-12 p-0">
+                    <label for="price">活動票卷售價</label>
+                    <div class="d-flex pricesetting">
+                        <div class="pricetag col-4">
+                            <p class="py-2">NT$</p>
+                        </div>
+                        <input name="price" type="number" min="0" max="9999" class="col-8 input">
 
-        <div class="d-flex">
-            <div class="blanket col-8"> </div>
-            <div class="price-lenght  col-xl-4 col-sm-12 p-0">
-                <label for="price">活動票卷售價</label>
-                <div class="d-flex pricesetting">
-                    <div class="pricetag col-4">
-                        <p class="py-2">NT$</p>
                     </div>
-                    <input name="price" type="number" min="0" max="9999" class="col-8 input">
+                    <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                            <path id="Subtraction_1" data-name="Subtraction 1" d="M3395-4803a13.907,13.907,0,0,1-9.9-4.1,13.907,13.907,0,0,1-4.1-9.9,13.907,13.907,0,0,1,4.1-9.9,13.907,13.907,0,0,1,9.9-4.1,13.907,13.907,0,0,1,9.9,4.1,13.907,13.907,0,0,1,4.1,9.9,13.907,13.907,0,0,1-4.1,9.9A13.907,13.907,0,0,1,3395-4803Zm-1.06-9v2h2v-2Zm1.045-11.114a2.722,2.722,0,0,1,1.963.777,2.448,2.448,0,0,1,.8,1.8,2.081,2.081,0,0,1-.273,1.045,6,6,0,0,1-1.187,1.284,13.2,13.2,0,0,0-1.265,1.226,4.142,4.142,0,0,0-.694,1.142,4.95,4.95,0,0,0-.292,1.787c0,.1,0,.274.01.527h1.689a7.015,7.015,0,0,1,.147-1.524,2.522,2.522,0,0,1,.39-.83A8.7,8.7,0,0,1,3397.4-4817a8.229,8.229,0,0,0,1.719-1.924,3.516,3.516,0,0,0,.44-1.729,3.624,3.624,0,0,0-1.25-2.763,4.794,4.794,0,0,0-3.35-1.144,4.666,4.666,0,0,0-3.189,1.064,4.691,4.691,0,0,0-1.45,3.066l1.806.216a3.727,3.727,0,0,1,.987-2.2A2.651,2.651,0,0,1,3394.985-4823.116Z" transform="translate(-3381 4831)" />
+                        </svg>
+                        ＋(1%)
+                    </div>
+                    <div class="total d-flex mt-2">
+                        <p>合計</p>
 
-                </div>
-                <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
-                        <path id="Subtraction_1" data-name="Subtraction 1" d="M3395-4803a13.907,13.907,0,0,1-9.9-4.1,13.907,13.907,0,0,1-4.1-9.9,13.907,13.907,0,0,1,4.1-9.9,13.907,13.907,0,0,1,9.9-4.1,13.907,13.907,0,0,1,9.9,4.1,13.907,13.907,0,0,1,4.1,9.9,13.907,13.907,0,0,1-4.1,9.9A13.907,13.907,0,0,1,3395-4803Zm-1.06-9v2h2v-2Zm1.045-11.114a2.722,2.722,0,0,1,1.963.777,2.448,2.448,0,0,1,.8,1.8,2.081,2.081,0,0,1-.273,1.045,6,6,0,0,1-1.187,1.284,13.2,13.2,0,0,0-1.265,1.226,4.142,4.142,0,0,0-.694,1.142,4.95,4.95,0,0,0-.292,1.787c0,.1,0,.274.01.527h1.689a7.015,7.015,0,0,1,.147-1.524,2.522,2.522,0,0,1,.39-.83A8.7,8.7,0,0,1,3397.4-4817a8.229,8.229,0,0,0,1.719-1.924,3.516,3.516,0,0,0,.44-1.729,3.624,3.624,0,0,0-1.25-2.763,4.794,4.794,0,0,0-3.35-1.144,4.666,4.666,0,0,0-3.189,1.064,4.691,4.691,0,0,0-1.45,3.066l1.806.216a3.727,3.727,0,0,1,.987-2.2A2.651,2.651,0,0,1,3394.985-4823.116Z" transform="translate(-3381 4831)" />
-                    </svg>
-                    ＋(1%)
-                </div>
-                <div class="total d-flex mt-2">
-                    <p>合計</p>
-
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="modbutton text-center">
-            <div class="okbutton col-xl-6 col-10 d-flex">
-                <button class="modify1 col-5 btn btn-primary">取消</button>
-                <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成</button>
+            <div class="modbutton text-center">
+                <div class="okbutton col-xl-6 col-10 d-flex">
+                    <button class="modify1 col-5 btn btn-primary">取消</button>
+                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成</button>
+                </div>
             </div>
-        </div>
+        </form>
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -158,27 +153,102 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src="">
-    function previewFile() {
-        const preview = document.querySelector('img');
-        const file = document.querySelector('input[type=file]').files[0];
-        const reader = new FileReader();
-
-        reader.addEventListener("load", function() {
-            // convert image file to base64 string
-            preview.src = reader.result;
-        }, false);
-
-        if (file) {
-            reader.readAsDataURL(file);
-        }
+<script>
+    function myFunction() {
+        addEventListener('click', 'facke-input')
     }
+    // 設定常數
 
-    function autogrow(textarea) {
-        var adjustedHeight = textarea.clientHeight;
-        adjustedHeight = Math.max(textarea.scrollHeight, adjustedHeight);
-        if (adjustedHeight > textarea.clientHeight) {
-            textarea.style.height = adjustedHeight + 'px';
+
+
+    function checkForm() {
+        // 呼叫的時候先清掉其他警告
+        // name.next().text('')
+        // account.next().text('')
+
+        $('.input-wrap').removeClass('success').removeClass('error');
+
+        // 檢查有沒有通過，檢查姓名長度跟email格式
+        let isPass = true;
+
+        // 如果拿到的姓名的長度小於2，就不通過
+        if (name.val().length < 2) {
+            isPass = false;
+
+            // 這邊設定下面small的小警告出現的文字
+            // 小警告的位置是name的next (JQ select注意！)
+            name.closest('.input-wrap').addClass('error')
+            // name.closest('.input-wrap').find(small).text('請填寫正確姓名')
+        } else {
+            name.closest('.input-wrap').removeClass('error')
+            name.closest('.input-wrap').addClass('success');
+        }
+
+        if (!account_re.test(account.val())) {
+            isPass = false;
+            account.closest('.input-wrap').addClass('error')
+        } else {
+            account.closest('.input-wrap').removeClass('error')
+            account.closest('.input-wrap').addClass('success');
+        }
+
+        if (password.val().length < 3) {
+            isPass = false;
+            password.closest('.input-wrap').addClass('error')
+        } else {
+            password.closest('.input-wrap').removeClass('error')
+            password.closest('.input-wrap').addClass('success');
+        }
+        if (checkpassword.val() != password.val() || checkpassword.val().length == 0) {
+            isPass = false;
+            checkpassword.closest('.input-wrap').addClass('error')
+        } else {
+            checkpassword.closest('.input-wrap').removeClass('error')
+            checkpassword.closest('.input-wrap').addClass('success');
+        }
+        if (mobile.val().length !== 0) {
+            isPass = false;
+            mobile.closest('.input-wrap').addClass('success');
+        }
+        if (address.val().length !== 0) {
+            isPass = false;
+            address.closest('.input-wrap').addClass('success');
+        }
+        if (!checkbox.prop('checked')) {
+            isPass = false;
+            alert('需同意 Kunsthaus 服務及隱私權政策才能註冊成為會員唷!');
+        } else {
+
+            $.post('1_member-signup-api.php', $(document.form1).serialize(), function(data) {
+                console.log(data);
+                // $('#exampleModalCenter').modal('show');
+                // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+                //     location.href = '1_member-login.php'
+                // })
+                // return;
+
+                if (data.success) {
+                    // info_bar
+                    //     .removeClass('alert-danger')
+                    //     .addClass('alert-success')
+                    //     .text('完成新增');
+                    $('#exampleModalCenter').modal('show');
+                    $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+                        location.href = '1_member-login.php'
+                    })
+                } else {
+                    info_bar
+                        // .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .text(data.error || '新增失敗');
+
+                    info_bar.slideDown();
+
+                    setTimeout(function() {
+                        info_bar.slideUp();
+                    }, 2000);
+                }
+            }, 'json');
         }
     }
 </script>

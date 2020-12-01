@@ -47,6 +47,14 @@ label {
   margin-top: 35px;
 }
 
+.fake_input {
+  opacity: 0;
+}
+
+.fake_input_placeholder {
+  width: 100%;
+}
+
 .event-banner {
   margin-top: 0;
 }

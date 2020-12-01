@@ -1,4 +1,4 @@
-<?php $title = 'B2B首頁'; ?>
+<?php $title = 'KunstHaus | 活動管理'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
