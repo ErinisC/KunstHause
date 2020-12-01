@@ -263,6 +263,9 @@ button:disabled {
 }
 
 @media screen and (max-width: 576px) {
+  .background {
+    height: 1150px;
+  }
   .pictureadd {
     width: 75px;
     height: 75px;
