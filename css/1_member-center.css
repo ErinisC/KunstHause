@@ -20,9 +20,6 @@ body {
   margin-top: 10rem;
 }
 
-.row {
-  width: 100%;
-}
 
 .member-area {
   background: #fff;
@@ -84,6 +81,11 @@ body {
   box-shadow: 8px 10px #ffc639;
 }
 
+.card-wrap:hover{
+    transform: translateY(-20px);
+    transition: .5s;
+}
+
 .card-kv {
   overflow: hidden;
   object-fit: contain;
@@ -140,7 +142,7 @@ body {
 }
 
 /* 小卡彈跳蓋板 */
-.modal-content {
+/* .modal-content {
   border: 3px solid black;
   border-radius: 0;
 }
@@ -153,7 +155,7 @@ iframe {
 
 .modal-body {
   height: 600px;
-}
+} */
 
 /* 票券管理 */
 
@@ -161,19 +163,50 @@ iframe {
   border: 3px solid #000;
 }
 
-.sub-info {
-  font-size: 0.7rem;
+.main-info {
+    font-weight: bold;
+    letter-spacing: 2.55px;
 }
 
-.button:focus {
-  outline: none;
+.sub-info p{
+  font-size: 0.6rem;
 }
 
-.qr-code-lg {
-  background-color: transparent;
+.price{
+    font-size: 0.7rem;
 }
 
-/* Animation css */
+
+.feedback {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: none;
+  }
+  
+  .delete {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: none;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  .qr-code-lg {
+    background-color: transparent;
+    border: none;
+  }
+
+  .mobile-edit-area img{
+      display: none;
+      /* background-color: transparent; */
+  }
+  
+ 
+  
+
+/* little monster Animation css */
 
 html,
     body,
@@ -760,17 +793,12 @@ html,
 
 
 
-
-
 /* ----------media query---------- */
 @media (min-width: 769px) {
   html {
     font-size: 20px;
   }
 
-  .c-row1 {
-    flex-wrap: ;
-  }
 }
 
 @media (min-width: 992px) {
@@ -784,41 +812,96 @@ html,
     font-size: 12px;
   }
 
+  body {
+    background: #fff;
+    background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
+      linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
+    background-size: 0.75rem 0.75rem;
+  }
+
+    .member-area{
+        margin-bottom: 2rem;
+    }
+
+  .Diversity{
+      display: none;
+  }
+
+  .avatar{
+    position: static;
+    margin: 0 auto;
+    margin-top: 11rem;
+    width: 12rem;
+    height: 12rem;
+    border: 3px solid #000;
+    }
+  
+
+  .edit-member {
+    margin: 0 0 2rem;
+    font-size: 1.6rem;
+  }
+
+  .btn{
+      height: 3rem;
+  }
+  .btn p{
+      font-size: 1.5rem;
+  }
+
+  div p{
+      font-size: 1.2rem;
+  }
+
+  
+  .card-wrap{
+      margin-bottom: 4rem;
+      box-shadow:none;      
+  }
+
+  .card-info{
+      padding: 1rem 0;
+  }
+
+    /* mobile-animation */
+    main{
+        display:none;
+    }
+
+    /* 票券管理 mobile */
+
   .main-info {
-    font-size: 1.7rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
   }
 
-  .sub-info {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
+  .sub-info p{
+    font-size: 0.6rem;
+    line-height: 1rem;
+    letter-spacing: 0.2rem;
   }
+
+
+
+  .qr-code-lg img{
+    width: 4rem;
+  }
+
+  .edit-area .e-ticket{
+    display: none;
+}
+  .edit-area img{
+    display: none;
 }
 
-/* ----------order status---------- */
-
-.main-info {
-  font-weight: bold;
-  letter-spacing: 2.55px;
+  .mobile-edit-area img{
+    display: inline-block;
 }
 
-.feedback {
-  width: 48px;
-  height: 48px;
-  border: none;
+.date{
+    font-size: 0.4rem;
 }
 
-.delete {
-  width: 48px;
-  height: 48px;
-  border: none;
 }
 
-.button:focus {
-  outline: none;
-}
 
-.qr-code-lg {
-  background-color: transparent;
-  border: none;
-}
