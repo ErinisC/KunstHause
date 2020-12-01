@@ -35,6 +35,12 @@ WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
+// 把這張表用foreach取成object
+$eventData = {};
+foreach ($d_rows as $d) {
+    $order_ids[] = $d['sid'];
+}
+
 // let eventData = {
 //     1:{
 //         pic:'HSZ-11',
@@ -45,8 +51,6 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 //         eventName: 'XXXXX'
 //     }
 // }
-
-
 // eventData[a['order-id']].eventName
 
 
@@ -67,8 +71,8 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 // echo json_encode($s_rows);
 // exit;
 
-
 ?>
+
 
 <?php $title = 'KunstHaus | 票券管理'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
@@ -271,7 +275,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
-                                <p class="event-name mb-2">123</p>
+                                <p class="event-name mb-2"> ${eventData[a['order-id']].eventName}</p>
                                 <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
@@ -322,9 +326,9 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         location.href = "#" + sid;
     });
 
-    function getProductData(cate = 0) {
+    function getProductData(status = 0) {
         $.get('2_member-order api.php', {
-            order_status: cate
+            order_status: status
         }, function(data) {
             console.log('data', data);
 
