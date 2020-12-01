@@ -1,0 +1,14 @@
+* {
+  /* outline: 1px solid red; */
+}
+/* ----------style guide---------- */
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ----------color style---------- */
+
+
+/* ----------media query---------- */
