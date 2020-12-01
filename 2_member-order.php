@@ -18,7 +18,7 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 if (empty($o_rows)) {
     echo '<script>alert(‘尚無訂單內容，來去逛逛吧’)</script>';
     echo "<script>window.location.href = '4_productList.php'</script>";
-    // header('Location: 4_productList.php'); // 顯示訊息比較好, 告訴用戶沒有訂單資料
+    // header('Location: 4_productList.php'); 
     // exit;
 }
 
@@ -35,9 +35,26 @@ WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
+// let eventData = {
+//     1:{
+//         pic:'HSZ-11',
+//         eventName: 'XXXXX'
+//     },
+//     2:{
+//         pic:'HSZ-22',
+//         eventName: 'XXXXX'
+//     }
+// }
+
+
+// eventData[a['order-id']].eventName
+
+
+
+
 // echo json_encode([
-//    'orders' => $o_rows,
-//    'details' => $d_rows,
+//     'orders' => $o_rows,
+//     'details' => $d_rows,
 // ]);
 // exit;
 
@@ -91,7 +108,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
     <div class="container order-status-list">
         <?php foreach ($o_rows as $o) : ?>
             <?php foreach ($d_rows as $d) : ?>
-                <!-- <div class="row order mb-5 align-content-center">
+                <div class="row order mb-5 align-content-center">
                     <?php if ($o['sid'] == $d['order_id']) : ?>
                         <div class="col-lg-3 event-img p-0">
                             <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
@@ -122,7 +139,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                             </div>
                         </div>
                     <?php endif; ?>
-                </div> -->
+                </div>
             <?php endforeach; ?>
         <?php endforeach; ?>
     </div>
@@ -248,21 +265,21 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
     const productTpl = function(a) {
         return `
         <div class="row order mb-5 align-content-center">
-                    <?php if ($o['sid'] == $d['order_id']) : ?>
+                    
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/HSZ-11.jpg" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
-                                <p class="event-name mb-2"><?= $d['event_name'] ?></p>
-                                <p class="price mb-2">單價$ <?= $d['price'] ?></p>
+                                <p class="event-name mb-2">123</p>
+                                <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
-                                <p class="date mb-2"><?= $d['start-datetime'] ?> ~ <?= $d['end-datetime'] ?></p>
-                                <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
-                                <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
-                                <p class="total-price mb-2">訂單總額：<?= $o['total_price'] ?></p>
-                                <p class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
+                                <p class="date mb-2">12345</p>
+                                <p class="order-sid mb-2">訂單編號：${a['order_id']}</p>
+                                <p class="pay-method mb-2">付款方式：${a['pay_way'] }</p>
+                                <p class="total-price mb-2">訂單總額：${a['event_amount'] }</p>
+                                <p class="order-status mb-2">訂單狀態：${a['order_status'] }</p>
                             </div>
                         </div>
                         <div class="col-lg-1 sm-none"></div>
@@ -277,19 +294,19 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                                 </button>
                             </div>
                         </div>
-                    <?php endif; ?>
+                    
                 </div>
     `;
     };
 
     function whenHashChanged() {
-        let u = parseInt(location.hash.slice(1)) || 0;
+        let u = location.hash.slice(1) || 0;
         console.log(u);
         getProductData(u);
 
         status_btns.removeClass('btn-primary').addClass('btn-select');
         status_btns.each(function(index, el) {
-            const sid = parseInt($(this).attr('data-sid'));
+            const sid = $(this).attr('data-sid');
             if (sid === u) {
                 $(this).removeClass('btn-select').addClass('btn-primary');
             }
@@ -300,24 +317,26 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
     whenHashChanged();
 
     status_btns.on('click', function(event) {
-        const sid = $(this).attr('data-sid') * 1;
+        const sid = $(this).attr('data-sid');
         console.log(`sid: ${sid}`);
         location.href = "#" + sid;
     });
 
     function getProductData(cate = 0) {
         $.get('2_member-order api.php', {
-            cate: cate
+            order_status: cate
         }, function(data) {
-            console.log(data);
+            console.log('data', data);
 
             let str = '';
-            if (data.products && data.products.length) {
-                data.products.forEach(function(el) {
+            if (data.order_details && data.order_details.length) {
+                data.order_details.forEach(function(el) {
                     str += productTpl(el);
                 });
             }
-            $('.product-list').html(str);
+
+            console.log('str', str);
+            $('.order-status-list').html(str);
         }, 'json');
     }
 </script>
