@@ -14,13 +14,13 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 // echo json_encode($o_rows);
 // exit;
 
-
-
 // 如果沒有任何的訂購資料, 就顯示訊息或離開
 if (empty($o_rows)) {
+    echo '<script>alert(‘提示內容’)</script>';
     header('Location: 4_productList.php'); // 顯示訊息比較好, 告訴用戶沒有訂單資料
     exit;
 }
+
 
 $order_ids = [];
 foreach ($o_rows as $o) {
@@ -86,8 +86,6 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             <p>還沒有訂單資料唷～</p>
         </div>
     </div>
-
-
 <?php else : ?>
 
     <div class="container order-status-list">
