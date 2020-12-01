@@ -87,11 +87,12 @@ body {
 
 .modify {
   margin-top: 30px;
-  width: 97px;
+  width: 100px;
   height: 50px;
   background-color: #ffc024;
   border: 3px solid #000;
   border-radius: 0;
+  padding: 0;
 }
 
 .picture {

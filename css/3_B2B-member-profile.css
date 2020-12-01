@@ -148,19 +148,21 @@ body {
 }
 
 .modify1 {
-  width: 140px;
+  width: 100%;
   height: 50px;
   background-color: #ed5b4c;
   border: 3px solid #000;
   border-radius: 0;
+  padding: 0;
 }
 
 .modify2 {
-  width: 140px;
+  width: 100%;
   height: 50px;
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 576px) {

@@ -16,7 +16,7 @@ textarea:focus {
 
 .background {
   width: 100%;
-  height: 1700px;
+  height: 1750px;
   background: url(../imgs/b2b/b2b_background.jpg) center no-repeat;
   background-size: cover;
 }
@@ -87,25 +87,52 @@ textarea:focus {
 .inputform {
   margin: 35px auto 0;
   padding: 0;
+  position: relative;
 }
 
-.inputform p {
+label {
   font-size: 16px;
   padding-left: 0;
   font-weight: 700;
 }
 
 /* trouble為錯誤提醒 */
-.trouble {
+.inputform.success input {
+  border-color: #168fa4;
+}
+
+.inputform.error input {
+  border-color: #ff0000;
+}
+
+.inputform.success textarea {
+  border-color: #168fa4;
+}
+
+.inputform.error textarea {
+  border-color: #ff0000;
+}
+
+.inputform i {
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: 45px;
-  opacity: 0;
-  z-index: 1;
+  visibility: hidden;
+}
+
+.inputform.success i.fa-check-circle {
+  visibility: visible;
+  color: #168fa4;
+}
+
+.inputform.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #ff0000;
 }
 
 .trouble2 {
   /* display: none; */
+  display: block;
   margin-top: 5px;
   text-align: end;
   opacity: 0;
@@ -117,7 +144,6 @@ textarea:focus {
   width: 100%;
   height: 50px;
   border: 3px solid #000;
-  position: relative;
 }
 
 .inputboxint {
@@ -151,7 +177,7 @@ textarea {
   background-color: #fff;
   border: 3px solid #000;
   width: 100%;
-  height: 25rem;
+  height: 20rem;
   overflow: auto;
   margin: 10px auto 0;
   font-family: NotoSansTC-Regular, Roboto;
@@ -263,6 +289,9 @@ button:disabled {
 }
 
 @media screen and (max-width: 576px) {
+  .background {
+    height: 1550px;
+  }
   .pictureadd {
     width: 75px;
     height: 75px;

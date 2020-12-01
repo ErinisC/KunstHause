@@ -65,7 +65,7 @@
 
                 <div class="inputform col-xl-8 col-12">
                     <label for="intro">主辦單位簡介（必填）</label>
-                    <textarea class="textarea2" name="intro" id="intro" cols="72" rows="10" placeholder="請填寫主辦單位簡介" required></textarea>
+                    <textarea class="textarea2" name="intro" id="intro" cols="89" rows="10" placeholder="請填寫主辦單位簡介" required></textarea>
                     <p class="wortcount">0/255</p>
                 </div>
 
@@ -118,7 +118,7 @@
                 </div>
 
                 <div class="checkform col-xl-8 col-12 d-flex">
-                    <p class="ckecktext col-xl-8 col-12"><input class="checkbox" type="checkbox">我同意Kunsthaus服務條款及隱私權政策</p>
+                    <p class="ckecktext col-xl-6 col-12"><input class="checkbox" type="checkbox">我同意Kunsthaus服務條款及隱私權政策</p>
                 </div>
 
                 <div class="modbutton text-center col-xl-8 col-12">

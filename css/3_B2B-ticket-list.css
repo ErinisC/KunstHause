@@ -13,7 +13,7 @@ body {
 }
 
 .ticketbg {
-  height: 1240px;
+  height: 1450px;
   margin: 0 auto;
   padding: 0;
 }
@@ -127,6 +127,7 @@ table {
   background-color: #ed5b4c;
   border: 3px solid #000;
   border-radius: 0;
+  padding: 0;
 }
 
 /* 提醒小卡css */

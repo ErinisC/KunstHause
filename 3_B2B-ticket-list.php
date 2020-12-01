@@ -148,7 +148,7 @@
                                             </g>
                                         </svg>
                                     </div>
-                                    <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">是否確認刪除訂單!
+                                    <div class="modal-title mx-auto mt-1" id="exampleModalCenterTitle">是否確認刪除訂單!
                                     </div>
                                 </div>
                                 <div class="modal-footer mx-auto">
@@ -184,7 +184,7 @@
                                 </div>
 
                                 <div class="modal-footer mx-auto">
-                                    <button type="button" class="closebutton btn btn-secondary mt-3" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                                    <button type="button" class="closebutton btn btn-secondary mt-1" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
                                 </div>
 
                             </div>
