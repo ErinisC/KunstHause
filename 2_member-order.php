@@ -36,10 +36,11 @@ WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
 // 把這張表用foreach取成object
-$eventData = {};
+$eventData = [];
 foreach ($d_rows as $d) {
     $order_ids[] = $d['sid'];
 }
+
 
 // let eventData = {
 //     1:{
@@ -271,11 +272,11 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         <div class="row order mb-5 align-content-center">
                     
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/HSZ-11.jpg" alt="">
+                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/${eventData[a['picture']].eventName}.jpg" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
-                                <p class="event-name mb-2"> ${eventData[a['order-id']].eventName}</p>
+                                <p class="event-name mb-2">${eventData[a['order-id']].eventName}</p>
                                 <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
@@ -343,6 +344,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             $('.order-status-list').html(str);
         }, 'json');
     }
+    
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
