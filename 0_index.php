@@ -9,18 +9,18 @@
 
 
 <section class="hero-section position-relative">
-    <div class="marquee-roll scroll-hide">
+    <div class="marquee-roll">
         <div id="marquee-main-lg" class="marquee-main marquee-main-lg">KUNSTHAUS</div>
         <div id="marquee-main-sm" class="marquee-main-sm">
             <p class="slogan text-center">不一樣的藝文售票平台</p>
         </div>
     </div>
-    <img class="the-wall position-absolute scroll-hide" src="<?= WEB_ROOT ?>imgs/index/ic-deco-thewall.svg" alt="">
-    <img class="god position-absolute scroll-hide" src="<?= WEB_ROOT ?>imgs/index/ic-deco-god.svg" alt="">
-    <img class="taipei position-absolute scroll-hide" src="<?= WEB_ROOT ?>imgs/index/ic-deco-taipeiFineArt.svg" alt="">
+    <img class="the-wall position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-deco-thewall.svg" alt="">
+    <img class="god position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-deco-god.svg" alt="">
+    <img class="taipei position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-deco-taipeiFineArt.svg" alt="">
     <div class="space"></div>
-    <div class="d-flex text-center align-middle scroll-hide">
-        <span class="scroll-down d-flex scroll-hide">
+    <div class="d-flex text-center align-middle">
+        <span class="scroll-down d-flex">
             <img class="eyes mx-4 scroll-hide" src="<?= WEB_ROOT ?>imgs/index/ic-eye.svg" alt="">
             <span class="scroll-hide">SCROLL DOWN</span>
             <img class="arrow mx-4 scroll-hide" src="<?= WEB_ROOT ?>imgs/index/ic-arrow-down.svg" alt="">
@@ -501,18 +501,6 @@
 
         reset.call(marquee.find("div"));
 
-    });
-
-    // hero section scroll down hide
-    let lastScrollTop = 0;
-    $(window).scroll(function() {
-        let scrollNow = $(this).scrollTop();
-        console.log("scrollNow:", scrollNow)
-        if (scrollNow > lastScrollTop) {
-            $('.scroll-hide').hide();
-        } else{
-            $('.scroll-hide').show();
-        }
     });
 
     // card heart animation
