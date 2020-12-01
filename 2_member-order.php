@@ -17,10 +17,10 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 // 如果沒有任何的訂購資料, 就顯示訊息或離開
 if (empty($o_rows)) {
     echo '<script>alert(‘尚無訂單內容，來去逛逛吧’)</script>';
-    header('Location: 4_productList.php'); // 顯示訊息比較好, 告訴用戶沒有訂單資料
-    exit;
+    echo "<script>window.location.href = '4_productList.php'</script>";
+    // header('Location: 4_productList.php'); // 顯示訊息比較好, 告訴用戶沒有訂單資料
+    // exit;
 }
-
 
 $order_ids = [];
 foreach ($o_rows as $o) {
