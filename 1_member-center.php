@@ -23,6 +23,7 @@
         <div class="banner">
             <img class="Diversity" src=" <?= WEB_ROOT ?>/imgs/member/Diversity.svg">
         </div>
+
         <div class="member-area mx-auto p-0 col-lg-12 col-md-12 col-sm-12 col-12 w-100">
             <div class="avatar">
                 <img src="/KunstHause/imgs/member_imgs/member_20.jpg">
@@ -260,14 +261,81 @@
                 <p>VIEW MORE >></p>
             </div>
 
+            <!-- Animation -->
+
+            <main>
+                <section class="path">
+
+                    <div class="pac-f">
+                        <div class="pac p-top">
+                            <div class="lipstick-top"></div>
+                        </div>
+                        <div class="pac p-bottom">
+                            <div class="lipstick-bottom"></div>
+                        </div>
+                        <div class="p-eye"></div>
+                        <div class="bow">
+                            <div class="b1"></div>
+                            <div class="knot"></div>
+                            <div class="b2"></div>
+                        </div>
+                    </div>
+
+                    <div class="pac-m">
+                        <div class="pac p-top"></div>
+                        <div class="pac p-bottom"></div>
+                        <div class="p-eye"></div>
+                    </div>
+
+                    <div class="heart">
+                        <div class="heart-l"></div>
+                        <div class="heart-r"></div>
+                    </div>
+
+                    <div class="pac-b">
+                        <div class="bottle">
+                            <div class="bubble"></div>
+                            <div class="lid"></div>
+                            <div class="jar"></div>
+                        </div>
+                        <div class="b-top"></div>
+                        <div class="b-bottom"></div>
+                        <div class="b-eye"></div>
+                        <div class="b-bow">
+                            <div class="b-b1"></div>
+                            <div class="b-knot"></div>
+                            <div class="b-b2"></div>
+                        </div>
+                    </div>
+
+                    <div class="pac-t">
+                        <div class="t-top"></div>
+                        <div class="t-bottom"></div>
+                        <div class="t-eye"></div>
+                        <div class="cell-phone">
+                            <div class="c-screen">
+                                <div class="msg-1"></div>
+                                <div class="msg-2"></div>
+                                <div class="msg-3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </main>
+
+
+            <!-- animation end -->
+
         </div>
+
     </div>
 </div>
 
 
+
+
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
-
-
 
 <!-- 引入自己的ＪＳ -->
 <!-- <script src=""></script> -->

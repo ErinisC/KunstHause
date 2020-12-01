@@ -243,6 +243,10 @@ label {
   background-color: #ff0000;
 }
 
+.s-login {
+  font-weight: 600;
+}
+
 /* Media Query */
 /* ============================= */
 /* Extra small 超小 (576px 以下) */
@@ -300,7 +304,7 @@ label {
   }
 
   .form-check-label {
-    font-size: 0.8125rem;
+    font-size: 0.7rem;
     margin-left: 0px;
   }
 
