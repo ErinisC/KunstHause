@@ -107,7 +107,7 @@
                         </a>
                         <!-- 會員dropdown -->
                         <div class="dropdown-menu p-0" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">會員資料</a>
+                            <a class="dropdown-item" href="1_member-center.php">會員中心</a>
                             <a class="dropdown-item" href="2_member-order.php">票券管理</a>
                             <a class="dropdown-item" href="#">我的收藏</a>
                             <a class="dropdown-item" href="#">優惠券管理</a>
