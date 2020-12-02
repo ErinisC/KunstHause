@@ -10,7 +10,7 @@
 }
 
 .b2bcreate {
-  height: 2350px;
+  height: 2850px;
 }
 
 .title {
@@ -52,7 +52,7 @@ label {
 }
 
 .fake_input_placeholder {
-  width: 100%;
+  width: 50%;
 }
 
 .event-banner {
@@ -94,6 +94,7 @@ input:focus {
   background-color: white;
   overflow: auto;
   resize: none;
+  width: 100%;
 }
 
 .blanket {
@@ -194,6 +195,26 @@ input[type="number"] {
   border: 3px solid #000;
   color: white !important;
   background-color: #168fa4 !important;
+}
+
+/* 通知提醒 */
+.alert {
+  text-align: center;
+  border: 3px solid #832626;
+  font-weight: 600;
+}
+
+.input-wrap.success input {
+  border-color: #168fa4;
+}
+
+.input-wrap.error input {
+  border-color: #ff0000;
+}
+
+.input-wrap.error small {
+  visibility: visible;
+  color: #ff0000;
 }
 
 /* Media Query */

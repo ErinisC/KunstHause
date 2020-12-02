@@ -10,10 +10,10 @@ $output = [
 
 if (empty($_POST['event_name']) or empty($_POST['event_info']) or empty($_POST['start-datetime']) or empty($_POST['price'])) {
     $output['postData'] = $_POST;
-    $s_sql = "SELECT * FROM `products` WHERE 1";
+    $s_sql = "SELECT 1 FROM `kunsthaus` WHERE `products`";
     $s_stmt->execute([$_POST['event_name']]);
     if ($s_stmt->rowCount() == 1) {
-        $output['info'] = '帳號已有人註冊';
+        $output['info'] = '此活動名稱已被註冊';
         echo json_encode($output, JSON_UNESCAPED_UNICODE);
         exit;
     }
@@ -22,27 +22,24 @@ if (empty($_POST['event_name']) or empty($_POST['event_info']) or empty($_POST['
 //TODO: 檢查資料格式
 
 $sql = "INSERT INTO `products`
-(`sid`, `event_name`, `hastag`, `event_status`, `picture`,
- `categories`, `categories_sid`, `location`, `location_id`, 
- `start-datetime`, `end-datetime`, `price`, `address`, `event_info`,
-  `notice`, `transportation`,)
+(`event_name`, `hastag`, `picture`,
+ `categories`, `location`, `start-datetime`, `end-datetime`, 
+ `price`, `address`, `event_info`, `notice`, 
+ `transportation`)
  VALUES (
+        ?, ?, ?,
         ?, ?, ?, ?,
         ?, ?, ?, ?,
-        ?, ?, ?, ?,
-        ?, ?, ?
+        ? 
     )";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['event_name'],
     $_POST['hastag'],
-    $_POST['event_status'],
     $_POST['picture'],
     $_POST['categories'],
-    $_POST['categories_sid'],
     $_POST['location'],
-    $_POST['location_id'],
     $_POST['start-datetime'],
     $_POST['end-datetime'],
     $_POST['price'],
