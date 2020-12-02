@@ -122,7 +122,7 @@ body {
 }
 
 .event-location {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .like-link {
@@ -168,13 +168,16 @@ iframe {
     letter-spacing: 2.55px;
 }
 
-.sub-info p{
-  font-size: 0.6rem;
+.event-title{
+    font-size: 1rem;
 }
 
-.price{
-    font-size: 0.7rem;
+.sub-info p{
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
 }
+
 
 
 .feedback {
@@ -190,7 +193,7 @@ iframe {
   }
   
   .button:focus {
-    outline: none;
+    outline: none !important;
   }
   
   .qr-code-lg {

@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 html {
   font-size: 20px;
@@ -88,8 +88,8 @@ p {
   height: 2.5rem;
 }
 
-.btn:active {
-  border: none;
+.btn:focus {
+  box-shadow: none !important;
   outline: none;
 }
 

@@ -307,17 +307,17 @@
                 </div>
                 <div class="edit-area d-flex">
                     <div class="e-ticket pt-3 mt-3">
-                        <button class="delete m-3" type="button">
+                        <div class="delete m-3" type="button">
                             <img src="/KunstHause/imgs/member/cancel.svg">
-                        </button>
-                        <button class="feedback m-3" type="button">
+                        </div>
+                        <div class="feedback m-3" type="button">
                             <img src="/KunstHause/imgs/member/feedback.svg">
-                        </button>
+                        </div>
                     </div>
                     <div class="qr-code mr-2">
-                        <button class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                        <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
                             <img src="/KunstHause/imgs/member/qr-code.svg">
-                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -332,15 +332,12 @@
                             <img src="/KunstHause/imgs/member/feedback.svg">
                         </div>
 
-
-                        <button class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                        <div class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
                             <img src="/KunstHause/imgs/member/qr-code.svg">
-                        </button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
 
             <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
                 <div class="t-detail col-lg-9 d-flex p-0">
@@ -363,17 +360,17 @@
                 </div>
                 <div class="edit-area d-flex">
                     <div class="e-ticket pt-3 mt-3">
-                        <button class="delete m-3" type="button">
+                        <div class="delete m-3" type="button">
                             <img src="/KunstHause/imgs/member/cancel.svg">
-                        </button>
-                        <button class="feedback m-3" type="button">
+                        </div>
+                        <div class="feedback m-3" type="button">
                             <img src="/KunstHause/imgs/member/feedback.svg">
-                        </button>
+                        </div>
                     </div>
                     <div class="qr-code mr-2">
-                        <button class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                        <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
                             <img src="/KunstHause/imgs/member/qr-code.svg">
-                        </button>
+                        </div>
                     </div>
                 </div>
 
@@ -388,11 +385,9 @@
                             <img src="/KunstHause/imgs/member/feedback.svg">
                         </div>
 
-                        <!-- <div class="qr-code"> -->
-                        <button class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                        <div class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
                             <img src="/KunstHause/imgs/member/qr-code.svg">
-                        </button>
-                        <!-- </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
