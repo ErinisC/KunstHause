@@ -39,6 +39,10 @@ header {
   position: relative;
 }
 
+.btn:focus {
+  box-shadow: none;
+}
+
 .search {
   border: 3px solid #000;
   height: 38px;
