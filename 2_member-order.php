@@ -257,7 +257,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                                 <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
-                                <p class="date mb-2">12345</p>
+                                <p class="date mb-2">${a['start-datetime']} ~ ${a['end-datetime']}</p>
                                 <p class="order-sid mb-2">訂單編號：${a['order_id']}</p>
                                 <p class="pay-method mb-2">付款方式：${a['pay_way'] }</p>
                                 <p class="total-price mb-2">訂單總額：${a['event_amount'] }</p>
