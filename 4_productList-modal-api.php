@@ -29,6 +29,43 @@ if (empty($row)) {
 <!-- 引入自己的ＣＳＳ -->
 <style>
     /* 蓋板彈跳窗格 */
+    * {
+        overflow: hidden;
+    }
+
+    html {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-family: "Roboto", sans-serif;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    button:focus {
+        outline: 3px solid #ffc024;
+    }
+
+    a {
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    textarea:focus,
+    input:focus {
+        outline: 2px solid #168fa4;
+        color: black !important;
+    }
+
     #cartWrap {
         display: none;
         width: 100%;
@@ -58,7 +95,7 @@ if (empty($row)) {
 
     /* 圖片 */
     .right-pic {
-        height: 200px;
+        height: 300px;
     }
 
 
@@ -79,11 +116,32 @@ if (empty($row)) {
     }
 
     .cost::before {
-        content: '$';
+        content: '單張票價：$ ';
     }
 
     .cost::after {
         content: '元';
+    }
+
+    .dollar-icon,
+    #total-cost {
+        color: #168FA4;
+    }
+
+    @media screen and (max-width: 576px) {
+        html {
+            font-size: 12px;
+        }
+
+        .right-pic {
+            height: 140px;
+        }
+
+        .right-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     }
 </style>
 
@@ -98,48 +156,59 @@ if (empty($row)) {
     <!-- 活動資訊區 -->
     <div class="left-info d-flex flex-column justify-content-around">
 
-        <div class="info-out text-center">
-            <h2 class="product-name">
+        <div class="info-out">
+            <h1 class="product-name text-center">
                 <?= $row['event_name'] ?>
-            </h2>
+            </h1>
 
-            <div class="card-info bread text-center my-3 text-dark">
-                活動日期放這邊
+            <div class="d-flex card-info m-3 align-items-center">
+                <i class="far fa-clock mr-2"></i>
+                活動日期： <?= $row['start-datetime'] ?>
             </div>
         </div>
 
-        <div class="cost text-center">
+        <div class="cost d-flex card-info mx-3 align-items-center">
             <?= $row['price'] ?>
         </div>
 
         <!-- 數量加減區塊 -->
-        <div class="number-wrap">
-            <div class="">數量</div>
+        <div class="number-wrap mt-5">
+            <div class="mb-3">數量</div>
             <div class="input-wrap">
                 <div class="input-group  justify-content-between">
-                    <span class="minus"><button><i class="fas fa-minus"></i></button></span>
+                    <span class="minus">
+                        <button class="btn btn-info">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </span>
 
                     <!-- 中間數量 -->
                     <input type="text" id='product-quantity' class="col-9" value="1">
 
-                    <span class="add"><button><i class="fas fa-plus"></i></button></span>
+                    <span class="add">
+                        <button class="btn btn-info">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </span>
                 </div>
             </div>
         </div>
 
         <!-- 總金額區塊 -->
-        <div class="total-wrap mt-2">
-            <div class="total">總金額</div>
-            <div class="input-group ml-3">
-                <span class="mr-3"><i class="fas fa-dollar-sign"></i></span>
-                <input type="text" id="total-cost">
+        <div class="total-wrap my-4">
+            <div class="d-flex total align-items-center">總金額
+
+                <span class="mx-2 dollar-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </span>
+                <h1 type="text" id="total-cost"></h1>
             </div>
+
         </div>
 
         <!-- 立刻購買按鈕 -->
-        <div class="btn-wrap mt-2">
-            <button class="buy-btn w-100">立刻購買</button>
-        </div>
+        <button class="btn buy-btn btn-info">立刻購買</button>
+
 
     </div>
 </div>
@@ -149,7 +218,7 @@ if (empty($row)) {
     // 數量增減
     let productQuantity = +$('#product-quantity').val();
     let cost = $('.cost').text()
-    $('#total-cost').val(cost * productQuantity)
+    $('#total-cost').text(cost * productQuantity)
 
     $('.add').on('click', function() {
         productQuantity += 1;
@@ -157,7 +226,7 @@ if (empty($row)) {
 
 
         $('#product-quantity').val(productQuantity)
-        $('#total-cost').val(cost * productQuantity)
+        $('#total-cost').text(cost * productQuantity)
     })
 
     // 按鈕減少數量
@@ -165,7 +234,7 @@ if (empty($row)) {
         productQuantity -= 1;
         cost = $('.cost').text()
         $('#product-quantity').val(productQuantity)
-        $('#total-cost').val(cost * productQuantity)
+        $('#total-cost').text(cost * productQuantity)
     })
 
 

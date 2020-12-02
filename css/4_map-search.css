@@ -1,0 +1,80 @@
+* {
+    outline: 1px solid red;
+}
+
+
+.bg {
+    /* height: 100vh; */
+    background-color: #168FA4;
+}
+
+/* 搜尋開始 */
+.search-box {
+    height: 300px;
+    border: 3px solid black;
+    background-color: #002c80;
+    /* background-image: radial-gradient(#01173fc2 10%, transparent 10%), radial-gradient(#01173fc2 10%, transparent 10%);
+    background-position: 20px 0, 60px 25px;
+    background-size: 70px 60px;
+    background-attachment: fixed; */
+}
+
+/* 地圖開始 */
+
+.map {
+    transition: 2s;
+}
+
+svg {
+    width: 60%;
+}
+
+
+path {
+    stroke: white;
+    fill: #FFC024;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+path:hover {
+    fill: #002c80;
+    stroke: none;
+    transform: translate(-5px, -5px);
+}
+
+path:visited {
+    fill: #002c80;
+    stroke: none;
+    transform: translate(-5px, -5px);
+}
+
+.map-active {
+    transform: translate(-80%, 0px);
+}
+
+/* Pins */
+.fa-map-marker-alt {
+    display: none;
+    color: #ED5B4C;
+}
+
+.pin1 {
+    top: 11%;
+    right: 26%;
+}
+
+.pin2 {
+    top: 13%;
+    right: 30%;
+}
+
+.pin3 {
+    top: 12%;
+    right: 35%;
+}
+
+.pin4 {
+    top: 10%;
+    right: 33%;
+}

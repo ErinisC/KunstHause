@@ -421,9 +421,167 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         </div>
 
 
+        <!-- another test -->
+        <div class="test container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+
+                    <!-- <div class="page-header">
+                        <h3>Bootstrap</h3>
+                        <p>Responsive Moving Box Carousel Demo</p>
+                    </div> -->
+
+                    <div class="carousel slide" id="myCarousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <ul class="thumbnails">
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- /Slide1 -->
+                            <div class="item">
+                                <ul class="thumbnails">
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- /Slide2 -->
+                            <div class="item">
+                                <ul class="thumbnails">
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                    <li class="span3">
+                                        <div class="thumbnail">
+                                            <a href="#"><img src="http://placehold.it/360x240" alt=""></a>
+                                        </div>
+                                        <div class="caption">
+                                            <h4>Praesent commodo</h4>
+                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
+                                            <a class="btn btn-mini" href="#">&raquo; Read More</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!-- /Slide3 -->
+                        </div>
+
+                        <div class="control-box">
+                            <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                            <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                        </div><!-- /.control-box -->
+
+                    </div><!-- /#myCarousel -->
+
+                </div><!-- /.span12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog col-lg-4 col-md- col-sm-11 col-11">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -500,7 +658,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         $(window).scroll(function() {
             let scrollTop = $(window).scrollTop();
             console.log('scrollTop:', scrollTop);
-
 
             // quotation飛進來
             if (scrollTop > 600) {
@@ -593,6 +750,13 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             }
             spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
         }
+
+        // 
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 6000
+            })
+        });
     </script>
 
     <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
