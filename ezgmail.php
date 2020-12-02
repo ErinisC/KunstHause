@@ -1,81 +1,85 @@
 <?php
-require_once("PHPMailer_v5.1/class.phpmailer.php");
+require __DIR__ . '/vendor/autoload.php';
 
 date_default_timezone_set('Asia/Taipei');
 
+require __DIR__ . '/vendor/phpmailer/phpmailer/src/PHPMailer.php';
 
 $mail = new PHPMailer();
 
 // Server 資訊
-$mail->IsSMTP();
-$mail->SMTPAuth = true;
-$mail->SMTPSecure = "ssl";
-$mail->Host = "smtp.gmail.com";
-$mail->Port = 465;
-$mail->CharSet = "utf-8";
+// $mail->IsSMTP();
+// $mail->SMTPAuth = true;
+// $mail->SMTPSecure = "ssl";
+// $mail->Host = "smtp.gmail.com";
+// $mail->Port = 465;
+// $mail->CharSet = "utf-8";
 
-// 登入
-$mail->Username = "dandanproj59@gmail.com"; //帳號
-$mail->Password = "q7w8e9a4s5d6"; //密碼
+// 登入帳密
+// $mail->Username = "dandanproj59@gmail.com"; 
+// $mail->Password = "q7w8e9a4s5d6"; 
 
-// 寄件者
-$mail->From = "dandanproj59@gmail.com"; //寄件者信箱
-$mail->FromName = "Dan"; //寄件者姓名
+// 寄件者信箱及姓名
+// $mail->From = "dandanproj59@gmail.com"; 
+// $mail->FromName = "Dan";
 //$mail->ConfirmReadingTo = "dandanproj59@gmail.com"; // 讀取回條 (對 Gmail 沒用)
 
 // 郵件資訊
-$mail->Subject = "title"; //設定郵件標題
-$mail->IsHTML(true); //設定郵件內容為HTML
+// $mail->Subject = "title";
+//設定郵件標題
+// $mail->IsHTML(true); 
+//設定郵件內容為HTML
 
-function send_mail($mail_address, $name, $body)
-{
-    global $mail;
-    $mail->Body = $body;
-    $mail->ClearAddresses();
-    $mail->AddAddress($mail_address, $name); //新稱收件者 (郵件及名稱)
-    //$mail->AddCC("some_other one@gmail.com", "Someone"); // 新稱副本收件者
 
-    if (!$mail->Send()) {
-        echo "Error: " . $mail->ErrorInfo . "\n";
-    } else {
-        echo "Send To: " . $mail_address . "\n";
-    }
-}
 
-function msg()
-{
-    return <<<EOF
-<p>Hi $%name%,
-<p>Here's the HTML template with $%pattern_strings%.
-EOF;
-}
 
-function fill_template($content, $data)
-{
-    foreach ($data as $key => $value) {
-        $content = str_replace('$%' . $key . '%', $value, $content);
-    }
-    return $content;
-}
+// phpmailer 官方文件寫法
 
-function parse_name_list_tsv($filename)
-{
-    $namelist = array();
-    $file = fopen($filename, 'r');
-    while ($line = fgets($file)) {
-        $line = str_replace("\n", "", $line);
-        list($name, $mail_address, $vip_code) = explode("\t", $line);
-        $namelist[] = array('name' => $name, 'mail_address' => $mail_address, 'vip_code' => $vip_code);
-    }
-    return $namelist;
-}
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
 
-$namelist = parse_name_list_tsv('list.tsv');
 
-//var_dump($namelist); die(); // convenient for show the name list
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-// Send email to all persons in name list
-foreach ($namelist as $data) {
-    $body = fill_template(msg(), $data);
-    send_mail($data['mail_address'], $data['name'], $body);
+// Load Composer's autoloader
+// require 'vendor/autoload.php';
+
+// Instantiation and passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp1.example.com';                    // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'dandanproj59@gmail.com';               // SMTP username
+    $mail->Password   = 'q7w8e9a4s5d6';                         // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    //Recipients
+    $mail->setFrom('dandanproj59@gmail.com', 'Mailer');
+    $mail->addAddress('erinischan940523@gmail.com', 'Erinis User');   // Add a recipient
+    $mail->addAddress('ellen@example.com');               // Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');
+
+    // Attachments
+    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

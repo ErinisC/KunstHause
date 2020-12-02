@@ -23,12 +23,13 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
 <div class="container">
     <div class="row">
+
         <!-- login list Area -->
 
         <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12 pb-3">
             <div class="deco">
                 <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
-                <img class="x-btn" src=" <?= WEB_ROOT ?>/imgs/member/times-solid.svg">
+                <!-- <img class="x-btn" src=" <?= WEB_ROOT ?>/imgs/member/times-solid.svg"> -->
             </div>
             <div class="login-title">請登入會員</div>
             <div class="reminder ml-3">*您可以選擇下列帳號快速登入</div>
@@ -79,7 +80,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             <div class="others d-flex justify-content-between my-4">
                 <div class="help ml-4">
                     <p>還不是 Kunsthaus會員嗎?</p>
-                    <a href="" class="s-signup text-dark">
+                    <a href="http://localhost/KunstHause/1_member-signup.php" class="s-signup text-dark">
                         <p style="font-weight:600; color:#1741ca; font-size: 0.8rem">點此註冊</p>
                     </a>
                 </div>
@@ -182,9 +183,9 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         .text('登入成功');
 
                     setTimeout(function() {
-                        location.href = '<?= $gotoURL ?>';
+                        location.href = '4_productList.php';
                     }, 2000);
-
+                    // <?= $gotoURL ?>
 
                 } else {
                     info_bar

@@ -20,6 +20,7 @@
 
 <div class="container">
     <div class="row">
+
         <div class="banner">
             <img class="Diversity" src=" <?= WEB_ROOT ?>/imgs/member/Diversity.svg">
         </div>
@@ -34,9 +35,10 @@
                     <i class="fas fa-edit"></i>
                     下一場活動要去哪呢?
                 </p>
-                <button class="btn btn-primary col-lg-2 col-4 mt-5">
-                    <p>編輯設定</p>
-                </button>
+                <a href="http://localhost/KunstHause/2_member-accunt-set.php">
+                    <button class="btn btn-primary col-lg-2 col-4 mt-5 ">
+                        <p>編輯設定</p>
+                    </button> </a>
             </div>
 
 

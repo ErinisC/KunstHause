@@ -229,7 +229,7 @@
                         <div class="line d-flex justify-content-between">
                             <div class="confirm">您已經是 Kunsthaus 的會員?</div>
                             <div class="login-btn">
-                                <a href="" class="s-login text-dark">登入</a>
+                                <a href="http://localhost/KunstHause/1_member-login.php" class="s-login text-dark">登入</a>
                             </div>
                         </div>
                     </form>
@@ -333,7 +333,7 @@
                     //     .text('完成新增');
                     $('#exampleModalCenter').modal('show');
                     $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                        location.href = '1_member-login.php'
+                        location.href = '4_productList.php'
                     })
                 } else {
                     info_bar
@@ -352,7 +352,7 @@
     }
 
 
-    // codepen 
+    // codepen 動動眼睛
 
     $(".move-area").mousemove(function(event) {
         var eye = $(".eye");
