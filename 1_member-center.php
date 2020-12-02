@@ -21,6 +21,8 @@
 <div class="container">
     <div class="row">
 
+
+
         <div class="banner">
             <img class="Diversity" src=" <?= WEB_ROOT ?>/imgs/member/Diversity.svg">
         </div>
@@ -40,7 +42,6 @@
                         <p>編輯設定</p>
                     </button> </a>
             </div>
-
 
 
             <!-- 我的收藏 區域 -->
@@ -460,11 +461,22 @@
 
                 </section>
             </main>
-            <!-- animation end -->
 
+
+            <!-- 變形蟲動畫 -->
+            <!-- <div class="c"></div>
+            <div class="c-c">
+                <div class="c-e"></div>
+                <div class="c-e"></div>
+            </div> -->
+
+
+            <!-- animation end -->
         </div>
     </div>
 </div>
+
+
 
 
 
