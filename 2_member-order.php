@@ -41,7 +41,6 @@ foreach ($d_rows as $d) {
     $order_ids[] = $d['sid'];
 }
 
-
 // let eventData = {
 //     1:{
 //         pic:'HSZ-11',
@@ -52,7 +51,6 @@ foreach ($d_rows as $d) {
 //         eventName: 'XXXXX'
 //     }
 // }
-// eventData[a['order-id']].eventName
 // ${eventData[a['order-id']].eventName}
 // ${eventData[a['picture']].eventName}
 
@@ -158,36 +156,6 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         <?php endforeach; ?>
     </div>
 
-    <!--pagination-->
-    <div class="container paginatio mb-5">
-        <div class="row mx-auto justify-content-center">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <!-- 前一頁 -->
-                    <li class="page-item">
-                        <a class="page-link" href="#"><i class="fas fa-arrow-left"></i></a>
-                    </li>
-                    <!-- 中間頁數 -->
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <!-- 後一頁 -->
-                    <li class="page-item">
-                        <a class="page-link" href="#">
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-        </div>
-    </div>
 
 <?php endif; ?>
 
@@ -258,7 +226,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                 <p class="location">台灣台北市信義區松壽路22號5樓</p>
             </div>
             <div class="modal-footer">
-                <p class="attender w-100 text-center">參加人：王大明</p>
+                <p class="attender w-100 text-center">參加人：<?= $d['name'] ?></p>
                 <p class="ticket-sid w-100 text-center">票券編號：1909050529332096708790</p>
             </div>
         </div>
@@ -281,11 +249,11 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         <div class="row order mb-5 align-content-center">
                     
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/HSZ-11.jpg" alt="">
+                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/${a['picture']}.jpg" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
-                                <p class="event-name mb-2">12345</p>
+                                <p class="event-name mb-2">${a['event_name']}</p>
                                 <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
@@ -337,7 +305,7 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
     });
 
     function getProductData(status = 0) {
-        $.get('2_member-order api.php', {
+        $.get('2_member-order-api.php', {
             order_status: status
         }, function(data) {
             console.log('data', data);
