@@ -91,29 +91,38 @@ if (empty($row)) {
 
             <div class="">
                 <button class="label">
+                    <!-- 活動標籤 -->
                     <p><?= $row['categories'] ?></p>
                 </button>
                 <div class="activity">
+                    <!-- 活動名稱 -->
+                    
                     <h1 class="activity-title mt-3"><?= $row['event_name'] ?></h1>
                     <div class="activity-time d-flex">
-                        <p class="activity-time-title mt-3">活動時間 17:30-20:30</p>
+                        <div class="mt-4 mr-3">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <p class="activity-time-title mt-3">活動日期時間：<br><?= $row['start-datetime'] ?></p>
                     </div>
 
-                    <div class="activity-date">
-                        <p class="activity-place-title mt-3">活動日期 台灣台北市中正區八德路一段117號</p>
-                    </div>
+                    <!-- <div class="activity-date">
+                        <p class="activity-place-title mt-3">活動地點 <?= $row['start-datetime'] ?></p>
+                    </div> -->
 
-                    <div class="activity-place">
-                        <p class="activity-place-title mt-3">活動地點 台灣台北市中正區八德路一段117號</p>
-                    </div>
-
-                    <div class="mt-3">
-                        <a href="#">#Covid-free</a>
-                        <a href="#">#INCEPTION</a>
+                    <div class="activity-place d-flex">
+                        <div class="mt-4 mr-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p class="activity-place-title mt-3">活動地點：<br><?= $row['address'] ?></p>
                     </div>
 
                     <div class="activity-place">
                         <p class="mt-3">$450</p>
+                    </div>
+
+                    <div class="hastag-place mt-3">
+                        <a href="#"><?= $row['hastag'] ?></a>
+                        <a href="#"><?= $row['hastag'] ?></a>
                     </div>
 
                 </div>
@@ -144,14 +153,15 @@ if (empty($row)) {
                 <input id="design" type="radio" name="tab_item">
                 <label class="tab_item" for="design">交通資訊</label>
                 <div class="tab_content" id="all_content">
-                    <p class="tab_content_title">AUDIO ARCHITECTURE：聲音的建築展 in 台北</p><br>
+                    <p class="tab_content_title"><?= $row['event_name'] ?></p><br>
 
-                    <p>25 公尺巨幅投影打造沉浸式劇場、日本東京票房保證、吸引近10萬人觀賞，一場「 用眼睛聽音樂 」的超感官體驗！ 東京六本木 21_21 DESIGN SIGHT 繼 2016 年「 單位展 」再度登台，如果你曾被單位展打動，就絕對不能錯過！帶來超越理性與感官、聲音視覺化的設計大作。 ■ 超感官體驗｜25 公尺巨幅投影打造沉浸式劇場 ■ 聲音視覺化｜9 位日本頂尖視覺藝術家參展創作 ■ 知名音樂人作曲｜小山田圭吾創作展覽同名樂 ■ 不必遠赴日本｜與設計最高殿堂距離最近的一次。</p>
+                    <p><?= $row['event_info'] ?></p>
                 </div>
                 <div class="tab_content" id="programming_content">
-                    <p class="tab_content_title">報名注意事項：</p><br>
-
-                    <p>報名繳費後因故不能參加活動而需取消時，酌收10％手續費 ; 開課後恕不退費，有任何問題請洽課程聯絡人。其他未盡周全事宜，請依主辦單位公告及場地規則為依據。主辦單位保留課程內容更動權利。請學員務必了解上課意願及個人時間後才報名。</p>
+                    <p class="tab_content_title">報名注意事項：</p>
+                    <br>
+                    <p>
+                        <p><?= $row['notice'] ?></p>
                 </div>
                 <div class="tab_content" id="design_content">
                     <div class="row">
@@ -159,7 +169,7 @@ if (empty($row)) {
 
                             <p class="tab_content_title">交通注意事項</p><br>
 
-                            <p>報名繳費後因故不能參加活動而需取消時，酌收10％手續費 ; 開課後恕不退費，有任何問題請洽課程聯絡人。其他未盡周全事宜，請依主辦單位公告及場地規則為依據。主辦單位保留課程內容更動權利。請學員務必了解上課意願及個人時間後才報名。</p>
+                            <p><?= $row['transportation'] ?></p>
 
                         </div>
                         <div class="tab_content_map col-lg-6 col-md-6 col-sm-12 col-12">
@@ -182,39 +192,45 @@ if (empty($row)) {
             </div>
 
             <!-- ------留言板內容------ -->
-            <div class="message-board p-3">
+            <div class="message-board p-3 col-12">
                 <div class="">
-                    <div class="name-bar d-flex">
-                        <div class="bar-circle"></div>
+                    <div class="name-bar d-flex col-10">
+                        <div class="bar-circle">
+                            <img class="w-100" src="../KunstHause/imgs/products/headshut-1.png" alt="" srcset="">
+                        </div>
 
                         <div class="bar-title">
-                            <h2>Johnny</h2>
-                            <p>2020/09/20</p>
+                            <h2 class="mb-2">9m88</h2>
+                            <p>2020/08/30</p>
                         </div>
 
                         <div class="bar-word">
-                            <p>金假讚！</p>
+                            <p>最高品質靜悄悄 蹲最低的跳最高！</p>
                         </div>
                     </div>
 
                     <div class="name-bar d-flex">
-                        <div class="bar-circle"></div>
+                        <div class="bar-circle">
+                            <img class="w-100" src="../KunstHause/imgs/products/headshut-2.png" alt="" srcset="">
+                        </div>
 
                         <div class="bar-title">
-                            <h2>Johnny</h2>
+                            <h2 class="mb-2">不好說</h2>
                             <p>2020/09/20</p>
                         </div>
 
                         <div class="bar-word">
-                            <p>金假讚！</p>
+                            <p>關於愛情 過去沒有異想的結局 那天起 卻顛覆了自己邏輯 我的懷疑 所有答案因你而明白 轉啊轉 就真的遇見 Mr.right！</p>
                         </div>
                     </div>
 
                     <div class="name-bar d-flex">
-                        <div class="bar-circle"></div>
+                        <div class="bar-circle">
+                            <img class="w-100" src="../KunstHause/imgs/products/headshut-3.png" alt="" srcset="">
+                        </div>
 
                         <div class="bar-title">
-                            <h2>Johnny</h2>
+                            <h2 class="mb-2">Johnny</h2>
                             <p>2020/09/20</p>
                         </div>
 
