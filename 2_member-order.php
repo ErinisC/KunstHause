@@ -53,6 +53,8 @@ foreach ($d_rows as $d) {
 //     }
 // }
 // eventData[a['order-id']].eventName
+// ${eventData[a['order-id']].eventName}
+// ${eventData[a['picture']].eventName}
 
 
 
@@ -90,11 +92,18 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title2.svg" alt="">
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
-            <?php foreach ($s_rows as $s) : ?>
-                <button type="button" class="status-btn btn-s" data-sid="<?= $s['order_status'] ?>">
-                    <?= $s['order_status'] ?>
+                <button type="button" class="status-btn btn-s" data-sid="已付款">
+                   已付款
                 </button>
-            <?php endforeach ?>
+                <button type="button" class="status-btn btn-s" data-sid="未付款">
+                   未付款
+                </button>
+                <button type="button" class="status-btn btn-s" data-sid="已取消">
+                   已取消
+                </button>
+                <button type="button" class="status-btn btn-s" data-sid="已完成">
+                   已完成
+                </button>
         </div>
     </div>
 </div>
@@ -272,11 +281,11 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
         <div class="row order mb-5 align-content-center">
                     
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/${eventData[a['picture']].eventName}.jpg" alt="">
+                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/HSZ-11.jpg" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
-                                <p class="event-name mb-2">${eventData[a['order-id']].eventName}</p>
+                                <p class="event-name mb-2">12345</p>
                                 <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
