@@ -65,7 +65,7 @@ if (empty($row)) {
 
             <!-- ---------報名卡片-------------- -->
 
-            <div class="apply  apply-02 d-flex align-items-center justify-content-center">
+            <!-- <div class="apply  apply-02 d-flex align-items-center justify-content-center">
                 <div class="d-flex text-align: center">
                     <div class="apply-ticket">
                         <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
@@ -74,7 +74,7 @@ if (empty($row)) {
                         <p>立即<br>報名</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="space-1"></div>
 
@@ -96,7 +96,7 @@ if (empty($row)) {
                 </button>
                 <div class="activity">
                     <!-- 活動名稱 -->
-                    
+
                     <h1 class="activity-title mt-3"><?= $row['event_name'] ?></h1>
                     <div class="activity-time d-flex">
                         <div class="mt-4 mr-3">
@@ -116,8 +116,11 @@ if (empty($row)) {
                         <p class="activity-place-title mt-3">活動地點：<br><?= $row['address'] ?></p>
                     </div>
 
-                    <div class="activity-place">
-                        <p class="mt-3">$450</p>
+                    <div class="activity-place d-flex">
+                        <div class="mt-3 mr-3">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <p class="mt-3"><?= $row['price'] ?></p>
                     </div>
 
                     <div class="hastag-place mt-3">
@@ -192,50 +195,58 @@ if (empty($row)) {
             </div>
 
             <!-- ------留言板內容------ -->
-            <div class="message-board p-3 col-12">
-                <div class="">
-                    <div class="name-bar d-flex col-10">
-                        <div class="bar-circle">
-                            <img class="w-100" src="../KunstHause/imgs/products/headshut-1.png" alt="" srcset="">
+            <div class="message-board col-12">
+                <div class="mt-5 mb-5">
+
+                    <div class="name-bar col-lg-10 col-sm-10 col-md-10">
+                        <div class="col-lg-2 col-sm-10 col-md-10">
+                            <div class="bar-circle">
+                                <img class="w-100" src="../KunstHause/imgs/products/headshut-1.png" alt="" srcset="">
+                            </div>
                         </div>
 
-                        <div class="bar-title">
+                        <div class="bar-title col-lg-2 col-md-10 col-sm-10">
                             <h2 class="mb-2">9m88</h2>
                             <p>2020/08/30</p>
                         </div>
 
-                        <div class="bar-word">
+                        <div class="bar-word-1 col-lg-6 col-md-10 col-sm-10">
                             <p>最高品質靜悄悄 蹲最低的跳最高！</p>
                         </div>
                     </div>
 
-                    <div class="name-bar d-flex">
-                        <div class="bar-circle">
-                            <img class="w-100" src="../KunstHause/imgs/products/headshut-2.png" alt="" srcset="">
+                    <div class="name-bar col-lg-10 col-sm-10 col-md-10">
+                        <div class="col-lg-2 col-sm-10 col-md-10">
+                            <div class="bar-circle">
+                                <img class="w-100" src="../KunstHause/imgs/products/headshut-2.png" alt="" srcset="">
+                            </div>
                         </div>
 
-                        <div class="bar-title">
-                            <h2 class="mb-2">不好說</h2>
+
+                        <div class="bar-title col-lg-2 col-md-10 col-sm-10">
+                            <h2 class="mb-2">說愛你</h2>
                             <p>2020/09/20</p>
                         </div>
 
-                        <div class="bar-word">
+                        <div class="bar-word col-lg-6 col-md-10 col-sm-10">
                             <p>關於愛情 過去沒有異想的結局 那天起 卻顛覆了自己邏輯 我的懷疑 所有答案因你而明白 轉啊轉 就真的遇見 Mr.right！</p>
                         </div>
                     </div>
 
-                    <div class="name-bar d-flex">
-                        <div class="bar-circle">
-                            <img class="w-100" src="../KunstHause/imgs/products/headshut-3.png" alt="" srcset="">
+                    <div class="name-bar col-lg-10 col-sm-10 col-md-10">
+                        <div class="col-lg-2 col-sm-10 col-md-10">
+                            <div class="bar-circle">
+                                <img class="w-100" src="../KunstHause/imgs/products/headshut-3.png" alt="" srcset="">
+                            </div>
                         </div>
 
-                        <div class="bar-title">
-                            <h2 class="mb-2">Johnny</h2>
+                        <div class="bar-title col-lg-2 col-md-10 col-sm-10">
+                            <h2 class="mb-2">愛情恰恰</h2>
                             <p>2020/09/20</p>
                         </div>
 
-                        <div class="bar-word">
-                            <p>金假讚！</p>
+                        <div class="bar-word col-lg-6 col-md-10 col-sm-10">
+                            <p>想要和你 想要和你 來跳恰恰恰 毋知你是 毋知你是 走去叼位躲 啊飲落去飲落去 毋通漏氣 跳落去跳落去 大家歡喜！</p>
                         </div>
                     </div>
                 </div>
@@ -249,8 +260,8 @@ if (empty($row)) {
 
         <div class="row">
             <div class="search-bar d-flex">
-                <input type="text" placeholder="我來說幾句...(50個字為限)" class="col-11">
-                <button class="search-bar-ser col-1 p-0 d-flex align-items-center justify-content-center text-white text-center">發表</button>
+                <input type="text" placeholder="我來說幾句...(50個字為限)" class="col-10">
+                <button class="search-bar-ser col-2 p-0 d-flex align-items-center justify-content-center text-white text-center">發表</button>
             </div>
         </div>
 

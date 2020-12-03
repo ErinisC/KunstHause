@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 html,
 body {
@@ -13,6 +13,10 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
 }
+
+/* .btn:focus {
+  box-shadow: none; ! important
+} */
 
 .space {
   height: 87px;
@@ -113,7 +117,7 @@ body {
 
 .activity-place-title {
   font-size: 24px;
-} 
+}
 
 .hastag-place a {
   color: #000000;
@@ -141,7 +145,7 @@ body {
   height: 80px;
   border-radius: 50%;
   border: 3px solid black;
-  margin: 20px 20px 20px 0;
+  margin: auto;
   overflow: hidden;
 }
 
@@ -150,9 +154,6 @@ body {
   object-position: center;
 }
 
-.bar-title {
-  margin: auto 20px auto 0;
-}
 
 .bar-word {
   margin: auto 0 auto 0;
@@ -277,8 +278,22 @@ input[name="tab_item"] {
 /* ====== Ｍedia Query ============= */
 /* Extra small 超小 (576px 以下) */
 @media screen and (max-width: 576px) {
-  .apply-01 {
+  /* .apply-01 {
     display: none !important;
+  } */
+
+  .bar-title {
+    text-align: center;
+    margin-bottom: 6px;
+    margin-top: 6px;
+  }
+
+  .bar-word {
+    text-align: left;
+  }
+
+  .bar-word-1 {
+    text-align: center;
   }
 }
 
@@ -287,6 +302,14 @@ input[name="tab_item"] {
 @media (min-width: 576px) {
   .apply-02 {
     display: none !important;
+  }
+
+  .name-bar {
+    display: flex;
+  }
+
+  .bar-title {
+    margin: auto 20px auto 20px;
   }
 }
 
