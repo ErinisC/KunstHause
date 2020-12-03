@@ -11,136 +11,8 @@ body {
   background-color: #002c80;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
-
-  /* width: 100vw; */
-  /* overflow: hidden; */
-  /* position: relative; */
 }
 
-/* 變形蟲css */
-/* .c {
-    width: 32vh;
-    height: 32vh;
-    position: absolute;
-    bottom: -16.6666666667vh;
-    left: 0;
-    border-radius: 43% 40% 43% 40%;
-    background: #d1481e;
-    -webkit-animation: bounce 1s infinite alternate, wave 2s infinite linear,
-      waking 7s infinite alternate linear;
-    animation: bounce 1s infinite alternate, wave 2s infinite linear,
-      waking 7s infinite alternate linear;
-  }
-  
-  .c-e {
-    width: 5vh;
-    height: 5vh;
-    border: 1.3043478261vh solid #fff;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    border-radius: 50%;
-    -webkit-animation: blink 4s infinite linear;
-    animation: blink 4s infinite linear;
-  }
-  
-  .c-c {
-    display: -webkit-box;
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    width: 24vh;
-    bottom: 3vh;
-    z-index: 1;
-    left: 7.5vh;
-    padding: 0 0.8vw;
-    z-index: 1;
-    -webkit-animation: waking 7s infinite alternate linear;
-    animation: waking 7s infinite alternate linear;
-  }
-  
-  @-webkit-keyframes wave {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes wave {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
-  
-  @-webkit-keyframes waking {
-    100% {
-      left: calc(100% - 30vh);
-    }
-  }
-  
-  @keyframes waking {
-    100% {
-      left: calc(100% - 30vh);
-    }
-  }
-  
-  @-webkit-keyframes bounce {
-    100% {
-      bottom: -20vh;
-    }
-  }
-  
-  @keyframes bounce {
-    100% {
-      bottom: -20vh;
-    }
-  }
-  
-  @-webkit-keyframes blink {
-    0%,
-    5%,
-    30%,
-    37%,
-    100% {
-      height: 5vh;
-      border-width: 1.3636363636vh;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  
-    3%,
-    33% {
-      height: 0;
-      border-width: 0;
-      -webkit-transform: translateY(-3vh);
-      transform: translateY(-3vh);
-    }
-  }
-  
-  @keyframes blink {
-    0%,
-    5%,
-    30%,
-    37%,
-    100% {
-      height: 5vh;
-      border-width: 1.3636363636vh;
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
-  
-    3%,
-    33% {
-      height: 0;
-      border-width: 0;
-      -webkit-transform: translateY(-3vh);
-      transform: translateY(-3vh);
-    }
-  } */
-
-
-
-/* test animation end */
 
 .banner img {
   width: 100%;
@@ -178,8 +50,9 @@ body {
 
 .edit-member {
   text-align: center;
-  margin: 4.5rem auto 2rem;
+  /* margin: 4.5rem auto 2rem; */
   font-weight: 600;
+  padding-top: 8rem;
 }
 
 .btn {
@@ -270,23 +143,9 @@ body {
   text-align: center;
 }
 
-/* 小卡彈跳蓋板 */
-/* .modal-content {
-  border: 3px solid black;
-  border-radius: 0;
-}
 
-iframe {
-  border: none;
-  width: 100%;
-  height: 100%;
-}
 
-.modal-body {
-  height: 600px;
-} */
-
-/* 票券管理 */
+/* 票券管理 css */
 
 .ticket-wrap {
   border: 3px solid #000;
@@ -306,8 +165,6 @@ iframe {
   letter-spacing: 0.1rem;
   font-weight: 500;
 }
-
-
 
 .feedback {
     width: 2.4rem;
@@ -360,7 +217,6 @@ html,
         display: flex;
         align-items: center;
         justify-content: center;
-
     }
 
     .path {
@@ -473,12 +329,12 @@ html,
     }
 
     .pac-f {
-        animation: f-chase 24s linear forwards;
+        animation: f-chase 24s linear infinite forwards;
       
     }
 
     .pac-m {
-        animation: m-chase 24s linear 3s forwards;
+        animation: m-chase 24s linear 3s infinite forwards;
         transform: translateX(-20vh);
     }
 
@@ -518,7 +374,7 @@ html,
         grid-template-columns: 100%;
         grid-template-rows: 100%;
         transform: translateX(-20vh);
-        animation: b-walk 24s linear 3s forwards;
+        animation: b-walk 24s linear 3s infinite forwards;
     }
 
     .b-top {
@@ -624,7 +480,7 @@ html,
         grid-template-columns: 100%;
         grid-template-rows: 100%;
         transform: translateX(-20vh);
-        animation: t-walk 24s linear 4s forwards;
+        animation: t-walk 24s linear 4s infinite forwards;
     }
 
     .t-top {
@@ -632,7 +488,7 @@ html,
         grid-column: 1;
         grid-row: 1;
         border-radius: 50%;
-        animation: mouth-up .5s ease-in-out infinite;
+        animation: mouth-up .5s ease-in-out infinite infinite;
     }
 
     .t-bottom {
@@ -641,7 +497,7 @@ html,
         grid-row: 1;
         border-radius: 50%;
         transform: translateY(-.25vh);
-        animation: mouth-down .5s ease-in-out infinite;
+        animation: mouth-down .5s ease-in-out infinite infinite;
         
     }
 
