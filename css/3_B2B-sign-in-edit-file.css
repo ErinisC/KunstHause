@@ -1,6 +1,10 @@
 * {
   outline: 1px solid red;
 }
+
+button:focus {
+  box-shadow: none !important;
+}
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
@@ -130,6 +134,7 @@ textarea:focus {
 textarea {
   margin-top: 12px;
   resize: none;
+  width: 100%;
   border: 3px solid #000;
 }
 

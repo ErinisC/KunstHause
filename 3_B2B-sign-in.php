@@ -1,6 +1,12 @@
 <?php $title = 'KunstHaus | 廠商會員註冊'; ?>
 
-<?php include __DIR__ . '/1_parts/0_config.php'; ?>
+<?php include __DIR__ . '/1_parts/0_config.php';
+// 判斷是否登入
+if (!isset($_SESSION['user'])) {
+    header('Location: 1_member-login.php');
+    exit;
+}
+?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
@@ -22,7 +28,8 @@
             <div class="title col-xl-8">
                 <h1>編輯主辦單位檔案</h1>
                 <p class="text">KunstHaus 使用者將透過下列資訊認識你</p>
-
+            </div>
+            <form name="b2b_form" method="post" onsubmit="checkForm();return false;" novalidate>
                 <div class="ogzcard">
                     <div class="picture">
                         <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
@@ -44,29 +51,31 @@
                         </button>
                     </div>
                 </div>
-            </div>
-            <form name="form1" method="post" onsubmit="checkForm();return false;" novalidate>
+
                 <div class="inputform col-xl-8 col-12">
                     <label for="name">主辦單位名稱（必填）</label>
                     <input class="inputbox" id="name" type="text" placeholder="請填寫主辦單位名稱" name="name" required>
+                    <small class="trouble2"></small>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small class="trouble2">X 必填資訊未填寫完整</small>
+                    <!-- <small class="trouble2">X 必填資訊未填寫完整</small> -->
                 </div>
 
                 <div class="inputform col-xl-8 col-12">
                     <label for="phone">主辦單位電話號碼（必填）</label>
                     <input class="inputbox" id="phone" type="text" placeholder="請填寫電話號碼" name="phone" required>
-                    <input class="inputbox" type="text" placeholder="分機號碼(選填)">
+                    <small class="trouble2"></small>
+                    <input class="inputbox" type="text" name="ext" placeholder="分機號碼(選填)">
+                    <small class="trouble2"></small>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
-                    <small class="trouble2">X 必填資訊未填寫完整</small>
+                    <!-- <small class="trouble2">X 必填資訊未填寫完整</small> -->
                 </div>
 
                 <div class="inputform col-xl-8 col-12">
                     <label for="intro">主辦單位簡介（必填）</label>
-                    <textarea class="textarea2" name="intro" id="intro" cols="72" rows="10" placeholder="請填寫主辦單位簡介" required></textarea>
-                    <p class="wortcount">0/255</p>
+                    <textarea class="textarea2" name="intro" id="intro" cols="" rows="10" placeholder="請填寫主辦單位簡介" maxlength="255" required></textarea>
+                    <span class="wortcount">0/255</span>
                 </div>
 
                 <div class="inputform col-xl-8 col-12">
@@ -118,13 +127,18 @@
                 </div>
 
                 <div class="checkform col-xl-8 col-12 d-flex">
-                    <p class="ckecktext col-xl-8 col-12"><input class="checkbox" type="checkbox">我同意Kunsthaus服務條款及隱私權政策</p>
+                    <p class="ckecktext col-xl-8 col-12"><input class="checkbox" type="checkbox" id="checkbox" name="checkbox" value="是">我同意Kunsthaus服務條款及隱私權政策</p>
+                </div>
+
+                <!-- 錯誤跳提醒設定 alert -->
+                <div id="info_bar" class="alert alert-danger col-8 mx-auto my-4 py-3" role="alert" style="display: none">
                 </div>
 
                 <div class="modbutton text-center col-xl-8 col-12">
                     <div class="okbutton col-xl-6 col-10 d-flex">
                         <button class="modify1 col-5 btn btn-primary">取消註冊</button>
-                        <button type="submit" id="submit" class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成註冊</button>
+
+                        <button type="submit" id="submit" class="modify2 col-5 btn btn-primary">完成註冊</button>
                     </div>
                 </div>
             </form>
@@ -170,7 +184,10 @@
     const name = $('#name');
     const phone = $('#phone');
     const intro = $('#intro');
-
+    const checkbox = $('#checkbox');
+    $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+        location.href = '3_B2B-index.php';
+    });
 
     function checkForm() {
         // 呼叫的時候先清掉其他警告
@@ -188,6 +205,8 @@
             // 這邊設定下面small的小警告出現的文字
             // 小警告的位置是name的next (JQ select注意！)
             name.closest('.inputform').addClass('error')
+            name.next().text('* 此欄位為必填, 請填上主辦單位名稱')
+
             // name.closest('.input-wrap').find(small).text('請填寫正確姓名')
         } else {
             name.closest('.inputform').removeClass('error')
@@ -197,6 +216,7 @@
         if (phone.val().length < 10) {
             isPass = false;
             phone.closest('.inputform').addClass('error');
+            phone.next().text('* 此欄位為必填, 請填上聯絡電話')
         } else {
             phone.closest('.inputform').removeClass('error')
             phone.closest('.inputform').addClass('success');
@@ -207,6 +227,40 @@
         } else {
             intro.closest('.inputform').removeClass('success')
             intro.closest('.inputform').addClass('error');
+        }
+        if (!checkbox.prop('checked')) {
+            isPass = false;
+            alert('需同意 Kunsthaus 服務及隱私權政策才能註冊成為會員唷!');
+        } else {
+
+            $.post('3_B2B-sign-in-api.php', $(document.b2b_form).serialize(), function(data) {
+                console.log(data);
+                // $('#exampleModalCenter').modal('show');
+                // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+                //     location.href = '1_member-login.php'
+                // })
+                // return;
+
+                if (data.success) {
+                    // info_bar
+                    //     .removeClass('alert-danger')
+                    //     .addClass('alert-success')
+                    //     .text('完成新增');
+                    $('#exampleModalCenter').modal('show');
+
+                } else {
+                    info_bar
+                        // .removeClass('alert-success')
+                        .addClass('alert-danger')
+                        .text(data.error || '新增失敗');
+
+                    info_bar.slideDown();
+
+                    setTimeout(function() {
+                        info_bar.slideUp();
+                    }, 2000);
+                }
+            }, 'json');
         }
     }
 </script>
