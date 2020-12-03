@@ -1,6 +1,10 @@
-* {
+/* * {
   outline: 1px solid red;
+} */
+button:focus {
+  box-shadow: none !important;
 }
+
 body {
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
@@ -58,7 +62,8 @@ textarea:focus {
 }
 
 .people {
-  margin: 40px auto 0;
+  margin-top: 40px;
+  margin-left: 40px;
   position: relative;
 }
 
@@ -80,8 +85,8 @@ textarea:focus {
   background-color: #f1f9ff;
   border: 3px solid #000;
   position: absolute;
-  top: 250px;
-  right: 240px;
+  top: 380px;
+  right: 420px;
 }
 
 .inputform {
@@ -130,14 +135,26 @@ label {
   color: #ff0000;
 }
 
-.trouble2 {
-  /* display: none; */
+.inputform.error .trouble2 {
+  color: #ff0000;
+}
+
+small.trouble2 {
+  color: #ff0000;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+  text-align: end;
+}
+
+/* .trouble2 {
+  display: none;
   display: block;
   margin-top: 5px;
   text-align: end;
   opacity: 0;
   color: #ff1000;
-}
+} */
 
 .inputbox {
   margin-top: 12px;
@@ -156,10 +173,12 @@ label {
 textarea {
   margin-top: 12px;
   resize: none;
+  width: 100%;
   border: 3px solid #000;
 }
 
 .wortcount {
+  display: block;
   margin-top: 5px;
   text-align: end;
 }
@@ -299,7 +318,7 @@ button:disabled {
     background-color: #f1f9ff;
     border: 3px solid #000;
     position: absolute;
-    top: 250px;
+    top: 380px;
     right: 40px;
   }
 

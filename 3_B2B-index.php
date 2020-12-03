@@ -1,6 +1,12 @@
 <?php $title = 'KunstHaus | 廠商會員中心首頁'; ?>
 
-<?php include __DIR__ . '/1_parts/0_config.php'; ?>
+<?php include __DIR__ . '/1_parts/0_config.php';
+// 判斷是否登入
+// if (!isset($_SESSION['vendor'])) {
+//     header('Location: 3_B2B-sign-in.php');
+//     exit;
+// } 
+?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
@@ -19,6 +25,7 @@
                     </svg>
                 </div>
                 <p class="organizer">主辦單位名稱</p>
+                <a href="3_B2B-member-profile.php">檢視主辦單位</a>
             </div>
             <div class="indexcard">
                 <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">
@@ -121,7 +128,7 @@
                     <p class="eventcardtext">快來辦一場精彩的活動吧！</p>
                     <div class="modbutton text-center">
                         <button class="modify btn btn-primary" onclick="location.href='3_B2B-create-event.php'">上架活動</button>
-                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-event-manage.php'">活動修改</button>
+                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-event-manage.php'">活動管理</button>
                     </div>
                 </div>
             </div>
@@ -206,7 +213,13 @@
             </div>
         </div>
         <div class="slogan">
-            <p>讓生活因<span class="event">活動</span>而生動</p>
+            <p class="word-wrap">活動可以為您帶來
+                <span class="word wisteria">快樂</span>
+                <span class="word belize">知識</span>
+                <span class="word pomegranate">驚奇</span>
+                <span class="word green">創造</span>
+                <span class="word midnight">活力</span>
+            </p>
         </div>
     </div>
 </div>
