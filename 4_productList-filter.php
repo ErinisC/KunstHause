@@ -79,7 +79,7 @@ foreach ($cate as $k => $c) {
                     <div class="accordion" id="accordionExample">
 
                         <!-- 篩選一 -->
-                        <div class="filter-btn card" data-sid="0">
+                        <div class="filter-btn card area_item" data-sid="0">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -91,10 +91,10 @@ foreach ($cate as $k => $c) {
 
                             <!-- cate -->
                             <?php foreach ($cate as $k => $c) : ?>
-                                <div class="filter-btn card" data-sid="<?= $c['sid'] ?>">
-                                    <div class="card-header" id="headingOne">
+                                <div class="filter-btn card area_item" data-sid="<?= $c['sid'] ?>">
+                                    <div class="card-header" id="headingOne<?= $c['sid'] ?>">
                                         <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<?= $c['sid'] ?>" aria-expanded="true" aria-controls="collapseOne<?= $c['sid'] ?>">
                                                 <?= $c['categories'] ?>
                                             </button>
                                         </h2>
@@ -102,10 +102,10 @@ foreach ($cate as $k => $c) {
 
                                     <!-- dropdown -->
 
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div id="collapseOne<?= $c['sid'] ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 
                                         <?php foreach ($c['children'] as $c2) : ?>
-                                            <div class="card-body">
+                                            <div class="card-body area_item" data-sid="<?= $c2['sid'] ?>">
                                                 <?= $c2['categories'] ?>
                                             </div>
                                         <?php endforeach; ?>
@@ -117,56 +117,7 @@ foreach ($cate as $k => $c) {
                             <?php endforeach; ?>
                         </div>
 
-                        <!-- 篩選二 -->
-                        <div class="btn-datepicker my-3">
-                            <div class="input-group">
-                                <!-- <span class="input-group-addon col-2 p-0 m-auto text-center">
-                                <i class="fas fa-calendar-alt"></i>
-                            </span> -->
-                                <input type="text" class="col-12" readonly="readonly" placeholder="篩選活動日期">
-                                <input type="date" class="w-100">
-                            </div>
-                        </div>
 
-
-                        <!-- 篩選三 -->
-                        <div class="filter-btn card" data-sid="0">
-                            <div class="card-header" id="headingOne">
-                                <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        所有類別
-                                    </button>
-                                </h2>
-                            </div>
-
-
-                            <!-- cate -->
-                            <?php foreach ($cate as $k => $c) : ?>
-                                <div class="filter-btn card" data-sid="<?= $c['sid'] ?>">
-                                    <div class="card-header" id="headingOne">
-                                        <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <?= $c['categories'] ?>
-                                            </button>
-                                        </h2>
-                                    </div>
-
-                                    <!-- dropdown -->
-
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-
-                                        <?php foreach ($c['children'] as $c2) : ?>
-                                            <div class="card-body">
-                                                <?= $c2['categories'] ?>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-
-
-                                </div>
-
-                            <?php endforeach; ?>
-                        </div>
 
                     </div>
                 </div>
@@ -263,6 +214,9 @@ foreach ($cate as $k => $c) {
             // slice是不要前面的＃
             let u = location.hash.slice(1);
             console.log(u);
+            // if (u == '2') {
+            //     '5,6,7'
+            // }
             getProductData(u);
 
 
@@ -277,7 +231,8 @@ foreach ($cate as $k => $c) {
         // JQ寫法抓sid，這邊要挪到最上面宣告，因為中間改選tag時會用到
         const cate_btns = $('.filter-btn');
         cate_btns.on('click', function(event) {
-            const sid = $(this).attr('data-sid') * 1;
+            const sid = $(event.target).closest('.area_item').attr('data-sid')
+            // const sid = $(this).attr('data-sid') * 1;
             console.log(`sid: ${sid}`);
             location.href = "#" + sid;
 

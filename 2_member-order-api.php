@@ -6,7 +6,6 @@ $status = urldecode(isset($_GET['order_status']) ? $_GET['order_status'] : 0);
 $member_sid = intval($_SESSION['user']['sid']);
 $s_sql = "SELECT d.*, o.* FROM `order_details` d JOIN `orders` o WHERE `member_sid`=$member_sid";
 $s_rows = $pdo->query($s_sql)->fetchAll();
-
 // echo json_encode($s_rows); 
 
 // WHERE `member_sid`=$member_sid

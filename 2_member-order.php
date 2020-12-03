@@ -27,7 +27,6 @@ foreach ($o_rows as $o) {
     $order_ids[] = $o['sid'];
 }
 
-
 $d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_id
 WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
