@@ -118,34 +118,35 @@ foreach ($d_rows as $d) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                                <div class="card-kv position-relative">
-                                    <img src="/KunstHause/imgs/event/event-sm/TPE-22.jpg">
-                                    <div class="time col-4 position-absolute mt-3">
-                                        <p class="my-2">2021.01.17-2021-01.17</p>
-                                    </div>
+                        </div>
+                        <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
+                            <div class="card-kv position-relative">
+                                <img src="/KunstHause/imgs/event/event-sm/TPE-22.jpg">
+                                <div class="time col-4 position-absolute mt-3">
+                                    <p class="my-2">2021.01.17-2021-01.17</p>
                                 </div>
-                                <div class="card-body d-flex p-0 w-100">
-                                    <div class="card-info position-relative col-8">
-                                        <div class="event-name my-2">
-                                            <p>獨立人種</p>
-                                        </div>
-                                        <div class="event-location my-2">【公館河岸留言】</div>
-                                        <!-- 收藏 -->
-                                        <a href="#" class="like-link position-absolute">
-                                            <i class="like far fa-heart"></i>
-                                        </a>
+                            </div>
+                            <div class="card-body d-flex p-0 w-100">
+                                <div class="card-info position-relative col-8">
+                                    <div class="event-name my-2">
+                                        <p>獨立人種</p>
                                     </div>
-                                    <div class="card-price col-4">
-                                        <div class="discount mt-3">
-                                            <p>優惠價</p>
-                                        </div>
-                                        <div class="price my-2">$</div>
+                                    <div class="event-location my-2">【公館河岸留言】</div>
+                                    <!-- 收藏 -->
+                                    <a href="#" class="like-link position-absolute">
+                                        <i class="like far fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="card-price col-4">
+                                    <div class="discount mt-3">
+                                        <p>優惠價</p>
                                     </div>
+                                    <div class="price my-2">$</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                     <div class="c-row2 d-flex justify-content-center my-5" style=" flex-wrap:wrap">
 
@@ -201,7 +202,6 @@ foreach ($d_rows as $d) {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="view-more mt-4">
@@ -319,7 +319,7 @@ foreach ($d_rows as $d) {
                                         </div>
                                         <div class="qr-code mr-2">
                                             <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                                <img src="<?= WEB_ROOT ?>/KunstHause/imgs/member/qr-code.svg" alt="">
+                                                <img src="<?= WEB_ROOT ?>/imgs/member/qr-code.svg" alt="">
                                             </div>
                                         </div>
                                     </div>
