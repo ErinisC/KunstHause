@@ -15,6 +15,9 @@ body {
   background-color: #002c80;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
+  width: 100vw;
+  /* overflow: hidden; */
+  position: relative;
 }
 
 /* 大眼睛css */
@@ -197,13 +200,6 @@ body {
 
 /* 變形怪 css */
 
-.monster {
-  width: 100vw;
-  /* overflow: hidden; */
-  position: relative;
-  /* height: 10px; */
-}
-
 .c {
   width: 30vh;
   height: 30vh;
@@ -211,7 +207,7 @@ body {
   bottom: -16.6666666667vh;
   left: 0;
   border-radius: 43% 40% 43% 40%;
-  background: #f3655b;
+  background: #d64e42;
   -webkit-animation: bounce 1s infinite alternate, wave 2s infinite linear,
     waking 7s infinite alternate linear;
   animation: bounce 1s infinite alternate, wave 2s infinite linear,
@@ -336,6 +332,7 @@ body {
   padding-top: 4rem;
   margin-top: 10rem;
   margin-bottom: 6rem;
+  z-index: 999;
 }
 
 .g-clip {

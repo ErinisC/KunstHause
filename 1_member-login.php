@@ -24,7 +24,11 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
 <div class="container">
     <div class="row">
-
+        <div class="c"></div>
+        <div class="c-c">
+            <div class="c-e"></div>
+            <div class="c-e"></div>
+        </div>
 
         <!-- 大眼睛 -->
         <!-- <div class="e-c">
@@ -154,17 +158,6 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 </div>
 
 
-<div class="monster">
-    <!-- 變形怪 -->
-    <div class="c"></div>
-    <div class="c-c">
-        <div class="c-e"></div>
-        <div class="c-e"></div>
-    </div>
-</div>
-
-
-
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
@@ -205,7 +198,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     setTimeout(function() {
                         location.href = '4_productList.php';
                     }, 2000);
-                    // <?= $gotoURL ?>
+
 
                 } else {
                     info_bar
