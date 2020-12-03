@@ -31,17 +31,20 @@ foreach ($o_rows as $o) {
 // event_name, p.sid, p.picture
 
 $d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
-JOIN `products` p ON p.sid=d.product_id
-WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
+JOIN `products` p ON p.sid=d.product_id  
+WHERE d.`order_id` IN (%s) ORDER BY p.`start_datetime` DESC", implode(',', $order_ids));
 
+// echo $d_sql;
+// exit;
 $d_rows = $pdo->query($d_sql)->fetchAll();
 
 // 把這張表用foreach取成object
+/*
 $eventData = [];
 foreach ($d_rows as $d) {
     $order_ids[] = $d['sid'];
 }
-
+*/
 ?>
 
 
@@ -76,7 +79,7 @@ foreach ($d_rows as $d) {
                     <img src="/KunstHause/imgs/member_imgs/member_14.jpg">
                 </div>
 
-                <div class="edit-member pt-5">
+                <div class="edit-member">
                     <p>Hi 小米
                         <i class="fas fa-edit"></i>
                         下一場活動要去哪呢?
@@ -96,7 +99,7 @@ foreach ($d_rows as $d) {
                         <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
                                 <img src="/KunstHause/imgs/event/event-sm/TPE-26.jpg">
-                                <div class="time col-4 position-absolute">
+                                <div class="time col-4 position-absolute mt-3">
                                     <p class="my-2">2021.03.20-2021.03.20</p>
                                 </div>
                                 <div class="card-body d-flex p-0 w-100">
@@ -118,34 +121,35 @@ foreach ($d_rows as $d) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                                <div class="card-kv position-relative">
-                                    <img src="/KunstHause/imgs/event/event-sm/TPE-22.jpg">
-                                    <div class="time col-4 position-absolute mt-3">
-                                        <p class="my-2">2021.01.17-2021-01.17</p>
-                                    </div>
+                        </div>
+                        <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
+                            <div class="card-kv position-relative">
+                                <img src="/KunstHause/imgs/event/event-sm/TPE-22.jpg">
+                                <div class="time col-4 position-absolute mt-3">
+                                    <p class="my-2">2021.01.17-2021-01.17</p>
                                 </div>
-                                <div class="card-body d-flex p-0 w-100">
-                                    <div class="card-info position-relative col-8">
-                                        <div class="event-name my-2">
-                                            <p>獨立人種</p>
-                                        </div>
-                                        <div class="event-location my-2">【公館河岸留言】</div>
-                                        <!-- 收藏 -->
-                                        <a href="#" class="like-link position-absolute">
-                                            <i class="like far fa-heart"></i>
-                                        </a>
+                            </div>
+                            <div class="card-body d-flex p-0 w-100">
+                                <div class="card-info position-relative col-8">
+                                    <div class="event-name my-2">
+                                        <p>獨立人種</p>
                                     </div>
-                                    <div class="card-price col-4">
-                                        <div class="discount mt-3">
-                                            <p>優惠價</p>
-                                        </div>
-                                        <div class="price my-2">$</div>
+                                    <div class="event-location my-2">【公館河岸留言】</div>
+                                    <!-- 收藏 -->
+                                    <a href="#" class="like-link position-absolute">
+                                        <i class="like far fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="card-price col-4">
+                                    <div class="discount mt-3">
+                                        <p>優惠價</p>
                                     </div>
+                                    <div class="price my-2">$</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
 
                     <div class="c-row2 d-flex justify-content-center my-5" style=" flex-wrap:wrap">
 
@@ -201,7 +205,6 @@ foreach ($d_rows as $d) {
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="view-more mt-4">
@@ -286,47 +289,51 @@ foreach ($d_rows as $d) {
                 <?php else : ?>
 
 
-                    <?php foreach ($o_rows as $o) : ?>
-                        <?php foreach ($d_rows as $d) : ?>
-                            <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
-                                <?php if ($o['sid'] == $d['order_id']) : ?>
-                                    <div class="t-detail col-lg-9 d-flex p-0">
-                                        <div class="ticket-kv col-lg-4 p-0 mr-3">
-                                            <img class="event-sm-img w-100 p-0" src="<?= WEB_ROOT ?>/KunstHause/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
-                                        </div>
-                                        <div class="main-info">
-                                            <div class="event-title my-4">
-                                                <p class="event-name mb-2"><?= $d['event_name'] ?></p>
-                                                <p class="price mb-2">單價$<?= $d['price'] ?></p>
-                                            </div>
-                                            <div class="sub-info my-4">
-                                                <p class="date mb-2"><?= $d['start-datetime'] ?> ~ <?= $d['end-datetime'] ?></p>
-                                                <p class="number mb-2">訂單編號:<?= $d['order_id'] ?></p>
-                                                <p class="pay mb-2">付款方式:<?= $d['pay_way'] ?></p>
-                                                <p class="total mb-2">訂單總額:<?= $o['total_price'] ?></p>
-                                                <p class="status mb-2">訂單狀態:<?= $d['order_status'] ?></p>
-                                            </div>
-                                        </div>
+                    <?php // foreach ($o_rows as $o) : 
+                    ?>
+                    <?php foreach ($d_rows as $d) : ?>
+                        <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
+                            <?php // if ($o['sid'] == $d['order_id']) : 
+                            ?>
+                            <div class="t-detail col-lg-9 d-flex p-0">
+                                <div class="ticket-kv col-lg-4 p-0 mr-3">
+                                    <img class="event-sm-img w-100 p-0" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                                </div>
+                                <div class="main-info">
+                                    <div class="event-title my-4">
+                                        <p class="event-name mb-2"><?= $d['event_name'] ?></p>
+                                        <p class="price mb-2">單價$<?= $d['price'] ?></p>
                                     </div>
-                                    <div class="edit-area d-flex">
-                                        <div class="e-ticket pt-3 mt-3">
-                                            <div class="delete m-3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal">
-                                                <img src="/KunstHause/imgs/member/cancel.svg">
-                                            </div>
-                                            <div class="feedback m-3" type="button">
-                                                <img src="/KunstHause/imgs/member/feedback.svg">
-                                            </div>
-                                        </div>
-                                        <div class="qr-code mr-2">
-                                            <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                                <img src="<?= WEB_ROOT ?>/KunstHause/imgs/member/qr-code.svg" alt="">
-                                            </div>
-                                        </div>
+                                    <div class="sub-info my-4">
+                                        <p class="date mb-2"><?= $d['start-datetime'] ?> ~ <?= $d['end-datetime'] ?></p>
+                                        <p class="number mb-2">訂單編號:<?= $d['order_id'] ?></p>
+                                        <p class="pay mb-2">付款方式:<?= $d['pay_way'] ?></p>
+                                        <p class="total mb-2">訂單總額:<?= $o['total_price'] ?></p>
+                                        <p class="status mb-2">訂單狀態:<?= $d['order_status'] ?></p>
                                     </div>
-                                <?php endif; ?>
+                                </div>
                             </div>
-                        <?php endforeach; ?>
+                            <div class="edit-area d-flex">
+                                <div class="e-ticket pt-3 mt-3">
+                                    <div class="delete m-3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal">
+                                        <img src="/KunstHause/imgs/member/cancel.svg">
+                                    </div>
+                                    <div class="feedback m-3" type="button">
+                                        <img src="/KunstHause/imgs/member/feedback.svg">
+                                    </div>
+                                </div>
+                                <div class="qr-code mr-2">
+                                    <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                                        <img src="<?= WEB_ROOT ?>/imgs/member/qr-code.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <?php // endif; 
+                            ?>
+                        </div>
                     <?php endforeach; ?>
+                    <?php // endforeach; 
+                    ?>
                 <?php endif; ?>
 
 

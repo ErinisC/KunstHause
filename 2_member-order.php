@@ -27,19 +27,14 @@ foreach ($o_rows as $o) {
     $order_ids[] = $o['sid'];
 }
 
-// event_name, p.sid, p.picture
 
 $d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_id
 WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
-
-// 把這張表用foreach取成object
-$eventData = [];
-foreach ($d_rows as $d) {
-    $order_ids[] = $d['sid'];
-}
+// echo json_encode($d_rows);
+// exit;
 
 // let eventData = {
 //     1:{
@@ -53,24 +48,6 @@ foreach ($d_rows as $d) {
 // }
 // ${eventData[a['order-id']].eventName}
 // ${eventData[a['picture']].eventName}
-
-
-
-
-// echo json_encode([
-//     'orders' => $o_rows,
-//     'details' => $d_rows,
-// ]);
-// exit;
-
-
-// 訂單狀態
-// 成功取出值的ajax寫法
-$status = isset($_GET['order_status']) ? intval($_GET['order_status']) : 0;
-$s_sql = "SELECT * FROM order_details";
-$s_rows = $pdo->query($s_sql)->fetchAll();
-// echo json_encode($s_rows);
-// exit;
 
 ?>
 
@@ -90,18 +67,18 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title2.svg" alt="">
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
-                <button type="button" class="status-btn btn-s" data-sid="已付款">
-                   已付款
-                </button>
-                <button type="button" class="status-btn btn-s" data-sid="未付款">
-                   未付款
-                </button>
-                <button type="button" class="status-btn btn-s" data-sid="已取消">
-                   已取消
-                </button>
-                <button type="button" class="status-btn btn-s" data-sid="已完成">
-                   已完成
-                </button>
+            <button type="button" class="status-btn btn-s" data-sid="已付款">
+                已付款
+            </button>
+            <button type="button" class="status-btn btn-s" data-sid="未付款">
+                未付款
+            </button>
+            <button type="button" class="status-btn btn-s" data-sid="已取消">
+                已取消
+            </button>
+            <button type="button" class="status-btn btn-s" data-sid="已完成">
+                已完成
+            </button>
         </div>
     </div>
 </div>
@@ -131,10 +108,10 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                                 <p class="price mb-2">單價$ <?= $d['price'] ?></p>
                             </div>
                             <div class="sub-info my-4">
-                                <p class="date mb-2"><?= $d['start-datetime'] ?> ~ <?= $d['end-datetime'] ?></p>
+                                <p class="date mb-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
                                 <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
                                 <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
-                                <p class="total-price mb-2">訂單總額：<?= $o['total_price'] ?></p>
+                                <p class="total-price mb-2">票券數量：<?= $o['total_price'] ?></p>
                                 <p class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
                             </div>
                         </div>
@@ -257,10 +234,11 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
                                 <p class="price mb-2">單價$ ${a['price']}</p>
                             </div>
                             <div class="sub-info my-4">
-                                <p class="date mb-2">${a['start-datetime']} ~ ${a['end-datetime']}</p>
+                                <p class="date mb-2">${a['start_datetime']} ~ ${a['end_datetime']}</p>
                                 <p class="order-sid mb-2">訂單編號：${a['order_id']}</p>
                                 <p class="pay-method mb-2">付款方式：${a['pay_way'] }</p>
-                                <p class="total-price mb-2">訂單總額：${a['event_amount'] }</p>
+                                <p class="total-price mb-2">票券數量：${a['event_amount'] }</p>
+                                <p class="total-price mb-2">票券總額：${a['event_amount']* a['price']}</p>
                                 <p class="order-status mb-2">訂單狀態：${a['order_status'] }</p>
                             </div>
                         </div>
@@ -321,7 +299,6 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
             $('.order-status-list').html(str);
         }, 'json');
     }
-    
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
