@@ -3,8 +3,6 @@
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
 
-
-
 <?php
 
 // 選擇資料庫要的資料表，用count找出總共的幾數
