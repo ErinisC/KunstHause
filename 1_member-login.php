@@ -21,8 +21,21 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
 
 
+
 <div class="container">
     <div class="row">
+        <div class="c"></div>
+        <div class="c-c">
+            <div class="c-e"></div>
+            <div class="c-e"></div>
+        </div>
+
+        <!-- 大眼睛 -->
+        <!-- <div class="e-c">
+            <div class="e"></div>
+            <div class="e"></div>
+        </div> -->
+
 
         <!-- login list Area -->
 
@@ -185,7 +198,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     setTimeout(function() {
                         location.href = '4_productList.php';
                     }, 2000);
-                    // <?= $gotoURL ?>
+
 
                 } else {
                     info_bar

@@ -11,11 +11,136 @@ body {
   background-color: #002c80;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
+
+  /* width: 100vw; */
+  /* overflow: hidden; */
+  /* position: relative; */
 }
 
-.left-control{
-    margin-top: 10rem;
-}
+/* 變形蟲css */
+/* .c {
+    width: 32vh;
+    height: 32vh;
+    position: absolute;
+    bottom: -16.6666666667vh;
+    left: 0;
+    border-radius: 43% 40% 43% 40%;
+    background: #d1481e;
+    -webkit-animation: bounce 1s infinite alternate, wave 2s infinite linear,
+      waking 7s infinite alternate linear;
+    animation: bounce 1s infinite alternate, wave 2s infinite linear,
+      waking 7s infinite alternate linear;
+  }
+  
+  .c-e {
+    width: 5vh;
+    height: 5vh;
+    border: 1.3043478261vh solid #fff;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    border-radius: 50%;
+    -webkit-animation: blink 4s infinite linear;
+    animation: blink 4s infinite linear;
+  }
+  
+  .c-c {
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    width: 24vh;
+    bottom: 3vh;
+    z-index: 1;
+    left: 7.5vh;
+    padding: 0 0.8vw;
+    z-index: 1;
+    -webkit-animation: waking 7s infinite alternate linear;
+    animation: waking 7s infinite alternate linear;
+  }
+  
+  @-webkit-keyframes wave {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes wave {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @-webkit-keyframes waking {
+    100% {
+      left: calc(100% - 30vh);
+    }
+  }
+  
+  @keyframes waking {
+    100% {
+      left: calc(100% - 30vh);
+    }
+  }
+  
+  @-webkit-keyframes bounce {
+    100% {
+      bottom: -20vh;
+    }
+  }
+  
+  @keyframes bounce {
+    100% {
+      bottom: -20vh;
+    }
+  }
+  
+  @-webkit-keyframes blink {
+    0%,
+    5%,
+    30%,
+    37%,
+    100% {
+      height: 5vh;
+      border-width: 1.3636363636vh;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    3%,
+    33% {
+      height: 0;
+      border-width: 0;
+      -webkit-transform: translateY(-3vh);
+      transform: translateY(-3vh);
+    }
+  }
+  
+  @keyframes blink {
+    0%,
+    5%,
+    30%,
+    37%,
+    100% {
+      height: 5vh;
+      border-width: 1.3636363636vh;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    3%,
+    33% {
+      height: 0;
+      border-width: 0;
+      -webkit-transform: translateY(-3vh);
+      transform: translateY(-3vh);
+    }
+  } */
+
+
+
+/* test animation end */
 
 .banner img {
   width: 100%;

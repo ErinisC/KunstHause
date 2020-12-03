@@ -67,7 +67,7 @@
             </div>
 
             <div id="title-shape">
-                <p class="title blur">KunstHaus</p>
+                <p class="brand-title blur">KunstHaus</p>
             </div>
 
 

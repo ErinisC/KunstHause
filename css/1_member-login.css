@@ -6,12 +6,321 @@ html {
   font-size: 20px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   background-color: #002c80;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
+  width: 100vw;
+  /* overflow: hidden; */
+  position: relative;
 }
+
+/* 大眼睛css */
+/* 
+.e {
+  width: 20vw;
+  height: 20vw;
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: eye 3.5s infinite;
+}
+.e:after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+  background: #000;
+  animation: eyeglobe 17.5s infinite;
+}
+.e-c {
+  width: 80vw;
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+}
+@-moz-keyframes eye {
+  0%,
+  5%,
+  30%,
+  37%,
+  100% {
+    height: 20vw;
+    transform: translate3d(0, 0, 0);
+  }
+  3%,
+  33% {
+    height: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+@-webkit-keyframes eye {
+  0%,
+  5%,
+  30%,
+  37%,
+  100% {
+    height: 20vw;
+    transform: translate3d(0, 0, 0);
+  }
+  3%,
+  33% {
+    height: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+@-o-keyframes eye {
+  0%,
+  5%,
+  30%,
+  37%,
+  100% {
+    height: 20vw;
+    transform: translate3d(0, 0, 0);
+  }
+  3%,
+  33% {
+    height: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+@keyframes eye {
+  0%,
+  5%,
+  30%,
+  37%,
+  100% {
+    height: 20vw;
+    transform: translate3d(0, 0, 0);
+  }
+  3%,
+  33% {
+    height: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+@-moz-keyframes eyeglobe {
+  0%,
+  20% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  21%,
+  40%,
+  81%,
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  41%,
+  60% {
+    transform: translate3d(0%, -50%, 0);
+  }
+  61%,
+  80% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+@-webkit-keyframes eyeglobe {
+  0%,
+  20% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  21%,
+  40%,
+  81%,
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  41%,
+  60% {
+    transform: translate3d(0%, -50%, 0);
+  }
+  61%,
+  80% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+@-o-keyframes eyeglobe {
+  0%,
+  20% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  21%,
+  40%,
+  81%,
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  41%,
+  60% {
+    transform: translate3d(0%, -50%, 0);
+  }
+  61%,
+  80% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+@keyframes eyeglobe {
+  0%,
+  20% {
+    transform: translate3d(-100%, -50%, 0);
+  }
+  21%,
+  40%,
+  81%,
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+  }
+  41%,
+  60% {
+    transform: translate3d(0%, -50%, 0);
+  }
+  61%,
+  80% {
+    transform: translate3d(-50%, 0%, 0);
+  }
+} */
+
+/* 變形怪 css */
+
+.c {
+  width: 30vh;
+  height: 30vh;
+  position: absolute;
+  bottom: -16.6666666667vh;
+  left: 0;
+  border-radius: 43% 40% 43% 40%;
+  background: #d64e42;
+  -webkit-animation: bounce 1s infinite alternate, wave 2s infinite linear,
+    waking 7s infinite alternate linear;
+  animation: bounce 1s infinite alternate, wave 2s infinite linear,
+    waking 7s infinite alternate linear;
+}
+
+.c-e {
+  width: 5vh;
+  height: 5vh;
+  border: 1.3043478261vh solid #fff;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  border-radius: 50%;
+  -webkit-animation: blink 4s infinite linear;
+  animation: blink 4s infinite linear;
+}
+
+.c-c {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 24vh;
+  bottom: 3vh;
+  z-index: 1;
+  left: 7.5vh;
+  padding: 0 0.8vw;
+  z-index: 1;
+  -webkit-animation: waking 7s infinite alternate linear;
+  animation: waking 7s infinite alternate linear;
+}
+
+@-webkit-keyframes wave {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes waking {
+  100% {
+    left: calc(100% - 30vh);
+  }
+}
+
+@keyframes waking {
+  100% {
+    left: calc(100% - 30vh);
+  }
+}
+
+@-webkit-keyframes bounce {
+  100% {
+    bottom: -20vh;
+  }
+}
+
+@keyframes bounce {
+  100% {
+    bottom: -20vh;
+  }
+}
+
+@-webkit-keyframes blink {
+  0%,
+  5%,
+  30%,
+  37%,
+  100% {
+    height: 5vh;
+    border-width: 1.3636363636vh;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  3%,
+  33% {
+    height: 0;
+    border-width: 0;
+    -webkit-transform: translateY(-3vh);
+    transform: translateY(-3vh);
+  }
+}
+
+@keyframes blink {
+  0%,
+  5%,
+  30%,
+  37%,
+  100% {
+    height: 5vh;
+    border-width: 1.3636363636vh;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  3%,
+  33% {
+    height: 0;
+    border-width: 0;
+    -webkit-transform: translateY(-3vh);
+    transform: translateY(-3vh);
+  }
+}
+
+/* 登入表單css 開始 */
 
 .login-popup {
   margin: 2.5rem auto;
@@ -22,6 +331,8 @@ body {
   position: relative;
   padding-top: 4rem;
   margin-top: 10rem;
+  margin-bottom: 6rem;
+  z-index: 999;
 }
 
 .g-clip {
@@ -164,6 +475,10 @@ p {
       ),
       linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
     background-size: 0.75rem 0.75rem;
+  }
+
+  .monster {
+    display: none;
   }
 
   .login-popup {
