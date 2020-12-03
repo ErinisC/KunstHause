@@ -3,10 +3,13 @@
 $output = [];
 $status = urldecode(isset($_GET['order_status']) ? $_GET['order_status'] : 0);
 
-$s_sql = "SELECT * FROM order_details";
+$member_sid = intval($_SESSION['user']['sid']);
+$s_sql = "SELECT d.*, o.* FROM `order_details` d JOIN `orders` o WHERE `member_sid`=$member_sid";
 $s_rows = $pdo->query($s_sql)->fetchAll();
 
-$where = " WHERE 1 ";
+// echo json_encode($s_rows); 
+
+$where = " WHERE `member_sid`=$member_sid";
 if (!empty($status)) {
     $output['order_status'] = $status;
     $where .= " AND d.`order_status`= ". $pdo->quote($status);
