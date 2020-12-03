@@ -202,7 +202,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                 <p class="location">台灣台北市信義區松壽路22號5樓</p>
             </div>
             <div class="modal-footer">
-                <p class="attender w-100 text-center">參加人：<?= $d['name'] ?></p>
+                <p class="attender w-100 text-center">參加人：大米</p>
                 <p class="ticket-sid w-100 text-center">票券編號：1909050529332096708790</p>
             </div>
         </div>
@@ -298,6 +298,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             $('.order-status-list').html(str);
         }, 'json');
     }
+
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
