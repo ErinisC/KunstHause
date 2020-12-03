@@ -31,7 +31,7 @@ $o_stmt = $pdo->prepare($o_sql);
 $o_stmt->execute([
     $_SESSION['user']['sid'],
     $total,
-    $_SESSION['buy_info']['company'],
+    $_SESSION['buy_info']['company_name'],
     $_SESSION['buy_info']['tax-id-number'],
     $_SESSION['creditcard']['credit-number'],
     $_SESSION['creditcard']['valid-date'],

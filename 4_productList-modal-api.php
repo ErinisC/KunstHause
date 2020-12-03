@@ -163,7 +163,7 @@ if (empty($row)) {
 
             <div class="d-flex card-info m-3 align-items-center">
                 <i class="far fa-clock mr-2"></i>
-                活動日期： <?= $row['start-datetime'] ?>
+                活動日期： <?= $row['start_datetime'] ?>
             </div>
         </div>
 

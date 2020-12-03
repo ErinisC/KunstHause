@@ -1,5 +1,5 @@
 * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 html {
@@ -45,32 +45,146 @@ a:hover {
 }
 
 /* 麵包屑區塊 */
-.breadcrumb {
+/* .breadcrumb {
     background-color: transparent;
-
 }
-
 .breadcrumb-item a {
     color: white;
 }
-
 .breadcrumb-item a:hover {
     color: #FFC024;
     text-decoration: none;
 }
-
-
 .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
     color: white;
 }
-
 .breadcrumb-item.active {
     color: #FFC024;
-}
+} */
 
 /* 篩選區塊 */
 .btn-datepicker {
     background-color: #fff;
     border-radius: 3px;
+}
+
+/* 商品卡片 */
+.product-list .card {
+    background-color: transparent;
+    border: none;
+    transition: 1s;
+    /* opacity: 0; */
+}
+
+
+/* 翻轉卡片 */
+.flip-card-inner {
+    height: 300px;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover .time {
+    opacity: 0;
+}
+
+.flip-card-front,
+.flip-card-back {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #ffc024;
+    border: 3px solid black;
+    line-height: 1.5;
+}
+
+.flip-card-back .filp-title {
+    font-weight: 600;
+    background-color: #4336a3;
+    color: white;
+}
+
+.flip-card-back p {
+    height: 80%;
+    overflow: hidden;
+}
+
+
+/* 活動小卡圖片 */
+.card .img-wrap {
+    height: 300px;
+    border: 3px solid black;
+}
+
+.img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-list .card .time {
+    bottom: 0;
+    background-color: #ffc024;
+    height: 50px;
+    border-radius: 3px;
+    transition: 0.8s;
+}
+
+.product-list .card-body {
+    border: 3px solid black;
+    background-color: white;
+    box-shadow: 6px 6px black;
+    color: black;
+}
+
+.card-body .card-price {
+    background-color: #4336a3;
+    color: white;
+    cursor: pointer;
+}
+
+.event-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.like-link {
+    bottom: 0;
+    right: 10px;
+    font-size: 2rem;
+}
+
+.like.liked {
+    color: #ed5b4c;
+    font-weight: 900;
+}
+
+/* 小卡彈跳蓋板 */
+.modal-content {
+    border: 3px solid black;
+    border-radius: 0;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-body {
+    height: 600px;
 }
