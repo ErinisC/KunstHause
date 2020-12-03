@@ -29,7 +29,7 @@ foreach ($o_rows as $o) {
 
 $d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_id
-WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
+WHERE d.`order_id` IN (%s) ORDER BY p.`start_datetime` DESC", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
 // echo json_encode($d_rows);
@@ -94,10 +94,10 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 <?php else : ?>
 
     <div class="container order-status-list">
-        <?php foreach ($o_rows as $o) : ?>
+        <?php //foreach ($o_rows as $o) : ?>
             <?php foreach ($d_rows as $d) : ?>
                 <div class="row order mb-5 align-content-center">
-                    <?php if ($o['sid'] == $d['order_id']) : ?>
+                    <?php //if ($o['sid'] == $d['order_id']) : ?>
                         <div class="col-lg-3 event-img p-0">
                             <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                         </div>
@@ -111,7 +111,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                                 <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
                                 <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
                                 <p class="total-price mb-2">票券數量：<?= $o['total_price'] ?></p>
-                                <p class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
+                                <p id="order-status" class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
                             </div>
                         </div>
                         <div class="col-lg-1 sm-none"></div>
@@ -126,13 +126,11 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                                 </button>
                             </div>
                         </div>
-                    <?php endif; ?>
+                    <?php //endif; ?>
                 </div>
             <?php endforeach; ?>
-        <?php endforeach; ?>
+        <?php //endforeach; ?>
     </div>
-
-
 <?php endif; ?>
 
 <!--modal cancel-->
@@ -152,7 +150,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                     按下確認鍵確定取消訂單。</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal">確認取消</button>
+                <button type="button" id="cancel-btn" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal">確認取消</button>
                 <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
             </div>
         </div>
@@ -297,6 +295,14 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             console.log('str', str);
             $('.order-status-list').html(str);
         }, 'json');
+    }
+
+    
+    function delete_it(order_id){
+        console.log('delete')
+        if(confirm(`確定要刪除編號為 ${order_id} 的資料嗎?`)){
+            location.href = "ab-del.php?sid=" + order_id;
+        }
     }
 
 </script>
