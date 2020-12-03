@@ -183,7 +183,7 @@ if (empty($row)) {
                     </span>
 
                     <!-- 中間數量 -->
-                    <input type="text" id='product-quantity' class="col-9" value="1">
+                    <input type="text" id='product-quantity' class="text-center col-9" value="1">
 
                     <span class="add">
                         <button class="btn btn-info">

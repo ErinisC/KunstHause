@@ -32,6 +32,11 @@ foreach ($cate as $k => $c) {
 };
 // echo json_encode($cate, JSON_UNESCAPED_UNICODE);
 // exit;
+
+
+// 拿種類的篩選層
+
+
 ?>
 
 
@@ -70,9 +75,10 @@ foreach ($cate as $k => $c) {
             <div class="col-3">
                 <div class="filter-container">
 
-                    <!-- 篩選一 -->
+                    <!-- 篩選 -->
                     <div class="accordion" id="accordionExample">
 
+                        <!-- 篩選一 -->
                         <div class="filter-btn card" data-sid="0">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
@@ -120,9 +126,48 @@ foreach ($cate as $k => $c) {
                                 <input type="text" class="col-12" readonly="readonly" placeholder="篩選活動日期">
                                 <input type="date" class="w-100">
                             </div>
-
-
                         </div>
+
+
+                        <!-- 篩選三 -->
+                        <div class="filter-btn card" data-sid="0">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        所有類別
+                                    </button>
+                                </h2>
+                            </div>
+
+
+                            <!-- cate -->
+                            <?php foreach ($cate as $k => $c) : ?>
+                                <div class="filter-btn card" data-sid="<?= $c['sid'] ?>">
+                                    <div class="card-header" id="headingOne">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <?= $c['categories'] ?>
+                                            </button>
+                                        </h2>
+                                    </div>
+
+                                    <!-- dropdown -->
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+
+                                        <?php foreach ($c['children'] as $c2) : ?>
+                                            <div class="card-body">
+                                                <?= $c2['categories'] ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+
+
+                                </div>
+
+                            <?php endforeach; ?>
+                        </div>
+
                     </div>
                 </div>
             </div>
