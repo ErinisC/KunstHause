@@ -2,8 +2,8 @@
 include __DIR__ . '/1_parts/0_config.php';
 
 
-$_SESSION['creditcard'] = $_POST;
+if (isset($_POST['name'])) {
+    $_SESSION['creditcard'] = $_POST;
+}
 
-
-$output['creditcard'] = $_SESSION['creditcard'];
-echo json_encode($output, JSON_UNESCAPED_UNICODE);
+echo json_encode($_SESSION['creditcard'], JSON_UNESCAPED_UNICODE);

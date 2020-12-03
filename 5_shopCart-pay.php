@@ -284,7 +284,7 @@
                                     <label for="credit-number">卡片號碼</label>
                                     <div class="input-box position-relative">
                                         <span id="generatecard">generate random</span>
-                                        <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="" pattern="[0-9]*" inputmode="numeric">
+                                        <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number">
                                         <!-- svg圖案 -->
                                         <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
                                         <!-- 信箱驗證 -->

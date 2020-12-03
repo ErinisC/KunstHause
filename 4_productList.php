@@ -244,7 +244,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             </div>
             <div class="row">
 
-
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
                     <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -255,7 +254,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                                 <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
                                     <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                                     <!-- 圖片上時間 -->
-                                    <div class="time position-absolute col-4 p-2"><?= $r['start-datetime'] ?></div>
+                                    <div class="time position-absolute col-4 p-2"><?= $r['start_datetime'] ?></div>
                                 </div>
 
                                 <!-- 翻轉卡片背面 -->
