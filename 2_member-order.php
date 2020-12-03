@@ -27,19 +27,14 @@ foreach ($o_rows as $o) {
     $order_ids[] = $o['sid'];
 }
 
-// event_name, p.sid, p.picture
 
 $d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_id
 WHERE d.`order_id` IN (%s)", implode(',', $order_ids));
 
 $d_rows = $pdo->query($d_sql)->fetchAll();
-
-// 把這張表用foreach取成object
-$eventData = [];
-foreach ($d_rows as $d) {
-    $order_ids[] = $d['sid'];
-}
+// echo json_encode($d_rows);
+// exit;
 
 // let eventData = {
 //     1:{
@@ -53,24 +48,6 @@ foreach ($d_rows as $d) {
 // }
 // ${eventData[a['order-id']].eventName}
 // ${eventData[a['picture']].eventName}
-
-
-
-
-// echo json_encode([
-//     'orders' => $o_rows,
-//     'details' => $d_rows,
-// ]);
-// exit;
-
-
-// 訂單狀態
-// 成功取出值的ajax寫法
-$status = isset($_GET['order_status']) ? intval($_GET['order_status']) : 0;
-$s_sql = "SELECT * FROM order_details";
-$s_rows = $pdo->query($s_sql)->fetchAll();
-// echo json_encode($s_rows);
-// exit;
 
 ?>
 
