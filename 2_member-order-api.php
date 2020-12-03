@@ -9,7 +9,8 @@ $s_rows = $pdo->query($s_sql)->fetchAll();
 
 // echo json_encode($s_rows); 
 
-$where = " WHERE `member_sid`=$member_sid";
+// WHERE `member_sid`=$member_sid
+$where = "WHERE 1";
 if (!empty($status)) {
     $output['order_status'] = $status;
     $where .= " AND d.`order_status`= ". $pdo->quote($status);
