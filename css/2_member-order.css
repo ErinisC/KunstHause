@@ -161,36 +161,6 @@ body.modal-open {
   background-color: transparent;
 }
 
-/* ----------pagination---------- */
-.pagination {
-  text-align: center;
-}
-
-.page-link {
-  background-color: transparent;
-  color: #fff;
-  border: none;
-}
-
-.page-link:hover {
-  background-color: #fff;
-  border: 3px solid black;
-}
-
-.page-item.active .page-link {
-  background-color: #ffc024;
-  color: #000;
-  border: 3px solid black;
-}
-
-.page-item.disabled .page-link {
-  background-color: transparent;
-}
-
-.page-link:focus {
-  box-shadow: none;
-}
-
 /* ----------modal---------- */
 .modal-dialog {
   top: 20vh;

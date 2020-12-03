@@ -15,7 +15,7 @@
     </div>
     <div class="row">
         <div class="col-lg-6 col-12">
-            <form class="service" action="POST" novalidate="novalidate">
+            <form class="service" novalidate="novalidate">
                 <div class="name d-flex mb-4">
                     <span class="label text-center">姓名</span>
                     <input name="your-name" class="inputbox" type="text" aria-required="true" maxlength="50" required>
@@ -34,7 +34,7 @@
                     </textarea>
                 </div>
                 <div class="buttons">
-                    <button type="submit" class="btn service-submit col-4 mr-2">寄送信件</button>
+                    <button type="button" class="btn service-submit col-4 mr-2" data-toggle="modal" data-target="#successModal">寄送信件</button>
                     <button type="reset" class="btn clear col-4">清除內容</button>
                 </div>
             </form>
@@ -77,7 +77,33 @@
 </div>
 <div class="space"></div>
 
-
+<!--modal success-->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content position-relative">
+            <div class="g-clip position-absolute">
+                <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
+            </div>
+            <div class="modal-header">
+                <div class="success-animation mx-auto mt-4">
+                    <svg class="checkmark success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark_circle_success" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark_check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" stroke-linecap="round" /></svg>
+                </div>
+            </div>
+            <div class="modal-body text-center">
+                <h2 class="thank-title">信件已發送成功</h2>
+                <p class="thank-mail">我們將盡快為您服務，<br>
+                    或於週一到週五9:00-18:00，<br>
+                    撥打02-2222-1111，<br>
+                    將有專人為您服務。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- JQ -->

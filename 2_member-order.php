@@ -223,7 +223,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         <div class="row order mb-5 align-content-center">
                     
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/${a['picture']}.jpg" alt="">
+                            <img class="event-sm-img w-100" src="imgs/event/event-sm/${a['picture']}.jpg" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">

@@ -18,11 +18,19 @@ body {
 
 @media (min-width: 992px) {
   .space {
-    height: 10rem;
+    height: 7rem;
   }
 
   .section-title img {
     width: 25vh;
+  }
+
+  .thank-title{
+    font-size: 1rem;
+  }
+  
+  .thank-mail{
+    font-size: 0.8rem;
   }
 }
 
@@ -39,9 +47,17 @@ body {
     width: 20vh;
   }
 
-  /* .sm-none{
+  .thank-title{
+    font-size: 1.4rem;
+  }
+  
+  .thank-mail{
+    font-size: 1rem;
+  }
+
+  .sm-none{
     display: none;
-  } */
+  }
 }
 
 /* ----------form---------- */
@@ -105,11 +121,68 @@ textarea {
 .btn:focus {
   box-shadow: none;
 }
+/* ----------modal---------- */
+.modal-dialog {
+  top: 20vh;
+}
+.modal-content {
+  border: 3px solid #000;
+  border-radius: 0%;
+}
+
+.g-clip {
+  top: -8%;
+}
+
+.g-clip img {
+  width: 70%;
+}
+.modal-header {
+  border: none;
+}
+
+.modal-title {
+  margin: 5% auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.modal-footer {
+  flex-direction: column;
+  border: none;
+}
+
+.modal-footer .btn {
+  border: 3px solid #000;
+  background-color: #ffc024;
+  border-radius: 0;
+  letter-spacing: 1.5px;
+  width: 50%;
+  margin: 10px 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2.55px;
+}
+
+.thank-title{
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.thank-mail{
+  line-height: 25px;
+}
 
 /* ----------animation---------- */
 .brand-title {
   text-align: center;
   font-size: 90px;
+  color: #fff;
 }
 
 #title-shape {
@@ -217,4 +290,114 @@ textarea {
 
 #shape-3 svg {
   fill: #168fa4;
+}
+
+/* ----------modal checkmark animation---------- */
+.checkmark_circle_success {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 5px;
+  stroke-miterlimit: 10;
+  stroke: #00c851;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark_circle_error {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 5px;
+  stroke-miterlimit: 10;
+  stroke: #ff4444;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 5px;
+  stroke: white;
+  stroke-miterlimit: 10;
+  margin: 5% auto;
+}
+
+.checkmark.success {
+  box-shadow: inset 0px 0px 0px #00c851;
+  animation: fillsuccess 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark.error {
+  box-shadow: inset 0px 0px 0px #ff4444;
+  animation: fillerror 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark_check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+.progress {
+  transform: rotate(-90deg);
+  stroke: black;
+}
+
+.progress circle {
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  animation: dash 1.5s infinite;
+}
+
+@keyframes dash {
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -130;
+  }
+}
+
+.progress {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+.progress.progress--thin {
+  left: auto;
+  right: 5%;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fillsuccess {
+  100% {
+    box-shadow: inset 0px 0px 0px 75px #00c851;
+  }
+}
+
+@keyframes fillerror {
+  100% {
+    box-shadow: inset 0px 0px 0px 75px #ff4444;
+  }
 }
