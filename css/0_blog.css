@@ -7,7 +7,7 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   background: #ffffff;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0),
+  background: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0),
     linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 0);
   background-size: 0.75rem 0.75rem;
 }
@@ -83,3 +83,31 @@ a:hover{
   background: #0000007c;
   width: 100%;
 }
+
+.sticker img{
+  width: 30%;
+}
+
+.s-01{
+  left: -30px;
+  top: 250px;
+}
+
+.s-02{
+  left: -50px;
+  top: 480px;
+  transform: rotate(25deg);
+}
+
+.s-03{
+  right: -330px;
+  top: 530px;
+  transform: rotate(10deg);
+}
+
+.s-04{
+  right: -550px;
+  top: 550px;
+  transform: rotate(-5deg);
+}
+

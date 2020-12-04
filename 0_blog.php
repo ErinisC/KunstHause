@@ -8,7 +8,23 @@
 
 <!--引入blog的css-->
 <link rel="stylesheet" href="./css/0_blog.css">
+
 <div class="space"></div>
+
+<!-- stickers -->
+<div class="sticker s-01 position-fixed">
+    <img src="<?= WEB_ROOT ?>imgs/blog/sticker-01.png" alt="">
+</div>
+<div class="sticker s-02 position-fixed">
+    <img src="<?= WEB_ROOT ?>imgs/blog/sticker-02.png" alt="">
+</div>
+<div class="sticker s-03 position-fixed">
+    <img src="<?= WEB_ROOT ?>imgs/blog/sticker-03.png" alt="">
+</div>
+<div class="sticker s-04 position-fixed">
+    <img src="<?= WEB_ROOT ?>imgs/blog/sticker-04.png" alt="">
+</div>
+
 
 <div class="container hero-article">
     <div class="row">
