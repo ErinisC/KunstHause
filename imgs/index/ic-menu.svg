@@ -1,16 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="242" height="48" viewBox="0 0 242 48">
-  <g id="ic-menu" transform="translate(2354 1982)">
-    <g id="Ellipse_355" data-name="Ellipse 355" transform="translate(-2354 -1982)" fill="#168fa4" stroke="#000" stroke-width="3">
-      <circle cx="24" cy="24" r="24" stroke="none"/>
-      <circle cx="24" cy="24" r="22.5" fill="none"/>
-    </g>
-    <g id="Ellipse_356" data-name="Ellipse 356" transform="translate(-2257 -1982)" fill="#168fa4" stroke="#000" stroke-width="3">
-      <circle cx="24" cy="24" r="24" stroke="none"/>
-      <circle cx="24" cy="24" r="22.5" fill="none"/>
-    </g>
-    <g id="Ellipse_357" data-name="Ellipse 357" transform="translate(-2160 -1982)" fill="#168fa4" stroke="#000" stroke-width="3">
-      <circle cx="24" cy="24" r="24" stroke="none"/>
-      <circle cx="24" cy="24" r="22.5" fill="none"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 242 48" style="enable-background:new 0 0 242 48;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:3;}
+</style>
+<g id="ic-menu" transform="translate(2354 1982)">
+	<g id="Ellipse_355" transform="translate(-2354 -1982)">
+		<circle cx="24" cy="24" r="24"/>
+		<circle class="st0" cx="24" cy="24" r="22.5"/>
+	</g>
+	<g id="Ellipse_356" transform="translate(-2257 -1982)">
+		<circle cx="24" cy="24" r="24"/>
+		<circle class="st0" cx="24" cy="24" r="22.5"/>
+	</g>
+	<g id="Ellipse_357" transform="translate(-2160 -1982)">
+		<circle cx="24" cy="24" r="24"/>
+		<circle class="st0" cx="24" cy="24" r="22.5"/>
+	</g>
+</g>
 </svg>
