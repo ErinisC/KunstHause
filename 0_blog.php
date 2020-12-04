@@ -242,6 +242,20 @@
     </div>
 </div>
 
+<div class="container feature-activityr">
+    <div class="row">
+        <div class="item col-lg-6 pl-0">
+            <h2>你可能會喜歡</h2>
+            <div class="thumbnail">
+                <a href="#">
+
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 
 

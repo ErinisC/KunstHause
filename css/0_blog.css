@@ -185,7 +185,7 @@ ul.issue-article-list {
   cursor: grab;
   overflow: hidden;
   width: 100%;
-  margin: 0 auto 3rem 0;
+  margin: 0 auto 1rem 0;
   padding: 25px 0;
 }
 
@@ -222,5 +222,8 @@ li.article .index {
 li.article .title {
   font: 500 1rem "Noto Sans TC";
   color: #000000;
-  
+}
+
+.issue{
+  border-bottom: 1px solid #000000;
 }
