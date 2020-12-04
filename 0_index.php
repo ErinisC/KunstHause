@@ -280,7 +280,9 @@
         <div class="row mt-5">
             <div class="col-lg-1 binding-ring"></div>
             <div class="col-lg-3 col-md-12">
-                <div class="section-title">新鮮事。</div>
+                <a href="0_blog.php">
+                    <div class="section-title">新鮮事。</div>
+                </a>
             </div>
             <div class="col-lg-3 col-md-12">
                 <div class="article-layout w-100 position-relative">
@@ -382,7 +384,6 @@
             </div>
         </div>
     </div>
-
 </section>
 
 
