@@ -7,6 +7,7 @@
 $pageName = 'productList';
 
 
+
 // 設定一頁只能有六格
 $perPage = 6;
 // 設定使用者目前看的頁數
@@ -41,6 +42,20 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 } else {
     $rows = [];
 }
+
+// 如果會員有登入，叫出收藏愛心項目
+
+if (isset($_SESSION['user'])) {
+    $member_sid = $_SESSION['user']['sid'];
+    $l_sql = "SELECT `product_sid` FROM `likes` WHERE `member_sid`=?";
+    $l_stmt = $pdo->prepare($l_sql);
+    $l_stmt->execute([
+        $member_sid
+    ]);
+    $l_rows = $l_stmt->fetchAll();
+    $likes = array_column($l_rows, 'product_sid');
+}
+
 
 
 ?>
@@ -276,7 +291,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                                     <!-- 收藏 -->
                                     <a href="Javascript:" class="like-link position-absolute">
-                                        <i class="like like-btn far fa-heart"></i>
+                                        <!-- <i class="like like-btn far fa-heart" onclick="checkLike(event);return false;" data-sid="<?= $r['sid'] ?>"></i> -->
+                                        <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
                                     </a>
 
                                 </div>
@@ -753,15 +769,35 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             })
         });
 
-        // card heart animation
-        // $('.like').on('click', function() {
-        //     console.log('like');
-        // });
+
 
         // 收藏功能
+
+        // function checkLike() {
+        //     const me = $(event.target); //curentTarget
+        //     const product_sid = me.attr('data-sid');
+        //     console.log('p', {
+        //         product_sid
+        //     })
+
+        //     $.post('4.likes-api.php'), {
+        //             product_sid
+        //         },
+        //         function(data) {
+        //             if (data.add) {
+        //                 me.addClass('liked');
+        //             } else {
+        //                 me.removeClass('liked');
+        //             }
+        //         }
+        // }
+
         const like_btns = $('.like-btn');
         like_btns.click(function() {
-            $(this).toggleClass('liked');
+            // if (session.user == "undefined") {
+            //     console.log('請先登入');
+
+            // } else {
             const card = $(this).closest('.card');
             const sid = card.attr('data-sid');
             const sendObj = {
@@ -771,7 +807,15 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             console.log(sendObj)
             $.get('4.likes-api.php', sendObj, function(data) {
                 console.log(data);
+                if (data.success) {
+                    card.find('.like-btn').addClass('liked');
+                } else {
+                    card.find('.like-btn').removeClass('liked');
+                }
+
             }, 'json');
+            // }
+
         });
     </script>
 
