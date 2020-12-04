@@ -62,7 +62,7 @@ body {
 
 .hero-article .title {
   margin-bottom: 16px;
-  font: 700 1.2rem "Noto Serif TC";
+  font: 700 1.2rem "Noto Sans TC";
   color: #1a1a1a;
 }
 
@@ -70,12 +70,12 @@ a:hover{
   text-decoration: none;
 }
 
-.hero-article .excerpt p,
-.one-article .excerpt p {
+.hero-article .excerpt p{
   font: 300 0.8rem "Noto Sans TC";
   padding: 0;
   margin: 0;
   border-bottom: none;
+  line-height: 30px;
 }
 
 .article-hr{
@@ -111,3 +111,19 @@ a:hover{
   transform: rotate(-5deg);
 }
 
+/* ----------three article---------- */
+.three-article .title {
+  font: 500 1rem "Noto Sans TC";
+  color: #000000;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.three-article .excerpt p {
+  font: 300 0.7rem "Noto Sans TC";
+  padding: 0;
+  margin: 0;
+  border-bottom: 0;
+  line-height: 30px;
+}
