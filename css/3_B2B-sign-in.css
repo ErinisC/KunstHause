@@ -53,22 +53,31 @@ textarea:focus {
 }
 
 .picture {
+  display: block;
   margin: 0 auto;
   width: 230px;
   height: 230px;
   border-radius: 50%;
   background-color: #f1f9ff;
   border: 3px solid #000;
-}
-
-.people {
-  margin-top: 40px;
-  margin-left: 40px;
   position: relative;
 }
 
+.eventimg {
+  border-radius: 50%;
+}
+
+.people {
+  top: 255px;
+  left: 43.6%;
+  position: absolute;
+}
+
 .peopleadd {
-  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  margin-left: 170px;
+  z-index: 99;
 }
 
 .organizer {
@@ -87,6 +96,16 @@ textarea:focus {
   position: absolute;
   top: 380px;
   right: 420px;
+  opacity: 0;
+}
+
+.fakeimgadd {
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+}
+
+.eventimg:focus {
+  outline: none;
 }
 
 .inputform {
@@ -309,6 +328,7 @@ button:disabled {
 
 @media screen and (max-width: 576px) {
   .background {
+    width: 100%;
     height: 1500px;
   }
   .pictureadd {
@@ -325,7 +345,9 @@ button:disabled {
   .eyes {
     opacity: 0;
   }
-
+  .people {
+    left: 105px;
+  }
   .modify1 {
     width: 100%;
     height: 50px;
