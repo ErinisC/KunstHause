@@ -52,7 +52,8 @@ label {
 }
 
 .fake_input_placeholder {
-  width: 50%;
+  width: 100%;
+  left: 0;
 }
 
 .event-banner {
@@ -204,6 +205,36 @@ input[type="number"] {
   font-weight: 600;
 }
 
+.error {
+  visibility: visible;
+  color: #ff0000;
+}
+
+.success {
+  border-color: #168fa4;
+}
+
+.input-wrap i {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  visibility: hidden;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap.success i.fa-check-circle {
+  visibility: visible;
+  color: #168fa4;
+}
+
+.input-wrap.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #ff0000;
+}
+
 .input-wrap.success input {
   border-color: #168fa4;
 }
@@ -223,6 +254,13 @@ input[type="number"] {
 @media screen and (max-width: 576px) {
   html {
     font-size: 16px;
+  }
+
+  .eventimg {
+    display: none;
+  }
+
+  .fake_input {
   }
 
   .background {

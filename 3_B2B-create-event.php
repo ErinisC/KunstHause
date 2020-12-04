@@ -1,5 +1,4 @@
 <?php $title = 'KunstHaus | 活動上架'; ?>
-
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
@@ -19,62 +18,123 @@
 
         <div class="space" style="height: 50px;"></div>
 
-        <form name="event-form" method="post" onsubmit="checkForm();return false;" novalidate>
+        <form name="event_form" method="post" onsubmit="checkForm();return false;" novalidate>
             <div class="form-group">
-                <label class="event-banner d-flex">
-                    <input id="picture" class="input fake_input col-sm-12" ref={fileInput} accept="image/jpeg,image/png" type="file" onChange={handleImageChange} placeholder="XXX.jpg" />
-                    <div class="input fake_input_placeholder position-absolute"></div>
-                    <a onclick="myFunction()" class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
+                <label class="event-banner d-flex col-sm-12">
+                    <div class="input fake_input_placeholder position-absolute ">
+                        <input id="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file" />
+                    </div>
+                    <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
                 </label>
-
+                <!-- 預覽圖片區 -->
+                <br>
+                <br>
+                <br>
                 <img class="eventimg" src="" width="100%" height="400" alt="Image preview" class="col-12">
                 <br>
             </div>
 
             <div class="form-group">
-                <label for="event-name">活動名稱</label>
-                <input id="event_name" class="input" type="text" name="event_name" placeholder="活動名稱">
-            </div>
 
-            <div class="form-group"><label for="eventDate">活動日期</label>
+                <label for="event_name">活動名稱</label>
 
-                <p class="pt-3">(活動日期開始)</p>
-                <input class="input" id="start-datetime" name="start-datetime" type="datetime-local">
-                <p class="mt-3">(活動日期結束)</p>
-                <input class="input" id="end-datetime" name="end-datetime" type="datetime-local">
+                <div class="input-wrap">
+
+                    <div class="input-box">
+                        <input id="event_name" class="input" type="text" name="event_name" placeholder="活動名稱">
+                    </div>
+
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="categories">活動種類</label>
-                <select id="categories" name="categories" type="text" class="input">
-                    <option value="music">音樂表演</option>
-                    <option value="show">演唱活動</option>
-                    <option value="art">藝文展覽</option>
-                </select>
+
+                <label for="eventDate">活動日期</label>
+                <div class="input-wrap">
+
+                    <div class="input-box">
+                        <p class="pt-3">(活動日期開始)</p>
+                        <input class="input" id="start-datetime" name="start-datetime" type="datetime-local">
+                    </div>
+
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+
+
+                    <div class="input-box">
+                        <p class="mt-3">(活動日期結束)</p>
+                        <input class="input" id="end-datetime" name="end-datetime" type="datetime-local">
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-wrap">
+                    <label for="categories">活動種類</label>
+                    <div class="input-box">
+                        <select id="categories" name="categories" type="text" class="input" required>
+                            <option value="">請選擇</option>
+                            <option value="music">音樂表演</option>
+                            <option value="show">演唱活動</option>
+                            <option value="art">藝文展覽</option>
+                        </select>
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="hashtag">標籤設定</label>
-                <input id="hashtag" type="text" class="input" name="hashtag" placeholder="#Hashtags">
+                <div class="input-wrap">
+                    <div class="input-box">
+                        <input id="hashtag" type="text" class="input" name="hashtag" placeholder="#Hashtags">
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
-                <label for="event-place">活動地點</label>
-                <label for="location" name="location_id" class="event-place d-flex flex-wrap col-12 p-0">
-                    <div class="selector col-xl-4  d-flex justify-content-between p-0">
-                        <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="address">
+                <label for="location">活動地點</label>
+                <div class="input-wrap d-flex flex-wrap col-lg-12 p-0">
+                    <div class="input-box selector col-xl-4  d-flex justify-content-between p-0">
+                        <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region" required>
+
+                            <option value="">請選擇</option>
                             <option value="North">北部</option>
                             <option value="Middle">中部</option>
                             <option value="South">南部</option>
+
                         </select>
-                        <div class="col-lg-1"></div>
-                        <select type="text" id="location" name="location" class="input col-sm-5 mx-0" style="width:180px">
+                        <div class="col-lg-1 blanket"></div>
+                        <select type="text" id="location" name="location" class="input-box input col-sm-5 mx-0" style="width:180px" required>
+
+                            <option value="">請選擇</option>
+                            <option value="TPE">台北市</option>
+                            <option value="TPH">新北市</option>
+                            <option value="TYC">桃園市</option>
+                            <option value="HSH">新竹市</option>
+                            <option value="TXG">台中市</option>
+                            <option value="KHH">高雄市</option>
+                            <option value="TNN">台南市</option>
+
                         </select>
-                        <div class="space col-1 px-0" style="width:10px"></div>
+                        <div class="blanket col-lg-1 px-0" style="width:10px"></div>
                     </div>
-                    <!-- <div class="space col-1" style="width:10px"></div> -->
-                    <input type="text" id="address" name="address" class="input col-xl-8 col-sm-12 mx-0" placeholder="XXX街XXX號">
-                </label>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+
+                    <div class="input-box col-xl-8 px-0">
+                        <input type="text" id="address" name="address" class="input-box input col-xl-12 col-sm-12 mx-0" placeholder="XXX街XXX號">
+                    </div>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
             </div>
 
 
@@ -95,22 +155,30 @@
             <div class="form-group">
                 <label for="event_info">
                     活動內容資訊
-                    <Textarea id="event_info" name="event_info" class="textarea" cols="117" rows="10" required></Textarea>
+                    <div class="input-wrap">
+
+                        <Textarea id="event_info" name="event_info" class="textarea" cols="117" rows="10" required></Textarea>
+
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
                 </label>
             </div>
 
             <div class="form-group">
                 <div class="d-flex">
                     <div class="blanket col-8"> </div>
-                    <div class="price-lenght  col-xl-4 col-sm-12 p-0">
+                    <div class="col-xl-4 col-sm-12 p-0">
                         <label for="price">活動票卷售價</label>
-                        <div class="d-flex pricesetting">
+                        <div class="input-wrap d-flex pricesetting">
                             <div class="pricetag col-4">
                                 <p class="py-2">NT$</p>
                             </div>
                             <input id="price" name="price" type="number" min="0" max="9999" class="col-8 input">
 
                         </div>
+
+
                         <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
                                 <path id="Subtraction_1" data-name="Subtraction 1" d="M3395-4803a13.907,13.907,0,0,1-9.9-4.1,13.907,13.907,0,0,1-4.1-9.9,13.907,13.907,0,0,1,4.1-9.9,13.907,13.907,0,0,1,9.9-4.1,13.907,13.907,0,0,1,9.9,4.1,13.907,13.907,0,0,1,4.1,9.9,13.907,13.907,0,0,1-4.1,9.9A13.907,13.907,0,0,1,3395-4803Zm-1.06-9v2h2v-2Zm1.045-11.114a2.722,2.722,0,0,1,1.963.777,2.448,2.448,0,0,1,.8,1.8,2.081,2.081,0,0,1-.273,1.045,6,6,0,0,1-1.187,1.284,13.2,13.2,0,0,0-1.265,1.226,4.142,4.142,0,0,0-.694,1.142,4.95,4.95,0,0,0-.292,1.787c0,.1,0,.274.01.527h1.689a7.015,7.015,0,0,1,.147-1.524,2.522,2.522,0,0,1,.39-.83A8.7,8.7,0,0,1,3397.4-4817a8.229,8.229,0,0,0,1.719-1.924,3.516,3.516,0,0,0,.44-1.729,3.624,3.624,0,0,0-1.25-2.763,4.794,4.794,0,0,0-3.35-1.144,4.666,4.666,0,0,0-3.189,1.064,4.691,4.691,0,0,0-1.45,3.066l1.806.216a3.727,3.727,0,0,1,.987-2.2A2.651,2.651,0,0,1,3394.985-4823.116Z" transform="translate(-3381 4831)" />
                             </svg>
@@ -128,15 +196,18 @@
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn btn-primary">取消</button>
-                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成</button>
+                    <button type="submit" class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成</button>
                 </div>
             </div>
 
         </form>
 
+        <!-- 錯誤跳提醒設定 alert -->
+        <div id="info_bar" class="alert alert-danger col-8 mx-auto my-4 py-3" role="alert" style="display: none">
+        </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content pt-3 mx-auto">
                     <div class="tap">
@@ -159,12 +230,12 @@
                     </div>
 
                     <div class="modal-footer mx-auto my-auto">
-                        <button type="button" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                        <button type="button" onclick="location. href='3_B2B-index.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
                     </div>
 
                 </div>
             </div>
-        </div>
+        </div> -->
         </table>
     </div>
 
@@ -178,7 +249,7 @@
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script>
     // 預覽圖片
-    $('input').on('change', function(e) {
+    $('.fake_input').on('change', function(e) {
         const file = this.files[0];
         const objectURL = URL.createObjectURL(file);
 
@@ -187,42 +258,50 @@
 
 
     // 設定常數
-    const eventname = $('#event-name');
+    const eventname = $('#event_name');
     const eventDate = $('#eventDate');
-    const eventplace = $('#event-place');
+    const eventplace = $('#region');
+    const address = $('#address');
     const eventinfo = $('#event_info');
     const price = $('#price');
+    const info_bar = $('#info_bar')
 
 
     function checkForm() {
+
         // 呼叫的時候先清掉其他警告
-        // name.next().text('')
-        // account.next().text('')
 
         $('.input-wrap').removeClass('success').removeClass('error');
 
         // 檢查有沒有通過，檢查姓名長度跟email格式
         let isPass = true;
 
-        // 如果拿到的姓名的長度小於2，就不通過
-        if (eventname.val().length < 2) {
+        // 如果拿到的活動名稱的長度小於2，就不通過
+        if (eventname.val().length == 0) {
             isPass = false;
 
             // 這邊設定下面small的小警告出現的文字
             // 小警告的位置是name的next (JQ select注意！)
             eventname.closest('.input-wrap').addClass('error')
             // name.closest('.input-wrap').find(small).text('請填寫正確姓名')
-        } else {
-            eventname.closest('.input-wrap').removeClass('error')
-            eventname.closest('.input-wrap').addClass('success');
         }
 
-        if (eventplace.val().length !== 0) {
+        // if (select.val() !== "") {
+        //     isPass = false;
+        //     select.closest('.input-wrap').addClass('error');
+        // }
+
+        if (address.val().length == 0) {
             isPass = false;
-            eventplace.closest('.input-wrap').addClass('success');
+            address.closest('.input-wrap').addClass('error');
+        }
+
+        if (eventinfo.val().length == 0) {
+            isPass = false;
+            eventinfo.closest('.input-wrap').addClass('error');
         } else {
 
-            $.post('3_B2B-create-event-api.php', $(document.form1).serialize(), function(data) {
+            $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
                 console.log(data);
                 // $('#exampleModalCenter').modal('show');
                 // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
