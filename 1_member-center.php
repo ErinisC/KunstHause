@@ -68,6 +68,7 @@ foreach ($d_rows as $d) {
     <div class="row">
 
         <div class="col-lg-10">
+
             <div class="banner">
                 <img class="Diversity" src=" <?= WEB_ROOT ?>/imgs/member/Diversity.svg">
             </div>
@@ -76,7 +77,9 @@ foreach ($d_rows as $d) {
 
                 <!-- 更換會員大頭照 -->
                 <div class="avatar">
-                    <img src="/KunstHause/imgs/member_imgs/member_14.jpg">
+                    <a href="">
+                        <img src="/KunstHause/imgs/member_imgs/member_14.jpg">
+                    </a>
                 </div>
 
                 <div class="edit-member">
@@ -99,33 +102,35 @@ foreach ($d_rows as $d) {
                         <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
                                 <img src="/KunstHause/imgs/event/event-sm/TPE-26.jpg">
-                                <div class="time col-4 position-absolute mt-3">
+                                <div class="time col-5 position-absolute mt-3">
                                     <p class="my-2">2021.03.20-2021.03.20</p>
                                 </div>
-                                <div class="card-body d-flex p-0 w-100">
-                                    <div class="card-info position-relative col-8">
-                                        <div class="event-name my-2">
-                                            <p>原子邦妮樂遊原演唱會</p>
-                                        </div>
-                                        <div class="event-location my-2">【ZEP NEW TEIPEI 】</div>
-                                        <!-- 收藏 -->
-                                        <a href="#" class="like-link position-absolute">
-                                            <i class="like far fa-heart"></i>
-                                        </a>
+                            </div>
+
+                            <div class="card-body d-flex p-0 w-100">
+                                <div class="card-info position-relative col-8">
+                                    <div class="event-name my-2">
+                                        <p>原子邦妮樂遊原演唱會</p>
                                     </div>
-                                    <div class="card-price col-4">
-                                        <div class="discount mt-3">
-                                            <p>優惠價</p>
-                                        </div>
-                                        <div class="price my-2">$</div>
+                                    <div class="event-location my-2">【ZEP NEW TEIPEI 】</div>
+                                    <!-- 收藏 -->
+                                    <a href="#" class="like-link position-absolute">
+                                        <i class="like far fa-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="card-price col-4">
+                                    <div class="discount mt-3">
+                                        <p>優惠價</p>
                                     </div>
+                                    <div class="price my-2">$</div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
                                 <img src="/KunstHause/imgs/event/event-sm/TPE-22.jpg">
-                                <div class="time col-4 position-absolute mt-3">
+                                <div class="time col-5 position-absolute mt-3">
                                     <p class="my-2">2021.01.17-2021-01.17</p>
                                 </div>
                             </div>
@@ -156,7 +161,7 @@ foreach ($d_rows as $d) {
                         <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
                                 <img src="/KunstHause/imgs/event/event-sm/TNN-54.jpg">
-                                <div class="time col-4 position-absolute mt-3">
+                                <div class="time col-5 position-absolute mt-3">
                                     <p class="my-2">2020.11.03-2020.12.13</p>
                                 </div>
                             </div>
@@ -182,7 +187,7 @@ foreach ($d_rows as $d) {
                         <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
                                 <img src="/KunstHause/imgs/event/event-sm/HSZ-11.jpg">
-                                <div class="time col-4 position-absolute mt-3">
+                                <div class="time col-5 position-absolute mt-3">
                                     <p class="my-2">2020.11.28-2021.01.09</p>
                                 </div>
                             </div>
@@ -277,7 +282,7 @@ foreach ($d_rows as $d) {
 
                 <!-- 票券管理 區域 -->
 
-                <div class="sort col-10 mx-auto my-5 pb-2">票券管理</div>
+                <div class="sort col-10 mx-auto mb-5 pb-2">票券管理</div>
 
                 <!-- 先判斷訂單資料內有沒有東西 -->
                 <?php if (empty($o_rows)) : ?>
@@ -288,24 +293,19 @@ foreach ($d_rows as $d) {
                     </div>
                 <?php else : ?>
 
-
-                    <?php // foreach ($o_rows as $o) : 
-                    ?>
                     <?php foreach ($d_rows as $d) : ?>
                         <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
-                            <?php // if ($o['sid'] == $d['order_id']) : 
-                            ?>
                             <div class="t-detail col-lg-9 d-flex p-0">
                                 <div class="ticket-kv col-lg-4 p-0 mr-3">
                                     <img class="event-sm-img w-100 p-0" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                                 </div>
                                 <div class="main-info">
-                                    <div class="event-title my-4">
+                                    <div class="event-title my-2">
                                         <p class="event-name mb-2"><?= $d['event_name'] ?></p>
-                                        <p class="price mb-2">單價$<?= $d['price'] ?></p>
+                                        <p class="price my-2">單價$<?= $d['price'] ?></p>
                                     </div>
-                                    <div class="sub-info my-4">
-                                        <p class="date mb-2"><?= $d['start-datetime'] ?> ~ <?= $d['end-datetime'] ?></p>
+                                    <div class="sub-info my-2">
+                                        <p class="date my-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
                                         <p class="number mb-2">訂單編號:<?= $d['order_id'] ?></p>
                                         <p class="pay mb-2">付款方式:<?= $d['pay_way'] ?></p>
                                         <p class="total mb-2">訂單總額:<?= $o['total_price'] ?></p>
@@ -328,12 +328,8 @@ foreach ($d_rows as $d) {
                                     </div>
                                 </div>
                             </div>
-                            <?php // endif; 
-                            ?>
                         </div>
                     <?php endforeach; ?>
-                    <?php // endforeach; 
-                    ?>
                 <?php endif; ?>
 
 
@@ -343,131 +339,29 @@ foreach ($d_rows as $d) {
                 <!-- 手機版 -->
 
                 <!-- <div class="mobile-edit-area d-flex">
-                                    <div class="e-ticket mt-3">
-                                        <div class="delete px-2" type="button">
-                                            <img src="/KunstHause/imgs/member/cancel.svg">
-                                        </div>
-                                        <div class="feedback mt-5 px-2" type="button">
-                                            <img src="/KunstHause/imgs/member/feedback.svg">
-                                        </div>
-
-                                        <button class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                            <img src="/KunstHause/imgs/member/qr-code.svg">
-                                        </button>
-                                    </div>
+                            <div class="e-ticket mt-3">
+                                <div class="delete px-2" type="button">
+                                    <img src="/KunstHause/imgs/member/cancel.svg">
                                 </div>
-                        </div>
+                                <div class="feedback mt-5 px-2" type="button">
+                                    <img src="/KunstHause/imgs/member/feedback.svg">
+                                </div>
+
+                                <button class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                                    <img src="/KunstHause/imgs/member/qr-code.svg">
+                                </button>
+                            </div>
+                        </div> -->
 
 
-                <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
-                    <div class="t-detail col-lg-9 d-flex p-0">
-                        <div class="ticket-kv col-lg-4 p-0 mr-3">
-                            <img class="event-sm-img w-100 p-0" src="/KunstHause/imgs/event/event-sm/TPE-06.jpg">
-                        </div>
-                        <div class="main-info">
-                            <div class="event-title my-4">
-                                <p class="event-name mb-2">【小毛頭之亂-大寶寶齊打交】</p>
-                                <p class="price mb-2">單價$</p>
-                            </div>
-                            <div class="sub-info my-4">
-                                <p class="date mb-2">2020.01.</p>
-                                <p class="number mb-2">訂單編號:</p>
-                                <p class="pay mb-2">付款方式: 信用卡</p>
-                                <p class="total mb-2">訂單總額:</p>
-                                <p class="status mb-2">訂單狀態:</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="edit-area d-flex">
-                        <div class="e-ticket pt-3 mt-3">
-                            <div class="delete m-3" type="button">
-                                <img src="/KunstHause/imgs/member/cancel.svg">
-                            </div>
-                            <div class="feedback m-3" type="button">
-                                <img src="/KunstHause/imgs/member/feedback.svg">
-                            </div>
-                        </div>
-                        <div class="qr-code mr-2">
-                            <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                <img src="/KunstHause/imgs/member/qr-code.svg">
-                            </div>
-                        </div>
-                    </div> -->
-
-                <!-- 手機版 -->
-
-                <!-- <div class="mobile-edit-area d-flex">
-                        <div class="e-ticket mt-3">
-                            <div class="delete px-2" type="button">
-                                <img src="/KunstHause/imgs/member/cancel.svg">
-                            </div>
-                            <div class="feedback mt-5 px-2" type="button">
-                                <img src="/KunstHause/imgs/member/feedback.svg">
-                            </div>
-
-                            <div class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                <img src="/KunstHause/imgs/member/qr-code.svg">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
-                    <div class="t-detail col-lg-9 d-flex p-0">
-                        <div class="ticket-kv col-lg-4 p-0 mr-3">
-                            <img class="event-sm-img w-100 p-0" src="/KunstHause/imgs/event/event-sm/TXG-08.jpg">
-                        </div>
-                        <div class="main-info">
-                            <div class="event-title my-4">
-                                <p class="event-name mb-2">【耿一偉-新時代的劇場創作】</p>
-                                <p class="price mb-2">單價$</p>
-                            </div>
-                            <div class="sub-info my-4">
-                                <p class="date mb-2">2020.01.</p>
-                                <p class="number mb-2">訂單編號:</p>
-                                <p class="pay mb-2">付款方式: 信用卡</p>
-                                <p class="total mb-2">訂單總額:</p>
-                                <p class="status mb-2">訂單狀態:</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="edit-area d-flex">
-                        <div class="e-ticket pt-3 mt-3">
-                            <div class="delete m-3" type="button">
-                                <img src="/KunstHause/imgs/member/cancel.svg">
-                            </div>
-                            <div class="feedback m-3" type="button">
-                                <img src="/KunstHause/imgs/member/feedback.svg">
-                            </div>
-                        </div>
-                        <div class="qr-code mr-2">
-                            <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                <img src="/KunstHause/imgs/member/qr-code.svg">
-                            </div>
-                        </div>
-                    </div> -->
-
-                <!-- 手機版 -->
-
-                <!-- <div class="mobile-edit-area d-flex">
-                        <div class="e-ticket mt-3">
-                            <div class="delete px-2" type="button">
-                                <img src="/KunstHause/imgs/member/cancel.svg">
-                            </div>
-                            <div class="feedback mt-5 px-2" type="button">
-                                <img src="/KunstHause/imgs/member/feedback.svg">
-                            </div>
-
-                            <div class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                <img src="/KunstHause/imgs/member/qr-code.svg">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <div class="view-more my-4">
-                    <p>VIEW MORE >></p>
+                    <p>
+                        VIEW MORE >>
+                    </p>
+
                 </div>
+
 
 
 
@@ -531,23 +425,21 @@ foreach ($d_rows as $d) {
                                 </div>
                             </div>
                         </div>
-
                     </section>
                 </main>
-
                 <!-- animation end -->
             </div>
         </div>
     </div>
+</div>
 
 
 
 
 
+<?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
-    <?php include __DIR__ . '/1_parts/3_script.php'; ?>
+<!-- 引入自己的ＪＳ -->
+<!-- <script src=""></script> -->
 
-    <!-- 引入自己的ＪＳ -->
-    <!-- <script src=""></script> -->
-
-    <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
+<?php include __DIR__ . '/1_parts/4_footer.php'; ?>
