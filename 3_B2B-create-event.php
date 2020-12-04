@@ -207,7 +207,7 @@
         </div>
 
         <!-- Modal -->
-        <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content pt-3 mx-auto">
                     <div class="tap">
@@ -221,7 +221,8 @@
                             </svg>
 
                         </div>
-                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">2019百威真我至上音樂巡迴
+                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">
+                            <? event_name ?>
                         </div>
                         <span class="text-center mt-3 ">活動已幫你送出審核，
                             再請至活動管理
@@ -235,7 +236,7 @@
 
                 </div>
             </div>
-        </div> -->
+        </div>
         </table>
     </div>
 
@@ -298,7 +299,7 @@
 
         if (eventinfo.val().length == 0) {
             isPass = false;
-            eventinfo.closest('.input-wrap').addClass('error');
+            eventinfo.addClass('error');
         } else {
 
             $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
