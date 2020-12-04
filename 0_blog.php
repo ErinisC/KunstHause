@@ -96,7 +96,7 @@
                     </div>
                 </a>
                 <div class="excerpt">
-                    <p>閱讀繪本的過程，讀字讀圖，讀字裡行間的言外之意，一窺文和圖之間的關係。讓我們藉著作家楊馥如的細膩筆觸，了解義大利人做繪本背後的藝術。</p>
+                    <p>短片《If Anything Happens I Love You》僅以配樂和簡單線條，刻畫悲劇後殘存的思念與哀傷，面對心中龐大的「黑影」，莫忘那一朵鑲著銀邊的雲，黑白的人生仍有機會再次點亮。</p>
                 </div>
 
             </div>
@@ -185,6 +185,21 @@
                     <p>流浪動物的議題是台灣一直以來十分關注的事，《你知道我家在哪裡嗎？》的故事作者佳穎，用她自身的經歷及感同身受的心情，創作出動人的故事，並期待大家能藉由可愛趣味的繪本，品嚐更多幸福的滋味、學會珍惜每一個生命。</p>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container issue">
+    <div class="row category-wrap">
+        <div class="category-header d-flex align-items-center justify-content-around w-100">
+            <div class="category-count">03</div>
+            <div class="category-name">
+                <div class="zh w-100">12月專題，食物攝影創作</div>
+            </div>
+            <div class="category-hr"></div>
+        </div>
+        <div class="row issue-meta-wrap">
+            
         </div>
     </div>
 </div>
