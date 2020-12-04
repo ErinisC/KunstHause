@@ -131,6 +131,10 @@ body {
   z-index: 2;
 }
 
+.tape-1 img {
+  width: 100%;
+}
+
 /* ------留言板------- */
 
 .name-bar {
@@ -153,7 +157,6 @@ body {
   object-fit: cover;
   object-position: center;
 }
-
 
 .bar-word {
   margin: auto 0 auto 0;
@@ -294,6 +297,14 @@ input[name="tab_item"] {
 
   .bar-word-1 {
     text-align: center;
+  }
+
+  .tape-1 {
+    width: 200px;
+  }
+
+  .tape-2 {
+    display: none !important;
   }
 }
 
