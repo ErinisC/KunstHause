@@ -58,6 +58,7 @@ textarea:focus {
   width: 230px;
   height: 230px;
   border-radius: 50%;
+  background-image: url(../imgs/b2b/people.png);
   background-color: #f1f9ff;
   border: 3px solid #000;
   position: relative;
@@ -65,19 +66,13 @@ textarea:focus {
 
 .eventimg {
   border-radius: 50%;
+  opacity: 0;
 }
 
 .people {
   top: 255px;
   left: 43.6%;
   position: absolute;
-}
-
-.peopleadd {
-  display: block;
-  margin-top: 10px;
-  margin-left: 170px;
-  z-index: 99;
 }
 
 .organizer {
@@ -87,7 +82,7 @@ textarea:focus {
   font-weight: 700;
 }
 
-.pictureadd {
+.pictureaddbtn {
   width: 75px;
   height: 75px;
   border-radius: 50%;
@@ -96,6 +91,16 @@ textarea:focus {
   position: absolute;
   top: 380px;
   right: 420px;
+}
+
+.pictureadd {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+
+  /* position: absolute;
+  top: 380px;
+  right: 420px; */
   opacity: 0;
 }
 

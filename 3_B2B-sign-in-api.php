@@ -20,22 +20,24 @@ if (empty($_POST['name']) or empty($_POST['phone']) or empty($_POST['ext']) or e
 }
 
 //TODO: 檢查資料格式
-
-$sql = "INSERT INTO `vendor`(`member_sid`,
+//注意格式 逗號要下對位置
+$sql = "INSERT INTO `vendor` (`member_sid`,
         `name`, `phone`, `ext`,`intro`, 
         `picture`
         ) VALUES (
-        ?, ?, ?,
-        ?, ?, ?
+        ?,?,?,
+        ?,?,?
     )";
 
+$output['sql'] = $sql;
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
+    $_POST['member_sid'],
     $_POST['name'],
     $_POST['phone'],
     $_POST['ext'],
     $_POST['intro'],
-    $_POST['picture'],
+    $_POST['pic_name']
 ]);
 if ($stmt->rowCount() == 1) {
     $output['success'] = true;
