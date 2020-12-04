@@ -246,7 +246,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
-                    <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
 
                         <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
                         <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
@@ -276,7 +276,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                                     <!-- 收藏 -->
                                     <a href="Javascript:" class="like-link position-absolute">
-                                        <i class="like far fa-heart"></i>
+                                        <i class="like like-btn far fa-heart"></i>
                                     </a>
 
                                 </div>
@@ -392,7 +392,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                         <div class="item card card-sm col-3">
                             <div class="img-wrap mb-1 position-relative">
                                 <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
-                                <div class="time position-absolute col-4"><?= $r['start-datetime'] ?></div>
+                                <div class="time position-absolute col-4"><?= $r['start_datetime'] ?></div>
                             </div>
                             <!-- 小卡下方票價 -->
                             <div class="wrap d-flex">
@@ -623,11 +623,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         //     }, 2000);
         // })
 
-        // card heart animation
-        $('.like').on('click', function() {
-            console.log('like');
-            $(this).toggleClass('liked');
-        });
+
 
         // modal
         function showProductModal(sid) {
@@ -755,6 +751,27 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             $('.carousel').carousel({
                 interval: 6000
             })
+        });
+
+        // card heart animation
+        // $('.like').on('click', function() {
+        //     console.log('like');
+        // });
+
+        // 收藏功能
+        const like_btns = $('.like-btn');
+        like_btns.click(function() {
+            $(this).toggleClass('liked');
+            const card = $(this).closest('.card');
+            const sid = card.attr('data-sid');
+            const sendObj = {
+                action: 'like',
+                sid: sid,
+            }
+            console.log(sendObj)
+            $.get('4.likes-api.php', sendObj, function(data) {
+                console.log(data);
+            }, 'json');
         });
     </script>
 

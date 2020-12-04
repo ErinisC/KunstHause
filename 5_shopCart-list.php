@@ -96,7 +96,7 @@ $rows = $stmt->fetchAll();
 
                                     <!-- 活動日期 -->
                                     <div class="my-3">
-                                        日期： <?= $i['start-datetime'] ?>
+                                        日期： <?= $i['start_datetime'] ?>
                                     </div>
 
                                     <!-- 活動價格 -->

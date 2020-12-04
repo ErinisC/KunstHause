@@ -240,12 +240,13 @@ input:focus {
 }
 
 /* 小標 */
-/* .section-title {
-    height: 80px;
-    background-color: #ED5B4C;
-    border: 3px solid black;
-    transform: rotate(-5deg);
+.section-title {
+  height: 80px;
+  background-color: #ED5B4C;
+  border: 3px solid black;
+  transform: rotate(-5deg);
 }
+
 .section-title-below {
   top: -10px;
   left: -15px;
@@ -254,10 +255,11 @@ input:focus {
   background-color: #ed5b4c;
   border: 3px solid black;
 }
+
 .section-title-below p {
-    transform: rotate(5deg);
-    font-size: 1.5rem;
-} */
+  transform: rotate(5deg);
+  font-size: 1.5rem;
+}
 
 /* 商品列表 */
 .bg-attatch {
