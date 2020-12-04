@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 html {
   font-size: 20px;
@@ -19,184 +19,6 @@ body {
   /* overflow: hidden; */
   position: relative;
 }
-
-/* 大眼睛css */
-/* 
-.e {
-  width: 20vw;
-  height: 20vw;
-  position: relative;
-  border-radius: 50%;
-  background-color: #fff;
-  animation: eye 3.5s infinite;
-}
-.e:after {
-  content: "";
-  width: 50%;
-  height: 50%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  border-radius: 50%;
-  background: #000;
-  animation: eyeglobe 17.5s infinite;
-}
-.e-c {
-  width: 80vw;
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  -moz-transform: translate3d(-50%, -50%, 0);
-}
-@-moz-keyframes eye {
-  0%,
-  5%,
-  30%,
-  37%,
-  100% {
-    height: 20vw;
-    transform: translate3d(0, 0, 0);
-  }
-  3%,
-  33% {
-    height: 0;
-    transform: translate3d(0, -50%, 0);
-  }
-}
-@-webkit-keyframes eye {
-  0%,
-  5%,
-  30%,
-  37%,
-  100% {
-    height: 20vw;
-    transform: translate3d(0, 0, 0);
-  }
-  3%,
-  33% {
-    height: 0;
-    transform: translate3d(0, -50%, 0);
-  }
-}
-@-o-keyframes eye {
-  0%,
-  5%,
-  30%,
-  37%,
-  100% {
-    height: 20vw;
-    transform: translate3d(0, 0, 0);
-  }
-  3%,
-  33% {
-    height: 0;
-    transform: translate3d(0, -50%, 0);
-  }
-}
-@keyframes eye {
-  0%,
-  5%,
-  30%,
-  37%,
-  100% {
-    height: 20vw;
-    transform: translate3d(0, 0, 0);
-  }
-  3%,
-  33% {
-    height: 0;
-    transform: translate3d(0, -50%, 0);
-  }
-}
-@-moz-keyframes eyeglobe {
-  0%,
-  20% {
-    transform: translate3d(-100%, -50%, 0);
-  }
-  21%,
-  40%,
-  81%,
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-  }
-  41%,
-  60% {
-    transform: translate3d(0%, -50%, 0);
-  }
-  61%,
-  80% {
-    transform: translate3d(-50%, 0%, 0);
-  }
-}
-@-webkit-keyframes eyeglobe {
-  0%,
-  20% {
-    transform: translate3d(-100%, -50%, 0);
-  }
-  21%,
-  40%,
-  81%,
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-  }
-  41%,
-  60% {
-    transform: translate3d(0%, -50%, 0);
-  }
-  61%,
-  80% {
-    transform: translate3d(-50%, 0%, 0);
-  }
-}
-@-o-keyframes eyeglobe {
-  0%,
-  20% {
-    transform: translate3d(-100%, -50%, 0);
-  }
-  21%,
-  40%,
-  81%,
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-  }
-  41%,
-  60% {
-    transform: translate3d(0%, -50%, 0);
-  }
-  61%,
-  80% {
-    transform: translate3d(-50%, 0%, 0);
-  }
-}
-@keyframes eyeglobe {
-  0%,
-  20% {
-    transform: translate3d(-100%, -50%, 0);
-  }
-  21%,
-  40%,
-  81%,
-  100% {
-    transform: translate3d(-50%, -50%, 0);
-  }
-  41%,
-  60% {
-    transform: translate3d(0%, -50%, 0);
-  }
-  61%,
-  80% {
-    transform: translate3d(-50%, 0%, 0);
-  }
-} */
 
 /* 變形怪 css */
 
@@ -376,6 +198,49 @@ p {
 .form-group {
   margin-bottom: 1.5rem;
 }
+
+/* .input-wrap {
+  position: relative;
+}
+
+.input-wrap.success input {
+  border-color: #168fa4;
+}
+
+.input-wrap.error input {
+  border-color: #ff0000;
+}
+
+.input-wrap i {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  visibility: hidden;
+}
+
+.input-wrap.success i.fa-check-circle {
+  visibility: visible;
+  color: #168fa4;
+}
+
+.input-wrap.error i.fa-exclamation-circle {
+  visibility: visible;
+  color: #ff0000;
+}
+
+.form-text {
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  right: 15px;
+  top: 65px;
+  font-size: 0.7rem;
+}
+
+.input-wrap.error small {
+  visibility: visible;
+  color: #ff0000;
+} */
 
 .login-item {
   font-size: 1rem;

@@ -24,17 +24,15 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
 <div class="container">
     <div class="row">
-        <div class="c"></div>
-        <div class="c-c">
-            <div class="c-e"></div>
-            <div class="c-e"></div>
-        </div>
 
-        <!-- 大眼睛 -->
-        <!-- <div class="e-c">
-            <div class="e"></div>
-            <div class="e"></div>
-        </div> -->
+        <!-- 變形怪 -->
+        <div class="monster">
+            <div class="c"></div>
+            <div class="c-c">
+                <div class="c-e"></div>
+                <div class="c-e"></div>
+            </div>
+        </div>
 
 
         <!-- login list Area -->
@@ -60,21 +58,27 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
             <div class="login-form" col-xl-12 col-md-12 col-sm-12 col-12 position-relative>
 
-                <form name="form1" id="loginForm" onsubmit="checkForm(); return false;">
+                <form name="form1" id="loginForm" onsubmit="checkForm(); return false;" novalidate>
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="account" class="login-item">帳號</label>
-                        <div class="input-box">
-                            <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱">
-                            <span class="error"></span>
-                            <small class="form-text text-muted"></small>
+                        <div class="input-wrap">
+                            <div class="input-box">
+                                <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
+                            </div>
+                            <!-- <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i> -->
+                            <small class="form-text"></small>
                         </div>
                     </div>
 
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
                         <label for="password" class="login-item">密碼</label>
-                        <div class="input-box">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="請輸入您的密碼" name="password">
-                            <span class="error"></span>
+                        <div class="input-wrap">
+                            <div class="input-box">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="請輸入您的密碼" name="password" required>
+                            </div>
+                            <!-- <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i> -->
                             <small class="form-text"></small>
                         </div>
                     </div>
@@ -162,16 +166,17 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <script>
-    const account = $('#account'),
-        password = $('#password'),
-        info_bar = $('#info_bar')
+    const account = $('#account');
+    const password = $('#password');
+    const info_bar = $('#info_bar')
 
     function checkForm() {
         let infoText = '';
         let send = true;
 
+
         if ($('#account').val() === '') {
-            infoText = '請輸入您的電子信箱';
+            infoText = '請輸入您的帳號及密碼';
             send = false;
         } else if ($('#password').val() === '') {
             infoText = '請輸入您的密碼';
@@ -197,7 +202,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
                     setTimeout(function() {
                         location.href = '4_productList.php';
-                    }, 2000);
+                    }, 3000);
 
 
                 } else {

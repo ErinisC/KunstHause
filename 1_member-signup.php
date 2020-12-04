@@ -3,9 +3,10 @@
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
-<!-- 引入自己的ＣＳＳ -->
+<!-- 引入自己的 css -->
 <link rel="stylesheet" href="./css/1_member-signup.css">
-
+<!-- 引入 css animation  -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
@@ -36,8 +37,9 @@
                     </div>
                 </div>
 
-                <div class="list-title">歡迎您加入「Kunsthaus」會員!<br>
-                    您可以隨時上網查詢預售狀況、節目資訊、演出時間等資訊。
+                <div class="list-title">
+                    <div class="animated bounceInLeft" style="animation-duration: 3s">歡迎您加入「Kunsthaus」會員!</div>
+                    <div class="animated bounceInRight mt-3" style="animation-duration: 3s">您可以隨時上網查詢預售狀況、節目資訊、演出時間等資訊。</div>
                 </div>
 
 
@@ -136,7 +138,7 @@
 
                             <div id="terms" class="terms col-xl-12 col-md-12 col-sm-12 col-12">
 
-                                <div class="service-term m-3">服務條款</div>
+                                <div id="service" class="service-term m-3">服務條款</div>
                                 <div class="service-text">
                                     (1) 台端與 Kunsthaus 的關係<br>
                                     1.1 Kunsthaus 依據本服務條款提供本站各項服務。當您註冊完成或開始使用本服務時，即表示您已閱讀、了解並同意接受本服務條款之所有內容。如果您不同意本服務條款的內容，或者您所屬的國家或地域排除本服務條款內容之全部或部分時，您應立即停止使用本服務。<br>
@@ -150,7 +152,7 @@
                                     2.4 台端認知並同意，Kunsthaus目前縱可能未設置 台端透過服務得發送或接收傳輸之數量或用於提供任何服務之存儲空間之上限，但 Kunsthaus 得自行決定隨時設定該等上限。
                                 </div>
 
-                                <div class="privacy-policy m-3">隱私權政策</div>
+                                <div id="privacy" class="privacy-policy m-3">隱私權政策</div>
                                 <div class="privacy-text">
                                     (1) 本網站將遵守 「個人隱私保護法」之規定與相關隱私保護政策，除本網站服務條款隱私權政策與法律規定外，不會違法洩漏或利用您的個人隱私資料。<br>
                                     (2) 當您於本官網註冊使用後，即表示您同意使用本網站所提供之服務及隱私權條款。<br>
@@ -367,6 +369,18 @@
             'transform': 'rotate(' + rot + 'deg)'
         });
     });
+
+    // 動動眼睛 end
+
+    var service;
+    window.onload = function() {
+        terms = document.getElementById("terms");
+        window.setInterval(scroll, 50);
+    };
+
+    function scroll() {
+        terms.scrollTop++;
+    }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
