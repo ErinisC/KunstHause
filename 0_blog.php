@@ -26,6 +26,7 @@
 
 <!-- blog -->
 <div class="container hero-article">
+    <h1 class="text-center">最新鮮的。報給你知</h1>
     <div class="row category-wrap">
         <div class="category-header d-flex align-items-center justify-content-around w-100">
             <div class="category-count">01</div>
@@ -70,6 +71,28 @@
                 <a href="#" class="">
                     <div class="title">
                         義大利人做繪本、玩繪本、讀繪本（上）
+                    </div>
+                </a>
+                <div class="excerpt">
+                    <p>閱讀繪本的過程，讀字讀圖，讀字裡行間的言外之意，一窺文和圖之間的關係。讓我們藉著作家楊馥如的細膩筆觸，了解義大利人做繪本背後的藝術。</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="hero-article d-flex align-items-end">
+            <div class="col-8 px-0">
+                <div class="feature-img yellow-shadow">
+                    <a href="#">
+                        <img src="<?= WEB_ROOT ?>imgs/blog/feature-img-06.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="article-meta col-4 px-0">
+                <a href="#" class="">
+                    <div class="title">
+                        零對白短片《If Anything Happens I Love You》如輓歌，刻畫悲劇後的思念與哀傷
                     </div>
                 </a>
                 <div class="excerpt">
@@ -130,6 +153,36 @@
                 </a>
                 <div class="excerpt">
                     <p>影響麵包口感的因子有很多：空氣、水、麵粉、溫度、技巧，要有好吃的麵包，每一個步驟的處理都必須小心再謹慎。如果逛膩了東京的大景點，不妨就來走訪一遭巷弄間的質感麵包店，挑戰對麵包的味蕾想像！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="two-article d-flex">
+            <div class="col-lg-6 pl-0">
+                <a href="#">
+                    <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-07.png" alt="">
+                </a>
+                <a href="#">
+                    <div class="title">
+                        「視覺，是一個時代的翻譯機。」 動態與平面合體的無敵金剛戰士 ── 專訪日目 247 Visual Art
+                    </div>
+                </a>
+                <div class="excerpt">
+                    <p>週五早晨，沒有侵略性的黃光照進座落在建國高架旁的工作室，黃顯勛親切的呼喚我喝口他們特別買的咖啡，然後話家常的說著，採訪的會議桌是他與陳普規定不可以被雜物入侵的神聖地。黃顯勛笑的豪爽親切，絲毫沒有視覺總監的架子。 「不好意思！」隨後到的陳 ……</p>
+                </div>
+            </div>
+            <div class="col-lg-6 pr-0">
+                <a href="#">
+                    <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-08.png" alt="">
+                </a>
+                <a href="#">
+                    <div class="title">
+                        用創作暖心的繪本故事，為在等家的浪浪們爭取更多愛！── 專訪故事創作者佳穎
+                    </div>
+                </a>
+                <div class="excerpt">
+                    <p>流浪動物的議題是台灣一直以來十分關注的事，《你知道我家在哪裡嗎？》的故事作者佳穎，用她自身的經歷及感同身受的心情，創作出動人的故事，並期待大家能藉由可愛趣味的繪本，品嚐更多幸福的滋味、學會珍惜每一個生命。</p>
                 </div>
             </div>
         </div>

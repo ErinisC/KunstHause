@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 /* ----------style guide---------- */
 body {
@@ -60,10 +60,19 @@ body {
   box-shadow: 0.5rem 0.5rem #002c80;
 }
 
+.yellow-shadow img{
+  box-shadow: 0.5rem 0.5rem #ffc024;
+}
+
 .hero-article .title {
   margin-bottom: 16px;
   font: 700 1.2rem "Noto Sans TC";
   color: #1a1a1a;
+  transition-duration: 0.2s;
+}
+
+.hero-article .title:hover{
+  text-shadow: 2px 2px 0px #c2c2c2;
 }
 
 a:hover{
@@ -111,7 +120,11 @@ a:hover{
   transform: rotate(-5deg);
 }
 
-/* ----------three article---------- */
+/* ----------sub article---------- */
+.three-article{
+  margin-bottom: 2rem;
+}
+
 .three-article .title {
   font: 500 1rem "Noto Sans TC";
   color: #000000;
@@ -121,6 +134,26 @@ a:hover{
 }
 
 .three-article .excerpt p {
+  font: 300 0.7rem "Noto Sans TC";
+  padding: 0;
+  margin: 0;
+  border-bottom: 0;
+  line-height: 30px;
+}
+
+.three-article{
+  margin-bottom: 3rem;
+}
+
+.two-article .title {
+  font: 500 1rem "Noto Sans TC";
+  color: #000000;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.two-article .excerpt p {
   font: 300 0.7rem "Noto Sans TC";
   padding: 0;
   margin: 0;
