@@ -194,13 +194,51 @@
         <div class="category-header d-flex align-items-center justify-content-around w-100">
             <div class="category-count">03</div>
             <div class="category-name">
-                <div class="zh w-100">12月專題，食物攝影創作</div>
+                <div class="zh w-100">拾貳專題，食物攝影創作</div>
             </div>
             <div class="category-hr"></div>
         </div>
-        <div class="row issue-meta-wrap">
-            
+    </div>
+    <div class="row issue-meta-wrap align-items-end">
+        <div class="issue-meta-inner col-4 pl-0">
+            <div class="issue-title">百飲募集・食物攝影創作</div>
+            <p class="issue-description">
+                美食攝影，是「料理人×攝影師」共同的藝術創作，搶在狼吞虎嚥之前，將香溢汁噴、鮮嫩欲滴的美味紀錄成永恆。舌尖上的攝影師團隊，集結平面攝影、動態影像、文字記敘，要把餐桌上的飲食，釀成當代台灣文化的雋永甘醇。
+            </p>
         </div>
+        <div class="issue-cover col-8 px-0">
+            <a href="#">
+                <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-09.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="issue-article-list d-flex">
+            <li class="article col-lg-3">
+                <div class="dot"></div>
+                <div class="date">Aug.11.2020</div>
+                <div class="index">01 /</div>
+                <a href="#" class="title">餐酒與職人，被小資女霸佔的放縱基地 First One Bistro ── 《百飲募集》 VOL.1</a>
+            </li>
+            <li class="article col-lg-3">
+                <div class="dot"></div>
+                <div class="date">Sep.27.2020</div>
+                <div class="index">02 /</div>
+                <a href="#" class="title">用逐格動畫，進入奇幻童趣的咖哩世界： 布咕咖啡 Boogoo Cafe ── 《百飲募集》 VOL.2</a>
+            </li>
+            <li class="article col-lg-3">
+                <div class="dot"></div>
+                <div class="date">Oct.04.2020</div>
+                <div class="index">03 /</div>
+                <a href="#" class="title">臺菜囝仔 × 衝浪精神：古早味雞肉飯・雞霸 ── 《百飲募集》 VOL.3</a>
+            </li>
+            <li class="article col-lg-3">
+                <div class="dot"></div>
+                <div class="date">Nov.08.2020</div>
+                <div class="index">04 /</div>
+                <a href="#" class="title">以 Neo-Bistro 吟遊四季：裸餐酒 Naked ── 《百飲募集》 VOL.4</a>
+            </li>
+        </ul>
     </div>
 </div>
 

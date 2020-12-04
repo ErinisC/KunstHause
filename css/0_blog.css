@@ -38,7 +38,7 @@ body {
 }
 
 .category-header .category-name {
-  font: 500 1.8rem "Noto Sans TC";
+  font: 800 1.8rem "Noto Sans TC";
   margin-right: 1rem;
 }
 
@@ -142,7 +142,7 @@ a:hover{
 }
 
 .three-article{
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .two-article .title {
@@ -161,6 +161,66 @@ a:hover{
   line-height: 30px;
 }
 
-.two-article {
+.sub-article {
   margin-bottom: 3rem;
+}
+
+/* ----------issue---------- */
+.issue-meta-wrap{
+  margin-bottom: 2rem;
+}
+
+.issue-title {
+  font: 500 1rem "Noto Sans TC";
+  margin-bottom: 20px;
+}
+
+.issue-description {
+  font: 300 0.7rem "Noto Sans TC";
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+ul.issue-article-list {
+  cursor: grab;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+li.article {
+  padding: 0 10px 30px 0;
+  padding-top: 26px;
+  border-top: 2px solid #1a1a1a;
+}
+
+li.article .dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+  background: #1a1a1a;
+  left: 0;
+  top: -8px;
+}
+
+li.article .date {
+  font: 600 0.8rem "Roboto";
+  letter-spacing: 1.2px;
+  color: #168fa4;
+  margin-bottom: 16px;
+}
+
+li.article .index {
+  font: 500 0.7rem "Roboto";
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+
+li.article .title {
+  font: 500 1rem "Noto Sans TC";
+  color: #000000;
+  
 }
