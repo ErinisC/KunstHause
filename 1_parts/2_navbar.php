@@ -8,7 +8,7 @@
 
     <header class="position-fixed w-100">
         <nav class="navbar navbar-expand-lg">
-            <div class="container ">
+            <div class="container">
                 <a class="navbar-brand mr-5 sm-none" href="0_index.php">
                     <img src="<?= WEB_ROOT ?>imgs/index/logo.svg" alt="">
                 </a>
@@ -24,7 +24,7 @@
                 <!-- 小版購物車 -->
                 <li class="nav-item dropdown position-relative">
                     <!-- 小版購物車 -->
-                    <a href="#" class="header-icon shopping-cart nav-link mx-0 lg-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a href="#" id="sm-shop-cart" class="header-icon shopping-cart nav-link mx-0 lg-none" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-shopping.svg" alt="" class="shopcart-small-click" style="width:48px;">
                         <!-- 小版購物車數量提示 -->
                         <span class="badge badge-pill badge-info position-absolute count-badge">0</span>
@@ -278,4 +278,11 @@
         $('.shopcart-small-click').on('click', function() {
             $('.cart-nav-small').toggle();
         });
+
+        // 小版
+        $('.navbar-toggler').on('click', function() {
+            console.log('hi');
+            $('#sm-shop-cart').toggleClass('sm-none');
+        });
+
     </script>
