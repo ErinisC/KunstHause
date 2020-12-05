@@ -91,11 +91,11 @@
                             <a class="nav-link lg-none" href="1_member-center.php">會員中心</a>
                         </li>
                         <?php if (isset($_SESSION['user'])) : ?>
-                        <li class="nav-item">
+                        <li class="nav-item lg-none">
                             <a class="nav-link lg-none" href="1_member-center.php">登出</a>
                         </li>
                         <?php else : ?>
-                        <li class="nav-item">
+                        <li class="nav-item lg-none">
                             <a class="nav-link lg-none" href="1_member-center.php">登入/註冊</a>
                         </li>
                         <?php endif; ?>

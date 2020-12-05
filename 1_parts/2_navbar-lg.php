@@ -199,6 +199,10 @@
             border: 3px solid black;
             z-index: 1;
         }
+
+        .dropdown-menu.show {
+            display: none;
+        }
     }
 </style>
 
