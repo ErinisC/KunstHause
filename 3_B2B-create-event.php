@@ -22,6 +22,7 @@
             <div class="form-group">
                 <label class="event-banner d-flex col-sm-12">
                     <div class="input fake_input_placeholder position-absolute ">
+                        <label for="" class="FileName"></label>
                         <input id="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file" />
                     </div>
                     <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
@@ -34,32 +35,35 @@
                 <br>
             </div>
 
-            <!-- 活動名稱 -->
             <div class="form-group">
+
                 <label for="event_name">活動名稱</label>
+
                 <div class="input-wrap">
+
                     <div class="input-box">
                         <input id="event_name" class="input" type="text" name="event_name" placeholder="活動名稱">
                     </div>
+
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                 </div>
             </div>
 
-            <!-- 活動日期 -->
             <div class="form-group">
-                <label for="eventDate">活動日期</label>
 
+                <label for="eventDate">活動日期</label>
                 <div class="input-wrap">
-                    <!-- start -->
+
                     <div class="input-box">
                         <p class="pt-3">(活動日期開始)</p>
                         <input class="input" id="start-datetime" name="start-datetime" type="datetime-local">
                     </div>
+
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
 
-                    <!-- end -->
+
                     <div class="input-box">
                         <p class="mt-3">(活動日期結束)</p>
                         <input class="input" id="end-datetime" name="end-datetime" type="datetime-local">
@@ -71,13 +75,12 @@
                 </div>
             </div>
 
-            <!-- 活動種類 -->
             <div class="form-group">
                 <div class="input-wrap">
                     <label for="categories">活動種類</label>
                     <div class="input-box">
                         <select id="categories" name="categories" type="text" class="input" required>
-                            <option value="">請選擇</option>
+                            <option value="" disabled selected>請選擇</option>
                             <option value="music">音樂表演</option>
                             <option value="show">演唱活動</option>
                             <option value="art">藝文展覽</option>
@@ -88,8 +91,6 @@
                 </div>
             </div>
 
-
-            <!-- hashtag -->
             <div class="form-group">
                 <label for="hashtag">標籤設定</label>
                 <div class="input-wrap">
@@ -99,15 +100,13 @@
                 </div>
             </div>
 
-
-            <!-- 活動地點 -->
             <div class="form-group">
                 <label for="location">活動地點</label>
                 <div class="input-wrap d-flex flex-wrap col-lg-12 p-0">
                     <div class="input-box selector col-xl-4  d-flex justify-content-between p-0">
                         <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region" required>
 
-                            <option value="">請選擇</option>
+                            <option value="" disabled selected>請選擇</option>
                             <option value="North">北部</option>
                             <option value="Middle">中部</option>
                             <option value="South">南部</option>
@@ -116,14 +115,17 @@
                         <div class="col-lg-1 blanket"></div>
                         <select type="text" id="location" name="location" class="input-box input col-sm-5 mx-0" style="width:180px" required>
 
-                            <option value="">請選擇</option>
-                            <option value="TPE">台北市</option>
-                            <option value="TPH">新北市</option>
-                            <option value="TYC">桃園市</option>
-                            <option value="HSH">新竹市</option>
-                            <option value="TXG">台中市</option>
-                            <option value="KHH">高雄市</option>
-                            <option value="TNN">台南市</option>
+                            <option value="" disabled selected>請選擇</option>
+                            <optgroup label="北部">
+                                <option value="TPE">台北市</option>
+                                <option value="TPH">新北市</option>
+                                <option value="TYC">桃園市</option>
+                                <option value="HSH">新竹市</option>
+                            <optgroup label="中部">
+                                <option value="TXG">台中市</option>
+                            <optgroup label="南部">
+                                <option value="KHH">高雄市</option>
+                                <option value="TNN">台南市</option>
 
                         </select>
                         <div class="blanket col-lg-1 px-0" style="width:10px"></div>
@@ -140,7 +142,6 @@
             </div>
 
 
-            <!-- 交通資訊 -->
             <div class="form-group">
                 <label for="transportation">
                     交通資訊
@@ -148,8 +149,6 @@
                 </label>
             </div>
 
-
-            <!-- 活動注意事項 -->
             <div class="form-group">
                 <label for="notice">
                     活動注意事項
@@ -157,15 +156,12 @@
                 </label>
             </div>
 
-
-
-            <!-- 活動內容資訊 -->
             <div class="form-group">
                 <label for="event_info">
                     活動內容資訊
                     <div class="input-wrap">
 
-                        <Textarea id="event_info" name="event_info" class="textarea" cols="117" rows="10" required></Textarea>
+                        <Textarea id="event_info" name="event_info" class="textarea event_info" cols="117" rows="10" required></Textarea>
 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -173,7 +169,6 @@
                 </label>
             </div>
 
-            <!-- 活動票價 -->
             <div class="form-group">
                 <div class="d-flex">
                     <div class="blanket col-8"> </div>
@@ -201,19 +196,20 @@
                 </div>
             </div>
 
+            <!-- 錯誤跳提醒設定 alert -->
+            <div id="info_bar" class="alert alert-danger col-8 mx-auto my-4 py-3" role="alert" style="display: none">
+            </div>
 
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
-                    <button class="modify1 col-5 btn btn-primary">取消</button>
-                    <button type="submit" class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成</button>
+                    <button class="modify1 col-5 btn btn-primary" onclick="showModal()">取消</button>
+                    <button type="submit" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
                 </div>
             </div>
 
         </form>
 
-        <!-- 錯誤跳提醒設定 alert -->
-        <div id="info_bar" class="alert alert-danger col-8 mx-auto my-4 py-3" role="alert" style="display: none">
-        </div>
+
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -230,8 +226,7 @@
                             </svg>
 
                         </div>
-                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">
-                            <? event_name ?>
+                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">2019百威真我至上音樂巡迴
                         </div>
                         <span class="text-center mt-3 ">活動已幫你送出審核，
                             再請至活動管理
@@ -255,8 +250,11 @@
 
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
-<!-- 引入自己的ＪＳ -->
-<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<!-- Bootstrap JS -->
+<script src="./bootstrap/js/bootstrap.bundle.js"></script>
+<!-- JQ -->
+<script src="./libary/jquery-3.5.1.js"></script>
+
 <script>
     // 預覽圖片
     $('.fake_input').on('change', function(e) {
@@ -266,16 +264,32 @@
         $('.eventimg').attr('src', objectURL);
     });
 
+    $('fake_input_placeholder').on('change', function getFilePath() {
+        $('input[type=file]').change(function() {
+            var filePath = $('#fileUpload').val();
+        })
+    });
+
+    $('#picture').change(function() {
+        var i = $(this).prev('label').clone();
+        var file = $('#picture')[0].files[0].name;
+        $(this).prev('label').text(file);
+    });
+
 
     // 設定常數
     const eventname = $('#event_name');
-    const eventDate = $('#eventDate');
-    const eventplace = $('#region');
+    const region = $('#region');
     const address = $('#address');
     const eventinfo = $('#event_info');
     const price = $('#price');
-    const info_bar = $('#info_bar')
+    const info_bar = $('#info_bar');
+    var startdate = document.querySelector('#start-datetime');
+    var enddate = document.querySelector('#end-datetime');
 
+    $('#exampleModalCenter').on('hidden.bs.modal', function(a) {
+        location.href = '3_B2B-index.php';
+    });
 
     function checkForm() {
 
@@ -308,7 +322,7 @@
 
         if (eventinfo.val().length == 0) {
             isPass = false;
-            eventinfo.addClass('error');
+            eventinfo.closest('.input-wrap').addClass('error');
         } else {
 
             $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
@@ -324,10 +338,7 @@
                     //     .removeClass('alert-danger')
                     //     .addClass('alert-success')
                     //     .text('完成新增');
-                    $('#exampleModalCenter').modal('show');
-                    $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                        location.href = '3_B2B-index.php'
-                    })
+
                 } else {
                     info_bar
                         // .removeClass('alert-success')

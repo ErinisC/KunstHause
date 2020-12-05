@@ -79,6 +79,12 @@
 
             </div>
 
+            <!-- 插圖 -->
+            <!-- <div class="b2bpic">
+                <img src="<?= WEB_ROOT ?>/imgs/b2b/computer.svg" alt="">
+            </div> -->
+
+
             <div class="modbutton text-center col-xl-8 col-12">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <!-- <button class="modify1 col-5 btn btn-primary">修改會員資料</button> -->

@@ -68,6 +68,11 @@ label {
   padding: 0 0 0 10px;
 }
 
+.FileName {
+  position: absolute;
+  top: -1rem;
+}
+
 .upload-banner {
   height: 50px;
   background-color: #15869a;
@@ -207,7 +212,7 @@ input[type="number"] {
 
 .error {
   visibility: visible;
-  border-color: #ff0000;
+  color: #ff0000;
 }
 
 .success {
@@ -260,8 +265,13 @@ input[type="number"] {
     display: none;
   }
 
-  .fake_input {
-    opacity: 0;
+  .FileName {
+    position: absolute;
+    top: -2rem;
+  }
+
+  .upload-banner {
+    padding-top: 10px;
   }
 
   .background {
@@ -282,6 +292,10 @@ input[type="number"] {
 
   .blanket {
     display: none;
+  }
+
+  .pricetag {
+    padding-top: 10px;
   }
 
   .okbutton {
