@@ -16,7 +16,7 @@
 
                 <!-- 三個小圖示-2 -->
                 <div class="progress-bar-section text-center p-0 col-3">
-                    <div class="img-wrap mb-2 px-0 py-1 mx-auto">
+                    <div class="img-wrap mb-2 px-0 mx-auto">
                         <img src="./imgs/shopcart/ic-fill info.svg" alt="">
                     </div>
                     <p>填資料</p>

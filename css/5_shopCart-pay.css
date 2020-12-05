@@ -6,11 +6,45 @@
     min-height: 90vh;
 }
 
-/* 
-.form-title {
-    border-bottom: 3px solid black;
-} */
 
+
+/* 通用格式 */
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.form-control:focus {
+    border-color: #ffc024;
+    box-shadow:
+        0 0 0 0.2rem #ffc024;
+}
+
+.form-title {
+    color: white;
+    background: #666;
+    font-size: .8rem;
+}
+
+/* 區塊距離 */
+.container {
+    margin-bottom: 3rem;
+}
+
+/* 購物車nav階段 */
+.progress-bar-section:nth-child(2) img {
+    height: 86%;
+}
+
+.progress-bar-section:nth-child(3) {
+    opacity: .5;
+}
+
+/* 選擇付款方式卡片 */
 .payway-wrap {
     cursor: pointer;
     transition: .5s;
@@ -23,6 +57,13 @@
     box-shadow: 5px 5px #168FA4;
 }
 
+.payway-wrap.active {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #168FA4;
+    color: white;
+}
+
 .payway-wrap .img-wrap {
     height: 100px;
 }
@@ -33,7 +74,6 @@
 }
 
 /* 信用卡圖片 */
-
 .preload * {
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -313,23 +353,76 @@
 
 
 
-/* 信用卡付款選單 */
+/* 信用卡付款表格 */
 .card-body .img-wrap {
     height: 300px;
 }
 
 .form-control {
-    border: 2px solid black;
-    margin: 10px 0 10px 0px;
+    font-family: NotoSansTC-Regular, Roboto;
+    font-size: .8rem;
+    height: 50px;
     border-radius: 0;
+    border: 2px solid black;
+
 }
 
-.form-control:focus {
-    border-color: #FFC026;
-    box-shadow: 0 0 0 0.2rem rgba(255, 192, 38, 0.25);
+/* 表格驗證格式 */
+
+.input-box .fas {
+    visibility: hidden;
+    top: 18px;
+    right: 11px;
 }
+
+.must-icon {
+    color: red;
+}
+
+.must {
+    color: red;
+    font-size: .6rem;
+}
+
+.input-box small {
+    visibility: hidden;
+    color: red;
+    font-size: .7rem;
+    text-align: right;
+}
+
+/* 錯誤 */
+.form-control.error {
+    border: 3px solid red;
+}
+
+.input-box.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #ff0000;
+}
+
+.input-box.error small {
+    visibility: visible;
+    color: #ff0000;
+}
+
+
+/* 成功 */
+.form-control.success {
+    border: 3px solid #168fa4;
+}
+
+.input-box.success i.fa-check-circle {
+    visibility: visible;
+    color: #168fa4;
+}
+
 
 /* 統一按鈕 */
+.btn-set {
+    margin-top: 3rem;
+}
+
 .btn {
     border: 3px solid #000;
     border-radius: 0px;

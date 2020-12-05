@@ -1,10 +1,47 @@
-.form-title {
-    border-bottom: 3px solid black;
+/* 通用格式 */
+.form-control:focus {
+    border-color: #ffc024;
+    box-shadow:
+        0 0 0 0.2rem #ffc024;
+}
+
+/* 購物車nav階段 */
+.progress-bar-section:nth-child(2) {
+    opacity: .5;
+}
+
+.progress-bar-section:nth-child(2) img {
+    height: 86%;
+}
+
+.progress-bar-section:nth-child(3) {
+    opacity: .5;
+}
+
+/* 明細 */
+.btn-itemlist {
+    background-color: #ED5B4C;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-itemlist:hover {
+    background-color: #e63e2c;
+    color: white;
+    font-weight: 600;
 }
 
 
+.rotate {
+    transform: rotateX(180deg);
+}
 
-
+/* 表單開始 */
+.form-title {
+    color: white;
+    background: #666;
+    font-size: .8rem;
+}
 
 .form-control {
     font-family: NotoSansTC-Regular, Roboto;
@@ -15,8 +52,56 @@
 
 }
 
+/* 表格驗證格式 */
+.input-box .fas {
+    visibility: hidden;
+    top: 18px;
+    right: 11px;
+}
+
+.must-icon {
+    color: red;
+}
+
+.must {
+    color: red;
+    font-size: .6rem;
+}
+
+.input-box small {
+    visibility: hidden;
+    color: red;
+    font-size: .7rem;
+    text-align: right;
+}
+
+/* 錯誤 */
+.form-control.error {
+    border: 3px solid red;
+}
+
+.input-box.error i.fa-exclamation-circle {
+    visibility: visible;
+    color: #ff0000;
+}
+
+.input-box.error small {
+    visibility: visible;
+    color: #ff0000;
+}
 
 
+/* 成功 */
+.form-control.success {
+    border: 3px solid #168fa4;
+}
+
+.input-box.success i.fa-check-circle {
+    visibility: visible;
+    color: #168fa4;
+}
+
+/* 表單按鈕 */
 form .btn {
     color: #000;
     margin: auto 0;
@@ -24,6 +109,7 @@ form .btn {
     border-radius: 0px;
     font-weight: 600;
 }
+
 
 /* 統一按鈕 */
 .btn {

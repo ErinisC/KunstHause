@@ -310,7 +310,7 @@ $rows = $stmt->fetchAll();
         $.get('4_productList-shopcart-api.php', {
             sid: sid,
             action: 'add',
-            quantity: quantity
+            quantity: quantity,
         }, function(data) {
             console.log(data);
             // 上面navbar的購物車數量要變

@@ -201,7 +201,8 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         .text('登入成功');
 
                     setTimeout(function() {
-                        location.href = '4_productList.php';
+                        // location.href = '4_productList.php';
+                        location.href = '<?= $gotoURL ?>';
                     }, 3000);
 
 

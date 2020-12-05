@@ -1,9 +1,12 @@
 <?php $title = '購物車 選擇付款方式'; ?>
 
-<?php include __DIR__ . '/1_parts/0_config.php';
+<?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
+<?php
 
-
+if (!isset($_SESSION['user'])) {
+    $gotoURL = '5_shopCart-list.php';
+}
 
 ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
@@ -21,11 +24,11 @@
 
 <!-- 內容開始 -->
 
-<div class="container my-4">
+<div class="container mt-4">
     <div class="row">
         <!-- 項目標題 -->
         <div class="wrap w-100 text-center my-4">
-            <div class="form-title col-6 m-auto py-2">選擇付款方式</div>
+            <div class="form-title col-lg-2 col-12 m-auto py-2">選擇付款方式</div>
         </div>
 
 
@@ -37,9 +40,7 @@
                         <img src="./imgs/shopcart/ic-pay.svg" alt="">
                     </div>
                     <div class="text-center my-3">信用卡付款</div>
-                    <div class="input-group-text">
-                        <input type="radio" class="m-auto" aria-label="Radio button for following text input">
-                    </div>
+
                 </div>
             </div>
         </a>
@@ -52,9 +53,7 @@
                         <img src="./imgs/shopcart/ic-banking.svg" alt="">
                     </div>
                     <div class="text-center my-3">銀行付款</div>
-                    <div class="input-group-text">
-                        <input type="radio" class="m-auto" aria-label="Radio button for following text input">
-                    </div>
+
                 </div>
             </div>
         </a>
@@ -67,9 +66,7 @@
                         <img src="./imgs/shopcart/ic-7-11.svg" alt="">
                     </div>
                     <div class="text-center my-3">信用卡付款</div>
-                    <div class="input-group-text">
-                        <input type="radio" class="m-auto" aria-label="Radio button for following text input">
-                    </div>
+
                 </div>
             </div>
         </a>
@@ -84,40 +81,13 @@
     <div class="row">
         <div class="col-12 p-0 m-auto">
             <!-- 下拉式選單呈現區塊 -->
-            <!-- <div class="wrap"> -->
+
             <!-- 信用卡付款下拉選單 -->
-            <!-- <div class="col">
-                    <div class="collapse multi-collapse" id="credit-pay">
-
-
-                    </div>
-                </div> -->
-
-            <!-- 銀行轉帳付款下拉選單 -->
-            <!-- <div class="col">
-                    <div class="collapse multi-collapse" id="bank-pay">
-                        <div class="card card-body col-8">
-                            銀行付款
-                        </div>
-                    </div>
-                </div> -->
-
-            <!-- 超商條碼付款下拉選單 -->
-            <!-- <div class="col">
-                    <div class="collapse multi-collapse" id="ibon-pay">
-                        <div class="card card-body">
-                            超商條碼付款
-                        </div>
-                    </div>
-                </div> -->
-            <!-- </div> -->
-
-
-            <div class="test" style="display:block">
+            <div class="credit-pay" style="display:none">
                 <!-- 開始信用卡圖片 -->
-                <div class="row justify-content-center">
-                    <!-- 信用卡圖片 -->
+                <div class="row justify-content-center mt-3">
 
+                    <!-- 信用卡圖片 -->
                     <div class="credit-card container preload  card-body m-auto col-lg-8 col-md-8 col-sm-10 col-12">
                         <div class="creditcard">
                             <div class="front">
@@ -221,124 +191,124 @@
 
                         <!-- 項目標題 -->
                         <div class="wrap w-100 text-center my-4">
-                            <div class="form-title col-6 m-auto py-2">信用卡資訊</div>
+                            <div class="w-100 m-auto py-2"></div>
                         </div>
 
                         <!-- 如果有設定信用卡的話，如果沒有就 -->
                         <?php if (isset($_SESSION['creditcard'])) : ?>
                             <!-- 持卡人姓名 -->
-                            <div class="form-group mb-4">
-                                <label for="name">持卡人姓名 (必填)</label>
+                            <div class="form-group">
+                                <label for="name" class="mb-2">
+                                    <span class="must-icon">*</span>
+                                    持卡人姓名
+                                    <span class="must">(必填)</span>
+                                </label>
+
                                 <div class="input-box">
-                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="<?= $_SESSION['creditcard']['name'] ?>">
+                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="<?= $_SESSION['creditcard']['name'] ?? "" ?>">
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
                                     <!-- 姓名驗證 -->
-                                    <small class="form-text"></small>
+                                    <small class="form-text mt-2">* 請輸入正確持卡人姓名</small>
                                 </div>
                             </div>
 
                             <!-- 卡片號碼 -->
-                            <div class="form-group mb-4">
-                                <label for="credit-number">卡片號碼</label>
-                                <div class="input-box position-relative">
+                            <div class="form-group">
+                                <label for="credit-number">
+                                    <span class="must-icon">*</span>
+                                    卡片號碼
+                                    <span class="must">(必填)</span>
+                                </label>
+
+                                <div class=" input-box position-relative">
                                     <span id="generatecard">generate random</span>
-                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="<?= $_SESSION['creditcard']['credit-number'] ?>">
+                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="<?= $_SESSION['creditcard']['credit-number'] ?? "" ?>">
                                     <!-- svg圖案 -->
                                     <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-                                    <!-- 信箱驗證 -->
-                                    <small id="credit-number" class="form-text"></small>
+
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- 卡片號碼驗證 -->
+                                    <small class="form-text mt-2">* 請輸入正確卡片號碼</small>
                                 </div>
                             </div>
 
                             <!-- 有效年月 -->
-                            <div class="form-group mb-4">
-                                <label for="valid-date">有效年月</label>
-                                <div class=" input-box">
-                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="<?= $_SESSION['creditcard']['valid-date'] ?>">
+                            <div class="form-group">
+                                <label for="valid-date" class="mb-2">
+                                    <span class="must-icon">*</span>
+                                    有效年月
+                                    <span class="must">(必填)</span>
+                                </label>
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="<?= $_SESSION['creditcard']['valid-date'] ?? "" ?>">
+
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
                                     <!-- 有效年月驗證 -->
-                                    <small class="form-text" class="r-pin"></small>
+                                    <small class="form-text" class="r-pin mt-2">* 請輸入有效年月</small>
                                 </div>
+                            </div>
 
-                                <!-- 驗證碼 -->
-                                <div class="form-group mb-4">
-                                    <label for="security-number">驗證碼</label>
-                                    <div class="input-box">
-                                        <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="<?= $_SESSION['creditcard']['security-number'] ?>">
-                                        <!-- 電話驗證 -->
-                                        <small class="form-text" class="r-pin"></small>
-                                    </div>
+                            <!-- 驗證碼 -->
+                            <div class="form-group">
+                                <label for="security-number" class="mb-2">
+                                    <span class="must-icon">*</span>
+                                    驗證碼
+                                    <span class="must">(必填)</span>
+                                </label>
+                                <div class="input-box">
+                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="<?= $_SESSION['creditcard']['security-number'] ?? "" ?>">
+
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- 電話驗證 -->
+                                    <small class="form-text" class="r-pin mt-2">* 請輸入正確電話</small>
                                 </div>
+                            </div>
 
-                            <?php else : ?>
-                                <!-- 持卡人姓名 -->
-                                <div class="form-group mb-4">
-                                    <label for="name">持卡人姓名 (必填)</label>
-                                    <div class="input-box">
-                                        <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="">
-                                        <!-- 姓名驗證 -->
-                                        <small class="form-text"></small>
-                                    </div>
-                                </div>
-
-                                <!-- 卡片號碼 -->
-                                <div class="form-group mb-4">
-                                    <label for="credit-number">卡片號碼</label>
-                                    <div class="input-box position-relative">
-                                        <span id="generatecard">generate random</span>
-                                        <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number">
-                                        <!-- svg圖案 -->
-                                        <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
-                                        <!-- 信箱驗證 -->
-                                        <small id="credit-number" class="form-text"></small>
-                                    </div>
-                                </div>
-
-                                <!-- 有效年月 -->
-                                <div class="form-group mb-4">
-                                    <label for="valid-date">有效年月</label>
-                                    <div class=" input-box">
-                                        <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="">
-                                        <!-- 有效年月驗證 -->
-                                        <small class="form-text" class="r-pin"></small>
-                                    </div>
-
-                                    <!-- 驗證碼 -->
-                                    <div class="form-group mb-4">
-                                        <label for="security-number">驗證碼</label>
-                                        <div class="input-box">
-                                            <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="">
-                                            <!-- 電話驗證 -->
-                                            <small class="form-text" class="r-pin"></small>
-                                        </div>
-                                    </div>
-
-                                <?php endif ?>
+                        <?php endif; ?>
 
 
-                                <!-- 上一步或送出按鈕 -->
-                                <div class="row justify-content-center">
-                                    <!-- 繼續逛逛 -->
-                                    <div class="col-6 text-right">
-                                        <a href="5_shopCart-member-info.php">
-                                            <button type="button" class="btn btn-warning btn-before">上一步</button>
-                                        </a>
-                                    </div>
+                        <!-- 上一步或送出按鈕 -->
+                        <div class="row btn-set justify-content-center">
+                            <!-- 繼續逛逛 -->
+                            <div class="col-6 text-right">
+                                <a href="5_shopCart-member-info.php">
+                                    <button type="button" class="btn btn-warning btn-before">上一步</button>
+                                </a>
+                            </div>
 
-                                    <!-- 送出 -->
-                                    <div class="col-6">
-                                        <button type="submit" class="btn submit btn-info">確認送出</button>
-                                    </div>
+                            <!-- 送出 -->
+                            <div class="col-6">
+                                <button type="submit" class="btn submit btn-info">確認送出</button>
+                            </div>
 
-                                </div>
+                        </div>
 
                     </form>
                 </div>
 
             </div>
 
+
+
+            <!-- 銀行轉帳付款下拉選單 -->
+            <!-- <div class="bank-pay" style="display:none">
+
+                <div class="">銀行轉帳</div>
+            </div> -->
+
         </div>
-
-
-
 
     </div>
 </div>
@@ -397,25 +367,31 @@
     // header不要fixed
     $('header').removeClass('position-fixed');
 
+    // 付款方式選擇
+    $('.payway-wrap').on('click', function() {
+        $(this).toggleClass('active')
+        $(this).closest('a').siblings().find('.payway-wrap').removeClass('active')
+    })
+
     // 秀出信用卡付款資料表
     function showCollapse() {
-        $('.test').toggle();
+        $('.credit-pay').slideToggle();
 
         // $('#credit-pay').collapse('show')
         // $('#bank-pay').collapse('hide')
         // $('#ibon-pay').collapse('hide')
     }
 
+
+    // 秀出銀行轉帳付款資料表
     function showCollapse2() {
-        $('#bank-pay').collapse('show')
-        $('#ibon-pay').collapse('hide')
-        $('#credit-pay').collapse('hide')
+        // $('.bank-pay').slideToggle()
+        $('.credit-pay').css('display', 'none')
     }
 
+    // 秀出超商ibon付款資料表
     function showCollapse3() {
-        $('#ibon-pay').collapse('show')
-        $('#bank-pay').collapse('hide')
-        $('#credit-pay').collapse('hide')
+        $('.credit-pay').css('display', 'none')
     }
 
     // 信用卡資訊送進sessio  ＪＳ
