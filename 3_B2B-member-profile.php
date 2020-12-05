@@ -15,11 +15,11 @@
             <div class="mambertext">
                 <img class="clip" src="/KunstHause//imgs/member/clip.svg" alt="">
                 <div class="picture">
-                    <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+                    <!-- <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
                         <path id="Union_7" data-name="Union 7" d="M0,140V122.5c0-19.254,31.5-35,70-35s70,15.75,70,35V140ZM35,35A35,35,0,1,1,70,70,35,35,0,0,1,35,35Z" fill="#7fc4fd" />
-                    </svg>
+                    </svg> -->
                 </div>
-                <p class="organizer">主辦單位名稱</p>
+                <p class="organizer">名字好難想工作室</p>
                 <div class="time d-flex col-6">
                     <svg class="eye" xmlns="http://www.w3.org/2000/svg" width="39" height="21" viewBox="0 0 39 21">
                         <g id="Eyes-icon" transform="translate(0 0)">
@@ -39,10 +39,8 @@
                 </div>
                 <p class="introduction">簡介</p>
                 <div class="introduction-text col-10 col-xl-6">
-                    <p>LMalaysian comedian and content creator based in London, UK. Creator of Uncle Roger and Rice To Meet You podcast.
-                        <br>
-                        <br>
-                        For all enquiries please contact Duncan Hayes at United Agents via Olivia Jones ojones@unitedagents.co.uk</p>
+                    <p>我們不得不面對一個非常尷尬的事實，那就是，想必大家都能了解名字好難想工作室的重要性。既然如此，若能夠欣賞到名字好難想工作室的美，相信我們一定會對名字好難想工作室改觀。名字好難想工作室似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。
+                    </p>
                 </div>
 
                 <div class="history col-xl-4 col-10">
@@ -61,7 +59,7 @@
                                 <path id="Path_1490" data-name="Path 1490" d="M280.351,123.33H268.358a4.141,4.141,0,0,0-4.141,4.141v23.987a4.141,4.141,0,0,0,4.141,4.14h11.993a4.141,4.141,0,0,0,4.141-4.14V127.471A4.141,4.141,0,0,0,280.351,123.33Zm-8.751,2.111h5.51v1.51H271.6Zm2.755,29.252a1.934,1.934,0,1,1,1.934-1.934A1.936,1.936,0,0,1,274.355,154.693Zm7.8-4.7h-15.6V128.689h15.6Zm-7.8,1.361a1.4,1.4,0,1,0,1.4,1.4A1.4,1.4,0,0,0,274.355,151.357Z" fill="#fff" />
                             </g>
                         </svg>
-                        <p class="number">0900-001-333</p>
+                        <p class="number">(02)-0003-1234</p>
                     </div>
                     <div class="e-mail d-flex col-12">
                         <svg class="mailimg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.026 52.026">
@@ -83,8 +81,8 @@
 
             <div class="modbutton text-center col-xl-8 col-12">
                 <div class="okbutton col-xl-6 col-10 d-flex">
-                    <button class="modify1 col-5 btn btn-primary">修改會員資料</button>
-                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">返回會員中心</button>
+                    <!-- <button class="modify1 col-5 btn btn-primary">修改會員資料</button> -->
+                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="location.href='3_B2B-index.php'">返回會員中心</button>
                 </div>
             </div>
 
