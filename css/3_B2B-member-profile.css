@@ -1,6 +1,20 @@
 /* * {
   outline: 1px solid red;
 } */
+.b2bpic {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: 40px;
+  top: 120px;
+  transform: rotate(5deg);
+  transition: 0.3s;
+}
+
+.b2bpic:hover {
+  transform: rotate(20deg);
+}
+
 button:focus {
   box-shadow: none !important;
 }
