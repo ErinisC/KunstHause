@@ -44,7 +44,11 @@ body {
 }
 
 .indexcard:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
+}
+
+.bgcard:hover {
+  box-shadow: 10px 10px #8b6400;
 }
 
 .titlecard {
@@ -61,6 +65,7 @@ body {
   height: 375px;
   background-color: #168fa4;
   border: 3px solid #000;
+  transition: 0.3s;
 }
 
 .notebook {
@@ -111,7 +116,9 @@ body {
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  background-color: #f1f9ff;
+  background: url(../imgs/B2B_imgs/b2b-3.jpg);
+  background-size: contain;
+  /* background-color: #f1f9ff; */
   border: 3px solid #000;
 }
 

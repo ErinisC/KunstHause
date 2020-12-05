@@ -263,7 +263,7 @@ if (!isset($_SESSION['user'])) {
                 console.log(data);
                 $('#exampleModalCenter').modal('show');
                 $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                    location.href = '1_member-login.php'
+                    location.href = '3_B2B-index.php'
                 })
                 return;
 
