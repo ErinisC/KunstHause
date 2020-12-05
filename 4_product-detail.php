@@ -52,9 +52,12 @@ if (empty($row)) {
         <div class="row justify-content-between">
 
             <!-- 活動圖片 -->
-            <div class="mainact">
-                <img src="imgs/event/event-lg/<?= $row['picture'] ?>.jpg" alt="">
+            <div class="intro-box">
+                <div class="mainact">
+                    <img src="imgs/event/event-lg/<?= $row['picture'] ?>.jpg" alt="">
+                </div>
             </div>
+
 
             <!-- <div class="space-1"></div> -->
 
@@ -311,9 +314,26 @@ if (empty($row)) {
 
 <!-- 自己的ＪＳ -->
 <script>
+    // see more rubberBand animation
+    $(window).scroll(function() {
+        let scrollTop = $(window).scrollTop();
+        let top = 820;
+        let isＭobile = ($(window).width()) < 576;
+
+        console.log('scrollTop:', scrollTop);
+        console.log(isＭobile)
+        if (isＭobile) {
+            top = 1110;
+        }
+
+        if (scrollTop > top) {
+            $('.tape-1').addClass('rubberBand');
+        } else {
+            $('.tape-1').removeClass('rubberBand');
+        }
 
 
-
+    });
 </script>
 
 <!-- footer -->

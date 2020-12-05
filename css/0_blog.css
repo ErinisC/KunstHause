@@ -23,6 +23,35 @@ body {
   .space {
     height: 8rem;
   }
+
+  .sticker{
+    display: none;
+  }
+
+  .hero-article{
+    flex-direction: column;
+  }
+
+  .hero-article .article-meta {
+    margin-top: 2rem;
+  }
+
+  .hero-article .feature-img{
+    width: 100%;
+  }
+
+  .hero-article .feature-img img{
+    width: 100%;
+  }
+
+  .three-article{
+    flex-direction: column;
+  }
+
+  .two-article{
+    flex-direction: column;
+  }
+
 }
 
 /* ----------hero article---------- */

@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 html,
 body {
@@ -103,6 +103,14 @@ body {
   text-align: center;
 }
 
+.tape-1.rubberBand {
+  /* margin: 0 0.5rem;
+  animation: rubberBand;
+  animation-duration: 0.8s; */
+  transition: 0.5s;
+  transform: translate(39px, 10px);
+}
+
 .activity {
   /* width: 500px; */
 }
@@ -125,6 +133,10 @@ body {
 
 .activity-place {
   font-size: 30px;
+}
+
+.tape img {
+  width: 100%;
 }
 
 .tape-1 {
@@ -299,13 +311,18 @@ input[name="tab_item"] {
     text-align: center;
   }
 
-  .tape-1 {
+  .tape {
     width: 200px;
   }
 
-  .tape-2 {
-    display: none !important;
+  .tape-1 {
+    width: 200px;
+    top: -70px;
   }
+
+  /* .tape-2 {
+    display: none !important;
+  } */
 }
 
 /* =============================== */

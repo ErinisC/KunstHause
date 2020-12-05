@@ -5,7 +5,7 @@
 // if (!isset($_SESSION['vendor'])) {
 //     header('Location: 3_B2B-sign-in.php');
 //     exit;
-// } 
+// }
 ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
@@ -20,11 +20,11 @@
         <div class="row index">
             <div class="ogzcard">
                 <div class="picture">
-                    <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+                    <!-- <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
                         <path id="Union_7" data-name="Union 7" d="M0,140V122.5c0-19.254,31.5-35,70-35s70,15.75,70,35V140ZM35,35A35,35,0,1,1,70,70,35,35,0,0,1,35,35Z" fill="#7fc4fd" />
-                    </svg>
+                    </svg> -->
                 </div>
-                <p class="organizer">主辦單位名稱</p>
+                <p class="organizer">名字好難想工作室</p>
                 <a href="3_B2B-member-profile.php">檢視主辦單位</a>
             </div>
             <div class="indexcard">

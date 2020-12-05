@@ -199,6 +199,10 @@
             border: 3px solid black;
             z-index: 1;
         }
+
+        .dropdown-menu.show {
+            display: none;
+        }
     }
 </style>
 
@@ -280,6 +284,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="0_blog.php">新鮮事</a>
                     </li>
+                    <li class="nav-item">
+                            <a class="nav-link lg-none" href="1_member-center.php">會員中心</a>
+                        </li>
+                        <?php if (isset($_SESSION['user'])) : ?>
+                        <li class="nav-item lg-none">
+                            <a class="nav-link lg-none" href="1_member-center.php">登出</a>
+                        </li>
+                        <?php else : ?>
+                        <li class="nav-item lg-none">
+                            <a class="nav-link lg-none" href="1_member-center.php">登入/註冊</a>
+                        </li>
+                        <?php endif; ?>
                 </ul>
 
                 <!-- 搜尋區塊 -->
@@ -293,7 +309,7 @@
                 <!-- 會員dropdown -->
                 <li class="nav-item dropdown">
                     <!-- 會員icon -->
-                    <a class="nav-link mx-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link mx-0 sm-none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php if (isset($_SESSION['user'])) : ?>
                             <i class="fas fa-user" style="font-size:38px;color:#168FA4"></i>
                         <?php else : ?>
@@ -310,7 +326,7 @@
                         <?php if (isset($_SESSION['user'])) : ?>
                             <a class="dropdown-item" href="1_member-logout-api.php">登出</a>
                         <?php else : ?>
-                            <a class="dropdown-item" href="1_member-login.php">登入</a>
+                            <a class="dropdown-item" href="1_member-login.php">登入/註冊</a>
                         <?php endif; ?>
                     </div>
                 </li>
