@@ -32,7 +32,7 @@
                 <div class="deco">
                     <img class="long-clip" src=" <?= WEB_ROOT ?>/imgs/member/clip.svg">
 
-                    <div class="tape animated bounceInDown">
+                    <div class="tape">
                         <img src=" <?= WEB_ROOT ?>/imgs/member/member-label.svg">
                     </div>
                 </div>

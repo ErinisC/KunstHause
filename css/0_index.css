@@ -493,10 +493,9 @@ body {
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.card:hover .event-intro{
+.card:hover .event-intro {
   opacity: 1;
 }
-
 
 .card-top {
   background-color: #fac000;

@@ -215,7 +215,7 @@ foreach ($d_rows as $d) {
                         </div>
                     </div>
 
-                    <div class="view-more mt-4">
+                    <div class="view-more">
                         <p>VIEW MORE >></p>
                     </div>
 
@@ -299,7 +299,7 @@ foreach ($d_rows as $d) {
                     <?php foreach ($d_rows as $d) : ?>
                         <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
                             <div class="t-detail col-lg-9 d-flex p-0">
-                                <div class="ticket-kv col-lg-4 p-0 mr-3">
+                                <div class="ticket-kv col-lg-4 col-sm-3 p-0 mr-3">
                                     <img class="event-sm-img w-100 p-0" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                                 </div>
                                 <div class="main-info">
@@ -318,14 +318,14 @@ foreach ($d_rows as $d) {
                             </div>
                             <div class="edit-area d-flex">
                                 <div class="e-ticket pt-3 mt-3">
-                                    <div class="delete m-3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal">
+                                    <div class="delete m-3 jq-delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                         <img src="/KunstHause/imgs/member/cancel.svg">
                                     </div>
                                     <div class="feedback m-3" type="button">
                                         <img src="/KunstHause/imgs/member/feedback.svg">
                                     </div>
                                 </div>
-                                <div class="qr-code mr-2">
+                                <div class="qr-code">
                                     <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
                                         <img src="<?= WEB_ROOT ?>/imgs/member/qr-code.svg" alt="">
                                     </div>
@@ -336,25 +336,49 @@ foreach ($d_rows as $d) {
                 <?php endif; ?>
 
 
+                <!--Modal 跳出確認取消提醒視窗 -->
 
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content position-relative col-11">
+                            <div class="logo position-absolute">
+                                <img src="<?= WEB_ROOT ?>imgs/index/Logo.svg" alt="">
+                            </div>
+
+                            <div class="modal-header mt-5 ml-3">
+                                <p class="modal-title p-2" id="exampleModalCenterTitle">
+                                    <?= $d['event_name'] ?>
+                                </p>
+                            </div>
+                            <div class="modal-body">
+                                <p>您確定要<span>取消</span>此筆訂單嘛?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="cancel-btn" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal" style="background-color:#FF4E42">確認取消</button>
+                                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
                 <!-- 手機版 -->
 
                 <!-- <div class="mobile-edit-area d-flex">
-                            <div class="e-ticket mt-3">
-                                <div class="delete px-2" type="button">
-                                    <img src="/KunstHause/imgs/member/cancel.svg">
-                                </div>
-                                <div class="feedback mt-5 px-2" type="button">
-                                    <img src="/KunstHause/imgs/member/feedback.svg">
-                                </div>
+                    <div class="e-ticket mt-3">
+                        <div class="delete px-2" type="button">
+                            <img src="/KunstHause/imgs/member/cancel.svg">
+                        </div>
+                        <div class="feedback mt-5 px-2" type="button">
+                            <img src="/KunstHause/imgs/member/feedback.svg">
+                        </div>
 
-                                <button class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                    <img src="/KunstHause/imgs/member/qr-code.svg">
-                                </button>
-                            </div>
-                        </div> -->
+                        <button class="qr-code-lg mt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                            <img src="/KunstHause/imgs/member/qr-code.svg">
+                        </button>
+                    </div>
+                </div> -->
 
 
 
@@ -428,9 +452,8 @@ foreach ($d_rows as $d) {
             </div>
         </div>
 
-        <div class="col-lg-2" style="margin-top:10rem">
-            <div class="guide-bar" style="line-height: 3rem ; text-align: center; font-weight: 600 ">
-                <div class="box"></div>
+        <div class="guide" style="margin-top:10rem">
+            <div class="guide-bar position-fixed col-lg-2" style="line-height: 3rem ; text-align: center; font-weight: 600;">
                 <div class="item" style="background-color:#FAC000"><a href="http://localhost/KunstHause/2_member-order.php" class="text-white">票券管理</a></div>
                 <div class="item" style="background-color:#fff"><a href="" class="text-dark">我的收藏</a></div>
                 <div class="item" style="background-color:#FAC000"><a href="" class="text-white">優惠券管理</a></div>
@@ -450,6 +473,15 @@ foreach ($d_rows as $d) {
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<!-- <script src=""></script> -->
+<script>
+    if $('.btn cancel-btn').click(function() {
+        $(this).parent().parent().parent().remove();
+    });
+
+
+    // $('.jq-delete').click(function() {
+    //     $(this).parent().parent().parent().remove();
+    // });
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

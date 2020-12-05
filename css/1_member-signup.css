@@ -207,12 +207,10 @@ label {
   height: 0.9375rem;
 }
 
-/* .signup-btn {
-  height: 50px;
-} */
-
-.btn:focus {
-  outline: none !important;
+.btn-primary:hover {
+  background-color: #1a90a5;
+  border-color: #000;
+  color: #fff;
 }
 
 .btn {

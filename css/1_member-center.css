@@ -13,13 +13,25 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.box{
-
-}
 
 .guide-bar .item{
 border-bottom: 5px solid #002c80;
 color: rgba(240, 184, 32, 0.849);
+}
+
+.guide-bar{
+    -webkit-animation-name: guide;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes guide {
+  0% {
+      -webkit-transform: translateY(0px);
+  }
+  100% {
+      -webkit-transform: translateY(-15px);
+  }
 }
 
 
@@ -64,7 +76,6 @@ color: rgba(240, 184, 32, 0.849);
 
 .edit-member {
   text-align: center;
-  /* margin: 4.5rem auto 2rem; */
   font-weight: 600;
   padding-top: 8rem;
 }
@@ -79,12 +90,10 @@ color: rgba(240, 184, 32, 0.849);
   height: 2.5rem;
 }
 
-.btn:focus {
-  border: none;
-}
-
-
 .btn:hover {
+    background-color: #1a90a5;
+    border-color: #000;
+    color: #fff;
     animation-name: rubberBand;
     animation-duration: 1s;
     animation-fill-mode: both;
@@ -135,8 +144,8 @@ color: rgba(240, 184, 32, 0.849);
 /* 我的珍藏 */
 
 .card-wrap {
-  border: 3px solid black;
   box-shadow: 8px 10px #ffc639;
+  border: 4px dashed #000;
 }
 
 .card-wrap:hover{
@@ -158,10 +167,15 @@ color: rgba(240, 184, 32, 0.849);
   background-color: #ffc024;
   height: 50px;
   font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-body{
+
 }
 
 .card-info {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   background-color: white;
 }
 
@@ -187,7 +201,7 @@ color: rgba(240, 184, 32, 0.849);
 .like-link {
   bottom: 0;
   right: 10px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .like.liked {
@@ -196,6 +210,7 @@ color: rgba(240, 184, 32, 0.849);
 }
 
 .view-more {
+margin-top: 4rem;
   font-weight: 600;
   text-align: center;
   -webkit-animation-name: prop-600;
@@ -211,7 +226,6 @@ color: rgba(240, 184, 32, 0.849);
       -webkit-transform: translateX(-20px);
   }
 }
-
 
 
 /* 票券管理 css */
@@ -234,19 +248,15 @@ color: rgba(240, 184, 32, 0.849);
 }
 
 .feedback {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
     border: none;
   }
   
   .delete {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
     border: none;
-  }
-  
-  .button:focus {
-    outline: none !important;
   }
   
   .qr-code-lg {
@@ -255,12 +265,49 @@ color: rgba(240, 184, 32, 0.849);
   }
 
   .mobile-edit-area img{
-      display: none;
-      /* background-color: transparent; */
+    display: none;
+  }
+
+  /* 刪除 Modal css */
+
+  .logo{
+      top:-20px;
+      left: calc(50% - 40px);
+      width: 10rem;
+  }
+
+  .modal-content{
+    border-radius: 0px;
+    background: #168fa4;
+    background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
+          linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
+    background-size: 0.75rem 0.75rem;
+  }
+
+  .modal-header {
+    border-bottom: 0 none;
+    font-weight: 600;
+  }
+  .modal-title {
+background-color: rgba(255, 255, 255, 0.5);
+  }
+ 
+  .modal-body {
+    border-top: 0 none;
+    text-align: center;
+    font-weight: 600;
+
+  }
+  .modal-body span{
+    border-bottom: 3px solid #FFC024;
+  }
+
+
+  .modal-footer {
+    border-top: 0 none;
   }
   
- 
-  
+
 
 /* little monster Animation css */
 
@@ -848,10 +895,6 @@ html,
 
 /* ----------media query---------- */
 @media (min-width: 769px) {
-  html {
-    font-size: 20px;
-  }
-
 }
 
 @media (min-width: 992px) {
@@ -893,6 +936,7 @@ html,
   .edit-member {
     margin: 0 0 2rem;
     font-size: 1.6rem;
+    padding-top: 3rem;
   }
 
   .btn{
@@ -902,29 +946,48 @@ html,
       font-size: 1.5rem;
   }
 
-  div p{
-      font-size: 1.2rem;
+  .sort{
+      font-size: 1.5rem;
+  }
+
+  .sub-info{
+    font-size: 1rem;
+
+  }
+
+  .date{
+    letter-spacing: 0.4rem;
   }
 
   
   .card-wrap{
-      margin-bottom: 4rem;
-      box-shadow:none;      
+    margin-bottom: 4rem;
+    box-shadow:none;      
   }
 
   .card-info{
-      padding: 1rem 0;
+    padding: 1rem 0;
   }
 
-    /* mobile-animation */
+  .view-more{
+    font-size: 1.5rem;
+    margin-top: 0 rem;
+    margin-bottom: 3rem;
+  }
+
+  .event-name{
+      font-size: 1.2rem;
+  }
+
+  .time{
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+  }
+
+    /* mobile-小精靈 animation */
     main{
-        display:none;
+    display:none;
     }
-
-    .view-more{
-
-    }
-
 
 
     /* 票券管理 mobile */
@@ -939,8 +1002,6 @@ html,
     line-height: 1rem;
     letter-spacing: 0.2rem;
   }
-
-
 
   .qr-code-lg img{
     width: 4rem;
@@ -957,7 +1018,7 @@ html,
     display: inline-block;
 }
 
-.date{
+ .date{
     font-size: 0.4rem;
 }
 
