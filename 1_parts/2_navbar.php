@@ -115,9 +115,9 @@
                             <a class="dropdown-item" href="2_member-service.php">聯繫客服</a>
 
                             <?php if (isset($_SESSION['user'])) : ?>
-                                <a class="dropdown-item" href="1_member-logout-api.php">登出</a>
+                                <a class="dropdown-item" href="1_member-logout-api.php">登出/註冊</a>
                             <?php else : ?>
-                                <a class="dropdown-item" href="1_member-login.php">登入</a>
+                                <a class="dropdown-item" href="1_member-login.php">登入/註冊</a>
                             <?php endif; ?>
                         </div>
                     </li>

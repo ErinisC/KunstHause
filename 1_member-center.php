@@ -55,6 +55,8 @@ foreach ($d_rows as $d) {
 
 <!-- 引入member center的 css -->
 <link rel="stylesheet" href="./css/1_member-center.css">
+<!-- 引入 css animation  -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 
 <!-- JQ -->
 <script src="./libary/jquery-3.5.1.js"></script>
@@ -67,13 +69,13 @@ foreach ($d_rows as $d) {
 <div class="container">
     <div class="row">
 
-        <div class="col-lg-10">
+        <div class="col-lg-10 p-0">
 
             <div class="banner">
                 <img class="Diversity" src=" <?= WEB_ROOT ?>/imgs/member/Diversity.svg">
             </div>
 
-            <div class="member-area mx-auto p-0 col-lg-12 col-md-12 col-sm-12 col-12 w-100">
+            <div class="member-area mx-auto p-0 col-lg-12 col-12 w-100">
 
                 <!-- 更換會員大頭照 -->
                 <div class="avatar">
@@ -83,13 +85,14 @@ foreach ($d_rows as $d) {
                 </div>
 
                 <div class="edit-member">
-                    <p>Hi 小米
-                        <i class="fas fa-edit"></i>
-                        下一場活動要去哪呢?
+                    <p>HELLO 小米
+                        <i class="fas fa-child"></i>
+                        <!-- <i class="fas fa-edit"></i> -->
+                        下一場活動想去哪呢?
                     </p>
                     <a href="http://localhost/KunstHause/2_member-accunt-set.php">
                         <button class="btn btn-primary col-lg-2 col-4 mt-5 ">
-                            <p>編輯設定</p>
+                            <p>編輯資料</p>
                         </button> </a>
                 </div>
 
@@ -356,14 +359,8 @@ foreach ($d_rows as $d) {
 
 
                 <div class="view-more my-4">
-                    <p>
-                        VIEW MORE >>
-                    </p>
-
+                    <p>VIEW MORE >></p>
                 </div>
-
-
-
 
 
                 <!-- 小精靈 Animation -->
@@ -428,6 +425,19 @@ foreach ($d_rows as $d) {
                     </section>
                 </main>
                 <!-- animation end -->
+            </div>
+        </div>
+
+        <div class="col-lg-2" style="margin-top:10rem">
+            <div class="guide-bar" style="line-height: 3rem ; text-align: center; font-weight: 600 ">
+                <div class="box"></div>
+                <div class="item" style="background-color:#FAC000"><a href="http://localhost/KunstHause/2_member-order.php" class="text-white">票券管理</a></div>
+                <div class="item" style="background-color:#fff"><a href="" class="text-dark">我的收藏</a></div>
+                <div class="item" style="background-color:#FAC000"><a href="" class="text-white">優惠券管理</a></div>
+                <div class="item" style="background-color:#fff"><a href="" class="text-dark">訊息管理</a></div>
+                <div class="item" style="background-color:#FAC000"><a href="" class="text-white">優惠券管理</a></div>
+                <div class="item" style="background-color:#fff"><a href="" class="text-dark">訊息管理</a></div>
+                <div class="item" style="background-color:#FAC000"><a href="http://localhost/KunstHause/2_member-service.php" class="text-white">聯繫客服</a></div>
             </div>
         </div>
     </div>
