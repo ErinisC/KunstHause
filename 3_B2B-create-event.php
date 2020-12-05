@@ -34,35 +34,32 @@
                 <br>
             </div>
 
+            <!-- 活動名稱 -->
             <div class="form-group">
-
                 <label for="event_name">活動名稱</label>
-
                 <div class="input-wrap">
-
                     <div class="input-box">
                         <input id="event_name" class="input" type="text" name="event_name" placeholder="活動名稱">
                     </div>
-
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                 </div>
             </div>
 
+            <!-- 活動日期 -->
             <div class="form-group">
-
                 <label for="eventDate">活動日期</label>
-                <div class="input-wrap">
 
+                <div class="input-wrap">
+                    <!-- start -->
                     <div class="input-box">
                         <p class="pt-3">(活動日期開始)</p>
                         <input class="input" id="start-datetime" name="start-datetime" type="datetime-local">
                     </div>
-
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
 
-
+                    <!-- end -->
                     <div class="input-box">
                         <p class="mt-3">(活動日期結束)</p>
                         <input class="input" id="end-datetime" name="end-datetime" type="datetime-local">
@@ -74,6 +71,7 @@
                 </div>
             </div>
 
+            <!-- 活動種類 -->
             <div class="form-group">
                 <div class="input-wrap">
                     <label for="categories">活動種類</label>
@@ -90,6 +88,8 @@
                 </div>
             </div>
 
+
+            <!-- hashtag -->
             <div class="form-group">
                 <label for="hashtag">標籤設定</label>
                 <div class="input-wrap">
@@ -99,6 +99,8 @@
                 </div>
             </div>
 
+
+            <!-- 活動地點 -->
             <div class="form-group">
                 <label for="location">活動地點</label>
                 <div class="input-wrap d-flex flex-wrap col-lg-12 p-0">
@@ -138,6 +140,7 @@
             </div>
 
 
+            <!-- 交通資訊 -->
             <div class="form-group">
                 <label for="transportation">
                     交通資訊
@@ -145,6 +148,8 @@
                 </label>
             </div>
 
+
+            <!-- 活動注意事項 -->
             <div class="form-group">
                 <label for="notice">
                     活動注意事項
@@ -152,6 +157,9 @@
                 </label>
             </div>
 
+
+
+            <!-- 活動內容資訊 -->
             <div class="form-group">
                 <label for="event_info">
                     活動內容資訊
@@ -165,6 +173,7 @@
                 </label>
             </div>
 
+            <!-- 活動票價 -->
             <div class="form-group">
                 <div class="d-flex">
                     <div class="blanket col-8"> </div>
