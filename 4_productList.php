@@ -34,7 +34,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     }
 
     // 這邊要抓出資料庫的筆數後，決定每頁放的資料（LIMIT %s,%s）
-    $sql = sprintf("SELECT * FROM products ORDER BY sid DESC LIMIT %s ,%s", ($page - 1) * $perPage, $perPage);
+    $sql = sprintf("SELECT * FROM products ORDER BY sid  LIMIT %s ,%s", ($page - 1) * $perPage, $perPage);
     $stmt = $pdo->query($sql);
 
     // $rows就會等於每一筆抓出的資料
@@ -82,54 +82,54 @@ if (isset($_SESSION['user'])) {
     </div> -->
 
     <!-- Banner輪播 -->
-    <!-- <div class="container-fluid pic p-0">
-        <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel"> -->
-    <!-- 固定的搜尋區塊 -->
-    <!-- <div class="filter-wrap position-absolute w-100">
+    <div class="container-fluid pic p-0">
+        <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel">
+            <!-- 固定的搜尋區塊 -->
+            <div class="filter-wrap position-absolute w-100">
                 <div class="row filter-bg text-white m-auto py-3 align-items-center col-8 col-md-8 col-sm-11 col-11">
                     <div class="event-search w-100 d-flex flex-column justify-content-between">
                         <h1 class="mb-3">最棒的活動，都在KunstHaus</h1>
                         <h5 class="mb-3">來找活動吧</h5>
-                        <div class="search-block position-relative"> -->
-    <!-- 搜尋input -->
-    <!-- <div class="input-group">
-                                <input type="text" id="search-event" class="col-lg-6 col-md-10 col-sm-10 col-10" placeholder="搜搜各種活動"> -->
+                        <div class="search-block position-relative">
+                            <!-- 搜尋input -->
+                            <div class="input-group">
+                                <input type="text" id="search-event" class="col-lg-8 col-md-10 col-sm-10 col-10" placeholder="搜搜各種活動">
 
-    <!-- 搜尋條input -->
-    <!-- <div class="input-group-btn col-2 p-0">
+                                <!-- 搜尋條input -->
+                                <div class="input-group-btn col-2 p-0">
                                     <button class="btn btn-info">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </div>
-                            </div> -->
-    <!-- 下拉框 -->
-    <!-- <div class="search-dropdown position-absolute col-11 py-3">
+                            </div>
+                            <!-- 下拉框 -->
+                            <div class="search-dropdown position-absolute col-8 py-3">
                                 <p class="title mb-3">選擇地區</p>
                                 <ul class=" col-3 p-0">
                                     <li>
-                                        <a href="#">北區</a>
+                                        <a href="4_productList-filter.php#2">北區</a>
                                     </li>
                                     <li>
-                                        <a href="#">中區</a>
+                                        <a href="4_productList-filter.php#3">中區</a>
                                     </li>
                                     <li>
-                                        <a href="#">南區</a>
+                                        <a href="4_productList-filter#4">南區</a>
                                     </li>
                                 </ul>
                             </div>
 
                         </div>
-                    </div> -->
+                    </div>
 
-    <!-- 關鍵字搜尋 -->
-    <!-- <div class="col mt-3">
+                    <!-- 關鍵字搜尋 -->
+                    <div class="col mt-3">
                         <div class="row quickSearch">
                             <div class="quickSearch__title col-2 p-0">熱門搜尋 <span class="gap mx-2"></span>
-                            </div> -->
+                            </div>
 
 
-    <!-- 關鍵字欄位 -->
-    <!-- <div class="row col-10">
+                            <!-- 關鍵字欄位 -->
+                            <div class="row col-10">
                                 <div class="search-keyword mb-3">
                                     <span class="chip m-2">
                                         <a href="#">青峰演唱會</a>
@@ -160,17 +160,17 @@ if (isset($_SESSION['user'])) {
                 </div>
 
 
-            </div> -->
+            </div>
 
-    <!-- 下面的小橫線 -->
-    <!-- <ol class="carousel-indicators">
+            <!-- 下面的小橫線 -->
+            <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol> -->
-    <!-- 圖片 -->
-    <!-- <div class="carousel-inner">
+            </ol>
+            <!-- 圖片 -->
+            <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="First slide">
                 </div>
@@ -185,9 +185,9 @@ if (isset($_SESSION['user'])) {
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-
+    <!-- 
     <div class="container-flui main-search">
         <div class="container h-100">
             <div class="row flex-column h-100 position-relative">
@@ -203,26 +203,28 @@ if (isset($_SESSION['user'])) {
         </div>
 
 
-    </div>
+    </div> -->
 
 
     <!-- 本週主打精選 -->
-    <div class="container week mt-5">
-        <div class="row">
+    <div class="container feature mt-5">
 
-            <!-- Section小標題 -->
-            <!-- <div class="section-title mb-5 col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
-                <div class="section-title-below position-absolute d-flex align-items-center">
-                    <p class="text-white text-center w-100">本週主打精選</p>
+        <!-- Section標題 -->
+        <div class="text-right">Feature</div>
+        <div class="row category-wrap">
+            <div class="category-header d-flex align-items-center justify-content-around w-100">
+                <div class="category-count">01</div>
+                <div class="category-name">
+                    <div class="zh w-100">精選活動，豐富生活</div>
                 </div>
-            </div> -->
-
-            <div class="quotation ql col-1">
-                <img src="imgs/banner/quotation_marks_1.webp" alt="">
+                <div class="category-hr"></div>
             </div>
+        </div>
 
+        <!-- 內容 -->
+        <div class="row">
             <!-- 介紹框 -->
-            <div class="intro-box w-100 mt-5">
+            <div class="intro-box w-100">
                 <a href="#" class="d-flex position-relative">
                     <div class="intro-img col-6">
                         <img src="imgs/event/TNC-41.jpg" alt="">
@@ -237,28 +239,113 @@ if (isset($_SESSION['user'])) {
 
 
             </div>
-            <div class="quotation qr text-right col-1 ml-auto mb-5">
+            <!-- <div class="quotation qr text-right col-1 ml-auto mb-5">
                 <img src="imgs/banner/quotation_marks_2.webp" alt="">
-            </div>
+            </div> -->
 
 
         </div>
     </div>
 
-    <!-- 商品列表 -->
-    <div class="container-fluid bg-attatch">
-        <div class="container list">
-            <div id="b1" class="pd-title py-5">
-                <!-- Section小標題 -->
-                <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
-                    <div class="section-title-below position-absolute d-flex align-items-center">
-                        <h1 class="text-white text-center w-100">大家都在看</h1>
-                    </div>
+
+    <!-- Top10熱門活動 -->
+    <div class="container Top10 mt-5">
+
+        <!-- Section標題 -->
+        <div class="text-right">Top10</div>
+        <div class="row category-wrap">
+            <div class="category-header d-flex align-items-center justify-content-around w-100">
+                <div class="category-count">02</div>
+                <div class="category-name">
+                    <div class="zh w-100">TOP10 熱門藝文展覽</div>
                 </div>
+                <div class="category-hr"></div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- 三欄的小卡開始 -->
+            <div class="row">
+                <?php foreach ($rows as $r) : ?>
+                    <!-- 小卡 -->
+                    <div class="card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
+
+                        <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
+                        <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
+                            <div class="flip-card-inner position-relative">
+                                <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                                    <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                    <!-- 圖片上時間 -->
+                                    <div class="time position-absolute col-4 p-2"><?= $r['start_datetime'] ?></div>
+                                </div>
+
+                                <!-- 翻轉卡片背面 -->
+                                <div class="flip-card-back position-absolute p-3">
+                                    <div class="filp-title mb-3 text-center"> 活動簡介</div>
+                                    <p class="px-3"><?= $r['event_info'] ?></p>
+                                    <div class="px-3 text-right mt-2 text-white">read more +</div>
+
+                                </div>
+                            </div>
+                        </a>
+
+
+                        <!-- 小卡下方票價 -->
+                        <div class="wrap mt-1">
+                            <div class="card-body p-0 w-100">
+                                <div class="card-info position-relative p-3">
+                                    <div class="event-name mb-3"><?= $r['event_name'] ?></div>
+
+                                    <div class="event-location"><?= $r['location'] ?></div>
+
+                                    <!-- 收藏 -->
+                                    <a href="Javascript:" class="like-link position-absolute">
+
+                                        <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
+                                    </a>
+
+                                </div>
+
+                                <!-- 價格按鈕加Modal的彈跳窗格 -->
+                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 w-100">
+                                    <div class=" card-price justify-content-center d-flex p-3">
+                                        <div class="mr-3">立刻購買</div>
+                                        <div class="now-price">$ <?= $r['price'] ?></div>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
 
             </div>
-            <div class="row">
 
+        </div>
+
+    </div>
+
+
+    <!-- 商品列表 -->
+    <div class="container-fluid bg-attatch">
+
+        <!-- 限制寬度的卡片內容區 -->
+        <div class="container list">
+            <!-- Section標題 -->
+            <div class="text-right">KunstHaus Event</div>
+            <div class="row category-wrap">
+                <div class="category-header d-flex align-items-center justify-content-around w-100">
+                    <div class="category-count">03</div>
+                    <div class="category-name">
+                        <div class="zh w-100">所有活動，快來逛逛</div>
+                    </div>
+                    <div class="category-hr"></div>
+                </div>
+            </div>
+
+            <!-- 商品小卡開始 -->
+            <div class="row">
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
                     <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
@@ -274,17 +361,19 @@ if (isset($_SESSION['user'])) {
 
                                 <!-- 翻轉卡片背面 -->
                                 <div class="flip-card-back position-absolute p-3">
-                                    <div class="filp-title mb-3 text-center"><?= $r['event_name'] ?></div>
+                                    <div class="filp-title mb-3 text-center"> 活動簡介</div>
                                     <p class="px-3"><?= $r['event_info'] ?></p>
+                                    <div class="px-3 text-right mt-2 text-white">read more +</div>
+
                                 </div>
                             </div>
                         </a>
 
 
                         <!-- 小卡下方票價 -->
-                        <div class="wrap mt-1 d-flex">
-                            <div class="card-body d-flex p-0 w-100">
-                                <div class="card-info position-relative m-auto py-3 col-8">
+                        <div class="wrap mt-1">
+                            <div class="card-body p-0 w-100">
+                                <div class="card-info position-relative p-3">
                                     <div class="event-name mb-3"><?= $r['event_name'] ?></div>
 
                                     <div class="event-location"><?= $r['location'] ?></div>
@@ -298,9 +387,9 @@ if (isset($_SESSION['user'])) {
                                 </div>
 
                                 <!-- 價格按鈕加Modal的彈跳窗格 -->
-                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-4">
-                                    <div class=" card-price py-3">
-                                        <div class="mb-3">優惠價</div>
+                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 w-100">
+                                    <div class=" card-price justify-content-center d-flex p-3">
+                                        <div class="mr-3">立刻購買</div>
                                         <div class="now-price">$ <?= $r['price'] ?></div>
                                     </div>
                                 </a>
@@ -355,24 +444,6 @@ if (isset($_SESSION['user'])) {
     </div>
 
 
-
-
-
-    <!-- 本週主打精選 -->
-    <div class="container flip-book mt-5">
-
-        <!-- Section小標題 -->
-        <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
-            <div class="section-title-below position-absolute d-flex align-items-center">
-                <h1 class="text-white text-center w-100">來個一排東東</h1>
-            </div>
-        </div>
-
-
-
-
-
-    </div>
 
 
     <!-- 推薦商品小卡 -->
@@ -485,38 +556,32 @@ if (isset($_SESSION['user'])) {
         // 用css animate抓scroll時的offest
         // parallax scrolling
 
-        $(window).scroll(function() {
-            let scrollTop = $(window).scrollTop();
-            console.log('scrollTop:', scrollTop);
+        // $(window).scroll(function() {
+        //     let scrollTop = $(window).scrollTop();
+        //     console.log('scrollTop:', scrollTop);
 
-            // quotation飛進來
-            if (scrollTop > 600) {
-                $('.quotation').addClass('flyin');
-            } else {
-                $('.quotation').removeClass('flyin');
-            }
+        //     // quotation飛進來
+        //     if (scrollTop > 600) {
+        //         $('.quotation').addClass('flyin');
+        //     } else {
+        //         $('.quotation').removeClass('flyin');
+        //     }
 
-            // 精選小卡浮現
-            if (scrollTop > 650) {
-                $('.intro-box').addClass('show-up');
-            } else {
-                $('.intro-box').removeClass('show-up');
-            }
+        //     // 精選小卡浮現
+        //     if (scrollTop > 650) {
+        //         $('.intro-box').addClass('show-up');
+        //     } else {
+        //         $('.intro-box').removeClass('show-up');
+        //     }
 
-            if (scrollTop > 1500) {
-                $('.card').addClass('move-up');
-                $('.card').addClass('move-up');
-            } else {
-                $('.card').removeClass('move-up');
-            }
+        //     if (scrollTop > 1500) {
+        //         $('.card').addClass('move-up');
+        //         $('.card').addClass('move-up');
+        //     } else {
+        //         $('.card').removeClass('move-up');
+        //     }
 
-            // 3D 區飛進來
-            // if (scrollTop > 2800) {
-            //     $('.containerA').addClass('right-in')
-            // } else {
-            //     $('.containerA').removeClass('right-in')
-            // }
-        })
+        // })
 
 
         $('.search-box').on('mouseover', function() {

@@ -1,11 +1,24 @@
-/* * {
-    outline: 1px solid red;
-} */
+* {
+  outline: 1px solid red;
+}
 
+/* 深藍底點點背景 */
+/* border: 6px solid black;
+background-color: #002c80;
+background-image: radial-gradient(#01173fc2 15%, transparent 15%), radial-gradient(#01173fc2 15%, transparent 15%);
+background-position: 20px 0, 56px 46px;
+background-size: 83px 80px;
+background-attachment: fixed; */
+
+/* 通用元件區 */
 html {
   font-size: 16px;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 button:focus {
@@ -21,13 +34,65 @@ a:hover {
   color: black;
 }
 
-.bg {
+/* input或text area打字時是黑色的字 */
+textarea:focus,
+input:focus {
+  outline: 2px solid #168fa4;
+  color: black !important;
+}
+
+/* navsearch隱藏 */
+.header-search {
+  display: none;
+}
+
+/* 區塊間距 */
+.container.feature,
+.container.Top10,
+.list {
+  margin-bottom: 3rem;
+}
+
+/* 區塊標題 */
+.category-header {
+  margin-bottom: 3rem;
   background-color: #168FA4;
-  /* background-image: radial-gradient(#0b4e5ab6 11%, transparent 31%), radial-gradient(#0b4e5ab6 27%, transparent 24%);
-    background-position: 19px 3px, 83px 49px;
-    background-size: 134px 118px;
-    background-attachment: fixed; */
-  /* transition: .3s; */
+}
+
+.category-header .category-count {
+  font: 900 2rem "Roboto";
+  letter-spacing: 3.2px;
+  color: #1a1a1a;
+  color: white;
+}
+
+.category-header .category-name {
+  font: 500 1.8rem "Noto Sans TC";
+  margin-right: 1rem;
+  color: white;
+}
+
+.category-header .category-hr {
+  height: 3px;
+  background: white;
+  width: 55%;
+}
+
+/* 整體背景 */
+.bg {
+  /* 點的背景 */
+  /* background-color: #168FA4;
+  background-image: radial-gradient(#147e91 10%, transparent 10%), radial-gradient(#147e91 10%, transparent 10%);
+  background-position: 32px 0px, 84px 56px;
+  background-size: 100px 100px;
+  background-attachment: fixed; */
+
+
+  /* 線的背景 */
+  background-color: #168FA4;
+  background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0), linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
+  background-size: 0.75rem 0.75rem;
+
 }
 
 .space {
@@ -54,124 +119,101 @@ a:hover {
 } */
 
 /* 大圖輪播區塊 */
-/* .pic {
-    height: 700px;
-    overflow: hidden;
+.pic {
+  height: 700px;
+  overflow: hidden;
 }
+
 .carousel {
   overflow: hidden;
 }
+
 .carousel-item {
   height: 700px;
 }
+
 .carousel img {
   object-fit: cover;
   height: 100%;
 }
+
 /* 篩選區塊 */
-/* .filter-wrap {
-    bottom: 30%;
-    z-index: 1;
+.filter-wrap {
+  bottom: 30%;
+  z-index: 1;
 }
+
 .filter-bg {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   max-width: 1170px;
 }
+
 .event-search {
-    height: 60%;
-} */
-
-h1 {
-  font-size: 2rem;
-}
-
-*/
-
-/* input或text area打字時是黑色的字 */
-textarea:focus,
-input:focus {
-  outline: 2px solid #168fa4;
-  color: black !important;
+  height: 60%;
 }
 
 /* 下拉篩選框 */
-/* .search-dropdown {
-    display: none;
-    top: 50px;
-    background-color: #fff;
-    border-radius: 3px;
-    height: 200px;
-    z-index: 1;
-    color: black;
+.search-dropdown {
+  display: none;
+  top: 50px;
+  background-color: #fff;
+  border-radius: 3px;
+  height: 200px;
+  z-index: 1;
+  color: black;
 }
+
 .search-dropdown .title {
   color: #168fa4;
   font-weight: 600;
 }
+
 .search-dropdown ul li a {
   color: #333;
   display: flex;
   padding: 15px 10px;
   font-size: 0.8rem;
 }
+
 .search-dropdown ul li a:hover {
-    text-decoration: none;
-    background: #f4f4f4;
-} */
+  text-decoration: none;
+  background: #f4f4f4;
+}
 
 
 /* 關鍵字區塊 */
-/* .gap {
-    width: 10px;
-    border-right: 2px solid white;
+.gap {
+  width: 10px;
+  border-right: 2px solid white;
 }
+
 .chip a {
   font-size: 0.8rem;
   color: white;
   border: 1px solid white;
-  border-radius: 100px;
+  /* border-radius: 100px; */
   padding: 2px 12px;
 }
+
 .chip a:hover {
-    text-decoration: none;
-    background-color: hsla(0, 0%, 100%, .2);
-} */
-
-.main-search {
-  height: 800px;
-  border: 6px solid black;
-  background-color: #002c80;
-  background-image: radial-gradient(#01173fc2 15%, transparent 15%), radial-gradient(#01173fc2 15%, transparent 15%);
-  background-position: 20px 0, 56px 46px;
-  background-size: 83px 80px;
-  background-attachment: fixed;
+  text-decoration: none;
+  background-color: hsla(0, 0%, 100%, .2);
 }
 
-.search-box {
-  border: 6px solid black;
-  background-color: #0544b8;
-}
 
-.search-box-shadow {
-  border: 6px solid black;
-  height: 400px;
-  top: 27%;
-  right: 23%;
-  background-color: rgb(241, 84, 69);
-}
 
 /* 本週主打精選 */
-.quotation img {
+/* .quotation img {
   width: 100%;
   object-fit: contain;
-}
+} */
 
 
 .intro-box {
   height: 500px;
   transition: 1s;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .show-up {
@@ -192,8 +234,7 @@ input:focus {
 }
 
 .intro-img img:hover {
-  transform: scale(1.2, 1.2);
-
+  opacity: 1.5;
 }
 
 .intro-info {
@@ -208,11 +249,11 @@ input:focus {
 .intro-info::before {
   content: "FEATURE";
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 3.5rem;
   position: absolute;
-  top: -23px;
-  right: 0;
-  color: rgba(255, 255, 255, 0.8);
+  top: -56px;
+  right: 20px;
+  color: rgba(255, 255, 255, 0.3);
   -webkit-transform: skew(-21.5deg) scaleY(.9);
   transform: skew(-21.5deg) scaleY(.9);
 }
@@ -236,47 +277,18 @@ input:focus {
   font-weight: 600;
 }
 
-/* 小標 */
-.section-title {
-  height: 80px;
-  background-color: #ED5B4C;
-  border: 3px solid black;
-  transform: rotate(-5deg);
-}
-
-.section-title-below {
-  top: -10px;
-  left: -15px;
-  width: 105%;
-  height: 80px;
-  background-color: #ed5b4c;
-  border: 3px solid black;
-}
-
-.section-title-below p {
-  transform: rotate(5deg);
-  font-size: 1.5rem;
-}
 
 /* 商品列表 */
-.bg-attatch {
-  /* background: url(../imgs/banner/bg-attatch-4.jpg);
-    background-attachment: fixed; */
-  background-color: #002c80;
-  border: 6px solid black;
-  border: 6px solid black;
-  background-color: #002c80;
-  background-image: radial-gradient(#01173fc2 15%, transparent 15%), radial-gradient(#01173fc2 15%, transparent 15%);
-  background-position: 20px 0, 56px 46px;
-  background-size: 83px 80px;
-  background-attachment: fixed;
-}
+/* .bg-attatch {
+  background: url(../imgs/banner/bg-attatch-4.jpg);
+    background-attachment: fixed;
+} */
 
 .card {
   background-color: transparent;
   border: none;
   transition: 1s;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 .move-up {
@@ -333,7 +345,7 @@ input:focus {
 }
 
 .flip-card-back p {
-  height: 80%;
+  height: 70%;
   overflow: hidden;
 }
 
@@ -374,7 +386,7 @@ input:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
