@@ -176,7 +176,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
 
         if ($('#account').val() === '') {
-            infoText = '請輸入您的帳號及密碼';
+            infoText = '您的帳號或密碼未填寫完整';
             send = false;
         } else if ($('#password').val() === '') {
             infoText = '請輸入您的密碼';

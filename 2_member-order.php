@@ -94,42 +94,46 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 <?php else : ?>
 
     <div class="container order-status-list">
-        <?php //foreach ($o_rows as $o) : ?>
-            <?php foreach ($d_rows as $d) : ?>
-                <div class="row order mb-5 align-content-center">
-                    <?php //if ($o['sid'] == $d['order_id']) : ?>
-                        <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
-                        </div>
-                        <div class="col-lg-5 event-info">
-                            <div class="main-info my-4">
-                                <p class="event-name mb-2"><?= $d['event_name'] ?></p>
-                                <p class="price mb-2">單價$ <?= $d['price'] ?></p>
-                            </div>
-                            <div class="sub-info my-4">
-                                <p class="date mb-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
-                                <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
-                                <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
-                                <p class="total-price mb-2">票券數量：<?= $o['total_price'] ?></p>
-                                <p id="order-status" class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-1 sm-none"></div>
-                        <div class="col-lg-3 ticket d-flex justify-content-around">
-                            <div class="edit">
-                                <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
-                                <button class="feedback"></button>
-                            </div>
-                            <div class="qr-code">
-                                <button class="qr-code-lg" type="button" class="btn btn-primary" data-toggle="modal" data-target="#qrcodeModal">
-                                    <img src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
-                                </button>
-                            </div>
-                        </div>
-                    <?php //endif; ?>
+        <?php //foreach ($o_rows as $o) : 
+        ?>
+        <?php foreach ($d_rows as $d) : ?>
+            <div class="row order mb-5 align-content-center">
+                <?php //if ($o['sid'] == $d['order_id']) : 
+                ?>
+                <div class="col-lg-3 event-img p-0">
+                    <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                 </div>
-            <?php endforeach; ?>
-        <?php //endforeach; ?>
+                <div class="col-lg-5 event-info">
+                    <div class="main-info my-4">
+                        <p class="event-name mb-2"><?= $d['event_name'] ?></p>
+                        <p class="price mb-2">單價$ <?= $d['price'] ?></p>
+                    </div>
+                    <div class="sub-info my-4">
+                        <p class="date mb-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
+                        <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
+                        <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
+                        <p class="total-price mb-2">票券數量：<?= $o['total_price'] ?></p>
+                        <p id="order-status" class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
+                    </div>
+                </div>
+                <div class="col-lg-1 sm-none"></div>
+                <div class="col-lg-3 ticket d-flex justify-content-around">
+                    <div class="edit">
+                        <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
+                        <button class="feedback"></button>
+                    </div>
+                    <div class="qr-code">
+                        <button class="qr-code-lg" type="button" class="btn btn-primary" data-toggle="modal" data-target="#qrcodeModal">
+                            <img src="<?= WEB_ROOT ?>imgs/member/qr-code.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <?php //endif; 
+                ?>
+            </div>
+        <?php endforeach; ?>
+        <?php //endforeach; 
+        ?>
     </div>
 <?php endif; ?>
 
@@ -297,14 +301,13 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         }, 'json');
     }
 
-    
-    function delete_it(order_id){
+
+    function delete_it(order_id) {
         console.log('delete')
-        if(confirm(`確定要刪除編號為 ${order_id} 的資料嗎?`)){
+        if (confirm(`確定要刪除編號為 ${order_id} 的資料嗎?`)) {
             location.href = "ab-del.php?sid=" + order_id;
         }
     }
-
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
