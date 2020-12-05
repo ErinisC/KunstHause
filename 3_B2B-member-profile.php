@@ -80,9 +80,18 @@
             </div>
 
             <!-- 插圖 -->
-            <!-- <div class="b2bpic">
-                <img src="<?= WEB_ROOT ?>/imgs/b2b/computer.svg" alt="">
-            </div> -->
+            <div class="share">
+                <img src="<?= WEB_ROOT ?>/imgs/b2b/share.svg" alt="">
+            </div>
+            <div class="fallow">
+                <img src="<?= WEB_ROOT ?>/imgs/b2b/fallow.svg" alt="">
+            </div>
+            <div class="draw">
+                <img src="<?= WEB_ROOT ?>/imgs/b2b/draw.svg" alt="">
+            </div>
+            <div class="love">
+                <img src="<?= WEB_ROOT ?>/imgs/b2b/love.svg" alt="">
+            </div>
 
 
             <div class="modbutton text-center col-xl-8 col-12">

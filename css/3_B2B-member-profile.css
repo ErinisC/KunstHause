@@ -1,17 +1,59 @@
 /* * {
   outline: 1px solid red;
 } */
-.b2bpic {
+.share {
   width: 250px;
   height: 250px;
   position: absolute;
-  right: 40px;
-  top: 120px;
-  transform: rotate(5deg);
+  right: 60px;
+  top: 150px;
+  /* transform: rotate(deg); */
   transition: 0.3s;
 }
 
-.b2bpic:hover {
+.share:hover {
+  transform: rotate(20deg);
+}
+
+.fallow {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 40px;
+  bottom: 150px;
+  transform: rotate(9deg);
+  transition: 0.3s;
+}
+
+.fallow:hover {
+  transform: rotate(-20deg);
+}
+
+.draw {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 30px;
+  bottom: 350px;
+  transform: rotate(9deg);
+  transition: 0.3s;
+}
+
+.draw:hover {
+  transform: rotate(-20deg);
+}
+
+.love {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 70px;
+  bottom: 250px;
+  transform: rotate(9deg);
+  transition: 0.3s;
+}
+
+.love:hover {
   transform: rotate(20deg);
 }
 
@@ -188,6 +230,22 @@ body {
 @media screen and (max-width: 576px) {
   html {
     font-size: 16px;
+  }
+
+  .share {
+    display: none;
+  }
+
+  .fallow {
+    display: none;
+  }
+
+  .draw {
+    display: none;
+  }
+
+  .love {
+    display: none;
   }
 
   .clip {
