@@ -26,7 +26,7 @@
 
 <!-- blog -->
 <div class="container hero-article">
-    <h1 class="text-center">最新鮮的。報給你知</h1>
+    <h1 class="text-right">最新鮮的。報給你知</h1>
     <div class="row category-wrap">
         <div class="category-header d-flex align-items-center justify-content-around w-100">
             <div class="category-count">01</div>
@@ -38,14 +38,14 @@
     </div>
     <div class="row">
         <div class="hero-article d-flex align-items-end">
-            <div class="col-8 px-0">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img red-shadow">
                     <a href="#">
                         <img src="<?= WEB_ROOT ?>imgs/blog/feature-img-01.png" alt="">
                     </a>
                 </div>
             </div>
-            <div class="article-meta col-4 px-0">
+            <div class="article-meta col-lg-4 col-md-12 col-sm-12 col-12 px-0">
                 <a href="#" class="">
                     <div class="title">
                         白雪世界裡的生命力，每個凜冽嚴冬中的堅毅臉龐
@@ -60,14 +60,14 @@
     </div>
     <div class="row">
         <div class="hero-article d-flex align-items-end">
-            <div class="col-8 px-0">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img blue-shadow">
                     <a href="#">
                         <img src="<?= WEB_ROOT ?>imgs/blog/feature-img-05.png" alt="">
                     </a>
                 </div>
             </div>
-            <div class="article-meta col-4 px-0">
+            <div class="article-meta col-lg-4 col-md-12 col-sm-12 col-12 px-0">
                 <a href="#" class="">
                     <div class="title">
                         義大利人做繪本、玩繪本、讀繪本（上）
@@ -82,14 +82,14 @@
     </div>
     <div class="row">
         <div class="hero-article d-flex align-items-end">
-            <div class="col-8 px-0">
+            <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img yellow-shadow">
                     <a href="#">
                         <img src="<?= WEB_ROOT ?>imgs/blog/feature-img-06.png" alt="">
                     </a>
                 </div>
             </div>
-            <div class="article-meta col-4 px-0">
+            <div class="article-meta col-lg-4 col-md-12 col-sm-12 col-12 px-0">
                 <a href="#" class="">
                     <div class="title">
                         零對白短片《If Anything Happens I Love You》如輓歌，刻畫悲劇後的思念與哀傷
@@ -116,7 +116,7 @@
     </div>
     <div class="row">
         <div class="three-article d-flex">
-            <div class="col-lg-4 pr-2 pl-0">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 pr-2 pl-0">
                 <a href="#">
                     <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-02.png" alt="">
                 </a>
@@ -129,7 +129,7 @@
                     <p>從反送中、白衣黑幫事件到最近的理工大學圍城現象，全世界都在關注香港的現況，然而不是當事人、不在現場的我們又該如何給予幫助？ 成立於 2011 年的小路映画，近期發起「『睜開左眼』，用台灣插畫撐香港。」的運動，會取名為「睜開左眼」的原因， ……</p>
                 </div>
             </div>
-            <div class="col-lg-4 px-1">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 px-1">
                 <a href="#">
                     <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-03.png" alt="">
                 </a>
@@ -142,7 +142,7 @@
                     <p>對於「美少年」、「美少女」這兩個字詞，我們可能有很多種想像，直觀的會認為是形容青春洋溢的少男少女們，然而其實在古希臘時代開始，歷經基督教時代、文藝復興時代，到當代每個時期都對其有著不同詮釋以及意義。讓我們藉由世界經典名畫結合而生的《美少 ……</p>
                 </div>
             </div>
-            <div class="col-lg-4 pl-2 pr-0">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-12 pl-2 pr-0">
                 <a href="#">
                     <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-04.png" alt="">
                 </a>
@@ -200,13 +200,13 @@
         </div>
     </div>
     <div class="row issue-meta-wrap align-items-end">
-        <div class="issue-meta-inner col-4 pl-0">
+        <div class="issue-meta-inner col-lg-4 col-md-12 col-sm-12 col-12 pl-0">
             <div class="issue-title">百飲募集・食物攝影創作</div>
             <p class="issue-description">
                 美食攝影，是「料理人×攝影師」共同的藝術創作，搶在狼吞虎嚥之前，將香溢汁噴、鮮嫩欲滴的美味紀錄成永恆。舌尖上的攝影師團隊，集結平面攝影、動態影像、文字記敘，要把餐桌上的飲食，釀成當代台灣文化的雋永甘醇。
             </p>
         </div>
-        <div class="issue-cover col-8 px-0">
+        <div class="issue-cover col-8 col-md-12 col-sm-12 col-12 px-0">
             <a href="#">
                 <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-09.png" alt="">
             </a>
