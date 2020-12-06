@@ -4,7 +4,7 @@
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
-<link rel="stylesheet" href="./css/3_B2B-ticket-list.css">
+<link rel="stylesheet" href="./css/3_B2B-ticket-list-cancel.css">
 
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
@@ -16,10 +16,10 @@
                 <h1>訂單管理</h1>
                 <p class="text">您可以在此查看所有的訂單紀錄</p>
                 <div class="ticketbutton d-flex col-xl-6 col-12">
-                    <button class="modify btn btn-primary">歷史訂單</button>
-                    <button class="modify2 btn btn-primary">已付款</button>
-                    <button class="modify2 btn btn-primary">未付款</button>
-                    <button class="modify2 btn btn-primary">已取消</button>
+                    <button class="modify2 btn btn-primary" onclick="location.href='3_B2B-ticket-list-history.php'">歷史訂單</button>
+                    <button class="modify2 btn btn-primary" onclick="location.href='3_B2B-ticket-list-pay.php'">已付款</button>
+                    <button class="modify2 btn btn-primary" onclick="location.href='3_B2B-ticket-list-nopay.php'">未付款</button>
+                    <button class="modify btn btn-primary">已取消</button>
                 </div>
                 <form class="header-search2 col-xl-6 col-12" method="POST" name="header-search" class="form-inline ">
                     <input class="search" type="text" name="search" placeholder="搜索訂單編號或活動名稱">
@@ -33,7 +33,7 @@
                         <tr class="tr d-flex mr-5 col-xl-12 col-12">
                             <td>訂單編號</td>
                             <td>訂單日期</td>
-                            <td>合計</td>
+                            <td class="ml-3">合計</td>
                             <td class="d-flex">訂單狀態<div class="white"></div>
                             </td>
                             <td class="confirm d-flex">顯示
@@ -136,7 +136,7 @@
                                 </div>
 
                                 <div class="modal-header d-flex flex-column">
-                                    <div class="g-check mx-auto mt-3">
+                                    <div class="g-check mx-auto mt-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 128 128">
                                             <g id="Exclamation_mark" data-name="Exclamation mark" transform="translate(-895.422 -303.047)">
                                                 <g id="Ellipse_338" data-name="Ellipse 338" transform="translate(895.422 303.047)" fill="none" stroke="#ed5b4c" stroke-width="3">
@@ -171,7 +171,7 @@
                                     <div class="eventimg"></div>
                                 </div>
                                 <div class="modal-header d-flex flex-column">
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">活動名稱：空山祭
+                                    <div class="modal-text ml-3 mt-1" id="exampleModalCenterTitle">活動名稱：空山祭
                                     </div>
                                     <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：XD48763
                                     </div>
