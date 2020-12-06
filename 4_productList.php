@@ -297,7 +297,12 @@ if (isset($_SESSION['user'])) {
                                 <div class="card-info position-relative p-3">
                                     <div class="event-name mb-3"><?= $r['event_name'] ?></div>
 
-                                    <div class="event-location"><?= $r['location'] ?></div>
+                                    <div class="event-location mb-2">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <?= $r['location'] ?>
+                                    </div>
+
+                                    <div class="now-price">$ <?= $r['price'] ?></div>
 
                                     <!-- 收藏 -->
                                     <a href="Javascript:" class="like-link position-absolute">
@@ -311,7 +316,7 @@ if (isset($_SESSION['user'])) {
                                 <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 w-100">
                                     <div class=" card-price justify-content-center d-flex p-3">
                                         <div class="mr-3">立刻購買</div>
-                                        <div class="now-price">$ <?= $r['price'] ?></div>
+
                                     </div>
                                 </a>
 
@@ -376,7 +381,9 @@ if (isset($_SESSION['user'])) {
                                 <div class="card-info position-relative m-auto py-3 col-10">
                                     <div class="event-name mb-2"><?= $r['event_name'] ?></div>
 
-                                    <div class="event-location mb-2"><?= $r['location'] ?></div>
+                                    <div class="event-location mb-2">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <?= $r['location'] ?></div>
 
                                     <div class="now-price">$ <?= $r['price'] ?></div>
 

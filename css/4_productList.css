@@ -398,9 +398,13 @@ input:focus {
   font-weight: 600;
 }
 
+.event-location {
+  color: #777;
+}
+
 .like-link {
-  bottom: 0;
-  right: 10px;
+  bottom: 10px;
+  right: 14px;
   font-size: 2rem;
 }
 
