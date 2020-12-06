@@ -78,7 +78,7 @@
                                 <div class="circle float-right mr-2"></div>
                             </div>
                             <div class="col-8 p-0">
-                                <a href="#">
+                                <a href="4_productList.php">
                                     <div class="cat-label-music text-center">
                                         <p class="section-title-s cw"></p>
                                     </div>
@@ -133,7 +133,7 @@
                                 <div class="circle float-right mr-2"></div>
                             </div>
                             <div class="col-8 p-0">
-                                <a href="#">
+                                <a href="4_productList.php">
                                     <div class="cat-label-ex text-center">
                                         <p class="section-title-s cw"></p>
                                     </div>
@@ -187,7 +187,7 @@
                                 <div class="circle float-right mr-2"></div>
                             </div>
                             <div class="col-8 p-0">
-                                <a href="#">
+                                <a href="4_productList.php">
                                     <div class="cat-label-th text-center">
                                         <p class="section-title-s cw"></p>
                                     </div>
