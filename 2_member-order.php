@@ -101,7 +101,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                 <?php //if ($o['sid'] == $d['order_id']) : 
                 ?>
                 <div class="col-lg-3 event-img p-0">
-                    <img class="event-sm-img w-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                    <img class="event-sm-img w-100 h-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                 </div>
                 <div class="col-lg-5 event-info">
                     <div class="main-info my-4">
@@ -113,7 +113,8 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                         <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
                         <p class="order-date mb-2">訂單日期：<?= $o['order_date'] ?></p>
                         <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
-                        <p class="total-price mb-2">票券數量：<?= $o['total_price'] ?></p>
+                        <p class="total-price mb-2">票券數量：<?= $d['event_amount'] ?></p>
+                        <p class="total-price mb-2">訂單總額：<?= $d['event_amount']*$d['price']?></p>
                         <p id="order-status" class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
                     </div>
                 </div>
