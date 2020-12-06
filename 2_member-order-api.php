@@ -24,7 +24,7 @@ $totalRows = $t_stmt->fetch(PDO::FETCH_NUM)[0]; // 總筆數
 if ($totalRows != 0) {
 
     $sql = sprintf(
-        "SELECT d.*, p.* FROM `order_details` d JOIN `products` p ON p.sid=d.product_id %s ORDER BY d.sid",
+        "SELECT d.*, p.* FROM `order_details` d JOIN `products` p ON p.sid=d.product_id %s ORDER BY `order_date` DESC",
         $where
     );
 

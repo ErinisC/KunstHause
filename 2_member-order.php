@@ -111,6 +111,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                     <div class="sub-info my-4">
                         <p class="date mb-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
                         <p class="order-sid mb-2">訂單編號：<?= $d['order_id'] ?></p>
+                        <p class="order-date mb-2">訂單日期：<?= $o['order_date'] ?></p>
                         <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
                         <p class="total-price mb-2">票券數量：<?= $o['total_price'] ?></p>
                         <p id="order-status" class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
