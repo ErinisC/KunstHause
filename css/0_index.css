@@ -145,6 +145,7 @@ body {
 
   .article-title {
     font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .article-subtitle {
@@ -314,6 +315,7 @@ body {
 
   .article-title {
     font-size: 1.7rem;
+    line-height: 2rem;
   }
 
   .article-subtitle {
@@ -806,15 +808,15 @@ a:hover {
 }
 
 .cover-1 {
-  background: url(../imgs/index/blog-01.jpg) center no-repeat;
+  background: url(../imgs/blog/feature-img-01.png) center no-repeat;
 }
 
 .cover-2 {
-  background: url(../imgs/index/blog-02.jpg) center no-repeat;
+  background: url(../imgs/blog/feature-img-05.png) center no-repeat;
 }
 
 .cover-3 {
-  background: url(../imgs/index/blog-03.jpg) center no-repeat;
+  background: url(../imgs/blog/feature-img-06.png) center no-repeat;
 }
 
 .cover-4 {

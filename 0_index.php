@@ -293,9 +293,9 @@
                         <div class="article-img cover-1">
                             <div class="img-mask">
                                 <div class="inner-box">
-                                    <h3 class="article-title">週五看MV</h3>
+                                    <h3 class="article-title">白雪世界裡的生命力</h3>
                                     <div class="line w-100"></div>
-                                    <p class="article-subtitle">巫建和主演DSPS新MV 以精湛演技詮釋內心戲</p>
+                                    <p class="article-subtitle">每個凜冽嚴冬中的堅毅臉龐</p>
                                 </div>
                             </div>
                         </div>
@@ -311,9 +311,9 @@
                         <div class="article-img cover-2">
                             <div class="img-mask">
                                 <div class="inner-box">
-                                    <h3 class="article-title">巴奈第二張個人全創作專輯</h3>
+                                    <h3 class="article-title">義大利人做繪本、玩繪本、讀繪本（上）</h3>
                                     <div class="line w-100"></div>
-                                    <p class="article-subtitle">歷經20年淬煉 《愛，不到》正式發行</p>
+                                    <p class="article-subtitle">讀字讀圖，讀字裡行間的言外之意</p>
                                 </div>
                             </div>
                         </div>
@@ -335,9 +335,9 @@
                         <div class="article-img cover-3">
                             <div class="img-mask">
                                 <div class="inner-box">
-                                    <h3 class="article-title">看見TCCF上的未來創意內容</h3>
+                                    <h3 class="article-title">If Anything Happens I Love You</h3>
                                     <div class="line w-100"></div>
-                                    <p class="article-subtitle">在安溥的歌裡漫遊、讓雅婷不只打逐字稿還做音樂</p>
+                                    <p class="article-subtitle">刻畫悲劇後的思念與哀傷</p>
                                 </div>
                             </div>
                         </div>
