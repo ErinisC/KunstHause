@@ -80,6 +80,11 @@ color: rgba(240, 184, 32, 0.849);
   padding-top: 8rem;
 }
 
+.edit-member i{
+font-size: 3rem;
+animation-iteration-count: 4;
+}
+
 .btn {
   background-color: #ffc639;
   color: #000;

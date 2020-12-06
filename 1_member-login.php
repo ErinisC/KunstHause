@@ -13,6 +13,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <!-- 引入css -->
 <link rel="stylesheet" href="./css/1_member-login.css">
+
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 <!-- JQ -->
@@ -37,16 +38,15 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
         <!-- login list Area -->
 
-        <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12 pb-3">
+        <div class="login-popup col-lg-5 col-md-5 col-sm-5 col-12 pb-0 pt-5">
             <div class="deco">
                 <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
-                <!-- <img class="x-btn" src=" <?= WEB_ROOT ?>/imgs/member/times-solid.svg"> -->
             </div>
             <div class="login-title">請登入會員</div>
             <div class="reminder ml-3">*您可以選擇下列帳號快速登入</div>
             <div class="icons d-flex justify-content-center mx-auto">
                 <img class="facebook" src=" <?= WEB_ROOT ?>/imgs/member/facebook-brands.svg" style="  cursor: pointer">
-                <p>或</p>
+                <p>OR</p>
                 <img class="google" src=" <?= WEB_ROOT ?>/imgs/member/google-plus-brands.svg" style="  cursor: pointer">
             </div>
 
@@ -60,7 +60,9 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
                 <form name="form1" id="loginForm" onsubmit="checkForm(); return false;" novalidate>
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
-                        <label for="account" class="login-item">帳號</label>
+                        <label for="account" class="login-item">
+                            <p>帳號</p>
+                        </label>
                         <div class="input-wrap">
                             <div class="input-box">
                                 <input type="email" class="form-control" id="account" name="account" placeholder="請填寫email信箱" required>
@@ -72,7 +74,9 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                     </div>
 
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
-                        <label for="password" class="login-item">密碼</label>
+                        <label for="password" class="login-item">
+                            <p>密碼</p>
+                        </label>
                         <div class="input-wrap">
                             <div class="input-box">
                                 <input type="password" class="form-control" id="password" name="password" placeholder="請輸入您的密碼" name="password" required>
@@ -83,33 +87,35 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         </div>
                     </div>
 
-
+                    <!-- d-flex justify-content-center -->
                     <!-- 登入按紐 -->
-                    <div class="login-btn d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary col-4 my-4">登入</button>
+                    <div class="login-btn d-flex justify-content-center mt-5">
+                        <!-- 忘記密碼 Modal Area -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary col-4 mr-3" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #168FA4">
+                            <p class="fp">忘記密碼?</p>
+                            <!-- <p style="font-size:1rem; padding-top:0px">忘記密碼?
+                            </p> -->
+                        </button>
+
+                        <button type="submit" class="btn btn-primary col-4 ml-3">登入</button>
                     </div>
                 </form>
             </div>
 
-
+            <!-- d-block mx-auto mt-3 -->
 
             <!-- 註冊標示 -->
-            <div class="others d-flex justify-content-between my-4">
-                <div class="help ml-4">
+            <div class="others">
+                <div class="help d-flex justify-content-around my-5">
                     <p>還不是 Kunsthaus會員嗎?</p>
                     <a href="http://localhost/KunstHause/1_member-signup.php" class="s-signup text-dark">
-                        <p style="font-weight:600; color:#1741ca; font-size: 0.8rem">點此註冊</p>
+                        <p style="font-weight:600; color:#183491; font-size: 0.9rem">我要註冊</p>
                     </a>
                 </div>
 
-                <!-- 忘記密碼 Modal Area -->
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary mr-4 mt-2" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #168FA4">
-                    <p style="font-size:1rem; padding-top:0px">忘記密碼?
-                    </p>
-                </button>
 
-                <!-- Modal -->
+                <!-- 忘記密碼 Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
 

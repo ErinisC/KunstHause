@@ -152,7 +152,7 @@ body {
   background-size: 0.75rem 0.75rem;
   position: relative;
   padding-top: 4rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
   margin-bottom: 6rem;
   z-index: 5;
 }
@@ -182,7 +182,7 @@ body {
   color: #f26969;
   font-weight: 600;
   font-size: 0.7rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .icons {
@@ -191,12 +191,17 @@ body {
   margin-bottom: 1.8rem;
 }
 
-p {
-  padding-top: 0.6rem;
+.icons p {
+  padding-top: 1rem;
+  font-weight: 600;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+label p {
+  font-weight: 700;
 }
 
 /* .input-wrap {
@@ -254,7 +259,7 @@ p {
   border-radius: 0;
 }
 .btn-primary:focus {
-  background-color: #1a90a5;
+  background-color: #168fa4;
   border-color: #000;
   color: #fff;
 }
@@ -270,6 +275,9 @@ p {
 }
 
 .btn:hover {
+  background-color: #ff4e42;
+  border-color: transparent;
+  color: #fff;
   animation-name: rubberBand;
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -393,10 +401,6 @@ p {
   }
 
   .g-clip {
-    display: none;
-  }
-
-  .x-btn {
     display: none;
   }
 }

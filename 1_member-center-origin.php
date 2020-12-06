@@ -42,18 +42,6 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 
 
 // 我的珍藏 
-// 如果會員有登入，叫出收藏愛心項目
-
-if (isset($_SESSION['user'])) {
-    $member_sid = $_SESSION['user']['sid'];
-    $l_sql = "SELECT `product_sid` FROM `likes` WHERE `member_sid`=?";
-    $l_stmt = $pdo->prepare($l_sql);
-    $l_stmt->execute([
-        $member_sid
-    ]);
-    $l_rows = $l_stmt->fetchAll();
-    $likes = array_column($l_rows, 'product_sid');
-}
 ?>
 
 
@@ -114,42 +102,7 @@ if (isset($_SESSION['user'])) {
                 </div>
                 <div class="favorite-list ">
                     <div class="c-row1 d-flex justify-content-center" style="flex-wrap:wrap">
-                        <?php foreach ($rows as $r) : ?>
-                            <!-- 小卡 -->
-                            <a href="4_product-detail.php?sid<?= $r['sid'] ?>" target="_blank">
-                                <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                                    <div class="card-kv position-relative">
-                                        <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg">
-                                        <div class="time col-5 position-absolute mt-3">
-                                            <p class="my-2"><?= $r['start_datetime'] ?></p>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-body d-flex p-0 w-100">
-                                        <div class="card-info position-relative col-8">
-                                            <div class="event-name my-2">
-                                                <p><?= $r['event_name'] ?></p>
-                                            </div>
-                                            <div class="event-location my-2"><?= $r['location'] ?></div>
-
-                                            <a href="Javascript:" class="like-link position-absolute">
-                                                <i class="like far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
-                                            </a>
-                                        </div>
-
-                                        <div class="card-price col-4">
-                                            <div class="discount mt-3">
-                                                <p>優惠價</p>
-                                            </div>
-                                            <div class="price my-2">$<?= $r['price'] ?></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
-
-
-                        <!-- <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
+                        <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
                                 <img src="/KunstHause/imgs/event/event-sm/TPE-26.jpg">
                                 <div class="time col-5 position-absolute mt-3">
@@ -163,7 +116,7 @@ if (isset($_SESSION['user'])) {
                                         <p>原子邦妮樂遊原演唱會</p>
                                     </div>
                                     <div class="event-location my-2">【ZEP NEW TEIPEI 】</div>
-                                    
+
                                     <a href="#" class="like-link position-absolute">
                                         <i class="like far fa-heart"></i>
                                     </a>
@@ -190,7 +143,7 @@ if (isset($_SESSION['user'])) {
                                         <p>獨立人種</p>
                                     </div>
                                     <div class="event-location my-2">【公館河岸留言】</div>
-                                    
+
                                     <a href="#" class="like-link position-absolute">
                                         <i class="like far fa-heart"></i>
                                     </a>
@@ -202,11 +155,11 @@ if (isset($_SESSION['user'])) {
                                     <div class="price my-2">$</div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
 
 
-                    <!-- <div class="c-row2 d-flex justify-content-center my-5" style=" flex-wrap:wrap">
+                    <div class="c-row2 d-flex justify-content-center my-5" style=" flex-wrap:wrap">
 
                         <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
                             <div class="card-kv position-relative">
@@ -221,7 +174,7 @@ if (isset($_SESSION['user'])) {
                                         <p>維也納藝術月-不均的平面</p>
                                     </div>
                                     <div class="event-location my-2">【台南市美術館-跨域展演廳】</div>
-                                   
+
                                     <a href="#" class="like-link position-absolute">
                                         <i class="like far fa-heart"></i>
                                     </a>
@@ -247,7 +200,7 @@ if (isset($_SESSION['user'])) {
                                         <p>野原邦彥個展-CYCLE</p>
                                     </div>
                                     <div class="event-location my-2">【愛上藝廊-新竹】</div>
-                                   
+
                                     <a href="#" class="like-link position-absolute">
                                         <i class="like far fa-heart"></i>
                                     </a>
@@ -260,7 +213,7 @@ if (isset($_SESSION['user'])) {
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <div class="view-more">
                         <p>VIEW MORE >></p>
