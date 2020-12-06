@@ -63,7 +63,8 @@ input:focus {
   font: 900 2rem "Roboto";
   letter-spacing: 3.2px;
   color: #1a1a1a;
-  color: white;
+  /* color: white; */
+  background-color: #ed5b4c;
 }
 
 .category-header .category-name {

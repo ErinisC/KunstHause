@@ -31,7 +31,8 @@ a:hover {
 }
 
 /* 區塊距離 */
-.container {
+.wrap-bg .container,
+.credit-card.container {
     margin-bottom: 3rem;
 }
 

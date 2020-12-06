@@ -82,13 +82,14 @@ if (!isset($_SESSION['user'])) {
         <div class="col-12 p-0 m-auto">
             <!-- 下拉式選單呈現區塊 -->
 
-            <!-- 信用卡付款下拉選單 -->
+
+
             <div class="credit-pay" style="display:none">
                 <!-- 開始信用卡圖片 -->
-                <div class="row justify-content-center mt-3">
+                <div class="row justify-content-center">
 
                     <!-- 信用卡圖片 -->
-                    <div class="credit-card container preload  card-body m-auto col-lg-8 col-md-8 col-sm-10 col-12">
+                    <div class="credit-card container preload  card-body mx-auto col-lg-8 col-md-8 col-sm-10 col-12">
                         <div class="creditcard">
                             <div class="front">
                                 <div id="ccsingle"></div>
@@ -189,11 +190,6 @@ if (!isset($_SESSION['user'])) {
                     <!-- 表單開始 -->
                     <form name="form1" onsubmit="checkForm(); return false;" class="col-lg-8 col-md-10 col-sm-12 col-12">
 
-                        <!-- 項目標題 -->
-                        <div class="wrap w-100 text-center my-4">
-                            <div class="w-100 m-auto py-2"></div>
-                        </div>
-
                         <!-- 如果有設定信用卡的話，如果沒有就 -->
                         <?php if (isset($_SESSION['creditcard'])) : ?>
                             <!-- 持卡人姓名 -->
@@ -205,7 +201,7 @@ if (!isset($_SESSION['user'])) {
                                 </label>
 
                                 <div class="input-box">
-                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="<?= $_SESSION['creditcard']['name'] ?? "" ?>">
+                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="<?= $_SESSION['creditcard']['name'] ?>">
                                     <!-- 通過icon -->
                                     <i class="fas fa-check-circle position-absolute"></i>
                                     <!-- 不通過icon -->
@@ -225,7 +221,7 @@ if (!isset($_SESSION['user'])) {
 
                                 <div class=" input-box position-relative">
                                     <span id="generatecard">generate random</span>
-                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="<?= $_SESSION['creditcard']['credit-number'] ?? "" ?>">
+                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="<?= $_SESSION['creditcard']['credit-number'] ?>">
                                     <!-- svg圖案 -->
                                     <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
 
@@ -246,7 +242,7 @@ if (!isset($_SESSION['user'])) {
                                     <span class="must">(必填)</span>
                                 </label>
                                 <div class="input-box">
-                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="<?= $_SESSION['creditcard']['valid-date'] ?? "" ?>">
+                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="<?= $_SESSION['creditcard']['valid-date'] ?>">
 
                                     <!-- 通過icon -->
                                     <i class="fas fa-check-circle position-absolute"></i>
@@ -265,7 +261,7 @@ if (!isset($_SESSION['user'])) {
                                     <span class="must">(必填)</span>
                                 </label>
                                 <div class="input-box">
-                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="<?= $_SESSION['creditcard']['security-number'] ?? "" ?>">
+                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="<?= $_SESSION['creditcard']['security-number'] ?>">
 
                                     <!-- 通過icon -->
                                     <i class="fas fa-check-circle position-absolute"></i>
@@ -276,11 +272,93 @@ if (!isset($_SESSION['user'])) {
                                 </div>
                             </div>
 
+                        <?php else : ?>
+                            <!-- 持卡人姓名 -->
+                            <div class="form-group">
+                                <label for="name" class="mb-2">
+                                    <span class="must-icon">*</span>
+                                    持卡人姓名
+                                    <span class="must">(必填)</span>
+                                </label>
+
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="">
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- 姓名驗證 -->
+                                    <small class="form-text mt-2">* 請輸入正確持卡人姓名</small>
+                                </div>
+                            </div>
+
+                            <!-- 卡片號碼 -->
+                            <div class="form-group">
+                                <label for="credit-number">
+                                    <span class="must-icon">*</span>
+                                    卡片號碼
+                                    <span class="must">(必填)</span>
+                                </label>
+
+                                <div class=" input-box position-relative">
+                                    <span id="generatecard">generate random</span>
+                                    <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="">
+                                    <!-- svg圖案 -->
+                                    <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
+
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- 卡片號碼驗證 -->
+                                    <small class="form-text mt-2">* 請輸入正確卡片號碼</small>
+                                </div>
+                            </div>
+
+                            <!-- 有效年月 -->
+                            <div class="form-group">
+                                <label for="valid-date" class="mb-2">
+                                    <span class="must-icon">*</span>
+                                    有效年月
+                                    <span class="must">(必填)</span>
+                                </label>
+                                <div class="input-box">
+                                    <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="">
+
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- 有效年月驗證 -->
+                                    <small class="form-text" class="r-pin mt-2">* 請輸入有效年月</small>
+                                </div>
+                            </div>
+
+                            <!-- 驗證碼 -->
+                            <div class="form-group">
+                                <label for="security-number" class="mb-2">
+                                    <span class="must-icon">*</span>
+                                    驗證碼
+                                    <span class="must">(必填)</span>
+                                </label>
+                                <div class="input-box">
+                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="">
+
+                                    <!-- 通過icon -->
+                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- 不通過icon -->
+                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- 電話驗證 -->
+                                    <small class="form-text" class="r-pin mt-2">* 請輸入正確電話</small>
+                                </div>
+                            </div>
+
+
                         <?php endif; ?>
 
 
                         <!-- 上一步或送出按鈕 -->
-                        <div class="row btn-set justify-content-center">
+                        <div class="row justify-content-center">
                             <!-- 繼續逛逛 -->
                             <div class="col-6 text-right">
                                 <a href="5_shopCart-member-info.php">
@@ -299,8 +377,6 @@ if (!isset($_SESSION['user'])) {
                 </div>
 
             </div>
-
-
 
             <!-- 銀行轉帳付款下拉選單 -->
             <!-- <div class="bank-pay" style="display:none">
