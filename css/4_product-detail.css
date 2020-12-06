@@ -87,21 +87,41 @@ body {
 
 /* --------音樂標籤-------- */
 .label {
-  height: 32px;
+  height: 33px;
   /* width: 72px; */
   background-color: #fff;
   border: 3px solid black;
   padding-top: 5px;
-  text-align: center;
+  /* text-align: center; */
 }
 
+/* -----報名按鍵---------- */
 .apply {
   height: 133px;
-  width: 223px;
+  width: 200px;
   background-color: #fac000;
   border: 3px solid black;
   text-align: center;
 }
+
+/* --------愛心的部分----------- */
+
+.aroundheart {
+  /* height: 133px;
+  width: 223px; */
+  text-align: center;
+}
+
+.like {
+  cursor: pointer;
+}
+
+.like.liked {
+  color: #ed5b4c;
+  font-weight: 900;
+}
+
+/* ------動畫的部分------------- */
 
 .tape-1.rubberBand {
   /* margin: 0 0.5rem;

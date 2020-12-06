@@ -90,17 +90,17 @@ if (empty($row)) {
         </div> -->
 
 
-        <div class="row justify-content-between">
+        <div class="row justify-content-between col-12 p-0">
 
             <div class="">
-                <button class="label">
+                <button class="label align-items-center justify-content-center">
                     <!-- 活動標籤 -->
                     <p><?= $row['categories'] ?></p>
                 </button>
                 <div class="activity">
                     <!-- 活動名稱 -->
 
-                    <h1 class="activity-title mt-3"><?= $row['event_name'] ?></h1>
+                    <h1 class="activity-title mt-3 col-9"><?= $row['event_name'] ?></h1>
                     <div class="activity-time d-flex">
                         <div class="mt-4 mr-3">
                             <i class="far fa-clock"></i>
@@ -126,7 +126,7 @@ if (empty($row)) {
                         <p class="mt-3"><?= $row['price'] ?></p>
                     </div>
 
-                    <div class="hastag-place mt-3">
+                    <div class="hastag-place mt-3 col-9">
                         <a href="#"><?= $row['hastag'] ?></a>
                         <a href="#"><?= $row['hastag'] ?></a>
                     </div>
@@ -136,16 +136,24 @@ if (empty($row)) {
 
 
             <!-- ---------報名卡片-------------- -->
-            <button class="apply apply-01 d-flex align-items-center justify-content-center">
-                <div class="d-flex text-align: center">
-                    <div class="apply-ticket">
-                        <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
-                    </div>
-                    <div class="apply-word d-flex align-items-center justify-content-center ml-3">
-                        <p>立即<br>報名</p>
-                    </div>
+            <div class="d-flex col-3">
+                <!-- -----------愛心----------------     -->
+                <div class="aroundheart mr-2">
+                    <i class="like far fa-heart fa-2x"></i>
                 </div>
-            </button>
+
+                <button class="apply apply-01 d-flex align-items-center justify-content-center">
+                    <div class="d-flex text-align: center">
+                        <div class="apply-ticket">
+                            <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
+                        </div>
+                        <div class="apply-word d-flex align-items-center justify-content-center ml-2">
+                            <p>立即<br>報名</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
         </div>
 
         <div class="space-1"></div>
@@ -252,6 +260,23 @@ if (empty($row)) {
                             <p>想要和你 想要和你 來跳恰恰恰 毋知你是 毋知你是 走去叼位躲 啊飲落去飲落去 毋通漏氣 跳落去跳落去 大家歡喜！</p>
                         </div>
                     </div>
+
+                    <div class="name-bar col-lg-10 col-sm-10 col-md-10">
+                        <div class="col-lg-2 col-sm-10 col-md-10">
+                            <div class="bar-circle">
+                                <img class="w-100" src="../KunstHause/imgs/products/headshut-4.png" alt="" srcset="">
+                            </div>
+                        </div>
+
+                        <div class="bar-title col-lg-2 col-md-10 col-sm-10">
+                            <h2 class="mb-2">雨水我問你</h2>
+                            <p>2020/12/21</p>
+                        </div>
+
+                        <div class="bar-word col-lg-6 col-md-10 col-sm-10">
+                            <p>啊 雨水我問你 我的感情算什麼 無采愛你已經愛這多年 啊 雨水我問你　誰人為愛賭生死 你敢講我就陪你去！</p>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -291,6 +316,30 @@ if (empty($row)) {
     </div>
 
 </section>
+
+<!-- -------modal----------- -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">發送留言前，我們要告知你：</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>1.毀謗屬刑事案件（會留下前科），敬告發表者自負法律責任。<br>2.良性建議可。無關或含有惡意批評文字、影射、歧視、諧音等留言將會刪除。<br>3.KUNSTHAUS全權決定刪除標準，累犯者將永久取消留言資格。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                <button type="button" class="btn btn-primary">我已瞭解，送出留言</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- 麵包屑 -->
 
@@ -334,6 +383,21 @@ if (empty($row)) {
 
 
     });
+
+
+    // Modal Show
+    $('.search-bar-ser').on('click', function() {
+        $('#exampleModalCenter').modal('show')
+
+    })
+
+    $('.apply').on('click', function() {
+        window.parent.$('#exampleModal').modal('hide');
+        window.parent.$('.cartnav-dropdown').toggle();
+        // 先移除購物車空空的alert
+        window.parent.$('.alert').css('display', 'none');
+        window.parent.$('.pay-btn').css('display', 'block');
+    })
 </script>
 
 <!-- footer -->
