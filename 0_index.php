@@ -243,7 +243,7 @@
 </section>
 
 
-<section class="about position-relative">
+<section id="about-us" class="about position-relative">
     <div class="fluid-container">
         <div class="row m-0">
             <div class="col-lg-6 col-md-12 col-sm-12 col-12 marquee-box p-0">
