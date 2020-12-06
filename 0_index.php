@@ -91,7 +91,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-1 img-480 position-relative">
-                            <p class="event-intro position-absolute">大人的年齡，始終是個秘密...就像早上七點能吃到豬排起司丼飯一樣「sweet」，吃飽了還要跟著大寶寶的快樂腳一起「小朋友上樓梯」。睽違一年，終於要再次掀起這場蝶戀蜂狂、醉舞狂歌的毛頭之亂，應觀眾敲碗舉辦北中南！</p>
+                            <p class="event-intro position-absolute">大人的年齡，始終是個秘密...就像早上七點能吃到豬排起司丼飯一樣「sweet」，吃飽了還要跟著大寶寶的快樂腳一起「小朋友上樓梯」。睽違一年，終於......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -146,7 +146,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-2 img-480 position-relative">
-                            <p class="event-intro position-absolute">延續以往療癒輕鬆的風格，同時訴說關於「宿命」及「循環」的概念。人類生活遵循時序的運行，追求物質生活的便利性，即使物換星移，有些循環仍是不會終止地發生在每個人身上。......</p>
+                            <p class="event-intro position-absolute">延續以往療癒輕鬆的風格，同時訴說關於「宿命」及「循環」的概念。人類生活遵循時序的運行，追求物質生活的便利性，即使物換星移，有些循環仍是不......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -200,7 +200,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-3 img-480 position-relative">
-                            <p class="event-intro position-absolute">來自「劇場」和「變裝」兩個不同專業領域的曾智偉和妮妃雅，皆對「懷孕」的形象充滿好奇與幻想，因此《 Mommy Drag 》將孕育生命的......</p>
+                            <p class="event-intro position-absolute">本場音樂會以《炙熱》為名，挑選了充滿突破性的貝多芬《弦樂四重奏作品18之4》、充滿奧地利貴族優雅風格的胡戈《義大利小夜曲》，回歸復古再創出自......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -414,7 +414,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-12 p-0">
-                <a href="#" class="be-partner position-relative">
+                <a href="3_B2B-index.php" class="be-partner position-relative">
                     <img class="sign1 position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-sign-01.svg" alt="">
                     <img class="sign2" src="<?= WEB_ROOT ?>imgs/index/ic-sign-02.svg" alt="">
                 </a>
