@@ -389,7 +389,7 @@ if (empty($row)) {
     $('.search-bar-ser').on('click', function() {
         $('#exampleModalCenter').modal('show')
 
-    })
+    });
 
     $('.apply').on('click', function() {
         window.parent.$('#exampleModal').modal('hide');
@@ -397,7 +397,7 @@ if (empty($row)) {
         // 先移除購物車空空的alert
         window.parent.$('.alert').css('display', 'none');
         window.parent.$('.pay-btn').css('display', 'block');
-    })
+    });
 </script>
 
 <!-- footer -->
