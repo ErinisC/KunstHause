@@ -346,6 +346,8 @@ if (isset($_SESSION['user'])) {
 
             <!-- 商品小卡開始 -->
             <div class="row">
+
+
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
                     <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
@@ -361,45 +363,46 @@ if (isset($_SESSION['user'])) {
 
                                 <!-- 翻轉卡片背面 -->
                                 <div class="flip-card-back position-absolute p-3">
-                                    <div class="filp-title mb-3 text-center"> 活動簡介</div>
+                                    <div class="filp-title mb-3 text-center"><?= $r['event_name'] ?></div>
                                     <p class="px-3"><?= $r['event_info'] ?></p>
-                                    <div class="px-3 text-right mt-2 text-white">read more +</div>
-
                                 </div>
                             </div>
                         </a>
 
 
                         <!-- 小卡下方票價 -->
-                        <div class="wrap mt-1">
-                            <div class="card-body p-0 w-100">
-                                <div class="card-info position-relative p-3">
-                                    <div class="event-name mb-3"><?= $r['event_name'] ?></div>
+                        <div class="wrap mt-1 d-flex">
+                            <div class="card-body d-flex p-0 w-100">
+                                <div class="card-info position-relative m-auto py-3 col-10">
+                                    <div class="event-name mb-2"><?= $r['event_name'] ?></div>
 
-                                    <div class="event-location"><?= $r['location'] ?></div>
+                                    <div class="event-location mb-2"><?= $r['location'] ?></div>
+
+                                    <div class="now-price">$ <?= $r['price'] ?></div>
 
                                     <!-- 收藏 -->
                                     <a href="Javascript:" class="like-link position-absolute">
-
+                                        <!-- <i class="like like-btn far fa-heart" onclick="checkLike(event);return false;" data-sid="<?= $r['sid'] ?>"></i> -->
                                         <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
                                     </a>
 
                                 </div>
 
                                 <!-- 價格按鈕加Modal的彈跳窗格 -->
-                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 w-100">
-                                    <div class=" card-price justify-content-center d-flex p-3">
-                                        <div class="mr-3">立刻購買</div>
-                                        <div class="now-price">$ <?= $r['price'] ?></div>
-                                    </div>
+                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-2 d-flex justify-content-center align-items-center">
+                                    <!-- <div class=" card-price py-3">
+
+                                    </div> -->
+
+                                    <i class="fas fa-cart-plus"></i>
                                 </a>
 
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
-
             </div>
+
 
         </div>
 

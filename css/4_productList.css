@@ -308,6 +308,13 @@ input:focus {
   opacity: 1;
 }
 
+
+.fas.fa-cart-plus {
+  font-size: 1.5rem;
+  color: white;
+
+}
+
 /* 翻轉卡片 */
 .flip-card-inner {
   height: 300px;
