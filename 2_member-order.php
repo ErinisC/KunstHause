@@ -229,7 +229,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         <div class="row order mb-5 align-content-center">
                     
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100" src="imgs/event/event-sm/${a['picture']}.jpg" alt="">
+                            <img class="event-sm-img w-100 h-100" src="imgs/event/event-sm/${a['picture']}.jpg" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
@@ -239,10 +239,11 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                             <div class="sub-info my-4">
                                 <p class="date mb-2">${a['start_datetime']} ~ ${a['end_datetime']}</p>
                                 <p class="order-sid mb-2">訂單編號：${a['order_id']}</p>
+                                <p class="order-date mb-2">訂單日期：${a['order_date']}</p>
                                 <p class="pay-method mb-2">付款方式：${a['pay_way'] }</p>
-                                <p class="total-price mb-2">票券數量：${a['event_amount'] }</p>
+                                <p class="total-price mb-2">票券數量：${a['event_amount']}</p>
                                 <p class="total-price mb-2">票券總額：${a['event_amount']* a['price']}</p>
-                                <p class="order-status mb-2">訂單狀態：${a['order_status'] }</p>
+                                <p class="order-status mb-2">訂單狀態：${a['order_status']}</p>
                             </div>
                         </div>
                         <div class="col-lg-1 sm-none"></div>

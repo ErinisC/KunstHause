@@ -26,6 +26,7 @@ if ($totalRows != 0) {
     $sql = sprintf(
         "SELECT d.*, p.* FROM `order_details` d JOIN `products` p ON p.sid=d.product_id %s ORDER BY d.sid DESC",
         $where
+        // SELECT d.*, p.*, o.`order_date` FROM `order_details` d JOIN `products` p JOIN `orders` o ON p.sid=d.product_id %s ORDER BY d.sid DESC
     );
 
     $stmt = $pdo->query($sql);
