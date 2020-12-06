@@ -629,7 +629,7 @@ body {
 .pickup-1 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact-02.jpg) no-repeat;
+  background: url(../imgs/event/event-sm/TPE-06.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -637,7 +637,7 @@ body {
 .pickup-2 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact-03.jpg) no-repeat;
+  background: url(../imgs/event/event-sm/HSZ-11.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -645,7 +645,7 @@ body {
 .pickup-3 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact-04.jpg) no-repeat;
+  background: url(../imgs/event/event-sm/TPE-42.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
