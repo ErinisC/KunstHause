@@ -91,7 +91,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-1 img-480 position-relative">
-                            <p class="event-intro position-absolute">張震嶽、陳綺貞、ØZI等超過40組音樂人，將在2月12日、13日的「2020 Simple Life ORIGINAL簡單生活節」帶來精采演出！2020簡單生活節5日在華山舉辦記者會，宣布本屆簡單生活節重回華山舉辦，創辦人張培仁公布與......</p>
+                            <p class="event-intro position-absolute">張震嶽、陳綺貞、ØZI等超過40組音樂人，將在2月12日、13日的「2020 Simple Life ORIGINAL簡單生活節」帶來精采演出！2020簡單生......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -146,7 +146,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-2 img-480 position-relative">
-                            <p class="event-intro position-absolute">2020 草率季從「窗」的概念出發，將 2020 年這特別的一年的主題定為「開天窗」，邀請大家一起來探索，並藉此「打開通往未知的天窗」。「開天窗」概念來自早期報業，當時媒體為了抗議政權高壓及言論檢查，希望讀者知道......</p>
+                            <p class="event-intro position-absolute">2020 草率季從「窗」的概念出發，將 2020 年這特別的一年的主題定為「開天窗」，邀請大家一起來探索，並藉此「打開通往未知的天......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -200,7 +200,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-3 img-480 position-relative">
-                            <p class="event-intro position-absolute">來自「劇場」和「變裝」兩個不同專業領域的曾智偉和妮妃雅，皆對「懷孕」的形象充滿好奇與幻想，因此《 Mommy Drag 》將孕育生命的子宮作為起點，母親與同志兒子的關係為故事架構，結合變裝文化中的對嘴與換裝元素，邀請......</p>
+                            <p class="event-intro position-absolute">來自「劇場」和「變裝」兩個不同專業領域的曾智偉和妮妃雅，皆對「懷孕」的形象充滿好奇與幻想，因此《 Mommy Drag 》將孕育生命的......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
