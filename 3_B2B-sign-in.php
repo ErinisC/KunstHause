@@ -289,6 +289,37 @@ if (!isset($_SESSION['user'])) {
             }, 'json');
         }
     }
+
+
+    //封裝一個限制字數方法
+    var checkStrLengths = function(str, maxLength) {
+        var maxLength = maxLength;
+        var result = 0;
+        if (str && str.length > maxLength) {
+            result = maxLength;
+        } else {
+            result = str.length;
+        }
+        return result;
+    }
+
+    //監聽輸入
+    $(".textarea2").on('input propertychange', function() {
+
+        //獲取輸入內容
+        var userDesc = $(this).val();
+
+        //判斷字數
+        var len;
+        if (userDesc) {
+            len = checkStrLengths(userDesc, 255);
+        } else {
+            len = 0
+        }
+
+        //顯示字數
+        $(".wortcount").html(len + '/255')
+    });
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

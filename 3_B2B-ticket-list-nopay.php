@@ -46,7 +46,7 @@
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -60,7 +60,7 @@
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -74,7 +74,7 @@
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -88,7 +88,7 @@
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -102,7 +102,7 @@
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
@@ -116,7 +116,7 @@
                             <td>XDXD48763</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
-                            <td>已付款</td>
+                            <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>

@@ -207,7 +207,7 @@
 
                     <p class="cardtext">檢視您的訂單</p>
                     <div class="modbutton text-center">
-                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-ticket-list.php'">檢視訂單</button>
+                        <button class="modify btn btn-primary" onclick="location.href='3_B2B-ticket-list-history.php'">檢視訂單</button>
                     </div>
                 </div>
             </div>

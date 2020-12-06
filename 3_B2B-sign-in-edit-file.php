@@ -60,8 +60,8 @@
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位簡介（必填）</p>
-                <textarea class="textarea2" name="" id="" cols="" rows="10" placeholder="我們不得不面對一個非常尷尬的事實，那就是，想必大家都能了解名字好難想工作室的重要性。既然如此，若能夠欣賞到名字好難想工作室的美，相信我們一定會對名字好難想工作室改觀。名字好難想工作室似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。"></textarea>
-                <p class="wortcount">0/255</p>
+                <textarea class="textarea2" name="" id="" cols="" rows="10" placeholder="請填寫主辦單位簡介" maxlength="255" required>我們不得不面對一個非常尷尬的事實，那就是，想必大家都能了解名字好難想工作室的重要性。既然如此，若能夠欣賞到名字好難想工作室的美，相信我們一定會對名字好難想工作室改觀。名字好難想工作室似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。</textarea>
+                <span class="wortcount">0/255</span>
             </div>
 
             <div class="modbutton text-center col-xl-8 col-12">
@@ -105,6 +105,37 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src=""></script>
+<!-- <script src=""></script> -->
+<script>
+    //封裝一個限制字數方法
+    var checkStrLengths = function(str, maxLength) {
+        var maxLength = maxLength;
+        var result = 0;
+        if (str && str.length > maxLength) {
+            result = maxLength;
+        } else {
+            result = str.length;
+        }
+        return result;
+    }
+
+    //監聽輸入
+    $(".textarea2").on('input propertychange', function() {
+
+        //獲取輸入內容
+        var userDesc = $(this).val();
+
+        //判斷字數
+        var len;
+        if (userDesc) {
+            len = checkStrLengths(userDesc, 255);
+        } else {
+            len = 0
+        }
+
+        //顯示字數
+        $(".wortcount").html(len + '/255')
+    });
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
