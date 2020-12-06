@@ -206,7 +206,7 @@
                 美食攝影，是「料理人×攝影師」共同的藝術創作，搶在狼吞虎嚥之前，將香溢汁噴、鮮嫩欲滴的美味紀錄成永恆。舌尖上的攝影師團隊，集結平面攝影、動態影像、文字記敘，要把餐桌上的飲食，釀成當代台灣文化的雋永甘醇。
             </p>
         </div>
-        <div class="issue-cover col-8 col-md-12 col-sm-12 col-12 px-0">
+        <div class="issue-cover col-lg-8 col-md-12 col-sm-12 col-12 px-0">
             <a href="#">
                 <img class="w-100" src="<?= WEB_ROOT ?>imgs/blog/feature-img-09.png" alt="">
             </a>
