@@ -32,7 +32,7 @@ foreach ($o_rows as $o) {
 
 // event_name, p.sid, p.picture
 
-$d_sql = sprintf("SELECT d.*, p.* FROM `order_details` d 
+$d_sql = sprintf("SELECT d.*, p.*, d.`sid` d_sid FROM `order_details` d 
 JOIN `products` p ON p.sid=d.product_id  
 WHERE d.`order_id` IN (%s) ORDER BY p.`start_datetime` DESC", implode(',', $order_ids));
 
@@ -110,7 +110,7 @@ $likes = $l_stmt->fetchAll();
                         </p>
                         <!-- <i class="fas fa-edit"></i> -->
                     </div>
-                    <a href="http://localhost/KunstHause/2_member-accunt-set.php">
+                    <a href="2_member-accunt-set.php">
                         <button class="btn btn-primary col-lg-2 col-4 mt-5 ">
                             <p>編輯資料</p>
                         </button> </a>
@@ -125,7 +125,7 @@ $likes = $l_stmt->fetchAll();
                         <?php foreach ($likes as $r) : ?>
                             <!-- 活動小卡 -->
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="card">
-                                <div class="card-wrap m-4 col-lg-5 col-sm-4 p-0">
+                                <div class="card-wrap m-4 col-lg-4 col-sm-3 p-0">
                                     <div class="card-kv position-relative">
                                         <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg">
                                         <div class="time col-5 text-dark position-absolute mt-3">
@@ -135,10 +135,10 @@ $likes = $l_stmt->fetchAll();
 
                                     <div class="card-body d-flex p-0 w-100">
                                         <div class="card-info position-relative col-8">
-                                            <div class="event-name my-2">
+                                            <div class="event-name text-dark my-2">
                                                 <p><?= $r['event_name'] ?></p>
                                             </div>
-                                            <div class="event-location my-2"><?= $r['location'] ?></div>
+                                            <div class="event-location text-dark my-2"><?= $r['location'] ?></div>
 
                                             <a href="Javascript:" class="like-link position-absolute">
                                                 <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
@@ -155,120 +155,8 @@ $likes = $l_stmt->fetchAll();
                                 </div>
                             </a>
                         <?php endforeach; ?>
-
-
-                        <!-- <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                            <div class="card-kv position-relative">
-                                <img src="/KunstHause/imgs/event/event-sm/TPE-26.jpg">
-                                <div class="time col-5 position-absolute mt-3">
-                                    <p class="my-2">2021.03.20-2021.03.20</p>
-                                </div>
-                            </div>
-
-                            <div class="card-body d-flex p-0 w-100">
-                                <div class="card-info position-relative col-8">
-                                    <div class="event-name my-2">
-                                        <p>原子邦妮樂遊原演唱會</p>
-                                    </div>
-                                    <div class="event-location my-2">【ZEP NEW TEIPEI 】</div>
-                                    
-                                    <a href="#" class="like-link position-absolute">
-                                        <i class="like far fa-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="card-price col-4">
-                                    <div class="discount mt-3">
-                                        <p>優惠價</p>
-                                    </div>
-                                    <div class="price my-2">$</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                            <div class="card-kv position-relative">
-                                <img src="/KunstHause/imgs/event/event-sm/TPE-22.jpg">
-                                <div class="time col-5 position-absolute mt-3">
-                                    <p class="my-2">2021.01.17-2021-01.17</p>
-                                </div>
-                            </div>
-                            <div class="card-body d-flex p-0 w-100">
-                                <div class="card-info position-relative col-8">
-                                    <div class="event-name my-2">
-                                        <p>獨立人種</p>
-                                    </div>
-                                    <div class="event-location my-2">【公館河岸留言】</div>
-                                    
-                                    <a href="#" class="like-link position-absolute">
-                                        <i class="like far fa-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="card-price col-4">
-                                    <div class="discount mt-3">
-                                        <p>優惠價</p>
-                                    </div>
-                                    <div class="price my-2">$</div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
 
-
-                    <!-- <div class="c-row2 d-flex justify-content-center my-5" style=" flex-wrap:wrap">
-
-                        <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                            <div class="card-kv position-relative">
-                                <img src="/KunstHause/imgs/event/event-sm/TNN-54.jpg">
-                                <div class="time col-5 position-absolute mt-3">
-                                    <p class="my-2">2020.11.03-2020.12.13</p>
-                                </div>
-                            </div>
-                            <div class="card-body d-flex p-0 w-100">
-                                <div class="card-info position-relative col-8">
-                                    <div class="event-name my-2">
-                                        <p>維也納藝術月-不均的平面</p>
-                                    </div>
-                                    <div class="event-location my-2">【台南市美術館-跨域展演廳】</div>
-                                   
-                                    <a href="#" class="like-link position-absolute">
-                                        <i class="like far fa-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="card-price col-4">
-                                    <div class="discount mt-3">
-                                        <p>優惠價</p>
-                                    </div>
-                                    <div class="price my-2">$</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-wrap ml-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
-                            <div class="card-kv position-relative">
-                                <img src="/KunstHause/imgs/event/event-sm/HSZ-11.jpg">
-                                <div class="time col-5 position-absolute mt-3">
-                                    <p class="my-2">2020.11.28-2021.01.09</p>
-                                </div>
-                            </div>
-                            <div class="card-body d-flex p-0 w-100">
-                                <div class="card-info position-relative col-8">
-                                    <div class="event-name my-2">
-                                        <p>野原邦彥個展-CYCLE</p>
-                                    </div>
-                                    <div class="event-location my-2">【愛上藝廊-新竹】</div>
-                                   
-                                    <a href="#" class="like-link position-absolute">
-                                        <i class="like far fa-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="card-price col-4">
-                                    <div class="discount mt-3">
-                                        <p>優惠價</p>
-                                    </div>
-                                    <div class="price my-2">$</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
                     <div class="view-more">
                         <p>VIEW MORE >></p>
@@ -353,7 +241,7 @@ $likes = $l_stmt->fetchAll();
 
                     <div class="container order-status-list col-lg-11">
                         <?php foreach ($d_rows as $d) : ?>
-                            <div class="t-detail mb-5 d-flex align-content-around">
+                            <div class="t-detail mb-5 d-flex align-content-around" data-detailid="<?= $d['d_sid'] ?>">
                                 <div class="ticket-kv col-lg-3 p-0">
                                     <img class="event-sm-img w-100 p-0 h-100" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                                 </div>
@@ -516,18 +404,22 @@ $likes = $l_stmt->fetchAll();
                     <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
 
-                <div class="item" style="background-color:#fff">
+                <div id="item" class="item position-relative" style="background-color:#fff">
                     <a href="" class="text-dark">我的收藏</a>
+                    <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
-                <div class="item" style="background-color:#FAC000">
+                <div id="item" class="item position-relative" style="background-color:#FAC000">
                     <a href="" class="text-white">優惠券管理</a>
+                    <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
 
-                <div class="item" style="background-color:#fff">
+                <div id="item" class="item position-relative" style="background-color:#fff">
                     <a href="2_member-service.php" class="text-dark">聯繫客服</a>
+                    <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
-                <div class="item" style="background-color:#FAC000">
+                <div id="item" class="item position-relative" style="background-color:#FAC000">
                     <a href="" class="text-white">訊息管理</a>
+                    <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
 
             </div>
@@ -541,27 +433,24 @@ $likes = $l_stmt->fetchAll();
 
 <!-- 引入自己的ＪＳ -->
 <script>
-    // 燈泡
-    const bulb = document.getElementById("light-bulb")
-    item = document.getElementById("item");
+    // 小燈泡
 
-    item.addEventListener('mouseenter' = function() {
-        bulb.show()
-    })
-    item.addEventListener('mouseleave' = function() {
-        bulb.hide()
+    $('.item').on('mouseenter', function() {
+        $(this).find('.light-bulb').show();
+    });
+
+    $('.item').on('mouseleave', function() {
+        $(this).find('.light-bulb').hide();
     });
 
 
 
     // 收藏功能
-
+    const sess_user = <?= json_encode($_SESSION['user'] ?? []) ?>;
     const like_btns = $('.like-btn');
-    like_btns.click(function() {
-        // if (session.user == "undefined") {
-        //     console.log('請先登入');
 
-        // } else {
+    like_btns.click(function() {
+
         const card = $(this).closest('.card');
         const sid = card.attr('data-sid');
         const sendObj = {
@@ -578,7 +467,6 @@ $likes = $l_stmt->fetchAll();
             }
 
         }, 'json');
-        // }
 
     });
 

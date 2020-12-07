@@ -94,8 +94,6 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary col-4 mr-3" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #168FA4">
                             <p class="fp">忘記密碼?</p>
-                            <!-- <p style="font-size:1rem; padding-top:0px">忘記密碼?
-                            </p> -->
                         </button>
 
                         <button type="submit" class="btn btn-primary col-4 ml-3">登入</button>
@@ -206,7 +204,6 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         .text('登入成功');
 
                     setTimeout(function() {
-                        // location.href = '4_productList.php';
                         location.href = '<?= $gotoURL ?>';
                     }, 3000);
 
