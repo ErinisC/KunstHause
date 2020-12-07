@@ -42,12 +42,12 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-59.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-03.jpg" alt="First slide">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-08.jpg" alt="First slide">
                     </a>
                 </div>
                 <div class="carousel-item">
@@ -91,7 +91,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-1 img-480 position-relative">
-                            <p class="event-intro position-absolute">張震嶽、陳綺貞、ØZI等超過40組音樂人，將在2月12日、13日的「2020 Simple Life ORIGINAL簡單生活節」帶來精采演出！2020簡單生......</p>
+                            <p class="event-intro position-absolute">大人的年齡，始終是個秘密...就像早上七點能吃到豬排起司丼飯一樣「sweet」，吃飽了還要跟著大寶寶的快樂腳一起「小朋友上樓梯」。睽違一年，終於......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -99,17 +99,17 @@
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
                                     <a href="#">
-                                        <p class="section-title-s m-3">2020簡單生活節</p>
+                                        <p class="section-title-s m-3">小毛頭之亂2.0</p>
                                     </a>
                                     <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
-                                <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
+                                <p class="act-time mb-3 ml-3">2020-12-19 20:00</p>
                                 <div class="d-flex">
                                     <div class="col-7">
-                                        <span class="hashtag">#簡單生活節</span>
-                                        <span class="hashtag">#文青聚會</span>
+                                        <span class="hashtag">#最口愛</span>
+                                        <span class="hashtag">#最年輕</span>
                                     </div>
-                                    <p class="col-5 price text-right">NT$2000</p>
+                                    <p class="col-5 price text-right">$ 900</p>
                                 </div>
                             </div>
 
@@ -146,7 +146,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-2 img-480 position-relative">
-                            <p class="event-intro position-absolute">2020 草率季從「窗」的概念出發，將 2020 年這特別的一年的主題定為「開天窗」，邀請大家一起來探索，並藉此「打開通往未知的天......</p>
+                            <p class="event-intro position-absolute">延續以往療癒輕鬆的風格，同時訴說關於「宿命」及「循環」的概念。人類生活遵循時序的運行，追求物質生活的便利性，即使物換星移，有些循環仍是不......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -158,13 +158,13 @@
                                     </a>
                                     <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
-                                <p class="act-time mb-3 ml-3">2020-01-15 ~ 01-16</p>
+                                <p class="act-time mb-3 ml-3">2020-12-20 ~ 02-15</p>
                                 <div class="d-flex">
                                     <div class="col-7 hashtage">
-                                        <span class="hashtag">#簡單生活節</span>
-                                        <span class="hashtag">#文青聚會</span>
+                                        <span class="hashtag">#野原邦彥</span>
+                                        <span class="hashtag">#雕塑</span>
                                     </div>
-                                    <p class="col-5 price text-right">NT$2000</p>
+                                    <p class="col-5 price text-right">免費活動</p>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                     </div>
                     <a href="#">
                         <div class="card-img pickup-3 img-480 position-relative">
-                            <p class="event-intro position-absolute">來自「劇場」和「變裝」兩個不同專業領域的曾智偉和妮妃雅，皆對「懷孕」的形象充滿好奇與幻想，因此《 Mommy Drag 》將孕育生命的......</p>
+                            <p class="event-intro position-absolute">本場音樂會以《炙熱》為名，挑選了充滿突破性的貝多芬《弦樂四重奏作品18之4》、充滿奧地利貴族優雅風格的胡戈《義大利小夜曲》，回歸復古再創出自......</p>
                         </div>
                     </a>
                     <div class="card-bottom pb-5">
@@ -208,17 +208,17 @@
                             <div class="info">
                                 <div class="d-flex act-title align-items-center justify-content-between">
                                     <a href="#">
-                                        <p class="section-title-s m-3">2020簡單生活節</p>
+                                        <p class="section-title-s m-3">弦沐絃樂四重奏2020</p>
                                     </a>
                                     <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
-                                <p class="act-time mb-3 ml-3">2020-12-12 ~ 12-13</p>
+                                <p class="act-time mb-3 ml-3">2020-01-15 ~ 01-16</p>
                                 <div class="d-flex">
                                     <div class="col-7 hashtage">
-                                        <span class="hashtag">#簡單生活節</span>
-                                        <span class="hashtag">#文青聚會</span>
+                                        <span class="hashtag">#弦樂</span>
+                                        <span class="hashtag">#四重奏</span>
                                     </div>
-                                    <p class="col-5 price text-right">NT$2000</p>
+                                    <p class="col-5 price text-right">$ 500</p>
                                 </div>
                             </div>
                         </div>
@@ -414,7 +414,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-12 p-0">
-                <a href="#" class="be-partner position-relative">
+                <a href="3_B2B-index.php" class="be-partner position-relative">
                     <img class="sign1 position-absolute" src="<?= WEB_ROOT ?>imgs/index/ic-sign-01.svg" alt="">
                     <img class="sign2" src="<?= WEB_ROOT ?>imgs/index/ic-sign-02.svg" alt="">
                 </a>
@@ -526,6 +526,18 @@
             $('#fixed-button').css('opacity', '0');
         }
     });
+
+    // article select animation
+    $('.img-mask').on('mouseover', function() {
+        $(this).addClass('darker-mask');
+        $('.img-mask').not(this).addClass('lighter-mask');
+    });
+    $('.img-mask').on('mouseleave', function() {
+        $(this).removeClass('darker-mask');
+        $('.img-mask').not(this).removeClass('lighter-mask');
+
+    });
+
 
     // fixed button animation
     $('#fixed-button').on('click', function() {

@@ -629,7 +629,7 @@ body {
 .pickup-1 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact-02.jpg) no-repeat;
+  background: url(../imgs/event/event-sm/TPE-06.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -637,7 +637,7 @@ body {
 .pickup-2 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact-03.jpg) no-repeat;
+  background: url(../imgs/event/event-sm/HSZ-11.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -645,7 +645,7 @@ body {
 .pickup-3 {
   border: 3px solid black;
   border-radius: 0;
-  background: url(../imgs/index/mainact-04.jpg) no-repeat;
+  background: url(../imgs/event/event-sm/TPE-42.jpg) no-repeat;
   background-size: cover;
   background-position: right;
 }
@@ -791,7 +791,6 @@ a:hover {
 .article-img {
   margin-top: 10%;
   height: 380px;
-  background-size: 100%;
   transition-duration: 0.5s;
   display: flex;
   align-items: center;
@@ -801,10 +800,19 @@ a:hover {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.5s;
 }
 
-.article-img:hover {
-  background-size: 130%;
+.lighter-mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.darker-mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .cover-1 {

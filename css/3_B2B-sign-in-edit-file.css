@@ -141,6 +141,7 @@ textarea {
 }
 
 .wortcount {
+  display: block;
   margin-top: 5px;
   text-align: end;
 }

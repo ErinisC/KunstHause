@@ -240,6 +240,14 @@ input[type="number"] {
   color: #ff0000;
 }
 
+.input-wrap.success textarea {
+  border-color: #168fa4;
+}
+
+.input-wrap.error textarea {
+  border-color: #ff0000;
+}
+
 .input-wrap.success input {
   border-color: #168fa4;
 }
