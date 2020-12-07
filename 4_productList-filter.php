@@ -30,11 +30,10 @@ foreach ($cate as $k => $c) {
         }
     }
 };
+
 // echo json_encode($cate, JSON_UNESCAPED_UNICODE);
 // exit;
 
-
-// 拿種類的篩選層
 
 
 ?>
@@ -165,22 +164,34 @@ foreach ($cate as $k => $c) {
 
     <!-- 引入自己的ＪＳ -->
     <script>
+        let likes = [];
+
         // 前端樣板小卡，先生成一個html的樣板字串格式
         const productTpl = function(a) {
+            const sYear = a.start_datetime.slice(0, 4);
+            const sDate = a.start_datetime.slice(5, 11);
+            const eDate = a.end_datetime.slice(5, 11);
+            let heart = '';
+            if (likes && likes.length) {
+                if (likes.includes(a.sid)) {
+                    heart = "liked"
+                }
+            }
+
             return `     <div class="event-card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="${a.sid}">
 
 <a href="4_product-detail.php?sid=${a.sid}" target="_blank" class="flip-card">
     <div class="flip-card-inner position-relative">
         <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-            <img src="imgs/event/${a.picture}.jpg" class="card-img-top" alt="">
+            <img src="imgs/event/event-sm/${a.picture}.jpg" class="card-img-top" alt="">
             <!-- 圖片上時間 -->
             <div class="time position-absolute p-2">
                 <!-- 年 -->
-                <div class="year"><?= substr($r['start_datetime'], 0, 4) ?></div>
+                <div class="year">${sYear}</div>
                 <!-- start -->
-                <div class="start"><?= substr($r['start_datetime'], 5, 6) ?></div>
+                <div class="start">${sDate}</div>
                 <!-- end -->
-                <div class="end"><?= substr($r['end_datetime'], 5, 6) ?></div>
+                <div class="end">${eDate}</div>
             </div>
         </div>
 
@@ -207,18 +218,13 @@ foreach ($cate as $k => $c) {
 
         
             <a href="Javascript:" class="like-link position-absolute">
-                <!-- <i class="like like-btn far fa-heart" onclick="checkLike(event);return false;" data-sid="${a.sid}"></i> -->
-                <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="${a.sid}"></i>
+                <i class="like like-btn far fa-heart ${heart}" data-sid="${a.sid}"></i>
             </a>
 
         </div>
 
    
         <a href="javascript:showProductModal(${a.sid})" class="card-price py-3 col-2 d-flex justify-content-center align-items-center">
-            <!-- <div class=" card-price py-3">
-
-            </div> -->
-
             <i class="fas fa-cart-plus"></i>
         </a>
 
@@ -279,12 +285,6 @@ foreach ($cate as $k => $c) {
             }, 'json');
         }
 
-        // card heart animation
-        $('.like').on('click', function() {
-            console.log('like');
-            $(this).toggleClass('liked');
-        });
-
         // modal
         function showProductModal(sid) {
             // 去抓當個sid
@@ -302,6 +302,35 @@ foreach ($cate as $k => $c) {
         // 搜尋下拉框呈現
         $('#search-event').on('click', function() {
             $('.search-dropdown').toggle();
+
+        });
+
+
+        // 收藏功能
+        const sess_user = <?= json_encode($_SESSION['user'] ?? []) ?>;
+        const like_btns = $('.like-btn');
+        like_btns.click(function() {
+            if (!sess_user.sid) {
+                console.log('請先登入');
+
+            } else {
+                const card = $(this).closest('.event-card');
+                const sid = card.attr('data-sid');
+                const sendObj = {
+                    action: 'like',
+                    sid: sid,
+                }
+                console.log(sendObj)
+                $.get('4.likes-api.php', sendObj, function(data) {
+                    console.log(data);
+                    if (data.success) {
+                        card.find('.like-btn').addClass('liked');
+                    } else {
+                        card.find('.like-btn').removeClass('liked');
+                    }
+
+                }, 'json');
+            }
 
         });
     </script>

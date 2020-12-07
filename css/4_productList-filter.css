@@ -70,7 +70,7 @@ a:hover {
 }
 
 /* 商品卡片 */
-.product-list .card {
+.product-list .event-card {
     background-color: transparent;
     border: none;
     transition: 1s;
@@ -89,6 +89,7 @@ a:hover {
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
+
 
 .flip-card:hover .time {
     opacity: 0;
@@ -122,7 +123,7 @@ a:hover {
 
 
 /* 活動小卡圖片 */
-.card .img-wrap {
+.event-card .img-wrap {
     height: 300px;
     border: 3px solid black;
 }
@@ -133,7 +134,7 @@ a:hover {
     object-fit: cover;
 }
 
-.product-list .card .time {
+.product-list .event-card .time {
     bottom: 0;
     background-color: #ffc024;
     height: 50px;

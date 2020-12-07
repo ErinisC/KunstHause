@@ -31,8 +31,24 @@ $c_rows = $pdo->query($c_sql)->fetchAll();
 
 
 
-
 $output['products'] = $rows;
 
+
+
+// 如果會員有登入，叫出收藏愛心項目
+
+if (isset($_SESSION['user'])) {
+    $member_sid = $_SESSION['user']['sid'];
+    $l_sql = "SELECT `product_sid` FROM `likes` WHERE `member_sid`=?";
+    $l_stmt = $pdo->prepare($l_sql);
+    $l_stmt->execute([
+        $member_sid
+    ]);
+    $l_rows = $l_stmt->fetchAll();
+    $likes = array_column($l_rows, 'product_sid');
+    $output['likes'] = $likes;
+    // echo json_encode($likes, JSON_UNESCAPED_UNICODE);
+    // exit;
+}
 header('Content-Type: application/json');
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
