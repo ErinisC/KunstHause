@@ -2,7 +2,7 @@
     /* outline: 1px solid red; */
 }
 
-html {
+body {
     font-size: 16px;
 }
 
@@ -137,7 +137,7 @@ a:hover {
 .product-list .event-card .time {
     bottom: 0;
     background-color: #ffc024;
-    height: 50px;
+    /* height: 50px; */
     border-radius: 3px;
     transition: 0.8s;
 }
@@ -159,13 +159,13 @@ a:hover {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
 .like-link {
-    bottom: 0;
-    right: 10px;
+    bottom: 10px;
+    right: 20px;
     font-size: 2rem;
 }
 

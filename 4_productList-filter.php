@@ -64,14 +64,14 @@ foreach ($cate as $k => $c) {
         <!-- 搜尋結果 -->
         <div class="col py-3">
             <h1>搜尋結果
-                <b class="text-white">" 大港演唱會 "</b>
+                <b class="search-result text-white">" <?= $cate['0']['categories'] ?> "</b>
             </h1>
         </div>
 
         <!-- 內容開始 -->
         <div class="row">
             <!-- 篩選區塊 -->
-            <div class="col-3">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
                 <div class="filter-container">
 
                     <!-- 篩選 -->
@@ -93,7 +93,7 @@ foreach ($cate as $k => $c) {
                                 <div class="filter-btn card area_item" data-sid="<?= $c['sid'] ?>">
                                     <div class="card-header" id="headingOne<?= $c['sid'] ?>">
                                         <h2 class="mb-0">
-                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<?= $c['sid'] ?>" aria-expanded="true" aria-controls="collapseOne<?= $c['sid'] ?>">
+                                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne<?= $c['sid'] ?>" aria-expanded="true" aria-controls="collapseOne<?= $c['sid'] ?>" data-name="<?= $c['categories'] ?>">
                                                 <?= $c['categories'] ?>
                                             </button>
                                         </h2>
@@ -104,7 +104,7 @@ foreach ($cate as $k => $c) {
                                     <div id="collapseOne<?= $c['sid'] ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 
                                         <?php foreach ($c['children'] as $c2) : ?>
-                                            <div class="card-body area_item" data-sid="<?= $c2['sid'] ?>">
+                                            <div class="card-body area_item" data-sid="<?= $c2['sid'] ?>" data-name=" <?= $c2['categories'] ?>">
                                                 <?= $c2['categories'] ?>
                                             </div>
                                         <?php endforeach; ?>
@@ -164,6 +164,21 @@ foreach ($cate as $k => $c) {
 
     <!-- 引入自己的ＪＳ -->
     <script>
+        // 改變搜尋結果內容文字
+        $('.card-header').on('click', function() {
+            $(this).find('.btn').text()
+            const text = $(this).find('.btn').attr('data-name')
+            // console.log(text)
+            $('.search-result').text('" ' + text + ' "')
+        });
+
+        $('.card-body').on('click', function() {
+            // console.log($(this).attr('data-name'))
+            const text = $(this).attr('data-name')
+            $('.search-result').text('" ' + text + ' "')
+
+        });
+
         let likes = [];
 
         // 前端樣板小卡，先生成一個html的樣板字串格式

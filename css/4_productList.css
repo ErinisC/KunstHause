@@ -66,6 +66,8 @@ input:focus {
   color: #1a1a1a;
   /* color: white; */
   background-color: #ed5b4c;
+  border: 3px solid black;
+  padding: 5px;
 }
 
 .category-header .category-name {
@@ -83,8 +85,8 @@ input:focus {
 /* 整體背景 */
 .bg {
   /* 點的背景 */
-  /* background-color: #168FA4;
-  background-image: radial-gradient(#147e91 10%, transparent 10%), radial-gradient(#147e91 10%, transparent 10%);
+  /* background-color: #168FA4; */
+  /* background-image: radial-gradient(#147e91 10%, transparent 10%), radial-gradient(#147e91 10%, transparent 10%);
   background-position: 32px 0px, 84px 56px;
   background-size: 100px 100px;
   background-attachment: fixed; */
@@ -122,7 +124,7 @@ input:focus {
 
 /* 大圖輪播區塊 */
 .pic {
-  height: 700px;
+  /* height: 700px; */
   overflow: hidden;
 }
 
@@ -226,7 +228,7 @@ input:focus {
 
 .intro-img img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: contain;
 }
 
@@ -243,28 +245,17 @@ input:focus {
 }
 
 
-.intro-info::before {
-  content: "FEATURE";
-  font-weight: 700;
-  font-size: 3.5rem;
-  position: absolute;
-  top: -56px;
-  right: 20px;
-  color: rgba(255, 255, 255, 0.3);
-  -webkit-transform: skew(-21.5deg) scaleY(.9);
-  transform: skew(-21.5deg) scaleY(.9);
-}
 
-.intro-info::after {
+.intro-img::before {
   content: "";
   position: absolute;
-  top: -186px;
-  bottom: 0;
-  right: 352px;
+  top: 30px;
+  bottom: -30px;
+  right: 30px;
   width: 45vw;
   max-width: 556px;
   max-height: 289px;
-  z-index: 0;
+  z-index: -2;
   background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #d5a546), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, #d5a546), color-stop(.75, #d5a546), color-stop(.75, transparent), to(transparent));
   background-size: 9px 9px;
 }
@@ -283,7 +274,7 @@ input:focus {
   height: 50px;
   left: calc(50% - 25%);
   z-index: 1;
-  background: url(/KunstHause/imgs/index/ic-tape-blog.svg);
+  background: url(/KunstHause/imgs/index/ic-tape-blog.svg) center no-repeat;
 }
 
 
@@ -301,9 +292,21 @@ input:focus {
 
 /* 03.TOP10 熱門活動 */
 
+.carousel-control-prev {
+  top: 0;
+  left: -50px;
+  opacity: 1;
+  font-size: 3rem;
+  color: #ffc024;
+}
 
-
-
+.carousel-control-next {
+  top: 0;
+  right: -50px;
+  opacity: 1;
+  font-size: 3rem;
+  color: #ffc024;
+}
 
 /* 04.商品列表 */
 /* .bg-attatch {
@@ -560,6 +563,21 @@ iframe {
   margin: 2em 1em;
 }
 
+/* 推薦區箭頭 */
+.recommend-left {
+  top: 40%;
+  left: 2%;
+  color: #ffc024;
+  font-size: 3rem;
+}
+
+.recommend-right {
+  top: 40%;
+  right: 2%;
+  color: #ffc024;
+  font-size: 3rem;
+}
+
 /* 怪怪地區 */
 footer .letter-submit {
   font-size: 1rem;
@@ -575,6 +593,12 @@ footer .letter-submit {
 /* ====== Ｍedia Query ===============
 /* Extra small 超小 (576px 以下) */
 @media screen and (max-width: 576px) {
+
+  /* 大圖輪播區大小 */
+  .carousel-item {
+    height: 300px;
+  }
+
   .card-price {
     font-size: 0.8rem;
   }
@@ -586,14 +610,73 @@ footer .letter-submit {
   .modal-body {
     height: 480px;
   }
+
+  /* 02. Feature精選推薦 */
+  .intro-box {
+    height: 330px;
+  }
+
+  .intro-img {
+    margin-left: 30px;
+  }
+
+  .intro-img::before {
+    top: 5%;
+    right: 10%;
+    width: 84vw;
+    max-height: 145px;
+  }
+
+  .intro-info {
+    height: 127px;
+    background-color: #4336a3;
+    bottom: 1%;
+    right: 7%;
+    box-shadow: 8px 8px black;
+    z-index: 1;
+  }
+
+  /* Top10熱門輪播區 */
+
+  .category-hr {
+    display: none;
+  }
+
+  .carousel-control-prev {
+    left: 0px;
+  }
+
+  .carousel-control-next {
+    right: 0px;
+  }
 }
 
 /* =============================== */
 /* Small 小型裝置sm (576px 以上) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+
+  .intro-info::before {
+    content: "FEATURE";
+    font-weight: 700;
+    font-size: 3.5rem;
+    position: absolute;
+    top: -56px;
+    right: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    -webkit-transform: skew(-21.5deg) scaleY(.9);
+    transform: skew(-21.5deg) scaleY(.9);
+  }
+}
 
 /* 576-768之間的畫面 */
-@media (min-width: 576px) and (max-width: 768px) {}
+@media (min-width: 576px) and (max-width: 768px) {
+
+  /* 大圖輪播區大小 */
+  .carousel-item {
+    height: 500px;
+  }
+
+}
 
 @media (max-width: 768px) {
   .shop-cart-content {
