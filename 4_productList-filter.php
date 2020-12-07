@@ -1,4 +1,4 @@
-<?php $title = '活動篩選頁'; ?>
+<?php $title = '活動篩選'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
@@ -53,6 +53,7 @@ foreach ($cate as $k => $c) {
     <!-- nav的高度空出來 -->
     <div class="space"></div>
     <div class="container">
+        <!-- 麵包屑 -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="0_index.php">首頁</a></li>
@@ -60,6 +61,50 @@ foreach ($cate as $k => $c) {
                 <li class="breadcrumb-item active" aria-current="page"><?= $title ?></li>
             </ol>
         </nav>
+
+        <!-- 大圖輪播 -->
+        <!-- Banner輪播 -->
+        <div class="pic mb-3">
+            <div id="carouselExampleIndicators" class="carousel slide p-0 position-relatve" data-ride="carousel">
+                <!-- 固定的搜尋區塊 -->
+                <div class="filter-wrap position-absolute col-8 col-md-8 col-sm-11 col-11">
+                    <div class="filter-bg text-white text-center py-3">
+                        <div class="event-search w-100 d-flex flex-column justify-content-between">
+                            <h1 class="mb-3">最棒的活動，都在KunstHaus</h1>
+                            <h5 class="">來找活動吧</h5>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <!-- 下面的小橫線 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <!-- 圖片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imgs/banner/b-2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imgs/banner/b-4.jpg" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="imgs/banner/b-5.jpg" alt="Four slide">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- 搜尋結果 -->
         <div class="col py-3">
@@ -81,7 +126,7 @@ foreach ($cate as $k => $c) {
                         <div class="filter-btn card area_item" data-sid="0">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
-                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-name="所有商品">
                                         所有商品
                                     </button>
                                 </h2>
@@ -124,7 +169,7 @@ foreach ($cate as $k => $c) {
 
 
             <!-- 產品列表 -->
-            <div class="col-9">
+            <div class="pd-wrap col-lg-9 col-md-9 col-sm-12 col-12">
                 <div class="row product-list">
 
 
@@ -166,6 +211,10 @@ foreach ($cate as $k => $c) {
     <script>
         // 改變搜尋結果內容文字
         $('.card-header').on('click', function() {
+            $(this).css('background-color', '#ffc024')
+            $(this).closest('.filter-btn').siblings().find('.card-header').css('background-color', 'rgba(0, 0, 0, 0.03)')
+
+            // 改變搜尋字
             $(this).find('.btn').text()
             const text = $(this).find('.btn').attr('data-name')
             // console.log(text)
@@ -174,6 +223,10 @@ foreach ($cate as $k => $c) {
 
         $('.card-body').on('click', function() {
             // console.log($(this).attr('data-name'))
+            $(this).css('background-color', '#ffdd85')
+            $(this).siblings().css('background-color', 'white')
+
+            // 抓文字
             const text = $(this).attr('data-name')
             $('.search-result').text('" ' + text + ' "')
 

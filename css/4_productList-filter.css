@@ -45,28 +45,91 @@ a:hover {
 }
 
 /* 麵包屑區塊 */
-/* .breadcrumb {
+.breadcrumb {
     background-color: transparent;
 }
+
 .breadcrumb-item a {
     color: white;
 }
+
 .breadcrumb-item a:hover {
     color: #FFC024;
     text-decoration: none;
 }
+
 .breadcrumb-item+.breadcrumb-item::before {
     content: ">";
     color: white;
 }
+
 .breadcrumb-item.active {
     color: #FFC024;
-} */
+}
+
+/* 大圖輪播區 */
+
+.pic {
+    /* height: 400px; */
+    overflow: hidden;
+}
+
+.carousel {
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 400px;
+}
+
+.carousel img {
+    object-fit: cover;
+    height: 100%;
+}
+
+/* 輪播上壓字區塊 */
+.filter-wrap {
+    left: 20%;
+    bottom: 30%;
+    z-index: 1;
+}
+
+.filter-bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    max-width: 1170px;
+}
+
+.event-search {
+    height: 60%;
+}
+
+
 
 /* 篩選區塊 */
-.btn-datepicker {
-    background-color: #fff;
-    border-radius: 3px;
+/* .accordion .btn {
+    color: white;
+} */
+
+.accordion {
+    border: 3px solid black;
+}
+
+.card-header {
+    border-bottom: 3px solid black;
+}
+
+.card .btn:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.area_item {
+    text-align: center;
+}
+
+.area_item:hover {
+    cursor: pointer;
 }
 
 /* 商品卡片 */
@@ -188,4 +251,22 @@ iframe {
 
 .modal-body {
     height: 600px;
+}
+
+
+/* ====== Ｍedia Query ===============
+/* Extra small 超小 (576px 以下) */
+@media screen and (max-width: 576px) {
+
+    /* 大圖輪播 */
+    .filter-wrap {
+        left: 16px;
+        bottom: 44%;
+    }
+
+
+    /* 商品 */
+    .pd-wrap {
+        margin-top: 3rem;
+    }
 }

@@ -387,7 +387,7 @@ input:focus {
 
 /* 活動小卡圖片 */
 .event-card .img-wrap {
-  height: 300px;
+  /* height: 300px; */
   border: 3px solid black;
 }
 
@@ -483,13 +483,7 @@ iframe {
 }
 
 /* 05.推薦活動，盡在此處 */
-.card-sm .img-wrap {
-  height: 200px;
-}
 
-.card-sm .time {
-  height: 40px;
-}
 
 /* 推薦商品小卡 */
 .r-section {
@@ -559,7 +553,7 @@ iframe {
 .item {
   display: inline-block;
   min-height: 250px;
-  min-width: 400px;
+  /* min-width: 400px; */
   margin: 2em 1em;
 }
 
@@ -634,6 +628,10 @@ footer .letter-submit {
     right: 7%;
     box-shadow: 8px 8px black;
     z-index: 1;
+  }
+
+  .flip-card-inner {
+    height: 200px;
   }
 
   /* Top10熱門輪播區 */
