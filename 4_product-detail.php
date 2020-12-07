@@ -37,16 +37,20 @@ if (empty($row)) {
     <!-- 撐開nav bar -->
     <div class="space"></div>
 
-    <div class="container">
-        <div class="row"></div>
-        <!-- 麵包屑 -->
+    <!-- 麵包屑 -->
+    <div class="container p-0">
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                <li class="breadcrumb-item"><a href="4_productList.php">活動列表</a></li>
-                <li class="breadcrumb-item active" aria-current="page">展覽列</li>
-            </ol>
+                <ol class="breadcrumb p-0 pt-4">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item"><a href="4_productList.php">活動列表</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">展覽列</li>
+                </ol>
         </nav>
+    </div>
+
+
+    <div class="container">
+        <div class="row p-0"></div>
 
         <!-- 活動開始 -->
         <div class="row justify-content-between">
@@ -83,49 +87,49 @@ if (empty($row)) {
 
         </div>
 
-        <!-- <div class="row">
-            <button class="label">
-                <p>音樂</p>
-            </button>
-        </div> -->
 
-<!-- --------活動詳情與報名鈕----------- -->
+        <!-- --------活動詳情與報名鈕----------- -->
         <div class="row justify-content-between p-0">
-            <div class="col-12">
+            <div class="col-12 p-0">
                 <button class="label align-items-center justify-content-center">
                     <!-- 活動標籤 -->
                     <p><?= $row['categories'] ?></p>
                 </button>
             </div>
 
-            <div class="col-8">
-                <div class="activity">
-                    <!-- 活動名稱 -->
+            <div class="col-8 p-0">
+                <div class="activity mt-3">
+                    <div class="d-flex">
+                        <h1 class="activity-title" data-sid="<?= $row['sid'] ?>"><?= $row['event_name'] ?></h1>
 
-                    <h1 class="activity-title mt-3" data-sid="<?= $row['sid'] ?>"><?= $row['event_name'] ?></h1>
+
+                        <div class="aroundheart ml-5">
+                            <i class="like far fa-heart fa-2x"></i>
+                        </div>
+                    </div>
+
                     <div class="activity-time d-flex">
-                        <div class="mt-4 mr-3">
+                        <div class="sm-icon mt-4 mr-3">
                             <i class="far fa-clock"></i>
                         </div>
                         <p class="activity-time-title mt-3">活動日期時間：<br><?= $row['start_datetime'] ?></p>
                     </div>
 
                     <div class="activity-place d-flex">
-                        <div class="mt-4 mr-3">
+                        <div class="sm-icon mt-4 mr-3">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <p class="activity-place-title mt-3">活動地點：<br><?= $row['address'] ?></p>
                     </div>
 
                     <div class="activity-place d-flex">
-                        <div class="mt-3 mr-3">
+                        <div class="sm-icon mt-3 mr-3">
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                         <p class="mt-3"><?= $row['price'] ?></p>
                     </div>
 
                     <div class="hastag-place mt-3">
-                        <a href="#"><?= $row['hastag'] ?></a>
                         <a href="#"><?= $row['hastag'] ?></a>
                     </div>
 
@@ -134,13 +138,10 @@ if (empty($row)) {
 
 
             <!-- ---------報名卡片-------------- -->
-            <div class="d-flex col-3">
-                <!-- -----------愛心----------------     -->
-                <div class="aroundheart mr-2">
-                    <i class="like far fa-heart fa-2x"></i>
-                </div>
+            <div class="d-flex col-3 p-0">
+                <!-- -----------愛心-------- -->
 
-                <button class="apply apply-01 d-flex align-items-center justify-content-center">
+                <button class="apply apply-01 d-flex align-items-center justify-content-center ml-auto mt-3">
                     <div class="d-flex text-align: center">
                         <div class="apply-ticket">
                             <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
@@ -296,6 +297,7 @@ if (empty($row)) {
         </div>
 
         <div class="space-1"></div>
+        <div class="space-1"></div>
 
     </div>
     </div>
@@ -335,7 +337,7 @@ if (empty($row)) {
             <div class="modal-body">
                 <p>1.毀謗屬刑事案件（會留下前科），敬告發表者自負法律責任。<br>2.良性建議可。無關或含有惡意批評文字、影射、歧視、諧音等留言將會刪除。<br>3.KUNSTHAUS全權決定刪除標準，累犯者將永久取消留言資格。</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer justify-content-center">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">不同意，取消留言</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">我同意，送出留言</button>
             </div>
@@ -384,6 +386,12 @@ if (empty($row)) {
         }
 
 
+    });
+
+        // card heart animation
+        $('.like').on('click', function() {
+        // console.log('like');
+        $(this).toggleClass('liked');
     });
 
 

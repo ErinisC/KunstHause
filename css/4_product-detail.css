@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 html,
 body {
@@ -10,6 +10,13 @@ body {
   background-image: linear-gradient(rgba(8, 46, 123, 0.15) 1px, transparent 0),
     linear-gradient(90deg, rgba(8, 46, 123, 0.15) 1px, transparent 0);
   background-size: 0.75rem 0.75rem;
+
+  /* background-color: #168FA4;
+  background-image: radial-gradient(#147e91 10%, transparent 10%), radial-gradient(#147e91 10%, transparent 10%);
+  background-position: 32px 0px, 84px 56px;
+  background-size: 100px 100px;
+  background-attachment: fixed; */
+  
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
 }
@@ -95,13 +102,27 @@ body {
   /* text-align: center; */
 }
 
+.sm-icon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+}
+
 /* -----報名按鍵---------- */
 .apply {
-  height: 133px;
-  width: 200px;
+  height: 18vh;
+  width: 18vw;
   background-color: #fac000;
   border: 3px solid black;
   text-align: center;
+  margin-top: 15%;
+  margin-left: 20%;
+  transition: 0.3s ease !important;
+  position: absolute;
+  animation: shake 10s;
+  animation-iteration-count: infinite;
 }
 
 /* --------愛心的部分----------- */
@@ -114,6 +135,7 @@ body {
 
 .like {
   cursor: pointer;
+  font-size: 28px;
 }
 
 .like.liked {
@@ -133,6 +155,7 @@ body {
 
 .activity {
   /* width: 500px; */
+  background:#168fa4;
 }
 
 .activity-title {
@@ -201,6 +224,10 @@ body {
 }
 
 .bar-word {
+  margin: auto 0 auto 0;
+}
+
+.bar-word-1 {
   margin: auto 0 auto 0;
 }
 
@@ -318,6 +345,35 @@ input[name="tab_item"] {
 .container-fluid {
   background-image: url(../imgs/member/section-4.svg);
   height: 600px;
+}
+
+/* -------Modal----------- */
+
+.modal-content {
+  border-radius: 0%;
+  border: 3px solid black;
+}
+
+.modal-title {
+  font-weight: bolder;
+  font-size: 28px;
+}
+
+.modal-body {
+  line-height: 2;
+}
+
+.btn-secondary {
+  border-radius: 0%;
+  background-color: #e8e8e8;
+  color: #bcbcbc;
+  border: 3px solid black;
+}
+
+.btn-primary {
+  border-radius: 0%;
+  background-color: #168fa4;
+  border: 3px solid black;
 }
 
 /* ====== Ｍedia Query ============= */
