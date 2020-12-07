@@ -114,7 +114,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                         <p class="order-date mb-2">訂單日期：<?= $o['order_date'] ?></p>
                         <p class="pay-method mb-2">付款方式：<?= $d['pay_way'] ?></p>
                         <p class="total-price mb-2">票券數量：<?= $d['event_amount'] ?></p>
-                        <p class="total-price mb-2">訂單總額：<?= $d['event_amount']*$d['price']?></p>
+                        <p class="total-price mb-2">訂單總額：<?= $d['event_amount'] * $d['price'] ?></p>
                         <p id="order-status" class="order-status mb-2">訂單狀態：<?= $d['order_status'] ?></p>
                     </div>
                 </div>
@@ -147,8 +147,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                 <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
             </div>
             <div class="modal-header text-center">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    <?= $d['event_name'] ?>
+                <h5 class="modal-title modal-event-name" id="exampleModalLabel">
                 </h5>
             </div>
             <div class="modal-body text-center">
@@ -171,9 +170,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                 <img src="<?= WEB_ROOT ?>imgs/member/g-clip.svg" alt="">
             </div>
             <div class="modal-header text-center">
-                <h5 class="modal-title" id="exampleModalLabel">
-                    <?= $d['event_name'] ?>
-                </h5>
+                <h5 class="modal-title modal-event-name" id="exampleModalLabel"></h5>
             </div>
             <div class="modal-body text-center">
                 <p>訂單已為您取消，<br>
@@ -201,7 +198,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                 </button>
             </div>
             <div class="modal-body text-center">
-                <h5><?= $d['event_name'] ?></h5>
+                <h5 class="modal-event-name"></h5>
                 <p class="time">2019-12-10 11:00 ~ 2019-12-10 12:00</p>
                 <p class="location">台灣台北市信義區松壽路22號5樓</p>
             </div>
@@ -226,7 +223,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 
     const productTpl = function(a) {
         return `
-        <div class="row order mb-5 align-content-center">
+        <div class="row order mb-5 align-content-center" data-sid="${a['order_id']}">
                     
                         <div class="col-lg-3 event-img p-0">
                             <img class="event-sm-img w-100 h-100" src="imgs/event/event-sm/${a['picture']}.jpg" alt="">
@@ -249,7 +246,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                         <div class="col-lg-1 sm-none"></div>
                         <div class="col-lg-3 ticket d-flex justify-content-around">
                             <div class="edit">
-                                <button class="delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelModal"></button>
+                                <button class="delete" type="button" class="btn btn-primary" onclick="wannaDel(event)"></button>
                                 <button class="feedback"></button>
                             </div>
                             <div class="qr-code">
@@ -265,7 +262,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 
     function whenHashChanged() {
         let u = location.hash.slice(1) || 0;
-        console.log(u);
+        //console.log(u);
         getProductData(u);
 
         status_btns.removeClass('btn-primary').addClass('btn-select');
@@ -282,7 +279,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 
     status_btns.on('click', function(event) {
         const sid = $(this).attr('data-sid');
-        console.log(`sid: ${sid}`);
+        //console.log(`sid: ${sid}`);
         location.href = "#" + sid;
     });
 
@@ -299,17 +296,19 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
                 });
             }
 
-            console.log('str', str);
+            //console.log('str', str);
             $('.order-status-list').html(str);
         }, 'json');
     }
 
-
-    function delete_it(order_id) {
-        console.log('delete')
-        if (confirm(`確定要刪除編號為 ${order_id} 的資料嗎?`)) {
-            location.href = "ab-del.php?sid=" + order_id;
-        }
+    function wannaDel(event) {
+        const btn = $(event.target);
+        const order = btn.closest('.order');
+        $('#cancelModal').modal('show');
+        const a = order.find('.event-name').text();
+        $('.modal-event-name').text(a);
+        console.log(order.attr('data-sid'), order.find('.event-name').text())
+        console.log(a)
     }
 </script>
 
