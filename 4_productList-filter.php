@@ -167,47 +167,64 @@ foreach ($cate as $k => $c) {
     <script>
         // 前端樣板小卡，先生成一個html的樣板字串格式
         const productTpl = function(a) {
-            return `  <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12">
-                            <a href="4_product-detail.php?sid=${a.sid}" target="_blank" class="flip-card">
-                                <div class="flip-card-inner position-relative">
-                                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                        <img src="imgs/event/event-sm/${a.picture}.jpg" class="card-img-top" alt="">
-                                        
-                                        <div class="time position-absolute col-4 p-2">${a.start_datetime}</div>
-                                    </div>
+            return `     <div class="event-card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="${a.sid}">
 
-                                
-                                    <div class="flip-card-back position-absolute p-3">
-                                        <div class="filp-title mb-3 text-center">${a.event_name}</div>
-                                        <p class="px-3">${a.event_info}</p>
-                                    </div>
-                                </div>
-                            </a>
+<a href="4_product-detail.php?sid=${a.sid}" target="_blank" class="flip-card">
+    <div class="flip-card-inner position-relative">
+        <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+            <img src="imgs/event/${a.picture}.jpg" class="card-img-top" alt="">
+            <!-- 圖片上時間 -->
+            <div class="time position-absolute p-2">
+                <!-- 年 -->
+                <div class="year"><?= substr($r['start_datetime'], 0, 4) ?></div>
+                <!-- start -->
+                <div class="start"><?= substr($r['start_datetime'], 5, 6) ?></div>
+                <!-- end -->
+                <div class="end"><?= substr($r['end_datetime'], 5, 6) ?></div>
+            </div>
+        </div>
 
-                            <div class="wrap mt-1 d-flex">
-                                <div class="card-body d-flex p-0 w-100">
-                                    <div class="card-info position-relative m-auto py-3 col-8">
-                                        <div class="event-name mb-3">${a.event_name}</div>
+        <div class="flip-card-back position-absolute p-3">
+            <div class="filp-title mb-3 text-center"> 活動簡介</div>
+            <p class="px-3">${a.event_info}</p>
+            <div class="px-3 text-right mt-2 text-white">read more >></div>
 
-                                        <div class="event-location">${a.location}</div>
+        </div>
+    </div>
+</a>
 
-                                        <a href="Javascript:" class="like-link position-absolute">
-                                            <i class="like far fa-heart"></i>
-                                        </a>
 
-                                    </div>
+<div class="wrap mt-1 d-flex">
+    <div class="card-body d-flex p-0 w-100">
+        <div class="card-info position-relative m-auto py-3 col-10">
+            <div class="event-name mb-2">${a.event_name}</div>
 
-                                
-                                    <a href="javascript:showProductModal(${a.sid})" class="card-price py-3 col-4">
-                                        <div class=" card-price py-3">
-                                            <div class="mb-3">優惠價</div>
-                                            <div class="now-price">${a.price}</div>
-                                        </div>
-                                    </a>
+            <div class="event-location mb-2">
+                <i class="fas fa-map-marker-alt"></i>
+                ${a.location}</div>
 
-                                </div>
-                            </div>
-                        </div>`;
+            <div class="now-price">$ ${a.price}</div>
+
+        
+            <a href="Javascript:" class="like-link position-absolute">
+                <!-- <i class="like like-btn far fa-heart" onclick="checkLike(event);return false;" data-sid="${a.sid}"></i> -->
+                <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="${a.sid}"></i>
+            </a>
+
+        </div>
+
+   
+        <a href="javascript:showProductModal(${a.sid})" class="card-price py-3 col-2 d-flex justify-content-center align-items-center">
+            <!-- <div class=" card-price py-3">
+
+            </div> -->
+
+            <i class="fas fa-cart-plus"></i>
+        </a>
+
+    </div>
+</div>
+</div>`;
         }
 
         function whenHashChanged() {

@@ -210,7 +210,7 @@ if (isset($_SESSION['user'])) {
     <div class="container feature mt-5">
 
         <!-- Section標題 -->
-        <div class="text-right">Feature</div>
+        <!-- <div class="text-right">Feature</div> -->
         <div class="row category-wrap">
             <div class="category-header d-flex align-items-center justify-content-around w-100">
                 <div class="category-count">01</div>
@@ -248,14 +248,119 @@ if (isset($_SESSION['user'])) {
     </div>
 
 
-    <!-- Top10熱門活動 -->
+    <!-- 02. 探索熱門活動種類 -->
     <div class="container Top10 mt-5">
 
         <!-- Section標題 -->
-        <div class="text-right">Top10</div>
         <div class="row category-wrap">
             <div class="category-header d-flex align-items-center justify-content-around w-100">
                 <div class="category-count">02</div>
+                <div class="category-name">
+                    <div class="zh w-100">探索熱門活動種類</div>
+                </div>
+                <div class="category-hr"></div>
+            </div>
+        </div>
+
+
+        <!-- 三欄的小卡開始 -->
+        <div class="row">
+            <!-- 種類一：演唱會 -->
+            <div class="type-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" ">
+            <!-- 圖片用連結包起來，連到篩選內頁-->
+             <a href=" #" target="_blank">
+                <div class="flip-card-inner position-relative">
+
+                    <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
+                        <div class=""> 演唱會</div>
+                    </div>
+
+                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                        <img src="imgs/banner/b-1.jpg" class="card-img-top" alt="">
+
+                        <!-- 圖片上種類 -->
+                        <div class="type position-absolute w-100 p-2">
+                            <span class="chip m-2">
+                                大港演唱會
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+                </a>
+            </div>
+
+            <!-- 種類二：藝文展覽 -->
+            <div class="type-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" ">
+            <!-- 圖片用連結包起來，連到篩選內頁-->
+             <a href=" #" target="_blank">
+                <div class="flip-card-inner position-relative">
+
+                    <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
+                        <div class=""> 藝文展覽</div>
+                    </div>
+
+                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                        <img src="imgs/banner/b-4.jpg" class="card-img-top" alt="">
+
+                        <!-- 圖片上種類 -->
+                        <div class="type position-absolute w-100 p-2">
+                            <span class="chip m-2">
+                                台北藝術節
+                            </span>
+                            <span class="chip m-2">
+                                故宮特展
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+                </a>
+            </div>
+
+            <!-- 種類三：音樂演奏 -->
+            <div class="type-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" ">
+            <!-- 圖片用連結包起來，連到篩選內頁-->
+             <a href=" #" target="_blank">
+                <div class="flip-card-inner position-relative">
+
+                    <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
+                        <div class="">音樂演奏</div>
+                    </div>
+
+                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                        <img src="imgs/banner/b-5.jpg" class="card-img-top" alt="">
+
+                        <!-- 圖片上種類 -->
+                        <div class="type position-absolute w-100 p-2">
+                            <span class="chip m-2">
+                                愛樂社
+                            </span>
+                            <span class="chip m-2">
+                                古典鋼琴會
+                            </span>
+                        </div>
+                    </div>
+
+
+                </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 03. Top10熱門活動 -->
+    <div class="container Top10 mt-5">
+
+        <!-- Section標題 -->
+        <!-- <div class="text-right">Top10</div> -->
+        <div class="row category-wrap">
+            <div class="category-header d-flex align-items-center justify-content-around w-100">
+                <div class="category-count">03</div>
                 <div class="category-name">
                     <div class="zh w-100">TOP10 熱門藝文展覽</div>
                 </div>
@@ -269,7 +374,7 @@ if (isset($_SESSION['user'])) {
             <div class="row">
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
-                    <div class="card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
+                    <div class="event-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
 
                         <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
                         <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
@@ -277,14 +382,21 @@ if (isset($_SESSION['user'])) {
                                 <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
                                     <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                                     <!-- 圖片上時間 -->
-                                    <div class="time position-absolute col-4 p-2"><?= $r['start_datetime'] ?></div>
+                                    <div class="time position-absolute p-2">
+                                        <!-- 年 -->
+                                        <div class="year"><?= substr($r['start_datetime'], 0, 4) ?></div>
+                                        <!-- start -->
+                                        <div class="start"><?= substr($r['start_datetime'], 5, 6) ?></div>
+                                        <!-- end -->
+                                        <div class="end"><?= substr($r['end_datetime'], 5, 6) ?></div>
+                                    </div>
                                 </div>
 
                                 <!-- 翻轉卡片背面 -->
                                 <div class="flip-card-back position-absolute p-3">
                                     <div class="filp-title mb-3 text-center"> 活動簡介</div>
                                     <p class="px-3"><?= $r['event_info'] ?></p>
-                                    <div class="px-3 text-right mt-2 text-white">read more +</div>
+                                    <div class="px-3 text-right mt-2 text-white">read more >></div>
 
                                 </div>
                             </div>
@@ -332,16 +444,17 @@ if (isset($_SESSION['user'])) {
     </div>
 
 
-    <!-- 商品列表 -->
+
+    <!-- 04.所有活動，商品列表 -->
     <div class="container-fluid bg-attatch">
 
         <!-- 限制寬度的卡片內容區 -->
         <div class="container list">
             <!-- Section標題 -->
-            <div class="text-right">KunstHaus Event</div>
+            <!-- <div class="text-right">KunstHaus Event</div> -->
             <div class="row category-wrap">
                 <div class="category-header d-flex align-items-center justify-content-around w-100">
-                    <div class="category-count">03</div>
+                    <div class="category-count">04</div>
                     <div class="category-name">
                         <div class="zh w-100">所有活動，快來逛逛</div>
                     </div>
@@ -355,7 +468,7 @@ if (isset($_SESSION['user'])) {
 
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
-                    <div class="card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
+                    <div class="event-card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
 
                         <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
                         <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
@@ -363,13 +476,22 @@ if (isset($_SESSION['user'])) {
                                 <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
                                     <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                                     <!-- 圖片上時間 -->
-                                    <div class="time position-absolute col-4 p-2"><?= $r['start_datetime'] ?></div>
+                                    <div class="time position-absolute p-2">
+                                        <!-- 年 -->
+                                        <div class="year"><?= substr($r['start_datetime'], 0, 4) ?></div>
+                                        <!-- start -->
+                                        <div class="start"><?= substr($r['start_datetime'], 5, 6) ?></div>
+                                        <!-- end -->
+                                        <div class="end"><?= substr($r['end_datetime'], 5, 6) ?></div>
+                                    </div>
                                 </div>
 
                                 <!-- 翻轉卡片背面 -->
                                 <div class="flip-card-back position-absolute p-3">
-                                    <div class="filp-title mb-3 text-center"><?= $r['event_name'] ?></div>
+                                    <div class="filp-title mb-3 text-center"> 活動簡介</div>
                                     <p class="px-3"><?= $r['event_info'] ?></p>
+                                    <div class="px-3 text-right mt-2 text-white">read more >></div>
+
                                 </div>
                             </div>
                         </a>
@@ -460,20 +582,25 @@ if (isset($_SESSION['user'])) {
     <div class="container-fluid r-section p-0">
         <!-- 推薦商品標題 -->
         <div class="container mt-5">
-            <!-- Section小標題 -->
-            <div class="section-title col-lg-3 col-md-3 col-sm-6 col-6 position-relative">
-                <div class="section-title-below position-absolute d-flex align-items-center">
-                    <h1 class="text-white text-center w-100">我們為您推薦</h1>
+            <!-- Section標題 -->
+            <!-- <div class="text-right">Top10</div> -->
+            <div class="row category-wrap">
+                <div class="category-header special-category d-flex align-items-center justify-content-around w-100">
+                    <div class="category-count special">05</div>
+                    <div class="category-name">
+                        <div class="zh w-100">推薦活動，盡在此處</div>
+                    </div>
+                    <div class="category-hr"></div>
                 </div>
             </div>
         </div>
         <!-- 拖曳卡片 -->
         <div class="grid-container">
-            <main class="grid-item main">
-                <div class="items mt-5">
+            <main class="grid-item main pt-0">
+                <div class="items">
                     <?php foreach ($rows as $r) : ?>
                         <!-- 小卡 -->
-                        <div class="item card card-sm col-3">
+                        <div class="item event-card card-sm col-3">
                             <div class="img-wrap mb-1 position-relative">
                                 <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                                 <div class="time position-absolute col-4"><?= $r['start_datetime'] ?></div>
@@ -666,30 +793,30 @@ if (isset($_SESSION['user'])) {
 
 
         // 收藏功能
-
+        const sess_user = <?= json_encode($_SESSION['user'] ?? []) ?>;
         const like_btns = $('.like-btn');
         like_btns.click(function() {
-            // if (session.user == "undefined") {
-            //     console.log('請先登入');
+            if (!sess_user.sid) {
+                console.log('請先登入');
 
-            // } else {
-            const card = $(this).closest('.card');
-            const sid = card.attr('data-sid');
-            const sendObj = {
-                action: 'like',
-                sid: sid,
-            }
-            console.log(sendObj)
-            $.get('4.likes-api.php', sendObj, function(data) {
-                console.log(data);
-                if (data.success) {
-                    card.find('.like-btn').addClass('liked');
-                } else {
-                    card.find('.like-btn').removeClass('liked');
+            } else {
+                const card = $(this).closest('.event-card');
+                const sid = card.attr('data-sid');
+                const sendObj = {
+                    action: 'like',
+                    sid: sid,
                 }
+                console.log(sendObj)
+                $.get('4.likes-api.php', sendObj, function(data) {
+                    console.log(data);
+                    if (data.success) {
+                        card.find('.like-btn').addClass('liked');
+                    } else {
+                        card.find('.like-btn').removeClass('liked');
+                    }
 
-            }, 'json');
-            // }
+                }, 'json');
+            }
 
         });
     </script>
