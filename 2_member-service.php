@@ -34,7 +34,7 @@
                     </textarea>
                 </div>
                 <div class="buttons">
-                    <button type="button" class="btn service-submit col-4 mr-2" data-toggle="modal" data-target="#successModal">寄送信件</button>
+                    <button type="reset" class="btn service-submit col-4 mr-2" data-toggle="modal" data-target="#successModal">寄送信件</button>
                     <button type="reset" class="btn clear col-4">清除內容</button>
                 </div>
             </form>
