@@ -2,10 +2,10 @@
 
 <?php include __DIR__ . '/1_parts/0_config.php';
 // 判斷是否登入
-if (!isset($_SESSION['user'])) {
-    header('Location: 1_member-login.php');
-    exit;
-}
+// if (!isset($_SESSION['user'])) {
+//     header('Location: 1_member-login.php');
+//     exit;
+// }
 
 // var_dump($_SESSION['user']);
 ?>
@@ -319,6 +319,12 @@ if (!isset($_SESSION['user'])) {
 
         //顯示字數
         $(".wortcount").html(len + '/255')
+    });
+
+
+    // 關閉btn連到index
+    $('.closebutton').on('click', function() {
+        location.href = "3_B2B-index.php";
     });
 </script>
 

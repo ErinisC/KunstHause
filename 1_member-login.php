@@ -109,7 +109,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             <div class="others">
                 <div class="help d-flex justify-content-around my-5">
                     <p>還不是 Kunsthaus會員嗎?</p>
-                    <a href="http://localhost/KunstHause/1_member-signup.php" class="s-signup text-dark">
+                    <a href="1_member-signup.php" class="s-signup text-dark">
                         <p style="font-weight:600; color:#183491; font-size: 0.9rem">我要註冊</p>
                     </a>
                 </div>

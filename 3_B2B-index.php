@@ -6,6 +6,7 @@
 //     header('Location: 3_B2B-sign-in.php');
 //     exit;
 // }
+// 
 ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
