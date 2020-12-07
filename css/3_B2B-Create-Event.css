@@ -248,6 +248,14 @@ input[type="number"] {
   border-color: #ff0000;
 }
 
+.input-wrap.success input {
+  border-color: #168fa4;
+}
+
+.input-wrap.error input {
+  border-color: #ff0000;
+}
+
 .input-wrap.error small {
   visibility: visible;
   color: #ff0000;
