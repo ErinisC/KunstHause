@@ -525,7 +525,7 @@ body {
 }
 
 .cat-label-music:before {
-  content: "音樂";
+  content: "演唱";
   position: absolute;
   top: 50%;
   left: 50%;
