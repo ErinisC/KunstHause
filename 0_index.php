@@ -237,7 +237,7 @@
     </div>
     <div class="container-fluid text-center p-0 my-5">
         <a href="4_productList.php">
-            <p class="see-more">我全都要</p>
+            <p class="see-more">看更多活動</p>
         </a>
     </div>
 </section>
@@ -275,7 +275,7 @@
 
 
 <section class="blog grid-white py-5">
-    <div class="container-fluid position-relative">
+    <div class="container-fluid position-relative mb-5">
         <img class="tiger position-absolute" src="<?= WEB_ROOT ?>imgs/index/blog-deco-03.png" alt="">
         <div class="row mt-5">
             <div class="col-lg-1 binding-ring"></div>
@@ -383,6 +383,11 @@
             <div class="col-lg-2 graffiti">
             </div>
         </div>
+    </div>
+    <div class="container-fluid text-center p-0 my-5">
+        <a href="0_blog.php">
+            <p class="see-more">看更多文章</p>
+        </a>
     </div>
 </section>
 
