@@ -304,8 +304,8 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
     function wannaDel(event) {
         const btn = $(event.target);
         const order = btn.closest('.order');
-        $('#cancelModal').modal('show');
         const a = order.find('.event-name').text();
+        $('#cancelModal').modal('show');
         $('.modal-event-name').text(a);
         console.log(order.attr('data-sid'), order.find('.event-name').text())
         console.log(a)
