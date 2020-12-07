@@ -1,14 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- 主機： localhost:8889
--- 產生時間： 2020 年 12 月 06 日 08:01
--- 伺服器版本： 5.7.30
--- PHP 版本： 7.4.9
+-- 主機： localhost
+-- 產生時間： 2020 年 12 月 07 日 07:26
+-- 伺服器版本： 10.4.13-MariaDB
+-- PHP 版本： 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- 資料庫： `kunsthaus`
@@ -24,8 +31,8 @@ CREATE TABLE `category` (
   `sid` int(11) NOT NULL,
   `categories` varchar(255) NOT NULL,
   `parent_sid` int(11) NOT NULL,
-  `visible` int(11) NOT NULL DEFAULT '1',
-  `sequence` int(11) NOT NULL DEFAULT '100'
+  `visible` int(11) NOT NULL DEFAULT 1,
+  `sequence` int(11) NOT NULL DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -58,7 +65,7 @@ CREATE TABLE `likes` (
   `sid` int(255) NOT NULL,
   `product_sid` int(255) NOT NULL,
   `member_sid` int(255) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -67,7 +74,12 @@ CREATE TABLE `likes` (
 
 INSERT INTO `likes` (`sid`, `product_sid`, `member_sid`, `created_at`) VALUES
 (3, 54, 1, '2020-12-04 15:10:49'),
-(12, 51, 1, '2020-12-04 16:41:18');
+(12, 51, 1, '2020-12-04 16:41:18'),
+(22, 1, 1, '2020-12-06 16:45:22'),
+(23, 2, 1, '2020-12-06 16:45:24'),
+(24, 3, 1, '2020-12-06 16:45:25'),
+(26, 13, 1, '2020-12-06 21:39:58'),
+(27, 17, 1, '2020-12-06 21:40:09');
 
 -- --------------------------------------------------------
 
@@ -84,7 +96,7 @@ CREATE TABLE `member` (
   `address` varchar(255) NOT NULL,
   `vendor_id` int(11) DEFAULT NULL,
   `picture` varchar(255) DEFAULT NULL,
-  `create_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `create_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='會員名單';
 
 --
@@ -126,7 +138,7 @@ CREATE TABLE `orders` (
   `total_price` int(11) NOT NULL,
   `company_name` varchar(255) DEFAULT NULL,
   `tax_id_number` int(11) DEFAULT NULL,
-  `remark` text,
+  `remark` text DEFAULT NULL,
   `pay_way` varchar(255) DEFAULT NULL,
   `credit_card_number` varchar(255) NOT NULL,
   `month` varchar(255) NOT NULL,
@@ -145,21 +157,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`sid`, `member_sid`, `total_price`, `company_name`, `tax_id_number`, `remark`, `pay_way`, `credit_card_number`, `month`, `year`, `security_number`, `QR_code`, `ticket_number`, `order_status`, `event_status`, `order_date`, `pay_date`) VALUES
-(1, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, '123322', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 18:40:22', NULL),
-(2, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, '123322', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 18:57:36', NULL),
-(3, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, '123322', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 18:58:06', NULL),
-(4, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, '1213123', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 19:04:33', NULL),
-(5, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, '1213123', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 19:05:33', NULL),
-(6, 1, 0, '感到鴨力有限公司', 995995, NULL, NULL, '1213123', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-23 19:06:07', NULL),
-(7, 1, 1600, '1212', 231, NULL, NULL, '1213123', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-11-25 18:18:58', NULL),
-(8, 1, 1000, '', 111, NULL, NULL, '1213123', '09/27', NULL, 11, NULL, NULL, NULL, NULL, '2020-11-28 16:00:45', NULL),
-(9, 1, 1200, '拉拉', 12334, NULL, NULL, '1213 1233 3333 3333', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-12-02 11:58:04', NULL),
-(10, 1, 300, 'eee', 1123, NULL, NULL, '1213 1233 3333 3333', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-12-02 11:59:17', NULL),
-(11, 1, 1200, NULL, NULL, NULL, NULL, '1213 123', '09/27', NULL, 1234, NULL, NULL, NULL, NULL, '2020-12-02 14:01:22', NULL),
-(12, 1, 320, '壓力很大', 123123, NULL, NULL, '1213 123', '09/27', NULL, 1212, NULL, NULL, NULL, NULL, '2020-12-02 14:40:14', NULL),
-(13, 1, 200, '壓力很大123', 995995, NULL, NULL, '5543 3334 5544 3221', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-12-02 16:16:53', NULL),
-(14, 1, 1200, '壓力很大', 123, NULL, NULL, '1234 3233 4566 7899', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-12-03 14:41:08', NULL),
-(15, 1, 3080, '壓力很大', 12345, NULL, NULL, '3714 496353 98431', '09/27', NULL, 123, NULL, NULL, NULL, NULL, '2020-12-03 20:59:44', NULL);
+(19, 1, 6800, '', 123, NULL, NULL, '3566 0020 2036 0505', '02/14', NULL, 132, NULL, NULL, NULL, NULL, '2020-12-07 14:23:46', NULL),
+(20, 1, 1350, '', 111, NULL, NULL, '3566 0020 2036 0505', '02/14', NULL, 123, NULL, NULL, NULL, NULL, '2020-12-07 14:24:23', NULL),
+(21, 1, 1000, '', 157, NULL, NULL, '6759 6498 2643 8453', '05/14', NULL, 568, NULL, NULL, NULL, NULL, '2020-12-07 14:24:58', NULL),
+(22, 1, 2500, '', 157, NULL, NULL, '3714 496353 98431', '05/18', NULL, 157, NULL, NULL, NULL, NULL, '2020-12-07 14:25:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -185,27 +186,11 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`sid`, `order_id`, `product_id`, `price`, `event_amount`, `pay_way`, `QR_code`, `ticket_number`, `order_status`, `event_status`) VALUES
-(1, 3, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(2, 3, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(3, 4, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(4, 4, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(5, 5, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(6, 5, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(7, 6, 56, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(8, 6, 55, 0, 1, NULL, NULL, NULL, NULL, NULL),
-(9, 7, 53, 200, 3, NULL, NULL, NULL, NULL, NULL),
-(10, 7, 54, 300, 2, NULL, NULL, NULL, NULL, NULL),
-(11, 7, 55, 400, 1, NULL, NULL, NULL, NULL, NULL),
-(12, 8, 56, 600, 1, NULL, NULL, NULL, NULL, NULL),
-(13, 8, 55, 400, 1, NULL, NULL, NULL, NULL, NULL),
-(14, 9, 55, 400, 3, NULL, NULL, NULL, NULL, NULL),
-(15, 10, 51, 300, 1, NULL, NULL, NULL, NULL, NULL),
-(16, 11, 51, 300, 4, NULL, NULL, NULL, NULL, NULL),
-(17, 12, 52, 320, 1, NULL, NULL, NULL, NULL, NULL),
-(18, 13, 53, 200, 1, NULL, NULL, NULL, NULL, NULL),
-(19, 14, 56, 600, 2, NULL, NULL, NULL, NULL, NULL),
-(20, 15, 52, 320, 4, '信用卡', NULL, NULL, '已付款', NULL),
-(21, 15, 56, 600, 3, '信用卡', NULL, NULL, '已付款', NULL);
+(26, 19, 3, 800, 4, '信用卡', NULL, NULL, '已付款', NULL),
+(27, 19, 6, 900, 4, '信用卡', NULL, NULL, '已付款', NULL),
+(28, 20, 1, 450, 3, '信用卡', NULL, NULL, '已取消', NULL),
+(29, 21, 5, 500, 2, '信用卡', NULL, NULL, '已付款', NULL),
+(30, 22, 14, 500, 5, '信用卡', NULL, NULL, '已付款', NULL);
 
 -- --------------------------------------------------------
 
@@ -230,7 +215,7 @@ CREATE TABLE `products` (
   `event_info` text NOT NULL,
   `notice` text NOT NULL,
   `transportation` text NOT NULL,
-  `comment` text
+  `comment` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='藝文活動商品';
 
 --
@@ -384,7 +369,7 @@ ALTER TABLE `category`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `sid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `sid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
@@ -396,13 +381,13 @@ ALTER TABLE `member`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `products`
@@ -415,3 +400,8 @@ ALTER TABLE `products`
 --
 ALTER TABLE `vendor`
   MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
