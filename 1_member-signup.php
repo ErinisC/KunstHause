@@ -370,9 +370,9 @@
             'transform': 'rotate(' + rot + 'deg)'
         });
     });
+    
 
-    // 動動眼睛 end
-
+    // 自動往下卷軸
     var service;
     window.onload = function() {
         terms = document.getElementById("terms");
@@ -382,6 +382,17 @@
     function scroll() {
         terms.scrollTop++;
     }
+
+
+    // 一鍵輸入
+    $('.list-body').click(function() {
+        $('#name').val('Chan');
+        $('#account').val('abcabc@gmail.com');
+        $('#password').val('123456789');
+        $('#checkpassword').val('123456789');
+        $('#mobile').val('091245678');
+        $('#address').val('台中市');
+    });
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

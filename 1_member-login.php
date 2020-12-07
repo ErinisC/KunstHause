@@ -184,7 +184,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
         } else if ($('#password').val() === '') {
             infoText = '請輸入您的密碼';
             send = false;
-        } else if ($('#password').val().length < 3) {
+        } else if ($('#password').val().length < 8) {
             infoText = '您的密碼不正確';
             send = false;
         }
@@ -233,10 +233,13 @@ if (isset($_SERVER['HTTP_REFERER'])) {
         }
 
     }
+
+    // 一鍵輸入
+    $('.monster').click(function(event) {
+        $('#account').val('test1@gmail.com');
+        $('#password').val('11111111');
+    });
 </script>
 
-
-<!-- 引入自己的JS -->
-<!-- <script src=""></script> -->
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

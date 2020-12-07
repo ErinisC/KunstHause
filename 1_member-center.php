@@ -400,14 +400,15 @@ $likes = $l_stmt->fetchAll();
             <div class="guide-bar position-fixed col-lg-2" style="line-height: 3rem ; text-align: center; font-weight: 600;">
 
                 <div id="item" class="item position-relative" style="background-color:#FAC000">
-                    <a href="2_member-order.php" class="text-white">票券管理</a>
+                    <a href="" class="text-white">我的收藏</a>
                     <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
 
                 <div id="item" class="item position-relative" style="background-color:#fff">
-                    <a href="" class="text-dark">我的收藏</a>
+                    <a href="2_member-order.php" class="text-dark">票券管理</a>
                     <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
                 </div>
+
                 <div id="item" class="item position-relative" style="background-color:#FAC000">
                     <a href="" class="text-white">優惠券管理</a>
                     <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
