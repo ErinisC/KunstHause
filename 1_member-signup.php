@@ -293,7 +293,7 @@
             account.closest('.input-wrap').addClass('success');
         }
 
-        if (password.val().length < 3) {
+        if (password.val().length < 8) {
             isPass = false;
             password.closest('.input-wrap').addClass('error')
         } else {
@@ -318,7 +318,8 @@
         if (!checkbox.prop('checked')) {
             isPass = false;
             alert('需同意 Kunsthaus 服務及隱私權政策才能註冊成為會員唷!');
-        } else {
+        }
+        if (isPass) {
 
             $.post('1_member-signup-api.php', $(document.form1).serialize(), function(data) {
                 console.log(data);

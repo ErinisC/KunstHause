@@ -113,55 +113,54 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                         <p style="font-weight:600; color:#183491; font-size: 0.9rem">我要註冊</p>
                     </a>
                 </div>
+            </div>
 
+        </div>
+    </div>
+</div>
 
-                <!-- 忘記密碼 Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
+<!-- 忘記密碼 Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
 
-                        <div class="modal-content mx-auto col-11">
-                            <div class="modal-header d-flex flex-column">
-                                <div class="modal-title mx-auto" id="exampleModalCenterTitle">忘記密碼
-                                </div>
-                                <img class="q-mark mt-2 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/question.svg">
-                            </div>
-                            <div class="modal-body">
-                                <div class="command-text mb-4"> 請輸入您的 Email<br>系統將寄送密碼重設信函給您 !
-                                </div>
-
-                                <div class="input-box col-11 mx-auto">
-                                    <input type="email" class="account form-control mb-2" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
-                                </div>
-
-                            </div>
-                            <div class="modal-footer mb-5 d-flex flex-column">
-                                <button type="submit" class="btn btn-primary col-5 mx-auto mb-2" data-toggle="modal" data-target="#sendModal" data-dismiss="modal">寄送</button>
-                                <button type="button" class="btn btn-secondary col-5 mt-3" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
-                            </div>
-                        </div>
-                    </div>
+        <div class="modal-content mx-auto col-11">
+            <div class="modal-header d-flex flex-column">
+                <div class="modal-title mx-auto" id="exampleModalCenterTitle">忘記密碼
+                </div>
+                <img class="q-mark mt-2 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/question.svg">
+            </div>
+            <div class="modal-body">
+                <div class="command-text mb-4"> 請輸入您的 Email<br>系統將寄送密碼重設信函給您 !
                 </div>
 
-                <!-- Modal Send-->
-                <div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-
-                        <div class="modal-content mx-auto col-10">
-                            <div class="modal-header d-flex flex-column">
-                                <div class="modal-title mx-auto" id="exampleModalCenterTitle">寄送成功
-                                </div>
-                                <img class="letter mt-3 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/letter.svg">
-                            </div>
-                            <div class="modal-body mt-2">請至您的電子信箱收確認信，以進行後續密碼修改，感謝您!
-                            </div>
-
-                            <div class="modal-footer mb-5">
-                                <button type="button" class="btn btn-secondary col-5 mt-4 mx-auto" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="input-box col-11 mx-auto">
+                    <input type="email" class="account form-control mb-2" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
                 </div>
 
+            </div>
+            <div class="modal-footer mb-5 d-flex flex-column">
+                <button type="submit" class="btn btn-primary col-5 mx-auto mb-2" data-toggle="modal" data-target="#sendModal" data-dismiss="modal">寄送</button>
+                <button type="button" class="btn btn-secondary col-5 mt-3" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Send-->
+<div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+
+        <div class="modal-content mx-auto col-10">
+            <div class="modal-header d-flex flex-column">
+                <div class="modal-title mx-auto" id="exampleModalCenterTitle">寄送成功
+                </div>
+                <img class="letter mt-3 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/letter.svg">
+            </div>
+            <div class="modal-body mt-2">請至您的電子信箱收確認信，以進行後續密碼修改，感謝您!
+            </div>
+
+            <div class="modal-footer mb-5">
+                <button type="button" class="btn btn-secondary col-5 mt-4 mx-auto" data-dismiss="modal" style="background-color: #ff0000">關閉視窗</button>
             </div>
         </div>
     </div>

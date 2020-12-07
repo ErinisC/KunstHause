@@ -43,7 +43,7 @@ if (empty($row)) {
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                <li class="breadcrumb-item"><a href="#">活動列表</a></li>
+                <li class="breadcrumb-item"><a href="4_productList.php">活動列表</a></li>
                 <li class="breadcrumb-item active" aria-current="page">展覽列</li>
             </ol>
         </nav>
@@ -89,28 +89,26 @@ if (empty($row)) {
             </button>
         </div> -->
 
-
-        <div class="row justify-content-between col-12 p-0">
-
-            <div class="">
+<!-- --------活動詳情與報名鈕----------- -->
+        <div class="row justify-content-between p-0">
+            <div class="col-12">
                 <button class="label align-items-center justify-content-center">
                     <!-- 活動標籤 -->
                     <p><?= $row['categories'] ?></p>
                 </button>
+            </div>
+
+            <div class="col-8">
                 <div class="activity">
                     <!-- 活動名稱 -->
 
-                    <h1 class="activity-title mt-3 col-9"><?= $row['event_name'] ?></h1>
+                    <h1 class="activity-title mt-3" data-sid="<?= $row['sid'] ?>"><?= $row['event_name'] ?></h1>
                     <div class="activity-time d-flex">
                         <div class="mt-4 mr-3">
                             <i class="far fa-clock"></i>
                         </div>
-                        <p class="activity-time-title mt-3">活動日期時間：<br><?= $row['start-datetime'] ?></p>
+                        <p class="activity-time-title mt-3">活動日期時間：<br><?= $row['start_datetime'] ?></p>
                     </div>
-
-                    <!-- <div class="activity-date">
-                        <p class="activity-place-title mt-3">活動地點 <?= $row['start-datetime'] ?></p>
-                    </div> -->
 
                     <div class="activity-place d-flex">
                         <div class="mt-4 mr-3">
@@ -126,7 +124,7 @@ if (empty($row)) {
                         <p class="mt-3"><?= $row['price'] ?></p>
                     </div>
 
-                    <div class="hastag-place mt-3 col-9">
+                    <div class="hastag-place mt-3">
                         <a href="#"><?= $row['hastag'] ?></a>
                         <a href="#"><?= $row['hastag'] ?></a>
                     </div>
@@ -261,22 +259,26 @@ if (empty($row)) {
                         </div>
                     </div>
 
-                    <div class="name-bar col-lg-10 col-sm-10 col-md-10">
-                        <div class="col-lg-2 col-sm-10 col-md-10">
-                            <div class="bar-circle">
-                                <img class="w-100" src="../KunstHause/imgs/products/headshut-4.png" alt="" srcset="">
+                    <div class="new-name-bar">
+
+                        <div class="name-bar-lest col-lg-10 col-sm-10 col-md-10">
+                            <div class="col-lg-2 col-sm-10 col-md-10">
+                                <div class="bar-circle">
+                                    <img class="w-100" src="../KunstHause/imgs/products/headshut-4.png" alt="" srcset="">
+                                </div>
+                            </div>
+
+                            <div class="bar-title col-lg-2 col-md-10 col-sm-10">
+                                <h2 class="mb-2">雨水我問你</h2>
+                                <p>2020/12/21</p>
+                            </div>
+
+                            <div class="bar-word col-lg-6 col-md-10 col-sm-10">
+                                <p>啊 雨水我問你 我的感情算什麼 無采愛你已經愛這多年 啊 雨水我問你　誰人為愛賭生死 你敢講我就陪你去！</p>
                             </div>
                         </div>
-
-                        <div class="bar-title col-lg-2 col-md-10 col-sm-10">
-                            <h2 class="mb-2">雨水我問你</h2>
-                            <p>2020/12/21</p>
-                        </div>
-
-                        <div class="bar-word col-lg-6 col-md-10 col-sm-10">
-                            <p>啊 雨水我問你 我的感情算什麼 無采愛你已經愛這多年 啊 雨水我問你　誰人為愛賭生死 你敢講我就陪你去！</p>
-                        </div>
                     </div>
+
                 </div>
 
 
@@ -334,8 +336,8 @@ if (empty($row)) {
                 <p>1.毀謗屬刑事案件（會留下前科），敬告發表者自負法律責任。<br>2.良性建議可。無關或含有惡意批評文字、影射、歧視、諧音等留言將會刪除。<br>3.KUNSTHAUS全權決定刪除標準，累犯者將永久取消留言資格。</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                <button type="button" class="btn btn-primary">我已瞭解，送出留言</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">不同意，取消留言</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">我同意，送出留言</button>
             </div>
         </div>
     </div>
@@ -388,15 +390,39 @@ if (empty($row)) {
     // Modal Show
     $('.search-bar-ser').on('click', function() {
         $('#exampleModalCenter').modal('show')
+    });
 
+    $('.btn.btn-primary').on('click', function() {
+        console.log('hi');
+        $('.new-name-bar').css('display', 'block');
     });
 
     $('.apply').on('click', function() {
-        window.parent.$('#exampleModal').modal('hide');
-        window.parent.$('.cartnav-dropdown').toggle();
+        $('.cartnav-dropdown').toggle();
         // 先移除購物車空空的alert
-        window.parent.$('.alert').css('display', 'none');
-        window.parent.$('.pay-btn').css('display', 'block');
+        $('.alert').css('display', 'none');
+        $('.pay-btn').css('display', 'block');
+
+        const item = $(this).closest('.row').find('.activity-title');
+        //再找到這個item的屬性，就能抓到設定給它的data-sid的值
+        const sid = item.attr('data-sid');
+
+        console.log(sid);
+        //接著再往item裡面找，找到數量，再取他的val來拿到數量的值
+        // const qty = item.find('#product-quantity').val();
+
+        $.get('4_productList-shopcart-api.php', {
+                sid: sid,
+                quantity: 1,
+                action: 'add'
+            },
+            function(data) {
+                console.log(data);
+                if (window.parent && window.parent.smallCartInit) {
+                    window.parent.smallCartInit();
+                }
+
+            }, 'json')
     });
 </script>
 

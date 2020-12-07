@@ -3,7 +3,7 @@
 
 // 票券管理php條件
 
-// 判斷是否登入
+// 判斷是否登入會員
 if (!isset($_SESSION['user'])) {
     header('Location: 1_member-login.php');
     exit;
@@ -44,19 +44,25 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 // 我的珍藏 
 // 如果會員有登入，叫出收藏愛心項目
 
-if (isset($_SESSION['user'])) {
-    $member_sid = $_SESSION['user']['sid'];
-    $l_sql = "SELECT `product_sid` FROM `likes` WHERE `member_sid`=?";
-    $l_stmt = $pdo->prepare($l_sql);
-    $l_stmt->execute([
-        $member_sid
-    ]);
-    $l_rows = $l_stmt->fetchAll();
-    $likes = array_column($l_rows, 'product_sid');
-}
+
+$member_sid = $_SESSION['user']['sid'];
+$l_sql = "SELECT p.* FROM `likes` a 
+    JOIN `products` p ON a.product_sid=p.sid
+     WHERE a.`member_sid`=?
+     ORDER BY a.created_at DESC";
+
+$l_stmt = $pdo->prepare($l_sql);
+$l_stmt->execute([
+    $member_sid
+]);
+$likes = $l_stmt->fetchAll();
+// $likes = array_column($l_rows, 'product_sid');
+
+
+// echo json_encode($likes, JSON_UNESCAPED_UNICODE);
+// exit;
+
 ?>
-
-
 
 
 
@@ -97,11 +103,13 @@ if (isset($_SESSION['user'])) {
                 </div>
 
                 <div class="edit-member">
-                    <p>HELLO 小米
-                        <i class="fas fa-child animated bounce"></i>
+                    <div class="nickname">
+                        <p>HELLO
+                            <i class="fas fa-child animated bounce"></i>
+                            <span>小新</span>下一場活動想去哪呢?
+                        </p>
                         <!-- <i class="fas fa-edit"></i> -->
-                        下一場活動想去哪呢?
-                    </p>
+                    </div>
                     <a href="http://localhost/KunstHause/2_member-accunt-set.php">
                         <button class="btn btn-primary col-lg-2 col-4 mt-5 ">
                             <p>編輯資料</p>
@@ -109,18 +117,18 @@ if (isset($_SESSION['user'])) {
                 </div>
 
                 <!-- 我的收藏 區域 -->
-                <div class="sort col-10 mx-auto mb-5 pb-2">
+                <div class="sort col-11 mx-auto mb-5 pb-2">
                     <p>我的收藏</p>
                 </div>
                 <div class="favorite-list ">
                     <div class="c-row1 d-flex justify-content-center" style="flex-wrap:wrap">
-                        <?php foreach ($rows as $r) : ?>
-                            <!-- 小卡 -->
-                            <a href="4_product-detail.php?sid<?= $r['sid'] ?>" target="_blank">
-                                <div class="card-wrap mr-4 col-lg-4 col-md-4 col-sm-10 col-10 p-0">
+                        <?php foreach ($likes as $r) : ?>
+                            <!-- 活動小卡 -->
+                            <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="card">
+                                <div class="card-wrap m-4 col-lg-5 col-sm-4 p-0">
                                     <div class="card-kv position-relative">
                                         <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg">
-                                        <div class="time col-5 position-absolute mt-3">
+                                        <div class="time col-5 text-dark position-absolute mt-3">
                                             <p class="my-2"><?= $r['start_datetime'] ?></p>
                                         </div>
                                     </div>
@@ -133,7 +141,7 @@ if (isset($_SESSION['user'])) {
                                             <div class="event-location my-2"><?= $r['location'] ?></div>
 
                                             <a href="Javascript:" class="like-link position-absolute">
-                                                <i class="like far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
+                                                <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
                                             </a>
                                         </div>
 
@@ -332,7 +340,7 @@ if (isset($_SESSION['user'])) {
 
                 <!-- 票券管理 區域 -->
 
-                <div class="sort col-10 mx-auto mb-5 pb-2">票券管理</div>
+                <div class="sort col-11 mx-auto mb-5 pb-2">票券管理</div>
 
                 <!-- 先判斷訂單資料內有沒有東西 -->
                 <?php if (empty($o_rows)) : ?>
@@ -343,14 +351,14 @@ if (isset($_SESSION['user'])) {
                     </div>
                 <?php else : ?>
 
-                    <?php foreach ($d_rows as $d) : ?>
-                        <div class="ticket-wrap col-10 mx-auto p-0 mb-5 d-flex justify-content-between">
-                            <div class="t-detail col-lg-9 d-flex p-0">
-                                <div class="ticket-kv col-lg-4 col-sm-3 p-0 mr-3">
-                                    <img class="event-sm-img w-100 p-0" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                    <div class="container order-status-list col-lg-11">
+                        <?php foreach ($d_rows as $d) : ?>
+                            <div class="t-detail mb-5 d-flex align-content-around">
+                                <div class="ticket-kv col-lg-3 p-0">
+                                    <img class="event-sm-img w-100 p-0 h-100" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
                                 </div>
-                                <div class="main-info">
-                                    <div class="event-title my-2">
+                                <div class="main-info col-lg-6">
+                                    <div class="event-title my-3">
                                         <p class="event-name mb-2"><?= $d['event_name'] ?></p>
                                         <p class="price my-2">單價$<?= $d['price'] ?></p>
                                     </div>
@@ -358,28 +366,29 @@ if (isset($_SESSION['user'])) {
                                         <p class="date my-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
                                         <p class="number mb-2">訂單編號:<?= $d['order_id'] ?></p>
                                         <p class="pay mb-2">付款方式:<?= $d['pay_way'] ?></p>
-                                        <p class="total mb-2">訂單總額:<?= $o['total_price'] ?></p>
+                                        <p class="total mb-2">票券數量:<?= $o['total_price'] ?></p>
                                         <p class="status mb-2">訂單狀態:<?= $d['order_status'] ?></p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="edit-area d-flex">
-                                <div class="e-ticket pt-3 mt-3">
-                                    <div class="delete m-3 jq-delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                        <img src="/KunstHause/imgs/member/cancel.svg">
+
+                                <div class="edit-area col-lg-3 d-flex justify-content-between">
+                                    <div class="e-ticket pt-4 mt-4">
+                                        <div class="jq-delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <img src="/KunstHause/imgs/member/cancel.svg">
+                                        </div>
+                                        <div class="feedback mt-2" type="button">
+                                            <img src="/KunstHause/imgs/member/feedback.svg">
+                                        </div>
                                     </div>
-                                    <div class="feedback m-3" type="button">
-                                        <img src="/KunstHause/imgs/member/feedback.svg">
+                                    <div class="qr-code">
+                                        <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
+                                            <img src="<?= WEB_ROOT ?>/imgs/member/qr-code.svg" alt="">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="qr-code">
-                                    <div class="qr-code-lg pt-5" type="button" data-toggle="modal" data-target="#qrcodeModal">
-                                        <img src="<?= WEB_ROOT ?>/imgs/member/qr-code.svg" alt="">
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </div>
                 <?php endif; ?>
 
 
@@ -398,7 +407,7 @@ if (isset($_SESSION['user'])) {
                                 </p>
                             </div>
                             <div class="modal-body">
-                                <p>您確定要<span>取消</span>此筆訂單嘛?</p>
+                                <p>您確定要取消此筆訂單嘛?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="cancel-btn" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal" style="background-color:#FF4E42">確認取消</button>
@@ -501,13 +510,26 @@ if (isset($_SESSION['user'])) {
 
         <div class="guide" style="margin-top:10rem">
             <div class="guide-bar position-fixed col-lg-2" style="line-height: 3rem ; text-align: center; font-weight: 600;">
-                <div class="item" style="background-color:#FAC000"><a href="http://localhost/KunstHause/2_member-order.php" class="text-white">票券管理</a></div>
-                <div class="item" style="background-color:#fff"><a href="" class="text-dark">我的收藏</a></div>
-                <div class="item" style="background-color:#FAC000"><a href="" class="text-white">優惠券管理</a></div>
-                <div class="item" style="background-color:#fff"><a href="" class="text-dark">訊息管理</a></div>
-                <div class="item" style="background-color:#FAC000"><a href="" class="text-white">優惠券管理</a></div>
-                <div class="item" style="background-color:#fff"><a href="" class="text-dark">訊息管理</a></div>
-                <div class="item" style="background-color:#FAC000"><a href="http://localhost/KunstHause/2_member-service.php" class="text-white">聯繫客服</a></div>
+
+                <div id="item" class="item position-relative" style="background-color:#FAC000">
+                    <a href="2_member-order.php" class="text-white">票券管理</a>
+                    <img id="light-bulb" class="light-bulb animated wobble position-absolute" src="<?= WEB_ROOT ?>/imgs/member/light-bulb.svg">
+                </div>
+
+                <div class="item" style="background-color:#fff">
+                    <a href="" class="text-dark">我的收藏</a>
+                </div>
+                <div class="item" style="background-color:#FAC000">
+                    <a href="" class="text-white">優惠券管理</a>
+                </div>
+
+                <div class="item" style="background-color:#fff">
+                    <a href="2_member-service.php" class="text-dark">聯繫客服</a>
+                </div>
+                <div class="item" style="background-color:#FAC000">
+                    <a href="" class="text-white">訊息管理</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -515,16 +537,60 @@ if (isset($_SESSION['user'])) {
 
 
 
-
-
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
 <script>
-    if $('.btn cancel-btn').click(function() {
-        $(this).parent().parent().parent().remove();
+    // 燈泡
+    const bulb = document.getElementById("light-bulb")
+    item = document.getElementById("item");
+
+    item.addEventListener('mouseenter' = function() {
+        bulb.show()
+    })
+    item.addEventListener('mouseleave' = function() {
+        bulb.hide()
     });
 
+
+
+    // 收藏功能
+
+    const like_btns = $('.like-btn');
+    like_btns.click(function() {
+        // if (session.user == "undefined") {
+        //     console.log('請先登入');
+
+        // } else {
+        const card = $(this).closest('.card');
+        const sid = card.attr('data-sid');
+        const sendObj = {
+            action: 'like',
+            sid: sid,
+        }
+        console.log(sendObj)
+        $.get('4.likes-api.php', sendObj, function(data) {
+            console.log(data);
+            if (data.success) {
+                card.find('.like-btn').addClass('liked');
+            } else {
+                card.find('.like-btn').removeClass('liked');
+            }
+
+        }, 'json');
+        // }
+
+    });
+
+
+
+
+
+    // 票券管理刪除功能
+
+    // if $('.btn cancel-btn').click(function() {
+    //     $(this).parent().parent().parent().remove();
+    // });
 
     // $('.jq-delete').click(function() {
     //     $(this).parent().parent().parent().remove();

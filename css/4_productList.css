@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 /* 深藍底點點背景 */
 /* border: 6px solid black;
@@ -15,6 +15,7 @@ html {
   font-size: 16px;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
+  letter-spacing: 2px;
 }
 
 h1 {
@@ -205,11 +206,6 @@ input:focus {
 
 
 /* 本週主打精選 */
-/* .quotation img {
-  width: 100%;
-  object-fit: contain;
-} */
-
 
 .intro-box {
   height: 500px;
@@ -279,13 +275,42 @@ input:focus {
 }
 
 
-/* 商品列表 */
+
+/* 02.探索熱們活動種類 */
+.post-tape {
+  top: -20px;
+  width: 50%;
+  height: 50px;
+  left: calc(50% - 25%);
+  z-index: 1;
+  background: url(/KunstHause/imgs/index/ic-tape-blog.svg);
+}
+
+
+.type {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+
+}
+
+.type .chip {
+  border: 1px solid white;
+}
+
+/* 03.TOP10 熱門活動 */
+
+
+
+
+
+/* 04.商品列表 */
 /* .bg-attatch {
   background: url(../imgs/banner/bg-attatch-4.jpg);
     background-attachment: fixed;
 } */
-
-.card {
+.event-card {
   background-color: transparent;
   border: none;
   transition: 1s;
@@ -358,7 +383,7 @@ input:focus {
 }
 
 /* 活動小卡圖片 */
-.card .img-wrap {
+.event-card .img-wrap {
   height: 300px;
   border: 3px solid black;
 }
@@ -369,10 +394,10 @@ input:focus {
   object-fit: cover;
 }
 
-.card .time {
+.event-card .time {
   bottom: 0;
   background-color: #ffc024;
-  height: 50px;
+  /* height: 50px; */
   border-radius: 3px;
   transition: 0.8s;
 }
@@ -454,7 +479,7 @@ iframe {
   background-color: transparent;
 }
 
-/* 推薦商品 */
+/* 05.推薦活動，盡在此處 */
 .card-sm .img-wrap {
   height: 200px;
 }
@@ -466,6 +491,22 @@ iframe {
 /* 推薦商品小卡 */
 .r-section {
   margin-top: 150px;
+  /* background: url(../imgs/member/section-4.svg); */
+  border: 3px solid black;
+  background-color: #002c80;
+  background-image: radial-gradient(#01173fc2 10%, transparent 10%), radial-gradient(#01173fc2 10%, transparent 10%);
+  background-position: 11px 0, 48px 40px;
+  background-size: 65px 65px;
+  background-attachment: fixed;
+}
+
+.special-category {
+  background-color: #002c80;
+  margin-bottom: 3rem;
+}
+
+.category-count.special {
+  background-color: #ffc024;
 }
 
 .recommened-events {
@@ -477,13 +518,7 @@ iframe {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr auto;
-  /* background: url(../imgs/member/section-4.svg); */
-  border: 6px solid black;
-  background-color: #002c80;
-  background-image: radial-gradient(#01173fc2 15%, transparent 15%), radial-gradient(#01173fc2 15%, transparent 15%);
-  background-position: 20px 0, 56px 46px;
-  background-size: 83px 80px;
-  background-attachment: fixed;
+
 }
 
 .main {

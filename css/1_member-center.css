@@ -80,9 +80,25 @@ color: rgba(240, 184, 32, 0.849);
   padding-top: 8rem;
 }
 
-.edit-member i{
+.nickname i{
 font-size: 3rem;
+color: #168fa4;
 animation-iteration-count: 4;
+}
+
+.nickname span{
+  font-size: 1.5rem;
+  color: #000;
+  border-bottom: 8px dotted #FFC024;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.light-bulb{
+  width: 3rem;
+  animation-iteration-count: 2;
+  left:0px;
+  top: -30px;
 }
 
 .btn {
@@ -175,9 +191,6 @@ animation-iteration-count: 4;
   margin-bottom: 0.2rem;
 }
 
-.card-body{
-
-}
 
 .card-info {
   /* border: 3px solid black; */
@@ -235,7 +248,7 @@ margin-top: 4rem;
 
 /* 票券管理 css */
 
-.ticket-wrap {
+.t-detail{
   border: 3px solid #000;
 }
 
@@ -273,6 +286,7 @@ margin-top: 4rem;
     display: none;
   }
 
+
   /* 刪除 Modal css */
 
   .logo{
@@ -302,9 +316,6 @@ background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     font-weight: 600;
 
-  }
-  .modal-body span{
-    border-bottom: 3px solid #FFC024;
   }
 
 
@@ -920,9 +931,9 @@ html,
     background-size: 0.75rem 0.75rem;
   }
 
-    .member-area{
-        margin-bottom: 2rem;
-    }
+  .member-area{
+    margin-bottom: 2rem;
+  }
 
   .Diversity{
       display: none;
@@ -1012,12 +1023,12 @@ html,
     width: 4rem;
   }
 
-  .edit-area .e-ticket{
+  /* .edit-area .e-ticket{
     display: none;
 }
   .edit-area img{
     display: none;
-}
+} */
 
   .mobile-edit-area img{
     display: inline-block;
