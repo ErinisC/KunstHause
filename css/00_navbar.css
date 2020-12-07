@@ -105,6 +105,13 @@ input:focus {
   border: 3px solid black;
 }
 
+.shopcart-nav-alert {
+  color: white;
+  background-color: #168fa4;
+  border-color: #168fa4;
+  text-align: center;
+}
+
 /* 購物車一列 */
 .one-item {
   border-bottom: 1px solid black;
@@ -187,7 +194,7 @@ input:focus {
   .cart-nav-small {
     display: none;
     min-height: 200px;
-    min-width: 300%;
+    min-width: 500%;
     top: 70px;
     right: -10px;
     background-color: #ffc026;

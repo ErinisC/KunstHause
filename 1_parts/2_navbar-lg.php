@@ -121,6 +121,13 @@
 
     }
 
+    .shopcart-nav-alert {
+        color: white;
+        background-color: #168fa4;
+        border-color: #168fa4;
+        text-align: center;
+    }
+
     /* 購物車一列 */
     .one-item {
         border-bottom: 1px solid black;
@@ -236,7 +243,7 @@
 
                     <!-- 如果session cart空空 -->
                     <?php if (empty($_SESSION['cart'])) : ?>
-                        <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
+                        <div class="alert  shopcart-nav-alert" role="alert">你的購物車空空如也～</div>
                         <!-- 如果session cart有東西 -->
                     <?php else : ?>
                         <!-- 先用foreach抓出session的東西 -->
@@ -285,17 +292,17 @@
                         <a class="nav-link" href="0_blog.php">新鮮事</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link lg-none" href="1_member-center.php">會員中心</a>
-                        </li>
-                        <?php if (isset($_SESSION['user'])) : ?>
+                        <a class="nav-link lg-none" href="1_member-center.php">會員中心</a>
+                    </li>
+                    <?php if (isset($_SESSION['user'])) : ?>
                         <li class="nav-item lg-none">
                             <a class="nav-link lg-none" href="1_member-center.php">登出</a>
                         </li>
-                        <?php else : ?>
+                    <?php else : ?>
                         <li class="nav-item lg-none">
                             <a class="nav-link lg-none" href="1_member-center.php">登入/註冊</a>
                         </li>
-                        <?php endif; ?>
+                    <?php endif; ?>
                 </ul>
 
                 <!-- 搜尋區塊 -->
@@ -346,7 +353,7 @@
 
                             <!-- 如果session cart空空 -->
                             <?php if (empty($_SESSION['cart'])) : ?>
-                                <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
+                                <div class="alert shopcart-nav-alert" role="alert">你的購物車空空如也～</div>
                                 <!-- 如果session cart有東西 -->
                             <?php else : ?>
                                 <!-- 先用foreach抓出session的東西 -->

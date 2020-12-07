@@ -264,88 +264,88 @@ if (isset($_SESSION['user'])) {
 
 
         <!-- 三欄的小卡開始 -->
-        <div class="row">
+        <div class="row justify-content-between">
             <!-- 種類一：演唱會 -->
-            <div class="type-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" ">
-            <!-- 圖片用連結包起來，連到篩選內頁-->
-             <a href=" #" target="_blank">
-                <div class="flip-card-inner position-relative">
+            <div class="type-card mb-5">
+                <!-- 圖片用連結包起來，連到篩選內頁-->
+                <a href=" #" target="_blank">
+                    <div class="flip-card-inner position-relative">
 
-                    <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
-                        <div class=""> 演唱會</div>
-                    </div>
-
-                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                        <img src="imgs/banner/b-1.jpg" class="card-img-top" alt="">
-
-                        <!-- 圖片上種類 -->
-                        <div class="type position-absolute w-100 p-2">
-                            <span class="chip m-2">
-                                大港演唱會
-                            </span>
+                        <div class="post-tape d-flex justify-content-center align-items-center position-absolute">
+                            <div class=""> 演唱會</div>
                         </div>
+
+                        <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                            <img src="imgs/banner/concert.jpg" class="card-img-top" alt="">
+
+                            <!-- 圖片上種類 -->
+                            <div class="type position-absolute w-100 p-2">
+                                <span class="chip m-2">
+                                    大港演唱會
+                                </span>
+                            </div>
+                        </div>
+
+
                     </div>
-
-
-                </div>
                 </a>
             </div>
 
             <!-- 種類二：藝文展覽 -->
-            <div class="type-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" ">
-            <!-- 圖片用連結包起來，連到篩選內頁-->
-             <a href=" #" target="_blank">
-                <div class="flip-card-inner position-relative">
+            <div class="type-card mb-5">
+                <!-- 圖片用連結包起來，連到篩選內頁-->
+                <a href=" #" target="_blank">
+                    <div class="flip-card-inner position-relative">
 
-                    <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
-                        <div class=""> 藝文展覽</div>
-                    </div>
-
-                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                        <img src="imgs/banner/b-4.jpg" class="card-img-top" alt="">
-
-                        <!-- 圖片上種類 -->
-                        <div class="type position-absolute w-100 p-2">
-                            <span class="chip m-2">
-                                台北藝術節
-                            </span>
-                            <span class="chip m-2">
-                                故宮特展
-                            </span>
+                        <div class="post-tape d-flex justify-content-center align-items-center position-absolute">
+                            <div class=""> 藝文展覽</div>
                         </div>
+
+                        <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                            <img src="imgs/banner/art-1.jpg" class="card-img-top" alt="">
+
+                            <!-- 圖片上種類 -->
+                            <div class="type position-absolute w-100 p-2">
+                                <span class="chip m-2">
+                                    台北藝術節
+                                </span>
+                                <span class="chip m-2">
+                                    故宮特展
+                                </span>
+                            </div>
+                        </div>
+
+
                     </div>
-
-
-                </div>
                 </a>
             </div>
 
             <!-- 種類三：音樂演奏 -->
-            <div class="type-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" ">
-            <!-- 圖片用連結包起來，連到篩選內頁-->
-             <a href=" #" target="_blank">
-                <div class="flip-card-inner position-relative">
+            <div class="type-card mb-5">
+                <!-- 圖片用連結包起來，連到篩選內頁-->
+                <a href=" #" target="_blank">
+                    <div class="flip-card-inner position-relative">
 
-                    <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
-                        <div class="">音樂演奏</div>
-                    </div>
-
-                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                        <img src="imgs/banner/b-5.jpg" class="card-img-top" alt="">
-
-                        <!-- 圖片上種類 -->
-                        <div class="type position-absolute w-100 p-2">
-                            <span class="chip m-2">
-                                愛樂社
-                            </span>
-                            <span class="chip m-2">
-                                古典鋼琴會
-                            </span>
+                        <div class="post-tape d-flex justify-content-center align-items-center  position-absolute">
+                            <div class="">音樂演奏</div>
                         </div>
+
+                        <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                            <img src="imgs/banner/music-2.jpg" class="card-img-top" alt="">
+
+                            <!-- 圖片上種類 -->
+                            <div class="type position-absolute w-100 p-2">
+                                <span class="chip m-2">
+                                    愛樂社
+                                </span>
+                                <span class="chip m-2">
+                                    古典鋼琴會
+                                </span>
+                            </div>
+                        </div>
+
+
                     </div>
-
-
-                </div>
                 </a>
             </div>
 
@@ -793,7 +793,7 @@ if (isset($_SESSION['user'])) {
 
         // })
 
-
+        // 搜尋框
         $('.search-box').on('mouseover', function() {
             $('.search-box').css('transform', 'translate(20px, 18px)')
         })
@@ -805,6 +805,16 @@ if (isset($_SESSION['user'])) {
         $('.card').eq(0); //抓到所有的小卡
         $('.card').eq(0).offset(); //抓到第0個的offset
 
+
+
+        // 活動種類小卡伸展
+        $('.type-card').on('mouseenter', function() {
+            $(this).addClass('expand')
+        })
+
+        $('.type-card').on('mouseleave', function() {
+            $(this).removeClass('expand')
+        })
 
 
         // 測試拖曳

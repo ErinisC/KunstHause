@@ -277,13 +277,22 @@ input:focus {
   background: url(/KunstHause/imgs/index/ic-tape-blog.svg) center no-repeat;
 }
 
-
 .type {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 5px;
+}
 
+.type-card {
+  width: 25%;
+  border: 3px solid black;
+  transition: 1s;
+
+}
+
+.type-card.expand {
+  width: 45%;
 }
 
 .type .chip {
@@ -454,7 +463,7 @@ iframe {
 }
 
 .modal-body {
-  height: 600px;
+  height: 500px;
 }
 
 /* 頁碼 */
@@ -632,6 +641,13 @@ footer .letter-submit {
 
   .flip-card-inner {
     height: 200px;
+  }
+
+
+  /* 03活動種類區 */
+  .type-card {
+    width: 80%;
+    margin: auto;
   }
 
   /* Top10熱門輪播區 */

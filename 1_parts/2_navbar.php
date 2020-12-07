@@ -36,17 +36,17 @@
 
                         <!-- 如果session cart空空 -->
                         <?php if (empty($_SESSION['cart'])) : ?>
-                            <div class="alert alert-primary" role="alert">你的購物車空空如也～</div>
+                            <div class="alert shopcart-nav-alert" role="alert">你的購物車空空如也～</div>
                             <!-- 如果session cart有東西 -->
                         <?php else : ?>
                             <!-- 先用foreach抓出session的東西 -->
                             <?php foreach ($_SESSION['cart'] as $i) : ?>
-                                <div id="prod<?= $i['sid'] ?>" class="row one-item flex-column p-3 mb-3">
-                                    <div class="img-wrap" style="height:100px">
+                                <div id="prod<?= $i['sid'] ?>" class="row one-item text-left p-3 mb-3">
+                                    <div class="img-wrap col-4" style="height:100px">
                                         <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                     </div>
 
-                                    <div class="item-info">
+                                    <div class="item-info col-6">
                                         <div class="title my-3">
                                             <?= $i['event_name'] ?>
                                         </div>
@@ -55,7 +55,7 @@
                                         <div class="price mb-3">單張票價： $<?= $i['price'] ?></div>
                                     </div>
 
-                                    <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete">
+                                    <a href="javascript:removeItem(<?= $i['sid'] ?>)" class="delete m-auto">
                                         <i class="far fa-trash-alt"></i>
                                     </a>
                                 </div>
@@ -91,13 +91,13 @@
                             <a class="nav-link lg-none" href="1_member-center.php">會員中心</a>
                         </li>
                         <?php if (isset($_SESSION['user'])) : ?>
-                        <li class="nav-item lg-none">
-                            <a class="nav-link lg-none" href="1_member-center.php">登出</a>
-                        </li>
+                            <li class="nav-item lg-none">
+                                <a class="nav-link lg-none" href="1_member-center.php">登出</a>
+                            </li>
                         <?php else : ?>
-                        <li class="nav-item lg-none">
-                            <a class="nav-link lg-none" href="1_member-center.php">登入/註冊</a>
-                        </li>
+                            <li class="nav-item lg-none">
+                                <a class="nav-link lg-none" href="1_member-center.php">登入/註冊</a>
+                            </li>
                         <?php endif; ?>
                     </ul>
                     <form class="header-search mr-3" method="POST" name="header-search" class="form-inline ">
@@ -149,7 +149,7 @@
                                 <div class="text-center my-3">購物車商品</div>
 
                                 <!-- 如果session cart空空 -->
-                                <div class="alert alert-primary" role="alert" style="display:<?= empty($_SESSION['cart']) ? 'block' : 'none' ?>">你的購物車空空如也～</div>
+                                <div class="alert shopcart-nav-alert" role="alert" style="display:<?= empty($_SESSION['cart']) ? 'block' : 'none' ?>">你的購物車空空如也～</div>
                                 <!-- 如果session cart有東西 -->
 
                                 <!-- 空的div包起樣板字串 -->
@@ -284,5 +284,4 @@
             console.log('hi');
             $('#sm-shop-cart').toggleClass('sm-none');
         });
-
     </script>
