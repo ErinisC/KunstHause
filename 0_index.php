@@ -42,12 +42,12 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-59.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-03.jpg" alt="First slide">
                     </a>
                 </div>
                 <div class="carousel-item">
                     <a href="#">
-                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TPE-60.jpg" alt="First slide">
+                        <img class="d-block w-100 mainact-1" src="<?= WEB_ROOT ?>imgs/event/event-lg/TXG-08.jpg" alt="First slide">
                     </a>
                 </div>
                 <div class="carousel-item">
@@ -526,6 +526,18 @@
             $('#fixed-button').css('opacity', '0');
         }
     });
+
+    // article select animation
+    $('.img-mask').on('mouseover', function() {
+        $(this).addClass('darker-mask');
+        $('.img-mask').not(this).addClass('lighter-mask');
+    });
+    $('.img-mask').on('mouseleave', function() {
+        $(this).removeClass('darker-mask');
+        $('.img-mask').not(this).removeClass('lighter-mask');
+
+    });
+
 
     // fixed button animation
     $('#fixed-button').on('click', function() {
