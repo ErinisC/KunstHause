@@ -18,10 +18,10 @@
 
         <div class="space" style="height: 50px;"></div>
 
-        <form name="event_form" method="post" onsubmit="checkForm();return false;" novalidate>
+        <div name="event_form">
             <div class="form-group">
                 <label class="event-banner d-flex col-sm-12">
-                    <div class="input fake_input_placeholder position-absolute ">
+                    <div class="input input-wrap input-wrap-picture fake_input_placeholder position-absolute">
                         <label for="" class="FileName"></label>
                         <input id="picture" name="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file" />
                     </div>
@@ -78,14 +78,12 @@
             <div class="form-group">
                 <div class="input-wrap">
                     <label for="categories">活動種類</label>
-                    <div class="input-box">
-                        <select id="categories" name="categories" type="text" class="input" required>
-                            <option value="" disabled selected>請選擇</option>
-                            <option value="music">音樂表演</option>
-                            <option value="show">演唱活動</option>
-                            <option value="art">藝文展覽</option>
-                        </select>
-                    </div>
+                    <select id="categories" name="categories" type="text" class="input" required>
+                        <option value="" disabled selected>請選擇</option>
+                        <option value="music">音樂表演</option>
+                        <option value="show">演唱活動</option>
+                        <option value="art">藝文展覽</option>
+                    </select>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
                 </div>
@@ -101,7 +99,7 @@
             </div>
 
             <div class="form-group">
-                <label for="location">活動地點</label>
+                <label for="cityLocation">活動地點</label>
                 <div class="input-wrap d-flex flex-wrap col-lg-12 p-0">
                     <div class="input-box selector col-xl-4  d-flex justify-content-between p-0">
                         <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region" required>
@@ -113,7 +111,7 @@
 
                         </select>
                         <div class="col-lg-1 blanket"></div>
-                        <select type="text" id="location" name="location" class="input-box input col-sm-5 mx-0" style="width:180px" required>
+                        <select type="text" id="cityLocation" name="cityLocation" class="input-box input col-sm-5 mx-0" style="width:180px" required>
 
                             <option value="" disabled selected>請選擇</option>
                             <optgroup label="北部">
@@ -203,11 +201,14 @@
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn btn-primary" onclick="showModal()">取消</button>
-                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
+                    <<<<<<< Updated upstream <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
+                        =======
+                        <button onclick="checkForm()" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
+                        >>>>>>> Stashed changes
                 </div>
             </div>
 
-        </form>
+        </div>
 
 
 
@@ -235,7 +236,7 @@
                     </div>
 
                     <div class="modal-footer mx-auto my-auto">
-                        <button type="button" onclick="location. href='3_B2B-index.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                        <button type="button" onclick="location.href='3_B2B-index.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
                     </div>
 
                 </div>
@@ -285,6 +286,7 @@
     const categories = $('#categories');
     const region = $('#region');
     const location = $('#loaction');
+    const cityLocation = $('#location');
     const address = $('#address');
     const eventinfo = $('#event_info');
     const info_bar = $('#info_bar');
@@ -294,6 +296,10 @@
         location.href = '3_B2B-index.php';
     });
 
+    function checkSelect() {
+        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 299 ~ checkSelect ~ checkSelect", checkSelect)
+
+    }
 
     // 送出表單
     function checkForm() {
@@ -304,35 +310,42 @@
         $('.input-wrap').removeClass('success').removeClass('error');
 
         // 檢查有沒有通過，檢查姓名長度跟email格式
-        let isPass = true;
+        let isPass = false;
 
-
-        if (picture.val() == 0) {
-            isPass = false;
-            picture.closest('input-wrap').addClass('error')
+        if (picture.val().length === 0) {
+            console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 317 ~ checkForm ~ picture.val()", picture.val().length)
+            picture.closest('.input-wrap').addClass('error')
         }
-        // 如果拿到的活動名稱的長度小於2，就不通過
-        if (eventname.val().length == 0) {
-            isPass = false;
 
+        // 如果拿到的活動名稱的長度小於2，就不通過
+        if (eventname.val().length === 0) {
             // 這邊設定下面small的小警告出現的文字
             // 小警告的位置是name的next (JQ select注意！)
             eventname.closest('.input-wrap').addClass('error')
             // name.closest('.input-wrap').find(small).text('請填寫正確姓名')
         }
 
-        if (address.val().length == 0) {
-            isPass = false;
+        if (startdate.val().length === 0) {
+            startdate.closest('.input-wrap').addClass('error');
+        }
+
+        if (enddate.val().length === 0) {
+            enddate.closest('.input-wrap').addClass('error');
+        }
+
+
+        if (categories.val() === null) {
+            categories.closest('.input-wrap').addClass('error');
+        }
+
+        if (address.val().length === 0) {
             address.closest('.input-wrap').addClass('error');
         }
 
-        if (eventinfo.val().length == 0) {
-            isPass = false;
+        if (eventinfo.val().length === 0) {
             eventinfo.closest('.input-wrap').addClass('error');
         } else {
             var formData = new FormData(document.event_form);
-
-
             fetch('3_B2B-create-event-api.php', {
                     method: 'POST',
                     body: formData
@@ -391,7 +404,9 @@
             //         }, 2000);
             //     }
             //     }, 'json');
-            // }
+            // 
+        }
+    }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

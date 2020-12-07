@@ -213,6 +213,7 @@ input[type="number"] {
 .error {
   visibility: visible;
   color: #ff0000;
+  border-color: #ff0000;
 }
 
 .success {
