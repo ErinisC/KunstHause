@@ -285,7 +285,6 @@
     const enddate = $('#end-datetime');
     const categories = $('#categories');
     const region = $('#region');
-    const location = $('#loaction');
     const cityLocation = $('#location');
     const address = $('#address');
     const eventinfo = $('#event_info');
