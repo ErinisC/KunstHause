@@ -203,7 +203,7 @@
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn btn-primary" onclick="showModal()">取消</button>
-                    <button id="submitButton" onclick="onClickSubmit();" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
+                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
                 </div>
             </div>
 
@@ -256,9 +256,6 @@
 <script src="./libary/jquery-3.5.1.js"></script>
 
 <script>
-    function onClickSubmit() {
-        console.log('onClickSubmit');
-    }
     // 預覽圖片
     $('.fake_input').on('change', function(e) {
         const file = this.files[0];
@@ -300,6 +297,7 @@
 
     // 送出表單
     function checkForm() {
+        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 301 ~ checkForm ~ checkForm", checkForm)
 
         // 呼叫的時候先清掉其他警告
 
