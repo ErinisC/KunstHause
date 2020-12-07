@@ -22,13 +22,13 @@ if (empty($_POST['event_name']) or empty($_POST['event_info']) or empty($_POST['
 //TODO: 檢查資料格式
 
 $sql = "INSERT INTO `products`
-(`event_name`, 
- `categories`, `location`,  
+(`event_name`, `picture`, 
+ `categories`, `region`, `location`,  
  `price`, `address`, `event_info`, `notice`, 
  `transportation`)
  VALUES (
-        ?, 
         ?, ?, 
+        ?, ?, ?,
         ?, ?, ?, ?,
         ? 
     )";
@@ -36,7 +36,9 @@ $sql = "INSERT INTO `products`
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['event_name'],
+    $_POST['picture'],
     $_POST['categories'],
+    $_POST['region'],
     $_POST['location'],
     $_POST['price'],
     $_POST['address'],

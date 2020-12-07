@@ -23,7 +23,7 @@
                 <label class="event-banner d-flex col-sm-12">
                     <div class="input fake_input_placeholder position-absolute ">
                         <label for="" class="FileName"></label>
-                        <input id="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file" />
+                        <input id="picture" name="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file" />
                     </div>
                     <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
                 </label>
@@ -203,7 +203,7 @@
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn btn-primary" onclick="showModal()">取消</button>
-                    <button type="submit" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
+                    <button id="submitButton" onclick="onClickSubmit();" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@
                             </svg>
 
                         </div>
-                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">2019百威真我至上音樂巡迴
+                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">019百威真我至上音樂巡迴2
                         </div>
                         <span class="text-center mt-3 ">活動已幫你送出審核，
                             再請至活動管理
@@ -256,6 +256,9 @@
 <script src="./libary/jquery-3.5.1.js"></script>
 
 <script>
+    function onClickSubmit() {
+        console.log('onClickSubmit');
+    }
     // 預覽圖片
     $('.fake_input').on('change', function(e) {
         const file = this.files[0];
@@ -264,33 +267,38 @@
         $('.eventimg').attr('src', objectURL);
     });
 
-    $('fake_input_placeholder').on('change', function getFilePath() {
-        $('input[type=file]').change(function() {
-            var filePath = $('#fileUpload').val();
-        })
-    });
+    // $('fake_input_placeholder').on('change', function getFilePath() {
+    //     $('input[type=file]').change(function() {
+    //         var filePath = $('#fileUpload').val();
+    //     })
+    // });
 
-    $('#picture').change(function() {
-        var i = $(this).prev('label').clone();
-        var file = $('#picture')[0].files[0].name;
-        $(this).prev('label').text(file);
-    });
+    // $('#picture').change(function() {
+    //     var i = $(this).prev('label').clone();
+    //     var file = $('#picture')[0].files[0].name;
+    //     $(this).prev('label').text(file);
+    // });
 
 
     // 設定常數
+    const picture = $('#picture');
     const eventname = $('#event_name');
+    const startdate = $('#start-datetime');
+    const enddate = $('#end-datetime');
+    const categories = $('#categories');
     const region = $('#region');
+    const location = $('#loaction');
     const address = $('#address');
     const eventinfo = $('#event_info');
-    const price = $('#price');
     const info_bar = $('#info_bar');
-    var startdate = document.querySelector('#start-datetime');
-    var enddate = document.querySelector('#end-datetime');
+
 
     $('#exampleModalCenter').on('hidden.bs.modal', function(a) {
         location.href = '3_B2B-index.php';
     });
 
+
+    // 送出表單
     function checkForm() {
 
         // 呼叫的時候先清掉其他警告
@@ -300,6 +308,11 @@
         // 檢查有沒有通過，檢查姓名長度跟email格式
         let isPass = true;
 
+
+        if (picture.val() == 0) {
+            isPass = false;
+            picture.closest('input-wrap').addClass('error')
+        }
         // 如果拿到的活動名稱的長度小於2，就不通過
         if (eventname.val().length == 0) {
             isPass = false;
@@ -310,11 +323,6 @@
             // name.closest('.input-wrap').find(small).text('請填寫正確姓名')
         }
 
-        // if (select.val() !== "") {
-        //     isPass = false;
-        //     select.closest('.input-wrap').addClass('error');
-        // }
-
         if (address.val().length == 0) {
             isPass = false;
             address.closest('.input-wrap').addClass('error');
@@ -324,36 +332,68 @@
             isPass = false;
             eventinfo.closest('.input-wrap').addClass('error');
         } else {
+            var formData = new FormData(document.event_form);
 
-            $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
-                console.log(data);
-                // $('#exampleModalCenter').modal('show');
-                // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                //     location.href = '1_member-login.php'
-                // })
-                // return;
 
-                if (data.success) {
-                    // info_bar
-                    //     .removeClass('alert-danger')
-                    //     .addClass('alert-success')
-                    //     .text('完成新增');
+            fetch('3_B2B-create-event-api.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .catch(error => console.error('Error:', error))
+                .then(data => {
+                    console.log(data);
+                    if (data.success) {
+                        // info_bar
+                        //     .removeClass('alert-danger')
+                        //     .addClass('alert-success')
+                        //     .text('完成新增');
 
-                } else {
-                    info_bar
-                        // .removeClass('alert-success')
-                        .addClass('alert-danger')
-                        .text(data.error || '新增失敗');
+                    } else {
+                        info_bar
+                            // .removeClass('alert-success')
+                            .addClass('alert-danger')
+                            .text(data.error || '新增失敗');
 
-                    info_bar.slideDown();
+                        info_bar.slideDown();
 
-                    setTimeout(function() {
-                        info_bar.slideUp();
-                    }, 2000);
-                }
-            }, 'json');
-        }
-    }
+                        setTimeout(function() {
+                            info_bar.slideUp();
+                        }, 2000);
+                    }
+                });
+
+
+
+
+            // $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
+            //     console.log(data);
+            //     // $('#exampleModalCenter').modal('show');
+            //     // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+            //     //     location.href = '1_member-login.php'
+            //     // })
+            //     // return;
+
+            //     if (data.success) {
+            //         // info_bar
+            //         //     .removeClass('alert-danger')
+            //         //     .addClass('alert-success')
+            //         //     .text('完成新增');
+
+            //     } else {
+            //         info_bar
+            //             // .removeClass('alert-success')
+            //             .addClass('alert-danger')
+            //             .text(data.error || '新增失敗');
+
+            //         info_bar.slideDown();
+
+            //         setTimeout(function() {
+            //             info_bar.slideUp();
+            //         }, 2000);
+            //     }
+            //     }, 'json');
+            // }
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
