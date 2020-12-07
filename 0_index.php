@@ -164,7 +164,7 @@
                                         <span class="hashtag">#野原邦彥</span>
                                         <span class="hashtag">#雕塑</span>
                                     </div>
-                                    <p class="col-5 price text-right">免費活動</p>
+                                    <p class="col-5 price text-right">$ 430</p>
                                 </div>
                             </div>
                         </div>
@@ -386,7 +386,7 @@
     </div>
     <div class="container-fluid text-center p-0 my-5">
         <a href="0_blog.php">
-            <p class="see-more">看更多文章</p>
+            <p class="see-more-article">看更多文章</p>
         </a>
     </div>
 </section>
