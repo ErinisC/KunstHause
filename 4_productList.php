@@ -410,7 +410,7 @@ if (isset($_SESSION['user'])) {
                                     <div class="flip-card-back position-absolute p-3">
                                         <div class="filp-title mb-3 text-center"> 活動簡介</div>
                                         <p class="px-3"><?= $r['event_info'] ?></p>
-                                        <div class="px-3 text-right mt-2 text-white">read more >></div>
+                                        <div class="px-3 text-right mt-2 text-white">查看詳細介紹 >></div>
 
                                     </div>
                                 </div>
@@ -518,7 +518,7 @@ if (isset($_SESSION['user'])) {
                                 <div class="flip-card-back position-absolute p-3">
                                     <div class="filp-title mb-3 text-center"> 活動簡介</div>
                                     <p class="px-3"><?= $r['event_info'] ?></p>
-                                    <div class="px-3 text-right mt-2 text-white">read more >></div>
+                                    <div class="px-3 text-right mt-2 text-white">查看詳細介紹 >></div>
 
                                 </div>
                             </div>
@@ -653,7 +653,7 @@ if (isset($_SESSION['user'])) {
                                     <div class="flip-card-back position-absolute p-3">
                                         <div class="filp-title mb-3 text-center"> 活動簡介</div>
                                         <p class="px-3"><?= $r['event_info'] ?></p>
-                                        <div class="px-3 text-right mt-2 text-white">read more >></div>
+                                        <div class="px-3 text-right mt-2 text-white">查看詳細介紹 >></div>
 
                                     </div>
                                 </div>
@@ -704,7 +704,7 @@ if (isset($_SESSION['user'])) {
 
 
 
-        <!-- Modal -->
+        <!-- Modal 進購物車 -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog col-lg-4 col-md- col-sm-11 col-11">
                 <div class="modal-content">
@@ -724,6 +724,8 @@ if (isset($_SESSION['user'])) {
                 </div>
             </div>
         </div>
+
+
 
 
 
@@ -878,7 +880,8 @@ if (isset($_SESSION['user'])) {
         const like_btns = $('.like-btn');
         like_btns.click(function() {
             if (!sess_user.sid) {
-                console.log('請先登入');
+                // console.log('請先登入');
+                location.href = "1_member-login.php";
 
             } else {
                 const card = $(this).closest('.event-card');
