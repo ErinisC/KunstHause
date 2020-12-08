@@ -150,12 +150,24 @@ input:focus {
   color: #bcbcbc;
 }
 
+.modify2:hover {
+  background-color: #0f5966;
+  border: 3px solid black;
+  color: #818181;
+}
+
 .modify2 {
   width: 140px;
   height: 50px;
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
+}
+
+.modify1:hover {
+  background-color: #3a3939;
+  border: 3px solid black;
+  color: black;
 }
 
 input::-webkit-outer-spin-button,
@@ -212,11 +224,18 @@ input[type="number"] {
 
 .error {
   visibility: visible;
-  color: #ff0000;
+  /* color: #ff0000; */
   border-color: #ff0000;
 }
 
 .success {
+  border-color: #168fa4;
+}
+.input-wrap.error select {
+  border-color: #ff0000;
+}
+
+.input-wrap.success select {
   border-color: #168fa4;
 }
 

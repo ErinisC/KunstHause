@@ -882,6 +882,13 @@ a:hover {
   transform: rotate(50deg);
 }
 
+.see-more-article{
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: #000000;
+  font-weight: bold;
+}
+
 /* ----------b2b area---------- */
 .b2b {
   background-color: #ffc024;
