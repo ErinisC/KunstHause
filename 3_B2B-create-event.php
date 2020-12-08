@@ -369,7 +369,7 @@
             eventinfo.closest('.input-wrap').removeClass('error')
             eventinfo.closest('.input-wrap').addClass('success')
         }
-        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 374 ~ checkForm ~ price.val()", price.val())
+
         if (price.val().length === 0) {
             price.closest('.input-wrap').addClass('error')
         } else {
