@@ -42,7 +42,7 @@ a:hover {
 }
 
 .progress-bar-section:nth-child(3) {
-    opacity: .5;
+    opacity: .3;
 }
 
 /* 選擇付款方式卡片 */
@@ -375,8 +375,9 @@ a:hover {
 .input-box .fas {
     visibility: hidden;
     top: 18px;
-    right: 11px;
+    right: 20px;
 }
+
 
 .must-icon {
     color: red;
@@ -393,6 +394,8 @@ a:hover {
     font-size: .7rem;
     text-align: right;
 }
+
+
 
 /* 錯誤 */
 .form-control.error {

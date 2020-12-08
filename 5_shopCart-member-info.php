@@ -49,15 +49,15 @@ $rows = $stmt->fetchAll();
                     <div id="prod<?= $i['sid'] ?>" data-sid="<?= $i['sid'] ?>" class="product-item row item mx-0 py-3 text-center">
                         <ul class="w-100 d-flex list-unstyled justify-content-between align-items-center">
                             <!-- 活動 -->
-                            <li class="p-0 align-items-center col-3">
+                            <li class="p-0 align-items-center col-2">
                                 <!-- 圖片 -->
-                                <div class="img-wrap col-8 m-auto">
+                                <div class="img-wrap pl-2 m-auto">
                                     <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
                                 </div>
                             </li>
 
                             <!-- 資訊 -->
-                            <li class="col-6">
+                            <li class="col-8">
                                 <div class="info-wrap w-100 px-3 d-flex flex-column text-left justify-content-around">
 
                                     <!-- 活動名稱 -->
@@ -72,21 +72,18 @@ $rows = $stmt->fetchAll();
 
                                     <!-- 活動價格 -->
                                     <div class="price" data-price="<?= $i['price'] ?>">
-                                        $ <?= $i['price'] ?>
+                                        $ <?= $i['price'] ?> X <?= $i['quantity'] ?> 張
                                     </div>
                                 </div>
 
 
                             </li>
 
-                            <!-- 數量 -->
-                            <li class="p-0 col-2">
-                                <div class=""> <?= $i['quantity'] ?> </div>
-                            </li>
+
 
                             <!-- 小計 -->
-                            <li id="total" class="subtotal col-1">
-                                0
+                            <li id="total" class="subtotal col-2">
+                                $ <?= $i['price'] * $i['quantity'] ?> 元
                             </li>
 
 
@@ -262,11 +259,11 @@ $rows = $stmt->fetchAll();
             name.addClass('error');
             name.closest('.input-box').addClass('error');
         } else {
-            name.removeClass('error');
-            name.closest('.input-box').removeClass('error');
+            // name.removeClass('error');
+            // name.closest('.input-box').removeClass('error');
 
-            name.addClass('success');
-            name.closest('.input-box').addClass('success');
+            // name.addClass('success');
+            // name.closest('.input-box').addClass('success');
 
             // 傳送表單
             $.post('5_shopCart-member-info-api.php', $(document.form1).serialize(), function(data) {

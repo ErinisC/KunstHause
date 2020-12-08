@@ -218,7 +218,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
                 setTimeout(function() {
                     info_bar.slideUp();
-                }, 2000);
+                }, 1000);
             }, 'json');
         } else {
             info_bar
@@ -229,7 +229,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
             setTimeout(function() {
                 info_bar.slideUp();
-            }, 2000);
+            }, 1000);
         }
 
     }

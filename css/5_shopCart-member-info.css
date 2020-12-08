@@ -5,17 +5,19 @@
         0 0 0 0.2rem #ffc024;
 }
 
-/* 購物車nav階段 */
-.progress-bar-section:nth-child(2) {
-    opacity: .5;
+body {
+    line-height: 1.5;
+    letter-spacing: 2px;
 }
+
+/* 購物車nav階段 */
 
 .progress-bar-section:nth-child(2) img {
     height: 86%;
 }
 
 .progress-bar-section:nth-child(3) {
-    opacity: .5;
+    opacity: .3;
 }
 
 /* 明細 */

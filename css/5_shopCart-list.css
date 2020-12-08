@@ -16,8 +16,25 @@ a:hover {
     min-height: 70vh;
 }
 
-/* 商品欄位 */
+button:focus {
+    outline: none;
+}
 
+/* 購物車nav階段 */
+.progress-bar-section:nth-child(2) {
+    opacity: .3;
+}
+
+.progress-bar-section:nth-child(2) img {
+    height: 86%;
+}
+
+.progress-bar-section:nth-child(3) {
+    opacity: .3;
+}
+
+
+/* 商品欄位 */
 .shop-item-title {
     border-bottom: 3px solid black;
 }
@@ -69,7 +86,7 @@ input:focus {
 /* 購物車總計明細藍框框 */
 .shopcart-total {
     background-color: #168FA4;
-    height: 300px;
+    min-height: 330px;
 }
 
 
@@ -87,6 +104,12 @@ input:focus {
 .form-control:focus {
     border-color: transparent;
     box-shadow: none;
+}
+
+/* 優惠券 */
+.cupon-success {
+    display: none;
+    color: #ffc024;
 }
 
 /* 統一按鈕 */

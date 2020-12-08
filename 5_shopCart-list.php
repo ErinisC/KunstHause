@@ -146,7 +146,7 @@ $rows = $stmt->fetchAll();
             </section>
 
             <!-- 總計明細框框 -->
-            <div class="container p-0 mt-3 col-lg-3 col-md-6 col-sm-12 col-12">
+            <div class="container p-0 mt-4 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="wrap">
                     <div class="shopcart-total p-3 text-white d-flex flex-column justify-content-between">
                         <div class="title">訂單資訊</div>
@@ -168,17 +168,21 @@ $rows = $stmt->fetchAll();
                                 </div>
                             </div>
                             <!-- 驗證 -->
-                            <p>＊優惠券不存在</p>
+                            <p class="cupon-success">＊成功使用優惠券</p>
                         </div>
                         <!-- 分隔線 -->
                         <div class="line w-100"></div>
                         <!-- 優惠券折扣 -->
                         <div class="wrap d-flex justify-content-between">
                             <p>優惠券折扣</p>
-                            <p id="discount">200</p>
+
+                            <span class="d-flex">-$
+                                <p id="discount">0</p>
+                            </span>
+
                         </div>
                         <!-- 總計 -->
-                        <div class="wrap d-flex justify-content-between">
+                        <div class="wrap d-flex justify-content-between align-items-center">
                             <p>總計</p>
                             <p id="allTotal">$1,000</p>
                         </div>
@@ -237,6 +241,16 @@ $rows = $stmt->fetchAll();
     // header不要fixed
     $('header').removeClass('position-fixed');
 
+
+
+    // 優惠券明細框假動態
+    $('.input-group-text').on('click', function() {
+        $(this).css('background-color', '#ffc024');
+        $(this).closest('.shopcart-total').find('.cupon-success').show();
+        $(this).closest('.shopcart-total').find('#discount').text('300');
+        calcTotal();
+
+    })
 
     // 數量增減
     $('.add').on('click', function() {

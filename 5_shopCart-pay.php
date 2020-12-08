@@ -200,7 +200,7 @@ if (!isset($_SESSION['user'])) {
                                     <span class="must">(必填)</span>
                                 </label>
 
-                                <div class="input-box">
+                                <div class=" input-box position-relative">
                                     <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="<?= $_SESSION['creditcard']['name'] ?>">
                                     <!-- 通過icon -->
                                     <i class="fas fa-check-circle position-absolute"></i>
@@ -226,9 +226,9 @@ if (!isset($_SESSION['user'])) {
                                     <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
 
                                     <!-- 通過icon -->
-                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- <i class="fas fa-check-circle  position-absolute"></i> -->
                                     <!-- 不通過icon -->
-                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- <i class="fas fa-exclamation-circle  position-absolute"></i> -->
                                     <!-- 卡片號碼驗證 -->
                                     <small class="form-text mt-2">* 請輸入正確卡片號碼</small>
                                 </div>
@@ -241,7 +241,7 @@ if (!isset($_SESSION['user'])) {
                                     有效年月
                                     <span class="must">(必填)</span>
                                 </label>
-                                <div class="input-box">
+                                <div class=" input-box position-relative">
                                     <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="<?= $_SESSION['creditcard']['valid-date'] ?>">
 
                                     <!-- 通過icon -->
@@ -260,7 +260,7 @@ if (!isset($_SESSION['user'])) {
                                     驗證碼
                                     <span class="must">(必填)</span>
                                 </label>
-                                <div class="input-box">
+                                <div class=" input-box position-relative">
                                     <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="<?= $_SESSION['creditcard']['security-number'] ?>">
 
                                     <!-- 通過icon -->
@@ -281,7 +281,7 @@ if (!isset($_SESSION['user'])) {
                                     <span class="must">(必填)</span>
                                 </label>
 
-                                <div class="input-box">
+                                <div class="input-box position-relative">
                                     <input type="text" class="form-control" id="name" placeholder="請填寫持卡人姓名" name="name" value="">
                                     <!-- 通過icon -->
                                     <i class="fas fa-check-circle position-absolute"></i>
@@ -307,9 +307,9 @@ if (!isset($_SESSION['user'])) {
                                     <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
 
                                     <!-- 通過icon -->
-                                    <i class="fas fa-check-circle position-absolute"></i>
+                                    <!-- <i class="fas fa-check-circle position-absolute"></i> -->
                                     <!-- 不通過icon -->
-                                    <i class="fas fa-exclamation-circle position-absolute"></i>
+                                    <!-- <i class="fas fa-exclamation-circle position-absolute"></i> -->
                                     <!-- 卡片號碼驗證 -->
                                     <small class="form-text mt-2">* 請輸入正確卡片號碼</small>
                                 </div>
@@ -322,7 +322,7 @@ if (!isset($_SESSION['user'])) {
                                     有效年月
                                     <span class="must">(必填)</span>
                                 </label>
-                                <div class="input-box">
+                                <div class=" input-box position-relative">
                                     <input type="text" class="form-control" id="valid-date" placeholder="請輸入有效年月" name="valid-date" value="">
 
                                     <!-- 通過icon -->
@@ -341,8 +341,8 @@ if (!isset($_SESSION['user'])) {
                                     驗證碼
                                     <span class="must">(必填)</span>
                                 </label>
-                                <div class="input-box">
-                                    <input type=" text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="">
+                                <div class=" input-box position-relative">
+                                    <input type="text" class="form-control" id="security-number" placeholder="請輸入信用卡驗證碼" name="security-number" value="">
 
                                     <!-- 通過icon -->
                                     <i class="fas fa-check-circle position-absolute"></i>
@@ -472,15 +472,76 @@ if (!isset($_SESSION['user'])) {
 
     // 信用卡資訊送進sessio  ＪＳ
     // 傳送表單
+    // const name = $('#name');
+    // const credit_number = $('#credit-number');
+    // const valid_date = $('#valid-date');
+    // const security_number = $('#security-number');
 
     function checkForm() {
+        // 呼叫的時候先清掉其他警告
+        $('.input-box').removeClass('success').removeClass('error');
+        $('input').removeClass('success').removeClass('error');
 
-        $.post('5_shopCart-pay-api.php', $(document.form1).serialize(), function(data) {
-            console.log(data)
-        }, 'json');
+        // 檢查有沒有通過，檢查姓名長度跟email格式
+        let isPass = true;
 
-        $('.modal').modal('show');
-    }
+
+        // 如果拿到的姓名的長度小於2，就不通過
+        if (name.value.length < 1) {
+            isPass = false;
+            name.classList.add('error');
+            name.closest('.input-box').classList.add('error');
+        } else {
+            name.classList.remove('error');
+            name.closest('.input-box').classList.remove('error');
+
+            name.classList.add('success');
+            name.closest('.input-box').classList.add('success');
+        }
+
+        // 卡片號碼驗證
+        if (cardnumber.value.length < 7) {
+            isPass = false;
+            cardnumber.classList.add('error');
+            cardnumber.closest('.input-box').classList.add('error');
+        } else {
+            cardnumber.classList.remove('error');
+            cardnumber.closest('.input-box').classList.remove('error');
+
+            cardnumber.classList.add('success');
+            cardnumber.closest('.input-box').classList.add('success');
+        }
+
+        // 有效日期驗證
+        if (expirationdate.value.length < 4) {
+            isPass = false;
+            expirationdate.classList.add('error');
+            expirationdate.closest('.input-box').classList.add('error');
+        } else {
+            expirationdate.classList.remove('error');
+            expirationdate.closest('.input-box').classList.remove('error');
+
+            expirationdate.classList.add('success');
+            expirationdate.closest('.input-box').classList.add('success');
+        }
+
+        // 驗證碼驗證
+        if (securitycode.value.length < 2) {
+            isPass = false;
+            securitycode.classList.add('error');
+            securitycode.closest('.input-box').classList.add('error');
+        } else {
+            $.post('5_shopCart-pay-api.php', $(document.form1).serialize(), function(data) {
+                console.log(data)
+            }, 'json');
+
+            $('.modal').modal('show');
+        }
+
+
+
+
+    };
 
     // 確認結帳
     function doBuy() {
