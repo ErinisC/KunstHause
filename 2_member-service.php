@@ -18,19 +18,19 @@
             <form class="service" novalidate="novalidate">
                 <div class="name d-flex mb-4">
                     <span class="label text-center">姓名</span>
-                    <input name="your-name" class="inputbox" type="text" aria-required="true" maxlength="50" required>
+                    <input id="your-name" name="your-name" class="inputbox" type="text" aria-required="true" maxlength="50" required>
                 </div>
                 <div class="mail-title d-flex mb-4">
                     <span class="label text-center">主旨</span>
-                    <input name="your-title" class="inputbox" type="text" aria-required="true" maxlength="50" required>
+                    <input id="your-title" name="your-title" class="inputbox" type="text" aria-required="true" maxlength="50" required>
                 </div>
                 <div class="email-ad d-flex mb-4">
                     <span class="label text-center">EMAIL</span>
-                    <input name="your-email" class="inputbox" type="email" aria-required="true" maxlength="50" required>
+                    <input id="your-email" name="your-email" class="inputbox" type="email" aria-required="true" maxlength="50" required>
                 </div>
                 <div class="content mb-4">
                     <p class="label text-center short-label">內容</p>
-                    <textarea name="your-content" class="inputbox w-100" type="text" aria-required="true" rows="8" required>
+                    <textarea id="your-content" name="your-content" class="inputbox w-100" type="text" aria-required="true" rows="8" required>
                     </textarea>
                 </div>
                 <div class="buttons">
@@ -111,5 +111,14 @@
 
 <!-- Boostrap JS -->
 <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+
+<script>
+    $('.label').click(function(event) {
+        $('#your-name').val('白佳穎');
+        $('#your-title').val('訂單：114退款事宜');
+        $('#your-email').val('test1@gmail.com');
+        $('#your-content').val('你好，請問編號114訂單的退款狀況？謝謝。');
+    });
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

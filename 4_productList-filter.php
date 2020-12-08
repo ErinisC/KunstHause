@@ -266,7 +266,7 @@ foreach ($cate as $k => $c) {
         <div class="flip-card-back position-absolute p-3">
             <div class="filp-title mb-3 text-center"> 活動簡介</div>
             <p class="px-3">${a.event_info}</p>
-            <div class="px-3 text-right mt-2 text-white">read more >></div>
+            <div class="px-3 text-right mt-2 text-white">查看詳細介紹 >></div>
 
         </div>
     </div>

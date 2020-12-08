@@ -140,8 +140,8 @@ $likes = $l_stmt->fetchAll();
                                             </div>
                                             <div class="event-location text-dark my-2"><?= $r['location'] ?></div>
 
-                                            <a href="Javascript:" class="like-link position-absolute">
-                                                <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
+                                            <a href="Javascript:" class="like-link position-absolute" data-sid="<?= $r['sid'] ?>">
+                                                <i class="like like-btn  liked far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
                                             </a>
                                         </div>
 
@@ -261,7 +261,7 @@ $likes = $l_stmt->fetchAll();
 
                                 <div class="edit-area col-lg-3 d-flex justify-content-between">
                                     <div class="e-ticket pt-4 mt-4">
-                                        <div class="jq-delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <div class="jq-delete" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter<?= $d['d_sid'] ?>">
                                             <img src="/KunstHause/imgs/member/cancel.svg">
                                         </div>
                                         <div class="feedback mt-2" type="button">
@@ -275,36 +275,38 @@ $likes = $l_stmt->fetchAll();
                                     </div>
                                 </div>
                             </div>
+
+                            <!--Modal 跳出確認取消提醒視窗 -->
+
+                            <div class="modal fade" id="exampleModalCenter<?= $d['d_sid'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content position-relative col-11">
+                                        <div class="logo position-absolute">
+                                            <img src="<?= WEB_ROOT ?>imgs/index/Logo.svg" alt="">
+                                        </div>
+
+                                        <div class="modal-header mt-5 ml-3">
+                                            <p class="modal-title p-2" id="exampleModalCenterTitle">
+                                                <?= $d['event_name'] ?>
+                                            </p>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>您確定要取消此筆訂單嘛?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="cancel-btn" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal" style="background-color:#FF4E42">確認取消</button>
+                                            <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
 
 
-                <!--Modal 跳出確認取消提醒視窗 -->
 
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content position-relative col-11">
-                            <div class="logo position-absolute">
-                                <img src="<?= WEB_ROOT ?>imgs/index/Logo.svg" alt="">
-                            </div>
-
-                            <div class="modal-header mt-5 ml-3">
-                                <p class="modal-title p-2" id="exampleModalCenterTitle">
-                                    <?= $d['event_name'] ?>
-                                </p>
-                            </div>
-                            <div class="modal-body">
-                                <p>您確定要取消此筆訂單嘛?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="cancel-btn" class="btn cancel-btn" data-toggle="modal" data-target="#confirmModal" data-dismiss="modal" style="background-color:#FF4E42">確認取消</button>
-                                <button type="button" class="btn close-btn" data-dismiss="modal">關閉視窗</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
                 <!-- 手機版 -->
@@ -452,21 +454,24 @@ $likes = $l_stmt->fetchAll();
 
     like_btns.click(function() {
 
-        const card = $(this).closest('.card');
-        const sid = card.attr('data-sid');
+        // console.log('this', $(this))
+        const sid = $(this).attr('data-sid')
+        const btn = $(this);
+        // const card = $(this).closest('.card');
+        // const sid = card.attr('data-sid');
         const sendObj = {
             action: 'like',
             sid: sid,
         }
-        console.log(sendObj)
+        // console.log(sendObj)
         $.get('4.likes-api.php', sendObj, function(data) {
             console.log(data);
             if (data.success) {
-                card.find('.like-btn').addClass('liked');
+                btn.addClass('liked');
             } else {
-                card.find('.like-btn').removeClass('liked');
+                btn.removeClass('liked');
+                btn.parents('.card-wrap').remove();
             }
-
         }, 'json');
 
     });
@@ -477,13 +482,14 @@ $likes = $l_stmt->fetchAll();
 
     // 票券管理刪除功能
 
-    // if $('.btn cancel-btn').click(function() {
-    //     $(this).parent().parent().parent().remove();
-    // });
+    $('.cancel-btn').click(function() {
 
-    // $('.jq-delete').click(function() {
-    //     $(this).parent().parent().parent().remove();
-    // });
+        console.log('hi', $(this).parents('.modal'))
+
+        $(this).parents('.modal').prev().remove();
+    });
+
+    
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
