@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   box-sizing: border-box;
 }
 
@@ -51,14 +51,42 @@ body {
 .form-bg {
   background-color: white;
   border: 3px solid black;
-  height: 90vh;
+  min-height: 80vh;
   z-index: 3;
 }
+
+.table {
+  border: 3px solid black;
+}
+
+td {
+  border-bottom: 3px solid black;
+}
+
+.table .thead-dark th {
+  background-color: #168FA4;
+}
+
 
 
 
 /* Media 複製以下 */
 /* =============================== */
+/* Small 小型裝置sm (576px 以下) */
+@media (max-width: 575px) {
+  .form-bg {
+    min-height: 40vh;
+  }
+
+  .navbar {
+    z-index: 2;
+  }
+
+}
+
+
+
+
 /* Small 小型裝置sm (576px 以上) */
 @media (min-width: 576px) {}
 
@@ -93,7 +121,8 @@ body {
   stroke-dashoffset: 166;
   stroke-width: 5px;
   stroke-miterlimit: 10;
-  stroke: #00C851;
+  /* stroke: #00C851; */
+  stroke: #168FA4;
   animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
@@ -118,7 +147,8 @@ body {
 }
 
 .checkmark.success {
-  box-shadow: inset 0px 0px 0px #00C851;
+  /* box-shadow: inset 0px 0px 0px #00C851; */
+  box-shadow: inset 0px 0px 0px #168FA4;
   animation: fillsuccess .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
 }
 
@@ -186,7 +216,10 @@ body {
 
 @keyframes fillsuccess {
   100% {
-    box-shadow: inset 0px 0px 0px 75px #00C851;
+    /* box-shadow: inset 0px 0px 0px 75px #00C851; */
+    box-shadow: inset 0px 0px 0px 75px #168FA4;
+
+
   }
 }
 

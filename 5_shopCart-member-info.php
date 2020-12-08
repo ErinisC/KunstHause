@@ -49,7 +49,7 @@ $rows = $stmt->fetchAll();
                     <div id="prod<?= $i['sid'] ?>" data-sid="<?= $i['sid'] ?>" class="product-item row item mx-0 py-3 text-center">
                         <ul class="w-100 d-flex list-unstyled justify-content-between align-items-center">
                             <!-- 活動 -->
-                            <li class="p-0 align-items-center col-2">
+                            <li class="p-0 align-items-center col-lg-2 col-4">
                                 <!-- 圖片 -->
                                 <div class="img-wrap pl-2 m-auto">
                                     <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
@@ -75,11 +75,7 @@ $rows = $stmt->fetchAll();
                                         $ <?= $i['price'] ?> X <?= $i['quantity'] ?> 張
                                     </div>
                                 </div>
-
-
                             </li>
-
-
 
                             <!-- 小計 -->
                             <li id="total" class="subtotal col-2">
