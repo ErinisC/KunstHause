@@ -31,17 +31,17 @@
                 <table>
                     <thead>
                         <tr class="tr d-flex mr-5 col-xl-12 col-12">
-                            <td>活動名稱</td>
-                            <td>活動日期</td>
+                            <td class="col-3">活動名稱</td>
+                            <td class="col-3">活動日期</td>
 
-                            <td class="d-flex">活動狀態
+                            <td class="col-3">活動狀態
                             </td>
-                            <td> </td>
-
+                            <td class="col-5"></td>
+                            <td></td>
 
                         </tr>
                     </thead>
-                    <tbody class="col-xl-12 col-12">
+                    <tbody class=" col-xl-12 col-12">
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
                             <td>2020-10-26 ~ 2020-11-22</td>
@@ -49,8 +49,11 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
 
-                                <div>
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
+                                <div class="modbutton text-center">
+                                    <img class="modify3 btn " src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
+                                </div>
+                                <div class="modbutton text-center">
+                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
                                 </div>
 
                             </td>
@@ -64,7 +67,9 @@
                                 <div class="modbutton text-center">
                                     <img class="modify3 btn" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
-
+                                <div class="modbutton text-center">
+                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
+                                </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
@@ -75,10 +80,10 @@
                             <td class="d-flex">
                                 <div class="modbutton text-center">
                                     <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
-
-                                    </button>
                                 </div>
-
+                                <div class="modbutton text-center">
+                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
+                                </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
@@ -90,7 +95,9 @@
                                 <div class="modbutton text-center ">
                                     <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target=""></img>
                                 </div>
-
+                                <div class="modbutton text-center">
+                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
+                                </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
@@ -102,7 +109,9 @@
                                 <div class="modbutton text-center">
                                     <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
-
+                                <div class="modbutton text-center">
+                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
+                                </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
@@ -114,7 +123,9 @@
                                 <div class="modbutton text-center">
                                     <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
-
+                                <div class="modbutton text-center">
+                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
