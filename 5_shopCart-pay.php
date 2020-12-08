@@ -379,10 +379,17 @@ if (!isset($_SESSION['user'])) {
             </div>
 
             <!-- 銀行轉帳付款下拉選單 -->
-            <!-- <div class="bank-pay" style="display:none">
-
+            <div class="bank-pay" style="display:none">
                 <div class="">銀行轉帳</div>
-            </div> -->
+            </div>
+
+
+            <!-- ibon轉帳付款下拉選單 -->
+            <div class="ibon-pay" style="display:none">
+
+                <div class="">ibon轉帳</div>
+            </div>
+
 
         </div>
 
@@ -453,21 +460,31 @@ if (!isset($_SESSION['user'])) {
     function showCollapse() {
         $('.credit-pay').slideToggle();
 
-        // $('#credit-pay').collapse('show')
-        // $('#bank-pay').collapse('hide')
-        // $('#ibon-pay').collapse('hide')
+        // 隱藏銀行付款資料
+        $('.bank-pay').hide()
+        // 隱藏超商付款資料
+        $('.ibon-pay').hide()
     }
 
 
     // 秀出銀行轉帳付款資料表
     function showCollapse2() {
-        // $('.bank-pay').slideToggle()
-        $('.credit-pay').css('display', 'none')
+        $('.bank-pay').slideToggle()
+
+        // 隱藏信用卡付款資料
+        $('.credit-pay').hide()
+        // 隱藏超商付款資料
+        $('.ibon-pay').hide()
     }
 
     // 秀出超商ibon付款資料表
     function showCollapse3() {
-        $('.credit-pay').css('display', 'none')
+        $('.ibon-pay').slideToggle()
+
+        // 隱藏信用卡付款資料
+        $('.credit-pay').hide()
+        // 隱藏銀行付款資料
+        $('.bank-pay').hide()
     }
 
     // 信用卡資訊送進sessio  ＪＳ

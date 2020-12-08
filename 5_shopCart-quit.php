@@ -23,33 +23,31 @@
             訂單編號: 2456344543
         </p>
 
-        <table class="table my-5">
+        <table class="table mx-auto my-5 col-lg-10 col-12">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col" colspan="2" class="text-center">訂單資料</th>
+
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+
+                    <td>總金額</td>
+                    <td class="text-center">$ 2,300 元</td>
+
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
+
+                    <td>付款方式</td>
+                    <td class="text-center">信用卡付款</td>
+
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+
+                    <td>付款時間</td>
+                    <td class="text-center">2020-12-18 10:21</td>
+
                 </tr>
             </tbody>
         </table>

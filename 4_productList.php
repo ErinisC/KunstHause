@@ -372,14 +372,12 @@ if (isset($_SESSION['user'])) {
 
             <!-- 三欄的小卡開始 -->
 
-
-
             <!-- 測試輪播 -->
-            <div id="carouselExampleIndicators" class="carousel slide posotion-relative" data-ride="carousel">
+            <div id="carouselExampleIndicators2" class="carousel slide posotion-relative" data-ride="carousel">
                 <ol class="carousel-indicators posotion-absolute">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators2" data-slide-to="2"></li>
                 </ol>
 
 
@@ -456,14 +454,14 @@ if (isset($_SESSION['user'])) {
 
 
                 <!-- 左 -->
-                <a class="carousel-control-prev posotion-absolute" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev posotion-absolute" href="#carouselExampleIndicators2" role="button" data-slide="prev">
                     <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                     <i class="fas fa-arrow-circle-left"></i>
                     <span class="sr-only">Previous</span>
                 </a>
 
                 <!-- 右 -->
-                <a class="carousel-control-next posotion-absolute" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next posotion-absolute" href="#carouselExampleIndicators2" role="button" data-slide="next">
                     <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                     <i class="fas fa-arrow-circle-right"></i>
                     <span class="sr-only">Next</span>
@@ -904,11 +902,11 @@ if (isset($_SESSION['user'])) {
         });
 
         // test
+        $('.carousel-control-next').on('click', function() {});
 
-        $('.carousel-control-next').on('click', function() {
 
-
-        });
+        // JS mediaQuery
+        // $(window).width()
     </script>
 
     <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

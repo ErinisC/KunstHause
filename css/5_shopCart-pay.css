@@ -41,9 +41,6 @@ a:hover {
     height: 86%;
 }
 
-.progress-bar-section:nth-child(3) {
-    opacity: .3;
-}
 
 /* 選擇付款方式卡片 */
 .payway-wrap {
