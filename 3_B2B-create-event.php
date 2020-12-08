@@ -195,9 +195,9 @@
 
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
-                    <button class="modify1 col-5 btn btn-primary" onclick="showModal()">取消</button>
+                    <button class="modify1 col-5 btn" onclick="showModal()">取消</button>
 
-                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn btn-primary" data-target="#exampleModalCenter">完成</button>
+                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn" data-target="#exampleModalCenter">完成</button>
 
                 </div>
             </div>
@@ -381,8 +381,10 @@
                 .then(response => response.json())
                 .catch(error => console.error('Error:', error))
                 .then(data => {
+                    console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 384 ~ checkForm ~ data", data)
                     console.log(data);
                     if (data.success) {
+                        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 386 ~ checkForm ~ data.success", data.success)
                         // info_bar
                         //     .removeClass('alert-danger')
                         //     .addClass('alert-success')
