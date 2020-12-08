@@ -91,10 +91,10 @@ foreach ($cate as $k => $c) {
                 <!-- 圖片 -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="imgs/banner/b-3.jpg" alt="First slide">
+                        <img class="d-block w-100" src="imgs/banner/art-1.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="imgs/banner/b-2.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="imgs/banner/bg-attatch-2.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="imgs/banner/b-4.jpg" alt="Third slide">

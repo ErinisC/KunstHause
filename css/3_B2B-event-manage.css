@@ -1,6 +1,7 @@
 * {
   outline: 1px solid red;
 }
+
 button:focus {
   box-shadow: none !important;
 }
@@ -113,6 +114,7 @@ table {
   height: 7rem;
   border-bottom: 1px solid #000;
   align-items: center;
+  display: flex;
 }
 
 .modify3 {
@@ -149,6 +151,7 @@ table {
   text-align: center;
   font-weight: 600;
 }
+
 .modal-header {
   border-bottom: 0 none;
 }
@@ -207,6 +210,7 @@ table {
   font-size: 16px;
   font-weight: 700;
 }
+
 /* 頁碼 */
 .page {
   margin-top: 35px;

@@ -1,6 +1,51 @@
 <?php $title = 'KunstHaus | 活動管理'; ?>
 
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
+
+<?php
+
+// 抓商品列表資料
+
+// 設定一頁只能有六格
+$perPage = 6;
+// 設定使用者目前看的頁數
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+// 選擇資料庫要的資料表，用count找出總共的幾數
+$t_sql = "SELECT count(1)FROM products";
+$t_stmt = $pdo->query($t_sql);
+
+// 計算資料筆數
+$totalRows = $t_stmt->fetch(PDO::FETCH_NUM)[0]; //總筆數
+$totalPages = ceil($totalRows / $perPage); //總頁數
+
+// 設定條件
+if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
+    if ($page < 1) { //如果所在頁數頁數小於一
+        header('Location:4_productList.php');
+        exit; //就轉向第一頁，然後停止執行下面的程式
+    }
+    if ($page > $totalPages) { //如果所在頁數頁數大於所有的頁數
+        //就轉向目前最後一頁，然後停止執行下面的程式
+        header('Location:4_productList.php' . $totalPages);
+        exit;
+    }
+
+    // 這邊要抓出資料庫的筆數後，決定每頁放的資料（LIMIT %s,%s）
+    $sql = sprintf("SELECT * FROM products ORDER BY sid  LIMIT %s ,%s", ($page - 1) * $perPage, $perPage);
+    $stmt = $pdo->query($sql);
+
+    // $rows就會等於每一筆抓出的資料
+    $rows = $stmt->fetchAll();
+} else {
+    $rows = [];
+}
+// echo json_encode($rows);
+// exit;
+?>
+
+
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
@@ -16,10 +61,10 @@
                 <h1>活動管理</h1>
                 <p class="text">您可以在此查看所有歷來活動的紀錄</p>
                 <div class="ticketbutton d-flex col-xl-6 col-12">
-                    <button class="modify2 btn " onclick="">歷史紀錄</button>
-                    <button class="modify2 btn " onclick="">尚未舉行</button>
-                    <button class="modify2 btn " onclick="">已結束</button>
-                    <button class="modify btn ">審核中</button>
+                    <button class="modify btn">審核中</button>
+                    <button class="modify2 btn">已上架</button>
+                    <button class="modify2 btn">已結束</button>
+                    <button class="modify2 btn">歷史活動</button>
                 </div>
                 <form class="header-search2 col-xl-6 col-12" method="POST" name="header-search" class="form-inline ">
                     <input class="search" type="text" name="search" placeholder="搜索活動名稱">
@@ -28,114 +73,57 @@
                     </button>
                 </form>
 
+
+                <!-- 活動明細 -->
                 <table>
                     <thead>
                         <tr class="tr d-flex mr-5 col-xl-12 col-12">
-                            <td class="col-3">活動名稱</td>
-                            <td class="col-3">活動日期</td>
+                            <td class="col-4">活動名稱</td>
+                            <td class="col-2">活動日期</td>
 
-                            <td class="col-3">活動狀態
-                            </td>
-                            <td class="col-5"></td>
-                            <td></td>
+                            <td class="col-2">活動狀態</td>
+                            <td class="col-2"></td>
+                            <td class="col-1"></td>
+
 
                         </tr>
                     </thead>
                     <tbody class=" col-xl-12 col-12">
-                        <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
-                            <td>2020-10-26 ~ 2020-11-22</td>
 
-                            <td style="color: #ff0000;">已結束</td>
-                            <td class="d-flex">
 
-                                <div class="modbutton text-center">
-                                    <img class="modify3 btn " src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
-                                </div>
-                                <div class="modbutton text-center">
-                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
-                                </div>
 
-                            </td>
-                        </tr>
-                        <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
-                            <td>2020-10-26 ~ 2020-11-22</td>
+                        <?php foreach ($rows as $r) : ?>
+                            <tr class="tr2" data-sid="<?= $r['sid'] ?>">
+                                <td class="col-4">
+                                    <a href="4_product-detail.php?sid=<?= $r['sid'] ?>">
+                                        <?= $r['event_name'] ?>
+                                    </a>
 
-                            <td style="color: #ff0000;">已結束</td>
-                            <td class="d-flex">
-                                <div class="modbutton text-center">
-                                    <img class="modify3 btn" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
-                                </div>
-                                <div class="modbutton text-center">
-                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
-                            <td>2020-10-26 ~ 2020-11-22</td>
+                                </td>
+                                <td class="col-2"><?= $r['start_datetime'] ?></td>
+                                <td class="col-2" style="color: #ff0000;">審核中</td>
 
-                            <td style="color: #ff0000;">已結束</td>
-                            <td class="d-flex">
-                                <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
-                                </div>
-                                <div class="modbutton text-center">
-                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
-                            <td>2020-10-26 ~ 2020-11-22</td>
+                                <td class="d-flex col-3">
+                                    <div class="modbutton text-center">
+                                        <button class="modify3 btn btn-primary mx-3 p-0">編輯活動</button>
+                                    </div>
+                                    <div class="modbutton text-center">
+                                        <button class="modify4 btn btn-primary" onclick="wannaDel(event)">刪除活動</button>
+                                    </div>
+                                </td>
+                            </tr>
 
-                            <td style="color: #ff0000;">已結束</td>
-                            <td class="d-flex">
-                                <div class="modbutton text-center ">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target=""></img>
-                                </div>
-                                <div class="modbutton text-center">
-                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
-                            <td>2020-10-26 ~ 2020-11-22</td>
+                        <?php endforeach; ?>
 
-                            <td style="color: #ff0000;">已結束</td>
-                            <td class="d-flex">
-                                <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
-                                </div>
-                                <div class="modbutton text-center">
-                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
-                            <td>2020-10-26 ~ 2020-11-22</td>
 
-                            <td style="color: #ff0000;">已結束</td>
-                            <td class="d-flex">
-                                <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
-                                </div>
-                                <div class="modbutton text-center">
-                                    <img class="modify4 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/trash.svg" alt="" data-target="#exampleModalCenter"></img>
-                                </div>
-                            </td>
-                        </tr>
+
                     </tbody>
+
                     <!-- Modal 取消訂單-->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class=" modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content pt-3 mx-auto">
-                                <div class="tap">
-
-                                </div>
+                                <div class="tap"></div>
 
                                 <div class="modal-header d-flex flex-column">
                                     <div class="g-check mx-auto mt-2">
@@ -164,33 +152,7 @@
                         </div>
                     </div>
 
-                    <!-- Modal 查閱訂單 -->
-                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content checkmodal pt-3 mx-auto">
-                                <div class="event mx-auto">
-                                    <div class="eventimg"></div>
-                                </div>
-                                <div class="modal-header d-flex flex-column">
-                                    <div class="modal-text ml-3 mt-1" id="exampleModalCenterTitle">活動名稱：空山祭
-                                    </div>
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：XD48763
-                                    </div>
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人姓名：王小明
-                                    </div>
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人電話：0900001234
-                                    </div>
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人電話：123@gmail.com
-                                    </div>
-                                </div>
 
-                                <div class="modal-footer mx-auto">
-                                    <button type="button" class="closebutton btn btn-secondary mt-1" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </table>
 
 
@@ -237,6 +199,31 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src=""></script>
+<script>
+    // 點擊標籤換頁
+    $('.modify2').on('click', function() {
+        $(this).removeClass('modify2')
+        $(this).addClass('modify')
+
+
+        $(this).siblings().removeClass('modify')
+        $(this).siblings().addClass('modify2')
+    });
+
+    // 刪除一列
+
+    $('.modify4').on('click', function() {
+        $('').show();
+    })
+
+    function wannaDel(event) {
+        const btn = $(event.target);
+        const order = btn.closest('.tr2');
+        $('#exampleModalCenter').modal('show');
+        $('.yes').on('click', function(event) {
+            order.hide();
+        });
+    }
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
