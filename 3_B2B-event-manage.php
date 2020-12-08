@@ -48,9 +48,9 @@
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
-                                <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
-                                </div>
+
+                                <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
                                 </div>
@@ -63,7 +63,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -93,7 +93,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -107,7 +107,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
@@ -121,7 +121,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
