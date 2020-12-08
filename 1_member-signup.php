@@ -47,7 +47,7 @@
                 <div class="signup-form w-100 col-md-8 col-xl-8 mx-auto">
                     <form name="form1" method="post" onsubmit="checkForm();return false;" novalidate>
                         <div class="form-group">
-                            <label for="name">會員姓名 (必填)</label>
+                            <label for="name" id="autoInput">會員姓名 (必填)</label>
                             <div class="input-wrap">
                                 <div class="input-box d-flex">
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-r.svg">
@@ -307,11 +307,11 @@
             checkpassword.closest('.input-wrap').removeClass('error')
             checkpassword.closest('.input-wrap').addClass('success');
         }
-        if (mobile.val().length !== 0) {
+        if (mobile.val().length == 0) {
             isPass = false;
             mobile.closest('.input-wrap').addClass('success');
         }
-        if (address.val().length !== 0) {
+        if (address.val().length == 0) {
             isPass = false;
             address.closest('.input-wrap').addClass('success');
         }
@@ -370,7 +370,7 @@
             'transform': 'rotate(' + rot + 'deg)'
         });
     });
-    
+
 
     // 自動往下卷軸
     var service;
@@ -385,7 +385,7 @@
 
 
     // 一鍵輸入
-    $('.list-body').click(function() {
+    $('#autoInput').click(function() {
         $('#name').val('Chan');
         $('#account').val('abcabc@gmail.com');
         $('#password').val('123456789');

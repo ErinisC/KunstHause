@@ -304,12 +304,18 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
     function wannaDel(event) {
         const btn = $(event.target);
         const order = btn.closest('.order');
-        const a = order.find('.event-name').text();
+        const modalTitle = order.find('.event-name').text();
         $('#cancelModal').modal('show');
-        $('.modal-event-name').text(a);
-        console.log(order.attr('data-sid'), order.find('.event-name').text())
-        console.log(a)
+        $('.modal-event-name').text(modalTitle);
+        console.log(order.attr('data-sid'), order.find('.event-name').text());
+        console.log(modalTitle);
+        $('#cancel-btn').on('click', function(event) {
+        $('.order').hide();
+    });
     }
+
+  
+
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
