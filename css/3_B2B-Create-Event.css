@@ -212,11 +212,18 @@ input[type="number"] {
 
 .error {
   visibility: visible;
-  color: #ff0000;
+  /* color: #ff0000; */
   border-color: #ff0000;
 }
 
 .success {
+  border-color: #168fa4;
+}
+.input-wrap.error select {
+  border-color: #ff0000;
+}
+
+.input-wrap.success select {
   border-color: #168fa4;
 }
 
