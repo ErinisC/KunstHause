@@ -307,13 +307,14 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         const modalTitle = order.find('.event-name').text();
         $('#cancelModal').modal('show');
         $('.modal-event-name').text(modalTitle);
-        console.log(order.attr('data-sid'), order.find('.event-name').text())
-        console.log(modalTitle)
-    }
-
-    $('#cancel-btn').on('click', function(event) {
+        console.log(order.attr('data-sid'), order.find('.event-name').text());
+        console.log(modalTitle);
+        $('#cancel-btn').on('click', function(event) {
         $('.order').hide();
     });
+    }
+
+  
 
 </script>
 
