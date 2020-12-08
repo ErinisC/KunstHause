@@ -754,3 +754,10 @@ footer .letter-submit {
     opacity: 0;
   }
 }
+
+.carousel-wrapper{
+  width: 100%;
+  position: relative;
+  left:0;
+  transition: .5s;
+}
