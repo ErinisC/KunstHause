@@ -227,6 +227,11 @@ body {
   padding: 0;
 }
 
+.modify2:hover {
+  background-color: #005d6d;
+  border: 3px solid #000;
+}
+
 @media screen and (max-width: 576px) {
   html {
     font-size: 16px;

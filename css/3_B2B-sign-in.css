@@ -292,6 +292,12 @@ button:disabled {
   border: 3px solid #000 !important;
 }
 
+/* .btn-primary:hover {
+  background-color: #1a90a5;
+  border-color: #000;
+  color: #fff;
+} */
+
 /* 提醒小卡css */
 .modal-content {
   border-radius: 0px;

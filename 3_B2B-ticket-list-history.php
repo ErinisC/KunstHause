@@ -9,12 +9,14 @@
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
 
+
 <div class="background">
     <div class="container">
         <div class="row ticketbg">
             <div class="title">
                 <h1>訂單管理</h1>
                 <p class="text">您可以在此查看所有的訂單紀錄</p>
+
                 <div class="ticketbutton d-flex col-xl-6 col-12">
                     <button class="modify btn btn-primary">歷史訂單</button>
                     <button class="modify2 btn btn-primary" onclick="location.href='3_B2B-ticket-list-pay.php'">已付款</button>
@@ -27,6 +29,8 @@
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-search.svg" alt="">
                     </button>
                 </form>
+
+
 
                 <table>
                     <thead>
@@ -57,7 +61,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48764</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
@@ -71,7 +75,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48765</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
@@ -85,7 +89,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48766</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
@@ -99,7 +103,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48767</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
@@ -113,7 +117,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48768</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
