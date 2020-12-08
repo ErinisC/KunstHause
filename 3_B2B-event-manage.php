@@ -50,7 +50,7 @@
                             <td class="d-flex">
 
                                 <div>
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
 
                             </td>
@@ -62,7 +62,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
 
                             </td>
@@ -74,7 +74,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
 
                                     </button>
                                 </div>
@@ -87,8 +87,8 @@
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
-                                <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                <div class="modbutton text-center ">
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target=""></img>
                                 </div>
 
                             </td>
@@ -100,7 +100,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
 
                             </td>
@@ -112,7 +112,7 @@
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" onclick="location.href='3_B2B-edit-event.php'"></img>
                                 </div>
 
                             </td>
