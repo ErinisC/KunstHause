@@ -854,7 +854,18 @@ if (isset($_SESSION['user'])) {
             console.log(walk);
         });
 
+        // 拖曳卡片右方按鈕
+        $('.recommend-right').on('click', function(){
+            const slider = document.querySelector('.items');
+            slider.scrollLeft += 300; 
+        })
 
+        // 拖曳卡片左方按鈕
+        $('.recommend-left').on('click', function(){
+            const slider = document.querySelector('.items');
+            slider.scrollLeft -= 300; 
+        })
+        
         // 瀏覽紀錄的動態
         $('.side-cookie-bar').on('mouseover', function() {
             $('.side-cookie-item').toggle();
@@ -922,7 +933,6 @@ if (isset($_SESSION['user'])) {
             carouselIndex ++;
             if(parseInt($('.carousel-wrapper').css('left')) *-1 < $('.carousel-wrapper').width() + $('.event-card').outerWidth(true)*1) {
                 $('.carousel-wrapper').css('left','-=' + $('.event-card').outerWidth(true));
-                console.log('carousel-control-next final',$('.carousel-wrapper').css('left'));
             }
             else{
                 $('.carousel-wrapper').css('left','-=' + $('.event-card').outerWidth(true));
@@ -946,7 +956,6 @@ if (isset($_SESSION['user'])) {
 
         //carousel 無限迴圈處理
         $('.carousel-wrapper').on('transitionend webkitTransitionEnd oTransitionEnd', function () {
-            console.log('carouselIndex:',carouselIndex)
             if (carouselIndex > 6) {
                 $('.carousel-wrapper').css('transition', 'none').css('left', $('.event-card').outerWidth(true) * -1);
                 carouselIndex = 1;

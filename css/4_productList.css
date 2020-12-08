@@ -542,7 +542,7 @@ iframe {
 .items {
   position: relative;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
   transition: all 0.2s;
