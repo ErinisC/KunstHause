@@ -259,12 +259,8 @@
         $('.eventimg').attr('src', objectURL);
     });
 
-    // $('fake_input_placeholder').on('change', function getFilePath() {
-    //     $('input[type=file]').change(function() {
-    //         var filePath = $('#fileUpload').val();
-    //     })
-    // });
 
+    // 顯示檔案名稱在fake_input
     $('#picture').change(function() {
         var i = $(this).prev('label').clone();
         var file = $('#picture')[0].files[0].name;
