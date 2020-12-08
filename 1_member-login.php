@@ -42,7 +42,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             <div class="deco">
                 <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
             </div>
-            <div class="login-title">請登入會員</div>
+            <div class="login-title" id="autoinput">請登入會員</div>
             <div class="reminder ml-3">*您可以選擇下列帳號快速登入</div>
             <div class="icons d-flex justify-content-center mx-auto">
                 <img class="facebook" src=" <?= WEB_ROOT ?>/imgs/member/facebook-brands.svg" style="  cursor: pointer">
@@ -235,7 +235,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
     }
 
     // 一鍵輸入
-    $('.monster').click(function(event) {
+    $('#autoinput').click(function(event) {
         $('#account').val('test1@gmail.com');
         $('#password').val('11111111');
     });

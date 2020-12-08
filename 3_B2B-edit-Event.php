@@ -1,9 +1,9 @@
-<?php $title = 'KunstHaus | 活動上架'; ?>
+<?php $title = 'KunstHaus | 活動資料修改'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
-<link rel="stylesheet" href="./css/3_B2B-Create-Event.css">
+<link rel="stylesheet" href="./css/3_B2B-Edit-Event.css">
 
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
@@ -12,8 +12,8 @@
     <div class="container col-xl-6 col-12 b2bcreate px-0">
         <div class="space" style="height: 130px;"></div>
         <div class="col-12">
-            <h1 class="title">上架活動資料</h1>
-            <h2 class="sm-title">KunstHaus 使用者將透過下列資訊了解活動</h2>
+            <h1 class="title">上架資料修改</h1>
+
         </div>
 
         <div class="space" style="height: 50px;"></div>
@@ -195,9 +195,9 @@
 
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
-                    <button class="modify1 col-5 btn" onclick="showModal()">取消</button>
+                    <button class="modify1 col-5 btn" onclick="showModal()">取消活動</button>
 
-                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn" data-target="#exampleModalCenter">完成</button>
+                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn" data-target="#exampleModalCenter">修改完成</button>
 
                 </div>
             </div>
