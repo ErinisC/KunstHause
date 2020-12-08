@@ -4,7 +4,7 @@
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
-<link rel="stylesheet" href="./css/3_B2B-ticket-list-cancel.css">
+<link rel="stylesheet" href="./css/3_B2B-event-manage.css">
 
 <!-- 引入navbar -->
 <?php include __DIR__ . '/1_parts/2_navbar.php'; ?>
@@ -34,98 +34,87 @@
                             <td>活動名稱</td>
                             <td>活動日期</td>
 
-                            <td class="d-flex">活動狀態<div class="white"></div>
+                            <td class="d-flex">活動狀態
                             </td>
-                            <td class="confirm d-flex">顯示
-                                <div class="white"></div>
-                            </td>
+                            <td> </td>
+
+
                         </tr>
                     </thead>
                     <tbody class="col-xl-12 col-12">
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
-                            <td>2020-10-26</td>
+                            <td>2020-10-26 ~ 2020-11-22</td>
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
 
-                                <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
-
-                                <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                <div>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
+
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
-                            <td>2020-10-26</td>
+                            <td>2020-10-26 ~ 2020-11-22</td>
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
-                                <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
-                                </div>
+
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
-                            <td>2020-10-26</td>
+                            <td>2020-10-26 ~ 2020-11-22</td>
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
 
                                     </button>
                                 </div>
-                                <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
-                                </div>
+
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
-                            <td>2020-10-26</td>
+                            <td>2020-10-26 ~ 2020-11-22</td>
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
-                                <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
-                                </div>
+
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
-                            <td>2020-10-26</td>
+                            <td>2020-10-26 ~ 2020-11-22</td>
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
-                                <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
-                                </div>
+
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
                             <td>XDXD48763</td>
-                            <td>2020-10-26</td>
+                            <td>2020-10-26 ~ 2020-11-22</td>
 
                             <td style="color: #ff0000;">已結束</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <img class="modify3 btn btn-primary" data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
+                                    <img class="modify3 btn " data-toggle="modal" src="<?= WEB_ROOT ?>/imgs/b2b/edit-button.svg" alt="" data-target="#exampleModalCenter2"></img>
                                 </div>
-                                <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
-                                </div>
+
                             </td>
                         </tr>
                     </tbody>
@@ -150,8 +139,7 @@
                                             </g>
                                         </svg>
                                     </div>
-                                    <div class="modal-title mx-auto mt-1" id="exampleModalCenterTitle">是否確認刪除訂單!
-                                    </div>
+
                                 </div>
                                 <div class="modal-footer mx-auto">
                                     <button type="button" class="yes btn btn-secondary" data-dismiss="modal" style="background-color: #ED5B4C">是</button>
