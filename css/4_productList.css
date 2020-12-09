@@ -542,7 +542,7 @@ iframe {
 .items {
   position: relative;
   width: 100%;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
   transition: all 0.2s;
@@ -753,4 +753,11 @@ footer .letter-submit {
     transform: translateY(-500px);
     opacity: 0;
   }
+}
+
+.carousel-wrapper{
+  width: 100%;
+  position: relative;
+  left:0;
+  transition: .5s;
 }
