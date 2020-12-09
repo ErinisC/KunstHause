@@ -1,6 +1,30 @@
 <?php $title = 'KunstHaus | 活動資料修改'; ?>
 <?php $pageName = 'b2b'; ?>
-<?php include __DIR__ . '/1_parts/0_config.php'; ?>
+<?php include __DIR__ . '/1_parts/0_config.php';
+
+
+if (!isset($_GET['sid'])) {
+    header('Location:3_B2B-index.php.php');
+    exit;
+}
+
+$sid = intval($_GET['sid']);
+$sql = "SELECT * FROM products WHERE sid=$sid";
+// 只有一筆就不要fetchAll，改用fetch
+$row = $pdo->query($sql)->fetch();
+
+if (empty($row)) {
+    header('Location:3_B2B-index.php.php');
+    exit;
+}
+
+// echo json_encode($row, JSON_UNESCAPED_UNICODE);
+// exit;
+
+?>
+
+
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己的ＣＳＳ -->
@@ -13,7 +37,7 @@
     <div class="container col-xl-6 col-12 b2bcreate px-0">
         <div class="space" style="height: 130px;"></div>
         <div class="col-12">
-            <h1 class="title">上架資料修改</h1>
+            <h1 class="title">編輯活動資料</h1>
 
         </div>
 
@@ -23,8 +47,8 @@
             <div class="form-group">
                 <label class="event-banner d-flex col-sm-12">
                     <div class="input input-wrap input-wrap-picture fake_input_placeholder position-absolute">
-                        <label for="" class="FileName"></label>
-                        <input id="picture" name="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file" />
+                        <label for="" class="FileName"> <?= $row['picture'] ?>.jpg </label>
+                        <input id="picture" name="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file">
                     </div>
                     <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
                 </label>
@@ -32,7 +56,7 @@
                 <br>
                 <br>
                 <br>
-                <img class="eventimg" src="" width="100%" height="400" alt="none" class="col-12">
+                <img class="eventimg" src="imgs/event/<?= $row['picture'] ?>.jpg" width="100%" height="400" alt="none" class="col-12">
                 <br>
             </div>
 
@@ -43,7 +67,7 @@
                 <div class="input-wrap">
 
                     <div class="input-box">
-                        <input id="event_name" class="input" type="text" name="event_name" placeholder="活動名稱">
+                        <input id="event_name" class="input" type="text" name="event_name" value="<?= $row['event_name'] ?>">
                     </div>
 
                     <i class="fas fa-check-circle"></i>
@@ -58,7 +82,7 @@
 
                     <div class="input-wrap">
                         <p class="pt-3">(活動日期開始)</p>
-                        <input class="input" id="start-datetime" name="start-datetime" type="datetime-local">
+                        <input class="input" id="start-datetime" name="start-datetime" type="datetime-local" value="<?= $row['start_datetime'] ?>">
                     </div>
 
 
@@ -128,7 +152,7 @@
                     <i class="fas fa-exclamation-circle"></i>
 
                     <div class="input-box col-xl-8 px-0">
-                        <input type="text" id="address" name="address" class="input-box input col-xl-12 col-sm-12 mx-0" placeholder="XXX街XXX號">
+                        <input type="text" id="address" name="address" class="input-box input col-xl-12 col-sm-12 mx-0" placeholder="XXX街XXX號" value="<?= $row['address'] ?>">
                     </div>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
@@ -139,14 +163,14 @@
             <div class="form-group">
                 <label for="transportation">
                     交通資訊
-                    <Textarea id="transportation" name="transportation" class="textarea" cols="117" rows="10"></Textarea>
+                    <Textarea id="transportation" name="transportation" class="textarea" cols="117" rows="10"><?= $row['transportation'] ?></Textarea>
                 </label>
             </div>
 
             <div class="form-group">
                 <label for="notice">
                     活動注意事項
-                    <Textarea id="notice" name="notice" class="textarea" cols="117" rows="10"></Textarea>
+                    <Textarea id="notice" name="notice" class="textarea" cols="117" rows="10"><?= $row['notice'] ?></Textarea>
                 </label>
             </div>
 
@@ -155,7 +179,7 @@
                     活動內容資訊
                     <div class="input-wrap">
 
-                        <Textarea id="event_info" name="event_info" class="textarea event_info" cols="117" rows="10" required></Textarea>
+                        <Textarea id="event_info" name="event_info" class="textarea event_info" cols="117" rows="10" required><?= $row['event_info'] ?></Textarea>
 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -172,7 +196,7 @@
                             <div class="pricetag col-4">
                                 <p class="py-2">NT$</p>
                             </div>
-                            <input id="price" name="price" type="number" min="0" max="9999" class="col-8 input">
+                            <input id="price" name="price" type="number" min="0" max="9999" class="col-8 input" value="<?= $row['price'] ?>">
 
                         </div>
 
@@ -196,9 +220,9 @@
 
             <div class="modbutton text-center">
                 <div class="okbutton col-xl-6 col-10 d-flex">
-                    <button class="modify1 col-5 btn" onclick="showModal()">取消活動</button>
+                    <button class="modify1 col-5 btn">取消活動</button>
 
-                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn" data-target="#exampleModalCenter">修改完成</button>
+                    <button id="submitButton" onclick="checkForm()" class="modify2 col-5 btn" data-toggle="modal" data-target="#exampleModalCenter">修改完成</button>
 
                 </div>
             </div>
@@ -231,7 +255,7 @@
                     </div>
 
                     <div class="modal-footer mx-auto my-auto">
-                        <button type="button" onclick="location.href='3_B2B-index.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                        <button type="button" onclick="location.href='3_B2B-event-manage.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
                     </div>
 
                 </div>
@@ -239,6 +263,7 @@
         </div>
         </table>
     </div>
+
 
 
     <div class="space" style="height: 150px;"></div>
@@ -252,6 +277,11 @@
 <script src="./libary/jquery-3.5.1.js"></script>
 
 <script>
+    // $('.modify1').on('click', function() {
+    //     $('#exampleModal').show()
+    // })
+
+
     // 預覽圖片
     $('.fake_input').on('change', function(e) {
         const file = this.files[0];
@@ -317,41 +347,41 @@
             eventname.closest('.input-wrap').addClass('success')
         }
 
-        if (startdate.val().length === 0) {
-            startdate.closest('.input-wrap').addClass('error');
-        } else {
-            startdate.closest('.input-wrap').removeClass('error')
-            startdate.closest('.input-wrap').addClass('success')
-        }
+        // if (startdate.val().length === 0) {
+        //     startdate.closest('.input-wrap').addClass('error');
+        // } else {
+        //     startdate.closest('.input-wrap').removeClass('error')
+        //     startdate.closest('.input-wrap').addClass('success')
+        // }
 
-        if (enddate.val().length === 0) {
-            enddate.closest('.input-wrap').addClass('error');
-        } else {
-            enddate.closest('.input-wrap').removeClass('error')
-            enddate.closest('.input-wrap').addClass('success')
-        }
+        // if (enddate.val().length === 0) {
+        //     enddate.closest('.input-wrap').addClass('error');
+        // } else {
+        //     enddate.closest('.input-wrap').removeClass('error')
+        //     enddate.closest('.input-wrap').addClass('success')
+        // }
 
-        if (categories.val() === null) {
-            categories.closest('.input-wrap').addClass('error');
-        } else {
-            categories.closest('.input-wrap').removeClass('error')
-            categories.closest('.input-wrap').addClass('success')
-        }
+        // if (categories.val() === null) {
+        //     categories.closest('.input-wrap').addClass('error');
+        // } else {
+        //     categories.closest('.input-wrap').removeClass('error')
+        //     categories.closest('.input-wrap').addClass('success')
+        // }
 
 
-        if (region.val() === null) {
-            region.closest('.input-wrap').addClass('error');
-        } else {
-            region.closest('.input-wrap').removeClass('error')
-            region.closest('.input-wrap').addClass('success')
-        }
+        // if (region.val() === null) {
+        //     region.closest('.input-wrap').addClass('error');
+        // } else {
+        //     region.closest('.input-wrap').removeClass('error')
+        //     region.closest('.input-wrap').addClass('success')
+        // }
 
-        if (cityLocation.val() === null) {
-            cityLocation.closest('.input-wrap').addClass('error');
-        } else {
-            cityLocation.closest('.input-wrap').removeClass('error')
-            cityLocation.closest('.input-wrap').addClass('success')
-        }
+        // if (cityLocation.val() === null) {
+        //     cityLocation.closest('.input-wrap').addClass('error');
+        // } else {
+        //     cityLocation.closest('.input-wrap').removeClass('error')
+        //     cityLocation.closest('.input-wrap').addClass('success')
+        // }
 
         if (address.val().length === 0) {
             address.closest('.input-wrap').addClass('error');
@@ -370,36 +400,37 @@
         if (price.val().length === 0) {
             price.closest('.input-wrap').addClass('error')
         } else {
-            var formData = new FormData(document.event_form);
-            fetch('3_B2B-create-event-api.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .catch(error => console.error('Error:', error))
-                .then(data => {
-                    console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 384 ~ checkForm ~ data", data)
-                    console.log(data);
-                    if (data.success) {
-                        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 386 ~ checkForm ~ data.success", data.success)
-                        // info_bar
-                        //     .removeClass('alert-danger')
-                        //     .addClass('alert-success')
-                        //     .text('完成新增');
+            $('#exampleModalCenter').modal('show')
+            // var formData = new FormData(document.event_form);
+            // fetch('3_B2B-create-event-api.php', {
+            //         method: 'POST',
+            //         body: formData
+            //     })
+            //     .then(response => response.json())
+            //     .catch(error => console.error('Error:', error))
+            //     .then(data => {
+            //         console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 384 ~ checkForm ~ data", data)
+            //         console.log(data);
+            //         if (data.success) {
+            //             console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 386 ~ checkForm ~ data.success", data.success)
+            //             info_bar
+            //                 .removeClass('alert-danger')
+            //                 .addClass('alert-success')
+            //                 .text('完成新增');
+            //         }
+            //         } else {
+            //             info_bar
+            //                 // .removeClass('alert-success')
+            //                 .addClass('alert-danger')
+            //                 .text(data.error || '新增失敗');
 
-                    } else {
-                        info_bar
-                            // .removeClass('alert-success')
-                            .addClass('alert-danger')
-                            .text(data.error || '新增失敗');
+            //             info_bar.slideDown();
 
-                        info_bar.slideDown();
-
-                        setTimeout(function() {
-                            info_bar.slideUp();
-                        }, 2000);
-                    }
-                }, 'json');
+            //             setTimeout(function() {
+            //                 info_bar.slideUp();
+            //             }, 2000);
+            //         }
+            //     }, 'json');
 
 
 
@@ -432,7 +463,9 @@
             //     }
             //     }, 'json');
             // 
+
         }
+
     }
 </script>
 

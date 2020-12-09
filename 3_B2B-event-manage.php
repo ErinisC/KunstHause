@@ -105,7 +105,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                                 <td class="d-flex col-3">
                                     <div class="modbutton text-center">
-                                        <button class="modify3 btn btn-primary mx-3 p-0">編輯活動</button>
+                                        <a href="3_B2B-edit-Event.php?sid=<?= $r['sid'] ?>" class="modify3 btn btn-primary mx-3 p-0">編輯活動</ㄇ>
                                     </div>
                                     <div class="modbutton text-center">
                                         <button class="modify4 btn btn-primary" onclick="wannaDel(event)">刪除活動</button>
