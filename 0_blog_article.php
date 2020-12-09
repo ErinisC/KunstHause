@@ -11,6 +11,12 @@
 <div class="space"></div>
 
 <div class="container">
+    <div class="bread-crumb row mb-4">
+        <img src="<?= WEB_ROOT ?>imgs/article/biscuits.svg" alt="">
+        <a href="0_index.php">首頁/ </a>
+        <a href="0_blog.php">新鮮事/ </a>
+        <a href="0_blog_article.php">義大利人做繪本、玩繪本、讀繪本（上）</a>
+    </div>
     <div class="row full-article mb-4">
         <div class="feature-img w-100 text-center mb-5">
             <img src="<?= WEB_ROOT ?>imgs/article/article-01.png" alt="">
