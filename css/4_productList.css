@@ -18,6 +18,10 @@ html {
   letter-spacing: 2px;
 }
 
+.nav-link{
+  letter-spacing: 0;
+}
+
 h1 {
   font-size: 2rem;
 }
