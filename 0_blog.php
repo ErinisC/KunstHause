@@ -62,13 +62,13 @@
         <div class="hero-article d-flex align-items-end">
             <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img blue-shadow">
-                    <a href="#">
+                    <a href="0_blog_article.php">
                         <img src="<?= WEB_ROOT ?>imgs/blog/feature-img-05.png" alt="">
                     </a>
                 </div>
             </div>
             <div class="article-meta col-lg-4 col-md-12 col-sm-12 col-12 px-0">
-                <a href="#" class="">
+                <a href="0_blog_article.php" class="">
                     <div class="title">
                         義大利人做繪本、玩繪本、讀繪本（上）
                     </div>
