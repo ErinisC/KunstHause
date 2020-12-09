@@ -84,7 +84,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="0_index.php#about-us">關於我們</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= $pageName === "blog" ? 'active' : '' ?>">
                             <a class="nav-link" href="0_blog.php">新鮮事</a>
                         </li>
                         <li class="nav-item">

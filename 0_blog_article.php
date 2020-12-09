@@ -1,5 +1,5 @@
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
-
+<?php $pageName = 'blog'; ?>
 <?php $title = 'KunstHaus | 義大利人做繪本、玩繪本、讀繪本（上）'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 <link rel="preconnect" href="https://fonts.gstatic.com">
