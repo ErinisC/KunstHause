@@ -24,6 +24,11 @@ body {
     height: 8rem;
   }
 
+  .row{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .sticker{
     display: none;
   }
