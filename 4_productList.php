@@ -375,28 +375,36 @@ if (isset($_SESSION['user'])) {
             <!-- 測試輪播 -->
             <div id="carouselExampleIndicators2" class="carousel slide posotion-relative" data-ride="carousel">
                 <ol class="carousel-indicators posotion-absolute">
-                <?php for ($x = 0; $x < count($rows); $x++) { ?>
-                    
-                    <li data-target="#carouselExampleIndicators2" data-slide-to="<?= $x ?>" class="carousel-white <?= ($x === 0)? 'active':'' ?>"></li>
-                <?php } ?>
+                    <?php for ($x = 0; $x < count($rows); $x++) { ?>
+
+                        <li data-target="#carouselExampleIndicators2" data-slide-to="<?= $x ?>" class="carousel-white <?= ($x === 0) ? 'active' : '' ?>"></li>
+                    <?php } ?>
                 </ol>
 
 
-                <div class="carousel-inner col-11 m-auto ">
+                <div class="carousel-inner col-11 m-auto">
                     <!-- <div class="carousel-item active">
                         <img class="d-block w-100" src="imgs/banner/b-1.jpg" alt="First slide">
                     </div> -->
                     <div class="carousel-wrapper d-flex">
-                    <?php for ($x = 0; $x < count($rows)+4; $x++) { ?>
-                        <?php $cardIndex = $x - 1; ?>
-                        <?php if($x === 0) {$cardIndex = count($rows)-1;} ?>
-                        <?php if($x === count($rows)+1) {$cardIndex = 0;} ?>
-                        <?php if($x === count($rows)+2) {$cardIndex = 1;} ?>
-                        <?php if($x === count($rows)+3) {$cardIndex = 2;} ?>
+                        <?php for ($x = 0; $x < count($rows) + 4; $x++) { ?>
+                            <?php $cardIndex = $x - 1; ?>
+                            <?php if ($x === 0) {
+                                $cardIndex = count($rows) - 1;
+                            } ?>
+                            <?php if ($x === count($rows) + 1) {
+                                $cardIndex = 0;
+                            } ?>
+                            <?php if ($x === count($rows) + 2) {
+                                $cardIndex = 1;
+                            } ?>
+                            <?php if ($x === count($rows) + 3) {
+                                $cardIndex = 2;
+                            } ?>
                             <!-- 小卡 -->
-                        
+
                             <div class="event-card mb-5 col-lg-4 col-md-6 col-sm-12 col-12" data-sid="<?= $rows[$cardIndex]['sid'] ?>">
-                            <?= $rows[$cardIndex]['sid'] ?>
+                                <!-- <//?= $rows[$cardIndex]['sid'] ?> -->
                                 <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
                                 <a href="4_product-detail.php?sid=<?= $rows[$cardIndex]['sid'] ?>" target="_blank" class="flip-card">
                                     <div class="flip-card-inner position-relative">
@@ -456,7 +464,7 @@ if (isset($_SESSION['user'])) {
                                     </div>
                                 </div>
                             </div>
-                            <?php } ?>
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -504,28 +512,28 @@ if (isset($_SESSION['user'])) {
 
                 <?php foreach ($rows as $r) : ?>
                     <!-- 小卡 -->
-                    <div class="event-card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $rows[$cardIndex]['sid'] ?>">
+                    <div class="event-card mb-5 col-lg-6 col-md-6 col-sm-12 col-12" data-sid="<?= $r['sid'] ?>">
 
                         <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
-                        <a href="4_product-detail.php?sid=<?= $rows[$cardIndex]['sid'] ?>" target="_blank" class="flip-card">
+                        <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
                             <div class="flip-card-inner position-relative">
                                 <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                    <img src="imgs/event/<?= $rows[$cardIndex]['picture'] ?>.jpg" class="card-img-top" alt="">
+                                    <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
                                     <!-- 圖片上時間 -->
                                     <div class="time position-absolute p-2">
                                         <!-- 年 -->
-                                        <div class="year"><?= substr($rows[$cardIndex]['start_datetime'], 0, 4) ?></div>
+                                        <div class="year"><?= substr($r['start_datetime'], 0, 4) ?></div>
                                         <!-- start -->
-                                        <div class="start"><?= substr($rows[$cardIndex]['start_datetime'], 5, 6) ?></div>
+                                        <div class="start"><?= substr($r['start_datetime'], 5, 6) ?></div>
                                         <!-- end -->
-                                        <div class="end"><?= substr($rows[$cardIndex]['end_datetime'], 5, 6) ?></div>
+                                        <div class="end"><?= substr($r['end_datetime'], 5, 6) ?></div>
                                     </div>
                                 </div>
 
                                 <!-- 翻轉卡片背面 -->
                                 <div class="flip-card-back position-absolute p-3">
                                     <div class="filp-title mb-3 text-center"> 活動簡介</div>
-                                    <p class="px-3"><?= $rows[$cardIndex]['event_info'] ?></p>
+                                    <p class="px-3"><?= $r['event_info'] ?></p>
                                     <div class="px-3 text-right mt-2 text-white">查看詳細介紹 >></div>
 
                                 </div>
@@ -537,24 +545,24 @@ if (isset($_SESSION['user'])) {
                         <div class="wrap mt-1 d-flex">
                             <div class="card-body d-flex p-0 w-100">
                                 <div class="card-info position-relative m-auto py-3 col-10">
-                                    <div class="event-name mb-2"><?= $rows[$cardIndex]['event_name'] ?></div>
+                                    <div class="event-name mb-2"><?= $r['event_name'] ?></div>
 
                                     <div class="event-location mb-2">
                                         <i class="fas fa-map-marker-alt"></i>
-                                        <?= $rows[$cardIndex]['location'] ?></div>
+                                        <?= $r['location'] ?></div>
 
-                                    <div class="now-price">$ <?= $rows[$cardIndex]['price'] ?></div>
+                                    <div class="now-price">$ <?= $r['price'] ?></div>
 
                                     <!-- 收藏 -->
                                     <a href="Javascript:" class="like-link position-absolute">
                                         <!-- <i class="like like-btn far fa-heart" onclick="checkLike(event);return false;" data-sid="<?= $rows[$cardIndex]['sid'] ?>"></i> -->
-                                        <i class="like like-btn far fa-heart <?= in_array($rows[$cardIndex]['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $rows[$cardIndex]['sid'] ?>"></i>
+                                        <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
                                     </a>
 
                                 </div>
 
                                 <!-- 價格按鈕加Modal的彈跳窗格 -->
-                                <a href="javascript:showProductModal(<?= $rows[$cardIndex]['sid'] ?>)" class="card-price py-3 col-2 d-flex justify-content-center align-items-center">
+                                <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-2 d-flex justify-content-center align-items-center">
                                     <!-- <div class=" card-price py-3">
 
                                     </div> -->
@@ -855,17 +863,17 @@ if (isset($_SESSION['user'])) {
         });
 
         // 拖曳卡片右方按鈕
-        $('.recommend-right').on('click', function(){
+        $('.recommend-right').on('click', function() {
             const slider = document.querySelector('.items');
-            slider.scrollLeft += 300; 
+            slider.scrollLeft += 300;
         })
 
         // 拖曳卡片左方按鈕
-        $('.recommend-left').on('click', function(){
+        $('.recommend-left').on('click', function() {
             const slider = document.querySelector('.items');
-            slider.scrollLeft -= 300; 
+            slider.scrollLeft -= 300;
         })
-        
+
         // 瀏覽紀錄的動態
         $('.side-cookie-bar').on('mouseover', function() {
             $('.side-cookie-item').toggle();
@@ -925,44 +933,42 @@ if (isset($_SESSION['user'])) {
 
         // TOP10 熱門藝文展覽 carousel 開始
         let carouselIndex = 1;
-        $('.carousel-wrapper').css('left','-=' + $('.event-card').outerWidth(true));
+        $('.carousel-wrapper').css('left', '-=' + $('.event-card').outerWidth(true));
 
         // carousel 往右按鈕
         $('.carousel-control-next').on('click', function() {
             $('.carousel-wrapper').css('transition', '.5s');
-            carouselIndex ++;
-            if(parseInt($('.carousel-wrapper').css('left')) *-1 < $('.carousel-wrapper').width() + $('.event-card').outerWidth(true)*1) {
-                $('.carousel-wrapper').css('left','-=' + $('.event-card').outerWidth(true));
+            carouselIndex++;
+            if (parseInt($('.carousel-wrapper').css('left')) * -1 < $('.carousel-wrapper').width() + $('.event-card').outerWidth(true) * 1) {
+                $('.carousel-wrapper').css('left', '-=' + $('.event-card').outerWidth(true));
+            } else {
+                $('.carousel-wrapper').css('left', '-=' + $('.event-card').outerWidth(true));
             }
-            else{
-                $('.carousel-wrapper').css('left','-=' + $('.event-card').outerWidth(true));
-            }
-            $('.carousel-white').removeClass('active').eq((carouselIndex > 6)?0:carouselIndex-1).addClass('active');
+            $('.carousel-white').removeClass('active').eq((carouselIndex > 6) ? 0 : carouselIndex - 1).addClass('active');
 
         });
 
         // carousel 往左按鈕
         $('.carousel-control-prev').on('click', function() {
             $('.carousel-wrapper').css('transition', '.5s');
-            carouselIndex --;
-            if(parseInt($('.carousel-wrapper').css('left')) *-1 > $('.event-card').outerWidth(true)) {
-                $('.carousel-wrapper').css('left','+=' + $('.event-card').outerWidth(true));
+            carouselIndex--;
+            if (parseInt($('.carousel-wrapper').css('left')) * -1 > $('.event-card').outerWidth(true)) {
+                $('.carousel-wrapper').css('left', '+=' + $('.event-card').outerWidth(true));
+            } else {
+                $('.carousel-wrapper').css('left', '+=' + $('.event-card').outerWidth(true));
             }
-            else{
-                $('.carousel-wrapper').css('left','+=' + $('.event-card').outerWidth(true));
-            }
-            $('.carousel-white').removeClass('active').eq((carouselIndex === 0 )?5:carouselIndex-1).addClass('active');
+            $('.carousel-white').removeClass('active').eq((carouselIndex === 0) ? 5 : carouselIndex - 1).addClass('active');
         });
 
         //carousel 無限迴圈處理
-        $('.carousel-wrapper').on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+        $('.carousel-wrapper').on('transitionend webkitTransitionEnd oTransitionEnd', function() {
             if (carouselIndex > 6) {
                 $('.carousel-wrapper').css('transition', 'none').css('left', $('.event-card').outerWidth(true) * -1);
                 carouselIndex = 1;
                 $('.carousel-white').removeClass('active').eq(0).addClass('active');
             }
 
-            if (carouselIndex === 0){
+            if (carouselIndex === 0) {
                 $('.carousel-wrapper').css('transition', 'none').css('left', $('.event-card').outerWidth(true) * -6);
                 carouselIndex = 6;
                 $('.carousel-white').removeClass('active').eq(5).addClass('active');
@@ -970,10 +976,10 @@ if (isset($_SESSION['user'])) {
         })
 
         // 白色橫條
-        $('.carousel-white').on('click',function(){
-            carouselIndex = $(this).data('slide-to') +1;
-            let left = carouselIndex  * $('.event-card').outerWidth(true) * -1;
-            $('.carousel-wrapper').css('left',left);
+        $('.carousel-white').on('click', function() {
+            carouselIndex = $(this).data('slide-to') + 1;
+            let left = carouselIndex * $('.event-card').outerWidth(true) * -1;
+            $('.carousel-wrapper').css('left', left);
             $('.carousel-white').removeClass('active');
             $(this).addClass('active');
         })
