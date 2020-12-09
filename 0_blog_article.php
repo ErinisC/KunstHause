@@ -17,7 +17,7 @@
         <a href="0_blog.php">新鮮事/ </a>
         <a href="0_blog_article.php">義大利人做繪本、玩繪本、讀繪本（上）</a>
     </div>
-    <div class="row full-article mb-4">
+    <div class="full-article row mb-4">
         <div class="feature-img w-100 text-center mb-5">
             <img src="<?= WEB_ROOT ?>imgs/article/article-01.png" alt="">
         </div>
@@ -75,7 +75,7 @@
             <p>文 Text｜楊馥如（作家／教授、大腦神經科學博士、外語教學碩士）</p>
         </div>
     </div>
-    <div class="readmore-articles row">
+    <div class="readmore-articles row mb-4">
         <div class="more-title-wrap d-flex w-100 sm-none">
             <div class="more-title">更多文章</div>
             <div class="more-title-en">READ MORE</div>
