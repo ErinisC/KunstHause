@@ -8,9 +8,9 @@ $output = [
     'postData' => $_POST,
 ];
 
-if (empty($_POST['event_name']) or empty($_POST['event_info']) or empty($_POST['start-datetime']) or empty($_POST['end-datetime']) or empty($_POST['price'])) {
+if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST['price'])) {
     $output['postData'] = $_POST;
-    $s_sql = "SELECT * FROM `kunsthaus` WHERE `products`";
+    $s_sql = "SELECT * FROM `kunsthaus` WHERE `products`=?";
     $s_stmt->execute([$_POST['event_name']]);
     if ($s_stmt->rowCount() == 1) {
         $output['info'] = '此活動名稱已被註冊';
@@ -21,34 +21,40 @@ if (empty($_POST['event_name']) or empty($_POST['event_info']) or empty($_POST['
 
 //TODO: 檢查資料格式
 
-$sql = "INSERT INTO `products`
-(`event_name`, `picture`, 
- `categories`, `region`, `location`,  
- `price`, `address`, `event_info`, `notice`, 
- `transportation`)
- VALUES (
+$sql = "INSERT INTO `products`( `event_name`, `hastag`,
+                                  `picture`, `categories`,
+                                  `location`, 
+                                   `start_datetime`, `end_datetime`, `price`, 
+                                   `address`, `event_info`, `notice`, 
+                                   `transportation`) VALUES
+ VALUES ( 
+        ?, ?,
         ?, ?, 
+        ?,  
         ?, ?, ?,
-        ?, ?, ?, ?,
-        ? 
+        ?, ?, ?,
+        ?
     )";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['event_name'],
+    $_POST['hashtag'],
     $_POST['picture'],
     $_POST['categories'],
-    $_POST['region'],
     $_POST['location'],
+    $_POST['start_datetime'],
+    $_POST['end_datetime'],
     $_POST['price'],
     $_POST['address'],
     $_POST['event_info'],
     $_POST['notice'],
-    $_POST['transportation'],
+    $_POST['transportation']
 ]);
 if ($stmt->rowCount() == 1) {
     $output['success'] = true;
     $output['error'] = '';
     $output['info'] = '資料新增完成';
 }
+header('Content-Type: application/json');
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
