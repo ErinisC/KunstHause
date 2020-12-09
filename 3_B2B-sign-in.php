@@ -1,5 +1,5 @@
 <?php $title = 'KunstHaus | 廠商會員註冊'; ?>
-
+<?php $pageName = 'b2b'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php';
 // 判斷是否登入
 // if (!isset($_SESSION['user'])) {

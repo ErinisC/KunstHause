@@ -1,5 +1,5 @@
 <?php $title = 'KunstHaus | 廠商訂單頁面'; ?>
-
+<?php $pageName = 'b2b'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 

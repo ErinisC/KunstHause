@@ -1,5 +1,5 @@
 <?php $title = 'KunstHaus | 活動管理'; ?>
-
+<?php $pageName = 'b2b'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
 <?php

@@ -78,7 +78,7 @@
                         <li class="nav-item <?= $pageName === "productList" ? 'active' : '' ?>">
                             <a class="nav-link" href="4_productList.php">逛逛活動</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item  <?= $pageName === "b2b" ? 'active' : '' ?>">
                             <a class="nav-link" href="3_B2B-index.php">舉辦活動</a>
                         </li>
                         <li class="nav-item">
