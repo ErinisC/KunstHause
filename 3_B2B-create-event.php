@@ -17,7 +17,7 @@
             <h2 class="sm-title">KunstHaus 使用者將透過下列資訊了解活動</h2>
         </div>
 
-        <div class="space" style="height: 50px;"></div>
+        <div class="space" style="height: 50px;"><img class="autoInput" id="autoInput" src=" <?= WEB_ROOT ?>/imgs/b2b/eyes-cartoon.svg"></div>
 
         <!-- 表單開始 -->
 
@@ -237,7 +237,7 @@
                     </div>
 
                     <div class="modal-footer mx-auto my-auto">
-                        <button type="button" onclick="location.href='3_B2B-index.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
+                        <button type="button" onclick="location.href='3_B2B-event-manage.php'" class="closebutton btn btn-secondary" data-dismiss="modal" style="background-color: #fff">關閉視窗</button>
                     </div>
 
                 </div>
@@ -258,6 +258,35 @@
 <script src="./libary/jquery-3.5.1.js"></script>
 
 <script>
+    // 設定常數
+
+    const picture = $('#picture');
+    const eventname = $('#event_name');
+    const startdate = $('#start-datetime');
+    const enddate = $('#end-datetime');
+    const categories = $('#categories');
+    const region = $('#region');
+    const cityLocation = $('#location');
+    const address = $('#address');
+    const eventinfo = $('#event_info');
+    const price = $('#price');
+    const info_bar = $('#info_bar');
+
+    //  一鍵輸入
+
+    $('#autoInput').click(function() {
+        eventname.val('TEST');
+        startdate.val('2020-12-18T08:30');
+        enddate.val('2021-01-20T08:30');
+        categories.val('music');
+        region.val('North');
+        cityLocation.val('TPE');
+        address.val('test')
+        eventinfo.val('test')
+        price.val('666')
+    });
+
+
     // 預覽圖片
     $('.fake_input').on('change', function(e) {
         const file = this.files[0];
@@ -273,20 +302,6 @@
         var file = $('#picture')[0].files[0].name;
         $(this).prev('label').text(file);
     });
-
-
-    // 設定常數
-    const picture = $('#picture');
-    const eventname = $('#event_name');
-    const startdate = $('#start-datetime');
-    const enddate = $('#end-datetime');
-    const categories = $('#categories');
-    const region = $('#region');
-    const cityLocation = $('#location');
-    const address = $('#address');
-    const eventinfo = $('#event_info');
-    const price = $('#price');
-    const info_bar = $('#info_bar');
 
 
     // 送出表單
@@ -391,7 +406,7 @@
             $('#showModal').click();
             $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
                 console.log(data);
-                // $('#exampleModalCenter').modal('show');
+
                 $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
                     location.href = '3_B2B-index.php'
                 })
@@ -441,16 +456,6 @@
     $('#exampleModalCenter').on('hidden.bs.modal', function(a) {
         location.href = '3_B2B-index.php';
     });
-
-    // 一鍵輸入
-    // $('#autoInput').click(function() {
-    //     $('#event_name').val('TEST');
-    //     $('#').val('abcabc@gmail.com');
-    //     $('#password').val('123456789');
-    //     $('#checkpassword').val('123456789');
-    //     $('#mobile').val('091245678');
-    //     $('#address').val('台中市');
-    // });
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

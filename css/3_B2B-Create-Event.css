@@ -9,6 +9,11 @@
   background-size: cover;
 }
 
+.autoInput {
+  height: 50px;
+  width: 100px;
+}
+
 .b2bcreate {
   height: 2950px;
 }
