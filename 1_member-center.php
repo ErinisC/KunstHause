@@ -121,7 +121,7 @@ $likes = $l_stmt->fetchAll();
                     <p>我的收藏</p>
                 </div>
                 <div class="favorite-list ">
-                    <div class="c-row1 d-flex justify-content-center" style="flex-wrap:wrap">
+                    <div class="c-row1 d-flex" style="flex-wrap:wrap; padding-left:8rem;">
                         <?php foreach ($likes as $r) : ?>
                             <!-- 活動小卡 -->
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="card">
