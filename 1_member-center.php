@@ -121,11 +121,11 @@ $likes = $l_stmt->fetchAll();
                     <p>我的收藏</p>
                 </div>
                 <div class="favorite-list ">
-                    <div class="c-row1 d-flex justify-content-center" style="flex-wrap:wrap">
+                    <div class="c-row1 d-flex" style="flex-wrap:wrap;">
                         <?php foreach ($likes as $r) : ?>
                             <!-- 活動小卡 -->
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="card">
-                                <div class="card-wrap m-4 col-lg-4 col-sm-3 p-0">
+                                <div class="card-wrap m-4 col-lg-5 col-md-5 col-sm-5 col-5 p-0">
                                     <div class="card-kv position-relative">
                                         <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg">
                                         <div class="time col-5 text-dark position-absolute mt-3">

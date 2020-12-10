@@ -197,17 +197,17 @@ label p {
 }
 
 .alert-danger {
-  color: #000;
+  color: #fff;
   font-weight: 600;
-  border: 3px solid rgb(243, 216, 61);
-  background-color: rgb(216, 44, 44);
+  border: 3px solid rgb(197, 49, 12);
+  background-color: rgba(241, 135, 135, 0.986);
 }
 
 .alert-success {
-  color: #000;
+  color: #fff;
   font-weight: 600;
-  border: 3px solid rgb(10, 116, 66);
-  background-color: rgb(243, 216, 61);
+  border: 3px solid rgb(15, 104, 62);
+  background-color: rgb(38, 122, 90);
 }
 
 /* .input-wrap {

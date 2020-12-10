@@ -57,6 +57,7 @@
 
     .copyright {
         margin-top: 250px;
+        margin-bottom: 50px;
     }
 
     /* ----------media query---------- */
@@ -65,7 +66,10 @@
             margin-top: 20px;
         }
 
-
+        .copyright {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
 
     }
 </style>

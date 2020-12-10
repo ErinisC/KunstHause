@@ -59,13 +59,14 @@
         font-size: 17px;
     }
 
-    .copyright {
-        margin-top: 250px;
-    }
-
     .contact,
     .service {
         margin-left: 50px;
+    }
+
+    .copyright {
+        margin-top: 250px;
+        margin-bottom: 50px;
     }
 
     /* ----------media query---------- */
@@ -85,6 +86,11 @@
 
         .email {
             width: 280px;
+        }
+
+        .copyright {
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
     }
