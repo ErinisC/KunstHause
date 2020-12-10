@@ -95,7 +95,7 @@
                 <div class="article-info blue">
                     Nov.16.2020 | Art & Design
                 </div>
-                <div class="excerpt">
+                <div class="excerpt mb-2">
                     <p>「如今的香港，哪裡才是安穩的家？」大火無法燒毀我們內心的家，就算困在難以伸展意志的鳥籠，但只要心中有愛，仍能挺過一切。</p>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                 <div class="article-info blue">
                     Nov.16.2020 | Art & Design
                 </div>
-                <div class="excerpt">
+                <div class="excerpt mb-2">
                     <p>在無法出國的 2020，你也想念日本了嗎？懷念說走就走的日子，無奈現實疫情仍未平息，先讓我們以《一個人的無謀小旅行》把關於旅行的記憶一件件翻出來、細細回味。</p>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                 <div class="article-info blue">
                     Nov.09.2020 | Art & Design
                 </div>
-                <div class="excerpt">
+                <div class="excerpt mb-2">
                     <p>由世界知名小說家尼爾．蓋曼與圖像藝術家羅倫佐．馬托蒂攜手，再次演繹格林兄弟的童話故事《漢賽爾與葛麗特》，一本寫給孩子也寫給成人的傳世經典，更是深刻刻畫家庭與人性的最佳版本。</p>
                 </div>
             </div>

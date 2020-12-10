@@ -307,7 +307,7 @@
                     <div class="post-tape position-absolute">
                         <img src="<?= WEB_ROOT ?>imgs/index/ic-tape-blog.svg" alt="">
                     </div>
-                    <a href="#" class="">
+                    <a href="0_blog_article.php" class="">
                         <div class="article-img cover-2">
                             <div class="img-mask">
                                 <div class="inner-box">
