@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid red;
-} */
+}
 
 html {
   font-size: 20px;
@@ -43,8 +43,18 @@ body {
   margin-top: 40px;
 }
 
+/* .big-head {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+  border: 3px solid black;
+}
 .long-clip-1 {
   position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .little-head {
@@ -53,8 +63,74 @@ body {
   border-radius: 50%;
   position: absolute;
   background-color: #fff;
-  top: 161px;
+  top: 190px;
   right: 390px;
+} */
+
+
+/* -------大頭照部分------- */
+.ogzcard {
+  margin-top: 40px;
+}
+
+.picture {
+  display: block;
+  margin: 0 auto;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background-image: url(../imgs/b2b/people.png);
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+  position: relative;
+}
+
+.eventimg {
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.people {
+  top: 255px;
+  left: 43.6%;
+  position: absolute;
+}
+
+.organizer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.pictureaddbtn {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+  position: absolute;
+  top: 290px;
+  right: 480px;
+}
+
+.pictureadd {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  opacity: 0;
+  /* position: absolute;
+  top: 380px;
+  right: 420px; */
+}
+
+.fakeimgadd {
+  background-color: #f1f9ff;
+  border: 3px solid #000;
+}
+
+.eventimg:focus {
+  outline: none;
 }
 
 /* 區塊標題 */
@@ -156,7 +232,7 @@ body {
   justify-content: space-around;
 }
 
-.modify1 {
+/* .modify1 {
   width: 140px;
   height: 50px;
   background-color: #ed5b4c;
@@ -170,6 +246,69 @@ body {
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
+} */
+.modify1 {
+  background-color:#168fa4;
+  color: #000;
+  margin: auto 0;
+  border: 3px solid #000;
+  border-radius: 0px;
+  font-weight: 600;
+  height: 2.5rem;
+}
+.modify2 {
+  background-color: #ffc639;
+  color: #000;
+  margin: auto 0;
+  border: 3px solid #000;
+  border-radius: 0px;
+  font-weight: 600;
+  height: 2.5rem;
+}
+
+.modify1:hover,
+.modify2:hover {
+  background-color: #ff4e42;
+  border-color: transparent;
+  color: #fff;
+  animation-name: rubberBand;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
 }
 
 button:disabled {

@@ -20,6 +20,47 @@ if (empty($row)) {
 // echo json_encode($row, JSON_UNESCAPED_UNICODE);
 // exit;
 
+// <!-- 自己的php條件放在這邊 -->
+// <?php
+$pageName = 'productList';
+
+
+
+// 設定一頁只能有六格
+$perPage = 6;
+// 設定使用者目前看的頁數
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+// 選擇資料庫要的資料表，用count找出總共的幾數
+$t_sql = "SELECT count(1)FROM products";
+$t_stmt = $pdo->query($t_sql);
+
+// 計算資料筆數
+$totalRows = $t_stmt->fetch(PDO::FETCH_NUM)[0]; //總筆數
+$totalPages = ceil($totalRows / $perPage); //總頁數
+
+// 設定條件
+if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
+    if ($page < 1) { //如果所在頁數頁數小於一
+        header('Location:4_productList.php');
+        exit; //就轉向第一頁，然後停止執行下面的程式
+    }
+    if ($page > $totalPages) { //如果所在頁數頁數大於所有的頁數
+        //就轉向目前最後一頁，然後停止執行下面的程式
+        header('Location:4_productList.php' . $totalPages);
+        exit;
+    }
+
+    // 這邊要抓出資料庫的筆數後，決定每頁放的資料（LIMIT %s,%s）
+    $sql = sprintf("SELECT * FROM products ORDER BY sid  LIMIT %s ,%s", ($page - 1) * $perPage, $perPage);
+    $stmt = $pdo->query($sql);
+
+    // $rows就會等於每一筆抓出的資料
+    $rows = $stmt->fetchAll();
+} else {
+    $rows = [];
+}
+
 ?>
 
 <!-- 引head -->
@@ -270,12 +311,12 @@ if (empty($row)) {
                             </div>
 
                             <div class="bar-title col-lg-2 col-md-10 col-sm-10">
-                                <h2 class="mb-2">雨水我問你</h2>
-                                <p>2020/12/21</p>
+                                <h2 class="mb-2">No Name</h2>
+                                <p>2020/12/10</p>
                             </div>
 
                             <div class="bar-word col-lg-6 col-md-10 col-sm-10">
-                                <p>啊 雨水我問你 我的感情算什麼 無采愛你已經愛這多年 啊 雨水我問你　誰人為愛賭生死 你敢講我就陪你去！</p>
+                                <p>good</p>
                             </div>
                         </div>
                     </div>
@@ -289,9 +330,9 @@ if (empty($row)) {
 
         </div>
 
-        <div class="row">
+        <div class=" inputbox row">
             <div class="search-bar d-flex">
-                <input type="text" placeholder="我來說幾句...(50個字為限)" class="col-10">
+                <input class="text col-10" type="text" placeholder="我來說幾句...(50個字為限)" class="col-10">
                 <button class="search-bar-ser col-2 p-0 d-flex align-items-center justify-content-center text-white text-center">發表</button>
             </div>
         </div>
@@ -511,6 +552,18 @@ if (empty($row)) {
 
             }, 'json')
     });
+
+            // 拖曳卡片右方按鈕
+            $('.recommend-right').on('click', function() {
+            const slider = document.querySelector('.items');
+            slider.scrollLeft += 300;
+        })
+
+        // 拖曳卡片左方按鈕
+        $('.recommend-left').on('click', function() {
+            const slider = document.querySelector('.items');
+            slider.scrollLeft -= 300;
+        })
 </script>
 
 <!-- footer -->
