@@ -22,6 +22,10 @@ body {
     height: 7rem;
   }
 
+  .bread-crumb a{
+    font-size: 0.8rem;
+  }
+
   .list-articles-wrap{
     flex-direction: row;
   }
@@ -34,6 +38,10 @@ body {
 @media (max-width: 768px) {
   .space {
     height: 8rem;
+  }
+
+  .bread-crumb a{
+    font-size: 0.6rem;
   }
 
   .list-articles-wrap{
@@ -54,7 +62,6 @@ body {
 
 .bread-crumb a{
   color: #000000;
-  font-size: 0.8rem;
   font-weight: 500;
   line-height: 1rem;
   letter-spacing: 1.5px;
