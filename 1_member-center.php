@@ -125,7 +125,7 @@ $likes = $l_stmt->fetchAll();
                         <?php foreach ($likes as $r) : ?>
                             <!-- 活動小卡 -->
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="card">
-                                <div class="card-wrap m-4 col-lg-5 col-md-5 col-sm-12 col-12 p-0">
+                                <div class="card-wrap m-4 col-lg-5 col-md-5 col-sm-5 col-5 p-0">
                                     <div class="card-kv position-relative">
                                         <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg">
                                         <div class="time col-5 text-dark position-absolute mt-3">

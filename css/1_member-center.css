@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 html {
   font-size: 20px;
@@ -184,9 +184,6 @@ animation-iteration-count: 4;
   width: 100%;
 }
 
-.c-row1{
-  /* padding-left:8rem; */
-}
 
 .time {
   bottom: 0;
