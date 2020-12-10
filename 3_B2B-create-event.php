@@ -200,7 +200,8 @@
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn">取消</button>
 
-                    <button type="submit" id="submit" class="modify2 col-5 btn" data-toggle="modal" data-target="#exampleModalCenter" onclick="checkForm();event.preventDefault();">完成</button>
+                    <button type="submit" id="submit" class="modify2 col-5 btn" onclick="checkForm();event.preventDefault();">完成</button>
+                    <button id="showModal" data-toggle="modal" data-target="#exampleModalCenter" hidden></button>
 
                 </div>
             </div>
@@ -286,7 +287,13 @@
 
 
     // function checkForm2() {
-
+    //     $('#event_name, #eventDate, #region, #address').each(function() {
+    //         if ($(this).val() == '' || $(this).val() == null) {
+    //             $(this).closest('.input-wrap').addClass('error')
+    //         } else {
+    //             $('#exampleModalCenter').modal('show');
+    //         }
+    //     });
     //     $.post('3_B2B-create-event-api.php', $(document.form1).serialize(), function(data) {
     //         console.log("data", data);
 
@@ -326,10 +333,10 @@
         $('.input-wrap').removeClass('success').removeClass('error');
 
         // 檢查有沒有通過，檢查長度
-        let isPass = true;
+        let isPass = false;
 
         if (picture.val().length === 0) {
-            isPass = false;
+            isPass = true;
             picture.closest('.input-wrap').addClass('error')
         } else {
             picture.closest('.input-wrap').removeClass('error')
@@ -338,7 +345,7 @@
 
         // 如果拿到的活動名稱的長度小於2，就不通過
         if (eventname.val().length === 0) {
-            isPass = false;
+            isPass = true;
             // 這邊設定下面small的小警告出現的文字
             // 小警告的位置是name的next (JQ select注意！)
             eventname.closest('.input-wrap').addClass('error')
@@ -349,7 +356,7 @@
         }
 
         if (startdate.val().length === 0) {
-            isPass = false;
+            isPass = true;
             startdate.closest('.input-wrap').addClass('error');
         } else {
             startdate.closest('.input-wrap').removeClass('error')
@@ -357,7 +364,7 @@
         }
 
         if (enddate.val().length === 0) {
-            isPass = false;
+            isPass = true;
             enddate.closest('.input-wrap').addClass('error');
         } else {
             enddate.closest('.input-wrap').removeClass('error')
@@ -367,16 +374,15 @@
         // 檢查值是否為null
 
         if (categories.val() === null) {
-            isPass = false;
+            isPass = true;
             categories.closest('.input-wrap').addClass('error');
         } else {
             categories.closest('.input-wrap').removeClass('error')
             categories.closest('.input-wrap').addClass('success')
         }
 
-
         if (region.val() === null) {
-            isPass = false;
+            isPass = true;
             region.closest('.input-wrap').addClass('error');
         } else {
             region.closest('.input-wrap').removeClass('error')
@@ -384,7 +390,7 @@
         }
 
         if (cityLocation.val() === null) {
-            isPass = false;
+            isPass = true;
             cityLocation.closest('.input-wrap').addClass('error');
         } else {
             cityLocation.closest('.input-wrap').removeClass('error')
@@ -392,7 +398,7 @@
         }
 
         if (address.val().length === 0) {
-            isPass = false;
+            isPass = true;
             address.closest('.input-wrap').addClass('error');
         } else {
             address.closest('.input-wrap').removeClass('error')
@@ -400,7 +406,7 @@
         }
 
         if (eventinfo.val().length === 0) {
-            isPass = false;
+            isPass = true;
             eventinfo.closest('.input-wrap').addClass('error');
         } else {
             eventinfo.closest('.input-wrap').removeClass('error')
@@ -408,13 +414,20 @@
         }
 
         if (price.val().length === 0) {
-            isPass = false;
+            isPass = true;
             price.closest('.input-wrap').addClass('error')
+            return;
         } else {
-            $('#exampleModalCenter').modal('show');
+
+        }
+
+        if (!isPass) {
+            console.log('hi')
+            isPass = false;
+            $('#showModal').click();
             $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
                 console.log(data);
-                $('#exampleModalCenter').modal('show');
+                // $('#exampleModalCenter').modal('show');
                 $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
                     location.href = '3_B2B-index.php'
                 })
