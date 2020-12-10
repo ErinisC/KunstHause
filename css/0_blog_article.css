@@ -25,6 +25,10 @@ body {
   .list-articles-wrap{
     flex-direction: row;
   }
+
+  .list-articles-wrap .article {
+    width: 30%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -35,7 +39,10 @@ body {
   .list-articles-wrap{
     flex-direction: column;
   }
-  
+
+  .list-articles-wrap .article {
+    /* width: 30%; */
+  }
 
 }
 
@@ -164,7 +171,6 @@ body {
 }
 
 .list-articles-wrap .article {
-  width: 30%;
   margin-left: 16px;
   margin-right: 16px;
 }
