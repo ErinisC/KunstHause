@@ -294,6 +294,10 @@ input[type="number"] {
     font-size: 16px;
   }
 
+  .autoInput {
+    display: none;
+  }
+
   .eventimg {
     display: none;
   }

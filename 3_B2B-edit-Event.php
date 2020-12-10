@@ -88,7 +88,7 @@ if (empty($row)) {
 
                     <div class="input-wrap">
                         <p class="mt-3">(活動日期結束)</p>
-                        <input class="input" id="end-datetime" name="end-datetime" type="datetime-local">
+                        <input class="input" id="end-datetime" name="end-datetime" type="datetime-local" value="<?= $row['end_datetime'] ?>">
                     </div>
 
 
@@ -98,7 +98,7 @@ if (empty($row)) {
             <div class="form-group">
                 <div class="input-wrap">
                     <label for="categories">活動種類</label>
-                    <select id="categories" name="categories" type="text" class="input" required>
+                    <select id="categories" name="categories" type="text" class="input" required value="<?= $row['categories'] ?>">
                         <option value="" disabled selected>請選擇</option>
                         <option value="music">音樂表演</option>
                         <option value="show">演唱活動</option>
@@ -121,7 +121,7 @@ if (empty($row)) {
                 <label for="cityLocation">活動地點</label>
                 <div class="input-wrap d-flex flex-wrap col-lg-12 p-0">
                     <div class="input-box selector col-xl-4  d-flex justify-content-between p-0">
-                        <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region" required>
+                        <select value="<?= $row['region'] ?>" id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region" required>
 
                             <option value="" disabled selected>請選擇</option>
                             <option value="North">北部</option>
@@ -131,7 +131,7 @@ if (empty($row)) {
                         </select>
 
                         <div class="col-lg-1 blanket"></div>
-                        <select type="text" id="cityLocation" name="cityLocation" class="input-box input col-sm-5 mx-0" style="width:180px" required>
+                        <select value="<?= $row['cityLocation'] ?>" type="text" id="cityLocation" name="cityLocation" class="input-box input col-sm-5 mx-0" style="width:180px" required>
 
                             <option value="" disabled selected>請選擇</option>
                             <optgroup label="北部">
@@ -409,10 +409,10 @@ if (empty($row)) {
             //     .then(response => response.json())
             //     .catch(error => console.error('Error:', error))
             //     .then(data => {
-            //         console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 384 ~ checkForm ~ data", data)
+            //        
             //         console.log(data);
             //         if (data.success) {
-            //             console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 386 ~ checkForm ~ data.success", data.success)
+            //            
             //             info_bar
             //                 .removeClass('alert-danger')
             //                 .addClass('alert-success')

@@ -109,7 +109,7 @@
                         </select>
 
                         <div class="col-lg-1 blanket"></div>
-                        <select type="text" id="location" name="location" class="input-box input col-sm-5 mx-0" style="width:180px" required>
+                        <select type="text" id="cityLocation" name="cityLocation" class="input-box input col-sm-5 mx-0" style="width:180px" required>
 
                             <option value="" disabled selected>請選擇</option>
                             <optgroup label="北部">
@@ -266,7 +266,7 @@
     const enddate = $('#end-datetime');
     const categories = $('#categories');
     const region = $('#region');
-    const cityLocation = $('#location');
+    const cityLocation = $('#cityLocation');
     const address = $('#address');
     const eventinfo = $('#event_info');
     const price = $('#price');
@@ -435,9 +435,11 @@
 
 
         }
+
+        // Modal 名稱顯示設定值
         const nameElement = document.getElementById("event_name");
         const name = nameElement.value;
-        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
+        // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
         $('#modal-title').text(name);
 
     }

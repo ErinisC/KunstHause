@@ -105,10 +105,10 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                                 <td class="d-flex col-3">
                                     <div class="modbutton text-center">
-                                        <a href="3_B2B-edit-Event.php?sid=<?= $r['sid'] ?>" class="modify3 btn btn-primary mx-3 p-0">編輯活動</ㄇ>
+                                        <button onclick="javascript:location.href='3_B2B-edit-Event.php?sid=<?= $r['sid'] ?>'" value="" class="modify3 btn mx-3 p-0">編輯活動</button>
                                     </div>
                                     <div class="modbutton text-center">
-                                        <button class="modify4 btn btn-primary" onclick="wannaDel(event)">刪除活動</button>
+                                        <button class="modify4 btn " data-toggle="modal" data-target="#exampleModalCenter">刪除活動</button>
                                     </div>
                                 </td>
                             </tr>
@@ -120,10 +120,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                     </tbody>
 
                     <!-- Modal 取消訂單-->
-                    <div class=" modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content pt-3 mx-auto">
-                                <div class="tap"></div>
+                                <div class="tap">
+
+                                </div>
 
                                 <div class="modal-header d-flex flex-column">
                                     <div class="g-check mx-auto mt-2">
@@ -138,10 +140,11 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                                             </g>
                                         </svg>
                                     </div>
-
+                                    <div class="modal-title mx-auto mt-1" id="exampleModalCenterTitle">是否確認刪除活動!
+                                    </div>
                                 </div>
                                 <div class="modal-footer mx-auto">
-                                    <button type="button" class="yes btn btn-secondary" data-dismiss="modal" style="background-color: #ED5B4C">是</button>
+                                    <button type="button" class="yes btn btn-secondary" onclick="wannaDel(event)" data-dismiss="modal" style="background-color: #ED5B4C">是</button>
                                 </div>
 
                                 <div class="modal-footer mx-auto">
@@ -151,7 +154,6 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                             </div>
                         </div>
                     </div>
-
 
                 </table>
 

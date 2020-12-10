@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 button:focus {
   box-shadow: none !important;
@@ -48,21 +48,43 @@ body {
   justify-content: space-between;
 }
 
-.modify {
-  width: 130px;
+.modify3 {
+  width: 100px;
   height: 50px;
+  margin-left: 10px;
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
 }
 
-.modify2 {
-  width: 130px;
+.modify4 {
+  width: 100px;
   height: 50px;
-  background-color: rgba(255, 255, 255, 0);
-  color: #000;
+  margin-left: 10px;
+  background-color: #ed5b4c;
   border: 3px solid #000;
   border-radius: 0;
+  padding: 0;
+}
+
+.modify:hover {
+  background-color: #005d6d;
+  border: 3px solid #000;
+}
+
+.modify2:hover {
+  background-color: #005d6d;
+  border: 3px solid #000;
+}
+
+.modify3:hover {
+  background-color: #005d6d;
+  border: 3px solid #000;
+}
+
+.modify4:hover {
+  background-color: #a3291b;
+  border: 3px solid #000;
 }
 
 .header-search2 {
@@ -123,15 +145,19 @@ table {
   background-color: #168fa4;
   border: 3px solid #000;
   border-radius: 0;
+  color: white;
+  text-align: center;
 }
 
 .modify4 {
+  padding-top: 10px;
   width: 100px;
   height: 50px;
   background-color: #ed5b4c;
   border: 3px solid #000;
   border-radius: 0;
   padding: 0;
+  text-align: center;
 }
 
 /* 提醒小卡css */

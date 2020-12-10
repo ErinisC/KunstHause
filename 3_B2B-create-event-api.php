@@ -19,6 +19,7 @@ if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST[
     }
 }
 
+
 //TODO: 檢查資料格式
 
 $sql = "INSERT INTO `products`( `event_name`, `hastag`,
