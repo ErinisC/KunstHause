@@ -225,7 +225,10 @@
                             </svg>
 
                         </div>
-                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">019百威真我至上音樂巡迴2
+                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">
+                            <span id="modal-title">
+
+                            </span>
                         </div>
                         <span class="text-center mt-3 ">活動已幫你送出審核，
                             再請至活動管理
@@ -284,45 +287,6 @@
     const eventinfo = $('#event_info');
     const price = $('#price');
     const info_bar = $('#info_bar');
-
-
-    // function checkForm2() {
-    //     $('#event_name, #eventDate, #region, #address').each(function() {
-    //         if ($(this).val() == '' || $(this).val() == null) {
-    //             $(this).closest('.input-wrap').addClass('error')
-    //         } else {
-    //             $('#exampleModalCenter').modal('show');
-    //         }
-    //     });
-    //     $.post('3_B2B-create-event-api.php', $(document.form1).serialize(), function(data) {
-    //         console.log("data", data);
-
-    //         // $('#exampleModalCenter').modal('show');
-    //         // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-    //         //     location.href = '1_member-login.php'
-    //         // })
-    //         // return;
-
-    //         if (data.success) {
-    //             // info_bar
-    //             //     .removeClass('alert-danger')
-    //             //     .addClass('alert-success')
-    //             //     .text('完成新增');
-
-    //         } else {
-    //             info_bar
-    //                 // .removeClass('alert-success')
-    //                 .addClass('alert-danger')
-    //                 .text(data.error || '新增失敗');
-
-    //             info_bar.slideDown();
-
-    //             setTimeout(function() {
-    //                 info_bar.slideUp();
-    //             }, 2000);
-    //         }
-    //     }, 'json');
-    // }
 
 
     // 送出表單
@@ -418,12 +382,12 @@
             price.closest('.input-wrap').addClass('error')
             return;
         } else {
-
+            price.closest('.input-wrap').removeClass('error')
+            price.closest('.input-wrap').addClass('success')
         }
 
         if (!isPass) {
-            console.log('hi')
-            isPass = false;
+
             $('#showModal').click();
             $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
                 console.log(data);
@@ -456,7 +420,22 @@
 
 
         }
+        const nameElement = document.getElementById("event_name");
+        const name = nameElement.value;
+        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
+        $('#modal-title').text(name);
+
     }
+
+
+    // // 顯示設定的event_name在modal
+
+    // const nameElement = document.getElementById("event_name");
+    // const name = nameElement.value;
+    // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
+    // $('#modal-title').text(name);
+
+
 
     // modal按鈕跳轉
     $('#exampleModalCenter').on('hidden.bs.modal', function(a) {
