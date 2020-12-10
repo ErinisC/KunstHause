@@ -24,9 +24,9 @@ if (!isset($_SESSION['vendor'])) {
                         <path id="Union_7" data-name="Union 7" d="M0,140V122.5c0-19.254,31.5-35,70-35s70,15.75,70,35V140ZM35,35A35,35,0,1,1,70,70,35,35,0,0,1,35,35Z" fill="#7fc4fd" />
                     </svg> -->
                 </div>
-                <p class="organizer">名字好難想工作室</p>
-                <a href="3_B2B-member-profile.php">檢視主辦單位</a>
-                <a href="3_vendor-logout-api.php">登出主辦單位</a>
+                <a class="organizer mt-3" href="3_B2B-member-profile.php">名字好難想工作室</a>
+                <!-- <a href="3_B2B-member-profile.php">檢視主辦單位</a> -->
+                <a class="mt-3" href="3_vendor-logout-api.php">登出主辦單位</a>
             </div>
             <div class="indexcard">
                 <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">

@@ -30,13 +30,14 @@ button {
 
 .ogzcard {
   margin-top: 170px;
+  color: #000;
 }
 
 .ogzcard a {
   display: block;
   margin-top: 10px;
   text-align: center;
-  color: #168fa4;
+  color: #000;
 }
 
 .indexcard {
