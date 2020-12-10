@@ -28,7 +28,7 @@ if (!isset($_SESSION['user'])) {
     <div class="container">
         <div class="row signinbg col-12">
             <div class="title col-xl-8">
-                <h1>編輯主辦單位檔案</h1>
+                <h1>註冊主辦單位檔案</h1>
                 <p class="text">KunstHaus 使用者將透過下列資訊認識你</p>
             </div>
             <form name="b2b_form" method="post" onsubmit="checkForm();return false;" novalidate>
