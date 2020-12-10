@@ -2,11 +2,10 @@
 <?php $pageName = 'b2b'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php';
 // 判斷是否登入
-// if (!isset($_SESSION['vendor'])) {
-//     header('Location: 3_B2B-sign-in.php');
-//     exit;
-// }
-// 
+if (!isset($_SESSION['vendor'])) {
+    header('Location: 3_B2B-sign-in.php');
+    exit;
+}
 ?>
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
@@ -27,6 +26,7 @@
                 </div>
                 <p class="organizer">名字好難想工作室</p>
                 <a href="3_B2B-member-profile.php">檢視主辦單位</a>
+                <a href="3_vendor-logout-api.php">登出主辦單位</a>
             </div>
             <div class="indexcard">
                 <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">

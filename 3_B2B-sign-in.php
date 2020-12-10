@@ -2,10 +2,10 @@
 <?php $pageName = 'b2b'; ?>
 <?php include __DIR__ . '/1_parts/0_config.php';
 // 判斷是否登入
-// if (!isset($_SESSION['user'])) {
-//     header('Location: 1_member-login.php');
-//     exit;
-// }
+if (!isset($_SESSION['user'])) {
+    header('Location: 1_member-login.php');
+    exit;
+}
 
 // var_dump($_SESSION['user']);
 ?>
@@ -190,6 +190,9 @@
 
 <script>
     // 預覽圖片
+    $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+        location.href = '3_B2B-index.php'
+    });
 
     $('#picture').on('change', function(e) {
         const file = this.files[0];
@@ -261,11 +264,9 @@
 
             $.post('3_B2B-sign-in-api.php', $(document.b2b_form).serialize(), function(data) {
                 console.log(data);
-                $('#exampleModalCenter').modal('show');
-                $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                    location.href = '3_B2B-index.php'
-                })
-                return;
+                // $('#exampleModalCenter').modal('show');
+
+
 
                 if (data.success) {
                     // info_bar

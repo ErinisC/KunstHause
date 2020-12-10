@@ -43,5 +43,13 @@ if ($stmt->rowCount() == 1) {
     $output['success'] = true;
     $output['error'] = '';
     $output['info'] = '資料新增完成';
+    $_SESSION['vendor'] = [
+        $_POST['member_sid'],
+        $_POST['name'],
+        $_POST['phone'],
+        $_POST['ext'],
+        $_POST['intro'],
+        $_POST['pic_name']
+    ];
 }
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
