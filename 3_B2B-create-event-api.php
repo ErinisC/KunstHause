@@ -10,7 +10,7 @@ $output = [
 
 if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST['price'])) {
     $output['postData'] = $_POST;
-    $s_sql = "SELECT * FROM `kunsthaus` WHERE `products`=?";
+    $s_sql = "SELECT 1 FROM `kunsthaus` WHERE `products`=?";
     $s_stmt->execute([$_POST['event_name']]);
     if ($s_stmt->rowCount() == 1) {
         $output['info'] = '此活動名稱已被註冊';
@@ -22,16 +22,15 @@ if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST[
 //TODO: 檢查資料格式
 
 $sql = "INSERT INTO `products`( `event_name`, `hastag`,
-                                  `picture`, `categories`,
+                                  `categories`,
                                   `location`, 
-                                   `start_datetime`, `end_datetime`, `price`, 
+                                 `price`, 
                                    `address`, `event_info`, `notice`, 
                                    `transportation`) VALUES
  VALUES ( 
         ?, ?,
         ?, ?, 
         ?,  
-        ?, ?, ?,
         ?, ?, ?,
         ?
     )";
@@ -40,11 +39,8 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['event_name'],
     $_POST['hashtag'],
-    $_POST['picture'],
     $_POST['categories'],
     $_POST['location'],
-    $_POST['start_datetime'],
-    $_POST['end_datetime'],
     $_POST['price'],
     $_POST['address'],
     $_POST['event_info'],

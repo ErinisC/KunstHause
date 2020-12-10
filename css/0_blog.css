@@ -24,9 +24,9 @@ body {
     height: 8rem;
   }
 
-  .row{
-    padding-left: 20px;
-    padding-right: 20px;
+  .sm-side{
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .sticker{

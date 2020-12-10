@@ -27,7 +27,7 @@
 <!-- blog -->
 <div class="container hero-article">
     <h1 class="text-right">最新鮮的。報給你知</h1>
-    <div class="row category-wrap">
+    <div class="row category-wrap sm-side">
         <div class="category-header d-flex align-items-center justify-content-around w-100">
             <div class="category-count">01</div>
             <div class="category-name">
@@ -36,7 +36,7 @@
             <div class="category-hr"></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row sm-side">
         <div class="hero-article d-flex align-items-end">
             <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img red-shadow">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row sm-side">
         <div class="hero-article d-flex align-items-end">
             <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img blue-shadow">
@@ -80,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row sm-side">
         <div class="hero-article d-flex align-items-end">
             <div class="col-lg-8 col-md-12 col-sm-12 col-12 px-0">
                 <div class="feature-img yellow-shadow">
@@ -105,7 +105,7 @@
 </div>
 
 <div class="container sub-article">
-    <div class="row category-wrap">
+    <div class="row category-wrap sm-side">
         <div class="category-header d-flex align-items-center justify-content-around w-100">
             <div class="category-count">02</div>
             <div class="category-name">
@@ -114,7 +114,7 @@
             <div class="category-hr"></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row sm-side">
         <div class="three-article d-flex">
             <div class="col-lg-4 col-md-12 col-sm-12 col-12 pr-2 pl-0">
                 <a href="#">
@@ -157,7 +157,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row sm-side">
         <div class="two-article d-flex">
             <div class="col-lg-6 pl-0">
                 <a href="#">
@@ -190,7 +190,7 @@
 </div>
 
 <div class="container issue">
-    <div class="row category-wrap">
+    <div class="row category-wrap sm-side">
         <div class="category-header d-flex align-items-center justify-content-around w-100">
             <div class="category-count">03</div>
             <div class="category-name">
@@ -199,7 +199,7 @@
             <div class="category-hr"></div>
         </div>
     </div>
-    <div class="row issue-meta-wrap align-items-end">
+    <div class="row issue-meta-wrap align-items-end sm-side">
         <div class="issue-meta-inner col-lg-4 col-md-12 col-sm-12 col-12 pl-0">
             <div class="issue-title">百飲募集・食物攝影創作</div>
             <p class="issue-description">
@@ -212,7 +212,7 @@
             </a>
         </div>
     </div>
-    <div class="row">
+    <div class="row sm-side">
         <ul class="issue-article-list d-flex">
             <li class="article col-lg-3">
                 <div class="dot"></div>
@@ -242,19 +242,6 @@
     </div>
 </div>
 
-<!-- <div class="container feature-activityr">
-    <div class="row">
-        <div class="item col-lg-6 pl-0">
-            <h2>你可能會喜歡</h2>
-            <div class="thumbnail">
-                <a href="#">
-
-                </a>
-            </div>
-        </div>
-
-    </div>
-</div> -->
 
 
 

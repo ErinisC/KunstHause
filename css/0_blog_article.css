@@ -48,17 +48,14 @@ body {
     flex-direction: column;
   }
 
-  .list-articles-wrap .article {
-    /* width: 30%; */
+  .full-article{
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
 }
 
 /* ----------hero article---------- */
-.row{
-  padding-left: 20px;
-  padding-right: 20px;
-}
 
 .bread-crumb a{
   color: #000000;
