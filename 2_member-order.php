@@ -309,12 +309,9 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         console.log(order.attr('data-sid'), order.find('.event-name').text());
         console.log(modalTitle);
         $('#cancel-btn').on('click', function(event) {
-        order.hide();
-    });
+            order.hide();
+        });
     }
-
-  
-
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
