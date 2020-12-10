@@ -41,7 +41,7 @@ if (empty($row)) {
     <div class="container p-0">
         <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 pt-4">
-                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item"><a href="0_index.php">首頁</a></li>
                     <li class="breadcrumb-item"><a href="4_productList.php">活動列表</a></li>
                     <li class="breadcrumb-item active" aria-current="page">展覽列</li>
                 </ol>
@@ -316,6 +316,85 @@ if (empty($row)) {
                     <img src=" <?= WEB_ROOT ?>/imgs/member/alien-1.svg">
                 </div>
             </div>
+        </div>
+
+    <!-- 拖曳卡片 -->
+        <div class="grid-container">
+            <main class="grid-item main pt-0 position-relative">
+                <div class="items col-11 mx-auto">
+
+
+
+                    <?php foreach ($rows as $r) : ?>
+                        <!-- 小卡 -->
+                        <div class="item event-card mb-5 col-xl-3 col-lg-6 col-md-6 col-sm-8 col-12" data-sid="<?= $r['sid'] ?>">
+
+                            <!-- 圖片用連結包起來，連到detail-api那隻，準備做商品詳情頁 -->
+                            <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
+                                <div class="flip-card-inner position-relative">
+                                    <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
+                                        <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                        <!-- 圖片上時間 -->
+                                        <div class="time position-absolute p-2">
+                                            <!-- 年 -->
+                                            <div class="year"><?= substr($r['start_datetime'], 0, 4) ?></div>
+                                            <!-- start -->
+                                            <div class="start"><?= substr($r['start_datetime'], 5, 6) ?></div>
+                                            <!-- end -->
+                                            <div class="end"><?= substr($r['end_datetime'], 5, 6) ?></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 翻轉卡片背面 -->
+                                    <div class="flip-card-back position-absolute p-3">
+                                        <div class="filp-title mb-3 text-center"> 活動簡介</div>
+                                        <p class="px-3"><?= $r['event_info'] ?></p>
+                                        <div class="px-3 text-right mt-2 text-white">查看詳細介紹 >></div>
+
+                                    </div>
+                                </div>
+                            </a>
+
+
+                            <!-- 小卡下方票價 -->
+                            <div class="wrap mt-1 d-flex">
+                                <div class="card-body d-flex p-0 w-100">
+                                    <div class="card-info position-relative m-auto py-3 col-10">
+                                        <div class="event-name mb-2"><?= $r['event_name'] ?></div>
+
+                                        <div class="event-location mb-2">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <?= $r['location'] ?></div>
+
+                                        <div class="now-price">$ <?= $r['price'] ?></div>
+
+                                        <!-- 收藏 -->
+                                        <a href="Javascript:" class="like-link position-absolute">
+                                            <i class="like like-btn far fa-heart <?= in_array($r['sid'], $likes) ? 'liked' : '' ?>" data-sid="<?= $r['sid'] ?>"></i>
+                                        </a>
+
+                                    </div>
+
+                                    <!-- 價格按鈕加Modal的彈跳窗格 -->
+                                    <a href="javascript:showProductModal(<?= $r['sid'] ?>)" class="card-price py-3 col-2 d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-cart-plus"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- 左 -->
+                <i class="recommend-left fas fa-arrow-circle-left position-absolute"></i>
+
+
+                <!-- 右 -->
+                <i class="recommend-right fas fa-arrow-circle-right position-absolute"></i>
+                <span class="sr-only">Next</span>
+
+            </main>
         </div>
     </div>
 

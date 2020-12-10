@@ -1,13 +1,13 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 html {
   font-size: 20px;
 }
 
 body {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #002c80;
   font-family: "Noto Sans TC", sans-serif;
   font-family: "Roboto", sans-serif;
@@ -18,7 +18,8 @@ body {
 }
 
 .account-set {
-  margin-top: 16rem;
+  margin-top: 12rem;
+  height: 100vx;
   background: #fff;
   background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
     linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
@@ -46,13 +47,45 @@ body {
 }
 
 .little-head {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   position: absolute;
-  top: 420px;
-  right: 470px;
+  background-color: #fff;
+  top: 161px;
+  right: 210px;
+}
+
+/* 區塊標題 */
+
+.category-header .category-count {
+  font: 900 1rem "Roboto";
+  letter-spacing: 3.2px;
+  color: #1a1a1a;
+  /* color: white; */
+  background-color: #ed5b4c;
+  border: 3px solid black;
+  padding: 5px;
+}
+
+/* .category-header .category-name {
+  font: 500 1.8rem "Noto Sans TC";
+  margin-right: 1rem;
+} */
+
+.category-header .category-hr {
+  height: 6px;
+  background: #ed5b4c;
+  width: 70%;
+  /* border: 2px solid black; */
 }
 
 /* --------title-bar------- */
+
+.form1 {
+  width: 100%;
+  margin: auto;
+}
 
 .title-out {
   /* height: 50px; */
@@ -86,19 +119,20 @@ body {
 }
 
 .trouble2 {
-  display: none;
+  /* display: none; */
   margin-top: 5px;
   text-align: end;
-  opacity: 0;
+  /* opacity: 0; */
   color: #ff1000;
 }
 
-.inputbox {
+.inputform .inputbox {
   margin-top: 12px;
   width: 100%;
   height: 50px;
   border: 3px solid #000;
   position: relative;
+  color: #000;
 }
 
 .inputboxint {
