@@ -62,7 +62,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
 
                 <div class="inputform col-xl-8 col-12">
-                    <label for="name">主辦單位名稱（必填）</label>
+                    <label for="name" id="autoinput">主辦單位名稱（必填）</label>
                     <input class="inputbox" id="name" type="text" placeholder="請填寫主辦單位名稱" name="name" required>
                     <small class="trouble2"></small>
                     <i class="fas fa-check-circle"></i>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['user'])) {
                     <label for="phone">主辦單位電話號碼（必填）</label>
                     <input class="inputbox" id="phone" type="text" placeholder="請填寫電話號碼" name="phone" required>
                     <small class="trouble2"></small>
-                    <input class="inputbox" type="text" name="ext" placeholder="分機號碼(選填)">
+                    <input class="inputbox" type="text" name="ext" id="ext" placeholder="分機號碼(選填)">
                     <small class="trouble2"></small>
                     <i class="fas fa-check-circle"></i>
                     <i class="fas fa-exclamation-circle"></i>
@@ -326,6 +326,14 @@ if (!isset($_SESSION['user'])) {
     // 關閉btn連到index
     $('.closebutton').on('click', function() {
         location.href = "3_B2B-index.php";
+    });
+
+    // 一鍵輸入
+    $('#autoinput').click(function() {
+        $('#name').val('名字好難想股份有限公司');
+        $('#phone').val('(02)-0003-1234');
+        $('#ext').val('123');
+        $('#intro').val('我們不得不面對一個非常尷尬的事實，那就是，想必大家都能了解名字好難想工作室的重要性。既然如此，若能夠欣賞到名字好難想工作室的美，相信我們一定會對名字好難想工作室改觀。名字好難想工作室似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。');
     });
 </script>
 
