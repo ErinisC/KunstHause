@@ -135,6 +135,8 @@ label {
   font-weight: 600;
 }
 
+
+
 /* eyes css animation */
 
 .move-area {
@@ -358,8 +360,8 @@ label {
   .tape img {
     position: static;
     width: 18rem;
-    transform: rotate(7deg);
-    margin-left: 3.5rem;
+    transform: rotate(10deg);
+    margin-left: 5rem;
   }
 
   .list-title {

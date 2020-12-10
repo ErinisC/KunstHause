@@ -159,7 +159,9 @@ $likes = $l_stmt->fetchAll();
 
 
                     <div class="view-more">
-                        <p>VIEW MORE >></p>
+                        <a class="text-dark" href="4_productList.php">
+                            <p>VIEW MORE >></p>
+                        </a>
                     </div>
 
                     <!-- 小精靈animation area 1 -->
@@ -329,7 +331,9 @@ $likes = $l_stmt->fetchAll();
 
 
                 <div class="view-more my-4">
-                    <p>VIEW MORE >></p>
+                    <a class="text-dark" href="4_productList.php">
+                        <p>VIEW MORE >></p>
+                    </a>
                 </div>
 
 
@@ -488,8 +492,6 @@ $likes = $l_stmt->fetchAll();
 
         $(this).parents('.modal').prev().remove();
     });
-
-    
 </script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

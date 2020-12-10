@@ -97,8 +97,9 @@ animation-iteration-count: 4;
 .light-bulb{
   width: 3rem;
   animation-iteration-count: 2;
-  left:0px;
+  left: 0px;
   top: -30px;
+  display: none;
 }
 
 .btn {
