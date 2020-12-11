@@ -152,7 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer mx-auto">
-                                    <button type="button" class="yes btn btn-secondary" data-dismiss="modal" style="background-color: #ED5B4C">是</button>
+                                    <button type="button" class="yes btn btn-secondary" id="deleteButton" data-dismiss="modal" style="background-color: #ED5B4C">是</button>
                                 </div>
 
                                 <div class="modal-footer mx-auto">
@@ -236,6 +236,11 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src=""></script>
+<!-- <script src=""></script> -->
+<script>
+    $('#deleteButton').on('click',function(){
+        
+    })
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

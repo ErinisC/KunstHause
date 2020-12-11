@@ -7,6 +7,7 @@
   position: absolute;
   right: 60px;
   top: 150px;
+  opacity: 0.7;
   /* transform: rotate(deg); */
   transition: 0.3s;
 }
@@ -21,6 +22,7 @@
   position: absolute;
   left: 40px;
   bottom: 150px;
+  opacity: 0.7;
   transform: rotate(9deg);
   transition: 0.3s;
 }
@@ -35,6 +37,7 @@
   position: absolute;
   right: 30px;
   bottom: 350px;
+  opacity: 0.7;
   transform: rotate(9deg);
   transition: 0.3s;
 }
@@ -49,6 +52,7 @@
   position: absolute;
   right: 70px;
   bottom: 250px;
+  opacity: 0.7;
   transform: rotate(9deg);
   transition: 0.3s;
 }
@@ -98,7 +102,7 @@ body {
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  background: url(../imgs/B2B_imgs/b2b-3.jpg);
+  background: url(../imgs/B2B_imgs/b2b-2.jpg);
   background-size: contain;
   /* background-color: #f1f9ff; */
   border: 3px solid #000;
@@ -117,7 +121,7 @@ body {
 }
 
 .introduction {
-  margin-top: 60px;
+  margin-top: 40px;
   text-align: center;
   font-size: 16px;
   font-weight: 700;
@@ -125,6 +129,7 @@ body {
 
 .introduction-text {
   margin: 30px auto;
+  line-height: 25px;
   height: 130px;
   padding: 0;
 }
@@ -146,7 +151,7 @@ body {
 }
 
 .history {
-  margin: 30px auto 0;
+  margin: 50px auto 0;
   width: 380px;
   height: 90px;
   padding: 0;
@@ -174,7 +179,7 @@ body {
 
 .phone {
   align-items: center;
-  padding-left: 100px;
+  padding-left: 40px;
 }
 
 .phoneimg {
