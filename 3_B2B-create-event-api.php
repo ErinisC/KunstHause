@@ -23,7 +23,7 @@ if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST[
 $filename = '';
 if (!empty($_FILES["picture"]["name"])) {
     $filename = $_FILES["picture"]["name"];
-    move_uploaded_file($_FILES["picture"]["tmp_name"], __DIR__ . '/uploads/' . $_FILES["picture"]["name"]);
+    move_uploaded_file($_FILES["picture"]["tmp_name"], __DIR__ . '/imgs/event/' . $_FILES["picture"]["name"]);
 }
 
 
@@ -32,13 +32,13 @@ if (!empty($_FILES["picture"]["name"])) {
 $sql = "INSERT INTO `products`( `event_name`, `hastag`,
                                   `categories`,
                                   `location`, 
-                                 `price`, 
+                                   `start_datetime`, `end_datetime`,`price`, 
                                    `address`, `event_info`, `notice`, 
                                    `transportation`) VALUES
  ( 
         ?, ?,
         ?, ?, 
-        ?,  
+        ?, ?, ?, 
         ?, ?, ?,
         ?
     )";
@@ -49,6 +49,8 @@ $stmt->execute([
     $_POST['hashtag'],
     $_POST['categories'],
     $_POST['cityLocation'],
+    $_POST['start-datetime'],
+    $_POST['end-datetime'],
     $_POST['price'],
     $_POST['address'],
     $_POST['event_info'],
@@ -62,5 +64,3 @@ if ($stmt->rowCount() == 1) {
 }
 header('Content-Type: application/json');
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
-
-

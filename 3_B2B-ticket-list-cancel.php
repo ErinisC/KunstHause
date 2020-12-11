@@ -57,7 +57,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48764</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -71,7 +71,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48765</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -85,7 +85,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48766</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -99,7 +99,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48767</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -113,7 +113,7 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48768</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -238,14 +238,6 @@
 <!-- 引入自己的ＪＳ -->
 <!-- <script src=""></script> -->
 <script>
-    $('#deleteButton').on('click', function() {
-
-    });
-
-
-
-
-
     // 刪除一列
     let activityDelBtn;
 
