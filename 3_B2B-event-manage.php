@@ -108,7 +108,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                                         <button onclick="javascript:location.href='3_B2B-edit-Event.php?sid=<?= $r['sid'] ?>'" value="" class="modify3 btn mx-3 p-0">編輯活動</button>
                                     </div>
                                     <div class="modbutton text-center">
-                                        <button class="modify4 btn " data-toggle="modal" data-target="#exampleModalCenter">刪除活動</button>
+                                        <!-- <button class="modify4 btn " data-toggle="modal" data-target="#exampleModalCenter">刪除活動</button> -->
+                                        <button class="modify4 btn " onclick="showDelConfirm(event)">刪除活動</button>
                                     </div>
                                 </td>
                             </tr>
@@ -212,18 +213,17 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         $(this).siblings().addClass('modify2')
     });
 
-    // 刪除一列
-    // $('.modify4').on('click', function() {
-    //     $('').show();
-    // })
 
-    function wannaDel(event) {
-        const btn = $(event.target);
-        const order = btn.closest('.tr2');
+    function wannaDel() {
+        const tr = $(activityDelBtn).closest('tr.tr2');
+        tr.remove();
+    }
+
+    let activityDelBtn;
+
+    function showDelConfirm(event) {
+        activityDelBtn = event.target;
         $('#exampleModalCenter').modal('show');
-        $('.yes').on('click', function(event) {
-            order.hide();
-        });
     }
 </script>
 
