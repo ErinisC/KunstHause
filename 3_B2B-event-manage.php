@@ -61,7 +61,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <h1>活動管理</h1>
                 <p class="text">您可以在此查看所有歷來活動的紀錄</p>
                 <div class="ticketbutton d-flex col-xl-6 col-12">
-                    <button class="modify btn">審核中</button>
+                    <button class="modify2 btn">審核中</button>
                     <button class="modify2 btn">已上架</button>
                     <button class="modify2 btn">已結束</button>
                     <button class="modify2 btn">歷史活動</button>
@@ -213,10 +213,9 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     });
 
     // 刪除一列
-
-    $('.modify4').on('click', function() {
-        $('').show();
-    })
+    // $('.modify4').on('click', function() {
+    //     $('').show();
+    // })
 
     function wannaDel(event) {
         const btn = $(event.target);
