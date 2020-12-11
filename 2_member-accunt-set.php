@@ -199,7 +199,7 @@ $m_row = $stmt->fetch();
         // } else 
         if ($('#newPass1').val() != $('#newPass2').val()) {
             errorMsg = "新密碼不相等";
-            $('.error2').text(errorMsg);
+            $('.error2').text(trouble2);
         } else {
             $('#sentPass').val($('#newPass1').val());
 
