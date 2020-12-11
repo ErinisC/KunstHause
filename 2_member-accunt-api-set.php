@@ -68,34 +68,34 @@ if ($_POST['password'] === '' && $_POST['name'] !== '') {
 }
 
 //兩者都更改
-if ($_POST['password'] !== '' && $_POST['name'] !== '') {
+// if ($_POST['password'] !== '' && $_POST['name'] !== '') {
 
-    $sql = "SELECT * FROM `member` WHERE `sid`= ? ";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([
-        $_POST['sid'],
-        // $_POST['name']
+//     $sql = "SELECT * FROM `member` WHERE `sid`= ? ";
+//     $stmt = $pdo->prepare($sql);
+//     $stmt->execute([
+//         $_POST['sid'],
+//         // $_POST['name']
 
-    ]);
+//     ]);
 
-    if ($stmt->rowCount() == 1) {
-        $output['success'] = true;
-        $output['error'] = '';
+//     if ($stmt->rowCount() == 1) {
+//         $output['success'] = true;
+//         $output['error'] = '';
 
-        $u_sql = "UPDATE `member` SET `name`= ?,`password`=sha1(?) WHERE `sid`= ?";
+//         $u_sql = "UPDATE `member` SET `name`= ?,`password`=sha1(?) WHERE `sid`= ?";
 
-        $u_stmt = $pdo->prepare($u_sql);
-        $u_stmt->execute(
-            [
-            $_POST['name'],
-            $_POST['password'],
-            $_POST['sid']
-        ]
-    );
-    } else {
-        $output['error'] = '資料沒有變更';
-    };
-}
+//         $u_stmt = $pdo->prepare($u_sql);
+//         $u_stmt->execute(
+//             [
+//             $_POST['name'],
+//             $_POST['password'],
+//             $_POST['sid']
+//         ]
+//     );
+//     } else {
+//         $output['error'] = '資料沒有變更';
+//     };
+// }
 // sha1($_POST['password']);
 
 
