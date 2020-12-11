@@ -19,8 +19,8 @@ $o_rows = $pdo->query($o_sql)->fetchAll();
 
 // 如果沒有任何的訂購資料, 就顯示訊息或離開
 if (empty($o_rows)) {
-    echo '<script>alert(‘尚無訂單內容，來去逛逛吧’)</script>';
-    echo "<script>window.location.href = '4_productList.php'</script>";
+    // echo '<script>alert(‘尚無訂單內容，來去逛逛吧’)</script>';
+    // echo "<script>window.location.href = '4_productList.php'</script>";
     // header('Location: 4_productList.php'); 
     // exit;
 }
@@ -31,14 +31,17 @@ foreach ($o_rows as $o) {
 }
 
 // event_name, p.sid, p.picture
+$d_rows = [];
+if (!empty($order_ids)) {
+    $d_sql = sprintf("SELECT d.*, p.*, d.`sid` d_sid FROM `order_details` d 
+    JOIN `products` p ON p.sid=d.product_id  
+    WHERE d.`order_id` IN (%s) ORDER BY p.`start_datetime` DESC", implode(',', $order_ids));
 
-$d_sql = sprintf("SELECT d.*, p.*, d.`sid` d_sid FROM `order_details` d 
-JOIN `products` p ON p.sid=d.product_id  
-WHERE d.`order_id` IN (%s) ORDER BY p.`start_datetime` DESC", implode(',', $order_ids));
+    // echo $d_sql;
+    // exit;
+    $d_rows = $pdo->query($d_sql)->fetchAll();
+}
 
-// echo $d_sql;
-// exit;
-$d_rows = $pdo->query($d_sql)->fetchAll();
 
 
 // 我的珍藏 
