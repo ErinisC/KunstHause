@@ -404,6 +404,30 @@
         if (!isPass) {
 
             $('#showModal').click();
+
+            // Modal 名稱顯示設定值
+            const nameElement = document.getElementById("event_name");
+            const name = nameElement.value;
+            // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
+            $('#modal-title').text(name);
+
+
+
+            var formData = new FormData(document.event_form);
+
+
+            fetch('3_B2B-create-event-api.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .catch(error => console.error('Error:', error))
+                .then(data => {
+                    console.log('Success:', response)
+                });
+
+            return;
+
             $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
                 console.log(data);
 
@@ -411,6 +435,8 @@
                     location.href = '3_B2B-index.php'
                 })
                 return;
+
+
 
                 // if (data.success) {
                 //     // info_bar
@@ -436,11 +462,6 @@
 
         }
 
-        // Modal 名稱顯示設定值
-        const nameElement = document.getElementById("event_name");
-        const name = nameElement.value;
-        // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
-        $('#modal-title').text(name);
 
     }
 
