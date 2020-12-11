@@ -103,8 +103,8 @@
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
                                     <input type="tel" class="form-control" id="mobile" placeholder="請輸入您的手機號碼" name="mobile">
                                 </div>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
+                                <!-- <i class="fas fa-check-circle"></i> -->
+                                <!-- <i class="fas fa-exclamation-circle"></i> -->
                                 <small class="form-text" class="r-pin"></small>
                             </div>
                         </div>
@@ -116,8 +116,8 @@
                                     <img src=" <?= WEB_ROOT ?>/imgs/member/tack-g.svg">
                                     <input type="text" class="form-control" id="address" placeholder="請填寫您的居住地址" name="address">
                                 </div>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
+                                <!-- <i class="fas fa-check-circle"></i> -->
+                                <!-- <i class="fas fa-exclamation-circle"></i> -->
                                 <small class="form-text"></small>
                             </div>
                         </div>
@@ -336,7 +336,8 @@
                     //     .text('完成新增');
                     $('#exampleModalCenter').modal('show');
                     $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                        location.href = '4_productList.php'
+                        // location.href = '4_productList.php'
+                        location.href = '1_member-login.php'
                     })
                 } else {
                     info_bar
@@ -386,12 +387,12 @@
 
     // 一鍵輸入
     $('#autoInput').click(function() {
-        $('#name').val('Chan');
+        $('#name').val('小安');
         $('#account').val('abcabc@gmail.com');
         $('#password').val('123456789');
         $('#checkpassword').val('123456789');
-        $('#mobile').val('091245678');
-        $('#address').val('台中市');
+        $('#mobile').val('0912456788');
+        $('#address').val('台北市大安區羅斯福路三段2號');
     });
 </script>
 

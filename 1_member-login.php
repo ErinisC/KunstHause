@@ -125,14 +125,14 @@ if (isset($_SERVER['HTTP_REFERER'])) {
             <div class="modal-header d-flex flex-column">
                 <div class="modal-title mx-auto" id="exampleModalCenterTitle">忘記密碼
                 </div>
-                <img class="q-mark mt-2 mx-auto" src=" <?= WEB_ROOT ?>/imgs/member/question.svg">
+                <img class="q-mark mt-2 mx-auto" id="q-mark" src=" <?= WEB_ROOT ?>/imgs/member/question.svg">
             </div>
             <div class="modal-body">
                 <div class="command-text mb-4"> 請輸入您的 Email<br>系統將寄送密碼重設信函給您 !
                 </div>
 
                 <div class="input-box col-11 mx-auto">
-                    <input type="email" class="account form-control mb-2" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
+                    <input type="email" id="e" class="account form-control mb-2" name="account" placeholder="請填寫email信箱"><small class="form-text"></small>
                 </div>
 
             </div>
@@ -234,10 +234,15 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
     }
 
-    // 一鍵輸入
+    // 登入一鍵輸入
     $('#autoinput').click(function(event) {
         $('#account').val('test1@gmail.com');
         $('#password').val('11111111');
+    });
+
+    // 忘記密碼一鍵輸入
+    $('#q-mark').click(function(event) {
+        $('#e').val('helloworld123@gmail.com');
     });
 </script>
 

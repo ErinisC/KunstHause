@@ -19,6 +19,13 @@ if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST[
     }
 }
 
+// 上傳圖片到uploads資料夾
+$filename = '';
+if (!empty($_FILES["picture"]["name"])) {
+    $filename = $_FILES["picture"]["name"];
+    move_uploaded_file($_FILES["picture"]["tmp_name"], __DIR__ . '/uploads/' . $_FILES["picture"]["name"]);
+}
+
 
 //TODO: 檢查資料格式
 
@@ -28,7 +35,7 @@ $sql = "INSERT INTO `products`( `event_name`, `hastag`,
                                  `price`, 
                                    `address`, `event_info`, `notice`, 
                                    `transportation`) VALUES
- VALUES ( 
+ ( 
         ?, ?,
         ?, ?, 
         ?,  
@@ -41,7 +48,7 @@ $stmt->execute([
     $_POST['event_name'],
     $_POST['hashtag'],
     $_POST['categories'],
-    $_POST['location'],
+    $_POST['cityLocation'],
     $_POST['price'],
     $_POST['address'],
     $_POST['event_info'],
@@ -55,3 +62,5 @@ if ($stmt->rowCount() == 1) {
 }
 header('Content-Type: application/json');
 echo json_encode($output, JSON_UNESCAPED_UNICODE);
+
+
