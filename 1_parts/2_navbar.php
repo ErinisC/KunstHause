@@ -43,7 +43,7 @@
                             <?php foreach ($_SESSION['cart'] as $i) : ?>
                                 <div id="prod<?= $i['sid'] ?>" class="row one-item text-left p-3 mb-3">
                                     <div class="img-wrap col-4" style="height:100px">
-                                        <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
+                                        <img src="imgs/event/<?= $i['picture'] ?>" alt="">
                                     </div>
 
                                     <div class="item-info col-6">
@@ -159,7 +159,7 @@
                                         <?php foreach ($_SESSION['cart'] as $i) : ?>
                                             <div id="prod<?= $i['sid'] ?>" class="one-item wrap d-flex px-2 justify-content-between align-items-center">
                                                 <div class="img-wrap col-4 p-0" style="height:100px">
-                                                    <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
+                                                    <img src="imgs/event/<?= $i['picture'] ?>" alt="">
                                                 </div>
 
                                                 <div class="item-info p-0 col-6">
@@ -231,7 +231,7 @@
         function smallCartShowItems(a) {
             return `  <div id="prod${a.sid}" class="one-item wrap d-flex px-2 justify-content-between align-items-center">
                                             <div class="img-wrap col-4 p-0" style="height:100px">
-                                                <img src="imgs/event/${a.picture}.jpg" alt="">
+                                                <img src="imgs/event/${a.picture}" alt="">
                                             </div>
 
                                             <div class="item-info p-0 col-6">

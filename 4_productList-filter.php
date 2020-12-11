@@ -251,7 +251,7 @@ foreach ($cate as $k => $c) {
 <a href="4_product-detail.php?sid=${a.sid}" target="_blank" class="flip-card">
     <div class="flip-card-inner position-relative">
         <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-            <img src="imgs/event/event-sm/${a.picture}.jpg" class="card-img-top" alt="">
+            <img src="imgs/event/event-sm/${a.picture}" class="card-img-top" alt="">
             <!-- 圖片上時間 -->
             <div class="time position-absolute p-2">
                 <!-- 年 -->

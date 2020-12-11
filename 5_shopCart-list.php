@@ -85,7 +85,7 @@ $rows = $stmt->fetchAll();
 
                                 <!-- 圖片 -->
                                 <div class="img-wrap p-0 col-4">
-                                    <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
+                                    <img src="imgs/event/<?= $i['picture'] ?>" alt="">
                                 </div>
                                 <div class="info-wrap w-100 px-3 d-flex flex-column text-left justify-content-around">
 

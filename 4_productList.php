@@ -409,7 +409,7 @@ if (isset($_SESSION['user'])) {
                                 <a href="4_product-detail.php?sid=<?= $rows[$cardIndex]['sid'] ?>" target="_blank" class="flip-card">
                                     <div class="flip-card-inner position-relative">
                                         <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                            <img src="imgs/event/event-sm/<?= $rows[$cardIndex]['picture'] ?>.jpg" class="card-img-top" alt="">
+                                            <img src="imgs/event/<?= $rows[$cardIndex]['picture'] ?>" class="card-img-top" alt="">
                                             <!-- 圖片上時間 -->
                                             <div class="time position-absolute p-2">
                                                 <!-- 年 -->
@@ -518,7 +518,7 @@ if (isset($_SESSION['user'])) {
                         <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
                             <div class="flip-card-inner position-relative">
                                 <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                    <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                    <img src="imgs/event/<?= $r['picture'] ?>" class="card-img-top" alt="">
                                     <!-- 圖片上時間 -->
                                     <div class="time position-absolute p-2">
                                         <!-- 年 -->
@@ -653,7 +653,7 @@ if (isset($_SESSION['user'])) {
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
                                 <div class="flip-card-inner position-relative">
                                     <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                        <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                        <img src="imgs/event/<?= $r['picture'] ?>" class="card-img-top" alt="">
                                         <!-- 圖片上時間 -->
                                         <div class="time position-absolute p-2">
                                             <!-- 年 -->
