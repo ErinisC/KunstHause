@@ -78,10 +78,11 @@
 
     .dropdown-menu {
         background-color: transparent;
-
+        border: none;
     }
 
     .dropdown-item {
+        max-width: 170px;
         float: none;
         color: #000;
         font-size: 16px;
