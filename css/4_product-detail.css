@@ -64,11 +64,17 @@ a:hover {
   /* background-image: url(../imgs/index/mainact-02.jpg); */
   /* background-size: cover; */
   background-position: right;
+  height: 99%;
+  transition: 0.3s;
+}
+
+.mainact:hover {
+  box-shadow: 10px 10px black;
 }
 
 .mainact img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: contain;
 }
 
@@ -121,8 +127,8 @@ a:hover {
 
 /* -----報名按鍵---------- */
 .apply {
-  height: 18vh;
-  width: 18vw;
+  height: 16vh;
+  width: 16vw;
   background-color: #fac000;
   border: 3px solid black;
   text-align: center;
@@ -315,6 +321,7 @@ input {
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
   width: 100%;
   margin: 0 auto;
+  box-shadow: 6px 6px black;
 }
 
 /*タブのスタイル*/
@@ -386,6 +393,7 @@ input[name="tab_item"] {
   /* height: 500px; */
   background-color: white;
   border: 3px solid black;
+  box-shadow: 6px 6px black;
   /* position: relative; */
 }
 
@@ -402,7 +410,8 @@ input[name="tab_item"] {
   /* background: url(../imgs/member/section-4.svg); */
   border: 3px solid black;
   background-color: #002c80;
-  background-image: radial-gradient(#01173fc2 10%, transparent 10%), radial-gradient(#01173fc2 10%, transparent 10%);
+  background-image: radial-gradient(#01173fc2 10%, transparent 10%),
+    radial-gradient(#01173fc2 10%, transparent 10%);
   background-position: 11px 0, 48px 40px;
   background-size: 65px 65px;
   background-attachment: fixed;
@@ -426,7 +435,6 @@ input[name="tab_item"] {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto 1fr auto;
-
 }
 
 .main {
@@ -521,7 +529,6 @@ input[name="tab_item"] {
 .fas.fa-cart-plus {
   font-size: 1.5rem;
   color: white;
-
 }
 
 /* 翻轉卡片 */
@@ -644,6 +651,11 @@ input[name="tab_item"] {
   .tape-1 {
     width: 200px;
     top: -70px;
+  }
+
+  .apply {
+    width: 50%;
+    margin: auto;
   }
 
   /* .tape-2 {

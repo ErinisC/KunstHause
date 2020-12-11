@@ -34,7 +34,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     }
 
     // 這邊要抓出資料庫的筆數後，決定每頁放的資料（LIMIT %s,%s）
-    $sql = sprintf("SELECT * FROM products ORDER BY sid  LIMIT %s ,%s", ($page - 1) * $perPage, $perPage);
+    $sql = sprintf("SELECT * FROM products ORDER BY sid DESC LIMIT %s ,%s", ($page - 1) * $perPage, $perPage);
     $stmt = $pdo->query($sql);
 
     // $rows就會等於每一筆抓出的資料

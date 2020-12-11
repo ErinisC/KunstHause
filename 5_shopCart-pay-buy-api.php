@@ -54,6 +54,8 @@ foreach ($_SESSION['cart'] as $i) {
     ]);
 }
 
+$_SESSION['orderNow'] = $order_sid;
+
 unset($_SESSION['cart']);
 unset($_SESSION['buy_info']);
 unset($_SESSION['creditcard']);

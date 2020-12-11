@@ -21,11 +21,11 @@
 
         <!-- 表單開始 -->
 
-        <form enctype="multipart/form-data" id="event_form" name="event_form" method="post" onsubmit="checkForm();event.preventDefault();">
+        <form enctype="multipart/form-data" id="event_form" name="event_form" method="post" onsubmit="checkForm();return false;">
             <div class="form-group">
                 <label class="event-banner d-flex col-sm-12">
                     <div class="input input-wrap input-wrap-picture fake_input_placeholder position-absolute">
-                        <label for="" class="FileName"></label>
+                        <label for="FileName" name="FileName" class="FileName"></label>
                         <input id="picture" name="picture" class="input fake_input" ref={fileInput} accept="image/jpeg,image/png" type="file" />
                     </div>
                     <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
@@ -193,6 +193,7 @@
             </div>
 
             <!-- 錯誤跳提醒設定 alert -->
+
             <div id="info_bar" class="alert alert-danger col-8 mx-auto my-4 py-3" role="alert" style="display: none">
             </div>
 
@@ -200,7 +201,7 @@
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn">取消</button>
 
-                    <button type="submit" id="submit" class="modify2 col-5 btn" onclick="checkForm();event.preventDefault();">完成</button>
+                    <button type="submit" id="submit" class="modify2 col-5 btn">完成</button>
                     <button id="showModal" data-toggle="modal" data-target="#exampleModalCenter" hidden></button>
 
                 </div>
@@ -395,7 +396,7 @@
         if (price.val().length === 0) {
             isPass = true;
             price.closest('.input-wrap').addClass('error')
-            return;
+            // return;
         } else {
             price.closest('.input-wrap').removeClass('error')
             price.closest('.input-wrap').addClass('success')
@@ -404,43 +405,61 @@
         if (!isPass) {
 
             $('#showModal').click();
-            $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
-                console.log(data);
 
-                $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-                    location.href = '3_B2B-index.php'
+            // Modal 名稱顯示設定值
+            const nameElement = document.getElementById("event_name");
+            const name = nameElement.value;
+            // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
+            $('#modal-title').text(name);
+
+
+
+            var formData = new FormData(document.event_form);
+
+            fetch('3_B2B-create-event-api.php', {
+                    method: 'POST',
+                    body: formData
                 })
-                return;
+                .then(response => response.json())
+                .catch(error => console.error('Error:', error))
+                .then(data => {
+                    console.log('Success:', data)
+                });
 
-                // if (data.success) {
-                //     // info_bar
-                //     //     .removeClass('alert-danger')
-                //     //     .addClass('alert-success')
-                //     //     .text('完成新增');
-                //     $('#exampleModalCenter').modal('show');
+            return;
 
-                // } else {
-                //     info_bar
-                //         // .removeClass('alert-success')
-                //         .addClass('alert-danger')
-                //         .text(data.error || '新增失敗');
+            // $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
+            //     console.log(data);
 
-                //     info_bar.slideDown();
+            //     $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+            //         location.href = '3_B2B-index.php'
+            //     })
+            //     return;
 
-                //     setTimeout(function() {
-                //         info_bar.slideUp();
-                //     }, 2000);
-                // }
-            }, 'json');
 
+
+            //     // if (data.success) {
+            //     //     // info_bar
+            //     //     //     .removeClass('alert-danger')
+            //     //     //     .addClass('alert-success')
+            //     //     //     .text('完成新增');
+            //     //     $('#exampleModalCenter').modal('show');
+
+            //     // } else {
+            //     //     info_bar
+            //     //         // .removeClass('alert-success')
+            //     //         .addClass('alert-danger')
+            //     //         .text(data.error || '新增失敗');
+
+            //     //     info_bar.slideDown();
+
+            //     //     setTimeout(function() {
+            //     //         info_bar.slideUp();
+            //     //     }, 2000);
+            //     // }
+            // }, 'json');
 
         }
-
-        // Modal 名稱顯示設定值
-        const nameElement = document.getElementById("event_name");
-        const name = nameElement.value;
-        // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
-        $('#modal-title').text(name);
 
     }
 

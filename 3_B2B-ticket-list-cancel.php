@@ -52,12 +52,12 @@
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                    <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
                                 </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48764</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -66,12 +66,12 @@
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                    <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
                                 </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48765</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -80,12 +80,12 @@
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                    <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
                                 </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48766</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -94,12 +94,12 @@
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                    <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
                                 </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48767</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -108,12 +108,12 @@
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                    <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
                                 </div>
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>XDXD48768</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
@@ -122,7 +122,7 @@
                                     <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
-                                    <button class="modify4 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">刪除訂單</button>
+                                    <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
                                 </div>
                             </td>
                         </tr>
@@ -152,7 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer mx-auto">
-                                    <button type="button" class="yes btn btn-secondary" data-dismiss="modal" style="background-color: #ED5B4C">是</button>
+                                    <button type="button" class="yes btn btn-secondary" id="deleteButton" data-dismiss="modal" style="background-color: #ED5B4C" onclick="wannaDel()">是</button>
                                 </div>
 
                                 <div class="modal-footer mx-auto">
@@ -236,6 +236,20 @@
 <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
 <!-- 引入自己的ＪＳ -->
-<script src=""></script>
+<!-- <script src=""></script> -->
+<script>
+    // 刪除一列
+    let activityDelBtn;
+
+    function showDelConfirm(event) {
+        activityDelBtn = event.target;
+        $('#exampleModalCenter').modal('show');
+    }
+
+    function wannaDel() {
+        const tr = $(activityDelBtn).closest('tr.tr2');
+        tr.remove();
+    }
+</script>
 
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>

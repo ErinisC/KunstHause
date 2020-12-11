@@ -96,7 +96,7 @@ if ($_POST['password'] !== '' && $_POST['name'] !== '') {
         $output['error'] = '資料沒有變更';
     };
 }
-// sha1($_POST['password']);
+sha1($_POST['password']);
 
 
 

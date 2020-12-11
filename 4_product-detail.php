@@ -81,11 +81,11 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     <!-- 麵包屑 -->
     <div class="container p-0">
         <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 pt-4">
-                    <li class="breadcrumb-item"><a href="0_index.php">首頁</a></li>
-                    <li class="breadcrumb-item"><a href="4_productList.php">活動列表</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">展覽列</li>
-                </ol>
+            <ol class="breadcrumb p-0 pt-4">
+                <li class="breadcrumb-item"><a href="0_index.php">首頁</a></li>
+                <li class="breadcrumb-item"><a href="4_productList.php">活動列表</a></li>
+                <li class="breadcrumb-item active" aria-current="page">展覽列</li>
+            </ol>
         </nav>
     </div>
 
@@ -138,7 +138,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 </button>
             </div>
 
-            <div class="col-8 p-0">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 p-0">
                 <div class="activity mt-3">
                     <div class="d-flex">
                         <h1 class="activity-title" data-sid="<?= $row['sid'] ?>"><?= $row['event_name'] ?></h1>
@@ -179,15 +179,15 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 
             <!-- ---------報名卡片-------------- -->
-            <div class="d-flex col-3 p-0">
+            <div class="d-flex col-3 p-0 col-lg-4 col-md-4 col-sm-12 col-12">
                 <!-- -----------愛心-------- -->
 
-                <button class="apply apply-01 d-flex align-items-center justify-content-center ml-auto mt-3">
+                <button class="apply apply-01 d-flex align-items-center justify-content-center mt-3">
                     <div class="d-flex text-align: center">
-                        <div class="apply-ticket">
+                        <div class="apply-ticket col-lg-6 col-md-6 col-sm-6 col-6">
                             <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
                         </div>
-                        <div class="apply-word d-flex align-items-center justify-content-center ml-2">
+                        <div class="apply-word d-flex align-items-center justify-content-center ml-2 col-lg-6 col-md-6 col-sm-6 col-6">
                             <p>立即<br>報名</p>
                         </div>
                     </div>
@@ -359,7 +359,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             </div>
         </div>
 
-    <!-- 拖曳卡片 -->
+        <!-- 拖曳卡片 -->
         <div class="grid-container">
             <main class="grid-item main pt-0 position-relative">
                 <div class="items col-11 mx-auto">
@@ -490,7 +490,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     // see more rubberBand animation
     $(window).scroll(function() {
         let scrollTop = $(window).scrollTop();
-        let top = 820;
+        let top = 1100;
         let isＭobile = ($(window).width()) < 576;
 
         console.log('scrollTop:', scrollTop);
@@ -508,8 +508,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
     });
 
-        // card heart animation
-        $('.like').on('click', function() {
+    // card heart animation
+    $('.like').on('click', function() {
         // console.log('like');
         $(this).toggleClass('liked');
     });
@@ -553,17 +553,17 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             }, 'json')
     });
 
-            // 拖曳卡片右方按鈕
-            $('.recommend-right').on('click', function() {
-            const slider = document.querySelector('.items');
-            slider.scrollLeft += 300;
-        })
+    // 拖曳卡片右方按鈕
+    $('.recommend-right').on('click', function() {
+        const slider = document.querySelector('.items');
+        slider.scrollLeft += 300;
+    })
 
-        // 拖曳卡片左方按鈕
-        $('.recommend-left').on('click', function() {
-            const slider = document.querySelector('.items');
-            slider.scrollLeft -= 300;
-        })
+    // 拖曳卡片左方按鈕
+    $('.recommend-left').on('click', function() {
+        const slider = document.querySelector('.items');
+        slider.scrollLeft -= 300;
+    })
 </script>
 
 <!-- footer -->

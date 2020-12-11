@@ -1,6 +1,18 @@
 <?php $title = 'KunstHaus | 結帳完成'; ?>
 
-<?php include __DIR__ . '/1_parts/0_config.php'; ?>
+<?php include __DIR__ . '/1_parts/0_config.php';
+
+$sql = "SELECT * FROM  orders where sid = {$_SESSION['orderNow']}";
+$stmt = $pdo->query($sql);
+
+// $rows就會等於每一筆抓出的資料
+$row = $stmt->fetch();
+
+// echo json_encode($rows);
+// exit;
+?>
+
+
 <?php include __DIR__ . '/1_parts/1_head.php'; ?>
 
 <!-- 引入自己購物車清單的ＣＳＳ -->
@@ -46,7 +58,8 @@
                 <tr>
 
                     <td>付款時間</td>
-                    <td class="text-center">2020-12-18 10:21</td>
+                    <td class="text-center">
+                        <?= $row['order_date'] ?></td>
 
                 </tr>
             </tbody>

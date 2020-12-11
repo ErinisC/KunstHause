@@ -19,19 +19,26 @@ if (empty($_POST['event_name']) or empty($_POST['event_info'])  or empty($_POST[
     }
 }
 
+// 上傳圖片到uploads資料夾
+$filename = '';
+if (!empty($_FILES["picture"]["name"])) {
+    $filename = $_FILES["picture"]["name"];
+    move_uploaded_file($_FILES["picture"]["tmp_name"], __DIR__ . '/imgs/event/' . $_FILES["picture"]["name"]);
+}
+
 
 //TODO: 檢查資料格式
 
-$sql = "INSERT INTO `products`( `event_name`, `hastag`,
-                                  `categories`,
+$sql = "INSERT INTO `products`( `event_name`, `hastag`, `picture`,
+                                  `categories`, 
                                   `location`, 
-                                 `price`, 
+                                   `start_datetime`, `end_datetime`,`price`, 
                                    `address`, `event_info`, `notice`, 
                                    `transportation`) VALUES
- VALUES ( 
-        ?, ?,
+ ( 
+        ?, ?, ?,
         ?, ?, 
-        ?,  
+        ?, ?, ?, 
         ?, ?, ?,
         ?
     )";
@@ -40,8 +47,11 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['event_name'],
     $_POST['hashtag'],
+    $filename,
     $_POST['categories'],
-    $_POST['location'],
+    $_POST['cityLocation'],
+    $_POST['start-datetime'],
+    $_POST['end-datetime'],
     $_POST['price'],
     $_POST['address'],
     $_POST['event_info'],
