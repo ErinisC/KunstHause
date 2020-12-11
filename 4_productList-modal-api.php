@@ -150,7 +150,7 @@ if (empty($row)) {
 <div class="content-wrap product-item" data-sid="<?= $row['sid'] ?>">
     <!-- 圖片 -->
     <div class="right-pic mb-3">
-        <img src="imgs/event/<?= $row['picture'] ?>.jpg" alt="">
+        <img src="imgs/event/<?= $row['picture'] ?>" alt="">
     </div>
 
     <!-- 活動資訊區 -->

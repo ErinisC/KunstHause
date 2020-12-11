@@ -52,7 +52,7 @@ $rows = $stmt->fetchAll();
                             <li class="p-0 align-items-center col-lg-2 col-4">
                                 <!-- 圖片 -->
                                 <div class="img-wrap pl-2 m-auto">
-                                    <img src="imgs/event/<?= $i['picture'] ?>.jpg" alt="">
+                                    <img src="imgs/event/<?= $i['picture'] ?>" alt="">
                                 </div>
                             </li>
 

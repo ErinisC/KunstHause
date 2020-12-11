@@ -103,7 +103,7 @@
                                     </a>
                                     <i class="like far fa-heart fa-2x mr-3"></i>
                                 </div>
-                                <p class="act-time mb-3 ml-3">2020-12-19 20:00</p>
+                                <p class="act-time mb-3 ml-3">2020-12-19</p>
                                 <div class="d-flex">
                                     <div class="col-7">
                                         <span class="hashtag">#最口愛</span>
