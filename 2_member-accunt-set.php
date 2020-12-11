@@ -3,6 +3,14 @@
 <?php include __DIR__ . '/1_parts/0_config.php'; ?>
 
 <?php
+
+// 判斷是否登入會員
+if (!isset($_SESSION['user'])) {
+    header('Location: 1_member-login.php');
+    exit;
+}
+
+
 $sid = intval($_SESSION['user']['sid']);
 
 $m_sql = "SELECT * FROM `member` WHERE `sid`=$sid ";
@@ -45,31 +53,31 @@ $m_row = $stmt->fetch();
             </div> -->
 
             <div class="ogzcard">
-                    <div class="picture">
-                        <img class="eventimg" src="" width="100%" height="224" style="border:0">
-                    </div>
-                    <!-- <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+                <div class="picture">
+                    <img class="eventimg" src="" width="100%" height="224" style="border:0">
+                </div>
+                <!-- <svg class="people" xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
                         <path id="Union_7" data-name="Union 7" d="M0,140V122.5c0-19.254,31.5-35,70-35s70,15.75,70,35V140ZM35,35A35,35,0,1,1,70,70,35,35,0,0,1,35,35Z" fill="#7fc4fd" />
                     </svg> -->
 
-                    <input type="text" id="pic_name" name="pic_name" hidden>
-                    <button class="pictureaddbtn">
-                        <input id="picture" name="picture" class="pictureadd" ref={fileInput} accept="image/jpeg,image/png" type="file">
-                        <svg class="peopleadd" style="margin-top: -125px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38.661" height="35.564" viewBox="0 0 38.661 35.564">
-                            <defs>
-                                <clipPath id="clip-path">
-                                    <rect width="38.661" height="35.564" fill="none" />
-                                </clipPath>
-                            </defs>
-                            <g id="Repeat_Grid_10" data-name="Repeat Grid 10" clip-path="url(#clip-path)">
-                                <g transform="translate(-220 -225.001)">
-                                    <path id="Path_623" data-name="Path 623" d="M427.768,74.558l-2.495,24.026c-.117,1.752-1.171,1.96-3.013,1.745l-.029-1.962.918.1,2.522-24.125-26.747-2.795-.354,3.383-2.13.1.386-3.7a2.109,2.109,0,0,1,2.318-1.879l26.745,2.795A2.11,2.11,0,0,1,427.768,74.558ZM420.2,77.1l1.117,24.458a2.108,2.108,0,0,1-2.01,2.2L392.442,105a2.107,2.107,0,0,1-2.2-2.01l-1.118-24.458a2.108,2.108,0,0,1,2.009-2.2l26.865-1.233A2.109,2.109,0,0,1,420.2,77.1Zm-27.859,25.56,26.863-1.233L418.092,77.2,391.228,78.43Zm25.476-8.456a3.159,3.159,0,0,0-.841-2.006l-1.889-2.037a1.584,1.584,0,0,0-2.3.106l-3.418,3.958-7.425-9.146a1.577,1.577,0,0,0-2.469.019l-5.8,7.645a3.171,3.171,0,0,0-.64,2.058l.31,6.757,24.757-1.136Zm-4.342-8.35a2.9,2.9,0,1,0-3.029-2.764A2.9,2.9,0,0,0,413.474,85.855Z" transform="translate(-169.119 155.567)" fill="#7fc4fd" />
-                                </g>
+                <input type="text" id="pic_name" name="pic_name" hidden>
+                <button class="pictureaddbtn">
+                    <input id="picture" name="picture" class="pictureadd" ref={fileInput} accept="image/jpeg,image/png" type="file">
+                    <svg class="peopleadd" style="margin-top: -125px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38.661" height="35.564" viewBox="0 0 38.661 35.564">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect width="38.661" height="35.564" fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="Repeat_Grid_10" data-name="Repeat Grid 10" clip-path="url(#clip-path)">
+                            <g transform="translate(-220 -225.001)">
+                                <path id="Path_623" data-name="Path 623" d="M427.768,74.558l-2.495,24.026c-.117,1.752-1.171,1.96-3.013,1.745l-.029-1.962.918.1,2.522-24.125-26.747-2.795-.354,3.383-2.13.1.386-3.7a2.109,2.109,0,0,1,2.318-1.879l26.745,2.795A2.11,2.11,0,0,1,427.768,74.558ZM420.2,77.1l1.117,24.458a2.108,2.108,0,0,1-2.01,2.2L392.442,105a2.107,2.107,0,0,1-2.2-2.01l-1.118-24.458a2.108,2.108,0,0,1,2.009-2.2l26.865-1.233A2.109,2.109,0,0,1,420.2,77.1Zm-27.859,25.56,26.863-1.233L418.092,77.2,391.228,78.43Zm25.476-8.456a3.159,3.159,0,0,0-.841-2.006l-1.889-2.037a1.584,1.584,0,0,0-2.3.106l-3.418,3.958-7.425-9.146a1.577,1.577,0,0,0-2.469.019l-5.8,7.645a3.171,3.171,0,0,0-.64,2.058l.31,6.757,24.757-1.136Zm-4.342-8.35a2.9,2.9,0,1,0-3.029-2.764A2.9,2.9,0,0,0,413.474,85.855Z" transform="translate(-169.119 155.567)" fill="#7fc4fd" />
                             </g>
-                        </svg>
-                    </button>
-                    <!-- <a class="fakeimgadd" href="">點選此處新增圖片</a> -->
-                </div>
+                        </g>
+                    </svg>
+                </button>
+                <!-- <a class="fakeimgadd" href="">點選此處新增圖片</a> -->
+            </div>
             <!-- -----------第一段------------- -->
 
             <form name="form1" class="form1 pb-5 col-10 col-lg-10 col-sm-10">
@@ -208,8 +216,8 @@ $m_row = $stmt->fetch();
 
     });
 
-        // 預覽圖片
-        $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
+    // 預覽圖片
+    $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
         location.href = '3_B2B-index.php'
     });
 
