@@ -184,12 +184,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                 <button class="apply apply-01 d-flex align-items-center justify-content-center mt-3">
                     <div class="d-flex text-align: center">
-                    <div class="apply-ticket col-lg-6 col-md-6 col-sm-6 col-6">
-                        <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
-                    </div>
-                    <div class="apply-word d-flex align-items-center justify-content-center ml-2 col-lg-6 col-md-6 col-sm-6 col-6">
-                        <p>立即<br>報名</p>
-                    </div>
+                        <div class="apply-ticket col-lg-6 col-md-6 col-sm-6 col-6">
+                            <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
+                        </div>
+                        <div class="apply-word d-flex align-items-center justify-content-center ml-2 col-lg-6 col-md-6 col-sm-6 col-6">
+                            <p>立即<br>報名</p>
+                        </div>
                     </div>
                 </button>
             </div>
