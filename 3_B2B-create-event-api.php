@@ -29,14 +29,14 @@ if (!empty($_FILES["picture"]["name"])) {
 
 //TODO: 檢查資料格式
 
-$sql = "INSERT INTO `products`( `event_name`, `hastag`,
-                                  `categories`,
+$sql = "INSERT INTO `products`( `event_name`, `hastag`, `picture`,
+                                  `categories`, 
                                   `location`, 
                                    `start_datetime`, `end_datetime`,`price`, 
                                    `address`, `event_info`, `notice`, 
                                    `transportation`) VALUES
  ( 
-        ?, ?,
+        ?, ?, ?,
         ?, ?, 
         ?, ?, ?, 
         ?, ?, ?,
@@ -47,6 +47,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $_POST['event_name'],
     $_POST['hashtag'],
+    $filename,
     $_POST['categories'],
     $_POST['cityLocation'],
     $_POST['start-datetime'],
