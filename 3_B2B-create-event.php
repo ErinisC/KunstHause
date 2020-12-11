@@ -275,8 +275,8 @@
     //  一鍵輸入
 
     $('#autoInput').click(function() {
-        eventname.val('TEST');
-        startdate.val('2020-12-18T08:30');
+        eventname.val('2020首屆知音「古典鋼琴合作」大賞');
+        startdate.val('2021-01-15T10:00');
         enddate.val('2021-01-20T08:30');
         categories.val('music');
         region.val('North');
