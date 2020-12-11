@@ -166,7 +166,7 @@ if (!isset($_SESSION['user'])) {
                                     <path id="Path_644" data-name="Path 644" d="M-97.709,57.527a10.375,10.375,0,0,0-14.63,0l-78.928,78.928-34.011-34.01a10.375,10.375,0,0,0-14.63,0,10.377,10.377,0,0,0,0,14.631l41.325,41.324a10.375,10.375,0,0,0,14.63,0h0l86.242-86.244A10.375,10.375,0,0,0-97.709,57.527Z" transform="translate(242.925 -54.509)" fill="#168fa4" />
                                 </svg>
                             </div>
-                            <div class="modal-title mx-auto mt-4" id="exampleModalCenterTitle">修改完成
+                            <div class="modal-title mx-auto mt-4" id="exampleModalCenterTitle">註冊成功
                             </div>
                         </div>
 
