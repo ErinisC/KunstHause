@@ -256,7 +256,7 @@ $likes = $l_stmt->fetchAll();
                                         <p class="date my-2"><?= $d['start_datetime'] ?> ~ <?= $d['end_datetime'] ?></p>
                                         <p class="number mb-2">訂單編號:<?= $d['order_id'] ?></p>
                                         <p class="pay mb-2">付款方式:<?= $d['pay_way'] ?></p>
-                                        <p class="total mb-2">票券數量:<?= $o['total_price'] ?></p>
+                                        <!-- <p class="total mb-2">票券數量:<?= $o['total_price'] ?></p> -->
                                         <p class="status mb-2">訂單狀態:<?= $d['order_status'] ?></p>
                                     </div>
                                 </div>
@@ -329,12 +329,11 @@ $likes = $l_stmt->fetchAll();
                 </div> -->
 
 
-
-                <div class="view-more my-4">
+                <!-- <div class="view-more my-4">
                     <a class="text-dark" href="4_productList.php">
                         <p>VIEW MORE >></p>
                     </a>
-                </div>
+                </div> -->
 
 
                 <!-- 小精靈 Animation -->
