@@ -130,7 +130,7 @@ $likes = $l_stmt->fetchAll();
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="card">
                                 <div class="card-wrap m-4 col-lg-5 col-md-5 col-sm-5 col-5 p-0">
                                     <div class="card-kv position-relative">
-                                        <img src="imgs/event/event-sm/<?= $r['picture'] ?>.jpg">
+                                        <img src="imgs/event/event-sm/<?= $r['picture'] ?>">
                                         <div class="time col-5 text-dark position-absolute mt-3">
                                             <p class="my-2"><?= $r['start_datetime'] ?></p>
                                         </div>
@@ -248,7 +248,7 @@ $likes = $l_stmt->fetchAll();
                         <?php foreach ($d_rows as $d) : ?>
                             <div class="t-detail mb-5 d-flex align-content-around" data-detailid="<?= $d['d_sid'] ?>">
                                 <div class="ticket-kv col-lg-3 p-0">
-                                    <img class="event-sm-img w-100 p-0 h-100" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                                    <img class="event-sm-img w-100 p-0 h-100" src="<?= WEB_ROOT ?>/imgs/event/event-sm/<?= $d['picture'] ?>" alt="">
                                 </div>
                                 <div class="main-info col-lg-6">
                                     <div class="event-title my-3">

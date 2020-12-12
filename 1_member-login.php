@@ -205,7 +205,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
                     setTimeout(function() {
                         location.href = '<?= $gotoURL ?>';
-                    }, 3000);
+                    }, 1000);
 
 
                 } else {
