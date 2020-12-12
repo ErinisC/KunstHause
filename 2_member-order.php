@@ -35,19 +35,6 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 // echo json_encode($d_rows);
 // exit;
 
-// let eventData = {
-//     1:{
-//         pic:'HSZ-11',
-//         eventName: 'XXXXX'
-//     },
-//     2:{
-//         pic:'HSZ-22',
-//         eventName: 'XXXXX'
-//     }
-// }
-// ${eventData[a['order-id']].eventName}
-// ${eventData[a['picture']].eventName}
-
 ?>
 
 
@@ -61,7 +48,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 
 <div class="space"></div>
 <div class="container">
-    <div class="row">
+    <div class="row sm-side">
         <div class="section-title mb-5">
             <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title2.svg" alt="">
         </div>
@@ -93,15 +80,15 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
     </div>
 <?php else : ?>
 
-    <div class="container order-status-list">
+    <div class="container order-status-list sm-side">
         <?php //foreach ($o_rows as $o) : 
         ?>
         <?php foreach ($d_rows as $d) : ?>
-            <div class="row order mb-5 align-content-center">
+            <div class="row order mb-5 align-content-center sm-side">
                 <?php //if ($o['sid'] == $d['order_id']) : 
                 ?>
                 <div class="col-lg-3 event-img p-0">
-                    <img class="event-sm-img w-100 h-100" src="<?= WEB_ROOT ?>imgs/event/event-sm/<?= $d['picture'] ?>.jpg" alt="">
+                    <img class="event-sm-img w-100 h-100" src="<?= WEB_ROOT ?>imgs/event/<?= $d['picture'] ?>" alt="">
                 </div>
                 <div class="col-lg-5 event-info">
                     <div class="main-info my-4">
@@ -226,7 +213,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         <div class="row order mb-5 align-content-center" data-sid="${a['order_id']}">
                     
                         <div class="col-lg-3 event-img p-0">
-                            <img class="event-sm-img w-100 h-100" src="imgs/event/event-sm/${a['picture']}.jpg" alt="">
+                            <img class="event-sm-img w-100 h-100" src="imgs/event/event-sm/${a['picture']}" alt="">
                         </div>
                         <div class="col-lg-5 event-info">
                             <div class="main-info my-4">
@@ -261,7 +248,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
 
     function whenHashChanged() {
         let u = location.hash.slice(1) || 0;
-        //console.log(u);
+        console.log('u:', u);
         getProductData(u);
 
         status_btns.removeClass('btn-primary').addClass('btn-select');

@@ -99,7 +99,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
             <!-- 活動圖片 -->
             <div class="intro-box">
                 <div class="mainact">
-                    <img src="imgs/event/<?= $row['picture'] ?>.jpg" alt="">
+                    <img src="imgs/event/<?= $row['picture'] ?>" alt="">
                 </div>
             </div>
 
@@ -374,7 +374,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                             <a href="4_product-detail.php?sid=<?= $r['sid'] ?>" target="_blank" class="flip-card">
                                 <div class="flip-card-inner position-relative">
                                     <div class="flip-card-front img-wrap mb-3 position-relative position-absolute">
-                                        <img src="imgs/event/<?= $r['picture'] ?>.jpg" class="card-img-top" alt="">
+                                        <img src="imgs/event/<?= $r['picture'] ?>" class="card-img-top" alt="">
                                         <!-- 圖片上時間 -->
                                         <div class="time position-absolute p-2">
                                             <!-- 年 -->

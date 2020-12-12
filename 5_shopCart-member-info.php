@@ -171,7 +171,7 @@ $rows = $stmt->fetchAll();
 
             <!-- 三聯發票抬頭 -->
             <div class="form-group">
-                <label for="company_name" class="mb-2">三聯發票抬頭</label>
+                <label for="company_name" class="mb-2 company_name">三聯發票抬頭</label>
                 <div class="input-box position-relative">
                     <input type="text" class="form-control" id="company_name" placeholder="三聯發票抬頭" name="company_name" value="<?= $_SESSION['buy_info']['company_name'] ?? '' ?>">
                     <!--抬頭驗證 -->
@@ -231,6 +231,13 @@ $rows = $stmt->fetchAll();
     })
 
 
+    // 一鍵輸入
+    $('.company_name').on('click', function() {
+        $('#company_name').val('金金藝文活動公司');
+        $('#tax-id-number').val('123456')
+    })
+
+
     // 傳送表單
     const name = $('#name');
     const email = $('#email');
@@ -268,11 +275,6 @@ $rows = $stmt->fetchAll();
             location.href = '5_shopCart-pay.php';
 
         }
-
-
-
-
-
 
     }
 </script>

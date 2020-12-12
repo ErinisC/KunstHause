@@ -95,7 +95,7 @@ $m_row = $stmt->fetch();
                         <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
                     </svg>
                     <input class="inputbox" type="text" name="nowPass" id="nowPass" placeholder="請輸入您現在的密碼">
-                    <p class="trouble2 error1">密碼不相符</p>
+                    <p class="trouble2 error1"></p>
                 </div>
 
                 <div class="inputform col-xl-10 col-10">
@@ -193,13 +193,13 @@ $m_row = $stmt->fetch();
         //     $('.error3').text('姓名不得小於二字');
         // }
 
-        // if ($('#nowPass').val() != ) {
-        //     errorMsg = "舊密碼錯誤";
-        //     $('.error1').text(errorMsg);
-        // } else 
+        if ($('#nowPass1').val() != $('#nowPass2').val()) {
+            errorMsg = "舊密碼錯誤";
+            $('.error1').text(errorMsg);
+        } else 
         if ($('#newPass1').val() != $('#newPass2').val()) {
-            errorMsg = "新密碼不相等";
-            $('.error2').text(trouble2);
+            errorMsg = "新密碼需相符";
+            $('.error2').text(errorMsg);
         } else {
             $('#sentPass').val($('#newPass1').val());
 
@@ -207,9 +207,12 @@ $m_row = $stmt->fetch();
                 console.log(data);
                 if (data.success) {
                     console.log('成功');
+
+
                     location.href = "1_member-center.php"
                 } else {
                     console.log('失敗');
+                    $('.error2').html('aaaaaa');
                 }
 
             }, 'json')

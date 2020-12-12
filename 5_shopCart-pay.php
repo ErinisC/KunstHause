@@ -220,7 +220,7 @@ if (!isset($_SESSION['user'])) {
                                 </label>
 
                                 <div class=" input-box position-relative">
-                                    <span id="generatecard">generate random</span>
+                                    <span id="generatecard">random chose card</span>
                                     <input type="text" class="form-control" id="credit-number" placeholder="請填寫信用卡號碼" name="credit-number" value="<?= $_SESSION['creditcard']['credit-number'] ?>">
                                     <!-- svg圖案 -->
                                     <svg id="ccicon" class="ccicon position-absolute" width="100" height="50" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>
@@ -407,13 +407,16 @@ if (!isset($_SESSION['user'])) {
     <div class="modal-dialog h-100">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title col-11 text-center">確認結帳</h5>
+                <h5 class="modal-title col-11 text-center"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body text-center">
-                <p>你真的確定你要結帳了嗎？</p>
+                <div class="img-wrap confirm-mark">
+                    <img src="./imgs/shopcart/Exclamation mark.svg" alt="">
+                </div>
+                <p calss="text-center">你確定要結帳嗎？</p>
             </div>
             <div class="modal-footer m-auto">
 

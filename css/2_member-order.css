@@ -107,6 +107,11 @@ body.modal-open {
     right: -12%;
     top: -10%;
   }
+
+  .sm-side{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 /* ----------order status---------- */

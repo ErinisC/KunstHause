@@ -442,8 +442,16 @@ a:hover {
 
 /* Modal */
 .modal-content {
-    min-height: 60vh;
+    min-height: 30vh;
     top: 15%;
+}
+
+.confirm-mark {
+    height: 200px;
+}
+
+.modal-body p {
+    font-size: 1.5rem;
 }
 
 small {
