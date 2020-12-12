@@ -60,7 +60,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
                 <form name="form1" id="loginForm" onsubmit="checkForm(); return false;" novalidate>
                     <div class="form-group col-xl-10 col-md-10 col-sm-10 col-10 mx-auto">
-                        <label for="account" class="login-item">
+                        <label for="account" class="login-item" id="auto">
                             <p>帳號</p>
                         </label>
                         <div class="input-wrap">
@@ -240,6 +240,10 @@ if (isset($_SERVER['HTTP_REFERER'])) {
         $('#password').val('11111111');
     });
 
+    // 帳號一鍵輸入
+    $('#auto').click(function(event) {
+        $('#account').val('dandan@gmail.com');
+    });
     // 忘記密碼一鍵輸入
     $('#q-mark').click(function(event) {
         $('#e').val('helloworld123@gmail.com');
