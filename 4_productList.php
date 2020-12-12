@@ -43,8 +43,9 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
     $rows = [];
 }
 
-// 如果會員有登入，叫出收藏愛心項目
 
+
+// 如果會員有登入，叫出收藏愛心項目
 if (isset($_SESSION['user'])) {
     $member_sid = $_SESSION['user']['sid'];
     $l_sql = "SELECT `product_sid` FROM `likes` WHERE `member_sid`=?";
@@ -55,8 +56,6 @@ if (isset($_SESSION['user'])) {
     $l_rows = $l_stmt->fetchAll();
     $likes = array_column($l_rows, 'product_sid');
 }
-
-
 
 ?>
 <!-- 引head -->
