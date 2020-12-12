@@ -65,8 +65,13 @@ $likes = $l_stmt->fetchAll();
 // echo json_encode($likes, JSON_UNESCAPED_UNICODE);
 // exit;
 
-?>
+$name_sql = "SELECT `name` FROM `member` WHERE `sid`= $member_sid ";
+$name_rows = $pdo->query($name_sql)->fetch();
 
+
+
+
+?>
 
 
 <?php $title = 'Kunsthaus|會員中心'; ?>
@@ -109,7 +114,7 @@ $likes = $l_stmt->fetchAll();
                     <div class="nickname">
                         <p>HELLO
                             <i class="fas fa-child animated bounce"></i>
-                            <span>小新</span>下一場活動想去哪呢?
+                            <span><?= $name_rows['name'] ?></span>下一場活動想去哪呢?
                         </p>
                         <!-- <i class="fas fa-edit"></i> -->
                     </div>

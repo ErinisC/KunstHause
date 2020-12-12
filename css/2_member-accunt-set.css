@@ -315,3 +315,32 @@ button:disabled {
   background: #000 !important;
   border: 3px solid #000 !important;
 }
+
+/* -------Modal----------- */
+
+.modal-content {
+  border-radius: 0%;
+  border: 3px solid black;
+}
+
+.modal-title {
+  font-weight: bolder;
+  font-size: 28px;
+}
+
+.modal-body {
+  line-height: 2;
+}
+
+.btn-secondary {
+  border-radius: 0%;
+  background-color: #e8e8e8;
+  color: #bcbcbc;
+  border: 3px solid black;
+}
+
+.btn-primary {
+  border-radius: 0%;
+  background-color: #168fa4;
+  border: 3px solid black;
+}
