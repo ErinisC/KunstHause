@@ -78,7 +78,8 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                 <table>
                     <thead>
                         <tr class="tr d-flex mr-5 col-xl-12 col-12">
-                            <td class="col-4">活動名稱</td>
+                            <td class="col-1"></td>
+                            <td class="col-3">活動名稱</td>
                             <td class="col-2">活動日期</td>
 
                             <td class="col-2">活動狀態</td>
@@ -94,7 +95,13 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                         <?php foreach ($rows as $r) : ?>
                             <tr class="tr2" data-sid="<?= $r['sid'] ?>">
-                                <td class="col-4">
+
+                                <td class="col-1">
+                                    <div class="img-wrap">
+                                        <img src="imgs/event/<?= $r['picture'] ?>" alt="">
+                                    </div>
+                                </td>
+                                <td class="col-3">
                                     <a href="4_product-detail.php?sid=<?= $r['sid'] ?>">
                                         <?= $r['event_name'] ?>
                                     </a>
