@@ -186,7 +186,7 @@
                         </div>
                         <div class="total d-flex mt-2 justify-content-between">
                             <p>合計</p>
-                            <p id="total_price" class="total_price" type="number"></p>
+                            <p id="total_price" class="total_price"></p>
 
                         </div>
                     </div>
@@ -273,13 +273,16 @@
     const eventinfo = $('#event_info');
     const price = $('#price');
     const info_bar = $('#info_bar');
+    const transport = $('#transportation');
+    const notice = $('#notice');
 
     // 總金額加1％
     $('#price').on('change', function summary() {
-        const num1 = Number(price);
-        const sum = num1 + num1
-        document.getElementById("total_price").innerHTML = toFixed(num1 + (num1 * '1 / 100'));
-        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 282 ~ summary ~ total_price", total_price.val())
+
+        const sum = Number(price) + (Number(price) % 100);
+        sum.toString();
+        document.getElementById("total_price").textContent = sum;
+
     });
 
 
@@ -289,17 +292,20 @@
         eventname.val('藝文活動好好玩KunstHaus');
         startdate.val('2020-12-18T09:00');
         enddate.val('2021-01-31T12:00');
-        categories.val('show');
+        categories.val('art');
         region.val('North');
         cityLocation.val('TPE');
         address.val('大安區和平東路二段106號11樓')
-        eventinfo.val('KunstHaus 發表')
+        transport.val('大安捷運站1號出口')
+        notice.val('為防範中國大陸新型冠狀病毒肺炎疫情,防疫人人有責, 請自備口罩全程佩戴.')
+        eventinfo.val('KunstHaus 發表 藝文活動好好玩 ')
         price.val('100')
     });
 
 
     // 預覽圖片
     $('.fake_input').on('change', function(e) {
+
         const file = this.files[0];
         const objectURL = URL.createObjectURL(file);
 
@@ -309,8 +315,8 @@
     // 顯示檔案名稱
 
     $('#picture').change(function() {
-        var i = $(this).prev('label').clone();
-        var file = $('#picture')[0].files[0].name;
+        const i = $(this).prev('label').clone();
+        const file = $('#picture')[0].files[0].name;
         $(this).prev('label').text(file);
     });
 
@@ -436,8 +442,6 @@
 
             return;
 
-
-
         }
 
     }
@@ -448,5 +452,4 @@
         location.href = '3_B2B-index.php';
     });
 </script>
-
 <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
