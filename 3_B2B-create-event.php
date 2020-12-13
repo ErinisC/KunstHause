@@ -180,12 +180,13 @@
 
 
                         <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
-                                <path id="Subtraction_1" data-name="Subtraction 1" d="M3395-4803a13.907,13.907,0,0,1-9.9-4.1,13.907,13.907,0,0,1-4.1-9.9,13.907,13.907,0,0,1,4.1-9.9,13.907,13.907,0,0,1,9.9-4.1,13.907,13.907,0,0,1,9.9,4.1,13.907,13.907,0,0,1,4.1,9.9,13.907,13.907,0,0,1-4.1,9.9A13.907,13.907,0,0,1,3395-4803Zm-1.06-9v2h2v-2Zm1.045-11.114a2.722,2.722,0,0,1,1.963.777,2.448,2.448,0,0,1,.8,1.8,2.081,2.081,0,0,1-.273,1.045,6,6,0,0,1-1.187,1.284,13.2,13.2,0,0,0-1.265,1.226,4.142,4.142,0,0,0-.694,1.142,4.95,4.95,0,0,0-.292,1.787c0,.1,0,.274.01.527h1.689a7.015,7.015,0,0,1,.147-1.524,2.522,2.522,0,0,1,.39-.83A8.7,8.7,0,0,1,3397.4-4817a8.229,8.229,0,0,0,1.719-1.924,3.516,3.516,0,0,0,.44-1.729,3.624,3.624,0,0,0-1.25-2.763,4.794,4.794,0,0,0-3.35-1.144,4.666,4.666,0,0,0-3.189,1.064,4.691,4.691,0,0,0-1.45,3.066l1.806.216a3.727,3.727,0,0,1,.987-2.2A2.651,2.651,0,0,1,3394.985-4823.116Z" transform="translate(-3381 4831)" />
+                                <path id="Subtraction_1" class="question＿mark" data-name="Subtraction 1" d="M3395-4803a13.907,13.907,0,0,1-9.9-4.1,13.907,13.907,0,0,1-4.1-9.9,13.907,13.907,0,0,1,4.1-9.9,13.907,13.907,0,0,1,9.9-4.1,13.907,13.907,0,0,1,9.9,4.1,13.907,13.907,0,0,1,4.1,9.9,13.907,13.907,0,0,1-4.1,9.9A13.907,13.907,0,0,1,3395-4803Zm-1.06-9v2h2v-2Zm1.045-11.114a2.722,2.722,0,0,1,1.963.777,2.448,2.448,0,0,1,.8,1.8,2.081,2.081,0,0,1-.273,1.045,6,6,0,0,1-1.187,1.284,13.2,13.2,0,0,0-1.265,1.226,4.142,4.142,0,0,0-.694,1.142,4.95,4.95,0,0,0-.292,1.787c0,.1,0,.274.01.527h1.689a7.015,7.015,0,0,1,.147-1.524,2.522,2.522,0,0,1,.39-.83A8.7,8.7,0,0,1,3397.4-4817a8.229,8.229,0,0,0,1.719-1.924,3.516,3.516,0,0,0,.44-1.729,3.624,3.624,0,0,0-1.25-2.763,4.794,4.794,0,0,0-3.35-1.144,4.666,4.666,0,0,0-3.189,1.064,4.691,4.691,0,0,0-1.45,3.066l1.806.216a3.727,3.727,0,0,1,.987-2.2A2.651,2.651,0,0,1,3394.985-4823.116Z" transform="translate(-3381 4831)" />
                             </svg>
                             ＋(1%)
                         </div>
-                        <div class="total d-flex mt-2">
+                        <div class="total d-flex mt-2 justify-content-between">
                             <p>合計</p>
+                            <p id="total_price" class="total_price" type="number"></p>
 
                         </div>
                     </div>
@@ -273,18 +274,27 @@
     const price = $('#price');
     const info_bar = $('#info_bar');
 
+    // 總金額加1％
+    $('#price').on('change', function summary() {
+        const num1 = Number(price);
+        const sum = num1 + num1
+        document.getElementById("total_price").innerHTML = toFixed(num1 + (num1 * '1 / 100'));
+        console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 282 ~ summary ~ total_price", total_price.val())
+    });
+
+
     //  一鍵輸入
 
     $('#autoInput').click(function() {
-        eventname.val('2020首屆知音「古典鋼琴合作」大賞');
-        startdate.val('2021-01-15T10:00');
-        enddate.val('2021-01-20T08:30');
-        categories.val('music');
+        eventname.val('藝文活動好好玩KunstHaus');
+        startdate.val('2020-12-18T09:00');
+        enddate.val('2021-01-31T12:00');
+        categories.val('show');
         region.val('North');
         cityLocation.val('TPE');
-        address.val('test')
-        eventinfo.val('test')
-        price.val('666')
+        address.val('大安區和平東路二段106號11樓')
+        eventinfo.val('KunstHaus 發表')
+        price.val('100')
     });
 
 
@@ -409,9 +419,7 @@
             // Modal 名稱顯示設定值
             const nameElement = document.getElementById("event_name");
             const name = nameElement.value;
-            // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
             $('#modal-title').text(name);
-
 
 
             var formData = new FormData(document.event_form);
@@ -428,49 +436,11 @@
 
             return;
 
-            // $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
-            //     console.log(data);
 
-            //     $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-            //         location.href = '3_B2B-index.php'
-            //     })
-            //     return;
-
-
-
-            //     // if (data.success) {
-            //     //     // info_bar
-            //     //     //     .removeClass('alert-danger')
-            //     //     //     .addClass('alert-success')
-            //     //     //     .text('完成新增');
-            //     //     $('#exampleModalCenter').modal('show');
-
-            //     // } else {
-            //     //     info_bar
-            //     //         // .removeClass('alert-success')
-            //     //         .addClass('alert-danger')
-            //     //         .text(data.error || '新增失敗');
-
-            //     //     info_bar.slideDown();
-
-            //     //     setTimeout(function() {
-            //     //         info_bar.slideUp();
-            //     //     }, 2000);
-            //     // }
-            // }, 'json');
 
         }
 
     }
-
-
-    // // 顯示設定的event_name在modal
-
-    // const nameElement = document.getElementById("event_name");
-    // const name = nameElement.value;
-    // console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 467 ~ event_name ~ name", name)
-    // $('#modal-title').text(name);
-
 
 
     // modal按鈕跳轉
