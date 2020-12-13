@@ -186,7 +186,11 @@
                         </div>
                         <div class="total d-flex mt-2 justify-content-between">
                             <p>合計</p>
-                            <p id="total_price" class="total_price"></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p id="total_price" name="price" class="total_price"></p>
+                            <p>$</p>
 
                         </div>
                     </div>
@@ -275,12 +279,14 @@
     const info_bar = $('#info_bar');
     const transport = $('#transportation');
     const notice = $('#notice');
+    const total_price = $("#total_price")
 
     // 總金額加1％
     $('#price').on('change', function summary() {
 
-        const sum = Number(price) + (Number(price) % 100);
-        sum.toString();
+
+        const sum = Number($(price).val()) * 1.01;
+        // console.log(Number(price.val()))
         document.getElementById("total_price").textContent = sum;
 
     });
@@ -298,7 +304,7 @@
         address.val('大安區和平東路二段106號11樓')
         transport.val('大安捷運站1號出口')
         notice.val('為防範中國大陸新型冠狀病毒肺炎疫情,防疫人人有責, 請自備口罩全程佩戴.')
-        eventinfo.val('KunstHaus 發表 藝文活動好好玩 ')
+        eventinfo.val('KunstHaus 發表 藝文活動好好玩 Thanks for your interest in The Nest Event Center. We encourage you to fill out the form below. This will give us some general information about your event to guide us in your upcoming tour / meeting. None of your answers are set in stone so feel free to answer as best you can at this point.')
         price.val('100')
     });
 
@@ -332,6 +338,8 @@
         let isPass = false;
 
         if (picture.val().length === 0) {
+            console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 335 ~ summary ~ price", price)
+            console.log("🚀 ~ file: 3_B2B-create-event.php ~ line 335 ~ summary ~ price", price)
             isPass = true;
             picture.closest('.input-wrap').addClass('error')
         } else {
