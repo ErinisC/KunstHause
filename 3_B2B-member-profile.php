@@ -35,7 +35,7 @@
                             <path id="Path_1407" data-name="Path 1407" d="M4.385,0A4.365,4.365,0,0,0,2.2.584L3.6,3.72.247,2.931A4.385,4.385,0,1,0,4.385,0Z" transform="translate(31.186 6.419) rotate(30)" />
                         </g>
                     </svg>
-                    <div class="date">建立於2020-11-15</div>
+                    <div class="date">建立於2020-12-18</div>
                 </div>
                 <p class="introduction">簡介</p>
                 <div class="introduction-text col-10 col-xl-6">
