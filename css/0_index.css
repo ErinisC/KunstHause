@@ -51,6 +51,10 @@ body {
     font-size: 12vw;
   }
 
+  .slogan{
+    font-size: 1.5rem;
+  }
+
   .the-wall {
     width: 250px;
     top: 8%;
