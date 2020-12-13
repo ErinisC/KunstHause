@@ -329,7 +329,8 @@ body {
   }
 
   .be-partner {
-    top: 0;
+    top: -50px;
+    right: -200px;
   }
 
   .sign2 {
@@ -803,13 +804,13 @@ a:hover {
   transition-duration: 0.5s;
 }
 
-.lighter-mask{
+.lighter-mask {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.1);
 }
 
-.darker-mask{
+.darker-mask {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
@@ -882,7 +883,7 @@ a:hover {
   transform: rotate(50deg);
 }
 
-.see-more-article{
+.see-more-article {
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
   color: #000000;

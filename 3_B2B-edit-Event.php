@@ -47,7 +47,7 @@ if (empty($row)) {
             <div class="form-group">
                 <label class="event-banner d-flex col-sm-12">
                     <div class="input input-wrap input-wrap-picture fake_input_placeholder position-absolute">
-                        <label for="" class="FileName"> <?= $row['picture'] ?>.jpg </label>
+                        <label for="" class="FileName"> <?= $row['picture'] ?> </label>
                         <input id="picture" name="picture" class="input fake_input " ref={fileInput} accept="image/jpeg,image/png" type="file">
                     </div>
                     <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
@@ -56,7 +56,7 @@ if (empty($row)) {
                 <br>
                 <br>
                 <br>
-                <img class="eventimg" src="imgs/event/<?= $row['picture'] ?>.jpg" width="100%" height="400" alt="none" class="col-12">
+                <img class="eventimg" src="imgs/event/<?= $row['picture'] ?>" width="100%" height="400" alt="none" class="col-12">
                 <br>
             </div>
 

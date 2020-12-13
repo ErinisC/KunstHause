@@ -26,7 +26,7 @@ if (!isset($_SESSION['vendor'])) {
                 </div>
                 <a class="organizer mt-3" href="3_B2B-member-profile.php">今晚想來點藝文工作室</a>
                 <!-- <a href="3_B2B-member-profile.php">檢視主辦單位</a> -->
-                <a class="mt-3" href="3_vendor-logout-api.php">登出主辦單位</a>
+                <a class="mt-3" href="3_vendor-logout-api.php" style="opacity: 0;">登出主辦單位</a>
             </div>
             <div class="indexcard">
                 <svg class="titlecard" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.249 78.712">

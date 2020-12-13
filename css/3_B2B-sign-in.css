@@ -337,6 +337,8 @@ button:disabled {
   color: #000 !important;
 }
 
+
+
 @media screen and (max-width: 576px) {
   .background {
     width: 100%;
