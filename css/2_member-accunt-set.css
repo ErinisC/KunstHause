@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 html {
   font-size: 20px;
@@ -67,7 +67,6 @@ body {
   right: 390px;
 } */
 
-
 /* -------大頭照部分------- */
 .ogzcard {
   margin-top: 40px;
@@ -111,7 +110,7 @@ body {
   border: 3px solid #000;
   position: absolute;
   top: 290px;
-  right: 480px;
+  right: 550px;
 }
 
 .pictureadd {
@@ -248,7 +247,7 @@ body {
   border-radius: 0;
 } */
 .modify1 {
-  background-color:#168fa4;
+  background-color: #168fa4;
   color: #000;
   margin: auto 0;
   border: 3px solid #000;

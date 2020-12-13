@@ -97,32 +97,10 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
         <div class="row justify-content-between">
 
             <!-- 活動圖片 -->
-            <div class="intro-box">
-                <div class="mainact">
-                    <img src="imgs/event/<?= $row['picture'] ?>" alt="">
-                </div>
+
+            <div class="mainact">
+                <img src="imgs/event/<?= $row['picture'] ?>" alt="">
             </div>
-
-
-            <!-- <div class="space-1"></div> -->
-
-            <!-- <div class="date">
-                <p class="date-year">2020</p>
-                <p class="date-mon">10.10<br>10.13</p>
-            </div> -->
-
-            <!-- ---------報名卡片-------------- -->
-
-            <!-- <div class="apply  apply-02 d-flex align-items-center justify-content-center">
-                <div class="d-flex text-align: center">
-                    <div class="apply-ticket">
-                        <img class="ticket" src=" <?= WEB_ROOT ?>/imgs/products/ticket.svg">
-                    </div>
-                    <div class="apply-word d-flex align-items-center justify-content-center ml-3">
-                        <p>立即<br>報名</p>
-                    </div>
-                </div>
-            </div> -->
 
             <div class="space-1"></div>
 
@@ -130,7 +108,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 
         <!-- --------活動詳情與報名鈕----------- -->
-        <div class="row justify-content-between p-0">
+        <div class="row justify-content-between">
             <div class="col-12 p-0">
                 <button class="label align-items-center justify-content-center">
                     <!-- 活動標籤 -->
@@ -312,7 +290,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
                             <div class="bar-title col-lg-2 col-md-10 col-sm-10">
                                 <h2 class="mb-2">No Name</h2>
-                                <p>2020/12/10</p>
+                                <p>2020/12/18</p>
                             </div>
 
                             <div class="bar-word col-lg-6 col-md-10 col-sm-10">
