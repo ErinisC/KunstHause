@@ -274,14 +274,15 @@
 
         }
 
-        // 小版購物車
+        // 小版購物車觸發案紐
         $('.shopcart-small-click').on('click', function() {
             $('.cart-nav-small').toggle();
         });
 
-        // 小版
+        // 小版購物車消失
         $('.navbar-toggler').on('click', function() {
             console.log('hi');
             $('#sm-shop-cart').toggleClass('sm-none');
+            $('.cartnav-dropdown').hide()
         });
     </script>
