@@ -246,11 +246,13 @@ if (empty($row)) {
                             </svg>
 
                         </div>
-                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">019百威真我至上音樂巡迴2
+                        <div class="modal-title mx-auto mt-3" id="exampleModalCenterTitle">
+                            <span id="modal-title">
+                            </span>
                         </div>
-                        <span class="text-center mt-3 ">活動已幫你送出審核，
-                            再請至活動管理
-                            查詢狀態。
+                        <span class="text-center mt-3 ">活動資料已修改完成，
+                            再請至活動頁面
+                            查詢。
                         </span>
                     </div>
 
@@ -297,6 +299,7 @@ if (empty($row)) {
         var file = $('#picture')[0].files[0].name;
         $(this).prev('label').text(file);
     });
+
 
 
     // 設定常數
@@ -400,6 +403,11 @@ if (empty($row)) {
         if (price.val().length === 0) {
             price.closest('.input-wrap').addClass('error')
         } else {
+
+            // Modal 名稱顯示設定值
+            const nameElement = document.getElementById("event_name");
+            const name = nameElement.value;
+            $('#modal-title').text(name);
             $('#exampleModalCenter').modal('show')
             // var formData = new FormData(document.event_form);
             // fetch('3_B2B-create-event-api.php', {
