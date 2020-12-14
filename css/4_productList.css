@@ -18,7 +18,7 @@ html {
   letter-spacing: 2px;
 }
 
-.nav-link{
+.nav-link {
   letter-spacing: 0;
 }
 
@@ -249,7 +249,6 @@ input:focus {
 }
 
 
-
 .intro-img::before {
   content: "";
   position: absolute;
@@ -269,7 +268,14 @@ input:focus {
   font-weight: 600;
 }
 
+.year {
+  font-size: .8rem;
+}
 
+.start,
+.end {
+  font-weight: 600;
+}
 
 /* 02.探索熱們活動種類 */
 .post-tape {
@@ -759,9 +765,9 @@ footer .letter-submit {
   }
 }
 
-.carousel-wrapper{
+.carousel-wrapper {
   width: 100%;
   position: relative;
-  left:0;
+  left: 0;
   transition: .5s;
 }
