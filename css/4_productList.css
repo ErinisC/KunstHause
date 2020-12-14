@@ -420,7 +420,7 @@ input:focus {
   bottom: 0;
   background-color: #ffc024;
   /* height: 50px; */
-  border-radius: 3px;
+  /* border-radius: 3px; */
   transition: 0.8s;
 }
 
