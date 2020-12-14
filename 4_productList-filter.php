@@ -208,6 +208,6 @@ foreach ($cate as $k => $c) {
     <?php include __DIR__ . '/1_parts/3_script.php'; ?>
 
     <!-- 引入自己的ＪＳ -->
-    <script src="./js/ 4_productList-filter.js"></script>
+    <script src="./js/4_productList-filter.js"></script>
 
     <?php include __DIR__ . '/1_parts/4_footer.php'; ?>
