@@ -13,7 +13,7 @@
     <div class="container col-xl-6 col-12 b2bcreate px-0">
         <div class="space" style="height: 130px;"></div>
         <div class="col-12">
-            <h1 class="title position-relative"> <img class="autoInput position-absolute" id="autoInput" src=" <?= WEB_ROOT ?>/imgs/b2b/eyes-cartoon.svg">上架活動資料</h1>
+            <h1 class="title position-relative"> 上架活動資料<img class="autoInput position-absolute" id="autoInput" src=" <?= WEB_ROOT ?>/imgs/b2b/eyes-cartoon.svg"></h1>
             <h2 class="sm-title">KunstHaus 使用者將透過下列資訊了解活動</h2>
         </div>
 
