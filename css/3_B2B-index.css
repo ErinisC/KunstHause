@@ -284,8 +284,12 @@ button {
     margin-left: 40px;
   }
 
+  .organizer {
+    margin-bottom: -20px;
+  }
+
   .indexcard {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 170px;
     height: 225px;
     /* background-color: #168fa4; */
@@ -374,5 +378,3 @@ button {
     margin-left: -20px;
   }
 }
-
-
