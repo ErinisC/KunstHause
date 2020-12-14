@@ -21,8 +21,8 @@ body {
   margin-top: 10rem;
   height: 100vx;
   background: #fff;
-  background-image: linear-gradient(rgba(22, 143, 164, 0.15) 1px, transparent 0),
-    linear-gradient(90deg, rgba(22, 143, 164, 0.15) 1px, transparent 0);
+  background-image: linear-gradient(rgba(22, 143, 164, 0.1) 1px, transparent 0),
+    linear-gradient(90deg, rgba(22, 143, 164, 0.1) 1px, transparent 0);
   background-size: 0.75rem 0.75rem;
   margin-bottom: 10rem;
   position: relative;
@@ -111,7 +111,7 @@ body {
   border: 3px solid #000;
   position: absolute;
   top: 290px;
-  right: 550px;
+  right: 500px;
 }
 
 .pictureadd {
@@ -139,10 +139,11 @@ body {
   font: 900 1rem "Roboto";
   letter-spacing: 3.2px;
   color: #1a1a1a;
-  /* color: white; */
-  background-color: #ed5b4c;
+  color: white;
+  background-color: #666;
   border: 3px solid black;
   padding: 5px;
+  margin: auto;
 }
 
 /* .category-header .category-name {
@@ -152,7 +153,7 @@ body {
 
 .category-header .category-hr {
   height: 6px;
-  background: #ed5b4c;
+  background: #666;
   width: 70%;
   /* border: 2px solid black; */
 }
