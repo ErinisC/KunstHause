@@ -206,8 +206,9 @@ label p {
 .alert-success {
   color: #fff;
   font-weight: 600;
-  border: 3px solid rgb(15, 104, 62);
-  background-color: rgb(38, 122, 90);
+  border: 3px solid rgb(25, 96, 100);
+  background-color: #168fa4;
+  border-radius: 0px;
 }
 
 /* .input-wrap {
