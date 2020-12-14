@@ -40,7 +40,7 @@
 
             <div class="form-group">
 
-                <label for="event_name">活動名稱</label>
+                <label for="event_name">活動名稱 (必填)</label>
 
                 <div class="input-wrap">
 
@@ -55,7 +55,7 @@
 
             <div class="form-group">
 
-                <label for="eventDate">活動日期</label>
+                <label for="eventDate">活動日期 (必填)</label>
                 <div class="input-box">
 
                     <div class="input-wrap">
@@ -75,8 +75,8 @@
 
             <div class="form-group">
                 <div class="input-wrap">
-                    <label for="categories">活動種類</label>
-                    <select id="categories" name="categories" type="text" class="input" required>
+                    <label for="categories">活動種類 (必填)</label>
+                    <select id="categories" name="categories" type="text" class="input">
                         <option value="" disabled selected>請選擇</option>
                         <option value="music">音樂表演</option>
                         <option value="show">演唱活動</option>
@@ -96,10 +96,10 @@
             </div>
 
             <div class="form-group">
-                <label for="location">活動地點</label>
+                <label for="location">活動地點 (必填)</label>
                 <div class="input-wrap d-flex flex-wrap col-lg-12 p-0">
                     <div class="input-box selector col-xl-4  d-flex justify-content-between p-0">
-                        <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region" required>
+                        <select id="region" name="region" type="text" class="input col-sm-5 mx-0" style="width:180px" name="region">
 
                             <option value="" disabled selected>請選擇</option>
                             <option value="North">北部</option>
@@ -109,7 +109,7 @@
                         </select>
 
                         <div class="col-lg-1 blanket"></div>
-                        <select type="text" id="cityLocation" name="cityLocation" class="input-box input col-sm-5 mx-0" style="width:180px" required>
+                        <select type="text" id="cityLocation" name="cityLocation" class="input-box input col-sm-5 mx-0" style="width:180px">
 
                             <option value="" disabled selected>請選擇</option>
                             <optgroup label="北部">
@@ -154,10 +154,10 @@
 
             <div class="form-group">
                 <label for="event_info">
-                    活動內容資訊
+                    活動內容資訊 (必填)
                     <div class="input-wrap">
 
-                        <Textarea id="event_info" name="event_info" class="textarea event_info" cols="117" rows="10" required></Textarea>
+                        <Textarea id="event_info" name="event_info" class="textarea event_info" cols="117" rows="10"></Textarea>
 
                         <i class="fas fa-check-circle"></i>
                         <i class="fas fa-exclamation-circle"></i>
@@ -182,6 +182,7 @@
                         <div class="fee">手續費 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
                                 <path id="Subtraction_1" class="question＿mark" data-name="Subtraction 1" d="M3395-4803a13.907,13.907,0,0,1-9.9-4.1,13.907,13.907,0,0,1-4.1-9.9,13.907,13.907,0,0,1,4.1-9.9,13.907,13.907,0,0,1,9.9-4.1,13.907,13.907,0,0,1,9.9,4.1,13.907,13.907,0,0,1,4.1,9.9,13.907,13.907,0,0,1-4.1,9.9A13.907,13.907,0,0,1,3395-4803Zm-1.06-9v2h2v-2Zm1.045-11.114a2.722,2.722,0,0,1,1.963.777,2.448,2.448,0,0,1,.8,1.8,2.081,2.081,0,0,1-.273,1.045,6,6,0,0,1-1.187,1.284,13.2,13.2,0,0,0-1.265,1.226,4.142,4.142,0,0,0-.694,1.142,4.95,4.95,0,0,0-.292,1.787c0,.1,0,.274.01.527h1.689a7.015,7.015,0,0,1,.147-1.524,2.522,2.522,0,0,1,.39-.83A8.7,8.7,0,0,1,3397.4-4817a8.229,8.229,0,0,0,1.719-1.924,3.516,3.516,0,0,0,.44-1.729,3.624,3.624,0,0,0-1.25-2.763,4.794,4.794,0,0,0-3.35-1.144,4.666,4.666,0,0,0-3.189,1.064,4.691,4.691,0,0,0-1.45,3.066l1.806.216a3.727,3.727,0,0,1,.987-2.2A2.651,2.651,0,0,1,3394.985-4823.116Z" transform="translate(-3381 4831)" />
                             </svg>
+                            <div class="sminfo"></div>
                             ＋(1%)
                         </div>
                         <div class="total d-flex mt-2 justify-content-between">
@@ -283,7 +284,6 @@
 
     // 總金額加1％
     $('#price').on('change', function summary() {
-
 
         const sum = Number($(price).val()) * 1.01;
         // console.log(Number(price.val()))
