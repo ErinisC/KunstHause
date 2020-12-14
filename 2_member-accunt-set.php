@@ -83,9 +83,9 @@ $m_row = $stmt->fetch();
             <form name="form1" class="form1 pb-5 col-10 col-lg-10 col-sm-10">
                 <input type="hidden" name="sid" value="<?= $m_row['sid'] ?>">
                 <div class="row col-10 p-0 mx-auto category-wrap mt-5">
-                    <div class="category-header d-flex align-items-center justify-content-between w-100">
+                    <div class="category-header d-flex align-items-center justify-content-between w-100 mt-3">
                         <div class="category-count">修改密碼</div>
-                        <div class="category-hr"></div>
+                        <!-- <div class="category-hr"></div> -->
                     </div>
                 </div>
 
@@ -120,9 +120,9 @@ $m_row = $stmt->fetch();
                 <!-- -----------第二段------------- -->
 
                 <div class="row col-10 p-0 mx-auto category-wrap mt-5">
-                    <div class="category-header d-flex align-items-center justify-content-between w-100">
+                    <div class="category-header d-flex align-items-center justify-content-between w-100 mt-3">
                         <div class="category-count">修改名稱</div>
-                        <div class="category-hr"></div>
+                        <!-- <div class="category-hr"></div> -->
                     </div>
                 </div>
 
