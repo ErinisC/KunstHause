@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost:8889
--- 產生時間： 2020 年 12 月 14 日 03:23
+-- 產生時間： 2020 年 12 月 15 日 03:19
 -- 伺服器版本： 5.7.30
 -- PHP 版本： 7.4.9
 
@@ -385,7 +385,7 @@ ALTER TABLE `category`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `sid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `sid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
@@ -409,7 +409,7 @@ ALTER TABLE `order_details`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `products`
 --
 ALTER TABLE `products`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `vendor`
