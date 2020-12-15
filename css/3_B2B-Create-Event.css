@@ -65,6 +65,10 @@ label {
   margin-top: 0;
 }
 
+.eventimg {
+  opacity: 0;
+}
+
 .input {
   border: #000000 3px solid;
   width: 100%;

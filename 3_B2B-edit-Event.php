@@ -289,7 +289,7 @@ if (empty($row)) {
         const file = this.files[0];
         const objectURL = URL.createObjectURL(file);
 
-        $('.eventimg').attr('src', objectURL);
+        $('.eventimg').attr('src', objectURL).css('opacity', 1);
     });
 
 
@@ -299,7 +299,6 @@ if (empty($row)) {
         var file = $('#picture')[0].files[0].name;
         $(this).prev('label').text(file);
     });
-
 
 
     // 設定常數
@@ -440,37 +439,6 @@ if (empty($row)) {
             //         }
             //     }, 'json');
 
-
-
-
-            // $.post('3_B2B-create-event-api.php', $(document.event_form).serialize(), function(data) {
-            //     console.log(data);
-            //     // $('#exampleModalCenter').modal('show');
-            //     // $('#exampleModalCenter').on('hidden.bs.modal', function(e) {
-            //     //     location.href = '1_member-login.php'
-            //     // })
-            //     // return;
-
-            //     if (data.success) {
-            //         // info_bar
-            //         //     .removeClass('alert-danger')
-            //         //     .addClass('alert-success')
-            //         //     .text('完成新增');
-
-            //     } else {
-            //         info_bar
-            //             // .removeClass('alert-success')
-            //             .addClass('alert-danger')
-            //             .text(data.error || '新增失敗');
-
-            //         info_bar.slideDown();
-
-            //         setTimeout(function() {
-            //             info_bar.slideUp();
-            //         }, 2000);
-            //     }
-            //     }, 'json');
-            // 
 
         }
 
