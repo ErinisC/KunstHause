@@ -90,11 +90,14 @@ $m_row = $stmt->fetch();
                 </div>
 
                 <div class="inputform col-10">
-                    <p>原本密碼</p>
+                    <div class="d-flex">
+                        <p>原本密碼</p>
+                        <i id="myeye" class="ml-2 far fa-eye"></i>
+                    </div>
                     <svg class="trouble" id="Attention" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                         <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
                     </svg>
-                    <input class="inputbox" type="text" name="nowPass" id="nowPass" placeholder="請輸入您現在的密碼">
+                    <input type="password" class="inputbox" type="text" name="nowPass" id="nowPass" placeholder="請輸入您現在的密碼">
                     <p class="trouble2 error1"></p>
                 </div>
 
@@ -196,7 +199,7 @@ $m_row = $stmt->fetch();
         if ($('#nowPass1').val() != $('#nowPass2').val()) {
             errorMsg = "舊密碼錯誤";
             $('.error1').text(errorMsg);
-        } else 
+        } else
         if ($('#newPass1').val() != $('#newPass2').val()) {
             errorMsg = "新密碼需相符";
             $('.error2').text(errorMsg);
@@ -236,6 +239,22 @@ $m_row = $stmt->fetch();
         $('#pic_name').val(file.name);
 
         // $('.people').addClass('opacity: 0;')
+    });
+
+    //我的密碼真可愛
+    $('#myeye').click(function() {
+        let type = $('#nowPass').attr('type');
+        // console.log(type);
+        if (type == 'password') {
+            $('#nowPass').attr('type', 'text');
+            $('#newPass1').attr('type', 'text');
+            $('#newPass2').attr('type', 'text');
+        } else {
+            $('#nowPass').attr('type', 'password');
+            $('#newPass1').attr('type', 'password');
+            $('#newPass2').attr('type', 'password');
+        }
+
     });
 </script>
 

@@ -43,7 +43,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
                 <img class="g-clip" src=" <?= WEB_ROOT ?>/imgs/member/g-clip.svg">
             </div>
             <div class="login-title" id="autoinput">請登入會員</div>
-            <div class="reminder ml-3">*您可以選擇下列帳號快速登入</div>
+            <div class="reminder ml-3" id="autoinput-2">*您可以選擇下列帳號快速登入</div>
             <div class="icons d-flex justify-content-center mx-auto">
                 <img class="facebook" src=" <?= WEB_ROOT ?>/imgs/member/facebook-brands.svg" style="  cursor: pointer">
                 <p>OR</p>
@@ -238,6 +238,11 @@ if (isset($_SERVER['HTTP_REFERER'])) {
     $('#autoinput').click(function(event) {
         $('#account').val('test1@gmail.com');
         $('#password').val('11111111');
+    });
+
+    $('#autoinput-2').click(function(event) {
+        $('#account').val('888@gmail.com');
+        $('#password').val('12345678');
     });
 
     // 帳號一鍵輸入

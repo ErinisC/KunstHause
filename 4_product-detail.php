@@ -235,12 +235,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                         </div>
 
                         <div class="bar-title col-lg-2 col-md-10 col-sm-10">
-                            <h2 class="mb-2">9m88</h2>
+                            <h2 class="mb-2">A冷Allen</h2>
                             <p>2020/08/30</p>
                         </div>
 
                         <div class="bar-word-1 col-lg-6 col-md-10 col-sm-10">
-                            <p>最高品質靜悄悄 蹲最低的跳最高！</p>
+                            <p>The Wall, you ROCK! 熱血樂手與樂迷們的集中地↖️(^ω^)↗️！</p>
                         </div>
                     </div>
 
@@ -253,12 +253,12 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
 
                         <div class="bar-title col-lg-2 col-md-10 col-sm-10">
-                            <h2 class="mb-2">說愛你</h2>
+                            <h2 class="mb-2">宮美春車</h2>
                             <p>2020/09/20</p>
                         </div>
 
                         <div class="bar-word col-lg-6 col-md-10 col-sm-10">
-                            <p>關於愛情 過去沒有異想的結局 那天起 卻顛覆了自己邏輯 我的懷疑 所有答案因你而明白 轉啊轉 就真的遇見 Mr.right！</p>
+                            <p>以Live house來說已經很讚了...廁所超乾淨的啊我很滿意！音場也很爽，老實說沒什麼好挑剔的(⁎⁍̴̛ᴗ⁍̴̛⁎)看完表演整個心情很好～！</p>
                         </div>
                     </div>
 
@@ -270,7 +270,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
                         </div>
 
                         <div class="bar-title col-lg-2 col-md-10 col-sm-10">
-                            <h2 class="mb-2">愛情恰恰</h2>
+                            <h2 class="mb-2">大祐池久子</h2>
                             <p>2020/09/20</p>
                         </div>
 
