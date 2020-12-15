@@ -186,11 +186,11 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             </div>
             <div class="modal-body text-center">
                 <h5 class="modal-event-name"></h5>
-                <p class="time">2019-12-10 11:00 ~ 2019-12-10 12:00</p>
+                <p class="time">2021-01-07 19:00 ~ 2021-01-07 21:30</p>
                 <p class="location">台灣台北市信義區松壽路22號5樓</p>
             </div>
             <div class="modal-footer">
-                <p class="attender w-100 text-center">參加人：大米</p>
+                <p class="attender w-100 text-center">參加人：白佳穎</p>
                 <p class="ticket-sid w-100 text-center">票券編號：1909050529332096708790</p>
             </div>
         </div>
