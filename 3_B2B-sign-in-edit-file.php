@@ -44,7 +44,7 @@
                 <svg class="trouble" id="Attention" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
                     <path id="Path_35" data-name="Path 35" d="M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM9.1,12.2H6.9V10.3H9.2v1.9Zm.1-7.4L8.6,9.2H7.4L6.8,4.8v-1H9.3v1Z" fill="#ff1000" />
                 </svg>
-                <input class="inputbox" type="text" placeholder="名字好難想工作室">
+                <input class="inputbox" type="text" placeholder="今晚想來點藝文工作室">
                 <p class="trouble2">X 必填資訊未填寫完整</p>
             </div>
 
@@ -60,7 +60,7 @@
 
             <div class="inputform col-xl-8 col-12">
                 <p>主辦單位簡介（必填）</p>
-                <textarea class="textarea2" name="" id="" cols="" rows="10" placeholder="請填寫主辦單位簡介" maxlength="255" required>我們不得不面對一個非常尷尬的事實，那就是，想必大家都能了解名字好難想工作室的重要性。既然如此，若能夠欣賞到名字好難想工作室的美，相信我們一定會對名字好難想工作室改觀。名字好難想工作室似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。</textarea>
+                <textarea class="textarea2" name="" id="" cols="" rows="10" placeholder="請填寫主辦單位簡介" maxlength="255" required>魯迅說過一句發人省思的話，什麼是路？就是從沒有路的地方踐踏出來的，從只有荊棘的地方開闢出來的。但願各位能從這段話中獲得心靈上的滋長。看看別人，再想想自己，會發現問題的核心其實就在你身旁。那麼，林肯告訴我們，噴泉的高度不會超過它的源頭; 一個人的事業也是這樣，他的成就決不會超過自己的信念。這段話的餘韻不斷在我腦海中迴盪著。</textarea>
                 <span class="wortcount">0/255</span>
             </div>
 
