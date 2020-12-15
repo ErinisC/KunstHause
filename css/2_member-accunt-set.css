@@ -81,7 +81,7 @@ body {
   background: url(../imgs/member_imgs/member_14.jpg) center center no-repeat;
   background-color: #f1f9ff;
   border: 3px solid #000;
-  background-size:cover;
+  background-size: cover;
   position: relative;
 }
 
@@ -111,7 +111,7 @@ body {
   border: 3px solid #000;
   position: absolute;
   top: 290px;
-  right: 500px;
+  right: 650px;
 }
 
 .pictureadd {
