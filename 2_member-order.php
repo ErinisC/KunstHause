@@ -53,7 +53,7 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
             <img class="" src="<?= WEB_ROOT ?>imgs/member/order-section-title2.svg" alt="">
         </div>
         <div class="btn-group w-100 mb-5 status" role="group" aria-label="Basic example">
-            <button type="button" class="status-btn btn-s" data-sid="已付款">
+            <button type="button" class="status-btn btn-s btn-select" data-sid="已付款">
                 已付款
             </button>
             <button type="button" class="status-btn btn-s" data-sid="未付款">
@@ -251,13 +251,19 @@ $d_rows = $pdo->query($d_sql)->fetchAll();
         console.log('u:', u);
         getProductData(u);
 
-        status_btns.removeClass('btn-primary').addClass('btn-select');
-        status_btns.each(function(index, el) {
-            const sid = $(this).attr('data-sid');
-            if (sid === u) {
-                $(this).removeClass('btn-select').addClass('btn-primary');
-            }
-        });
+        $('.status-btn').click(function() {
+            $(this).addClass('btn-select');
+            $('.status-btn').not(this).removeClass('btn-select');
+
+        })
+
+        // status_btns.removeClass('btn-primary').addClass('btn-select');
+        // status_btns.each(function(index, el) {
+        //     const sid = $(this).attr('data-sid');
+        //     if (sid === u) {
+        //         $(this).removeClass('btn-select').addClass('btn-primary');
+        //     }
+        // });
     };
 
     window.addEventListener('hashchange', whenHashChanged);
