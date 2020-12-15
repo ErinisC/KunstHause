@@ -212,7 +212,7 @@ $m_row = $stmt->fetch();
                     location.href = "1_member-center.php"
                 } else {
                     console.log('失敗');
-                    $('.error2').html('aaaaaa');
+                    $('.error2').html('密碼不相符');
                 }
 
             }, 'json')

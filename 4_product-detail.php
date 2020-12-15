@@ -98,7 +98,7 @@ if ($totalRows != 0) { // 如果總筆數不等於零=有資料的話
 
             <!-- 活動圖片 -->
 
-            <div class="mainact">
+            <div class="mainact w-100">
                 <img src="imgs/event/<?= $row['picture'] ?>" alt="">
             </div>
 
