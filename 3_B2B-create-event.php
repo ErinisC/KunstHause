@@ -26,7 +26,7 @@
                 <label class="event-banner d-flex col-sm-12">
                     <div class="input input-wrap input-wrap-picture fake_input_placeholder position-absolute">
                         <label for="FileName" name="FileName" class="FileName"></label>
-                        <input id="picture" name="picture" class="input fake_input" ref={fileInput} accept="image/jpeg,image/png" type="file" />
+                        <input id="picture" name="picture" class="input fake_input" ref={fileInput} accept="image/jpeg,image/jpg" type="file" />
                     </div>
                     <a class="upload-banner btn position-absolute " type="submit">上傳圖片</a>
                 </label>
@@ -311,7 +311,8 @@
         const file = this.files[0];
         const objectURL = URL.createObjectURL(file);
 
-        $('.eventimg').attr('src', objectURL);
+        $('.eventimg').attr('src', objectURL).css('opacity', 1);
+
     });
 
     // 顯示檔案名稱
