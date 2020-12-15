@@ -458,7 +458,7 @@
         marquee.append(marquee.find("span").clone());
 
         marquee.wrapInner("<div id='marquee-direction'>");
-        marquee.find("div").css("width", "200%");
+        marquee.find("div").css("width", "250%");
 
         const reset = function() {
             $(this).css("margin-left", "0%");
