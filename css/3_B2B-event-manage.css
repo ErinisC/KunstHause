@@ -2,6 +2,12 @@
   outline: 1px solid red;
 } */
 
+a {
+  color: black;
+  text-decoration: underline;
+  line-height: 1.2;
+}
+
 button:focus {
   box-shadow: none !important;
 }
