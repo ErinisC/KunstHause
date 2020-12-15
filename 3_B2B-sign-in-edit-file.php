@@ -67,7 +67,7 @@
             <div class="modbutton text-center col-xl-8 col-12">
                 <div class="okbutton col-xl-6 col-10 d-flex">
                     <button class="modify1 col-5 btn btn-primary">取消修改</button>
-                    <button class="modify2 col-5 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">完成修改</button>
+                    <button class="modify2 col-5 btn" data-toggle="modal" data-target="#exampleModalCenter">完成修改</button>
                 </div>
             </div>
 

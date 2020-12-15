@@ -47,13 +47,13 @@
                     </thead>
                     <tbody class="col-xl-12 col-12">
                         <tr class="tr2 d-flex">
-                            <td>XDXD48763</td>
+                            <td>AAAAAA01</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <button class="modify3 btn" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
@@ -61,13 +61,13 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48764</td>
+                            <td>AAAAAA02</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>未付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <button class="modify3 btn" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
@@ -75,13 +75,13 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48765</td>
+                            <td>AAAAAA03</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <button class="modify3 btn" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
@@ -89,13 +89,13 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48766</td>
+                            <td>AAAAAA04</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td style="color: #ff0000;">已取消</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <button class="modify3 btn" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
@@ -103,13 +103,13 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48767</td>
+                            <td>AAAAAA05</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <button class="modify3 btn" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
@@ -117,13 +117,13 @@
                             </td>
                         </tr>
                         <tr class="tr2 d-flex">
-                            <td>XDXD48768</td>
+                            <td>AAAAAA06</td>
                             <td>2020-10-26</td>
                             <td>NT$590</td>
                             <td>已付款</td>
                             <td class="d-flex">
                                 <div class="modbutton text-center">
-                                    <button class="modify3 btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
+                                    <button class="modify3 btn" data-toggle="modal" data-target="#exampleModalCenter2">查閱</button>
                                 </div>
                                 <div class="modbutton text-center">
                                     <button class="modify4 btn btn-primary" onclick="showDelConfirm(event)">刪除訂單</button>
@@ -177,7 +177,7 @@
                                 <div class="modal-header d-flex flex-column">
                                     <div class="modal-text ml-3 mt-1" id="exampleModalCenterTitle">活動名稱：空山祭
                                     </div>
-                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：XDXD48763
+                                    <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂單編號：AAAAAA01
                                     </div>
                                     <div class="modal-text ml-3 mt-3" id="exampleModalCenterTitle">訂購人姓名：王小明
                                     </div>

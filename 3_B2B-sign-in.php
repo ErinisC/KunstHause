@@ -147,7 +147,7 @@ if (!isset($_SESSION['user'])) {
                     <div class="okbutton col-xl-6 col-10 d-flex">
                         <button class="modify1 col-5 btn btn-primary">取消註冊</button>
 
-                        <button type="submit" id="submit" class="modify2 col-5 btn btn-primary">完成註冊</button>
+                        <button type="submit" id="submit" class="modify2 col-5 btn" style="color: #fff;">完成註冊</button>
                     </div>
                 </div>
             </form>
