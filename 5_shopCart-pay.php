@@ -65,7 +65,7 @@ if (!isset($_SESSION['user'])) {
                     <div class="img-wrap">
                         <img src="./imgs/shopcart/ic-7-11.svg" alt="">
                     </div>
-                    <div class="text-center my-3">信用卡付款</div>
+                    <div class="text-center my-3">ibon超商付款</div>
 
                 </div>
             </div>
